@@ -1,8 +1,6 @@
 ---
-title:
-  "Triple Product Rule in Partial Differentiation": 
-date:
-  "2025-10-30"
+title: "Triple Product Rule in Partial Differentiation"
+date: "2025-10-30"
 subject: mathematics
 tags:
   - study
