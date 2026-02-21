@@ -134,7 +134,7 @@ $$\int_0^t f(s,\omega) dB_s(\omega) = ?$$
 - [[Martingale Theory]]: Itô integral의 이론적 기초
 
 ## References
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 - Bernt Øksendal, "Stochastic Differential Equations", Chapter 3.1
 - White noise의 존재 불가능성에 대한 논의 (p.21)
 - 일반화된 확률과정 이론

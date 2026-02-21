@@ -202,7 +202,7 @@ $$\liminf_{||\Delta|| \to 0} \sum_j |\Delta B_j| = \infty$$
 
 ## Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

@@ -121,7 +121,7 @@ Itô integral은 **인과관계(causality)** 를 존중합니다:
 
 ## Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

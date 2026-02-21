@@ -11,7 +11,7 @@ tags:
   - brownian_motion
 class: study
 ---
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 # Central Limit Theorem
 
 ## Notation

@@ -138,7 +138,7 @@ $$P(A) = E[\chi_A] = \int \chi_A(\omega) dP(\omega) \tag{11}$$
 
 ## References
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 - Bernt Øksendal, "Stochastic Differential Equations", Section 3.1
 - 측도론 교재들에서의 단순함수 구성
 - 집합론에서의 특성함수 정의

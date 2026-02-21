@@ -231,7 +231,7 @@ $p = 2$일 때 분산을 이용한 제어와 유사
 
 ## Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

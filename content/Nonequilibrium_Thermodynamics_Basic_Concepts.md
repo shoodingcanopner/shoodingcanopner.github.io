@@ -131,7 +131,7 @@ $\omega \to 0$ 극한에서:
 
 ## Related Concepts
 
-- [[Stochastic Differential Equations 공부하기]]
+- [[MOCs/Stochastic Differential Equations 공부하기]]
 - [[Brownian Motion Properties]]
 
 ## References

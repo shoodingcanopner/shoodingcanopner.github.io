@@ -150,7 +150,7 @@ $$M_t = E[M_0] + \int_0^t g(s,ω) dB(s)$$
 
 ## Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

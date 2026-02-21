@@ -144,7 +144,7 @@ $E[M_s|\mathcal{F}_t] = M_t$에서:
 
 ## Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

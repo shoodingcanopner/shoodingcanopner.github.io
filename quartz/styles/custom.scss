@@ -1,3 +1,37 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+// 하이퍼링크 색상 + 초록 음영
+a {
+  color: #2E4336 !important;
+  text-decoration-color: rgba(46, 67, 54, 0.4) !important;
+  transition: background-color 0.2s ease;
+  border-radius: 3px;
+  &:hover {
+    color: #FFB906 !important;
+    background-color: rgba(46, 67, 54, 0.1) !important;
+  }
+}
+
+// 태그 색상 → 딥그린
+.tag {
+  background-color: #2E4336 !important;
+  color: #F5F0E8 !important;
+  &:hover {
+    background-color: #FFB906 !important;
+    color: #1A1008 !important;
+  }
+}
+
+
+
+// 노트 목록 항목 간 구분선
+.explorer-ul li {
+  border-bottom: 1px solid rgba(46, 67, 54, 0.2);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.explorer-ul li:last-child {
+  border-bottom: none;
+}

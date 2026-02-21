@@ -203,7 +203,7 @@ $$dX_t = -\theta X_t dt + \sigma dB_t$$
 
 ##  Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

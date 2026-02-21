@@ -272,7 +272,7 @@ $$\frac{dN}{dt} = rN(1 - N/K) + σN \cdot "noise"$$
 
 ## Reference
 
-[[Stochastic Differential Equations 공부하기]]
+[[MOCs/Stochastic Differential Equations 공부하기]]
 
 ## 관련 개념들
 

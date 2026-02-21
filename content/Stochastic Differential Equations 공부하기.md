@@ -1,5 +1,5 @@
 ---
-title: Stochastic Differential Equations 공부하기
+title: 📖 Stochastic Differential Equations 공부하기
 date: 2025-07-17
 tags:
   - study
@@ -9,6 +9,7 @@ class: study_subject
 Bernet의 Stochastic differential equation을 읽고 공부한 기록
 
 [[2025-07-17_1일차 Stochastic Differential Equations]]
+
 [[2025-07-21_2일차_Stochastic Differential Equaeions]]
 
 # Section 3 Ito integral
