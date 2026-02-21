@@ -1,6 +1,6 @@
 ---
-title: "Electrodynamics"
-date: "2025-10-28"
+title: 📖 Electrodynamics
+date: 2025-10-28
 subject: physics
 tags:
   - study

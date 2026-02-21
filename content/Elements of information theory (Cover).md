@@ -1,5 +1,5 @@
 ---
-title: Elements of information theory (Cover)
+title: 📖 Elements of information theory (Cover)
 date: 2026-01-23
 subject: statistical mechanics
 tags:

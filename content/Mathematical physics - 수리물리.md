@@ -1,5 +1,5 @@
 ---
-title: mathematical physics
+title: 📖 mathematical physics
 date: 2026-02-11
 subject: physics
 tags:

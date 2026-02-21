@@ -1,5 +1,5 @@
 ---
-title: Statistical Physics for Biological Matter (Woo)
+title: 📖 Statistical Physics for Biological Matter (Woo)
 date: 2026-01-12
 subject: statistical mechanics
 tags:

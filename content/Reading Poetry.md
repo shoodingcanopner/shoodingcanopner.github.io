@@ -1,5 +1,5 @@
 ---
-title: Reading Poetry
+title: 📖 Reading Poetry
 date: 2025-08-25
 subject: general
 tags:
