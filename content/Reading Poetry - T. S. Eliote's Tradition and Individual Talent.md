@@ -1,4 +1,6 @@
-
+---
+draft: true
+---
 [[Reading Poetry]]
 #### reading material
 [[week5_Eliot_tradition_and_the_individual_talent.pdf]]

@@ -1,6 +1,7 @@
 ---
 title: Reading Poetry - Harlem Renaissance (정리본)
 date: "2025-11-18"
+draft: true
 tags: [poetry, literature, harlem-renaissance, annotation]
 ---
 

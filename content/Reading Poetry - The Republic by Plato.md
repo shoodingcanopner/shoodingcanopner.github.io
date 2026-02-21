@@ -1,4 +1,6 @@
-
+---
+draft: true
+---
 플라톤은 편협하고 꼬장꼬장하다. 
 
 [[Reading Poetry]]

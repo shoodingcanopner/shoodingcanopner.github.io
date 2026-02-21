@@ -18,7 +18,7 @@ class: study
 
 **Triple Product Rule:**
 $$
-\left(\frac{\partial E}{\partial V}\right)_P \left(\frac{\partial V}{\partial S}\right)_E \left(\frac{\partial S}{\partial E}\right)_V = -1 \tag{1}\label{eq:triple-product}
+\left(\frac{\partial E}{\partial V}\right)_P \left(\frac{\partial V}{\partial S}\right)_E \left(\frac{\partial S}{\partial E}\right)_V = -1 \tag{1}
 $$
 
 ## Notation and Symbols

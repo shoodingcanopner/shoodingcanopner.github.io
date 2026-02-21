@@ -1,3 +1,6 @@
+---
+draft: true
+---
 [[Reading Poetry]]
 Week 11: Symbolism and Surrealism in Poetry
 

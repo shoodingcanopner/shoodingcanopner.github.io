@@ -1,4 +1,6 @@
-
+---
+draft: true
+---
 stanza: 연이다. 
 한 stanza에서는 같은 라임이 유지된다. 
 

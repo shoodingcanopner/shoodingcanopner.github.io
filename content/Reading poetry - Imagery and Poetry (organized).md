@@ -1,4 +1,6 @@
-
+---
+draft: true
+---
 # 이미지즘이 뭔가?
 
 [[Reading Poetry - Ezra Pounds's A Retrospect]]
