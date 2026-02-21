@@ -35,3 +35,9 @@ a {
 .explorer-ul li:last-child {
   border-bottom: none;
 }
+
+// 사이트 제목 줄내림 - "스라소니" 다음에서
+.page-title {
+  word-break: keep-all;
+  max-width: 5em;
+}
