@@ -13,8 +13,13 @@ class: study_journal
 
 # Stochastic thermodynamics for biological functions
 
-## memo
-sdf
+## 이거 왜 읽었나?
+Quantitative biology Journal의 논문.
+논문의 제목이 곧 내 관심분야이다. 
+이 분야에서 가장 최근에 나온 리뷰논문이다. 
+이것을 읽으며 기본 개념을 많이 배웠고, 더 읽어보고 싶은 논문도 발굴했다. 
+
+아직 노트에 읽은 내용을 다 정리하지 않았다. 지금까지 절반 정도 했나?
 
 ## Overview
 
@@ -46,8 +51,7 @@ sdf
 
 ## Related Concepts
 
-이 논문을 이해하기 위해 필요한 학습 노트를 연결한다. 
-글리아와 논문을 읽으며 새로 공부하고, 작성한 학습노트를 이곳에 자동으로 추가한다. 
+많은 개념을 배웠다.
 
 - [[detailed balance]]
 - [[Nonequilibrium_Thermodynamics_Basic_Concepts]]
@@ -59,7 +63,6 @@ sdf
 
 ## 더 읽어보고 싶은 레퍼런스
 
-이 논문의 레퍼런스 중에서 읽어보고 싶은 것을 링크. 
-
 [[Flexibility and sensitivity in gene regulation out of equilibrium.pdf]]
-[[Size limits the sensitivity of kinetic schemes.pdf]]
+
+[[Journal reading - Size limits the sensitivity of kinetic schemes]]

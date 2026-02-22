@@ -1,8 +1,13 @@
 ---
-title: Order Parameter in Ising Model
-date: "2025-09-30"
-tags: [physics, statistical-mechanics, phase-transition, study]
-subjects: [physics]
+title: Order Parameter란 뭘까? feat. Ising Model
+date: 2025-09-30
+tags:
+  - physics
+  - statistical-mechanics
+  - phase-transition
+  - study
+subjects:
+  - physics
 ---
 
 # Order Parameter in Ising Model
@@ -22,7 +27,7 @@ subjects: [physics]
 
 ## Order Parameter란?
 
-**Order parameter(질서 매개변수)**는 시스템의 대칭성 파괴 정도를 정량적으로 나타내는 물리량이다.
+**Order parameter(질서 매개변수)** 는 시스템의 대칭성 파괴 정도를 정량적으로 나타내는 물리량이다.
 
 ### 핵심 특징
 
@@ -344,11 +349,9 @@ $$
 
 ## 참고문헌
 
-1. Huang, K. (1987). *Statistical Mechanics*. Wiley.
-2. Kardar, M. (2007). *Statistical Physics of Particles*. Cambridge.
-3. Yeomans, J. M. (1992). *Statistical Mechanics of Phase Transitions*. Oxford.
+1. 진짜 참고문헌 뭐 였는지 찾아야 함
 
 ---
 
 *Created: 2025-09-30*
-*Last modified: 2025-09-30*
+*Last modified: 2026-02-22*

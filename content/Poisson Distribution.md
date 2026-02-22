@@ -20,7 +20,7 @@ P(N,t) = \frac{(\lambda t)^N e^{-\lambda t}}{N!}
 \tag{1}
 $$
 
-이 분포는 **exponential waiting time**을 가지는 CTRW (Continuous Time Random Walk)의 결과이며, 모든 cumulant가 동일하다는 독특한 성질을 가진다.
+이 분포는 **exponential waiting time**을 가지는 CTRW (Continuous Time Random Walk)의 결과이며, **모든 cumulant가 동일하다**는 독특한 성질을 가진다.
 
 ### Symbol Table
 

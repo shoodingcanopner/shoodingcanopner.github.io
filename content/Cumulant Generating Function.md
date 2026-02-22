@@ -87,7 +87,7 @@ c_1 = m_1 = \langle x \rangle
 \tag{7}
 $$
 
-### 2nd Cumulant: Variance ⭐
+### 2nd Cumulant: Variance 
 
 $$
 \begin{aligned}
@@ -110,7 +110,7 @@ $$
 \tag{10}
 $$
 
-**이게 바로 variance입니다!**
+**이게 바로 variance!**
 
 ### Higher Cumulants
 
@@ -123,7 +123,7 @@ c_4 = m_4 - 3m_2^2 - 4m_1 m_3 + 12m_1^2 m_2 - 6m_1^4 \quad \text{(kurtosis)} \ta
 
 $$
 
-## Additivity: 가장 중요한 특성! 🔥
+## Additivity: 가장 중요한 특성
 
 ### Convolution → Product → Sum 체인
 
@@ -194,7 +194,7 @@ $$
 \tag{21}
 $$
 
-**이게 바로 normal diffusion의 square-root scaling!** ✨
+**이게 바로 normal diffusion의 square-root scaling!** 
 
 ## Why Logarithm? 왜 Log를 취하는가?
 
