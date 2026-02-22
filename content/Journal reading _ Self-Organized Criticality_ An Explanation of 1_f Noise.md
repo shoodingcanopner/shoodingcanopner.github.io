@@ -1,5 +1,5 @@
 ---
-title: "journal readig _ Self-Organized Criticality: An Explanation of 1/f Noise"
+title: "Journal reading - Self-Organized Criticality: An Explanation of 1/f Noise"
 date: 2025-09-16
 subject: statistical_mechanics
 tags:

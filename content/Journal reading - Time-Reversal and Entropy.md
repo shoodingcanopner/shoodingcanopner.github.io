@@ -1,5 +1,5 @@
 ---
-title: Time-Reversal and Entropy
+title: Journal reading - Time-Reversal and Entropy
 date: 2025-11-29
 subject: Statistical Mechanics, Nonequilibrium Thermodynamics
 tags:

@@ -1,5 +1,5 @@
 ---
-title: journal reading _ Love might be a second-order phase transition
+title: Journal reading - Love might be a second-order phase transition
 date: 2025-09-16
 subject: statistical_mechanics
 tags:

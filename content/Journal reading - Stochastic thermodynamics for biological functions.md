@@ -1,8 +1,8 @@
 ---
-title: "Stochastic thermodynamics for biological functions"
+title: Journal reading - Stochastic thermodynamics for biological functions
 authors: Yuansheng Cao, Shiling Liang
 DOI: "[10.1002/qub2.75](https://doi.org/10.1002/qub2.75)"
-date: "2026-02-19"
+date: 2026-02-19
 subject: stochastic thermodynamics, biophysics
 tags:
   - study

@@ -91,7 +91,7 @@ export default (() => {
           document.addEventListener('DOMContentLoaded', function() {
             var banner = document.createElement('div');
             banner.style.cssText = 'background:#F5F0E8;color:#2E4336;text-align:left;padding:0.5rem 1rem;font-size:0.85rem;width:100%;box-sizing:border-box;';
-            banner.textContent = '＼（〇_ｏ）／ 누추한 곳에 손님이 오셨군요. 이곳은 개인용 위키입니다. 아직 정리되지 않은 어수선한 생각들로 가득합니다. 적당한 레퍼런스와 AI를 이용해 초안을 작성한 뒤, 운영자가 수정합니다. 링크된 PDF 자료는 열리지 않습니다.';
+            banner.textContent = '＼（〇_ｏ）／ 누추한 곳에 손님이 오셨군요. 적당한 레퍼런스와 AI를 이용해 초안을 작성한 뒤, 운영자가 수정하긴 하는데... 아직 정리되지 않은 어수선한 문서들로 가득합니다. 링크된 PDF 자료는 열리지 않습니다.';
             document.body.insertBefore(banner, document.body.firstChild);
           });
         `}} />

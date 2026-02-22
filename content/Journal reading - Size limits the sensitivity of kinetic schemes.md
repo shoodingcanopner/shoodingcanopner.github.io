@@ -1,8 +1,8 @@
 ---
-title: "Size limits the sensitivity of kinetic schemes"
+title: Journal reading - Size limits the sensitivity of kinetic schemes
 authors: Jeremy A. Owen, Jordan M. Horowitz
 DOI: "[DOI](https://doi.org/10.1038/s41467-023-36705-8)"
-date: "2026-02-22"
+date: 2026-02-22
 subject: nonequilibrium biophysics
 tags:
   - study
@@ -20,6 +20,7 @@ class: study_journal
 ## Link to PDF and DOI
 
 - DOI: [https://doi.org/10.1038/s41467-023-36705-8](https://doi.org/10.1038/s41467-023-36705-8)
+- PDF: [[Size limits the sensitivity of kinetic schemes.pdf]]
 
 ## 주요 내용 요약
 
