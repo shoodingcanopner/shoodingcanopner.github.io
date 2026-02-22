@@ -159,10 +159,7 @@ $$\xi(T,L) \sim L \quad \text{at } T_c \tag{8}$$
 
 ## References
 
-- UIUC Physics 466 Lecture Notes - Phase Transitions and Finite-size Scaling
-- Phase Transitions, Finite-size Scaling and Renormalization Group (Illinois)
-- Finite-size scaling functions of the ferromagnetic Ising model (arXiv:2110.02928)
-- Monte Carlo Simulation in Statistical Physics textbook
+- 전산물리 강의 자료
 
 ## Notes from Claude
 
