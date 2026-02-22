@@ -65,7 +65,7 @@ const config: QuartzConfig = {
         enableInHtmlEmbed: false,
         enableCheckbox: true,
       }),
-      Plugin.GitHubFlavoredMarkdown(),
+      Plugin.GitHubFlavoredMarkdown({ softBreaks: true }),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
