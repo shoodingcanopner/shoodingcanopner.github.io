@@ -36,13 +36,13 @@ const config: QuartzConfig = {
         },
         darkMode: {
           light: "#1A2420",
-          lightgray: "#2E4336",    // ← 딥그린
+          lightgray: "#C4D6CB",    // ← 변경
           gray: "#5A7A68",
           darkgray: "#D4C8B0",
-          dark: "#F5F0E8",         // ← 베이지
-          secondary: "#FFB906",    // ← 노랑 포인트
-          tertiary: "#2E4336",
-          highlight: "rgba(255, 185, 6, 0.1)",
+          dark: "#F5F0E8",
+          secondary: "#C4D6CB",    // ← 변경
+          tertiary: "#FFB906",
+          highlight: "rgba(196, 214, 203, 0.1)",    // ← 변경
           textHighlight: "#FFB90688",
         },
       },
