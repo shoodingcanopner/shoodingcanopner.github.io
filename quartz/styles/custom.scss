@@ -1,29 +1,27 @@
+
 @use "./base.scss";
 
 // put your custom CSS here!
+
 // 하이퍼링크 색상 + 초록 음영
 a {
-  color: #2E4336 !important;
   text-decoration-color: rgba(46, 67, 54, 0.4) !important;
   transition: background-color 0.2s ease;
   border-radius: 3px;
   &:hover {
-    color: #FFB906 !important;
     background-color: rgba(46, 67, 54, 0.1) !important;
   }
 }
 
-// 태그 색상 → 딥그린
+// 태그 색상 → config secondary 색상 사용
 .tag {
-  background-color: #2E4336 !important;
-  color: #F5F0E8 !important;
+  color: var(--light) !important;
+  background-color: var(--secondary) !important;
   &:hover {
-    background-color: #FFB906 !important;
-    color: #1A1008 !important;
+    background-color: var(--tertiary) !important;
+    color: var(--dark) !important;
   }
 }
-
-
 
 // 노트 목록 항목 간 구분선
 .explorer-ul li {
@@ -36,8 +34,22 @@ a {
   border-bottom: none;
 }
 
-// 사이트 제목 줄내림 - "스라소니" 다음에서
+// 사이트 제목 줄내림
 .page-title {
   word-break: keep-all;
   max-width: 5em;
 }
+
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("/static/fonts/RIDIBatang.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// 노트 목록 폰트
+.explorer-ul {
+  font-family: "Nanum Square", sans-serif !important;
+}
+

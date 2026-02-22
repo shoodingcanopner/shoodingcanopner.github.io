@@ -15,11 +15,11 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
+      fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Noto Serif KR",   // ← 리디 바탕 대체 (아래 설명 참고)
-        body: "Noto Serif KR",
+        header: "RIDIBatang",
+        body: "RIDIBatang",
         code: "IBM Plex Mono",
       },
       colors: {
@@ -36,13 +36,13 @@ const config: QuartzConfig = {
         },
         darkMode: {
           light: "#1A2420",
-          lightgray: "#C4D6CB",    // ← 변경
+          lightgray: "#C4D6CB",
           gray: "#5A7A68",
-          darkgray: "#D4C8B0",
-          dark: "#F5F0E8",
-          secondary: "#C4D6CB",    // ← 변경
+          darkgray: "#E8E0D0",    // ← 더 밝게
+          dark: "#F5F0E8",        // ← 더 밝게
+          secondary: "#C4D6CB",
           tertiary: "#FFB906",
-          highlight: "rgba(196, 214, 203, 0.1)",    // ← 변경
+          highlight: "rgba(196, 214, 203, 0.1)",
           textHighlight: "#FFB90688",
         },
       },
@@ -86,7 +86,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages(),
+      //Plugin.CustomOgImages(),
     ],
   },
 }

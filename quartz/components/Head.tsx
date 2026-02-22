@@ -86,6 +86,7 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
         <meta name="google-site-verification" content="Bufh1sD6u4Vlxnef4sALd_-Po6yDbI_22sTZEwYMX4w" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/snz-hayden/toolo/fonts/nanum_square/nanum_square.css" />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js

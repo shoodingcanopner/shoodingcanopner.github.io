@@ -4,5 +4,5 @@ git add .
 git commit -m "update: %date% %time%"
 git push
 echo.
-echo 배포 완료! 2-3분 후 사이트에 반영됩니다.
+echo  Pushing has been completed. The blog will be fixed in 2-3 minutes.
 pause
