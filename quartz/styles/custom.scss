@@ -2,7 +2,20 @@
 @use "./base.scss";
 
 // put your custom CSS here!
-
+// 경고 배너
+.notice-bar {
+  background-color: #FFB906;
+  color: #1A1008;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  width: 100%;
+}
+.page-header {
+  display: block !important;
+  min-height: 2rem !important;
+  overflow: visible !important;
+}
 // 하이퍼링크 색상 + 초록 음영
 a {
   text-decoration-color: rgba(46, 67, 54, 0.4) !important;

@@ -23,9 +23,11 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import Notice from "./Notice"
 
 export {
   ArticleTitle,
+  Notice,  // ← 추가
   Content,
   TagContent,
   FolderContent,

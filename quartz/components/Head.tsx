@@ -87,7 +87,14 @@ export default (() => {
         <meta name="generator" content="Quartz" />
         <meta name="google-site-verification" content="Bufh1sD6u4Vlxnef4sALd_-Po6yDbI_22sTZEwYMX4w" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/snz-hayden/toolo/fonts/nanum_square/nanum_square.css" />
-
+        <script dangerouslySetInnerHTML={{__html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            var banner = document.createElement('div');
+            banner.style.cssText = 'background:#F5F0E8;color:#2E4336;text-align:left;padding:0.5rem 1rem;font-size:0.85rem;width:100%;box-sizing:border-box;';
+            banner.textContent = '＼（〇_ｏ）／ 누추한 곳에 손님이 오셨군요. 이곳은 개인용 위키입니다. 아직 정리되지 않은 어수선한 생각들로 가득합니다. 아쉽게도 PDF 자료는 열리지 않습니다.';
+            document.body.insertBefore(banner, document.body.firstChild);
+          });
+        `}} />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
