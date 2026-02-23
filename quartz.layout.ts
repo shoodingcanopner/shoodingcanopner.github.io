@@ -48,11 +48,13 @@ export const defaultContentPageLayout: PageLayout = {
         repelForce: 1.5,     // 기본값 0.5 → 높일수록 노드가 멀어짐
         linkDistance: 45,    // 기본값 30 → 링크 길이
         centerForce: 0.2,    // 기본값 0.3 → 낮출수록 중앙 쏠림 감소
+        showTags: false,  // ← 추가
       },
       globalGraph: {
         repelForce: 1.5,
         linkDistance: 60,
         centerForce: 0.2,
+        showTags: false,  // ← 추가
       },
     }),
     Component.DesktopOnly(Component.TableOfContents()),
