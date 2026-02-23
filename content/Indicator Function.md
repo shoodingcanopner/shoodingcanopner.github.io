@@ -16,20 +16,22 @@ class: study
 
 ## Notation
 
-| 기호 | 의미 |
-|------|------|
-| $\chi_A(x)$ | 집합 $A$의 지시함수 (클래식 기호) |
-| $\mathbf{1}_A(x)$ | 집합 $A$의 지시함수 (현대적 기호) |
-| $I_A(x)$ | 집합 $A$의 지시함수 (대안 기호) |
-| $X_{[a,b)}(t)$ | 구간 $[a,b)$의 지시함수 (교재 기호) |
-| $A$ | 집합 |
-| $x$ | 원소 |
-| $\in$ | 원소 관계 |
-| $\notin$ | 비원소 관계 |
+| 기호                | 의미                       |
+| ----------------- | ------------------------ |
+| $\chi_A(x)$       | 집합 $A$의 지시함수 (클래식 기호)    |
+| $\mathbf{1}_A(x)$ | 집합 $A$의 지시함수 (현대적 기호)    |
+| $I_A(x)$          | 집합 $A$의 지시함수 (대안 기호)     |
+| $X_{[a,b)}(t)$    | 구간 $[a,b)$의 지시함수 (교재 기호) |
+| $A$               | 집합                       |
+| $x$               | 원소                       |
+
 
 ## Overview
 
-Indicator function (지시함수)는 특정 집합에 속하는지 여부를 0과 1로 나타내는 함수이다. 집합론, 측도론, 확률론에서 기본적이면서도 강력한 도구로 사용되며, 복잡한 함수를 단순한 형태로 근사하는 데 핵심적인 역할을 한다.
+Indicator function (지시함수)는 input으로 받은 원소 $x$가 특정 집합에 속하는지 여부를 0과 1로 나타내는 함수이다. 
+... 이게 전부다! 어려울 거 없다. 
+
+집합론, 측도론, 확률론에서 기본적이면서도 강력한 도구로 사용되며, 복잡한 함수를 단순한 형태로 근사하는 데 핵심적인 역할을 한다.
 
 ## Key Points
 
@@ -37,10 +39,12 @@ Indicator function (지시함수)는 특정 집합에 속하는지 여부를 0�
 
 집합 $A$에 대한 지시함수 $\chi_A$는 다음과 같이 정의된다:
 
-$$\chi_A(x) = \begin{cases}
+$$
+\chi_A(x) = \begin{cases}
 1 & \text{if } x \in A \\
 0 & \text{if } x \notin A
-\end{cases} \tag{1}$$
+\end{cases} \tag{1}
+$$
 
 ### 다양한 표기법
 
@@ -51,10 +55,12 @@ $$\chi_A(x) = \begin{cases}
 ### 구간에서의 지시함수
 
 **반열린구간** $[a,b)$에 대해:
-$$X_{[a,b)}(t) = \begin{cases}
+$$
+X_{[a,b)}(t) = \begin{cases}
 1 & \text{if } t \in [a,b) \\
 0 & \text{if } t \notin [a,b)
-\end{cases} \tag{2}$$
+\end{cases} \tag{2}
+$$
 
 **시각적 표현**:
 ```
@@ -70,23 +76,38 @@ X[a,b)(t) │
 ### 기본 성질들
 
 **합성 (Union)**:
-$$\chi_{A \cup B}(x) = \max(\chi_A(x), \chi_B(x)) = \chi_A(x) + \chi_B(x) - \chi_A(x) \chi_B(x) \tag{3}$$
+OR 연산 같은 기능
+$$
+\chi_{A \cup B}(x) = \max(\chi_A(x), \chi_B(x)) = \chi_A(x) + \chi_B(x) - \chi_A(x) \chi_B(x) \tag{3}
+$$
 
 **교집합 (Intersection)**:
-$$\chi_{A \cap B}(x) = \min(\chi_A(x), \chi_B(x)) = \chi_A(x) \chi_B(x) \tag{4}$$
+AND 연산 같은 기능능
+$$
+\chi_{A \cap B}(x) = \min(\chi_A(x), \chi_B(x)) = \chi_A(x) \chi_B(x) \tag{4}
+$$
 
 **여집합 (Complement)**:
-$$\chi_{A^c}(x) = 1 - \chi_A(x) \tag{5}$$
+$$
+\chi_{A^c}(x) = 1 - \chi_A(x) \tag{5}
+$$
 
 **차집합 (Difference)**:
-$$\chi_{A \setminus B}(x) = \chi_A(x)(1 - \chi_B(x)) \tag{6}$$
+$$
+\chi_{A \setminus B}(x) = \chi_A(x)(1 - \chi_B(x)) \tag{6}
+$$
 
 ### 단순함수로의 확장
 
-**단순함수**: 유한개의 지시함수들의 선형결합
-$$f(x) = \sum_{i=1}^n c_i \chi_{A_i}(x) \tag{7}$$
+**단순함수** [[Simple Functions]]: 유한개의 지시함수들의 선형결합
+$$
+f(x) = \sum_{i=1}^n c_i \chi_{A_i}(x) \tag{7}
+$$
 
 여기서 $c_i$는 상수, $A_i$는 서로소 집합들
+위의 '시각적 표현'에서 지시함수가 높이 1인 박스 모양으로 나타난다는 것을 상기기하라. 
+단순 함수는 여러가지 폭($A_i$)과 높이($c_i$)를 가진 박스들을 쌓아 올려서 만들 수 있다. 
+유한개의 박스를 쌓아 올렸기 때문에 단순 함수는 계단모양을 가지게 된다,
 
 ## Questions & Insights
 
@@ -103,7 +124,9 @@ $$f(x) = \sum_{i=1}^n c_i \chi_{A_i}(x) \tag{7}$$
 **주의**: "Characteristic function"과 혼동 금지!
 
 **확률론에서 Characteristic function**:
-$$\phi_X(t) = E[e^{itX}] \tag{8}$$
+$$
+\phi_X(t) = E[e^{itX}] \tag{8}
+$$
 이는 확률분포의 푸리에 변환으로 완전히 다른 개념
 
 **올바른 용어**:
@@ -113,7 +136,9 @@ $$\phi_X(t) = E[e^{itX}] \tag{8}$$
 ### Itô Integral에서의 역할
 
 **단순함수 구성** (Øksendal 교재 3.1.7):
-$$\phi(t,\omega) = \sum_{j \geq 0} e_j(\omega) \cdot X_{[j \cdot 2^{-n}, (j+1)2^{-n})}(t) \tag{9}$$
+$$
+\phi(t,\omega) = \sum_{j \geq 0} e_j(\omega) \cdot X_{[j \cdot 2^{-n}, (j+1)2^{-n})}(t) \tag{9}
+$$
 
 **의미**:
 - 시간축을 $2^{-n}$ 간격으로 분할
@@ -123,18 +148,20 @@ $$\phi(t,\omega) = \sum_{j \geq 0} e_j(\omega) \cdot X_{[j \cdot 2^{-n}, (j+1)2^
 ### 측도론에서의 응용
 
 **집합의 측도**:
-$$\mu(A) = \int \chi_A(x) d\mu(x) \tag{10}$$
+$$
+\mu(A) = \int \chi_A(x) d\mu(x) \tag{10}
+$$
 
 **확률**:
-$$P(A) = E[\chi_A] = \int \chi_A(\omega) dP(\omega) \tag{11}$$
+$$
+P(A) = E[\chi_A] = \int \chi_A(\omega) dP(\omega) \tag{11}
+$$
+
 
 ## Related Concepts
 
 - [[Simple Functions]]: 지시함수들의 선형결합
-- [[Lebesgue Integration]]: 지시함수부터 시작하는 적분 구성
 - [[White Noise and Brownian Motion Relationship]]: 단순함수 근사의 응용
-- [[Measure Theory]]: 지시함수의 이론적 배경
-- [[Set Theory]]: 지시함수의 기초가 되는 집합 연산
 
 ## References
 
