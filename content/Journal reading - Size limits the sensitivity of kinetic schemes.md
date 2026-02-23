@@ -116,14 +116,17 @@ $$
 
 FIG3
 ![[Pasted image 20260223091846.png]]
+DNA에 여러개의 TF들이 붙는 상황을 가정하라. 
+이때 TF는 한 가지이지만, n개의 binding sites는 구별된다.
 
-unordered binding 모델, 즉 $n$개의 구분 가능한 결합 자리에 동일한 ligand가 임의의 순서로 결합하는 경우를 생각하자. 이 경우 가능한 상태의 수는 $2^n$이고, fully bound state를 제외한 모든 상척도의 위계(hierarchy of timescales)**
+
+이런 시스템을 unordered binding 모델이라 부르자. 즉 $n$개의 구분 가능한 결합 자리에 동일한 ligand가 임의의 순서로 결합하는 경우이다. 이 경우 가능한 상태의 수는 $2^n$이고(n개의 site 각각이 ligand on/off 두 가지 상태를 가지므로), fully bound state를 제외한 모든 상척도의 위계(hierarchy of timescales)
 결합 자리에 번호를 붙이면, 높은 번호의 자리일수록 결합/해리가 훨씬 느리게 일어난다.
 
 **② 중첩된 조건부 결합 규칙**
 자리 $i$에 결합이 일어나려면 $1, \ldots, i-1$번 자리가 모두 차 있어야 하고, 자리 $i$에서 해리가 일어나려면 $1, \ldots, i-1$번 자리가 모두 비어 있어야 한다.
 
-이 두 조건이 결합되면 강한 시간첥도 분리 극한에서 각 자리의 steady-state 점유 확률이 다음과 같이 유도된다:
+이 두 조건이 결합되면 강한 시간척도 분리 극한에서 각 자리의 steady-state 점유 확률이 다음과 같이 유도된다:
 
 $$
 \pi(\text{site } i \text{ is bound}) = \frac{x^{2^{i-1}}}{1 + x^{2^{i-1}}} \tag{20}
