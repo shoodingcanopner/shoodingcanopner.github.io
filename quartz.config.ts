@@ -51,6 +51,7 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
+      Plugin.HardLineBreaks(),  // ← 추가
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
       }),
@@ -65,7 +66,7 @@ const config: QuartzConfig = {
         enableInHtmlEmbed: false,
         enableCheckbox: true,
       }),
-      Plugin.GitHubFlavoredMarkdown({ softBreaks: true }),
+      Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
