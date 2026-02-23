@@ -102,10 +102,6 @@ $$
 
 직관적으로 따졌을 때, 식 (3-1)은 상태 $j$에서 탈출하는 current의 합이고, 식 (3-2)는 상태 $j$로 들어오는 currnet의 합이다. 그리고 이 둘이 같은 값인 게 평형 상태다. 
 
-### 행렬론적 해석
-
-이 공식은 행렬 $P - I$의 **주 cofactor(principal cofactor)** 벡터와 일치한다. $n$개 state, 완전 그래프인 경우 confluence의 수는 $n^{n-2}$개 (Cayley's formula).
-
 ## Questions & Insights
 
 ## Related Concepts
