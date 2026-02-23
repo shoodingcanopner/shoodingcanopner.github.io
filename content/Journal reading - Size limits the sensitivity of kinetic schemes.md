@@ -200,4 +200,5 @@ Hunchback 이라는 유전자의 TF에 대한 sensitivity를 측정한 결과, H
 
 ## 더 읽어보고 싶은 레퍼런스
 
-이 논문의 레퍼런스 중에서 읽어보고 싶은 것을 링크. 
+→ Markov chain tree theorem이 뭘까. 알 수 있다고 한다.
+[[Journal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov Chain]]
