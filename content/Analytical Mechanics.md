@@ -24,4 +24,5 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 
 ### 1st week
 
-[[Analytical mechanics lecture notes - 운동방정식은 어떻게 세워지는가]]
+[[AM lecture notes - Galilean transformation]]
+[[AM lecture notes - unnamed]]

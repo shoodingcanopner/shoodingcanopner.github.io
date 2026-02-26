@@ -142,7 +142,7 @@ $\det P = -1$이므로 improper rotation이다.
 
 - [[대칭성, 위상수학, 상전이]]
 - [[Lagrangian Mechanics]]
-- [[2025-06-02_Symmetry_Conservation_Laws_Three_Step_Proof]]
+- [[Symmetry_Conservation_Laws_Three_Step_Proof]]
 
 ## References
 

@@ -11,6 +11,7 @@ category: MOC
 ## 개요
 
 세 개의 핵심 정리를 연결하여 **"대칭성 → 보존법칙"** 을 엄밀하게 증명하는 논법
+**"해밀토니안이 어떤 대칭성에 불변이면, 그 대칭성의 생성자가 보존량이 된다"**
 
 ## 필요한 세 가지 정리
 
@@ -18,6 +19,8 @@ category: MOC
 **명제:** 어떤 observable을 나타내는 operator Q가 있고, 어떤 transformation을 나타내는 unitary operator Y가 있다. 이때 Q가 Y에 대해 invariant하면 Q와 Y는 commute한다.
 
 **수식:** $Y^\dagger Q Y = Q \Rightarrow [Q, Y] = 0$
+왜 이런 샌드위치같은 연산을 하는가? 궁금하면
+Observable에 basis transform을 하는 연산인  [[Unitary transformation]]를 공부하라. 
 
 **증명:**
 $$Y^\dagger Q Y = Q$$
@@ -35,6 +38,8 @@ Q가 observable(에르미트)이므로 $Q^\dagger = Q$:
 $$Q Y = Y Q$$
 
 따라서 $[Q, Y] = 0$ □
+
+나중에 $Q$ 자리에 해밀토니안 $H$를 대입할 것이다. 
 
 ### 정리 2: 생성자와 불변량의 교환
 **명제:** 앞서 정의한 Y, Q와 어떤 observable을 나타내는 operator A가 있다. 
@@ -60,7 +65,7 @@ Baker-Campbell-Hausdorff 증명을 통해 더 엄밀하게 증명할 수 있다�
 ### 정리 3: Generalized Ehrenfest Theorem
 **공식:**
 $$\frac{d}{dt}\langle\hat{A}\rangle = \frac{1}{i\hbar}\langle[\hat{A}, \hat{H}]\rangle + \left\langle\frac{\partial \hat{A}}{\partial t}\right\rangle \tag{2}$$
-
+[[Generalized_Ehrenfest_Theorem]]
 ## 3단계 논법: 대칭성에서 보존법칙 유도
 
 ### 주어진 조건

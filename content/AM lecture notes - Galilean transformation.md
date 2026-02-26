@@ -1,13 +1,14 @@
 ---
-title: 운동방정식은 어떻게 세워지는가?
-date:
-subject: 
+title: AM lecture notes - Galilean transformation
+date: 2026-02-24
+subject: physics
 tags:
   - study
   - concept
   - question
 class: study_lecture
 ---
+[[Analytical Mechanics]]
 이것은 강의를 듣고 적은 필기입니다. 
 정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다. 
 
@@ -299,6 +300,9 @@ $C_i$는 **질량중심의 위치**와 관련된 양이다. boost invariance에 
 
 
 # References
+Tong의 Lecture note
+[[1 Newton’s Laws of Motion.pdf]]
+
 
 맥스웰 방정식 풀이법 참고해 봐라고 주신 자료가 있다. 
 긴 논문이다. 
@@ -306,6 +310,7 @@ $C_i$는 **질량중심의 위치**와 관련된 양이다. boost invariance에 
 [[Maxwell S2.pdf]]
 
 
-
+# 이어지는 강의
+[[AM lecture notes - unnamed]]
 
 
