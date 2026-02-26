@@ -85,16 +85,76 @@ Casimir invariant들이 입자를 분류한다. $C_1 = M$이 있다는 건 입�
 
 다시 말해 **"질량 $m$을 가진 입자가 갈릴레이 대칭성을 만족하며 움직인다"는 요구조건만으로 뉴턴 방정식이 나온다.**
 
+# 왜 모든 generator와 commute하면 변환에 불변인가?
+
+## Generator와 변환의 관계
+
+변환 $Y$는 generator $A$로부터 만들어진다:
+
+$$
+Y = e^{i\alpha A}
+$$
+
+$[C, A] = 0$ 이면, commutator의 선형성과 $[C, A^n] = nA^{n-1}[C,A]$를 이용하면:
+
+$$
+[C, e^{i\alpha A}] = i\alpha[C, A] \cdot e^{i\alpha A} = 0
+$$
+
+따라서:
+
+$$
+[C, A] = 0 \implies [C, Y] = 0 \implies Y^\dagger C Y = C
+$$
+
+갈릴레이 그룹의 임의의 변환은 모든 generator의 조합으로 만들어지므로, **$C$가 모든 generator와 commute하면 어떤 갈릴레이 변환에도 불변**이다.
+
+## 고전역학에서는?
+
+고전역학에서 commutator의 역할은 **Poisson bracket**이 한다:
+
+$$
+\{f, g\}_{\text{Poisson}} \longleftrightarrow \frac{1}{i\hbar}[\hat{f}, \hat{g}]_{\text{commutator}}
+$$
+
+보존량 조건도 대응된다:
+
+$$
+\frac{dA}{dt} = \{A, H\} + \frac{\partial A}{\partial t} = 0 \quad (\text{고전}) \longleftrightarrow \quad \frac{d}{dt}\langle\hat{A}\rangle = \frac{1}{i\hbar}\langle[\hat{A},\hat{H}]\rangle + \left\langle\frac{\partial\hat{A}}{\partial t}\right\rangle = 0 \quad (\text{양자})
+$$
+
+$[C, \text{generator}] = 0$ 표기는 사실 **Lie algebra bracket**이며, 고전역학에서의 실체는 Poisson bracket이다. 같은 Lie 대수 구조를 고전/양자역학이 각자의 방식으로 구현하는 것.
+
+→ [[Poisson_Brackets]]
+
+## 샌드위치 연산 $Y^\dagger C Y$의 의미
+
+이건 그냥 **선형대수의 기저 변환**이다.
+
+기저를 $Y$로 바꿨을 때 연산자 $C$의 새로운 표현:
+
+$$
+C \mapsto Y^\dagger C Y
+$$
+
+(유니터리 행렬은 $Y^{-1} = Y^\dagger$이므로 $RCR^{-1}$과 같은 형태.)
+
+$Y^\dagger C Y = C$ 는 "새 기저에서 봐도 $C$의 표현이 똑같다" — 즉 $C$가 그 변환에 불변이라는 뜻. 기댓값 보존과 형태는 같지만 맥락이 다르다:
+
+| 맥락 | 의미 |
+|------|------|
+| 기댓값 보존 | 상태를 변환해도 측정 결과가 같다 |
+| 연산자 불변성 | 기저를 바꿔도 연산자 표현이 같다 |
+
+→ [[Unitary transformation]]
+
 # 궁금한 내용
 
-Lie bracket과 commutation relation을 체계적으로 계산하는 방법은?
-
-Poincaré 그룹의 Casimir invariant는 무엇인가? (상대론적 버전)
 
 # 연관 학습 노트
 
 [[AM lecture notes - Galilean transformation]]
-[[AM lecture notes - unnamed]]
+[[AM lecture notes - Transformation of equation]]
 [[Poisson_Brackets]]
 
 양자역학에서

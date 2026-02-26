@@ -8,6 +8,7 @@ tags:
   - question
 class: study_lecture
 ---
+
 [[Analytical Mechanics]]
 이것은 강의를 듣고 적은 필기입니다. 
 정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다. 
@@ -311,6 +312,6 @@ Tong의 Lecture note
 
 
 # 이어지는 강의
-[[AM lecture notes - unnamed]]
+[[AM lecture notes - Transformation of equation]]
 
 

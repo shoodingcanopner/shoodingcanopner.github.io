@@ -25,4 +25,4 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 ### 1st week
 
 [[AM lecture notes - Galilean transformation]]
-[[AM lecture notes - unnamed]]
+[[AM lecture notes - Transformation of equation]]

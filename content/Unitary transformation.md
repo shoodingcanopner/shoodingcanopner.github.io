@@ -15,6 +15,8 @@ class: study
 
 양자역학에서 유니타리 연산자 $U$ ($U^\dagger U = UU^\dagger = I$)를 이용해 observable $Q$를 새로운 기저(basis)에서 다시 표현하는 것을 **유사 변환(similarity transformation)** 혹은 **유니타리 변환(unitary transformation)** 이라 한다.
 
+양자역학뿐만 아니라 그냥 선형대수학에서도 적용되는 특성이다. 
+
 변환의 방향(능동/수동)에 따라 샌드위치의 순서가 달라진다:
 - **능동 변환 (active):** 상태를 $U$로 변환 → $|\psi'\rangle = U|\psi\rangle$ → operator는 $Q' = UQU^\dagger$
 - **수동 변환 (passive / 기저 변환):** 행렬 원소 관점에서 새 기저로의 변환 → $Q'_{ij} = (U^\dagger Q U)_{ij}$
@@ -63,6 +65,8 @@ U S_z U^\dagger = S_x = \frac{\hbar}{2}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatr
 $$
 
 물리적으로는 동일한 실험이지만, 기준 방향이 바뀐 것이다.
+
+![[고개룰 돌려봐.png]]
 
 
 ## Questions & Insights

@@ -78,9 +78,7 @@ $$\{f, H\} = 0 \quad \Leftrightarrow \quad f\text{는 보존량} \tag{8}$$
 ## Related Concepts
 
 - [[Lagrangian_and_Generalized_Momentum|Lagrangian and Generalized Momentum]] - 라그랑지안 역학에서 해밀톤 역학으로의 발전
-- [[Hamiltonian Mechanics]] - 푸아송 괄호가 정의되는 해밀톤 역학의 틀
 - [[양자역학 기댓값 연산의 비선형성]] - 양자역학과의 연결점
-- [[Conservation Laws]] - 푸아송 괄호와 보존량의 관계
 - [[Liouville's Theorem]]
 
 ## References

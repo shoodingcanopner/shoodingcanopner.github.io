@@ -25,12 +25,8 @@ Week 9-13: Chap. 3 Theory of Angular Momentum
 Week 14-15: Chap. 4 Symmetry in Quantum Mechanics
 Week 16: Final Exam
 
-
 # 강의 필기
 
-Compton effect가 뭐지
-디락 방정식 
-
-1.1이 재미있다. 읽어보시라. 
+[[QM lecture note - Kets, Bras, and Operators]]
 
 # 연관 노트들
