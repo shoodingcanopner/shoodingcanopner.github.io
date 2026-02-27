@@ -312,6 +312,6 @@ Tong의 Lecture note
 
 
 # 이어지는 강의
-[[AM lecture notes - Transformation of equation]]
+[[AM lecture notes - Transformation of equation, Casimir Invariants]]
 
 

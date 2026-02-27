@@ -1,5 +1,5 @@
 ---
-title: AM lecture notes - Transformation of equation
+title: AM lecture notes - Transformation of Equation, Casimir Invariants
 date: 2026-02-26
 subject: physics
 tags:
@@ -136,7 +136,7 @@ C_1 = M = m\mathbb{I} \quad (\text{mass})
 $$
 
 $$
-C_2 = U = H - \frac{1}{2m}|P|^2 \quad (\text{energy})
+C_2 = U = H - \frac{1}{2m}|P|^2 \quad (\text{innre energy})
 $$
 
 $$

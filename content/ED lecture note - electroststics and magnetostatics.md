@@ -161,7 +161,10 @@ $$
 $$
 \sigma_b = \vec{P} \cdot \hat{n}, \qquad \rho_b = -\nabla \cdot \vec{P}
 $$
+![[Pasted image 20260227100815.png]]
+![[Pasted image 20260227100848.png]]
 
+![[Pasted image 20260227101125.png]]
 ### Effective charge density와 D 벡터
 
 $$
@@ -173,11 +176,9 @@ Gauss 법칙에 대입:
 $$
 \nabla \cdot \vec{E} = \frac{1}{\varepsilon_0} \rho = \frac{1}{\varepsilon_0} \rho_{free} - \frac{1}{\varepsilon_0} \nabla \cdot \vec{P}
 $$
-
 $$
 \varepsilon_0 \nabla \cdot \vec{E} + \nabla \cdot \vec{P} = \rho_{free}
 $$
-
 $$
 \nabla \cdot (\varepsilon_0 \vec{E} + \vec{P}) = \rho_{free}
 $$
