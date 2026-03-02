@@ -289,6 +289,7 @@ $$
 
 Tong의 Lecture note
 [[1 Newton’s Laws of Motion.pdf]]
-[[2 The Lagrangian Formalism.pdf]]
+
 
 # 다음 강의
+[[AM lecture note - Lagrangian mechanics]]

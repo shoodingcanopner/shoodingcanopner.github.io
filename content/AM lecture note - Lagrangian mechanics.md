@@ -12,6 +12,9 @@ class: study_lecture
 이것은 강의를 듣고 적은 필기입니다. 
 정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다. 
 
+# 지난 강의
+[[AM lecture notes - Transformation of equation, Casimir Invariants]]
+
 # 오늘의 핵심
 
 정리를 끝내고 나서 핵심을 이곳에 적기. 
@@ -84,10 +87,12 @@ boundary condition으로 $\delta q(t_i) = \delta q(t_f) = 0$이 요청된다.
 
 # 연관 학습 노트
 
+[[The True Nature of Lagrangian]]
 
 # References
 
-강의 ppt 링크를 이곳에 
+Tong의 강의록
+[[2 The Lagrangian Formalism.pdf]]
 
 
 

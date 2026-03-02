@@ -26,3 +26,4 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 
 [[AM lecture notes - Galilean transformation]]
 [[AM lecture notes - Transformation of equation, Casimir Invariants]]
+[[AM lecture note - Lagrangian mechanics]]
