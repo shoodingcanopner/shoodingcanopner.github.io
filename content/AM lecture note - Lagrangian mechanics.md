@@ -71,7 +71,7 @@ $$
 \delta S_2 = \left(\frac{1}{2}q\delta\dot{q} - \frac{1}{2}\dot{q}\delta q\right)^{t_f}_{t_i}
 $$
 
-boundary condition으로 $\delta q(t_i) = \delta q(t_f) = 0$이 요청된다.
+boundary condition으로 $\delta q(t_i) = \delta q(t_f) = 0$이 요구된다.
 
 **Gibbons-Hawking-York term** — 이 경계 조건 관련된 용어, 나중에 알아봐야 한다.
 
@@ -94,6 +94,8 @@ boundary condition으로 $\delta q(t_i) = \delta q(t_f) = 0$이 요청된다.
 Tong의 강의록
 [[2 The Lagrangian Formalism.pdf]]
 
+# 다음 강의
+[[AM lecture note - Lagrangian for fields]]
 
 
 

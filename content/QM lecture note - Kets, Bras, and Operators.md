@@ -35,7 +35,7 @@ Hilbert space는 다음 4가지 조건을 통과해야 부를 수 있다.
 
 $|\alpha\rangle, |\beta\rangle \in \mathcal{H}$ 이면 $C_a|\alpha\rangle + C_b|\beta\rangle \in \mathcal{H}$, $C_a, C_b \in \mathbb{C}$
 
-다른 벡터들의 선형 합 또한 그 안에 사는 벡터다.
+다른 벡터들의 선형 합 또한 그 공간간안에 사는 벡터다.
 
 **2. Inner product가 정의된다.**
 
@@ -78,7 +78,7 @@ $$
 
 **4. Separable 하다.**
 
-셀 수 있는 orthonormal basis set이 있다.
+셀 수 있는 orthonormal basis set이 있다. → *그래서 '양자'역학인가?*
 어떤 벡터든 basis로 나타낼 수 있다:
 
 $$
@@ -122,6 +122,177 @@ $$
 $$
 
 
+## Orthonormal Basis와 Completeness Relation
+
+Ket으로 이루어진 basis $\{|k_n\rangle\}$가 있으면, 모든 basis의 선형합으로 나타낼 수 있다:
+
+$$
+|a\rangle = \sum_n C_n |k_n\rangle
+$$
+
+orthonormal이면 $\langle k_m | k_n \rangle = \delta_{nm}$. 성분 추출:
+
+$$
+\langle k_n | a \rangle = \sum_m C_m \langle k_n | k_m \rangle = \sum_m \delta_{nm} C_m = C_n
+$$
+
+Completeness relation (항등 연산자):
+
+$$
+\sum_n |k_n\rangle\langle k_n| = \mathbb{I}
+$$
+
+이를 이용하면:
+
+$$
+\sum_m |k_m\rangle\langle k_m | a \rangle = \sum_m C_m |k_m\rangle = |a\rangle
+$$
+
+$$
+\left(\sum_m |k_m\rangle\langle k_m|\right)|a\rangle = \mathbb{I}|a\rangle = |a\rangle
+$$
+
+## Operators
+
+벡터를 변환하는 operator:
+
+$$
+X|a\rangle = |a'\rangle
+$$
+
+**Operator의 성질:**
+- **같다**: $X|a\rangle = Y|a\rangle$ for all $|a\rangle$ 이면 $X = Y$
+- **Null operator**: $X|a\rangle = 0$ for all $|a\rangle$이면 $X$는 null operator
+- **Commute**: $X + Y = Y + X$
+- **Associative**: $X + (Y + Z) = (X + Y) + Z$
+- **Linear**: $X\left(C_a|a\rangle + C_b|b\rangle\right) = C_a(X|a\rangle) + C_b(X|b\rangle)$
+
+## Projection Operator
+
+1차원 subspace (basis ket $|k\rangle$ 하나로 이루어진)로의 projection operator:
+
+$$
+P_k \equiv |k\rangle\langle k|
+$$
+
+어떤 벡터의 $|k\rangle$ 방향 성분만 추출:
+
+$$
+P_k|a\rangle = C_k|k\rangle = |k\rangle\langle k|a\rangle
+$$
+
+**Outer product**: column vector와 row vector를 곱하면 matrix가 됨:
+
+$$
+(|\beta\rangle)(\langle\alpha|) = |\beta\rangle\langle\alpha|
+$$
+
+모든 basis에 대한 projection operator를 더하면 → Hilbert space 전체에 projection → 항등 연산자:
+
+$$
+\sum_n |k_n\rangle\langle k_n| = \mathbb{I} \quad \text{(completeness relation)}
+$$
+
+basis가 whole space를 span한다는 뜻.
+
+## Operator의 Outer Product 표현
+
+모든 operator는 ket과 bra의 outer product로 나타낼 수 있다:
+
+$$
+X = |b\rangle\langle a|, \quad X|c\rangle = |b\rangle\langle a|c\rangle
+$$
+
+## Dual Correspondence와 Adjoint (Hermitian Conjugate)
+
+$$
+X|a\rangle \longleftrightarrow \langle a|X^\dagger
+$$
+
+$$
+X|c\rangle = |b\rangle\langle a|c\rangle \longleftrightarrow \langle c|X^\dagger = \langle c|a\rangle\langle b|
+$$
+
+이것을 **hermitian adjoint** 라고 한다.
+
+$X = |b\rangle\langle a|$, $Y = |d\rangle\langle c|$ 일 때:
+
+$$
+XY = |b\rangle\langle a|d\rangle\langle c| = |b\rangle(\langle a|d\rangle)\langle c|
+$$
+
+$$
+YX = |d\rangle\langle c|b\rangle\langle a| = |d\rangle(\langle c|b\rangle)\langle a|
+$$
+
+따라서 일반적으로 $XY \neq YX$.
+
+$$(XY)^\dagger = Y^\dagger X^\dagger = |c\rangle\langle d|a\rangle\langle b|$$
+
+연산의 순서를 바꾸면:
+
+$$
+\langle \beta | X | \alpha \rangle = \left(\langle \alpha | X^\dagger | \beta \rangle\right)^*
+$$
+
+$X$가 **hermitian**이면 $X = X^\dagger$. 그때 $\langle \alpha | X | \beta \rangle$의 complex conjugate:
+
+$$
+\langle \beta | X | \alpha \rangle = \left(\langle \alpha | X | \beta \rangle\right)^*
+$$
+
+$$
+\langle \alpha | X | \alpha \rangle \text{ is real.}
+$$
+
+## Theorem 1: Hermitian Operator의 성질
+
+**Hermitian operator의 eigenvalue는 real이다.**
+
+$A|a\rangle = \lambda|a\rangle$ 이면 $\langle a|A^\dagger = \langle a|A = \langle a|\lambda$.
+
+$$
+\langle a|A|a\rangle = \lambda\langle a|a\rangle
+$$
+
+$$
+\langle a|A|a\rangle = \left(\langle a|A^\dagger|a\rangle\right)^* = \left(\langle a|A|a\rangle\right)^*
+$$
+
+따라서:
+
+$$
+\lambda\langle a|a\rangle = (\lambda\langle a|a\rangle)^* \implies \lambda = \lambda^* \implies \lambda \text{ is real.}
+$$
+
+**한 operator에 대해 다른 eigenvalue를 가지는 두 eigenket은 서로 orthogonal하다.**
+
+$A|a_1\rangle = \lambda_1|a_1\rangle$, $A|a_2\rangle = \lambda_2|a_2\rangle$ 일 때:
+
+$$
+\langle a_2|A|a_1\rangle = \lambda_1\langle a_2|a_1\rangle = \left(\langle a_1|A|a_2\rangle\right)^* = \lambda_2\langle a_2|a_1\rangle
+$$
+
+$$
+(\lambda_1 - \lambda_2)\langle a_2|a_1\rangle = 0 \implies (\lambda_1 - \lambda_2)\delta_{12} = 0
+$$
+
+$\lambda_1 \neq \lambda_2$이면 $\langle a_2|a_1\rangle = 0$. 즉 orthogonal.
+
+## Completeness Relation의 응용
+
+Completeness relation $\sum_n |a_n\rangle\langle a_n| = \mathbb{I}$을 이용하면:
+
+$$
+|a\rangle = \mathbb{I}|a\rangle = \sum_n |a_n\rangle\langle a_n|a\rangle
+$$
+
+Normalization 조건:
+
+$$
+\langle a|a\rangle = \langle a|\mathbb{I}|a\rangle = \langle a|\sum_n |a_n\rangle\langle a_n||a\rangle = \sum_n |\langle a_n|a\rangle|^2 = \sum_n |C_n|^2 = 1
+$$
+
 # 궁금한 내용
 
 Compton effect가 뭐지
@@ -130,6 +301,7 @@ Compton effect가 뭐지
 ### $\langle \alpha | \alpha \rangle = 1$인데, $|\beta\rangle \neq |\alpha\rangle$에 대해서 $\langle \beta | \alpha \rangle = 0$ 이어야 하지 않나?
 [[Quantum Measurement and Context Dependence]]
 
+Gelfand triple이 워지
 
 # AI의 보충 설명
 
@@ -141,7 +313,8 @@ Compton effect가 뭐지
 
 강의 ppt 링크를 이곳에 
 
-
+# 다음 강의
+[[QM lecture note - Base Kets and Matrix Representation]]
 
 
 
