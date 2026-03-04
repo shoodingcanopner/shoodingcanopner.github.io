@@ -7,8 +7,8 @@ tags:
   - subject
 class: study_subject
 ---
-
-대학원 1학년 1학기에 수강하는 해석역학 강의 
+> [!info] 과목 노트
+> 대학원 1학년 1학기에 수강하는 해석역학 강의 
 
 ## 강의 정보
 과제, 시험 전부다 오픈북이다. 
@@ -33,6 +33,7 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Lagrangian for fields]]
 [[AM lecture note - Coordinate transformation invariance of Lagrangian equation]]
 [[AM lecture note - Holonomic constraints]]
+
 
 
 

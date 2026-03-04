@@ -7,10 +7,11 @@ tags:
   - subject
 class: study_subject
 ---
-
-대학원 첫 학기에 수강하는 양자역학 강의 필기들
+> [!info] 과목 노트
+> 대학원 1학년 1학기에 수강하는 양자역학1 강의 필기들
 
 # 강의 정보 
+교재로 Sakurai 책을 이용한다. 
 
 중간고사 4월 14일
 기말고사 6월 9일
@@ -33,5 +34,6 @@ Week 16: Final Exam
 
 ## 중간고사 범위
 [[QM lecture note - Kets, Bras, and Operators]]
+[[QM lecture note - Base Kets and Matrix Representation]]
 
 # 연관 노트들

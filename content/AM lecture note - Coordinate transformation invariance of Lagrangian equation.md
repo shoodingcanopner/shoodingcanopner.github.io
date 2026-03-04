@@ -7,9 +7,9 @@ tags:
   - lecture_notes
 class: study_lecture
 ---
-[[Analytical Mechanics]]
-이것은 강의를 듣고 적은 필기입니다.
-정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다.
+> [!attention] 강의 필기
+> 이것은 [[Analytical Mechanics]] 강의를 듣고 적은 필기입니다. 
+> 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
 # 지난 강의
 [[AM lecture note - Lagrangian for fields]]
@@ -144,6 +144,13 @@ $$
 
 **결론: 라그랑주 방정식은 좌표 변환에 대해 불변이다.**
 좌표변환된 라그랑주 방정식을 얻고 싶다면 바로 자코비 행렬을 이용하면 된다. 
+
+## 변환된 좌표계에서 라그랑지안 역학이 사용되는 예
+
+Tong 강의록에 그대로 있다. 
+중간 풀이 과정을 추가한 내용을 별도 노트에 정리했다. 
+[[Lagrangian in Rotating Coordinate, Coriolis force]]
+
 
 ---
 

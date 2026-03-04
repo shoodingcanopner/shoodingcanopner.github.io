@@ -7,9 +7,9 @@ tags:
   - lecture_notes
 class: study_lecture
 ---
-[[Electrodynamics 그 모든 것]]
-이것은 강의를 듣고 적은 필기입니다. 
-정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다. 
+> [!attention] 강의 필기
+> 이것은 [[Electrodynamics 그 모든 것]]강의를 듣고 적은 필기입니다. 
+> 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
 # 지난 강의
 
