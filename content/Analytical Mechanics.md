@@ -31,6 +31,8 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture notes - Transformation of equation, Casimir Invariants]]
 [[AM lecture note - Lagrangian mechanics]]
 [[AM lecture note - Lagrangian for fields]]
+[[AM lecture note - Coordinate transformation invariance of Lagrangian equation]]
+[[AM lecture note - Holonomic constraints]]
 
 
 
