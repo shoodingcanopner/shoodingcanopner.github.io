@@ -116,6 +116,7 @@ $$
 ## Related Concepts
 
 [[맥스웰 방정식 외우기]]
+- [[Dirac Delta Function]]
 
 ## References
 
