@@ -27,6 +27,11 @@ Week 16: Final Exam
 
 # 강의 필기
 
+## 필기 노트 템플릿
+
+[[QM lecture note  - Template]]
+
+## 중간고사 범위
 [[QM lecture note - Kets, Bras, and Operators]]
 
 # 연관 노트들

@@ -186,6 +186,12 @@ $$
 # 2026 전기역학1 강의 필기
 2026년 1학기에 수강한 송창용 교수님 대학원 전기역학1 강의 필기들
 
+## 노트 템플릿
+
+[[ED lecture note - Template]]
+
+## 중간고사 범위
+
 [[ED lecture note - electroststics and magnetostatics]]
 
 ---

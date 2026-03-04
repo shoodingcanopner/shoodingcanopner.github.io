@@ -130,7 +130,7 @@ $$
 |a\rangle = \sum_n C_n |k_n\rangle
 $$
 
-orthonormal이면 $\langle k_m | k_n \rangle = \delta_{nm}$. 성분 추출:
+orthonormal이면 $\langle k_m | k_n \rangle = \delta_{nm}$. 특정 basis의 계수를 추출출
 
 $$
 \langle k_n | a \rangle = \sum_m C_m \langle k_n | k_m \rangle = \sum_m \delta_{nm} C_m = C_n
@@ -169,7 +169,7 @@ $$
 
 ## Projection Operator
 
-1차원 subspace (basis ket $|k\rangle$ 하나로 이루어진)로의 projection operator:
+1차원 subspace (basis ket $|k\rangle$ 하나로 이루어진 공간) 로의 projection operator:
 
 $$
 P_k \equiv |k\rangle\langle k|
@@ -178,7 +178,7 @@ $$
 어떤 벡터의 $|k\rangle$ 방향 성분만 추출:
 
 $$
-P_k|a\rangle = C_k|k\rangle = |k\rangle\langle k|a\rangle
+P_k|a\rangle  = |k\rangle\langle k|a\rangle = C_k|k\rangle
 $$
 
 **Outer product**: column vector와 row vector를 곱하면 matrix가 됨:
@@ -202,9 +202,20 @@ basis가 whole space를 span한다는 뜻.
 $$
 X = |b\rangle\langle a|, \quad X|c\rangle = |b\rangle\langle a|c\rangle
 $$
+열벡터와 행벡터를 곱하면 matrix가 됨:
+
+$$
+\begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix} \begin{pmatrix} r_1 & r_2 & \cdots & r_n \end{pmatrix} = \begin{pmatrix} m_{11} & m_{12} & \cdots & m_{1n} \\ m_{21} & m_{22} & \cdots & m_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ m_{n1} & m_{n2} & \cdots & m_{nn} \end{pmatrix}
+$$
+
+$$
+X^\dagger = |a\rangle\langle b|
+$$
 
 ## Dual Correspondence와 Adjoint (Hermitian Conjugate)
 
+화살표로 이어진 것은 서로 복소켤레이다.
+켤레전치는 벡터들의 순서를 거울상으로 뒤집고 브라와 켓도 뒤집는 효과를 준다. 
 $$
 X|a\rangle \longleftrightarrow \langle a|X^\dagger
 $$
@@ -240,58 +251,13 @@ $X$가 **hermitian**이면 $X = X^\dagger$. 그때 $\langle \alpha | X | \beta \
 $$
 \langle \beta | X | \alpha \rangle = \left(\langle \alpha | X | \beta \rangle\right)^*
 $$
-
+$$
+\langle \alpha | X | \alpha \rangle = \left(\langle \alpha | X | \alpha \rangle\right)^*
+$$
 $$
 \langle \alpha | X | \alpha \rangle \text{ is real.}
 $$
-
-## Theorem 1: Hermitian Operator의 성질
-
-**Hermitian operator의 eigenvalue는 real이다.**
-
-$A|a\rangle = \lambda|a\rangle$ 이면 $\langle a|A^\dagger = \langle a|A = \langle a|\lambda$.
-
-$$
-\langle a|A|a\rangle = \lambda\langle a|a\rangle
-$$
-
-$$
-\langle a|A|a\rangle = \left(\langle a|A^\dagger|a\rangle\right)^* = \left(\langle a|A|a\rangle\right)^*
-$$
-
-따라서:
-
-$$
-\lambda\langle a|a\rangle = (\lambda\langle a|a\rangle)^* \implies \lambda = \lambda^* \implies \lambda \text{ is real.}
-$$
-
-**한 operator에 대해 다른 eigenvalue를 가지는 두 eigenket은 서로 orthogonal하다.**
-
-$A|a_1\rangle = \lambda_1|a_1\rangle$, $A|a_2\rangle = \lambda_2|a_2\rangle$ 일 때:
-
-$$
-\langle a_2|A|a_1\rangle = \lambda_1\langle a_2|a_1\rangle = \left(\langle a_1|A|a_2\rangle\right)^* = \lambda_2\langle a_2|a_1\rangle
-$$
-
-$$
-(\lambda_1 - \lambda_2)\langle a_2|a_1\rangle = 0 \implies (\lambda_1 - \lambda_2)\delta_{12} = 0
-$$
-
-$\lambda_1 \neq \lambda_2$이면 $\langle a_2|a_1\rangle = 0$. 즉 orthogonal.
-
-## Completeness Relation의 응용
-
-Completeness relation $\sum_n |a_n\rangle\langle a_n| = \mathbb{I}$을 이용하면:
-
-$$
-|a\rangle = \mathbb{I}|a\rangle = \sum_n |a_n\rangle\langle a_n|a\rangle
-$$
-
-Normalization 조건:
-
-$$
-\langle a|a\rangle = \langle a|\mathbb{I}|a\rangle = \langle a|\sum_n |a_n\rangle\langle a_n||a\rangle = \sum_n |\langle a_n|a\rangle|^2 = \sum_n |C_n|^2 = 1
-$$
+따라서 Hermitian의 expectation value는 실수이다. 
 
 # 궁금한 내용
 
@@ -299,6 +265,8 @@ Compton effect가 뭐지
 디락 방정식이 뭐지
 - Countable의 정확한 수학적 정의가 뭔가?
 ### $\langle \alpha | \alpha \rangle = 1$인데, $|\beta\rangle \neq |\alpha\rangle$에 대해서 $\langle \beta | \alpha \rangle = 0$ 이어야 하지 않나?
+어리석은 질문이지만 양자역학에 익숙하지 않다면 충분히 할 수 있는 질문이다. 
+아래 노트에 정리했다. 
 [[Quantum Measurement and Context Dependence]]
 
 Gelfand triple이 워지

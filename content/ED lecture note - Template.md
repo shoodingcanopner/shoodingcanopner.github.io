@@ -1,5 +1,5 @@
 ---
-title: AM lecture note - Template
+title: ED lecture note - Template
 date: 2026-03-05
 subject: physics
 tags:
@@ -7,7 +7,7 @@ tags:
   - lecture_notes
 class: study_lecture
 ---
-[[Analytical Mechanics]]
+[[Electrodynamics 그 모든 것]]
 이것은 강의를 듣고 적은 필기입니다. 
 정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다. 
 

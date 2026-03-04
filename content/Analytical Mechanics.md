@@ -22,11 +22,15 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 
 ## 강의 필기
 
+### 노트 템플릿
+[[AM lecture note - Template]]
+
 ### 중간고사 범위
 
 [[AM lecture notes - Galilean transformation]]
 [[AM lecture notes - Transformation of equation, Casimir Invariants]]
 [[AM lecture note - Lagrangian mechanics]]
-[[AM lecture note - What's next]]
 [[AM lecture note - Lagrangian for fields]]
+
+
 
