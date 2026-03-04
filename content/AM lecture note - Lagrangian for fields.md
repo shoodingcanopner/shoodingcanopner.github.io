@@ -46,7 +46,7 @@ $$
 $$
 S + \delta S = \int_{t_1}^{t_2} dt\ \mathcal{L}[x + \delta x,\ \dot{x} + \delta\dot{x}]
 $$
-
+테일러 전개
 $$
 = \int_{t_1}^{t_2} dt \left( \mathcal{L}(x, \dot{x}) + \frac{\partial \mathcal{L}}{\partial x}\delta x + \frac{\partial \mathcal{L}}{\partial \dot{x}}\delta\dot{x} \right)
 $$
@@ -57,19 +57,21 @@ $$
 \delta S = \int_{t_1}^{t_2} dt \left( \frac{\partial \mathcal{L}}{\partial x}\delta x + \frac{\partial \mathcal{L}}{\partial \dot{x}}\delta\dot{x} \right)
 $$
 
-두 번째 항에 부분적분을 적용하면:
+적분 속 두 번째 항에 부분적분을 적용하면:
 
 $$
-= \int_{t_1}^{t_2} dt \left( \frac{\partial \mathcal{L}}{\partial x}\delta x \right) + \left[ \frac{\partial \mathcal{L}}{\partial \dot{x}}\delta x \right]_{t_1}^{t_2} - \int_{t_1}^{t_2} dt \left( \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{x}}\delta x \right)
+\int_{t_1}^{t_2} dt \left(  \frac{\partial \mathcal{L}}{\partial \dot{x}}\delta\dot{x} \right) = \left[ \frac{\partial \mathcal{L}}{\partial \dot{x}}\delta x \right]_{t_1}^{t_2} - \int_{t_1}^{t_2} dt \left( \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{x}}\delta x \right)
 $$
 
-Dirichlet boundary condition에 의해 경계 항은 0이므로:
+Dirichlet boundary condition에 의해 $t_1$과  $t_2$에서 $\delta x$는 0이므로, $\left[ \frac{\partial \mathcal{L}}{\partial \dot{x}}\delta x \right]_{t_1}^{t_2}$는 0이 되어 사라진다.
+풀어낸 결과를 본래 식에 적용하면. 
 
 $$
 \delta S = \int_{t_1}^{t_2} dt \left( \frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{x}} \right) \delta x
 $$
 
-$\delta S = 0$ 이면 **라그랑주 방정식**:
+최소 작용이라면 엑션이 극값을 가지므로 $\delta S = 0$ 이다.
+그러면 **라그랑주 방정식**이 나온다. 
 
 $$
 \frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{x}} = 0
@@ -79,8 +81,6 @@ $$
 
 ## Higher-order Lagrangian — $\ddot{q}$를 포함하는 경우
 
-> [!note] 자체 풀이
-> 아래 유도는 교수님이 생략하신 부분을 직접 계산한 것.
 
 만약 라그랑지안이 아래 형태라면?
 
@@ -89,43 +89,52 @@ $$
 $$
 
 이 경우 equation of motion은 어떻게 될까?
+$\mathcal{L}[x, \dot{x}] = T(\dot{x}) - V(x) = \frac{m}{2}(\dot{x})^2 - V(x)$ 이었을 때와 똑같이 나온다. 
+왜냐면 라그랑지안에 붙은 시간에 대한 전미분 항은 equation of motion을 변화시키지 않기 때문이다. 왜 그런지 직접 풀어보겠다. 
 
-라그랑지안을 $q$와 $\dot{q}$ 에 대한 함수로 보아야 하는가?
+> [!note] 자체 풀이
+> 아래 유도는 수업에서 생략된 부분을 직접 계산한 것.
+
+$\mathcal{L} = -\frac{1}{2}q\ddot{q}$일 때 라그랑주 방정식을 직접 구해보자. 
+
+이 경우 라그랑지안을 $q$와 $\ddot{q}$ 에 대한 함수로 보아야 하는 것 같다. 
 
 변분을 취하면:
 
 $$
-\delta \mathcal{L} = \frac{\partial \mathcal{L}}{\partial q}\delta q + \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta\dot{q}
+\delta \mathcal{L} = \frac{\partial \mathcal{L}}{\partial q}\delta q + \frac{\partial \mathcal{L}}{\partial \ddot{q}}\delta\ddot{q}
 $$
 
 $$
-\int_{t_1}^{t_2} dt\ \delta\mathcal{L} = \int_{t_1}^{t_2} dt\ \frac{\partial \mathcal{L}}{\partial q}\delta q + \int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta\dot{q}
+\int_{t_1}^{t_2} dt\ \delta\mathcal{L} = \int_{t_1}^{t_2} dt\ \frac{\partial \mathcal{L}}{\partial q}\delta q + \int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial \ddot{q}}\delta\ddot{q}
 $$
 
 두 번째 항을 두 번 부분적분하면:
 
 $$
-\int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta\dot{q} = \left[ \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta\dot{q} \right]_{t_1}^{t_2} - \left[ \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}}\right)\delta q \right]_{t_1}^{t_2} + \int_{t_1}^{t_2} dt\ \frac{d^2}{dt^2}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}}\right)\delta q
+\int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial \ddot{q}}\delta\ddot{q} = \left[ \frac{\partial \mathcal{L}}{\partial \ddot{q}}\delta\dot{q} \right]_{t_1}^{t_2} - \left[ \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \ddot{q}}\right)\delta q \right]_{t_1}^{t_2} + \int_{t_1}^{t_2} dt\ \frac{d^2}{dt^2}\left(\frac{\partial \mathcal{L}}{\partial \ddot{q}}\right)\delta q
 $$
 
 경계조건: $\delta q(t_1) = \delta q(t_2) = 0$ 이고 $\delta\dot{q}(t_1) = \delta\dot{q}(t_2) = 0$ 이면 경계 항들이 사라진다.
 
+$\delta\dot{q}(t_1) = \delta\dot{q}(t_2) = 0$ 이어야 한다는 조건들은 라그랑지안이 $\mathcal{L}[x, \dot{x}] = \frac{m}{2}(\dot{x})^2$ 였을 때는 필요 없었던 경계 조건이다. 
+
 따라서:
 
 $$
-\int_{t_1}^{t_2} dt\ \delta\mathcal{L} = \int_{t_1}^{t_2} dt \left[ \frac{\partial \mathcal{L}}{\partial q} + \frac{d^2}{dt^2}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}}\right) \right]\delta q
+\int_{t_1}^{t_2} dt\ \delta\mathcal{L} = \int_{t_1}^{t_2} dt \left[ \frac{\partial \mathcal{L}}{\partial q} + \frac{d^2}{dt^2}\left(\frac{\partial \mathcal{L}}{\partial \ddot{q}}\right) \right]\delta q
 $$
 
 **Equation of motion:**
 
 $$
-\frac{\partial \mathcal{L}}{\partial q} + \frac{d^2}{dt^2}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}}\right) = 0
+\frac{\partial \mathcal{L}}{\partial q} + \frac{d^2}{dt^2}\left(\frac{\partial \mathcal{L}}{\partial \ddot{q}}\right) = 0
 $$
 
 풀어보면 ($\mathcal{L} = -\frac{1}{2}q\ddot{q} - V(q)$):
 
 $$
-\frac{\partial \mathcal{L}}{\partial q} = -\frac{1}{2}\ddot{q} - \frac{\partial V}{\partial q}, \quad \frac{\partial \mathcal{L}}{\partial \dot{q}} = -\frac{1}{2}q
+\frac{\partial \mathcal{L}}{\partial q} = -\frac{1}{2}\ddot{q} - \frac{\partial V}{\partial q}, \quad \frac{\partial \mathcal{L}}{\partial \ddot{q}} = -\frac{1}{2}q
 $$
 
 $$
@@ -140,6 +149,8 @@ $$
 
 > [!note] 자체 풀이
 > 아래 분석은 직접 계산한 것.
+
+라그랑지안에 붙은 시간에 대한 전미분 항은 equation of motion을 변화시키지 않는 이유는 간단하다. 액션에 상수항을 추가하는 기능을 하기 때문이다. 
 
 $\mathcal{L}$이 아래 형태일 때:
 
@@ -163,7 +174,7 @@ $$
 = \int_{t_1}^{t_2} dt \left[\frac{1}{2}\dot{q}^2 - V(q)\right] + \text{constant}
 $$
 
-→ **시간에 대한 total derivative는 equation of motion에 영향을 주지 않지만, boundary condition에 유도관여하게 된다.**
+결론 (강의에서 들은 메시지): **시간에 대한 total derivative는 equation of motion에 영향을 주지 않지만, boundary condition에 관여하게 된다.**
 
 ---
 
@@ -280,3 +291,9 @@ Tong의 강의록
 
 # 다음 강의
 
+
+# 손 필기 이미지
+
+![[Pasted image 20260304093446.png]]
+![[Pasted image 20260304093456.png]]![[Pasted image 20260304093500.png]]
+![[Pasted image 20260304093512.png]]![[Pasted image 20260304093530.png]]
