@@ -33,6 +33,7 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Lagrangian for fields]]
 [[AM lecture note - Coordinate transformation invariance of Lagrangian equation]]
 [[AM lecture note - Holonomic constraints]]
+[[AM lecture note - Noether theorem]]
 
 
 

@@ -126,13 +126,12 @@ $$
 
 ## Related Concepts
 
-- [[AM lecture note - Coordinate transformation invariance of Lagrangian equation]]
-- [[AM lecture note - Lagrangian mechanics]]
 - [[Lagrangian Mechanics]]
 
 ## References
 
 - David Tong, *Classical Dynamics* (Cambridge Lecture Notes), Section 2.2.1
+- [[2 The Lagrangian Formalism.pdf]]
 
 ## Notes from Claude
 
