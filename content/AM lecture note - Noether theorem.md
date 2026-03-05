@@ -17,6 +17,16 @@ class: study_lecture
 
 # 오늘의 핵심
 
+### 대칭에 의한 보존량
+
+대칭의 정의와 라그랑주 방정식을 이용하면, 대칭에 의해 보존되는 양이 
+$$
+\frac{\partial L}{\partial \dot{q}}\frac{\partial Q}{\partial s}\bigg|_{s=0}
+$$
+임을 유도할 수 있다. 
+
+저거 외우는 방법? space translation과 운동량이 제일 간단한 예시이다. 
+앞부분에 있는 $\frac{\partial L}{\partial \dot{q}}$이 바로 generalized momentum의 정의이며, $\frac{\partial Q}{\partial s} = 1$이기 때문이다. 
 
 
 # 필기 내용
@@ -44,30 +54,34 @@ $$
 H = \left(\sum_j \dot{q}_j \frac{\partial L}{\partial \dot{q}_j}\right) - L
 $$
 
-$H$는 보존량이다. 양자역학에서 보존량은 양자화 가능하며, **해밀토니안은 시간의 generator**이다.
+$H$는 보존량이다. 양자역학에서 보존량은 양자화 가능하며, **해밀토니안은 시간의 generator**라는 사실은 익히 알고 있다. 
 
 **증명:**
 
 $$
-\frac{dH}{dt} = \sum_j \left(\ddot{q}_j \frac{\partial L}{\partial \dot{q}_j} - \dot{q}_j \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_j}\right)\right) - \frac{d}{dt}L = 0
+\frac{dH}{dt} = \sum_j \left(\ddot{q}_j \frac{\partial L}{\partial \dot{q}_j} - \dot{q}_j \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_j}\right)\right) - \frac{d}{dt}L
 $$
 
 $$
 \frac{d}{dt}L = \left(\frac{\partial L}{\partial q_i}\right)\dot{q}_i + \left(\frac{\partial L}{\partial \dot{q}_i}\right)\ddot{q}_i = -\left(\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right)\right)\dot{q}_i + \left(\frac{\partial L}{\partial \dot{q}_i}\right)\ddot{q}_i
 $$
+위 식에 대입하면 모든 항이 cancel out, 0이 된다. 
 
+이 증명에 따르면 
 > **경로가 오일러-라그랑주 방정식을 따라야만** 해밀토니안이 보존된다는 말씀.  
-> → 따르지 않는 경우가 양자 역학이다.
+> → 따르지 않는 경우가 양자역학이다.
 
 ---
 
-## Cyclic Coordinate와 보존량
+## Generalized momentum 
 
 특정 일반화 좌표 $q_j$에 대해 $\frac{\partial L}{\partial q_j} = 0$ 이라면?
 
 $$
-p_j = \frac{\partial L}{\partial \dot{q}_j} \text{ 는 상수, 보존량이다.}
+p_j = \frac{\partial L}{\partial \dot{q}_j} \text{ 는 보존량이다. 우린 이걸 generalized momentum이라 부른다. }
 $$
+
+증명은 아주 간단, 라그랑주 방정식을 이용한다. 
 
 $$
 \frac{dp_j}{dt} = \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_j}\right) = \frac{\partial L}{\partial q_j} = 0
@@ -75,19 +89,42 @@ $$
 
 ---
 
-## 뇌터 정리의 일반적 유도
+## 뇌터 정리 유도하기, 간단한 방법
 
-$s$라는 정도로 좌표를 transform한다 생각. 시간은 관여하지 않는다고 일단 생각하자. $s$는 실수.
+$q_i(t)$는 라그랑주 방정식을 만족하는 운동이다. 즉, 운동방정식의 soultion이다. 
+
+$s$라는 정도로 $q_i(t)$ 좌표를 transform한 결과를 $Q_i(s, t)$라고 생각하자. (time transform은 아직 생각하지 않는다.)
+
+$s$는 연속적인 값을 가진다. 뇌터 정리는 연속 대칭에 대해서만 유효하다. 
+예를 들어 space translation이라면, s는 원래 좌표계의 원점과 변환 좌표계의 원점 사이 변위 벡터이다. 
 
 $$
-q_i(t) \longrightarrow Q_i(s, t), \quad Q_i(0, t) = q_i(t)
+q_i(t) \longrightarrow Q_i(s, t)
+$$
+$s=0$이라면 변환 전과 후가 똑같을 것이다. 
+$$
+\quad Q_i(0, t) = q_i(t)
 $$
 
-$s$의 변화에 따라 $L$이 변하지 않으면 대칭인 것이다:
+### 대칭의 정의
+
+$s$의 변화에 따라 운동 방정식이 달라지지 않으면, 
+다른 말로 해 $L$이 변하지 않으면, 그 시스템은 $s$에 대해 대칭인 것이다. 
 
 $$
 \frac{\partial}{\partial s} L[Q, \dot{Q}, t] = 0
 $$
+### 대칭에 의한 보존량
+
+대칭의 정의와 라그랑주 방정식을 이용하면, 대칭에 의해 보존되는 양이 
+$$
+\frac{\partial L}{\partial \dot{q}}\frac{\partial Q}{\partial s}\bigg|_{s=0}
+$$
+임을 유도할 수 있다. 
+
+저거 외우는 방법? space translation과 운동량이 제일 간단한 예시이다. 
+앞부분에 있는 $\frac{\partial L}{\partial \dot{q}}$이 바로 generalized momentum의 정의이며, $\frac{\partial Q}{\partial s} = 1$이기 때문이다. 
+
 
 **증명:**
 
@@ -95,18 +132,20 @@ $$
 \frac{\partial}{\partial s} L = \frac{\partial L}{\partial Q}\frac{\partial Q}{\partial s} + \frac{\partial L}{\partial \dot{Q}}\frac{\partial \dot{Q}}{\partial s}
 $$
 
+$s=0$이라는 조건을 넣으면 $\frac{\partial L}{\partial Q}$와 $\frac{\partial L}{\partial \dot{Q}}$에 있던 $Q$가 $q$가 된다. 당장은 납득하기 힘들고, 잊어버리기 쉬운 부분이다. 
+
 $$
 \frac{\partial L}{\partial s}\bigg|_{s=0} = \frac{\partial L}{\partial q}\frac{\partial Q}{\partial s}\bigg|_{s=0} + \frac{\partial L}{\partial \dot{q}}\frac{\partial \dot{Q}}{\partial s}\bigg|_{s=0}
 $$
-
+라그랑주 방정식을 대입
 $$
 = \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right)\frac{\partial Q}{\partial s}\bigg|_{s=0} + \frac{\partial L}{\partial \dot{q}}\frac{\partial \dot{Q}}{\partial s}\bigg|_{s=0}
 $$
-
+$\frac{\partial \dot{Q}}{\partial s} = \frac{d}{dt} \frac{\partial Q}{\partial s}$ 이란 점을 이용하면, 위의 식을 싹다 시간에 대한 미분으로 나타낼 수 있다. 
 $$
 = \frac{d}{dt}\left[\frac{\partial L}{\partial \dot{q}}\frac{\partial Q}{\partial s}\bigg|_{s=0}\right]
 $$
-
+$\frac{\partial}{\partial s} L =0$에 의해, 결국 위 값은
 $$
 = 0
 $$
@@ -119,30 +158,24 @@ $$
 
 **는 보존되는 양이다.**
 
-> [!note] 자체 풀이
-> 위 유도에서 두 번째 줄에서 세 번째 줄로 넘어갈 때, 오일러-라그랑주 방정식을 사용했다:
-> $$
-> \frac{\partial L}{\partial q} = \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right)
-> $$
-> 그리고 product rule을 쓰면:
-> $$
-> \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right)\frac{\partial Q}{\partial s} + \frac{\partial L}{\partial \dot{q}}\frac{d}{dt}\left(\frac{\partial Q}{\partial s}\right) = \frac{d}{dt}\left[\frac{\partial L}{\partial \dot{q}}\frac{\partial Q}{\partial s}\right]
-> $$
-> $\frac{d}{dt}\frac{\partial Q}{\partial s} = \frac{\partial \dot{Q}}{\partial s}$ 이므로 성립.  
-> 또한 $\int dt \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i} \delta q_i\right) = 0$ (경계 조건).
 
 ---
 
-## 예시 — 병진 대칭과 운동량 보존
+## 예시 — Homogeneity of Space
+
+Tong lecture note에 그대로 있는 내용. 
+운동량의 보존을 유도하자. 
+시스템 내부입자들 끼리만 상호작용하는 경우, 
+그러니까 외력이 없는 시스템의 라그랑지안은 다음과 같다. 
 
 $$
 L = \frac{1}{2}m\sum_i^N |\dot{\mathbf{r}}_i|^2 - \frac{1}{2}\sum_{\substack{i,j=1 \\ i \neq j}}^N \left(|\mathbf{r}_i - \mathbf{r}_j|\right)^2
 $$
 
-변환: $\mathbf{r}_i \to \mathbf{r}_i + s\hat{n}$ ($\hat{n}$은 병진 이동 벡터)
+변환: $\mathbf{r}_i \to \mathbf{r}_i + s\hat{n}$ ($\hat{n}$은 병진 이동 방향 벡터)
 
 $$
-L(\cdot, |\dot{\mathbf{r}}_i|, t) = L(\mathbf{r}_i + s\hat{n}, |\dot{\mathbf{r}}_i|, t)
+L(\mathbf{r}_i, \dot{\mathbf{r}}_i, t) = L(\mathbf{r}_i + s\hat{n}, \dot{\mathbf{r}}_i, t)
 $$
 
 보존량:
@@ -153,54 +186,61 @@ $$
 
 → **운동량은 보존량이다.**
 
-변환: $\mathbf{r}_i \to \mathbf{r}_i + d\hat{n} \times \mathbf{r}_i$ ($\hat{n}$은 회전축 벡터)
+## 예시 - Isotropy of Space
+
+변환: $\mathbf{r}_i \to \mathbf{r}_i + \alpha \hat{n} \times \mathbf{r}_i$ ($\hat{n}$은 회전축 벡터)
+$\alpha$는 infinitesimal angle이다. 
 
 $$
-\sum_i \frac{\partial L}{\partial \dot{\mathbf{r}}_i} \cdot (\hat{n} \times \mathbf{r}_i) \text{ 이 보존량이며, 이게 각운동량이다.}
+L(\mathbf{r}_i, \dot{\mathbf{r}}_i) = L(\mathbf{r}_i + \alpha \hat{n} \times \mathbf{r}_i, \dot{\mathbf{r}_i} + \alpha \hat{n} \times \dot{\mathbf{r}_i})
 $$
-
-→ 다교재에 있는 예시.
+L이 $\alpha$에 의해 변하지 않는다면, 각운동향은 보존된다. 
+$$
+\sum_i \frac{\partial L}{\partial \dot{\mathbf{r}}_i} \cdot (\hat{\mathbf{n}} \times \mathbf{r}_i) = \sum_i \hat{\mathbf{n}} \cdot (\mathbf{r}_i \times \mathbf{p}_i) = \hat{\mathbf{n}} \cdot \mathbf{L}
+$$
+첫째 식에서 둘째 식으로 넘어갈 때 generalized momentum공식과 vector identity가 이용되었다. 
 
 ---
 
-## 갈릴레이 변환의 10개 Generator에 적용 (Noether's theorem의 일반적 유도)
+## 갈릴레이 변환의 10개 Generator에 적용 (Noether's theorem의 전문적 유도, 진짜 복잡함)
 
 갈릴레이 변환에 있는 10개의 generator를 적용해 보자.  
-→ 위키피디아 아래 참고해 강의하셨다.
+→ 위키피디아를 참고해 강의하셨다. 
 
-시간 변환:
+이제는 시간 변환까지 고려한다!
 
 $$
 t \to t' = t + \varepsilon T
 $$
 
-$T$는 generator.
+$T$는 time generator.
 
+일반화 좌표는 $\Phi$라는 함수를 이용해서 변환한다. 
+문제는 $q_i(t)$속의 시간 $t$까지 $t'$로 변환해야 한 다는 것이다. 
 $$
 q_i(t) \to q'_i(t') = \Phi[q_i(t), \varepsilon] = \Phi[q_i(t' - \varepsilon T), \varepsilon]
 $$
 
-Action:
+변환된 일반화 속도는 이렇게 정의된다. $t'$이 아니라 $t$로 미분해 준다. 
+$$
+\dot{q}_i(t) \to \dot{q}'_i(t') = \frac{d}{dt}\Phi[q_i(t), \varepsilon]
+$$
+풀어주면
+$$
+ = \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \frac{\partial q}{\partial t} = \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \dot{q}_i(t' - \varepsilon T)
+$$
+
+
+Action은 변환되기 이전에 이렇게 주어진다.
 
 $$
 I = \int_{t_1}^{t_2} dt\, L(q_i(t), \dot{q}_i(t), t)
 $$
-
+변환된 이후의 action은 이렇게 구해야 한다. 
 $$
 I'(\varepsilon) = \int_{t_1 + \varepsilon T}^{t_2 + \varepsilon T} dt'\, L\left[q'_i(t'), \dot{q}'_i(t'), t'\right]
 $$
-
-속도의 변환:
-
-$$
-\dot{q}_i(t) \to \dot{q}'_i(t') = \frac{d}{dt}\Phi[q_i(t), \varepsilon] = \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \frac{\partial q}{\partial t}
-$$
-
-$$
-= \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \dot{q}_i(t' - \varepsilon T)
-$$
-
-따라서:
+변환된 일반화 좌표와 속도를 대입하면, 
 
 $$
 I'(\varepsilon) = \int_{t_1 + \varepsilon T}^{t_2 + \varepsilon T} dt'\, L\left[\Phi(q_i(t'-\varepsilon T), \varepsilon),\, \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q}\dot{q}_i(t'-\varepsilon T),\, t'\right]
@@ -215,26 +255,78 @@ $$
 $$
 = L[q_i(t_2), \dot{q}_i(t_2), t_2]\,T - L[q_i(t_1), \dot{q}_i(t_1), t_1]\,T
 $$
-
 $$
 + \int_{t_1 + O.T.}^{t_2 + O.T.} dt\, \left[\frac{\partial L}{\partial q} \cdot \left(-\frac{\partial q}{\partial q}\dot{q}\,T + \frac{\partial q}{\partial \varepsilon}\right) + \frac{\partial L}{\partial \dot{q}}\left(-\frac{\partial^2 \Phi}{\partial q^2}\dot{q}^2 + \frac{\partial^2 \Phi}{\partial \varepsilon \partial q}\dot{q} - \frac{\partial \Phi}{\partial q}\ddot{q}\,T\right)\right]
 $$
 
-> [!note] 미완성 — 위키피디아 유도 참조
-> 마지막 페이지 수식은 판서 내용이 너무 방대하여 완전히 옮기지 못했습니다.  
-> 아래 Wikipedia Derivations 섹션을 함께 참고할 것:  
-> [Noether's theorem — Wikipedia](https://en.wikipedia.org/wiki/Noether%27s_theorem#Derivations)
+> [!note] 위키피디아 유도 기반
+> 판서의 미완성 부분을 Wikipedia의 Noether's theorem Derivations 섹션을 바탕으로 완성했다. 교수님께서도 위키피디아 스샷을 보고 판서하셨었다. 
+> 원본: [Noether's theorem — Wikipedia](https://en.wikipedia.org/wiki/Noether%27s_theorem#Derivations)
+
+### Step 1: $\varepsilon = 0$에서 미분 (Leibniz rule)
 
 $$
-\Phi[q_i(t'-\varepsilon T), \varepsilon] = \Phi[q_i(t') - \varepsilon T\dot{q}_i, \varepsilon]
+0 = \frac{dI'}{d\varepsilon}[0] = L[\mathbf{q}[t_2],\dot{\mathbf{q}}[t_2],t_2]\,T - L[\mathbf{q}[t_1],\dot{\mathbf{q}}[t_1],t_1]\,T
 $$
 
 $$
-\frac{\partial}{\partial \varepsilon}\left(\frac{\partial \Phi}{\partial q}\dot{q}\right) = \frac{\partial}{\partial \varepsilon}\left[\dot{q}\frac{\partial}{\partial q}\left(\Phi[q_i(t') - \varepsilon\frac{\partial \Phi}{\partial q}\dot{q}\,T\right]\right] = \frac{\partial}{\partial \varepsilon}\left(\frac{\partial \Phi}{\partial q} - \varepsilon\frac{\partial^2 \Phi}{\partial q^2}\dot{q}\,T\right)
++ \int_{t_1}^{t_2} \frac{\partial L}{\partial \mathbf{q}}\left(-\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T + \frac{\partial \varphi}{\partial \varepsilon}\right) + \frac{\partial L}{\partial \dot{\mathbf{q}}}\left(-\frac{\partial^2 \varphi}{(\partial \mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial^2 \varphi}{\partial \varepsilon \partial \mathbf{q}}\dot{\mathbf{q}} - \frac{\partial \varphi}{\partial \mathbf{q}}\ddot{\mathbf{q}}\,T\right) dt
 $$
+
+### Step 2: 오일러-라그랑주로 $T$에 관한 항 정리
+
+오일러-라그랑주 방정식을 이용하면 다음이 성립한다:
+
+$$
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T\right) = \frac{\partial L}{\partial \mathbf{q}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial^2 \varphi}{(\partial \mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\ddot{\mathbf{q}}\,T
+$$
+
+이를 Step 1 식에 대입하면 적분 내 $T$에 관한 항들이 경계항으로 빠져나온다:
+
+$$
+0 = \left[L\,T - \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T\right]_{t_1}^{t_2} + \int_{t_1}^{t_2} \frac{\partial L}{\partial \mathbf{q}}\frac{\partial \varphi}{\partial \varepsilon} + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial^2 \varphi}{\partial \varepsilon \partial \mathbf{q}}\dot{\mathbf{q}}\; dt
+$$
+
+### Step 3: 오일러-라그랑주로 $\varepsilon$에 관한 항 정리
+
+같은 방법으로 적분 내의 $\varepsilon$에 관한 항도 경계항으로 빠진다:
+
+$$
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \varepsilon}\right) = \frac{\partial L}{\partial \mathbf{q}}\frac{\partial \varphi}{\partial \varepsilon} + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial^2 \varphi}{\partial \varepsilon \partial \mathbf{q}}\dot{\mathbf{q}}
+$$
+
+최종적으로:
+
+$$
+0 = \left[L\,T - \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \varepsilon}\right]_{t_1}^{t_2}
+$$
+
+### 뇌터 보존량 (Noether Charge)
+
+$t_1, t_2$가 임의적이므로 대괄호 안이 보존량이다. $\varepsilon=0$에서 $\frac{\partial \varphi}{\partial \mathbf{q}}\big|_{\varepsilon=0} = 1$이므로:
+
+$$
+\boxed{\mathcal{Q} = \left(\frac{\partial L}{\partial \dot{\mathbf{q}}}\dot{\mathbf{q}} - L\right)T - \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \varepsilon} = H\cdot T - \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \varepsilon}}
+$$
+
+$$
+\frac{d\mathcal{Q}}{dt} = 0
+$$
+
+> 부호 주의: $(\frac{\partial L}{\partial \dot{\mathbf{q}}}\dot{\mathbf{q}} - L) = H$이므로 $T$에 의한 항은 $H \cdot T$, $\frac{\partial \varphi}{\partial \varepsilon}$에 의한 항은 $-p_i \cdot \frac{\partial \varphi}{\partial \varepsilon}$이다.
+
+### 갈릴레이 군 10개 Generator 적용
+
+| 변환 | $T$ | $\frac{\partial \varphi}{\partial \varepsilon}$ | 보존량 $\mathcal{Q}$ |
+|------|-----|------|------|
+| 시간 평행이동 | $1$ | $0$ | $H$ (에너지) |
+| 공간 평행이동 | $0$ | $\hat{n}$ | $-\mathbf{p}\cdot\hat{n}$ (운동량) |
+| 회전 | $0$ | $\hat{n}\times\mathbf{r}$ | $-\hat{n}\cdot\mathbf{L}$ (각운동량) |
+| 갈릴레이 부스트 | $0$ | $t\hat{n}$ | $-\mathbf{p}\cdot t\hat{n}$ (질량중심) |
 
 # 궁금한 내용
 
+### 왜 양자역학에서 보존량은 양자화 가능한 걸까?
 
 
 # AI의 보충 설명
