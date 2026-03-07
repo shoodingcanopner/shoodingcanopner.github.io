@@ -35,5 +35,6 @@ Week 16: Final Exam
 ## 중간고사 범위
 [[QM lecture note - Kets, Bras, and Operators]]
 [[QM lecture note - Base Kets and Matrix Representation]]
+[[QM lecture note - Measurements, Observables, and the Uncertainty Relations]]
 
 # 연관 노트들

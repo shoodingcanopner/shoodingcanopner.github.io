@@ -207,6 +207,9 @@ $$
 갈릴레이 변환에 있는 10개의 generator를 적용해 보자.  
 → 위키피디아를 참고해 강의하셨다. 
 
+복잡해서 혼자서 하나부터 열까지 직접 유도하라고 하면 못 할 거 같다. 
+나중에 필요할 때 자세히 보자. 
+
 이제는 시간 변환까지 고려한다!
 
 $$
@@ -218,16 +221,16 @@ $T$는 time generator.
 일반화 좌표는 $\Phi$라는 함수를 이용해서 변환한다. 
 문제는 $q_i(t)$속의 시간 $t$까지 $t'$로 변환해야 한 다는 것이다. 
 $$
-q_i(t) \to q'_i(t') = \Phi[q_i(t), \varepsilon] = \Phi[q_i(t' - \varepsilon T), \varepsilon]
+q_i(t) \to q'_i(t') = \varphi[q_i(t), \varepsilon] = \varphi[q_i(t' - \varepsilon T), \varepsilon]
 $$
 
 변환된 일반화 속도는 이렇게 정의된다. $t'$이 아니라 $t$로 미분해 준다. 
 $$
-\dot{q}_i(t) \to \dot{q}'_i(t') = \frac{d}{dt}\Phi[q_i(t), \varepsilon]
+\dot{q}_i(t) \to \dot{q}'_i(t') = \frac{d}{dt}\varphi[q_i(t), \varepsilon]
 $$
 풀어주면
 $$
- = \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \frac{\partial q}{\partial t} = \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \dot{q}_i(t' - \varepsilon T)
+ = \frac{\partial \varphi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \frac{\partial q}{\partial t} = \frac{\partial \varphi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \dot{q}_i(t' - \varepsilon T)
 $$
 
 
@@ -243,21 +246,11 @@ $$
 변환된 일반화 좌표와 속도를 대입하면, 
 
 $$
-I'(\varepsilon) = \int_{t_1 + \varepsilon T}^{t_2 + \varepsilon T} dt'\, L\left[\Phi(q_i(t'-\varepsilon T), \varepsilon),\, \frac{\partial \Phi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q}\dot{q}_i(t'-\varepsilon T),\, t'\right]
+I'(\varepsilon) = \int_{t_1 + \varepsilon T}^{t_2 + \varepsilon T} dt'\, L\left[\varphi(q_i(t'-\varepsilon T), \varepsilon),\, \frac{\partial \varphi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q}\dot{q}_i(t'-\varepsilon T),\, t'\right]
 $$
 
-대칭 조건 ($I' = I$) 에서 $\varepsilon$으로 미분하고 $\varepsilon = 0$으로 놓으면:
 
-$$
-0 = \frac{dI'(\varepsilon)}{d\varepsilon}\bigg|_{\varepsilon=0}
-$$
 
-$$
-= L[q_i(t_2), \dot{q}_i(t_2), t_2]\,T - L[q_i(t_1), \dot{q}_i(t_1), t_1]\,T
-$$
-$$
-+ \int_{t_1 + O.T.}^{t_2 + O.T.} dt\, \left[\frac{\partial L}{\partial q} \cdot \left(-\frac{\partial q}{\partial q}\dot{q}\,T + \frac{\partial q}{\partial \varepsilon}\right) + \frac{\partial L}{\partial \dot{q}}\left(-\frac{\partial^2 \Phi}{\partial q^2}\dot{q}^2 + \frac{\partial^2 \Phi}{\partial \varepsilon \partial q}\dot{q} - \frac{\partial \Phi}{\partial q}\ddot{q}\,T\right)\right]
-$$
 
 > [!note] 위키피디아 유도 기반
 > 판서의 미완성 부분을 Wikipedia의 Noether's theorem Derivations 섹션을 바탕으로 완성했다. 교수님께서도 위키피디아 스샷을 보고 판서하셨었다. 
@@ -265,13 +258,70 @@ $$
 
 ### Step 1: $\varepsilon = 0$에서 미분 (Leibniz rule)
 
+대칭 조건 ($I' = I$) 에서 $\varepsilon$으로 미분하고 $\varepsilon = 0$으로 놓는다. 
+$\epsilon$이 적분 경계에 있고 내부 적분 항에도 있어서 계산이 복잡하다. 
+이런 때에 사용하는 것이 Leibniz rule이다. 
+
+$$
+\frac{d}{d\varepsilon}\int_{a(\varepsilon)}^{b(\varepsilon)} f(t', \varepsilon)\, dt' = f(b(\varepsilon), \varepsilon)\cdot b'(\varepsilon) - f(a(\varepsilon), \varepsilon)\cdot a'(\varepsilon) + \int_{a(\varepsilon)}^{b(\varepsilon)} \frac{\partial f}{\partial \varepsilon}\, dt'
+$$
+
+이걸 $I'(\varepsilon)$에 적용하면, 
+
 $$
 0 = \frac{dI'}{d\varepsilon}[0] = L[\mathbf{q}[t_2],\dot{\mathbf{q}}[t_2],t_2]\,T - L[\mathbf{q}[t_1],\dot{\mathbf{q}}[t_1],t_1]\,T
 $$
-
 $$
 + \int_{t_1}^{t_2} \frac{\partial L}{\partial \mathbf{q}}\left(-\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T + \frac{\partial \varphi}{\partial \varepsilon}\right) + \frac{\partial L}{\partial \dot{\mathbf{q}}}\left(-\frac{\partial^2 \varphi}{(\partial \mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial^2 \varphi}{\partial \varepsilon \partial \mathbf{q}}\dot{\mathbf{q}} - \frac{\partial \varphi}{\partial \mathbf{q}}\ddot{\mathbf{q}}\,T\right) dt
 $$
+
+일단 결과는 이렇다.  $\frac{\partial L}{\partial \varepsilon}$을 어떻게 구했는지가 참 의문이다. 한번 풀어보면
+
+> [!note] AI 보충 — $\frac{\partial L}{\partial \varepsilon}\big|_{\varepsilon=0}$ 계산
+> 
+> $L$은 $\mathbf{q}'$와 $\dot{\mathbf{q}}'$를 통해 $\varepsilon$에 의존하므로 chain rule:
+> 
+> $$
+> \frac{\partial L}{\partial\varepsilon} = \frac{\partial L}{\partial\mathbf{q}'}\cdot\frac{\partial\mathbf{q}'}{\partial\varepsilon} + \frac{\partial L}{\partial\dot{\mathbf{q}}'}\cdot\frac{\partial\dot{\mathbf{q}}'}{\partial\varepsilon}
+> $$
+> 
+> **첫 번째 인수** $\mathbf{q}' = \varphi[\mathbf{q}[t'-\varepsilon T],\varepsilon]$ 의 $\varepsilon$ 미분:
+> $\varepsilon$이 $\varphi$의 첫 번째 인수 $\mathbf{q}[t'-\varepsilon T]$ 안에도, 두 번째 인수 $\varepsilon$ 자체에도 들어있으므로 chain rule:
+> 
+> $$
+> \frac{\partial\mathbf{q}'}{\partial\varepsilon} = \frac{\partial\varphi}{\partial\mathbf{q}}\cdot(-\dot{\mathbf{q}}T) + \frac{\partial\varphi}{\partial\varepsilon}
+> $$
+> 
+> **두 번째 인수** $\dot{\mathbf{q}}' = \frac{\partial\varphi}{\partial\mathbf{q}}[\mathbf{q}[t'-\varepsilon T],\varepsilon]\cdot\dot{\mathbf{q}}[t'-\varepsilon T]$ 의 $\varepsilon$ 미분:
+> 곱이므로 product rule:
+> 
+> $$
+> \frac{\partial\dot{\mathbf{q}}'}{\partial\varepsilon} = \frac{\partial}{\partial\varepsilon}\!\left(\frac{\partial\varphi}{\partial\mathbf{q}}\right)\cdot\dot{\mathbf{q}} + \frac{\partial\varphi}{\partial\mathbf{q}}\cdot\frac{\partial\dot{\mathbf{q}}}{\partial\varepsilon}
+> $$
+> 
+> 앞 항: $\frac{\partial\varphi}{\partial\mathbf{q}}$도 $\varepsilon$이 두 곳에 들어있으므로 chain rule:
+> 
+> $$
+> \frac{\partial}{\partial\varepsilon}\!\left(\frac{\partial\varphi}{\partial\mathbf{q}}\right) = \frac{\partial^2\varphi}{(\partial\mathbf{q})^2}(-\dot{\mathbf{q}}T) + \frac{\partial^2\varphi}{\partial\varepsilon\partial\mathbf{q}}
+> $$
+> 
+> 뒤 항: $\dot{\mathbf{q}}[t'-\varepsilon T]$에서 $\varepsilon$은 $t$를 통해서만 들어오므로:
+> 
+> $$
+> \frac{\partial}{\partial\varepsilon}\dot{\mathbf{q}}[t'-\varepsilon T] = -\ddot{\mathbf{q}}\cdot T
+> $$
+> 
+> 따라서:
+> 
+> $$
+> \frac{\partial\dot{\mathbf{q}}'}{\partial\varepsilon} = -\frac{\partial^2\varphi}{(\partial\mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial^2\varphi}{\partial\varepsilon\partial\mathbf{q}}\dot{\mathbf{q}} - \frac{\partial\varphi}{\partial\mathbf{q}}\ddot{\mathbf{q}}T
+> $$
+> 
+> 전부 합치면 ($\varepsilon=0$에서 $\frac{\partial\varphi}{\partial\mathbf{q}}\big|_{\varepsilon=0}=1$):
+> 
+> $$
+> \frac{\partial L}{\partial\varepsilon}\bigg|_{\varepsilon=0} = \frac{\partial L}{\partial\mathbf{q}}\left(-\frac{\partial\varphi}{\partial\mathbf{q}}\dot{\mathbf{q}}T + \frac{\partial\varphi}{\partial\varepsilon}\right) + \frac{\partial L}{\partial\dot{\mathbf{q}}}\left(-\frac{\partial^2\varphi}{(\partial\mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial^2\varphi}{\partial\varepsilon\partial\mathbf{q}}\dot{\mathbf{q}} - \frac{\partial\varphi}{\partial\mathbf{q}}\ddot{\mathbf{q}}T\right)
+> $$
 
 ### Step 2: 오일러-라그랑주로 $T$에 관한 항 정리
 
@@ -281,7 +331,11 @@ $$
 \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T\right) = \frac{\partial L}{\partial \mathbf{q}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial^2 \varphi}{(\partial \mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\ddot{\mathbf{q}}\,T
 $$
 
-이를 Step 1 식에 대입하면 적분 내 $T$에 관한 항들이 경계항으로 빠져나온다:
+이를 Step 1 식
+$$
+\int_{t_1}^{t_2} \frac{\partial L}{\partial \mathbf{q}}\left(-\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T + \frac{\partial \varphi}{\partial \varepsilon}\right) + \frac{\partial L}{\partial \dot{\mathbf{q}}}\left(-\frac{\partial^2 \varphi}{(\partial \mathbf{q})^2}\dot{\mathbf{q}}^2 T + \frac{\partial^2 \varphi}{\partial \varepsilon \partial \mathbf{q}}\dot{\mathbf{q}} - \frac{\partial \varphi}{\partial \mathbf{q}}\ddot{\mathbf{q}}\,T\right) dt
+$$
+에 대입하면 적분 내 $T$에 관한 항들이 경계항으로 빠져나온다:
 
 $$
 0 = \left[L\,T - \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial \varphi}{\partial \mathbf{q}}\dot{\mathbf{q}}\,T\right]_{t_1}^{t_2} + \int_{t_1}^{t_2} \frac{\partial L}{\partial \mathbf{q}}\frac{\partial \varphi}{\partial \varepsilon} + \frac{\partial L}{\partial \dot{\mathbf{q}}}\frac{\partial^2 \varphi}{\partial \varepsilon \partial \mathbf{q}}\dot{\mathbf{q}}\; dt
@@ -328,20 +382,40 @@ $$
 
 ### 왜 양자역학에서 보존량은 양자화 가능한 걸까?
 
+### 왜 $\varphi[\mathbf{q}, \varepsilon]$는 $\varepsilon$에 대한 함수인가?
+
+병진 이동 거리 같은 별도의 물리적 변수를 쓰지 않는 이유가 뭘까?
+
+> [!note] AI 보충 설명
+> 
+> 뇌터 정리를 적용하려면 변환을 **하나의 실수 매개변수로 이어지는 연속적인 경로**로 봐야 한다. 그게 $\varepsilon$이다.
+> 
+> $$
+> \varphi[\mathbf{q}, \varepsilon] : \quad \varepsilon = 0 \text{ 이면 항등변환}, \quad \varepsilon = 1 \text{ 이면 원하는 변환}
+> $$
+> 
+> 즉, $\varepsilon$은 "변환을 얼마나 했는가"를 나타내는 **단일 실수 눈금**이다.
+> 
+> **병진 이동 예시:** "$x$ 방향으로 거리 $a$만큼 이동"은 이렇게 표현한다:
+> 
+> $$
+> \varphi[\mathbf{q}, \varepsilon] = \mathbf{q} + \varepsilon\,\hat{x}
+> $$
+> 
+> $\varepsilon = a$ 일 때 원하는 변환이 완성된다. 별도의 변수 $a$가 $\varepsilon$ 하나로 흡수된 것이다.
+> 
+> **핵심:** 뇌터 정리에서 실제로 필요한 건 유한한 변환 자체가 아니라, $\varepsilon = 0$ 근방의 infinitesimal 변환:
+> 
+> $$
+> \frac{\partial \varphi}{\partial \varepsilon}\bigg|_{\varepsilon=0}
+> $$
+> 
+> 이것만 있으면 보존량을 구할 수 있다. 변환의 구체적인 물리적 변수가 뭔지는 중요하지 않고, 그 변환이 $\varepsilon = 0$ 근방에서 어떤 방향으로 좌표를 움직이는지만 알면 된다.
+> 
+> 따라서 $\varphi$는 물리적 변수($a$, 회전각, $\mathbf{v}$...)를 **$\varepsilon$이라는 하나의 추상적인 눈금으로 통일**한 표현이다. 이렇게 하면 어떤 종류의 연속 변환이든 같은 공식 하나로 처리할 수 있다.
+
 
 # AI의 보충 설명
-
-## 라그랑주 승수법의 핵심 아이디어
-
-라그랑주 승수법은 수학적으로 매우 우아한 방법이다. 핵심은 다음과 같다:
-
-**원래 계**: $x^a$를 자유롭게 변분하되, constraint $f_\alpha = 0$를 따로 강제한다.  
-**수정된 계**: $L' = L + \lambda_\alpha f_\alpha$에서 $x^a$와 $\lambda_\alpha$를 **모두** 자유 변수로 취급하여 변분한다.
-
-$\lambda_\alpha$로 변분 → constraint equation 재생.  
-$x^a$로 변분 → constraint force가 포함된 운동방정식.
-
-$\lambda$의 물리적 의미는 **constraint가 계에 가하는 힘의 세기**이다. 진자의 경우 $\lambda = -T/l$로, 줄의 장력을 인코딩한다.
 
 ## 뇌터 정리의 중요성
 
@@ -377,3 +451,9 @@ $\frac{\partial L}{\partial q_j} = 0$인 좌표를 **cyclic coordinate** 또는 
 # 다음 강의
 
 
+# 필기 이미지
+
+![[Pasted image 20260305175146.png]]
+![[Pasted image 20260305175153.png]]
+![[Pasted image 20260305175159.png]]
+![[Pasted image 20260305175206.png]]

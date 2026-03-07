@@ -1,8 +1,7 @@
 ---
 title: Uncertainty Principle (불확정성 원리)
 date: 2025-05-08
-subject:
-  - 양자역학
+subject: quantummechanics
 tags:
   - study
   - concept
@@ -16,7 +15,7 @@ class: study
 
 ## 개요
 
-불확정성 원리는 양자역학의 핵심 원리 중 하나로, 특정 쌍을 이루는 물리량들(예: 위치와 운동량, 에너지와 시간)을 동시에 정확하게 측정할 수 없다는 근본적인 제약을 설명합니다. 이 원리는 1927년 베르너 하이젠베르크(Werner Heisenberg)에 의해 제안되었으며, 양자역학의 확률적 해석과 파동-입자 이중성의 기반이 됩니다.
+양자역학을 양자역학답게 만드는 핵심 원리. 
 
 ## 수학적 표현
 
@@ -41,17 +40,16 @@ $$\sigma_x \cdot \sigma_p \geq \frac{\hbar}{2}$$
 
 ### 에너지-시간 불확정성 관계
 
-에너지와 시간 사이의 불확정성 관계는 다음과 같습니다:
 
 $$\Delta E \cdot \Delta t \geq \frac{\hbar}{2}$$
 
-이는 에너지를 정확하게 측정하려면 충분한 시간이 필요하며, 매우 짧은 시간 동안에는 에너지의 불확정성이 커진다는 의미입니다.
+이는 에너지를 정확하게 측정하려면 충분한 시간이 필요하며, 매우 짧은 시간 동안에는 에너지의 불확정성이 커진다는 의미.
 
 ## 불확정성 부등식의 유도
 
 ### 교환자를 이용한 일반적인 불확정성 부등식 유도
 
-두 에르미트 연산자 $\hat{A}$와 $\hat{B}$에 대한 불확정성 부등식을 유도해 보겠습니다. 이 유도는 슈바르츠 부등식(Cauchy-Schwarz inequality)을 기반으로 합니다.
+ 슈바르츠 부등식(Cauchy-Schwarz inequality)을 기반으로  한다.
 
 #### 1단계: 정의 및 준비
 
@@ -60,7 +58,7 @@ $$\Delta E \cdot \Delta t \geq \frac{\hbar}{2}$$
 $$\Delta \hat{A} = \hat{A} - \langle\hat{A}\rangle I$$
 $$\Delta \hat{B} = \hat{B} - \langle\hat{B}\rangle I$$
 
-여기서 $\langle\hat{A}\rangle = \langle\psi|\hat{A}|\psi\rangle$, $\langle\hat{B}\rangle = \langle\psi|\hat{B}|\psi\rangle$이고, $I$는 항등 연산자입니다.
+여기서 $\langle\hat{A}\rangle = \langle\psi|\hat{A}|\psi\rangle$, $\langle\hat{B}\rangle = \langle\psi|\hat{B}|\psi\rangle$이고, $I$는 항등 연산자.
 
 연산자 $\Delta \hat{A}$와 $\Delta \hat{B}$는 상태 $|\psi\rangle$에 작용했을 때 그 상태를 평균으로부터의 편차 방향으로 이동시킵니다.
 
@@ -187,16 +185,9 @@ $$\Delta x \cdot \Delta p \geq \frac{1}{2}|\langle[\hat{x}, \hat{p}]\rangle| = \
 ## 관련 개념
 
 - [[양자역학 기댓값 연산의 비선형성]]
-- [[파동-입자 이중성]]
-- [[양자 중첩]]
-- [[슈뢰딩거 방정식]]
-- [[코히어런트 상태]]
 
 ## 참고문헌
 
-- Heisenberg, W. (1927). "Über den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik". Zeitschrift für Physik, 43(3–4): 172–198.
-- Griffiths, D. J. (2017). Introduction to Quantum Mechanics. Cambridge University Press.
-- Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1991). Quantum Mechanics. Wiley.
 - Sakurai, J. J. (2017). Modern Quantum Mechanics. Cambridge University Press.
 
 

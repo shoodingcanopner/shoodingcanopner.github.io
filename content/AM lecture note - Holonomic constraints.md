@@ -231,4 +231,6 @@ $$
 # 다음 강의
 [[AM lecture note - Noether theorem]]
 
+# 필기 이미지
 
+![[Pasted image 20260305175119.png]]![[Pasted image 20260305175127.png]]
