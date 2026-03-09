@@ -17,7 +17,8 @@ class: study_lecture
 
 # 오늘의 핵심
 
-패러데이 법칙으로부터 맥스웰 방정식을 완성하고, displacement current를 도입하는 과정. 이어서 전자기장을 포텐셜 $\Phi$, $\vec{A}$로 표현하는 방법을 정리한다.
+패러데이 법칙으로부터 맥스웰 방정식을 완성하고, displacement current를 도입하는 과정. 
+이어서 전자기장을 포텐셜 $\Phi$, $\vec{A}$로 표현하는 방법을 정리한다.
 
 ---
 

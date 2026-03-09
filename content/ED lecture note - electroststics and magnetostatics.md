@@ -46,7 +46,7 @@ class: study_lecture
 
 $\vec{R}_{10}$: $q_1$부터 $q_0$까지의 거리 벡터.
 
-Coulomb's law — test charge $Q_0$에 $q_1$이 작용하는 힘:
+### Coulomb's law — test charge $Q_0$에 $q_1$이 작용하는 힘:
 
 $$
 \vec{F}_{10} = \frac{1}{4\pi\varepsilon_0} \frac{q_1}{R_1^2} Q_0 \hat{R}_{10}
@@ -68,7 +68,7 @@ $$
 \vec{F}_{total} = \frac{Q}{4\pi\varepsilon_0} \int_V \frac{\hat{R}}{R^2} \rho \, d^3v
 $$
 
-**전기장** 도입: $\vec{F}_{total} = Q\vec{E}$
+### **전기장** 도입: $\vec{F}_{total} = Q\vec{E}$
 
 $$
 \vec{E} = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\hat{R}}{R^2} \rho \, d^3\tau
@@ -90,7 +90,7 @@ $$
 \nabla \cdot \vec{E} = \frac{1}{\varepsilon_0} \rho
 $$
 
-### Scalar Potential
+### Electrostatic Scalar Potential
 
 정전기학에서 $\nabla \times \vec{E} = 0$. 폐곡선에 대해 선적분하면 $\oint \vec{E} \cdot d\vec{l} = 0$.
 
@@ -102,7 +102,16 @@ $$
 
 $V$를 **scalar potential**이라고 부른다. Potential을 도입하는 이유: 벡터보다 다루기 쉽기 때문.
 
-**Poisson 방정식** ($\rho \neq 0$):
+### Scalar potential and charge density
+
+$$
+V = \frac{1}{4\pi\varepsilon_0} \int_V \frac{1}{R} \rho \, d^3\tau
+$$
+$R$은 포텐셜을 측정하는 지점과 점전하 사이의 거리. 
+이것은 아래 푸아송 방정식의 해이다. 아마도. 
+왜냐면 $- \frac{1}{4\pi R}$ 이 푸아송 방정식의 Green's function이기 때문. 
+
+### **Poisson 방정식** ($\rho \neq 0$):
 
 $$
 \nabla^2 V = -\frac{1}{\varepsilon_0} \rho
@@ -128,7 +137,8 @@ $\rho = 0$이면 **Laplace 방정식**: $\nabla^2 V = 0$.
 
 ### Dipole Moment으로부터 Potential 유도
 
-점 dipole의 potential:
+점 dipole의 potential, dipole moment가 이미 거리 성분을 가지고 있기 때문에 포텐셜이 $\frac{1}{R^2}$에 비례. 점전하는 $\frac{1}{R}$에 비례했다는 걸 감안하면 다른 부분이다. 
+또한 Dipole moment는 벡터이기 때문에 포텐셜또한 방향에 영향을 받음. dipole moment와 떨어진 변위 $\hat{R}$와의 내적에 비례. 두 개의 전하를 머리에 그려보면 당연함. $\hat{R}$과 $\vec{p}$가 직교하면 그건 dipole의 양전하와 음전하랑 떨어진 거리가 똑같은 상황이다. 
 
 $$
 V = \frac{1}{4\pi\varepsilon_0} \frac{\hat{R} \cdot \vec{p}}{R^2}
@@ -140,7 +150,14 @@ $$
 V = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\hat{R} \cdot \vec{P}}{R^2} d^3\tau
 $$
 
-$\frac{\hat{R}}{R^2} = \nabla\!\left(\frac{1}{R}\right)$ 이다. 이건 알아두면 유용하다. 
+이걸 풀어쓰면 polarization density로부터 effective charge를 유도할 수 있다. 
+이때 적분 식을 변형하기 위해 
+
+$$
+\frac{\hat{R}}{R^2} = \nabla\!\left(\frac{1}{R}\right)
+$$ 의 관계를 이용한다. 이건 꼭 외워두기. 
+
+
 $\nabla$의 곱의 규칙을 적용:
 
 $$
@@ -241,31 +258,13 @@ $$
 \oint_S \vec{J} \cdot d\vec{a} = \int_V \nabla \cdot \vec{J} \, d^3v = -\frac{d}{dt} Q_{total} = -\frac{d}{dt} \int_V \rho \, d^3v
 $$
 
-**Continuity equation:**
+### Continuity equation of charge and current
 
 $$
 \nabla \cdot \vec{J} = -\frac{d\rho}{dt}
 $$
 
----
-
-### Magnetostatics 핵심 방정식 요약
-
-**연속방정식 (Continuity equation):**
-
-$$
-\nabla \cdot \vec{J} = -\frac{\partial\rho}{\partial t}
-$$
-
-Steady state에서는 $\nabla \cdot \vec{J} = 0$.
-
-**비오-사바르 법칙 (Biot-Savart law):**
-
-$$
-\vec{B} = \frac{\mu_0}{4\pi} \int \frac{d\vec{l} \times \hat{R}}{R^2}
-$$
-
-**앙페르 법칙 (Ampere's law):**
+### 앙페르 법칙 (Ampere's law)
 
 $$
 \oint \vec{B} \cdot d\vec{l} = \mu_0 I_{inner} = \mu_0 \int \vec{J} \cdot d\vec{a}
@@ -280,20 +279,20 @@ $$
 이것이 앙페르 법칙이다. **Steady state에서만 성립**한다.
 
 **자기장의 발산:**
-
 $$
 \nabla \cdot \vec{B} = 0
 $$
 
 자기장은 절대 발산할 수 없다. 자기장은 자기벡터 포텐셜로 나타낼 수 있다.
 
-**자기 벡터 포텐셜 (Magnetic vector potential):**
+### 자기 벡터 포텐셜 (Magnetic vector potential)
 
 $$
 \vec{B} = \nabla \times \vec{A}
 $$
 
-이를 앙페르 법칙에 대입하면 포아송 방정식이 나온다:
+이를 앙페르 법칙에 대입하면 벡터 푸아송 방정식이 나온다. 
+이중 컬을 푸는 동안 - 부호가 나타난 것을 확인하라. 
 
 $$
 \nabla^2 \vec{A} = -\mu_0 \vec{J}
@@ -311,13 +310,22 @@ $$
 
 전류가 인 자기 성분: 자기쌍극자 모멘트 $\vec{m}$. 이것의 자원은?
 
-점 자기쌍극자의 벡터 포텐셜:
+### 점 자기쌍극자의 벡터 포텐셜
 
 $$
 \vec{A} = \frac{\mu_0}{4\pi} \frac{\vec{m} \times \hat{R}}{R^2}
 $$
 
 분모가 $R^2$임에 주목!
+
+### Induced current density
+
+> [!tip] 벡터 Stokes 정리 (부피 → 면)
+> 발산 정리로부터 유도되는 관계식:
+> $$
+> \int_V \nabla \times \vec{F} \, dV = -\oint_S \vec{F} \times d\vec{a}
+> $$
+> 아래 $\vec{A}$ 유도에서 사용된다.
 
 $\vec{M}$: **magnetization density**
 
@@ -353,7 +361,7 @@ $$
 \vec{J}_{free} = \nabla \times \left(\frac{1}{\mu_0} \vec{B} - \vec{M}\right)
 $$
 
-**H 벡터 정의:**
+### H 벡터 정의
 
 $$
 \vec{H} = \frac{1}{\mu_0} \vec{B} - \vec{M}
@@ -367,7 +375,7 @@ Free current를 조절할 때 궁극적으로 바뀌는 건 $\vec{H}$이다.
 
 보통 $\vec{M}$은 $\vec{H}$에 비례한다: $\vec{M} = \chi_m \vec{H}$
 
-$\chi_m$: **magnetic susceptibility**
+### $\chi_m$: **magnetic susceptibility**
 
 $$
 \vec{H} = \frac{1}{\mu_0} \vec{B} - \chi_m \vec{H} \implies \vec{B} = \mu_0(1+\chi_m)\vec{H} = \mu \vec{H}
@@ -375,7 +383,7 @@ $$
 
 그러면 자기장은 $\vec{H}$에 따라 선형적으로 증가한다.
 
-$\mu = \mu_0(1+\chi_m)$: **magnetic permeability**
+### $\mu = \mu_0(1+\chi_m)$: **magnetic permeability**
 
 - $\chi_m > 0$이면 **paramagnet**
 - $\chi_m < 0$이면 **diamagnet**
@@ -384,7 +392,7 @@ $\mu = \mu_0(1+\chi_m)$: **magnetic permeability**
 
 # 궁금한 내용
 
-### 도체 표면의 곡률과 전하 분포 사이의 관계는?
+## 도체 표면의 곡률과 전하 분포 사이의 관계는?
 
 **핵심: 곡률이 클수록 전하 밀도가 높다.**
 
@@ -433,6 +441,15 @@ $$
 
 Conductor 내부에서 $\vec{E} = 0$이 되려면, 표면 전하들이 만드는 전기장이 서로 상쇄되어야 한다. 뾰족한 곳에서는 전하들이 좁은 영역에 몰려 있어 내부 방향으로의 전기장 기여가 커지기 때문에, 더 많은 전하가 있어야 상쇄가 가능하다. 결과적으로 평형 상태에서 곡률이 큰 곳에 전하가 몰리게 된다.
 
+## 쿨롱 법칙으로부터 가우스 법칙을 유도하는 general한 방법
+
+가장 간단한 방법은 점전하 하나 잡고, 가우스 곡면을 구 표면으로 잡아서 쿨롱 법칙으로 가우스 법칙을 증명하는 방법이다. 그러나 이것보다 더 general하고 확실한 유도 방법이 있는가?
+$$
+\vec{F}_{total} = \frac{Q}{4\pi\varepsilon_0} \int_V \frac{\hat{R}}{R^2} \rho \, d^3v
+$$
+여기서 어떻게 가우스 법칙을 유도하는가?
+
+
 # AI의 보충 설명
 
 
@@ -446,4 +463,4 @@ Conductor 내부에서 $\vec{E} = 0$이 되려면, 표면 전하들이 만드는
 
 # 다음 강의
 
-[[ED lecture note - Faraday Maxwell Potentials]]0
+[[ED lecture note - Faraday Maxwell Potentials]]
