@@ -2,7 +2,7 @@
 title: Journal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov Chain
 authors: Bruno O. Shubert
 DOI: 10.1109/TSMC.1975.5408382
-date: 2026-02-23
+date read: 2026-02-23
 subject: stochastic processes, markov chains, graph theory
 tags:
   - study

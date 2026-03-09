@@ -249,6 +249,139 @@ $$
 
 ---
 
+### Magnetostatics 핵심 방정식 요약
+
+**연속방정식 (Continuity equation):**
+
+$$
+\nabla \cdot \vec{J} = -\frac{\partial\rho}{\partial t}
+$$
+
+Steady state에서는 $\nabla \cdot \vec{J} = 0$.
+
+**비오-사바르 법칙 (Biot-Savart law):**
+
+$$
+\vec{B} = \frac{\mu_0}{4\pi} \int \frac{d\vec{l} \times \hat{R}}{R^2}
+$$
+
+**앙페르 법칙 (Ampere's law):**
+
+$$
+\oint \vec{B} \cdot d\vec{l} = \mu_0 I_{inner} = \mu_0 \int \vec{J} \cdot d\vec{a}
+$$
+
+Stokes' theorem을 적용하면 미분형:
+
+$$
+\nabla \times \vec{B} = \mu_0 \vec{J}
+$$
+
+이것이 앙페르 법칙이다. **Steady state에서만 성립**한다.
+
+**자기장의 발산:**
+
+$$
+\nabla \cdot \vec{B} = 0
+$$
+
+자기장은 절대 발산할 수 없다. 자기장은 자기벡터 포텐셜로 나타낼 수 있다.
+
+**자기 벡터 포텐셜 (Magnetic vector potential):**
+
+$$
+\vec{B} = \nabla \times \vec{A}
+$$
+
+이를 앙페르 법칙에 대입하면 포아송 방정식이 나온다:
+
+$$
+\nabla^2 \vec{A} = -\mu_0 \vec{J}
+$$
+
+해는:
+
+$$
+\vec{A} = \frac{\mu_0}{4\pi} \int \frac{\vec{J}}{R} \, dR
+$$
+
+---
+
+## 물질 내부에서의 Magnetostatics
+
+전류가 인 자기 성분: 자기쌍극자 모멘트 $\vec{m}$. 이것의 자원은?
+
+점 자기쌍극자의 벡터 포텐셜:
+
+$$
+\vec{A} = \frac{\mu_0}{4\pi} \frac{\vec{m} \times \hat{R}}{R^2}
+$$
+
+분모가 $R^2$임에 주목!
+
+$\vec{M}$: **magnetization density**
+
+$$
+\vec{A} = \frac{\mu_0}{4\pi} \int \frac{\vec{M} \times \hat{R}}{R^2} \, dR = \frac{\mu_0}{4\pi} \left[ \int \frac{1}{R} (\nabla \times \vec{M}) \, dA + \oint \frac{1}{R} (\vec{M} \times d\vec{a}) \right]
+$$
+
+여기서 항등식 $\frac{\hat{R}}{R^2} = \nabla\left(\frac{1}{R}\right)$을 사용했다.
+
+$\nabla \times \vec{M}$은 **bound current density** $\vec{J}_b$와 같은 기능을 한다:
+
+$$
+\nabla \times \vec{M} \equiv \vec{J}_b \quad (\text{bound current})
+$$
+
+$$
+\vec{M} \times d\vec{a} \equiv \vec{K}_b \quad (\text{surface bound current})
+$$
+
+전체 전류:
+
+$$
+\vec{J} = \vec{J}_{free} + \vec{J}_b
+$$
+
+앙페르 법칙:
+
+$$
+\frac{1}{\mu_0} \nabla \times \vec{B} = \vec{J}_{free} + \nabla \times \vec{M}
+$$
+
+$$
+\vec{J}_{free} = \nabla \times \left(\frac{1}{\mu_0} \vec{B} - \vec{M}\right)
+$$
+
+**H 벡터 정의:**
+
+$$
+\vec{H} = \frac{1}{\mu_0} \vec{B} - \vec{M}
+$$
+
+$$
+\nabla \times \vec{H} = \vec{J}_{free}
+$$
+
+Free current를 조절할 때 궁극적으로 바뀌는 건 $\vec{H}$이다.
+
+보통 $\vec{M}$은 $\vec{H}$에 비례한다: $\vec{M} = \chi_m \vec{H}$
+
+$\chi_m$: **magnetic susceptibility**
+
+$$
+\vec{H} = \frac{1}{\mu_0} \vec{B} - \chi_m \vec{H} \implies \vec{B} = \mu_0(1+\chi_m)\vec{H} = \mu \vec{H}
+$$
+
+그러면 자기장은 $\vec{H}$에 따라 선형적으로 증가한다.
+
+$\mu = \mu_0(1+\chi_m)$: **magnetic permeability**
+
+- $\chi_m > 0$이면 **paramagnet**
+- $\chi_m < 0$이면 **diamagnet**
+
+---
+
 # 궁금한 내용
 
 ### 도체 표면의 곡률과 전하 분포 사이의 관계는?
@@ -310,3 +443,7 @@ Conductor 내부에서 $\vec{E} = 0$이 되려면, 표면 전하들이 만드는
 # References
 
 강의 ppt 링크를 이곳에
+
+# 다음 강의
+
+[[ED lecture note - Faraday Maxwell Potentials]]0

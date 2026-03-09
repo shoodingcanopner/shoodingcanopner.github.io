@@ -2,7 +2,7 @@
 title: "Journal reading - Gene expression in growing cells: A biophysical primer"
 authors: Ido Golding, Ariel Amir
 DOI: "[10.1103/RevModPhys.96.041001](https://doi.org/10.1103/RevModPhys.96.041001)"
-date: 2026-01-26
+date read: 2026-01-26
 subject: biophysics
 tags:
   - study

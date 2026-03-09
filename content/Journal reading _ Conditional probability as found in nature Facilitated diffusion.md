@@ -1,6 +1,6 @@
 ---
 title: Journal reading - Conditional probability as found in nature Facilitated diffusion
-date: 2025-11-22
+date read: 2025-11-22
 subject: statistical_mechanics
 tags:
   - study

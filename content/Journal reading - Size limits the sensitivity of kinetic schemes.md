@@ -2,7 +2,7 @@
 title: Journal reading - Size limits the sensitivity of kinetic schemes
 authors: Jeremy A. Owen, Jordan M. Horowitz
 DOI: "[DOI](https://doi.org/10.1038/s41467-023-36705-8)"
-date: 2026-02-22
+date read: 2026-02-22
 subject: nonequilibrium biophysics
 tags:
   - study
@@ -32,7 +32,7 @@ Continuous time Markov chain (Markov jump process, kinetic scheme)에서 어떤 
 - DOI: [https://doi.org/10.1038/s41467-023-36705-8](https://doi.org/10.1038/s41467-023-36705-8)
 - PDF: [[Size limits the sensitivity of kinetic schemes.pdf]]
 
-## 용어 정리부터터
+## 용어 정리부터
 
 FIG1. 
 ![[Pasted image 20260222215655.png]]
@@ -40,17 +40,21 @@ FIG1.
 
 ![[Pasted image 20260223081520.png]]
 - 이 논문에서 다루는 **Markov state**이란, 
-> ligand가 붙을 수 있는 효소나 DNA의 상태를 의미한다. 이것에 ligand가 붙은 양상, 효소의 어느 자리에 무슨 ligand가 붙었는지가 달라지면 상태가 달라지는 것이다. 예를 들어 구분 불가능한 ligan binding site가 n개 있는 효소의 상태는, 위의 그림 처럼 ligand가 붙은 수에 따라 0부터 n 까지의 상태로 구별된다. 
+> ligand가 붙을 수 있는 효소나 DNA의 상태를 의미한다. 
+> 이것에 ligand가 붙은 양상, 효소의 어느 자리에 무슨 ligand가 붙었는지가 달라지면 상태가 달라지는 것이다. 
+> 예를 들어 구분 불가능한 ligan binding site가 n개 있는 효소의 상태는, 위의 그림 처럼 ligand가 붙은 수에 따라 0부터 n 까지의 상태로 구별된다. 
 
 - 이 논문에서 다루는 **perturbation** 이란, 
 > 주로 ligand concentration을 의미한다. Ligand가 몇 개나 효소에 붙었는지에 따라 효소의 상태가 달라지고, ligand가 붙는 속도는 ligand concentration에 선형적으로 증가한다. 때문에 Markov chain의 transition rate는 ligand concentration에 따라 달라진다. 그래서 위 그림에 state transition rate가 $k_i [L]$로 표기된 것이다. 
 > 결과적으로 평형상태에서 특정 상태에 있을 확률은 ligand concentration이라는 perturebation에 의해 달라진다. 
 
 
-![[Pasted image 20260222220822.png]]
-*위키피디아에서 따온 이미지*
+![[Pasted image 20260309113846.png]]
+[*다른 자료에서 따온 이미지](https://earth.callutheran.edu/Academic_Programs/Departments/BioDev/omm/jsmolnew/hemo/cooperative.html)*
+![[Pasted image 20260309113928.png]]
+[*다른 자료에서 따온 이미지*](https://ib.bioninja.com.au/haemoglobin/)
 
-- **Hill coefficient** → 이 논문의 출발점. 
+- **Hill coefficient**와 **cooperative binding**→ 이 논문의 출발점. 
 > 일부 효소는 여러 개의 ligand binding site를 가지고 있다. ligand concentration이 증가할 때, 효소의 모든  ligand binding site가 차지되어 있을 확률, $f(x)$는 시그모이드함수로 증가한다. 
 > 이 시그모이드 관계를 정량화하기 위해 Hill function을 사용한다:
 $$
@@ -70,6 +74,7 @@ $$
 $$
 
 - **Support bound** → **이 논문에서 제시하는 가장 핵심 개념**
+
 > **perturbation x의 support**는 Markov chain을 이루는 state의 부분집합을 의미하는데, "perturebation이 없을 때보다 있을 때 탈출 속도가 더 빨라지는 states"로 이루어진 집합이다. 더 명확히 하면 "x가 증가함에 따라 exit rate가 증가하는 states"이다. 
 >
 > 이 논문의 제목에서 있는 size는 곧 support의 개수를 의미한다. 
@@ -88,6 +93,63 @@ $$
 앞에서 Hill function을 다룰 때는 '효소의 모든  ligand binding site가 차지되어 있을 확률' $f(x)$의 logarithmic sensitivity를 다루었다. 식 (7)의 의도는 이 $f(x)$라는 값을 더 다양한 의미를 가지는 관측량으로 일반화한 것이다. 즉, 식 (7)은 더 다양한 관측량의 sensitivity를 다룬다.
 
 식 (7)에서 만약 관측량 $A$를 '효소의 모든  ligand binding site가 차지되어 있는 상태'에 대한 indicator function이라고 두고, 관측량 $B$를 1로 둔다면, $\langle A \rangle_\pi / \langle B \rangle_\pi = f(x)$이다. 
+
+## Support Bound 증명: 식 (28)~(32)
+
+식 (7)이 왜 성립하는지 증명 흐름을 따라가 보자. 핵심 도구는 [[Markov Chain Tree Theorem]]이다.
+
+**식 (28): Steady-state를 spanning tree로 표현**
+
+$$
+\pi_k = \frac{1}{Z} \sum_{\substack{\text{spanning trees} \\ \text{oriented to } k}} \prod_{\text{edges } i \to j} W_{ji}
+\tag{28}
+$$
+
+Steady-state 확률 $\pi_k$는 그래프 $G$의 모든 spanning tree를 root $k$를 향해 방향을 정한 뒤, 각 tree의 edge 전이율을 모두 곱한 값들의 합에 비례한다. 각 항은 전이율들의 **양의 단항식(positive monomial)**이므로, $\pi_k$는 $x$의 다항식이 된다.
+
+**식 (29): ⟨A⟩/⟨B⟩는 유리함수다**
+
+$\pi_k$가 $x$의 다항식이므로, $\langle A \rangle_\pi = \sum_i A_i \pi_i$도 다항식이다. 따라서:
+
+$$
+\frac{\langle A \rangle_\pi}{\langle B \rangle_\pi} = x^{a_{\min} - b_{\min}} \cdot \frac{\sum_{i=0}^{a_{\max}-a_{\min}} k_i x^i}{\sum_{j=0}^{b_{\max}-b_{\min}} q_j x^j}
+\tag{29}
+$$
+
+분자의 최고·최저 차수를 $a_{\max}, a_{\min}$, 분모를 $b_{\max}, b_{\min}$이라 하면, 이 비율은 **유리함수**다.
+
+**식 (30): 로그 감도를 미분으로 표현**
+
+식 (29)를 로그 미분하면:
+
+$$
+\frac{d \log \langle A \rangle_\pi / \langle B \rangle_\pi}{d \log x} = (a_{\min} - b_{\min}) + \left( \frac{\sum i \cdot k_i x^i}{\sum k_i x^i} - \frac{\sum j \cdot q_j x^j}{\sum q_j x^j} \right)
+\tag{30}
+$$
+
+괄호 안의 각 항은 다항식의 **가중 평균 차수**이므로, 첫째 항은 $[a_{\min},\, a_{\max}]$, 둘째 항은 $[b_{\min},\, b_{\max}]$ 범위에 있다.
+
+**식 (31): 차수 범위로 bound**
+
+위 범위를 이용하면:
+
+$$
+a_{\min} - b_{\max} \leq \frac{d \log \langle A \rangle_\pi / \langle B \rangle_\pi}{d \log x} \leq a_{\max} - b_{\min}
+\tag{31}
+$$
+
+**식 (32): Support가 차수를 제한한다 → Support Bound 완성**
+
+식 (28)에서 spanning tree는 **각 vertex마다 나가는 edge가 최대 하나** (root 제외). 따라서 한 monomial에서 $x$에 의존하는 전이율이 등장할 수 있는 횟수는, $x$에 의존하는 나가는 edge를 가진 상태의 수, 즉 **support 크기 $m$** 을 넘을 수 없다. 따라서 $a_{\max} \leq m$, $b_{\max} \leq m$이고, 식 (31)에 대입하면:
+
+$$
+\left| \frac{d \log \langle A \rangle_\pi / \langle B \rangle_\pi}{d \log x} \right| \leq m
+\tag{32}
+$$
+
+이것이 바로 식 (7)의 support bound다. 증명 어디에도 A와 B의 구체적인 값이 개입하지 않으며, 오로지 **그래프의 구조**만이 bound를 결정한다.
+
+---
 
 ## 그래서 이 논문의 목표는 
 
@@ -148,7 +210,7 @@ Bound 자체는 이렇게 정해졌는데, 이렇게 ligand bound site 개수에
 그리고 이 메커니즘이 실제 DNA와 TF biding을 잘 모사할 수 있는 생물학적 근거 또한 갖추고 있다고 자부한다. 
 
 Nested hysteresis는 hyper cybic에 추가로 아래 두 특징을 가진다. 
-
+![[Pasted image 20260309121656.png]]
 **① 모든 상척도의 위계(hierarchy of timescales)**
 결합 자리에 번호를 붙이면, 높은 번호의 자리일수록 결합/해리가 훨씬 느리게 일어난다.
 느린 정도가 꽤나 커서, 다른 결합 자리는 아예 다른 time scale에서 사는 정도이다. 

@@ -197,6 +197,7 @@ $$
 ## 중간고사 범위
 
 [[ED lecture note - electroststics and magnetostatics]]
+[[ED lecture note - Faraday Maxwell Potentials]]
 
 ---
 

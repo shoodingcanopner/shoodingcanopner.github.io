@@ -1,6 +1,6 @@
 ---
 title: Journal reading - Anomalous diffusion models and their properties
-date: 2025-08-24
+date read: 2025-08-24
 tags:
   - statistical_physics
   - study

@@ -2,7 +2,7 @@
 title: Journal reading - Transient power-law behaviour following induction distinguishes between competing models of stochastic gene expression
 authors: Andrew G. Nicoll, Juraj Szavits-Nossan, Martin R. Evans, Ramon Grima
 DOI: "[10.1038/s41467-025-58127-4](https://doi.org/10.1038/s41467-025-58127-4)"
-date: 2026-02-07
+date read: 2026-02-07
 subject: biophysics
 tags:
   - study

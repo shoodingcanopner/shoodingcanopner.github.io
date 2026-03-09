@@ -2,7 +2,7 @@
 title: Journal reading - Stochastic thermodynamics for biological functions
 authors: Yuansheng Cao, Shiling Liang
 DOI: "[10.1002/qub2.75](https://doi.org/10.1002/qub2.75)"
-date: 2026-02-19
+date read: 2026-02-19
 subject: stochastic thermodynamics, biophysics
 tags:
   - study
@@ -63,6 +63,5 @@ Quantitative biology Journal의 논문.
 
 ## 더 읽어보고 싶은 레퍼런스
 
-[[Flexibility and sensitivity in gene regulation out of equilibrium.pdf]]
-
 [[Journal reading - Size limits the sensitivity of kinetic schemes]]
+[[Journal reading - Flexibility and sensitivity in gene regulation out of equilibrium]]

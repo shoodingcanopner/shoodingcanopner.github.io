@@ -2,7 +2,7 @@
 title: Journal reading - Shortcuts in Stochastic Systems and Control of Biophysical Processes
 authors: Efe Ilker, Özenç Güngör, Benjamin Kuznets-Speck, Joshua Chiel, Sebastian Deffner, Michael Hinczewski
 DOI: "[10.1103/PhysRevX.12.021048](https://doi.org/10.1103/PhysRevX.12.021048)"
-date: 2026-01-20
+date read: 2026-01-20
 subject: non-equilibrium thermodynamics
 tags:
   - study
