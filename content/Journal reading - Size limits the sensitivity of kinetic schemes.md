@@ -210,8 +210,9 @@ Bound 자체는 이렇게 정해졌는데, 이렇게 ligand bound site 개수에
 그리고 이 메커니즘이 실제 DNA와 TF biding을 잘 모사할 수 있는 생물학적 근거 또한 갖추고 있다고 자부한다. 
 
 Nested hysteresis는 hyper cybic에 추가로 아래 두 특징을 가진다. 
-![[Pasted image 20260309121656.png]]
-**① 모든 상척도의 위계(hierarchy of timescales)**
+![[Pasted image 20260309132637.png]]
+![[Pasted image 20260309132611.png]]
+**① 결합 자리에 따른 시간 척도의 위계(hierarchy of timescales)**
 결합 자리에 번호를 붙이면, 높은 번호의 자리일수록 결합/해리가 훨씬 느리게 일어난다.
 느린 정도가 꽤나 커서, 다른 결합 자리는 아예 다른 time scale에서 사는 정도이다. 
 
@@ -237,6 +238,10 @@ $$
 $$
 
 이 식은 $H = 2^n - 1$인 Hill function에 수렴하며, 식 (16)을 모든 $\pi_\text{all}$ 범위에서 동시에 포화시킨다.
+
+![[Pasted image 20260309132714.png]]
+이런 nested hysteresis를 직접 시뮬래이션한 결과, Hill coefficient = 7 의 이론 함수와 잘 맞아 떨어지는 그래프를 얻었다. 
+
 
 **생물학적 함의:** 평형계에서 $H_\text{eff} \approx 100$을 얻으려면 ~100개의 분자가 필요하지만, nested hysteresis를 쓰면 단 7개의 결합 자리($2^7 - 1 = 127$)로 같은 감도를 달성할 수 있다. 비평형에서는 비약적인 sensitivity를 가지는 게 가능함을 보이는 부분. 
 
