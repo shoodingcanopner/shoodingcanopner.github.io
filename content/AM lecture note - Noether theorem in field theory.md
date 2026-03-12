@@ -469,4 +469,4 @@ $$
 ![[Pasted image 20260312084136.png]]
 
 # 다음 강의
-
+[[AM lecture note - Hamiltonian mechanics]]

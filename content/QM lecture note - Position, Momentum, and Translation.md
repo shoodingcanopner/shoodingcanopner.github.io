@@ -188,7 +188,7 @@ $$
 $$
 
 $$
-\therefore\quad T^\dagger(\delta x)\,T(\delta x) = \mathbb{1}
+\therefore \quad T^\dagger(\delta x)\,T(\delta x) = \mathbb{1}
 $$
 
 **2) Composition**
