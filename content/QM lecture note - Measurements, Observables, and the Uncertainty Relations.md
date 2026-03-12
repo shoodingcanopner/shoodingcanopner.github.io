@@ -218,9 +218,166 @@ $$
 
 이때 B를 측정하여 $b'^{(j)}$가 나온다면 상태는 $|a', b'^{(j)}\rangle$로 고정되고, 다시 A로 측정하면 100%로 $a'$가 나온다.
 
+## Incompatible Observables
+
+$[A, B] \neq 0$인 경우, A와 B의 **simultaneous eigenket은 존재하지 않는다.**
+
+**증명.** 만약 이 둘의 simultaneous eigenket $|a', b'\rangle$가 있다면?
+
+$$
+AB|a',b'\rangle = A(b'|a',b'\rangle) = a'b'|a',b'\rangle
+$$
+
+$$
+BA|a',b'\rangle = B(a'|a',b'\rangle) = a'b'|a',b'\rangle
+$$
+
+$AB = BA$가 되어 $[A,B] \neq 0$의 전제조건을 만족하지 못한다.
+
+### 관측의 기본항
+
+중간에 또 다른 물리량으로 관측한 사건이이 측정 결과에 영향을 미친다.
+
+**사례 1.** A로 $|\alpha\rangle$를 관측하여 $|a'\rangle$ 상태로 준비, 이를 B로 관측하고, 또 C로 관측한다. $|c'\rangle$ 상태가 관측될 확률은?
+
+$$
+\sum_{b'} |\langle b'|a'\rangle|^2 |\langle c'|b'\rangle|^2
+$$
+
+**사례 2.** A로 $|\alpha\rangle$를 관측하여 $|a'\rangle$ 상태로 준비, 바로 이를 C로 관측한다. $|c'\rangle$ 상태가 관측될 확률은?
+
+$$
+|\langle c'|a'\rangle|^2 = \left|\sum_{b'} \langle c'|b'\rangle\langle b'|a'\rangle\right|^2
+$$
+
+두 경우는 일반적으로 다르다:
+
+$$
+\sum_{b'} |\langle b'|a'\rangle|^2 |\langle c'|b'\rangle|^2 \neq \left|\sum_{b'} \langle c'|b'\rangle\langle b'|a'\rangle\right|^2
+$$
+
+전자는 summation 중에 **phase에 대한 정보가 날아가지만**, 후자는 summation에 **phase가 반영된다.**
+
+## Uncertainty Principle
+
+Observable $A$의 **variance**는 이렇게 정의된다:
+
+$$
+\langle(\Delta A)^2\rangle = \langle(A - \langle A\rangle)^2\rangle = \langle A^2 - 2\langle A\rangle A + \langle A\rangle^2\rangle = \langle A^2\rangle - \langle A\rangle^2
+$$
+
+Operator $\Delta A$를 $\Delta A = A - \langle A\rangle$라고 정의한다.
+
+**Uncertainty Principle:**
+
+$$
+\langle(\Delta A)^2\rangle\langle(\Delta B)^2\rangle \geq \frac{1}{4}\left|\langle[A,B]\rangle\right|^2
+$$
+
+### 증명에 필요한 Lemma
+
+**Lemma 1. 코시-슈바르츠 부등식.**
+[[Cauchy-Schwarz Inequality]]
+유클리드 공간에서는 두 벡터 $\vec{a}$와 $\vec{b}$에 대해:
+
+$$
+|\vec{a}|^2|\vec{b}|^2 \geq |\vec{a}\cdot\vec{b}|^2
+$$
+
+힐베르트 공간에서 두 ket $|\alpha\rangle$와 $|\beta\rangle$가 있을 때:
+
+$$
+\langle\alpha|\alpha\rangle\langle\beta|\beta\rangle \geq |\langle\alpha|\beta\rangle|^2
+$$
+
+**Lemma 2.** 에르미트 연산자의 expectation value는 **real value**이다.
+
+**Lemma 3.** anti-에르미트 연산자의 expectation value는 **pure imaginary value**이다.
+
+(Lemma 2와 Lemma 3의 증명은 간단하다.)
+
+### 본격적인 증명
+
+임의의 ket $|\alpha\rangle$에 대해, $\Delta A|\alpha\rangle$와 $\Delta B|\alpha\rangle$에 코시-슈바르츠 부등식을 적용한다:
+
+$$
+\langle\alpha|(\Delta A)^2|\alpha\rangle\langle\alpha|(\Delta B)^2|\alpha\rangle \geq |\langle\alpha|\Delta A\Delta B|\alpha\rangle|^2
+$$
+
+$$
+\langle(\Delta A)^2\rangle\langle(\Delta B)^2\rangle \geq |\langle\Delta A\Delta B\rangle|^2
+$$
+
+우변을 다르게 나타낼 수 있다. 어떤 operator이든 에르미트 연산자와 anti-에르미트 연산자로 나눌 수 있기 때문에:
+
+$$
+\Delta A\Delta B = \frac{1}{2}[\Delta A, \Delta B] + \frac{1}{2}\{\Delta A, \Delta B\}
+$$
+
+또한 $[\Delta A, \Delta B] = [A, B]$이다. $[A,B]$는 anti-에르미트이고 $\{\Delta A, \Delta B\}$는 에르미트이므로:
+
+$$
+\langle\Delta A\Delta B\rangle = \frac{1}{2}\langle[A,B]\rangle + \frac{1}{2}\langle\{\Delta A,\Delta B\}\rangle
+$$
+
+이때 $\langle[A,B]\rangle$는 imaginary number, $\langle\{\Delta A,\Delta B\}\rangle$는 real number이므로:
+
+$$
+|\langle\Delta A\Delta B\rangle|^2 = \frac{1}{4}|\langle[A,B]\rangle|^2 + \frac{1}{4}|\langle\{\Delta A,\Delta B\}\rangle|^2
+$$
+
+다시 부등식으로 돌아가면:
+
+$$
+|\langle\Delta A\Delta B\rangle|^2 \geq \frac{1}{4}|\langle[A,B]\rangle|^2
+$$
+
+따라서:
+
+$$
+\langle(\Delta A)^2\rangle\langle(\Delta B)^2\rangle \geq \frac{1}{4}\left|\langle[A,B]\rangle\right|^2
+$$
+
 # 궁금한 내용
 
 생각난 질문을 여기에 메모
+
+## Q. 불확정성 원리 유도에서 왜 anti-commutator 항을 버리나? 등식 조건의 물리적 의미는?
+
+**Q1. $|\langle\Delta A\Delta B\rangle|^2 = \frac{1}{4}|\langle[A,B]\rangle|^2 + \frac{1}{4}|\langle\{\Delta A,\Delta B\}\rangle|^2$에서 최종 부등식으로 넘어갈 때 왜 anti-commutator 항을 버리나?**
+
+맞다, 더 **느슨한(덜 정확한) 부등식**이 된다. 의도적으로 그렇게 하는 것이다.
+
+$\frac{1}{4}|\langle\{\Delta A,\Delta B\}\rangle|^2 \geq 0$이므로 이 항을 버리면:
+
+$$
+\langle(\Delta A)^2\rangle\langle(\Delta B)^2\rangle \geq \frac{1}{4}|\langle[A,B]\rangle|^2
+$$
+
+이렇게 하는 이유는 **anti-commutator 항은 상태 $|\alpha\rangle$에 의존하는 반면**, commutator $[A,B]$는 연산자만의 성질이기 때문이다. 예를 들어 $[x,p] = i\hbar$는 어떤 상태에서도 항상 성립하는 고정된 값이다.
+
+anti-commutator 항을 포함한 식은 특정 상태에 대한 더 tight한 정보를 주긴 하지만, **"이 두 observable은 원리적으로 동시에 정확히 측정될 수 없다"는 보편적인 하한**을 주려면 commutator 항만 남기는 것이 더 유용하다.
+
+**Q2. 등식 성립 조건 — $\langle\{\Delta A,\Delta B\}\rangle = 0$의 물리적 의미는?**
+
+불확정성 원리의 등식이 성립하려면 두 조건이 동시에 필요하다:
+
+- **조건 1.** Cauchy-Schwarz 등호 조건: $\Delta B|\alpha\rangle = i\lambda\,\Delta A|\alpha\rangle$ (어떤 실수 $\lambda$에 대해)
+- **조건 2.** $\langle\{\Delta A,\Delta B\}\rangle = 0$
+
+조건 2를 해석하면:
+
+$$
+\langle\{\Delta A,\Delta B\}\rangle = 2\,\text{Re}\langle\Delta A\Delta B\rangle = 0
+$$
+
+즉, $\langle\Delta A\Delta B\rangle$이 **순허수**라는 뜻이다. 두 observable의 fluctuation 사이에 **실수 부분의 상관관계(real correlation)가 없다**는 것을 의미한다.
+
+가장 유명한 예시는 **Gaussian wave packet**이다. 위치공간에서 순수하게 실수인 가우시안 $\psi(x) \propto e^{-x^2/4\sigma^2}$ 상태는 $\langle\{\Delta x,\Delta p\}\rangle = 0$을 만족하고, $\Delta x\cdot\Delta p = \hbar/2$인 **최소 불확정성 상태(minimum uncertainty state)** 가 된다.
+
+반대로 $\langle\{\Delta A,\Delta B\}\rangle \neq 0$이면 두 observable의 fluctuation 사이에 실수 상관관계가 존재한다. 예를 들어 **chirped Gaussian**(위상이 위치에 따라 변하는 파동묶음)은 위치가 크면 운동량도 크게 되는 상관이 생겨 $\Delta x\cdot\Delta p > \hbar/2$가 된다.
+
+**요약:** anti-commutator expectation value가 0인 상태 = 두 observable의 fluctuation 사이에 여분의 상관관계가 없는 상태 = 불확정성 원리의 하한을 정확히 달성하는 최소 불확정성 상태.
 # AI의 보충 설명
 
 
@@ -232,6 +389,16 @@ $$
 강의 ppt 링크를 이곳에 
 
 # 다음 강의
+[[QM lecture note - Basis Transformation Operator]]
 
 
+# 원본 필기 이미지
 
+![[Pasted image 20260310153332.png]]
+![[Pasted image 20260310153339.png]]
+![[Pasted image 20260310153343.png|637]]
+![[Pasted image 20260310153404.png]]
+![[Pasted image 20260310153408.png]]
+![[Pasted image 20260310153127.png]]
+![[Pasted image 20260310153121.png]]
+![[Pasted image 20260310153118.png]]

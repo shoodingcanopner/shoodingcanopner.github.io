@@ -213,3 +213,9 @@ $$
 # 다음 강의
 
 [[QM lecture note - Measurements, Observables, and the Uncertainty Relations]]
+
+# 원본 필기 이미지
+
+![[Pasted image 20260310153311.png]]
+![[Pasted image 20260310153319.png]]
+![[Pasted image 20260310153326.png]]

@@ -178,16 +178,17 @@ $$
 
 > ☞ $\Phi$와 $\vec{A}$를 알면 $\vec{E}$와 $\vec{B}$를 알 수 있다.  
 > potentials (scalars/vectors) → vectors.  
-> potential을 사용하는 편이 dimension이 낮다. $\vec{E}$와 $\vec{B}$가 동립적이지 않기 때문.
+> potential을 사용하는 편이 dimension이 낮다. $\vec{E}$와 $\vec{B}$가 독독립적이지 않기 때문.
 
-### 파동 방정식으로 변환
+###  $\Phi$와 $\vec{A}$에 대한 방정식으로 남기기
 
 $\nabla \cdot \vec{D} = \rho$, $\nabla \cdot \vec{E} = \frac{1}{\varepsilon_0}\rho$에서:
 
+steady state에서
 $$
 -\nabla^2 \Phi = \frac{1}{\varepsilon_0}\rho
 $$
-
+Steady state가 아닐 때.  
 $$
 \nabla^2 \Phi + \frac{\partial}{\partial t}(\nabla \cdot \vec{A}) = -\frac{1}{\varepsilon_0}\rho
 $$

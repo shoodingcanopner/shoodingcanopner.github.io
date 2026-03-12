@@ -217,8 +217,10 @@ t \to t' = t + \varepsilon T
 $$
 
 $T$는 time generator.
+$\varepsilon$은 translation을 하는 정도이다. 이게 정확히 어떤 의미인지는 노트 후반부 Q&A를 참고. 
+$\varepsilon =0$이면 translation을 하지 않는 것을 의미한다. 
 
-일반화 좌표는 $\Phi$라는 함수를 이용해서 변환한다. 
+일반화 좌표는 $\varphi$라는 함수를 이용해서 변환한다. 
 문제는 $q_i(t)$속의 시간 $t$까지 $t'$로 변환해야 한 다는 것이다. 
 $$
 q_i(t) \to q'_i(t') = \varphi[q_i(t), \varepsilon] = \varphi[q_i(t' - \varepsilon T), \varepsilon]
@@ -228,6 +230,26 @@ $$
 $$
 \dot{q}_i(t) \to \dot{q}'_i(t') = \frac{d}{dt}\varphi[q_i(t), \varepsilon]
 $$
+
+> [!note] AI 보충 — 왜 $t'$이 아니라 $t$로 미분하는가?
+> 
+> 시간 병진 변환 $t' = t + \varepsilon T$에서 $\varepsilon$이 infinitesimal이면 $dt = dt'$이므로, **수치적으로는** $t$로 미분하든 $t'$으로 미분하든 차이가 없다. 라고 내가 생각했다. AI가 맞다고 해줬다. 
+> 
+> $$
+> \frac{d}{dt'}\varphi[q_i(t'-\varepsilon T), \varepsilon] = \frac{d}{dt}\varphi[q_i(t), \varepsilon]\bigg|_{t = t' - \varepsilon T}
+> $$
+> 
+> 그럼에도 $t$로 미분하는 것으로 **정의**하는 이유는 계산의 편의성 때문이다.
+> $t'$으로 미분하면 나중에 $\varepsilon$에 대해 미분할 때, $t' = t + \varepsilon T$이므로 $t'$이 $\varepsilon$에 의존해서 추가 항이 생겨 복잡해진다.
+> 
+> 반면 $t$로 미분해두면, $\varepsilon$-미분과 $t$-미분의 교환이 깔끔하게 성립한다:
+> 
+> $$
+> \frac{d}{d\varepsilon}\frac{d}{dt}\varphi = \frac{d}{dt}\frac{d}{d\varepsilon}\varphi
+> $$
+> 
+> 즉, $t$로 미분하는 것은 **편의를 위해 선택한 정의**이고, 이것이 Step 1~3의 계산을 깔끔하게 만들어준다.
+
 풀어주면
 $$
  = \frac{\partial \varphi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \frac{\partial q}{\partial t} = \frac{\partial \varphi[q_i(t'-\varepsilon T), \varepsilon]}{\partial q} \cdot \dot{q}_i(t' - \varepsilon T)
@@ -383,7 +405,8 @@ $$
 ### 왜 양자역학에서 보존량은 양자화 가능한 걸까?
 
 ### 왜 $\varphi[\mathbf{q}, \varepsilon]$는 $\varepsilon$에 대한 함수인가?
-
+$\epsilon$은 이미 처음에 time translation의 척도로 쓴 변수이다. 
+그런데 이걸 space translation을 일으키는 $\varphi[\mathbf{q}, \varepsilon]$에서 또 쓴다.
 병진 이동 거리 같은 별도의 물리적 변수를 쓰지 않는 이유가 뭘까?
 
 > [!note] AI 보충 설명
@@ -413,6 +436,23 @@ $$
 > 이것만 있으면 보존량을 구할 수 있다. 변환의 구체적인 물리적 변수가 뭔지는 중요하지 않고, 그 변환이 $\varepsilon = 0$ 근방에서 어떤 방향으로 좌표를 움직이는지만 알면 된다.
 > 
 > 따라서 $\varphi$는 물리적 변수($a$, 회전각, $\mathbf{v}$...)를 **$\varepsilon$이라는 하나의 추상적인 눈금으로 통일**한 표현이다. 이렇게 하면 어떤 종류의 연속 변환이든 같은 공식 하나로 처리할 수 있다.
+
+> [!note] AI 보충 — $\varepsilon$ 하나로 갈릴레이 군 10개 generator를 모두 표현할 수 있는가?
+> 
+> **결론:** $\varepsilon$은 "변환의 세기"만 담당하고, 변환의 종류(방향, 축 등)는 $T$와 $\varphi$의 함수 형태가 결정한다.
+> 
+> $\varepsilon$은 "볼륨 다이얼"에 비유할 수 있다. 어떤 음악을 틀지는 $T$와 $\varphi$가 결정하고, 볼륨 다이얼은 항상 같은 역할(크기 눈금)만 한다.
+> 
+> 갈릴레이 군의 10개 변환을 나열하면:
+> 
+> | 변환 | $T$ | $\varphi[\mathbf{q}, \varepsilon]$ |
+> |------|------|------|
+> | 시간 평행이동 (1개) | $1$ | $\mathbf{q}$ |
+> | 공간 병진 (3개) | $0$ | $\mathbf{q} + \varepsilon\hat{n}$ ($\hat{n} = \hat{x}, \hat{y}, \hat{z}$) |
+> | 회전 (3개) | $0$ | $\mathbf{q} + \varepsilon(\hat{n}\times\mathbf{q})$ |
+> | 갈릴레이 부스트 (3개) | $0$ | $\mathbf{q} + \varepsilon t\hat{n}$ |
+> 
+> $\varepsilon$ 하나가 10가지 정보를 동시에 담는 것이 **아니라**, 각각의 변환에 대해 $\varepsilon$을 **독립적으로 10번 별도 적용**하는 것이다. 뇌터 정리의 공식 하나로 어떤 연속 대칭이든 처리할 수 있는 것은 바로 이 구조 덕분이다.
 
 
 # AI의 보충 설명

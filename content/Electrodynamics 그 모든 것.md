@@ -30,88 +30,7 @@ class: study_subject
 **중요한 관계식:**
 $$c = \frac{1}{\sqrt{\epsilon_0 \mu_0}} \tag{0.1}$$
 
-### SI 단위계의 전자기 단위
 
-#### 전기 관련 단위
-
-| 물리량           | 단위  | 기호  | 기본 단위 표현      | 비고  |
-| ------------- | --- | --- | ------------- | --- |
-| 전하            | 쿨롱  | C   | A·s           |     |
-| 전류            | 암페어 | A   | A (기본 단위)     |     |
-| 전위, 전압        | 볼트  | V   | kg·m²/(A·s³)  | J/C |
-| 전기장           | -   | -   | V/m = N/C     |     |
-| 전기 저항         | 옴   | Ω   | kg·m²/(A²·s³) | V/A |
-| 전기 용량 (커패시턴스) | 패럿  | F   | A²·s⁴/(kg·m²) | C/V |
-| 유전율           | -   | -   | F/m           |     |
-
-#### 자기 관련 단위
-
-| 물리량 | 단위 | 기호 | 기본 단위 표현 | 비고 |
-|--------|------|------|---------------|------|
-| 자기장 | 테슬라 | T | kg/(A·s²) | Wb/m² |
-| 자기선속 | 웨버 | Wb | kg·m²/(A·s²) | V·s = T·m² |
-| 자기 인덕턴스 | 헨리 | H | kg·m²/A² | Wb/A = V·s/A |
-| 투자율 | - | - | H/m | |
-| 자화 | - | - | A/m | |
-
-### 단위 간 관계식
-
-**테슬라(T), 웨버(Wb), 헨리(H)의 관계:**
-
-$$
-\begin{align}
-1 \text{ T} &= 1 \frac{\text{Wb}}{\text{m}^2} = 1 \frac{\text{kg}}{\text{A} \cdot \text{s}^2} \tag{0.2}\\
-1 \text{ Wb} &= 1 \text{ V} \cdot \text{s} = 1 \text{ T} \cdot \text{m}^2 \tag{0.3}\\
-1 \text{ H} &= 1 \frac{\text{Wb}}{\text{A}} = 1 \frac{\text{V} \cdot \text{s}}{\text{A}} \tag{0.4}
-\end{align}
-$$
-
-**패럿(F)과 다른 단위의 관계:**
-
-$$
-\begin{align}
-1 \text{ F} &= 1 \frac{\text{C}}{\text{V}} = 1 \frac{\text{A} \cdot \text{s}}{\text{V}} \tag{0.5}\\
-1 \text{ F} &= 1 \frac{\text{s}}{\Omega} \tag{0.6}
-\end{align}
-$$
-
-**전기장과 자기장의 단위 관계:**
-
-$$
-\begin{align}
-[\mathbf{E}] &= \frac{\text{V}}{\text{m}} = \frac{\text{N}}{\text{C}} \tag{0.7}\\
-[\mathbf{B}] &= \text{T} = \frac{\text{N}}{\text{A} \cdot \text{m}} \tag{0.8}
-\end{align}
-$$
-
-### SI vs CGS-Gaussian 단위계 비교
-
-| 물리량 | SI 단위 | CGS-Gaussian 단위 | 변환 |
-|--------|---------|-------------------|------|
-| 전하 $q$ | 쿨롱 (C) | esu (statC) | 1 C = $3 \times 10^9$ esu |
-| 전류 $I$ | 암페어 (A) | esu/s | 1 A = $3 \times 10^9$ esu/s |
-| 전위 $\phi$ | 볼트 (V) | statvolt | 1 V = $1/300$ statvolt |
-| 전기장 $\mathbf{E}$ | V/m | statvolt/cm | 1 V/m = $1/(3 \times 10^4)$ statvolt/cm |
-| 자기장 $\mathbf{B}$ | 테슬라 (T) | 가우스 (G) | 1 T = $10^4$ G |
-
-**CGS-Gaussian 단위계에서의 맥스웰 방정식:**
-
-$$
-\begin{align}
-\nabla \cdot \mathbf{E} &= 4\pi\rho \\
-\nabla \cdot \mathbf{B} &= 0 \\
-\nabla \times \mathbf{E} &= -\frac{1}{c}\frac{\partial \mathbf{B}}{\partial t} \\
-\nabla \times \mathbf{B} &= \frac{4\pi}{c}\mathbf{J} + \frac{1}{c}\frac{\partial \mathbf{E}}{\partial t}
-\end{align}
-$$
-
-### 유용한 기억 팁
-
-1. **테슬라(T)**: 자기장의 세기. 자기선속밀도 = 웨버/면적
-2. **웨버(Wb)**: 자기선속. 패러데이 법칙에서 자연스럽게 나타남
-3. **헨리(H)**: 인덕턴스. 웨버/전류 = 전압·시간/전류
-4. **패럿(F)**: 커패시턴스. 전하/전압
-5. **==$\epsilon_0 \mu_0 c^2 = 1$==**: SI 단위계의 핵심 관계식
 
 ---
 
@@ -138,14 +57,18 @@ $$
 
 **핵심 개념:**
 - 전기 스칼라 포텐셜 $\phi$와 자기 벡터 포텐셜 $\mathbf{A}$의 정의
-- 전기장: $\mathbf{E} = -\nabla \phi - \frac{\partial \mathbf{A}}{\partial t}$
-- 자기장: $\mathbf{B} = \nabla \times \mathbf{A}$
+$$
+\mathbf{E} = -\nabla \phi - \frac{\partial \mathbf{A}}{\partial t}
+$$
+$$
+\mathbf{B} = \nabla \times \mathbf{A}
+$$
+
 - 게이지 불변성과 게이지 선택 (Coulomb gauge, Lorenz gauge)
-- 전기-자기 대칭성의 의미
 
 [[전기장과 자기장의 포텐셜]]
 [[포텐셜을 이용한 맥스웰 방정식]]
-
+[[Vector Identities in Electrodynamics]]
 
 ## 3. 그린 함수를 이용한 쿨롱 법칙과 비오-사바르 법칙 유도
 
@@ -198,6 +121,7 @@ $$
 
 [[ED lecture note - electroststics and magnetostatics]]
 [[ED lecture note - Faraday Maxwell Potentials]]
+[[ED lecture note - Gauge Transform and Energy Conservation]]
 
 ---
 

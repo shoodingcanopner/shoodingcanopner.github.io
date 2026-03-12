@@ -154,14 +154,14 @@ $$
 이때 적분 식을 변형하기 위해 
 
 $$
-\frac{\hat{R}}{R^2} = \nabla\!\left(\frac{1}{R}\right)
+\frac{\hat{R}}{R^2} = \nabla\!\left(-\frac{1}{R}\right)
 $$ 의 관계를 이용한다. 이건 꼭 외워두기. 
 
 
 $\nabla$의 곱의 규칙을 적용:
 
 $$
-V = \frac{1}{4\pi\varepsilon_0} \int_V \vec{P} \cdot \nabla\!\left(\frac{1}{R}\right) d\tau
+V = \frac{1}{4\pi\varepsilon_0} \int_V \vec{P} \cdot \nabla\!\left(-\frac{1}{R}\right) d\tau
 $$
 
 $$
@@ -291,8 +291,11 @@ $$
 \vec{B} = \nabla \times \vec{A}
 $$
 
-이를 앙페르 법칙에 대입하면 벡터 푸아송 방정식이 나온다. 
 이중 컬을 푸는 동안 - 부호가 나타난 것을 확인하라. 
+[[Vector Identities in Electrodynamics]]
+이중 컬을 풀면 $\nabla \cdot \vec{A}$ 항이 포함된 게 나온다. 우린 이걸 날려버리기 위해 임의로  $\nabla \cdot \vec{A} = 0$을 만족하는 A를 선택한다. 이것을 gauge fixing이라고 한다. 
+
+이 조건들을을 앙페르 법칙에 대입하면 벡터 푸아송 방정식이 나온다. 
 
 $$
 \nabla^2 \vec{A} = -\mu_0 \vec{J}
@@ -326,6 +329,7 @@ $$
 > \int_V \nabla \times \vec{F} \, dV = -\oint_S \vec{F} \times d\vec{a}
 > $$
 > 아래 $\vec{A}$ 유도에서 사용된다.
+> 부호에 유의한다!
 
 $\vec{M}$: **magnetization density**
 

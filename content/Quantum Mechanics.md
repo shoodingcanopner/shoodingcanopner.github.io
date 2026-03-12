@@ -37,4 +37,8 @@ Week 16: Final Exam
 [[QM lecture note - Base Kets and Matrix Representation]]
 [[QM lecture note - Measurements, Observables, and the Uncertainty Relations]]
 
+## 중간고사 이후
+[[QM lecture note - Position, Momentum, and Translation]]
+
 # 연관 노트들
+[[QM lecture note - Basis Transformation Operator]]
