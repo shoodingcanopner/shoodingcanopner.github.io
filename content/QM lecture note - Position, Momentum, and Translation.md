@@ -7,8 +7,9 @@ tags:
   - lecture_notes
 class: study_lecture
 ---
-이것은 강의를 듣고 적은 필기입니다.
-정리가 안 되어 있고, 개인적인 생각이 섞여 있을 수도 있습니다.
+> [!attention] 강의 필기
+> 이것은 [[Quantum Mechanics]] 강의를 듣고 적은 필기입니다. 
+> 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
 # 지난 강의
 
@@ -76,7 +77,7 @@ $$
 |                | Discrete                                                                                  | Continuous                                                                                      |
 | -------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | eigenvalue eq. | $A \| a'\rangle = a'\|a'\rangle$                                                          | $\xi\|\xi'\rangle = \xi'\|\xi'\rangle$                                                          |
-| orthonormality | $\langle a''\|a'\rangle = \delta_{a''a'}$                                                 | $\langle \xi''\|\xi'\rangle = \delta(\xi''-\xi')$                                               |
+| orthonormality | 크로네커 델타 사용<br>$\langle a''\|a'\rangle = \delta_{a''a'}$                                   | 디락델타 사용<br>$\langle \xi''\|\xi'\rangle = \delta(\xi''-\xi')$                                    |
 | completeness   | $\sum_{a'}\|a'\rangle\langle a'\| = \mathbb{1}$                                           | $\int d\xi'\,\|\xi'\rangle\langle\xi'\| = \mathbb{1}$                                           |
 | expansion      | $\|\alpha\rangle = \sum_{a'}\|a'\rangle\langle a'\|\alpha\rangle$                         | $\|\alpha\rangle = \int d\xi'\,\langle\xi'\|\alpha\rangle\,\|\xi'\rangle$                       |
 | norm           | $\sum_{a'}\|\langle a'\|\alpha\rangle\|^2 = 1$                                            | $\int d\xi'\,\|\langle\xi'\|\alpha\rangle\|^2 = 1$                                              |
