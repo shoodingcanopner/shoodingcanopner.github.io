@@ -1,5 +1,5 @@
 ---
-title: Flexibility and sensitivity in gene regulation out of equilibrium
+title: Journal reading - Flexibility and sensitivity in gene regulation out of equilibrium
 authors: Sara D. Mahdavi, Gabriel L. Salmon, Patill Daghlian, Hernan G. Garcia, Rob Phillips
 DOI: "[10.1073/pnas.2411395121](https://doi.org/10.1073/pnas.2411395121)"
 date read: 2026-03-08
@@ -22,7 +22,8 @@ class: study_journal
 
 DOI: [10.1073/pnas.2411395121](https://doi.org/10.1073/pnas.2411395121)
 PDF: [[Flexibility and sensitivity in gene regulation out of equilibrium.pdf]]
-
+Supplementary: [[S_Flexibility and sensitivity in gene regulation out of equilibrium.pdf]]
+supplementary가 80페이지가 넘어간다. 엄청나다. 
 ## memo
 
 Hernan G. Garcia와 Rob Phillips 교수님이 이쪽에서 유명하신 분 인 거 같다. UCB 생물리 그룹, 칼텍 수리천문과 소속이시다. 
