@@ -15,6 +15,13 @@ class: study
 
 정규 마르코프 체인(regular Markov chain)의 정상 분포(stationary distribution) $\boldsymbol{\mu}$를 전이 그래프의 **spanning tree 구조**로부터 직접 계산하는 정리. 선형방정식 $\boldsymbol{\mu} = \boldsymbol{\mu}P$를 풀지 않고도 그래프의 위상적 구조만으로 $\mu_i$를 구할 수 있다.
 
+![[Pasted image 20260316134246.png]]
+나무 모양 기호를 쓴 식. 귀엽다. 
+
+> [! Warning]
+> 평형 상태(equlibrium state)가 아니라 정상 상태(steady state)에서 분포를 구하는 공식이다. 따라서 비평형에서도 쓸 수 있다.   
+
+
 ## Key Points
 
 ### 기본 설정
