@@ -38,3 +38,4 @@ Week 16: Final Exam
 [[QM lecture note - Measurements, Observables, and the Uncertainty Relations]]
 [[QM lecture note - Basis Transformation Operator]]
 [[QM lecture note - Position, Momentum, and Translation]]
+[[QM lecture note - Position, Momentum, and Generators]]

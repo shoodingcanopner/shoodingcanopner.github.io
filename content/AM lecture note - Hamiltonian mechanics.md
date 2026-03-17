@@ -28,8 +28,6 @@ class: study_lecture
 
 > [!Danger] 텐서 연산이 들어가기 때문에 헷갈린다. 주의할 것
 
-
-
 지난 시간에 로렌츠 힘 예시를 보았다.
 
 $$
@@ -396,3 +394,5 @@ $$
 - [[4 The Hamiltonian Formulation.pdf]]
 
 # 다음 강의
+
+[[AM lecture note - Poisson bracket and constraints]]

@@ -24,19 +24,20 @@ class: study_lecture
 
 ## 지난 시간 복습: 에너지 보존
 
-지난 시간, 미시적 보존을 배웠다.
+지난 시간, 에너지 보존과 Poynting Vector를 배웠다.
 
 $$
 \int \mathbf{J} \cdot \mathbf{E} + \frac{d}{dt}\frac{1}{2}\{\mathbf{E} \cdot \mathbf{D} + \mathbf{B} \cdot \mathbf{H}\}\,d^3x = \oint (\mathbf{E} \times \mathbf{H}) \cdot d\mathbf{a}
 $$
 
-여기서 mechanical work rate, field energy, Poynting vector가 등장했다.
+좌변에서 첫번째 항은 mechanical work rate, 두번째 항은 field energy이다. 
+우변에 있는 것은 Poynting vector 이다. 
 
 $$
 \mathbf{S} = \mathbf{E} \times \mathbf{H}
 $$
 
-차원은 $\left[\frac{\text{에너지}}{\text{면적}} \cdot \frac{1}{\text{시간}}\right]$, 즉 단위 면적 당 에너지 유출(일률)을 의미한다.
+차원은 $\left[\frac{\text{에너지}}{\text{면적}} \cdot \frac{1}{\text{시간}}\right]$, 즉 단위 면적 당, 단위 시간 당 에너지 유출(일률)을 의미한다.
 
 ---
 
@@ -50,40 +51,67 @@ $$
 \mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
 $$
 
-힘은 운동량 변화율. 전자와 바깥으로 나가는 개념적 다르긴 하지만, 결국 운동량 보존을 쓴다.
+힘은 운동량 변화율. 위 식을 전하 밀도에 관한 것으로 바꾸고 적분하면 아래와 같이 표현할 수 있다. 
 
 $$
 \frac{d\mathbf{p}_\text{mech}}{dt} = \int \rho(\mathbf{E} + \mathbf{v} \times \mathbf{B})\,d^3x
 $$
 
-$\rho/\epsilon_0 = \nabla \cdot \mathbf{E}$ 와 $\nabla \times \mathbf{H} = \mathbf{J} + \frac{\partial \mathbf{D}}{\partial t}$ 를 이것들을 대입한다. 2가지 맥스웰 식이 들어간다.
+$\rho/\epsilon_0 = \nabla \cdot \mathbf{E}$ 와 $\nabla \times \mathbf{H} = \mathbf{J} + \frac{\partial \mathbf{D}}{\partial t}$ 를 대입한다. 
+지금 $\mathbf{v}$는 vector field이다. 따라서 $\rho\mathbf{v} = \mathbf{J}$ 이다. 
 
 $$
 \frac{d\mathbf{p}_\text{mech}}{dt} = \int \left[\mathbf{E}(\nabla \cdot \mathbf{E})\epsilon_0 + \left(\nabla \times \mathbf{H} - \frac{\partial \mathbf{D}}{\partial t}\right) \times \mathbf{B}\right]d^3x
 $$
 
-여기서 나머지 맥스웰 방정식도 활용하자.
+지금부터 아주 빡센 유도를 할 것이다. **(중요) 모든 맥스웰 방정식을 다 활용할 것이다.**
+
+지금까지 $\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}$ 과 $\nabla \times \mathbf{H} = \mathbf{J}$ 를 사용했다. 이제 남은 건 $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$ 와 $\nabla \cdot \mathbf{B} = 0$ 이다.
+
+일단 위 식을 $\mathbf{B}$와 $\mathbf{E}$에 대해 정리하자. $\mathbf{D} = \epsilon_0 \mathbf{E}$, $\mathbf{H} = \frac{1}{\mu_0}\mathbf{B}$ 를 대입하면:
 
 $$
-= \epsilon_0 \int \left[\mathbf{E}(\nabla \cdot \mathbf{E}) + c^2 \mathbf{B}(\nabla \mathbf{B}) + \mathbf{E} \times \frac{\partial \mathbf{B}}{\partial t} - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]d^3x
+\frac{d\mathbf{p}_\text{mech}}{dt} = \epsilon_0 \int \left[(\nabla \cdot \mathbf{E})\mathbf{E} + \left(\frac{1}{\mu_0 \epsilon_0}\nabla \times \mathbf{B} - \frac{\partial \mathbf{E}}{\partial t}\right) \times \mathbf{B}\right]d^3x
 $$
 
-등 매우 복잡하게 되는데,
+괄호 안의 식을 정리하자.
+
+**Step 1.** $(\nabla \cdot \mathbf{E})\mathbf{E}$와 대칭을 맞추기 위해 $\frac{1}{\mu_0 \epsilon_0}(\nabla \cdot \mathbf{B})\mathbf{B} = 0$ 항을 넣는다. ($\nabla \cdot \mathbf{B} = 0$ 이므로 값에는 영향이 없다.)
+
+**Step 2.** $\frac{\partial \mathbf{B}}{\partial t}$가 나타날 수 있게 시간 미분 항을 정리한다.
 
 $$
-\frac{d}{dt}(\mathbf{A} \times \mathbf{B}) = \frac{d\mathbf{A}}{dt} \times \mathbf{B} + \mathbf{A} \times \frac{d\mathbf{B}}{dt}
+\left(-\frac{\partial \mathbf{E}}{\partial t}\right) \times \mathbf{B} = \mathbf{B} \times \left(\frac{\partial \mathbf{E}}{\partial t}\right) = \frac{\partial}{\partial t}(\mathbf{B} \times \mathbf{E}) - \left(\frac{\partial \mathbf{B}}{\partial t}\right) \times \mathbf{E}
 $$
 
-이걸 생각하면? 이게 의미하는 것이 뭔지 ...
-
 $$
-- \epsilon_0 \int \frac{\partial}{\partial t}[\mathbf{E} \times \mathbf{B}]\,d^3x
+= -\mu_0 \frac{\partial}{\partial t}(\mathbf{E} \times \mathbf{H}) + (\nabla \times \mathbf{E}) \times \mathbf{E}
 $$
 
-이게 Poynting vector의 형태와 관계가 있다.
+(두 번째 줄에서 $\mathbf{B} \times \mathbf{E} = -\mathbf{E} \times \mathbf{B} = -\mu_0 \mathbf{E} \times \mathbf{H}$ 와 $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$ 를 사용)
+
+그러면 다시 정리하면:
 
 $$
-\mathbf{p}_\text{field} = \epsilon_0 \int \mathbf{E} \times \mathbf{B}\,d^3x = \frac{1}{c^2}\int \mathbf{E} \times \mathbf{H}\,d^3x = \frac{1}{c^2}\int \mathbf{S}\,d^3x
+\frac{d\mathbf{p}_\text{mech}}{dt} = \epsilon_0 \int \left[(\nabla \cdot \mathbf{E})\mathbf{E} + c^2(\nabla \cdot \mathbf{B})\mathbf{B} + (\nabla \times \mathbf{E}) \times \mathbf{E} + c^2(\nabla \times \mathbf{B}) \times \mathbf{B}\right]d^3x - \frac{1}{c^2}\int \frac{\partial}{\partial t}(\mathbf{E} \times \mathbf{H})\,d^3x
+$$
+
+**Step 3.** 앞으로 우리는
+
+$$
+\frac{1}{c^2}\int \frac{\partial}{\partial t}(\mathbf{E} \times \mathbf{H})\,d^3x = \frac{1}{c^2}\int \frac{\partial}{\partial t}\mathbf{S}\,d^3x
+$$
+
+이것을 "field momentum"의 시간 변화율이라고 해석한다.
+
+$$
+\frac{1}{c^2}\int \frac{d}{dt}\mathbf{S}\,d^3x = \frac{d\mathbf{p}_\text{field}}{dt}
+$$
+
+여기서
+
+$$
+\mathbf{p}_\text{field} = \frac{1}{c^2}\int \mathbf{S}\,d^3x = \frac{1}{c^2}\int \mathbf{E} \times \mathbf{H}\,d^3x = \epsilon_0 \int \mathbf{E} \times \mathbf{B}\,d^3x
 $$
 
 장의 운동량 밀도:
@@ -91,8 +119,6 @@ $$
 $$
 \mathbf{g} = \frac{1}{c^2}\mathbf{S}
 $$
-
-가 장의 운동량 밀도이다. 이미 질량 밀도에 해당하는 에너지 밀도와 사전이므로.
 
 $$
 \mathbf{p}_\text{field} = \int \mathbf{g}\,d^3x
@@ -102,27 +128,19 @@ $$
 
 ## 전체 운동량의 시간 변화
 
-결국,
+따라서,
 
 $$
-\frac{d\mathbf{p}_\text{mech}}{dt} + \frac{d\mathbf{p}_\text{field}}{dt} = \epsilon_0 \int \left[\mathbf{E}(\nabla \cdot \mathbf{E}) + c^2 \mathbf{B}(\nabla \cdot \mathbf{B}) + \mathbf{E} \times \frac{\partial \mathbf{B}}{\partial t} - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]d^3x
+\frac{d\mathbf{p}_\text{mech}}{dt} + \frac{d\mathbf{p}_\text{field}}{dt} = \epsilon_0 \int \left[(\nabla \cdot \mathbf{E})\mathbf{E} + c^2(\nabla \cdot \mathbf{B})\mathbf{B} - \mathbf{E} \times (\nabla \times \mathbf{E}) - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]d^3x
 $$
 
-우변의 적분을 에쁘기도 놀라, 내놓으면 도움 될 것이다.
+(부호 주의: $(\nabla \times \mathbf{E}) \times \mathbf{E} = -\mathbf{E} \times (\nabla \times \mathbf{E})$ )
 
 ---
 
 ## 우변의 적분을 자세히 보자
 
-$$
-\epsilon_0 \int \left[\mathbf{E}(\nabla \cdot \mathbf{E}) + c^2 \mathbf{B}(\nabla \cdot \mathbf{B}) + \mathbf{E} \times \frac{\partial \mathbf{B}}{\partial t} - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]d^3x
-$$
-
-제기 정상 나머지 것들이 대칭 이용을 해야한다. 맨 앞의 두 항은 비슷한 항들.
-
-$\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$ 이므로, $\mathbf{E} \times \frac{\partial \mathbf{B}}{\partial t} = -\mathbf{E} \times (\nabla \times \mathbf{E})$.
-
-나머지, 불필요한 대칭을 유지하기 위해 항을 두 개 이상에 대해 합칠 수 있다는 것이 있는데.
+우변을 $\mathbf{E}$ 부분과 $\mathbf{B}$ 부분으로 나눠서 보자. $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$ 이므로, $\mathbf{E} \times \frac{\partial \mathbf{B}}{\partial t} = -\mathbf{E} \times (\nabla \times \mathbf{E})$.
 
 ---
 

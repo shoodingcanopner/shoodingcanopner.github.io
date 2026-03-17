@@ -292,6 +292,10 @@ $$
 
 # References
 
+# 다음 강의
+
+[[QM lecture note - Position, Momentum, and Generators]]
+
 # 필기 이미지
 
 ![[Pasted image 20260312144017.png]]
