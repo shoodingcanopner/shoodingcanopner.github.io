@@ -308,5 +308,8 @@ $$
 
 강의 ppt 링크를 이곳에 
 
+# 다음 강의
+[[ED lecture note - Symmetry and EM Waves]]
+
 # 필기 원본
 [[ED_4thweek_1.pdf]]

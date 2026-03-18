@@ -15,8 +15,6 @@ class: study_lecture
 
 [[AM lecture note - Hamiltonian mechanics]]
 
-르장드르 변환, Hamilton 방정식 유도, 로렌츠 힘 예시, variational principle, Poisson bracket의 정의와 constraint consistency condition.
-
 # 오늘의 핵심
 
 - Poisson bracket의 네 가지 대수적 성질(antisymmetry, linearity, Leibniz rule, Jacobi identity)
@@ -35,12 +33,13 @@ $$
 \{f, g\} := \frac{\partial f}{\partial q_i}\frac{\partial g}{\partial p_i} - \frac{\partial g}{\partial q_i}\frac{\partial f}{\partial p_i}
 $$
 
-($i$에 대해 summation)
+(Einstein summation convention을 따른다.)
 
 > [!note] 왜 $p$와 $q$가 orthogonal?
 > 나중에 다룰 예정이라고 함.
 
 ### 네 가지 성질
+꼭 위의 표현식을 따를 필요도 없이, 아래의 네 가지 성질을 따르는 것을 푸아송 괄호로 취취급한다고 한다. 
 
 ① **Antisymmetry**
 
@@ -59,7 +58,10 @@ $$
 $$
 \{fg, h\} = f\{g, h\} + \{f, h\}g
 $$
-
+여기에 antisymmetry를 적용하면, 
+$$
+\{h, fg\} = f\{h, g\} + \{h, f\}g
+$$
 ④ **Jacobi identity** (consistance condition)
 
 $$
@@ -68,10 +70,10 @@ $$
 
 > [!note] Group과의 연관
 > Group의 definition을 상기하면 — 연산의 closure, identity, inverse.
-> 4번 규칙은 association rule에 더해 $f = e^{iG\epsilon}$ infinitesimal transform을 넣으면 증명 가능하다고 한다.
+> 4번 규칙은 association rule에 더해 $f = e^{iG\epsilon}$ infinitesimal transform을 넣으면 증명 가능하다고 한다. 지금 당장은 무슨 말인지 모르겠다. 
 > 이게 **심플렉틱 기하학(symplectic geometry)** 과도 연관된다 한다.
 
-### 기본 Poisson bracket 관계
+### 해밀토니안 역학에서 Poisson bracket의 특성
 
 $$
 \{q_i, q_j\} = 0, \quad \{p_i, p_j\} = 0, \quad \{q_i, p_j\} = \delta^i_j
@@ -96,7 +98,9 @@ $$
 따라서 **$f$가 보존량이 되는 조건**: $\{f, H\} = 0$ 이고 $\frac{\partial f}{\partial t} = 0$.
 
 > [!question] 궁금한 내용
-> 그렇다면 이 표현은 $\pm$이 더 정리된 또 다른 표현인가?
+> 그럼 위 식은 뇌터 정리와 동치인가?
+
+> [!note] Lie bracket과의 연결?
 > (Lie bracket과의 연결이 언급됐는데, $f \, e^{-t \frac{\overleftarrow{\partial}}{\partial q_i} \otimes \frac{\overrightarrow{\partial}}{\partial p_i}} g$ 를 소개하는 데 이게 **Moyal product** 라고 불리고 Lie bracket과 연결된다고 함)
 
 ### Jacobi identity를 이용한 보존량의 성질
@@ -110,7 +114,7 @@ $$
 즉, **두 보존량의 Poisson bracket도 보존량**이다.
 
 > [!question] 궁금한 내용
-> 이게 진짜 의미하는 것이 무엇인지 — $I$와 $J$가 보존량이면 $\{I, J\}$도 보존량이라는 것이 어떤 물리적 의미인가?
+> 이것의 물리적인 함의는 무엇인가?
 
 ---
 
@@ -134,7 +138,57 @@ $$
 = -r_2 p_1 + p_2 r_1 = L_3
 $$
 
-(자세한 계산은 나중에 직접 해보기)
+> [!note] 자세한 유도 (추가 필기 2026-03-18)
+> 
+> **일반적인 경우 $\{L_i, L_\ell\}$ 유도**
+> 
+> $L_i = \epsilon_{ijk}\, r_j p_k$, $L_\ell = \epsilon_{\ell mn}\, r_m p_n$ 으로 쓰면:
+> 
+> $$
+> \{L_i, L_\ell\} = \epsilon_{ijk}\,\epsilon_{\ell mn}\{r_j p_k,\, r_m p_n\}
+> $$
+> 
+> Leibniz rule을 적용하면 ($\{r_j, r_m\} = 0$, $\{p_k, p_n\} = 0$ 을 이용해 소거):
+> 
+> $$
+> \{r_j p_k,\, r_m p_n\} = r_j r_m \{p_k, p_n\} + r_j \{p_k, r_m\} p_n + r_m \{r_j, p_n\} p_k + \{r_j, r_m\} p_k p_n
+> $$
+> 
+> $$
+> = -\delta_{km}\, r_j p_n + \delta_{jn}\, r_m p_k
+> $$
+> 
+> 대입하면:
+> 
+> $$
+> \epsilon_{ijk}\,\epsilon_{\ell mn}\{r_j p_k,\, r_m p_n\} = -\epsilon_{ijk}\,\epsilon_{\ell kn}\, r_j p_n + \epsilon_{ijk}\,\epsilon_{\ell mj}\, r_m p_k
+> $$
+> 
+> $\epsilon$-$\delta$ 항등식 $\epsilon_{ijk}\,\epsilon_{i'jk} = \delta_{ii'}\delta_{jj'} - \delta_{ij'}\delta_{ji'}$ 을 적용:
+> 
+> $$
+> = -(\delta_{ni}\delta_{\ell j} - \delta_{nj}\delta_{\ell i})\, r_j p_n + (\delta_{k\ell}\delta_{im} - \delta_{km}\delta_{i\ell})\, r_m p_k
+> $$
+> 
+> $$
+> = -\delta_{ni}\delta_{\ell j}\, r_j p_n + r_i p_i + \delta_{k\ell}\delta_{im}\, r_m p_k - r_m p_m
+> $$
+> 
+> $$
+> = -r_\ell p_i + r_i p_\ell
+> $$
+> 
+> 이것을 $\epsilon$-$\delta$ 항등식으로 다시 쓰면:
+> 
+> $$
+> = (\delta_{ig}\delta_{h\ell} - \delta_{ih}\delta_{\ell g})\, r_g p_h = \epsilon_{i\ell f}\,\epsilon_{fgh}\, r_g p_h = \epsilon_{i\ell f}\, L_f
+> $$
+> 
+> 따라서:
+> 
+> $$
+> \{L_i, L_\ell\} = \epsilon_{i\ell f}\, L_f
+> $$
 
 일반화하면:
 
@@ -143,7 +197,7 @@ $$
 $$
 
 ### Casimir invariant
-
+[[Casimir Invariants]] 참고. 
 모든 연산자와 commute하는 것 — **Casimir invariant**.
 
 $$
@@ -157,7 +211,7 @@ $$
 ## Laplace–Runge–Lenz (LRL) 벡터
 
 행성의 타원 운동에서 — **행성과 항성의 거리에 따른 또 다른 보존량**.  
-(Space translation은 대칭이 아니지만 최진은 대칭)
+(Space translation은 대칭이 아니지만 회전은 대칭)
 
 $$
 \mathbf{A} = \frac{1}{m}\mathbf{p} \times \mathbf{L} - \hat{r}, \quad \left(\hat{r} = \frac{\mathbf{r}}{r}\right)
@@ -174,14 +228,17 @@ $$
 \{L_\alpha, A_b\} \quad \text{와} \quad \{A_\alpha, A_b\} \text{ 를 계산해보자.}
 $$
 
-이제 우리는 6개의 보존량을 가진다.  
-그래서 바지 — 이전을 4차원에서 하는 것이다.  
+이제 우리는 6개의 보존량을 가졌다.
+그래서 마치 회전을 4차원에서 하는 것이다.  
 최전면이 6개인 곳, 이제 $SO(3)$의 대칭에서 $SO(4)$로 승격됐다.  
 이런 방법은 수소 원자를 풀 때도 쓸 수 있다.
 
 ---
 
 ## Gauge theory와 Dirac constraint formalism
+
+이 부분은 혼란스럽다. 배경을 모르는 모델을 풀고 있기 때문이다. 
+레퍼런스를 참고해 더 공부해보자. 
 
 ### 1차원 Scalar QED 모델 (예시)
 
@@ -192,7 +249,7 @@ I[\psi(t),\, A_0(t)] = \frac{1}{2}\int_{t_1}^{t_2} dt\, \left(\dot{\psi} - A_0\r
 $$
 
 > [!question] 궁금한 내용
-> 이거 지금 갑자기 왜 물고 있는 거지? $\psi$와 $A_0$가 뭐인지? 라그랑지안이 이렇게 줄어지지?
+> 이거 지금 갑자기 왜 물고 있는 거지? $\psi$와 $A_0$가 뭐인지? 왜 라그랑지안이 이렇게 주어지는 거지?
 
 #### ① Gauge symmetry (redundancy)
 
@@ -245,6 +302,30 @@ $$
 $$
 \frac{\delta I}{\delta A_0} = P_\psi, \quad \frac{\delta I}{\delta P_\psi} = \dot{\psi} - P_\psi - A_0 = 0, \quad \frac{\delta I}{\delta \psi} = -\dot{P}_\psi = 0
 $$
+
+> [!note] Glia의 보충 (2026-03-18): Constraint와 EOM의 구분
+> 
+> **왜 $\frac{\delta I}{\delta A_0} = P_\psi = 0$을 "constraint"라고 부르는가?**
+> 
+> 핵심 기준은 **시간 미분의 유무**이다.
+> 
+> - **운동방정식(EOM)**: $\dot{q} = \ldots$, $\dot{p} = \ldots$ 형태 — 시간 미분을 포함하며, "현재 상태로부터 미래 진화"를 결정한다.
+> - **Constraint**: $\phi(p, q) = 0$ 형태 — 시간 미분 없이, **허용되는 초기 조건의 범위**를 제한하는 대수적 조건이다.
+> 
+> Hamiltonian action:
+> $$
+> I[P_\psi, \psi, A_0] = \int dt\left(P_\psi \dot{\psi} - \frac{1}{2}P_\psi^2 - A_0 P_\psi\right)
+> $$
+> 에서 $A_0$는 **시간 미분 없이** action에 등장한다. 따라서 $A_0$로 변분하면 $\dot{p}$가 끼어들 여지가 없고, 결과가 $P_\psi = 0$이라는 순수한 대수적 조건으로 나온다. 이것이 constraint이다.
+> 
+> $A_0$는 **Lagrange 승수(Lagrange multiplier)** 역할을 한다. 홀로노믹 구속조건 $f(q) = 0$을 action에 $\lambda f(q)$로 더했을 때 $\lambda$로 변분하면 $f(q) = 0$이 constraint로 나오는 것과 완전히 같은 구조이다.
+> 
+> | 구분 | 형태 | 역할 |
+> |------|------|------|
+> | EOM | $\dot{q} = \ldots$, $\dot{p} = \ldots$ | 시간 진화를 결정 |
+> | Constraint | $\phi(p, q) = 0$ (미분 없음) | 허용된 초기조건의 범위를 제한 |
+> 
+> 따라서 "모든 EOM이 constraint인가?"라는 의문의 답은 **아니다**. Constraint는 EOM 중에서도 시간 미분을 포함하지 않는 특별한 경우이며, 게이지 이론에서는 Lagrange 승수 역할을 하는 변수($A_0$ 등)가 항상 이것을 만들어낸다.
 
 **이것이 바로 Gauge theory이다.**
 
@@ -383,5 +464,5 @@ $$
 # References
 
 [[A short review on Noether's theorems, gauge symmetries-part-4.pdf]]
-위 책의 chapter 3
+
 # 다음 강의

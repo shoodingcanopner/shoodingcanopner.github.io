@@ -7,7 +7,7 @@ tags:
   - lecture_notes
 class: study_lecture
 ---
-> [!attention] 강의 필기
+> [!warning] 강의 필기
 > 이것은 [[Analytical Mechanics]] 강의를 듣고 적은 필기입니다. 
 > 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
@@ -107,6 +107,140 @@ $$
 $$
 m\ddot{\mathbf{x}} + q\left\{\frac{\partial\mathbf{A}}{\partial t} + (\nabla \mathbf{A}) \cdot \dot{\mathbf{x}} - \nabla(\dot{\mathbf{x}}\cdot\mathbf{A}) + \nabla\phi\right\} = 0
 $$
+
+### 숙제 풀이: 원통 좌표에서의 운동방정식과 각속도 (HW1 #6)
+
+> [!note] 직접 풀었음음
+> 아래는 숙제 6번 문제의 풀이이다. 라그랑지안이 로렌츠 힘을 재현함을 보이고, 구체적인 벡터 포텐셜에서 각속도 공식을 유도한다.
+
+**문제:** 전자(질량 $m$, 전하 $-e$)가 자기장 $\mathbf{B} = \nabla \times \mathbf{A}$ 속에서 운동한다. 라그랑지안은:
+
+$$
+L = \frac{1}{2}m\dot{\mathbf{r}} \cdot \dot{\mathbf{r}} - e\dot{\mathbf{r}} \cdot \mathbf{A}(\mathbf{r})
+$$
+
+원통 좌표 $(r, \theta, z)$에서 $\mathbf{A} = (0,\, f(r)/r,\, 0)$이 주어졌을 때, 초기 시각에 $r = r_0$이고 속도가 $(r, z)$ 평면에 있다면 $z$축 둘레의 각속도를 구하라.
+
+#### Step 1: 라그랑지안 전개
+
+원통 좌표에서 $\dot{\mathbf{r}} \cdot \dot{\mathbf{r}} = \dot{r}^2 + r^2\dot{\theta}^2 + \dot{z}^2$이고, $\dot{\mathbf{r}} \cdot \mathbf{A} = r\dot{\theta} \cdot \frac{f(r)}{r} = \dot{\theta}f(r)$이므로:
+
+$$
+L = \frac{1}{2}m(\dot{r}^2 + r^2\dot{\theta}^2 + \dot{z}^2) - e\dot{\theta}f(r)
+$$
+
+#### Step 2: 벡터 그래디언트 텐서와 운동방정식
+
+원통 좌표 $(r, \theta, z)$에서 벡터장 $\mathbf{A} = A_r \hat{r} + A_\theta \hat{\theta} + A_z \hat{z}$의 벡터 그래디언트 $\nabla \mathbf{A} = \nabla \otimes \mathbf{A}$는 2차 텐서이다.
+
+**유도:** $\nabla = \hat{r}\frac{\partial}{\partial r} + \hat{\theta}\frac{1}{r}\frac{\partial}{\partial \theta} + \hat{z}\frac{\partial}{\partial z}$를 $\mathbf{A}$에 텐서곱으로 작용시킨다. 기저 벡터 $\hat{r}, \hat{\theta}$가 $\theta$에 의존하므로:
+
+$$
+\frac{\partial \hat{r}}{\partial \theta} = \hat{\theta}, \quad \frac{\partial \hat{\theta}}{\partial \theta} = -\hat{r}
+$$
+
+$r, z$에 대한 기저 벡터의 미분은 모두 0이다.
+
+**(1) $\hat{r}$ 방향 미분** ($\frac{\partial}{\partial r}$): 기저 벡터가 $r$에 의존하지 않으므로 단순 편미분:
+
+$$
+\frac{\partial}{\partial r}(A_r \hat{r} + A_\theta \hat{\theta} + A_z \hat{z}) = \frac{\partial A_r}{\partial r}\hat{r} + \frac{\partial A_\theta}{\partial r}\hat{\theta} + \frac{\partial A_z}{\partial r}\hat{z}
+$$
+
+이것이 텐서의 첫 번째 열(column)을 준다.
+
+**(2) $\hat{\theta}$ 방향 미분** ($\frac{1}{r}\frac{\partial}{\partial \theta}$): 곱의 법칙 + 기저 벡터 미분이 핵심이다.
+
+$$
+\frac{\partial}{\partial \theta}(A_r \hat{r}) = \frac{\partial A_r}{\partial \theta}\hat{r} + A_r \hat{\theta}
+$$
+
+$$
+\frac{\partial}{\partial \theta}(A_\theta \hat{\theta}) = \frac{\partial A_\theta}{\partial \theta}\hat{\theta} - A_\theta \hat{r}
+$$
+
+$$
+\frac{\partial}{\partial \theta}(A_z \hat{z}) = \frac{\partial A_z}{\partial \theta}\hat{z}
+$$
+
+$\hat{r}, \hat{\theta}$ 성분끼리 모으고 $1/r$을 곱하면, 텐서의 두 번째 열이 된다:
+
+$$
+\hat{r} \text{ 성분}: \frac{1}{r}\frac{\partial A_r}{\partial \theta} - \frac{A_\theta}{r}, \quad \hat{\theta} \text{ 성분}: \frac{1}{r}\frac{\partial A_\theta}{\partial \theta} + \frac{A_r}{r}, \quad \hat{z} \text{ 성분}: \frac{1}{r}\frac{\partial A_z}{\partial \theta}
+$$
+
+여기서 $-A_\theta/r$와 $+A_r/r$이 곡률 보정항이다.
+
+**(3) $\hat{z}$ 방향 미분** ($\frac{\partial}{\partial z}$): 기저 벡터가 $z$에 의존하지 않으므로 단순 편미분:
+
+$$
+\frac{\partial}{\partial z}(A_r \hat{r} + A_\theta \hat{\theta} + A_z \hat{z}) = \frac{\partial A_r}{\partial z}\hat{r} + \frac{\partial A_\theta}{\partial z}\hat{\theta} + \frac{\partial A_z}{\partial z}\hat{z}
+$$
+
+세 열을 모으면 일반 공식이 된다:
+
+$$
+(\nabla \mathbf{A})_{ij} = \begin{pmatrix} \dfrac{\partial A_r}{\partial r} & \dfrac{1}{r}\dfrac{\partial A_r}{\partial \theta} - \dfrac{A_\theta}{r} & \dfrac{\partial A_r}{\partial z} \\[10pt] \dfrac{\partial A_\theta}{\partial r} & \dfrac{1}{r}\dfrac{\partial A_\theta}{\partial \theta} + \dfrac{A_r}{r} & \dfrac{\partial A_\theta}{\partial z} \\[10pt] \dfrac{\partial A_z}{\partial r} & \dfrac{1}{r}\dfrac{\partial A_z}{\partial \theta} & \dfrac{\partial A_z}{\partial z} \end{pmatrix}
+$$
+
+여기에 $A_r = 0$, $A_\theta = f(r)/r$, $A_z = 0$을 대입한다. $A_\theta$가 $r$에만 의존하므로 $\theta, z$ 미분은 모두 0이다. 0이 아닌 성분만 계산하면:
+
+- $(1,2)$ 성분: $\dfrac{1}{r}\dfrac{\partial A_r}{\partial \theta} - \dfrac{A_\theta}{r} = 0 - \dfrac{f/r}{r} = -\dfrac{f}{r^2}$
+
+- $(2,1)$ 성분: $\dfrac{\partial A_\theta}{\partial r} = \dfrac{\partial}{\partial r}\!\left(\dfrac{f}{r}\right) = \dfrac{1}{r}\dfrac{\partial f}{\partial r} - \dfrac{f}{r^2}$
+
+- $(2,2)$ 성분: $\dfrac{1}{r}\dfrac{\partial A_\theta}{\partial \theta} + \dfrac{A_r}{r} = 0 + 0 = 0$
+
+따라서:
+
+$$
+(\nabla \mathbf{A})_{ij} = \begin{pmatrix} 0 & -\dfrac{f}{r^2} & 0 \\[8pt] \dfrac{1}{r}\dfrac{\partial f}{\partial r} - \dfrac{f}{r^2} & 0 & 0 \\[8pt] 0 & 0 & 0 \end{pmatrix}
+$$
+
+오일러-라그랑주 방정식으로부터 운동방정식 세 개를 얻는다:
+
+$$
+m(\ddot{r} - \dot{\theta}^2 r) + e\dot{\theta}\frac{f}{r} + e\dot{\theta}\frac{\partial f}{\partial r} = 0
+$$
+
+$$
+m(2\dot{r}\dot{\theta} + r\ddot{\theta}) - e\dot{r}\left(\frac{1}{r}\frac{\partial f}{\partial r} - \frac{f}{r^2}\right) = 0
+$$
+
+$$
+m\ddot{z} = 0
+$$
+
+#### Step 3: 보존량을 이용한 각속도 유도
+
+운동방정식을 직접 풀기보다, **$\theta$가 순환 좌표**임을 이용한다. $L$에 $\theta$ 자체가 나타나지 않으므로 정준 각운동량이 보존된다:
+
+$$
+p_\theta = \frac{\partial L}{\partial \dot{\theta}} = mr^2\dot{\theta} - ef(r) = \text{const}
+$$
+
+**초기 조건 적용:** 초기에 $r = r_0$이고 속도가 $(r, z)$ 평면에 있으므로 $\dot{\theta}(t=0) = 0$이다. 따라서:
+
+$$
+p_\theta = m r_0^2 \cdot 0 - ef(r_0) = -ef(r_0)
+$$
+
+임의 시각에서 보존 법칙을 적용하면:
+
+$$
+mr^2\dot{\theta} - ef(r) = -ef(r_0)
+$$
+
+$\dot{\theta}$에 대해 정리하면:
+
+$$
+\boxed{\dot{\theta} = \frac{e}{mr^2}\left[f(r) - f(r_0)\right]}
+$$
+
+> [!tip] 풀이 전략의 교훈
+> 이 문제에서 운동방정식을 직접 세우는 것은 "라그랑주 방정식이 로렌츠 힘을 재현함을 보여라"는 전반부에 필요하다. 하지만 각속도를 구하는 후반부에서는 **대칭성 → 보존량 → 초기 조건 대입**이라는 전략이 훨씬 효율적이다.
+>
+> 일반적 원칙: **순환 좌표가 보이면, 운동방정식을 풀지 말고 보존량부터 쓰라.**
 
 ---
 

@@ -19,10 +19,21 @@ class: study_lecture
 
 Momentum operator를 position basis에서 나타내면 디락델타와 공간 미분이 나온다. 
 $$
-\langle x' | p | x'' \rangle = -i\hbar \frac{\partial}{\partial x'} \delta(x' - x'')
+\boxed{\langle x' | p | x'' \rangle = -i\hbar \frac{\partial}{\partial x'} \delta(x' - x'')}
 $$
 이것이 모든 유도의 시작점.
 
+
+
+$$
+\langle x^m | \mathcal{U} | x^k \rangle = \langle x^m | p^k \rangle
+$$
+
+이게 position space와 mementum space사이 transformation function 역할을 한다.
+Position basis에서 연산을 수행할 때, transformation function으로 $\langle x^m | p^k \rangle$의 값을 사용하면 되는 것이다. 
+$$
+\boxed{\langle x' | p' \rangle = \frac{1}{\sqrt{2\pi\hbar}} \exp\!\left( \frac{ip'x'}{\hbar} \right)}
+$$
 
 # 필기 내용
 

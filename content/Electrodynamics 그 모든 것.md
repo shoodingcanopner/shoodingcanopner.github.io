@@ -123,6 +123,7 @@ $$
 [[ED lecture note - Faraday Maxwell Potentials]]
 [[ED lecture note - Gauge Transform and Energy Conservation]]
 [[ED lecture note - Momentum Conservation and Stress Tensor]]
+[[ED lecture note - Symmetry and EM Waves]]
 
 ---
 

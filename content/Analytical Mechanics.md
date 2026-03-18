@@ -35,7 +35,7 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Holonomic constraints]]
 [[AM lecture note - Noether theorem]]
 [[AM lecture note - Noether theorem in field theory]]
-[[AM lecture note - Hamiltonian mechanics]]
+[[AM lecture note - Hamiltonian mechanics]] → Lerentz force 예시가 이곳에. 
 [[AM lecture note - Poisson bracket and constraints]]
 
 
