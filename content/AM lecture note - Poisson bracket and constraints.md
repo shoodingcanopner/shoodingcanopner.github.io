@@ -466,3 +466,5 @@ $$
 [[A short review on Noether's theorems, gauge symmetries-part-4.pdf]]
 
 # 다음 강의
+
+[[AM lecture note - Constrained systems examples]]

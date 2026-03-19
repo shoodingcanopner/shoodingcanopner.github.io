@@ -170,6 +170,40 @@ $$
 \delta q_i = \varepsilon \{q_i, G\} = \varepsilon \frac{\partial G}{\partial p_i}, \qquad \delta p_i = \varepsilon \{p_i, G\} = -\varepsilon \frac{\partial G}{\partial q_i}
 $$
 
+> [!note] 이게 왜 성립하죠? 해석역학에서 유도법을 배운 적 없는 거 같은데...
+> Glia 왈..
+> 
+> Hamilton 방정식을 봐:
+> 
+> $$
+> \dot{q}_i = \frac{\partial H}{\partial p_i}, \qquad \dot{p}_i = -\frac{\partial H}{\partial q_i}
+> $$
+> 
+> 시간 $\varepsilon$만큼의 변화는:
+> 
+> $$
+> \delta q_i = \dot{q}_i\,\varepsilon = \varepsilon\frac{\partial H}{\partial p_i}, \qquad \delta p_i = \dot{p}_i\,\varepsilon = -\varepsilon\frac{\partial H}{\partial q_i}
+> $$
+> 
+> 즉 시간 발전은 $H$를 generator로 하는 변환이야.
+> 
+> "시간"이 아닌 임의의 파라미터 $\varepsilon$으로 위상공간을 흘려보내는 변환을 정의하고 싶어. 그 변환을 생성하는 함수를 $G$라고 하면, Hamilton 방정식의 구조를 그대로 빌려와서:
+> 
+> $$
+> \frac{dq_i}{d\varepsilon} = \frac{\partial G}{\partial p_i}, \qquad \frac{dp_i}{d\varepsilon} = -\frac{\partial G}{\partial q_i}
+> $$
+> 
+> 라고 **정의**한다. 그러면 infinitesimal 변환은:
+> 
+> $$
+> \delta q_i = \varepsilon\frac{\partial G}{\partial p_i}, \qquad \delta p_i = -\varepsilon\frac{\partial G}{\partial q_i}
+> $$
+> 자세한 건 심플래틱 기하학을 통해 이야기해야 한다면서, 일단은 정의라고 치고 넘어가라고 한다. 
+
+
+
+
+
 **예시: Infinitesimal space translation**
 
 $Q = q + \varepsilon$, $P = p$이면:

@@ -66,7 +66,7 @@ $$\tilde{f}(k) = e^{-k^2/4\alpha} \int_{-\infty}^{\infty} e^{-\alpha\left(x + \f
 
 $u = x + \frac{ik}{2\alpha}$로 치환하면 $du = dx$이고, 적분 경로는 복소평면에서 실수축에서 허수 방향으로 $\frac{k}{2\alpha}$만큼 평행이동한 직선이 된다.
 
-코시 정리(Cauchy's Theorem)에 의해, $e^{-\alpha u^2}$는 전 복소평면에서 해석적(analytic)이므로 이 경로를 실수축으로 변형할 수 있다:
+코시 정리(Cauchy's Theorem)에 의해, $e^{-\alpha u^2}$는 전 복소평면에서 해석적(analytic)이므로 이 경로를 실수축으로 변형할 수 있다:+-
 
 $$\int_{-\infty}^{\infty} e^{-\alpha u^2} du = \sqrt{\frac{\pi}{\alpha}} \tag{8}$$
 

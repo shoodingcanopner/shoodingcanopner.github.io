@@ -69,6 +69,16 @@ $$
 ![[고개룰 돌려봐.png]]
 
 
+## 대각화와 연결
+
+어떤 행렬을 자기 자신의 eigen vector로 이루어진 basis로 나타낸다면? 
+Eigenvector들의 orthogonality로 인해 변환된 행렬은 대각 성분만 가지게 된다. 
+이것이 바로 대각화다. 
+
+## Eigen value의 유지
+
+
+
 ## Questions & Insights
 
 - $Y$가 유니타리가 아닌 경우(예: non-Hermitian 계)에도 similarity transformation의 의미가 유지될까? → 기댓값 보존이 깨지므로 물리적 해석이 달라진다.
@@ -80,9 +90,6 @@ $$
 
 ## References
 
-- University of Tennessee, R. Seto, *Quantum Mechanics Lecture 12: Change of Basis* — http://phenix.bnl.gov/WWW/publish/seto/quantum/qm12.pdf
-- University of Tennessee, Knoxville, *Change of Representation* — http://electron6.phys.utk.edu/qm1/modules/m4/change_rep.htm
-- Wikipedia, *Unitary transformation (quantum mechanics)* — https://en.wikipedia.org/wiki/Unitary_transformation_(quantum_mechanics)
 
 ## Notes from Claude
 
