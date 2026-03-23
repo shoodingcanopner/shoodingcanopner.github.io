@@ -490,6 +490,7 @@ $\frac{\partial L}{\partial q_j} = 0$인 좌표를 **cyclic coordinate** 또는 
 
 # 다음 강의
 
+[[AM lecture note - Noether theorem in field theory]]
 
 # 필기 이미지
 

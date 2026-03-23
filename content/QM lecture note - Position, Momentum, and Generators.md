@@ -458,6 +458,7 @@ $$
 
 # 다음 강의
 
+[[QM lecture note - Gaussian Wave Packet]]
 
 # 원본 필기 이미지
 

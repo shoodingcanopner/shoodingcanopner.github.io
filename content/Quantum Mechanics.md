@@ -39,3 +39,5 @@ Week 16: Final Exam
 [[QM lecture note - Basis Transformation Operator]]
 [[QM lecture note - Position, Momentum, and Translation]]
 [[QM lecture note - Position, Momentum, and Generators]]
+[[QM lecture note - Gaussian Wave Packet]]
+[[QM lecture note - Time Evolution Operator]]
