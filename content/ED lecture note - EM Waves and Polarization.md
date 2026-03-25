@@ -22,6 +22,10 @@ class: study_lecture
 - $\hat{n}$이 복소수이면 amplitude가 위치에 따라 지수적으로 변함 (evanescent wave)
 - Time-averaged Poynting vector: $\langle \mathbf{S} \rangle_t = \frac{1}{2}\sqrt{\frac{\varepsilon}{\mu}}|\mathbf{E}_0|^2 \hat{n}$
 - 편광(Polarization)은 $\mathbf{E}_0$의 두 횡방향 성분의 **위상 차이**로 결정됨
+$$
+\boxed{\sqrt{\mu\varepsilon}\,\hat{n}\times\mathbf{E}_0 = \mathbf{B}_0}
+$$
+자기장은 전자기파 전파속도만큼 전기장보다 약하다. 
 
 # 필기 내용
 
@@ -285,6 +289,7 @@ $$
 
 # 다음 강의
 
+[[ED lecture note - Stokes Parameters and Reflection]]
 
 # 원본 필기 이미지
 

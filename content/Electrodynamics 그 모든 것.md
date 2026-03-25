@@ -125,6 +125,7 @@ $$
 [[ED lecture note - Momentum Conservation and Stress Tensor]]
 [[ED lecture note - Symmetry and EM Waves]]
 [[ED lecture note - EM Waves and Polarization]]
+[[ED lecture note - Stokes Parameters and Reflection]]
 
 ---
 

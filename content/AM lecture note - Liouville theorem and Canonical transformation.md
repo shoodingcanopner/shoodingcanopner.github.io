@@ -398,15 +398,10 @@ $$
 # 필기 원본
 [[AM_5thweek_1.pdf]]
 
+![[AM_5thweek_1-000.jpg]]
 
----
+![[AM_5thweek_1-001.jpg]]
 
-## 필기 스캔본 이미지
+![[AM_5thweek_1-002.jpg]]
 
-![AM_5thweek_1-000](attachments/AM_5thweek_1-000.jpg)
-
-![AM_5thweek_1-001](attachments/AM_5thweek_1-001.jpg)
-
-![AM_5thweek_1-002](attachments/AM_5thweek_1-002.jpg)
-
-![AM_5thweek_1-003](attachments/AM_5thweek_1-003.jpg)
+![[AM_5thweek_1-003.jpg]]

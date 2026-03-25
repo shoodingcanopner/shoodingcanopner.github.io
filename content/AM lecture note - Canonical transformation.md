@@ -17,7 +17,28 @@ class: study_lecture
 
 # 오늘의 핵심
 
-- Canonical transformation의 조건: symplectic matrix $\mathbb{J}$가 보존됨 ($\mathbb{J}' = \mathbb{J}$, 즉 $M \mathbb{J} M^T = \mathbb{J}$)
+해밀턴 운동방정식을 심플래틱 행렬로 나타낼 수 있다. 
+$$
+\dot{\chi}_\alpha = \mathbb{J}_{\alpha\beta} \frac{\partial \mathcal{H}}{\partial \chi_\beta}
+$$
+
+여기서 $\chi_i$는 $p$와 $q$모두가 될 수 있으며, index는 1부터 2N 까지이다. 
+index가 N보다 작으면 $q$를, 보다 크면 $p$를 나타낸다. 
+$\chi_i = q_i$ ($i \leq N$), $\chi_i = p_{i-N}$ ($i > N$).
+
+- Canonical transformation의 조건: symplectic matrix $\mathbb{J}$가 보존됨 
+$$
+\boxed{M\, \mathbb{J}\, M^T = \mathbb{J}'}
+$$사실 $\mathbb{J}$는 $q$와 $p$들의 Poisson 괄호 결과값을 미리 저장해둔 행렬이었다:
+
+$$
+\mathbb{J}_{\alpha\beta} = \{\chi_\alpha, \chi_\beta\} = \begin{cases} \{q_\alpha, q_\beta\} = 0 & \alpha \leq N,\, \beta \leq N \\ \{p_{\alpha-N}, q_\beta\} = -\delta_{\alpha-N,\,\beta} & \alpha > N,\, \beta \leq N \\ \{q_\alpha, p_{\beta-N}\} = \delta_{\alpha,\,\beta-N} & \alpha \leq N,\, \beta > N \\ \{p_{\alpha-N}, p_{\beta-N}\} = 0 & \alpha > N,\, \beta > N \end{cases}
+$$
+심플레틱 행렬로 푸아송 괄호를 표현할 수 있다. 
+$$
+\{f, g\} = \frac{\partial f}{\partial \chi_i} \mathbb{J}_{ij} \frac{\partial g}{\partial \chi_j}
+$$
+
 - Poisson bracket이 canonical transformation 하에서 불변
 - Infinitesimal canonical transformation의 generating function $G$
 
@@ -165,7 +186,10 @@ $$
 $$
 Chain rule을 적용하는 과정을 풀어 쓰자면,
 $$
-\{\chi_\alpha, \mathcal{H}\} = \frac{\partial \chi_\alpha}{\partial q_i} \frac{\partial \mathcal{H}}{\partial p_i} - \frac{\partial \chi_\alpha}{\partial p_i} \frac{\partial \mathcal{H}}{\partial q_i} = \left(\frac{\partial \chi_\alpha}{\partial q_i}\frac{\partial \chi_\beta}{\partial p_i} - \frac{\partial \chi_\alpha}{\partial p_i}\frac{\partial \chi_\beta}{\partial q_i}\right) \frac{\partial \mathcal{H}}{\partial \chi_\beta} = \{\chi_\alpha, \chi_\beta\} \frac{\partial \mathcal{H}}{\partial \chi_\beta}
+\{\chi_\alpha, \mathcal{H}\} = \frac{\partial \chi_\alpha}{\partial q_i} \frac{\partial \mathcal{H}}{\partial p_i} - \frac{\partial \chi_\alpha}{\partial p_i} \frac{\partial \mathcal{H}}{\partial q_i}
+$$
+$$
+= \left(\frac{\partial \chi_\alpha}{\partial q_i}\frac{\partial \chi_\beta}{\partial p_i} - \frac{\partial \chi_\alpha}{\partial p_i}\frac{\partial \chi_\beta}{\partial q_i}\right) \frac{\partial \mathcal{H}}{\partial \chi_\beta} = \{\chi_\alpha, \chi_\beta\} \frac{\partial \mathcal{H}}{\partial \chi_\beta}
 $$
 
 $\mathbb{J}$도 블록으로 조각낼 수 있다. 오직 $q_i$와 $p_j$의 Poisson 괄호 관계만 본다면, 
@@ -178,11 +202,18 @@ $$
 이제 $\mathbb{J}' = M \mathbb{J} M^T$를 계산해 보자:
 
 $$
-\hat{\mathbb{J}}'_{k\ell} = \hat{M}_{ki}\, \hat{\mathbb{J}}_{ij}\, (\hat{M}^T)_{j\ell} = \begin{pmatrix} \frac{\partial Q_k}{\partial q_i} & \frac{\partial Q_k}{\partial p_i} \\ \frac{\partial P_k}{\partial q_i} & \frac{\partial P_k}{\partial p_i} \end{pmatrix} \begin{pmatrix} 0 & \delta_{ij} \\ -\delta_{ij} & 0 \end{pmatrix} \begin{pmatrix} \frac{\partial Q_\ell}{\partial q_j} & \frac{\partial P_\ell}{\partial q_j} \\ \frac{\partial Q_\ell}{\partial p_j} & \frac{\partial P_\ell}{\partial p_j} \end{pmatrix}
+\hat{\mathbb{J}}'_{k\ell} = \hat{M}_{ki}\, \hat{\mathbb{J}}_{ij}\, (\hat{M}^T)_{j\ell} 
+$$
+$$
+= \begin{pmatrix} \frac{\partial Q_k}{\partial q_i} & \frac{\partial Q_k}{\partial p_i} \\ \frac{\partial P_k}{\partial q_i} & \frac{\partial P_k}{\partial p_i} \end{pmatrix} \begin{pmatrix} 0 & \delta_{ij} \\ -\delta_{ij} & 0 \end{pmatrix} \begin{pmatrix} \frac{\partial Q_\ell}{\partial q_j} & \frac{\partial P_\ell}{\partial q_j} \\ \frac{\partial Q_\ell}{\partial p_j} & \frac{\partial P_\ell}{\partial p_j} \end{pmatrix}
 $$
 
 $$
-= \begin{pmatrix} \frac{\partial Q_k}{\partial q_i} & \frac{\partial Q_k}{\partial p_i} \\ \frac{\partial P_k}{\partial q_i} & \frac{\partial P_k}{\partial p_i} \end{pmatrix} \begin{pmatrix} \frac{\partial Q_\ell}{\partial p_i} & \frac{\partial P_\ell}{\partial p_i} \\ -\frac{\partial Q_\ell}{\partial q_i} & -\frac{\partial P_\ell}{\partial q_i} \end{pmatrix} = \begin{pmatrix} \{Q_k, Q_\ell\} & \{Q_k, P_\ell\} \\ \{P_k, Q_\ell\} & \{P_k, P_\ell\} \end{pmatrix}
+= \begin{pmatrix} \frac{\partial Q_k}{\partial q_i} & \frac{\partial Q_k}{\partial p_i} \\ \frac{\partial P_k}{\partial q_i} & \frac{\partial P_k}{\partial p_i} \end{pmatrix} \begin{pmatrix} \frac{\partial Q_\ell}{\partial p_i} & \frac{\partial P_\ell}{\partial p_i} \\ -\frac{\partial Q_\ell}{\partial q_i} & -\frac{\partial P_\ell}{\partial q_i} \end{pmatrix} 
+$$
+
+$$
+= \begin{pmatrix} \{Q_k, Q_\ell\} & \{Q_k, P_\ell\} \\ \{P_k, Q_\ell\} & \{P_k, P_\ell\} \end{pmatrix}
 $$
 
 $\hat{\mathbb{J}}' = \hat{\mathbb{J}}$은, 즉 심플레틱 행렬이 유지되는 것은 **Poisson 괄호의 성질이 유지되는 것과 동치**이다.
@@ -276,8 +307,8 @@ David Tong, *Classical Dynamics* (Cambridge lecture notes)
 
 ## 필기 스캔본 이미지
 
-![AM_5thweek_2-000](attachments/AM_5thweek_2-000.jpg)
+![[AM_5thweek_2-000.jpg]]
 
-![AM_5thweek_2-001](attachments/AM_5thweek_2-001.jpg)
+![[AM_5thweek_2-001.jpg]]
 
-![AM_5thweek_2-002](attachments/AM_5thweek_2-002.jpg)
+![[AM_5thweek_2-002.jpg]]

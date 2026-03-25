@@ -112,7 +112,6 @@ $\theta_1 > \theta_c$일 때 전반사가 일어난다.
 
 - [[Wave Equation from Maxwell Equations]]
 - [[맥스웰 방정식 외우기]]
-- [[Fresnel Integration and Diffraction]]
 
 ## References
 
