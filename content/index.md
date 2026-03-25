@@ -13,7 +13,7 @@ title: Frontal Cortex
 
 # 이번 학기 듣는 수업들
 
-[[Analytical Mechanics]]
+[[MOCs/# 필기 원본[[AM_5thweek_2.pdf]]Analytical Mechanics]]
 [[Quantum Mechanics]]
 [[Electrodynamics 그 모든 것]]
 

@@ -7,7 +7,7 @@ tags:
   - lecture_notes
 class: study_lecture
 ---
--`> [!attention] 강의 필기
+> [!attention] 강의 필기
 > 이것은 [[Analytical Mechanics]] 강의를 듣고 적은 필기입니다. 
 > 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
@@ -335,7 +335,7 @@ Tong의 강의록
 [[2 The Lagrangian Formalism.pdf]]
 
 # 다음 강의
-
+[[AM lecture note - Coordinate transformation invariance of Lagrangian equation]]
 
 # 손 필기 이미지
 

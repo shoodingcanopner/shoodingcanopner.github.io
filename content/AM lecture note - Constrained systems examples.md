@@ -408,7 +408,21 @@ David Tong, Classical Dynamics lecture notes
 
 # 다음 강의
 
+[[AM lecture note - Relativistic particle and Dirac bracket]]
 
 # 필기 원본
 [[AM_4thweek_2.pdf]]
 
+
+
+---
+
+## 필기 스캔본 이미지
+
+![AM_4thweek_2-000](attachments/AM_4thweek_2-000.jpg)
+
+![AM_4thweek_2-001](attachments/AM_4thweek_2-001.jpg)
+
+![AM_4thweek_2-002](attachments/AM_4thweek_2-002.jpg)
+
+![AM_4thweek_2-003](attachments/AM_4thweek_2-003.jpg)

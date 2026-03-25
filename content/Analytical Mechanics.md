@@ -38,6 +38,9 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Hamiltonian mechanics]] → Lerentz force 예시가 이곳에. 
 [[AM lecture note - Poisson bracket and constraints]]
 [[AM lecture note - Constrained systems examples]]
+[[AM lecture note - Relativistic particle and Dirac bracket]]
+[[AM lecture note - Liouville theorem and Canonical transformation]]
+[[AM lecture note - Canonical transformation]]
 
 
 

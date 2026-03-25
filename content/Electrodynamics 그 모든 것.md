@@ -124,6 +124,7 @@ $$
 [[ED lecture note - Gauge Transform and Energy Conservation]]
 [[ED lecture note - Momentum Conservation and Stress Tensor]]
 [[ED lecture note - Symmetry and EM Waves]]
+[[ED lecture note - EM Waves and Polarization]]
 
 ---
 

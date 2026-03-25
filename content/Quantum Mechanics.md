@@ -41,3 +41,5 @@ Week 16: Final Exam
 [[QM lecture note - Position, Momentum, and Generators]]
 [[QM lecture note - Gaussian Wave Packet]]
 [[QM lecture note - Time Evolution Operator]]
+[[QM lecture note - Heisenberg Picture and Equations of Motion]]
+[[QM lecture note - Simple Harmonic Oscillator]]

@@ -314,6 +314,8 @@ $$
 
 # 다음 강의
 
+[[QM lecture note - Heisenberg Picture and Equations of Motion]]
+
 # 원본 필기 이미지
 
 [[QM_4thweek_2.pdf]]

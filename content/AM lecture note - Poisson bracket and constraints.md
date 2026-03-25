@@ -249,7 +249,7 @@ I[\psi(t),\, A_0(t)] = \frac{1}{2}\int_{t_1}^{t_2} dt\, \left(\dot{\psi} - A_0\r
 $$
 
 > [!question] 궁금한 내용
-> 이거 지금 갑자기 왜 물고 있는 거지? $\psi$와 $A_0$가 뭐인지? 왜 라그랑지안이 이렇게 주어지는 거지?
+> 이거 지금 갑자기 왜 풀고 있는 거지? $\psi$와 $A_0$가 뭐인지? 왜 라그랑지안이 이렇게 주어지는 거지?
 
 #### ① Gauge symmetry (redundancy)
 
@@ -468,3 +468,47 @@ $$
 # 다음 강의
 
 [[AM lecture note - Constrained systems examples]]
+
+# 필기 원본
+
+![AM_4thweek_1-000](attachments/AM_4thweek_1-000.jpg)
+![AM_4thweek_1-001](attachments/AM_4thweek_1-001.jpg)
+![AM_4thweek_1-002](attachments/AM_4thweek_1-002.jpg)
+![AM_4thweek_1-003](attachments/AM_4thweek_1-003.jpg)
+![AM_4thweek_1-004](attachments/AM_4thweek_1-004.jpg)
+![AM_4thweek_1-005](attachments/AM_4thweek_1-005.jpg)
+
+---
+
+
+---
+
+## 필기 스캔본 이미지
+
+![AM_4thweek_1-000](attachments/AM_4thweek_1-000.jpg)
+
+![AM_4thweek_1-001](attachments/AM_4thweek_1-001.jpg)
+
+![AM_4thweek_1-002](attachments/AM_4thweek_1-002.jpg)
+
+![AM_4thweek_1-003](attachments/AM_4thweek_1-003.jpg)
+
+![AM_4thweek_1-004](attachments/AM_4thweek_1-004.jpg)
+
+![AM_4thweek_1-005](attachments/AM_4thweek_1-005.jpg)
+
+---
+
+## 필기 스캔본 이미지
+
+![AM_4thweek_1-000](attachments/AM_4thweek_1-000.jpg)
+
+![AM_4thweek_1-001](attachments/AM_4thweek_1-001.jpg)
+
+![AM_4thweek_1-002](attachments/AM_4thweek_1-002.jpg)
+
+![AM_4thweek_1-003](attachments/AM_4thweek_1-003.jpg)
+
+![AM_4thweek_1-004](attachments/AM_4thweek_1-004.jpg)
+
+![AM_4thweek_1-005](attachments/AM_4thweek_1-005.jpg)

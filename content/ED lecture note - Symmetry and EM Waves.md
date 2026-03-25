@@ -371,4 +371,4 @@ $$
 
 # 다음 강의
 
-Chapter 7 계속 — Transverse nature, Polarization, Fresnel formula
+[[ED lecture note - EM Waves and Polarization]]

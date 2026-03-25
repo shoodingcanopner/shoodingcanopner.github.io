@@ -1,6 +1,6 @@
 ---
-title: "ED lecture note - Gauge Transform and Energy Conservation"
-date: "2026-03-11"
+title: ED lecture note - Gauge Transform, Energy Conservation, Poynting Vector
+date: 2026-03-11
 subject: physics
 tags:
   - study
