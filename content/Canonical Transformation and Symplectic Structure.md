@@ -387,6 +387,7 @@ $$
 # 연관 학습 노트
 
 - [[QM lecture note - Position, Momentum, and Generators]]
+- [[AM lecture note - Canonical transformation]]
 # 같이 읽어보면 좋을 자료
 
 [[MIT8_09F14_Chapter_4.pdf]]

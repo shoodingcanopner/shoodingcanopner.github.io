@@ -102,10 +102,10 @@ $$
 ### Jacobian을 이용한 새로운 좌표계에서의 Poisson bracket
 
 $$
-\{f, g\} = \frac{\partial f}{\partial \chi_\alpha} M_{\beta\alpha}^{-1}\, \mathbb{J}_{\beta\gamma}\, M_{\delta\gamma}^{-1} \frac{\partial g}{\partial y_\delta}
+\{f, g\} = \frac{\partial f}{\partial \chi_i} \mathbb{J}_{ij} \frac{\partial g}{\partial \chi_j}
 $$
 
-$\dfrac{\partial f}{\partial \chi_\alpha} = \dfrac{\partial f}{\partial y_\alpha} M_{\beta\alpha}$을 이용하면:
+$\dfrac{\partial f}{\partial \chi_i} = \dfrac{\partial f}{\partial y_k} M_{ki}$을 이용하면:
 
 $$
 \{f, g\} = \frac{\partial f}{\partial y_k} M_{ki}\, \mathbb{J}_{ij}\, M_{\lambda j} \frac{\partial g}{\partial y_\lambda}
@@ -258,7 +258,7 @@ $\alpha$가 $t$라면, $G$는 곧 $\mathcal{H}$이다. **$\mathcal{H}$가 시간
 
 # 연관 학습 노트
 
-
+[[Canonical Transformation and Symplectic Structure]]
 
 # References
 
