@@ -29,7 +29,8 @@ $\chi_i = q_i$ ($i \leq N$), $\chi_i = p_{i-N}$ ($i > N$).
 - Canonical transformation의 조건: symplectic matrix $\mathbb{J}$가 보존됨 
 $$
 \boxed{M\, \mathbb{J}\, M^T = \mathbb{J}'}
-$$사실 $\mathbb{J}$는 $q$와 $p$들의 Poisson 괄호 결과값을 미리 저장해둔 행렬이었다:
+$$
+사실 $\mathbb{J}$는 $q$와 $p$들의 Poisson 괄호 결과값을 미리 저장해둔 행렬이었다:
 
 $$
 \mathbb{J}_{\alpha\beta} = \{\chi_\alpha, \chi_\beta\} = \begin{cases} \{q_\alpha, q_\beta\} = 0 & \alpha \leq N,\, \beta \leq N \\ \{p_{\alpha-N}, q_\beta\} = -\delta_{\alpha-N,\,\beta} & \alpha > N,\, \beta \leq N \\ \{q_\alpha, p_{\beta-N}\} = \delta_{\alpha,\,\beta-N} & \alpha \leq N,\, \beta > N \\ \{p_{\alpha-N}, p_{\beta-N}\} = 0 & \alpha > N,\, \beta > N \end{cases}
@@ -115,7 +116,7 @@ $$
 \{f, g\} = \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i} = \frac{\partial f}{\partial \chi_i} \mathbb{J}_{ij} \frac{\partial g}{\partial \chi_j}
 $$
 
-. $\mathbb{J}_{ij}$는 정확히 $2N \times 2N$ matrix $\mathbb{J}$의 $i$번째 행 $j$번째 열 원소를 나타낸다.
+$\mathbb{J}_{ij}$는 정확히 $2N \times 2N$ matrix $\mathbb{J}$의 $i$번째 행 $j$번째 열 원소를 나타낸다.
 
 > [!note] $\mathbb{J}$는 일종의 metric?
 > $\mathbb{J}$는 일반적 metric과는 다른, Poisson structure를 정의하는 antisymmetric bilinear form이다.
@@ -177,9 +178,9 @@ $$
 \mathbb{J} = \begin{pmatrix} 0^{n\times n} & \mathbb{I}^{n\times n} \\ -\mathbb{I}^{n\times n} & 0^{n\times n} \end{pmatrix}
 $$
 
-(4개의 블록으로 조각낼 수 있게 된 것이다.)
+(4개의 블록으로 조각낸 모양이다.)
 
-아까 보았던 Hamilton 방정식의 행렬 표현도 사실 chain rule의 결과였다:
+아까 보았던 Hamilton 방정식의 행렬 표현도 알고 보니 chain rule의 결과였다:
 
 $$
 \dot{\chi}_\alpha = \{\chi_\alpha, \mathcal{H}\} = \mathbb{J}_{\alpha\beta} \frac{\partial \mathcal{H}}{\partial \chi_\beta} = \{\chi_\alpha, \chi_\beta\} \frac{\partial \mathcal{H}}{\partial \chi_\beta}
@@ -281,8 +282,6 @@ $\alpha$가 $t$라면, $G$는 곧 $\mathcal{H}$이다. **$\mathcal{H}$가 시간
 
 # 궁금한 내용
 
-- $G$가 라그랑지안의 total differential term이라는 것은 구체적으로 무슨 의미인가?
-- Canonical transformation의 generating function에는 어떤 종류가 있는가? (Type 1, 2, 3, 4?)
 
 # AI의 보충 설명
 

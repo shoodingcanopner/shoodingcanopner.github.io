@@ -17,10 +17,14 @@ class: study_lecture
 
 # 오늘의 핵심
 
-슈뢰딩거 묘사와 하이젠베르크 묘사는 서로 dual한 관점이다. 슈뢰딩거에서는 ket이 시간에 따라 진화하고 operator는 고정되지만, 하이젠베르크에서는 ket이 고정되고 operator가 시간에 따라 진화한다. Heisenberg equation of motion은 고전역학의 Hamilton 방정식과 정확히 대응된다.
+슈뢰딩거 묘사와 하이젠베르크 묘사는 서로 dual한 관점이다. 슈뢰딩거에서는 ket이 시간에 따라 진화하고 operator는 고정되지만, 하이젠베르크에서는 ket이 고정되고 operator가 시간에 따라 진화한다. Heisenberg equation of motion은 고전역학의 Hamilton 방정식과 정확히 대응된다. 
 
 $$
 \frac{dA^H}{dt} = \frac{1}{i\hbar}[A^H, \mathcal{H}]
+$$
+고전역학에서는 이랬었다. Lie bracket 대신 poisson bracket 을 쓴다. 
+$$
+\frac{dA}{dt} = \{A, \mathcal{H}\}
 $$
 
 # 필기 내용
