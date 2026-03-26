@@ -23,7 +23,8 @@ class: study_lecture
 - **Lorenz Condition**
 $$
 \nabla \cdot \mathbf{A} + \frac{1}{c^2}\frac{\partial \phi}{\partial t} = 0
-$$ 을 만족하는 게이지. $\phi$와 $\mathbf{A}$가 분리된 파동방정식 형태가 된다.
+$$ 
+을 만족하는 게이지. $\phi$와 $\mathbf{A}$가 분리된 파동방정식 형태가 된다.
 
 - **Coulomb Gauge** 
 $$
@@ -193,7 +194,7 @@ $$
 
 **문제점**: $\phi$에서 $t$와 $\rho$에서 $t$가 같은 게 말이 안 된다!
 이게 성립하려면 포텐셜의 전하 변화를 받아들이는 속도가 무한대 여야 한다.
-그런데 그럴 리리가 없다.
+그런데 그럴 리가 없다.
 
 ### Coulomb gauge에서 $\mathbf{A}$ 방정식
 

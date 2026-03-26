@@ -17,49 +17,64 @@ class: study_lecture
 
 # 오늘의 핵심
 
-슈뢰딩거 묘사와 하이젠베르크 묘사는 서로 dual한 관점이다. 슈뢰딩거에서는 ket이 시간에 따라 진화하고 operator는 고정되지만, 하이젠베르크에서는 ket이 고정되고 operator가 시간에 따라 진화한다. Heisenberg equation of motion은 고전역학의 Hamilton 방정식과 정확히 대응된다. 
+슈뢰딩거 묘사는 time evolution에 대한 active transform, 하이젠베르트 묘사는 passive transform이다. 
 
 $$
 \frac{dA^H}{dt} = \frac{1}{i\hbar}[A^H, \mathcal{H}]
 $$
-고전역학에서는 이랬었다. Lie bracket 대신 poisson bracket 을 쓴다. 
+고전역학에서는 어떤 물리량의 시간 미분을 해밀토니안과의 푸아송 괄호호로 구했었다. 
 $$
 \frac{dA}{dt} = \{A, \mathcal{H}\}
 $$
+Poisson bracket을 Lie bracket으로 바꾸는 게 바로 양자화였다. 
 
 # 필기 내용
 
 ## 슈뢰딩거 묘사 vs 하이젠베르크 묘사
 
 Time evolution이 **unitary operator**라는 점을 이용한다.
+원래 슈뢰딩거의 세계관에서는, 
+basis와 operator는 절대 변하지 않는 양이지만, 개별 상태를 나타내는 ket들은 시간이 지남에 따라 변화하였다. 
+아래 식 처럼 $\mathcal{U}$가 ket에 취해지면, 그것은 미래의 ket을 나타내었다. 
 
 $$
 |\alpha\rangle \xrightarrow{\text{time}} \mathcal{U}|\alpha\rangle
 $$
+미래를 나타내는 방법을 다른 방식으로 바꿀 수 있다. 
 
-Bra-operator-ket에 time evolution을 끼워 넣으면:
-
-$$
-\langle \beta | X | \alpha \rangle \;\to\; \langle \beta | \mathcal{U}^\dagger X \mathcal{U} | \alpha \rangle = \langle \beta | (\mathcal{U}^\dagger X \mathcal{U}) | \alpha \rangle
-$$
+지금부터 이야기하는 **Schrödinger picture** 과 **Heisenberg Picture** 의 비교는 **active transform VS passive transform** 의 차이와 정확히 같다. 
 
 **두 묘사의 정의:**
 
 - **슈뢰딩거 묘사 (Schrödinger Picture)**: Operator $A^S$는 고정, ket이 시간에 따라 진화한다.
 - **하이젠베르크 묘사 (Heisenberg Picture)**: ket은 고정, Operator가 시간에 따라 진화한다.
 
+| 구분                | 묘사        | 무엇이 변하는가                             |
+| ----------------- | --------- | ------------------------------------ |
+| Active Transform  | 슈뢰딩거 묘사   | 물체(ket)의 위치가 바뀜                      |
+| Passive Transform | 하이젠베르크 묘사 | 좌표계(base ket)가 바뀜. 연산자(operator)가 바뀜 |
+
+**하이젠베르크 묘사에서:**
+- ket이 시간이 지나도 불변한다.
+- $t=0$에서 eigenket을 basis로 ket을 나타냈을 때, coefficient가 불변한다.
+
+두가지 묘사 방식이 동등함을 쉽게 보일 수 있다. 
+$\mathcal{U}$는 $t=0$에서 $t$로 이동시키는 연산자, time evolution operator, $\mathcal{U} = \exp\!\left(-\dfrac{i}{\hbar}\mathcal{H}t\right)$.
+$\langle \beta | X | \alpha \rangle_t$를 계산한다고 치자, 이것은 시간 t가 지났을 때 $\langle \beta | X | \alpha \rangle$값이다. 
+원래 $\bra{\beta}$와 $\ket{\alpha}$ 에 적용되어야 할 time evolution operator $\mathcal{U}$를 operator $X$에 적용시켜도, 계산 결과 $\langle \beta | X | \alpha \rangle_t$ 는 똑같다. 
+
 $$
-A^H(t) = \mathcal{U}^\dagger A^S(t) \,\mathcal{U}
+\langle \beta | X | \alpha \rangle \;\to\; \langle \beta | \mathcal{U}^\dagger X \mathcal{U} | \alpha \rangle = \langle \beta | (\mathcal{U}^\dagger X \mathcal{U}) | \alpha \rangle
+$$
+$$
+A^H(t) = \mathcal{U}^\dagger A^S \,\mathcal{U}
 $$
 
-여기서 $\mathcal{U}$는 $t=0$에서 $t$로 이동시키는 연산자, 즉 $\mathcal{U} = \exp\!\left(-\dfrac{i}{\hbar}\mathcal{H}t\right)$.
-
-**두 묘사는 $t = 0$에서 일치한다:**
+당연하지만, 두 묘사는 $t = 0$에서 일치한다. 시간 진화를 안 했으니까. 
 
 $$
 t = 0 \text{ 이라면 } A^H = A^S
 $$
-
 $$
 t > 0 \text{ 이면,} \quad
 \begin{cases}
@@ -68,7 +83,8 @@ t > 0 \text{ 이면,} \quad
 \end{cases}
 $$
 
-Expectation value는 두 묘사를 써도 같다:
+Expectation value는 두 묘사를 써도 같다.
+즉 실제 물리 현상으로 발현되는 값을 어느 모사를 써도 똑같이 예측할 수 있다는 뜻이다. 
 
 $$
 {}^S\!\langle \alpha, t | A^S | \alpha, t \rangle^S = \langle \alpha, 0 | \mathcal{U}^\dagger A^S \mathcal{U} | \alpha, 0 \rangle
@@ -96,15 +112,16 @@ $$
 
 이것이 **Heisenberg의 equation of motion**이다.
 
-> [!info] 상수 운동 (Constant of Motion)
-> $A^H$가 $\mathcal{H}$과 commute하면, $A$는 **constant of motion**이다.
+> [!info] 운동 상수 (Constant of Motion)
+> $A^H$가 $\mathcal{H}$과 commute하면, $A$는 **constant of motion**, 즉 보존량이다.
 
 ---
 
 ## 예시: 위치 연산자의 시간 진화
 
-유용한 commutation relation:
-
+유용한 commutation relation.
+이는 $F(P)$와 $G(x)$ 자리에 각각 P와 x에 대한 polynomial을 넣어서 직접 계산할 수 있다. 
+그러나 푸아송 괄호와 commutator 사이 관계를 이용하는 게 더 쉽다. 
 $$
 [x, P] = i\hbar, \qquad [x_i, F(P)] = i\hbar\frac{\partial F}{\partial P_i}, \qquad [P_i, G(x)] = -i\hbar\frac{\partial G}{\partial x_i}
 $$
@@ -112,10 +129,10 @@ $$
 Hamiltonian이 $\mathcal{H} = \dfrac{P^2}{2m} + V(x)$일 때:
 
 $$
-\frac{\partial x^H}{\partial t} = \frac{1}{i\hbar}[x, \mathcal{H}] = \frac{1}{i\hbar}\left[x, \frac{P^2}{2m} - V(x)\right] = \frac{1}{2mi\hbar}[x, P^2]
+\frac{\partial x^H_{(t)}}{\partial t} = \frac{1}{i\hbar}[x, \mathcal{H}] = \frac{1}{i\hbar}\left[x, \frac{P^2}{2m} - V(x)\right] = \frac{1}{2mi\hbar}[x, P^2]
 $$
 
-여기서 $[x, P^2]$를 recurrent하게 찾거나 포아송 괄호와의 관계를 이용하면:
+아까 보인 commutation relation을 사용하면, 
 
 $$
 \frac{\partial x^H}{\partial t} = \frac{1}{2mi\hbar}(i\hbar \cdot 2P) = \frac{P}{m}
@@ -146,7 +163,7 @@ $$
 $$
 \frac{d^2 x_i}{dt^2} = \frac{1}{i\hbar}\left[\frac{dx_i}{dt}, \mathcal{H}\right] = \frac{1}{i\hbar}\left[\frac{1}{m}P_i, \mathcal{H}\right] = \frac{1}{m}\frac{dP_i}{dt} = -\frac{1}{m}\frac{\partial}{\partial x_i}V(x)
 $$
-
+고전역학에서 사용하던 운동방정식이 나와버린다. 
 따라서 **하이젠베르크 묘사에서 관계를 완전히 고전 역학과 같게 쓸 수 있다**:
 
 $$
@@ -204,16 +221,7 @@ $$
 
 ---
 
-## Active Transform vs Passive Transform
 
-| 구분 | 묘사 | 무엇이 변하는가 |
-|------|------|----------------|
-| Active Transform | 슈뢰딩거 묘사 | 물체(ket)의 위치가 바뀜 |
-| Passive Transform | 하이젠베르크 묘사 | 좌표계(base ket)가 바뀜 |
-
-**하이젠베르크 묘사에서:**
-- ket이 시간이 지나도 불변한다.
-- $t=0$에서 eigenket을 basis로 사용했을 때 coefficient가 불변한다.
 
 # 궁금한 내용
 
@@ -221,7 +229,6 @@ $$
 
 # 연관 학습 노트
 
-[[QM lecture note - Time Evolution Operator]]
 
 # References
 
@@ -232,3 +239,5 @@ $$
 # 원본 필기 이미지
 
 [[QM_5thweek_1.pdf]]
+![[Pasted image 20260326162832.png]]![[Pasted image 20260326162835.png]]
+![[Pasted image 20260326162844.png]]

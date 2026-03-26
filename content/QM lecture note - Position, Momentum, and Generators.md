@@ -18,12 +18,36 @@ class: study_lecture
 # 오늘의 핵심
 
 Momentum operator를 position basis에서 나타내면 디락델타와 공간 미분이 나온다. 
+유도는 momentum operator가 position transition operator라는 점에서 시작한다. 
+
+**이 유도법은 다른 generator에서도 쓰일 것 같으니 통으로 알아두자**
+
+$$
+T(dx)\ket{\alpha} = \left(\mathbb{1} - \frac{i}{\hbar}dx\, p\right)\ket{\alpha} = \int dx''\, \psi_\alpha(x'')\ket{x''} - \frac{i}{\hbar}dx\, p\ket{\alpha}
+$$
+한편으로는, 
+$$
+T(dx)\ket{\alpha} = \int dx'\, \psi_\alpha(x')T(dx)\ket{x'} = \int dx'\, \psi_\alpha(x')\ket{x'+dx} = \int dx''\, \psi_\alpha(x''-dx)\ket{x''}
+$$
+두 식을 같다고 놓으면:
+$$
+-\frac{i}{\hbar}dx\, p\ket{\alpha} = \int dx''\,\bigl(\psi_\alpha(x''-dx) - \psi_\alpha(x'')\bigr)\ket{x''}
+$$
+$$
+= \int dx''\left(-dx\,\frac{\partial}{\partial x''}\psi_\alpha(x'')\right)\ket{x''}
+$$
+
+양변에서 $-\frac{i}{\hbar}dx$를 나누고, $\bra{x''}$을 왼쪽에서 곱하면:
+
+$$
+\braket{x''|p|\alpha} = -i\hbar\frac{\partial}{\partial x''}\braket{x''|\alpha}
+$$
 $$
 \boxed{\langle x' | p | x'' \rangle = -i\hbar \frac{\partial}{\partial x'} \delta(x' - x'')}
 $$
 이것이 모든 유도의 시작점.
 
-
+---
 
 $$
 \langle x^m | \mathcal{U} | x^k \rangle = \langle x^m | p^k \rangle
@@ -34,6 +58,7 @@ Position basis에서 연산을 수행할 때, transformation function으로 $\la
 $$
 \boxed{\langle x' | p' \rangle = \frac{1}{\sqrt{2\pi\hbar}} \exp\!\left( \frac{ip'x'}{\hbar} \right)}
 $$
+---
 
 # 필기 내용
 
@@ -199,10 +224,6 @@ $$
 > \delta q_i = \varepsilon\frac{\partial G}{\partial p_i}, \qquad \delta p_i = -\varepsilon\frac{\partial G}{\partial q_i}
 > $$
 > 자세한 건 심플래틱 기하학을 통해 이야기해야 한다면서, 일단은 정의라고 치고 넘어가라고 한다. 
-
-
-
-
 
 **예시: Infinitesimal space translation**
 
@@ -463,3 +484,8 @@ $$
 # 원본 필기 이미지
 
 [[QM_4thweek_1.pdf]]
+![[Pasted image 20260326172639.png]]![[Pasted image 20260326172645.png]]
+![[Pasted image 20260326172650.png]]
+![[Pasted image 20260326172657.png]]
+![[Pasted image 20260326172704.png]]
+![[Pasted image 20260326172709.png]]

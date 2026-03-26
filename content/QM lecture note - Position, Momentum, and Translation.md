@@ -285,10 +285,6 @@ $$
 
 # 연관 학습 노트
 
-- [[QM lecture note - Kets, Bras, and Operators]]
-- [[QM lecture note - Base Kets and Matrix Representation]]
-- [[QM lecture note - Measurements, Observables, and the Uncertainty Relations]]
-- [[QM lecture note - Basis Transformation Operator]]
 
 # References
 
