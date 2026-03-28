@@ -46,14 +46,17 @@ $$
 # 필기 내용
 
 ## Symplectic 조건과 Canonical Transformation
+$i$ index가 1부터 N까지 있다고 치자, 즉 자유도가 N인 시스템이다. 
 
-심플렉틱 행렬을 다음과 같이 정의한다:
+심플렉틱 행렬 $\mathbb{J}$를 다음과 같이 정의한다:
+이것은 2N by 2N matrix이다. 
 
 $$
 \mathbb{J} = \begin{pmatrix} 0 & \mathbb{I} \\ -\mathbb{I} & 0 \end{pmatrix}
 $$
+0과 $\mathbb{I}$ 둘 다 N by N matrix이다. 
 
-Hamilton 운동방정식은 이 행렬로 쓸 수 있다는 것을 저번 시간에 배웠다. 
+Hamilton 운동방정식을 이 행렬로 쓸 수 있다는 것을 저번 시간에 배웠다. 
 
 $$
 \dot{\chi}_\alpha = \mathbb{J}_{\alpha\beta} \frac{\partial \mathcal{H}}{\partial \chi_\beta}
@@ -65,7 +68,8 @@ $\chi_i = q_i$ ($i \leq N$), $\chi_i = p_{i-N}$ ($i > N$).
 
 ### 새로운 좌표계로의 변환
 
-$\chi \to y$ 변환 시 운동방정식의 변환:
+$\chi \to y$ 변환 시 운동방정식은 어떻게 변환되는가?
+위의 $\mathbb{J}$를 이용한 꼴의 운동방정식이 $y$의 좌표계에서는 어떻게 바뀌는지 확인해 보자. 
 
 $$
 \dot{y}_\alpha = \frac{\partial y_\alpha}{\partial \chi_\beta} \dot{\chi}_\beta = \frac{\partial y_\alpha}{\partial \chi_\beta} \mathbb{J}_{\beta\gamma} \frac{\partial \mathcal{H}}{\partial \chi_\gamma} = \frac{\partial y_\alpha}{\partial \chi_\beta} \mathbb{J}_{\beta\gamma} \frac{\partial y_\delta}{\partial \chi_\gamma} \frac{\partial \mathcal{H}}{\partial y_\delta}
@@ -83,7 +87,7 @@ $$
 $$
 
 index summation 순서 주의. 
-$M_{\lambda\gamma}$는 summation 순서가 반대여서(앞의 ) transpose했다.
+$M_{\lambda\gamma}$는 summation 순서가 반대여서(바로 앞의 matrix $\mathbb{J}$와 index가 연관 되는 순서를 보아라.)  transpose했다.
 $$
 [M^T]_{\gamma\lambda} = \dfrac{\partial y_\lambda}{\partial \chi_\gamma}
 $$
@@ -226,7 +230,7 @@ $\hat{\mathbb{J}}' = \hat{\mathbb{J}}$은, 즉 심플레틱 행렬이 유지되�
 아주 작은 좌표계 변화를 만드는 canonical transformation을 생각한다:
 
 $$
-Q_i = q_i + \alpha F_i(q_j, p_j)
+Q_i = q_i + \alpha H_i(q_j, p_j)
 $$
 
 $$
@@ -235,48 +239,48 @@ $$
 
 $\alpha$는 아주 작은 수, 변환이 얼마나 일어났는가의 척도. 
 
-이 변환이 canonical transformation이 되려면 $F_i$와 $E_i$이 어떤 조건을 갖추어야 하는가?
+이 변환이 canonical transformation이 되려면 $H_i$와 $E_i$이 어떤 조건을 갖추어야 하는가?
 
 $$
-\hat{M}_{ij} = \begin{pmatrix} \delta_{ij} + \alpha\dfrac{\partial F_i}{\partial q_j} & \alpha\dfrac{\partial F_i}{\partial p_j} \\[6pt] \alpha\dfrac{\partial E_i}{\partial q_j} & \delta_{ij} + \alpha\dfrac{\partial E_i}{\partial p_j} \end{pmatrix}
+\hat{M}_{ij} = \begin{pmatrix} \delta_{ij} + \alpha\dfrac{\partial H_i}{\partial q_j} & \alpha\dfrac{\partial H_i}{\partial p_j} \\[6pt] \alpha\dfrac{\partial E_i}{\partial q_j} & \delta_{ij} + \alpha\dfrac{\partial E_i}{\partial p_j} \end{pmatrix}
 $$
 
 여기서 $M \mathbb{J} M^T = \mathbb{J}$를 적용하면 조건이 나온다:
 
 $$
-\frac{\partial F_i}{\partial q_j} = -\frac{\partial E_j}{\partial p_i}
+\frac{\partial H_i}{\partial q_j} = -\frac{\partial E_j}{\partial p_i}
 $$
 
-이는 어떤 함수 $G$에 대해,
+이는 어떤 함수 $F$에 대해,
 
 $$
-F = \frac{\partial G}{\partial p_j}, \qquad E = -\frac{\partial G}{\partial q_j}
+H = \frac{\partial F}{\partial p_j}, \qquad E = -\frac{\partial F}{\partial q_j}
 $$
 
 이어야 함을 의미한다. 이는 **코시-리만 조건**과 닮아 있다.
 
-우리는 $G$를 **generating function**이라고 부르며:
+우리는 $F$를 **generating function**이라고 부르며:
 
 $$
-\frac{dQ_i}{d\alpha} = F_i = \frac{\partial G}{\partial p_i}, \qquad \frac{dP_i}{d\alpha} = E_i = -\frac{\partial G}{\partial q_i}
+\frac{dQ_i}{d\alpha} = H_i = \frac{\partial F}{\partial p_i}, \qquad \frac{dP_i}{d\alpha} = E_i = -\frac{\partial F}{\partial q_i}
 $$
 
 이다. Poisson bracket 형태로 쓰면:
 
 $$
-\frac{dQ_i}{d\alpha} = \{q_i, G\}, \qquad \frac{dP_i}{d\alpha} = \{p_i, G\}
+\frac{dQ_i}{d\alpha} = \{q_i, F\}, \qquad \frac{dP_i}{d\alpha} = \{p_i, F\}
 $$
 
 따라서 위상 공간에서의 변분은:
 
 $$
-\delta q_i = \alpha\{q_i, G\}, \qquad \delta p_i = \alpha\{p_i, G\}
+\delta q_i = \alpha\{q_i, F\}, \qquad \delta p_i = \alpha\{p_i, F\}
 $$
 
-$\alpha$가 $t$라면, $G$는 곧 $\mathcal{H}$이다. **$\mathcal{H}$가 시간에 대한 generator**가 된다.
+$\alpha$가 $t$라면, $F$는 곧 $\mathcal{H}$이다. **$\mathcal{H}$가 시간에 대한 generator**가 된다.
 
 > [!note] Generating function의 물리적 의미
-> $G$는 사실 라그랑지안에서 total differential term이다. 자세한 내용은 다음 시간에 다룬다.
+> $F$는 사실 라그랑지안에서 total differential term이다. 자세한 내용은 다음 시간에 다룬다.
 
 ---
 
@@ -309,5 +313,6 @@ David Tong, *Classical Dynamics* (Cambridge lecture notes)
 ![[AM_5thweek_2-000.jpg]]
 
 ![[AM_5thweek_2-001.jpg]]
-
+필기본과 위 전산화한 내용의 notation이 다르다. 
+일부러 바꾼 거임!!
 ![[AM_5thweek_2-002.jpg]]
