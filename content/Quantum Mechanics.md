@@ -43,3 +43,5 @@ Week 16: Final Exam
 [[QM lecture note - Time Evolution Operator]]
 [[QM lecture note - Heisenberg Picture and Equations of Motion]]
 [[QM lecture note - Simple Harmonic Oscillator]]
+[[QM lecture note - Wave Equation and Probability Conservation]]
+→ 해석역학 범위인 Hamiton-Jacobi equation 설명도 자세하게 되어 있음

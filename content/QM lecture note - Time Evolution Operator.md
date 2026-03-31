@@ -25,6 +25,15 @@ $$
 
 에너지 고유상태는 시간이 지나도 phase만 바뀌며, 일반 상태의 time evolution은 에너지 eigenbasis로 전개하여 기술한다.
 
+
+
+$$
+|\Psi_{E,t}\rangle = \exp\!\left(-i\frac{E}{\hbar}t\right)|\Psi_{E,0}\rangle
+$$
+
+**Energy eigenket은 시간이 지나도 phase만 바뀐다.** (Stationary state)
+
+
 # 필기 내용
 
 ## Time Evolution Operator 도입

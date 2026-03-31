@@ -563,6 +563,7 @@ SHO에서 virial theorem은 "$T$와 $V$의 기댓값이 같다"는 것을, equip
 
 # 다음 강의
 
+[[QM lecture note - Wave Equation and Probability Conservation]]
 
 # 원본 필기 이미지
 
