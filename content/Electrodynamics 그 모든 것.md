@@ -10,9 +10,34 @@ class: study_subject
 ---
 # Electrodynamics
 
+# 2026 전기역학1 강의 필기
+
+> [!info] 과목 노트
+> 대학원 1학년 1학기에 수강하는 전기역학1 강의 
+> 
+
+
+## 노트 템플릿
+
+[[ED lecture note - Template]]
+
+## 중간고사 범위
+
+[[ED lecture note - electroststics and magnetostatics]]
+[[ED lecture note - Faraday Maxwell Potentials]]
+[[ED lecture note - Gauge Transform and Energy Conservation]]
+[[ED lecture note - Momentum Conservation and Stress Tensor]]
+[[ED lecture note - Symmetry and EM Waves]]
+[[ED lecture note - EM Waves and Polarization]]
+[[ED lecture note - Stokes Parameters and Reflection]]
+[[ED lecture note - Fresnel Equations]]
+[[ED lecture note - Dispersion]]
+
+---
+
+
 이 노트는 전기역학에 대한 감을 완전히 잃어버렸을 때, 기초부터 다시 감을 잡기 위한 로드맵 역할을 한다. 각 주제에 대한 상세한 내용은 연결된 노트들을 참고한다.
 
-2026년 2월부터 대학원 전기역학1 강의록도 기록한다. 
 
 ## 0. 단위와 상수 범례
 
@@ -106,27 +131,6 @@ $$
 - 복사 저항
 
 ---
-# 2026 전기역학1 강의 필기
 
-> [!info] 과목 노트
-> 대학원 1학년 1학기에 수강하는 전기역학1 강의 
-> 
-
-
-## 노트 템플릿
-
-[[ED lecture note - Template]]
-
-## 중간고사 범위
-
-[[ED lecture note - electroststics and magnetostatics]]
-[[ED lecture note - Faraday Maxwell Potentials]]
-[[ED lecture note - Gauge Transform and Energy Conservation]]
-[[ED lecture note - Momentum Conservation and Stress Tensor]]
-[[ED lecture note - Symmetry and EM Waves]]
-[[ED lecture note - EM Waves and Polarization]]
-[[ED lecture note - Stokes Parameters and Reflection]]
-
----
 
 *이 노트는 지속적으로 업데이트되며, 각 주제에 대한 상세 노트가 작성되면 링크가 추가된다.*
