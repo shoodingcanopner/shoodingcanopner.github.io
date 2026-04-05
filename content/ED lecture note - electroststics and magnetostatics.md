@@ -94,7 +94,7 @@ $$
 
 정전기학에서 $\nabla \times \vec{E} = 0$. 폐곡선에 대해 선적분하면 $\oint \vec{E} \cdot d\vec{l} = 0$.
 
-이는 $\vec{E}$가 어떤 함수의 gradient임을 암시한다다. 따라서:
+이는 $\vec{E}$가 어떤 함수의 gradient임을 암시한다. 따라서:
 
 $$
 \vec{E} = -\nabla V
@@ -157,16 +157,22 @@ $$
 \frac{\hat{R}}{R^2} = \nabla\!\left(-\frac{1}{R}\right)
 $$ 의 관계를 이용한다. 이건 꼭 외워두기. 
 
+> [!error] 부호 오류 (2026-04-04 정정)
+> $\nabla\left(\frac{1}{R}\right) = -\frac{\hat{R}}{R^2}$ 이므로, 올바른 항등식은:
+> $$\frac{\hat{R}}{R^2} = -\nabla\left(\frac{1}{R}\right) = \nabla'\left(\frac{1}{R}\right)$$
+> 여기서 $\nabla'$는 source point $\mathbf{x}'$에 대한 미분이다. ($R = |\mathbf{x} - \mathbf{x}'|$이므로 $\mathbf{x}'$로 미분하면 부호가 반전됨.)
+> Electrostatics에서 $\frac{\hat{R}}{R^2} = \nabla(-1/R)$을 사용한 것과 일관된다.
 
 $\nabla$의 곱의 규칙을 적용:
 
 $$
-V = \frac{1}{4\pi\varepsilon_0} \int_V \vec{P} \cdot \nabla\!\left(-\frac{1}{R}\right) d\tau
+V = \frac{1}{4\pi\varepsilon_0} \int_V \vec{P} \cdot \nabla\!\left(\frac{1}{R}\right) d\tau
 $$
 
 $$
 = \frac{1}{4\pi\varepsilon_0} \int_V \nabla \cdot \left(\frac{1}{R}\vec{P}\right) - \frac{1}{R}(\nabla \cdot \vec{P}) \, d\tau
 $$
+
 
 발산 정리 적용 후:
 
@@ -211,6 +217,21 @@ $$
 
 $$
 \nabla \cdot \vec{D} = \rho_{free}
+$$
+
+**Electric susceptibility**, $\chi_e$
+dipole이 외부 전기장에 의해 얼마나 잘 생기는가의 척도. 
+$$
+\vec{P} = \chi_e \varepsilon_0 \vec{E}
+$$
+
+**Electric permittivity** $\varepsilon$
+
+$$
+\vec{D} = \varepsilon_0 (\vec{E} + \chi_e\vec{E}) = \varepsilon_0 (1 + \chi_e) \vec{E}= \varepsilon \vec{E}
+$$
+$$
+\varepsilon = \varepsilon_0(1 + \chi_e) 
 $$
 
 ---
@@ -311,7 +332,6 @@ $$
 
 ## 물질 내부에서의 Magnetostatics
 
-전류가 인 자기 성분: 자기쌍극자 모멘트 $\vec{m}$. 이것의 자원은?
 
 ### 점 자기쌍극자의 벡터 포텐셜
 
@@ -339,12 +359,14 @@ $$
 
 여기서 항등식 $\frac{\hat{R}}{R^2} = \nabla\left(\frac{1}{R}\right)$을 사용했다.
 
+
+
 $\nabla \times \vec{M}$은 **bound current density** $\vec{J}_b$와 같은 기능을 한다:
 
 $$
 \nabla \times \vec{M} \equiv \vec{J}_b \quad (\text{bound current})
 $$
-
+electric dipole 때와는 부호가 반대!
 $$
 \vec{M} \times d\vec{a} \equiv \vec{K}_b \quad (\text{surface bound current})
 $$

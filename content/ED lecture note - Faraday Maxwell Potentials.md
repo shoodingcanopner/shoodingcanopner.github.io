@@ -84,7 +84,7 @@ $$
 
 ### Displacement Current의 도입
 
-$\nabla \times \vec{H} = \vec{J}$는 steady state에서만 기도된다. 왜냐하면:
+$\nabla \times \vec{H} = \vec{J}$는 steady state에서만 유효하다. 왜냐하면:
 
 $$
 \nabla \cdot (\nabla \times \vec{H}) = \nabla \cdot \vec{J} = -\frac{\partial \rho}{\partial t}
@@ -178,7 +178,7 @@ $$
 
 > ☞ $\Phi$와 $\vec{A}$를 알면 $\vec{E}$와 $\vec{B}$를 알 수 있다.  
 > potentials (scalars/vectors) → vectors.  
-> potential을 사용하는 편이 dimension이 낮다. $\vec{E}$와 $\vec{B}$가 독독립적이지 않기 때문.
+> potential을 사용하는 편이 dimension이 낮다. $\vec{E}$와 $\vec{B}$가 독립적이지 않기 때문.
 
 ###  $\Phi$와 $\vec{A}$에 대한 방정식으로 남기기
 
@@ -225,4 +225,4 @@ $$
 강의 ppt 링크를 이곳에
 
 # 다음 강의
-
+[[ED lecture note - Gauge Transform and Energy Conservation]]

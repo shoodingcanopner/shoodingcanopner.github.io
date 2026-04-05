@@ -76,7 +76,7 @@ $$
 
 괄호 안의 식을 정리하자.
 
-**Step 1.** $(\nabla \cdot \mathbf{E})\mathbf{E}$와 대칭을 맞추기 위해 $\frac{1}{\mu_0 \epsilon_0}(\nabla \cdot \mathbf{B})\mathbf{B} = 0$ 항을 넣는다. ($\nabla \cdot \mathbf{B} = 0$ 이므로 값에는 영향이 없다.)
+**Step 1.** $(\nabla \cdot \mathbf{E})\mathbf{E}$와 대칭을 맞추기 위해 $\frac{1}{\mu_0 \epsilon_0}(\nabla \cdot \mathbf{B})\mathbf{B} = 0$ 항을 넣는다. ( $\nabla \cdot \mathbf{B} = 0$ 이므로 값에는 영향이 없다. )
 
 **Step 2.** $\frac{\partial \mathbf{B}}{\partial t}$가 나타날 수 있게 시간 미분 항을 정리한다.
 
@@ -149,6 +149,7 @@ $$
 $$
 \epsilon_0 \int \left[\mathbf{E}(\nabla \cdot \mathbf{E}) - \mathbf{E} \times (\nabla \times \mathbf{E}) + c^2 \mathbf{B}(\nabla \cdot \mathbf{B}) - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]d^3x
 $$
+이 식을 어떤 텐서에 대한 미분으로 나타낼 수 있다. 
 
 vector calculus identity를 $\mathbf{E}$에 대해서 먼저 보면. 무엇을 알 수 있을까?
 
@@ -158,7 +159,7 @@ $$
 
 아인슈타인 summation notation 을 쓸 때에, $\nabla \cdot \mathbf{E} = \partial_j E_j$ 이다.
 
-$\mathbf{E} \times (\nabla \times \mathbf{E})$ 가 불쾌감을 줄 수 있다. 이 외적을 풀어 써야 하는데, 이미 풀고 나온 결과를 쓰기에는 $(\nabla \times \mathbf{E})$ 자체가 벡터이다. 이걸 잘 다뤄야 하는데 해서, 해당 양을 계산하기 위해,
+우변 둘째 항에 cross product 두 개 있는 항을 풀어보자. 
 
 $$
 [\nabla \times \mathbf{E}]_i = \epsilon_{ijk} \partial_j E_k
@@ -172,7 +173,7 @@ $$
 [\mathbf{E} \times (\nabla \times \mathbf{E})]_i = \epsilon_{inm} E_n \epsilon_{mjk} \partial_j E_k
 $$
 
-이때, $\epsilon_{inm}\epsilon_{mjk} = \delta_{ij}\delta_{nk} - \delta_{ik}\delta_{nj}$ (m 등의 시작되는 index에 대해 축약).
+이때, $\epsilon_{inm}\epsilon_{mjk} = \delta_{ij}\delta_{nk} - \delta_{ik}\delta_{nj}$ (m index에 대해 축약).
 
 $$
 [\mathbf{E} \times (\nabla \times \mathbf{E})]_i = (\delta_{ij}\delta_{nk} - \delta_{ik}\delta_{nj}) E_n \partial_j E_k
@@ -189,26 +190,45 @@ $$
 $$
 
 $$
-= \partial_j (E_i E_j) - \frac{1}{2}\partial_i E_j^2
+= \partial_j (E_i E_j) - \frac{1}{2}\partial_i E_jE_j
 $$
 
 $c^2[\mathbf{B}(\nabla \cdot \mathbf{B}) - \mathbf{B} \times (\nabla \times \mathbf{B})]$ 에 대해서도 완전히 같은 형태로 계산된다.
+
+그래서 결론은
+$$
+ \left[\mathbf{E}(\nabla \cdot \mathbf{E}) - \mathbf{E} \times (\nabla \times \mathbf{E}) + c^2 \mathbf{B}(\nabla \cdot \mathbf{B}) - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]_i 
+ $$
+ $$
+ = \partial_j (E_i E_j) +\partial_j c^2(B_i B_j) - \frac{1}{2}\partial_i E_kE_k  - \frac{1}{2}\partial_i c^2B_kB_k
+$$
 
 ---
 
 ## Maxwell Stress Tensor
 
-이것을 하나로 이 대체하는 방향.
 
 $$
-\frac{d}{dt}(\mathbf{p}_\text{mech} + \mathbf{p}_\text{field})_i = \oint T_{ij}\hat{n}_j\,d^2x = \int \partial_j T_{ij}\,d^3x
+T_{\alpha\beta} = \epsilon_0\left[E_\alpha E_\beta + c^2 B_\alpha B_\beta - \frac{1}{2}\delta_{\alpha\beta}(\mathbf{E} \cdot \mathbf{E} + c^2 \mathbf{B} \cdot \mathbf{B})\right]
+$$
+이런 텐서를 생각하면, 
+
+$$
+\epsilon_0  \left[\mathbf{E}(\nabla \cdot \mathbf{E}) - \mathbf{E} \times (\nabla \times \mathbf{E}) + c^2 \mathbf{B}(\nabla \cdot \mathbf{B}) - c^2 \mathbf{B} \times (\nabla \times \mathbf{B})\right]_i 
+$$
+$$
+ = \partial_j (E_i E_j) +\partial_j c^2(B_i B_j) - \frac{1}{2}\partial_i E_kE_k  - \frac{1}{2}\partial_i c^2B_kB_k 
+ $$
+$$
+= \partial_j (E_i E_j) +\partial_j c^2(B_i B_j) - \frac{1}{2}\delta_{ij}\partial_j E_kE_k  - \frac{1}{2}\delta_{ij}\partial_j c^2B_kB_k  = \partial_j T_{ij} 
+$$
+이렇게 위의 복잡한 항을 간단하게 나타낼 수 있다. 
+
+$$
+\frac{d}{dt}(\mathbf{p}_\text{mech} + \mathbf{p}_\text{field})_i = \int \partial_j T_{ij}\,d^3x = \oint T_{ij}\hat{n}_j\,d^2x
 $$
 
 여기서 아까 체적분-면적분 변환은 Green's theorem에 의함이다.
-
-$$
-T_{\alpha\beta} = \epsilon_0\left[E_\alpha E_\beta + c^2 B_\alpha B_\beta - \frac{1}{2}(\mathbf{E} \cdot \mathbf{E} + c^2 \mathbf{B} \cdot \mathbf{B})\delta_{\alpha\beta}\right]
-$$
 
 이것을 **Maxwell stress tensor** 라고 한다. 차원은 힘/면적, 즉 **stress tensor** 의 형태와 같다.
 
@@ -218,45 +238,43 @@ $$
 
 는 **부피 표면에 작용하는 스트레스(힘/면적)를 적분한 것**이다.
 
-두 가지 conservation을 이 형태 E 와 B의 대칭성을 밝히면 된다.
+우리는 momentum conservation에서 E 와 B의 대칭성을 발견했다. 
 
 ---
 
 ## Symmetry Property of Electromagnetic Field (6.10 Jackson)
 
-공간 반전 / 시간 / time reversal 에 의한 어떤 성질이 가능할까?
+물리량들이 공간 회전 / 반전 / time reversal 에 어떤 성질을 가지나? 
 
-반전/변환 변환도 직교 변환의 한가지에 속한다. 공간 변환도 같이가 변하지 않아야 한다.
-
-좋, **orthogonal matrix** (transformation) 이 이것은 된다.
+회전/반전 변환은 **orthogonal matrix** (transformation) 이어야 한다. 변환을 해도 벡터의길이가 변하지 않아야 하기 때문이다. 이 matri는 determinant의 절댓값이 1이다. 
 
 ### Orthogonal transformation
 
 변환 될 때에 모양이 불변이다.
 
-좌표 $\hat{x}_i' = a_{ij}\hat{x}_j$ : 변환된 unit vector는 변환 이전 unit vector의 linear summation으로 나타낼 수 있다나타낸다.
+좌표 $\hat{x}_i' = a_{ij}\hat{x}_j$ : 변환된 unit vector는 변환 이전 unit vector의 linear summation으로 나타낼 수 있어야 한다. 
 
-$a_{ij}$가 어떤 변환 행렬의 요소이다.
+$a_{ij}$는 transformation matrix의 element
 
 $$
 a_{ij} = \hat{x}_i' \cdot \hat{x}_j
 $$
 
-, 라는 것이 자명하다. (unit vector 의 orthogonality를 의미한다).
+라는 것이 자명하다. (unit vector 의 orthogonality로 인해서.)
 
 $$
-\delta_{ij} = \hat{x}_i' \cdot \hat{x}_j' = a_{ik}a_{j\ell}\,\hat{x}_k \cdot \hat{x}_\ell = \delta_{k\ell}\,a_{ik}a_{j\ell} = a_{ik}a_{jk}
+\delta_{ij} = \hat{x}_i' \cdot \hat{x}_j' = a_{ik}a_{j\ell}\,\hat{x}_k \cdot \hat{x}_\ell = \delta_{k\ell}\,a_{ik}a_{j\ell} = a_{ik}a_{jk} = a_{ik}\tilde{a}_{kj}
 $$
 
 즉,
 
 $$
-\alpha\tilde{\alpha} = \mathbb{1}
+a\tilde{a} = \mathbb{1}
 $$
 
-따라서 $\tilde{\alpha} = \alpha^{-1}$, 즉 **orthogonal matrix**를 의미하는 것이다.
+따라서 $\tilde{a} = a^{-1}$, 즉 **orthogonal matrix**를 의미하는 것이다.
 
-$\alpha$의 제일 왼쪽 것 등 이들이 행렬 22가과 같다. 이것이 orthogonal matrix의 성질이다. 즉 열벡터도 이것은 unit vector의 dot product를 계산할 때 직교성을 줄지며 짝을 이루면서 $\delta$가 된다는 것.
+$\alpha$의 전치행렬은 역행렬과 같다. 이것이 orthogonal matrix의 성질이다.
 
 determinant는
 
@@ -272,27 +290,24 @@ $$
 
 ## Similarity transformation
 
-즉 matrix $A$에 대해 차원을 살펴보면.
+임의의 matrix $A$에 대해, 그리고 직교 변환 행렬 $S$에 대해, 
 
 $$
 \mathbf{y} = A\mathbf{x} \quad \longleftrightarrow \quad \mathbf{y}' = A'\mathbf{x}'
 $$
 
 $$
-A' = SAS' \quad \text{(2차 변환)}
+A' = SAS' 
 $$
 
 $$
 \mathbf{y}' = SAS'\mathbf{x}' = SA\mathbf{x}
 $$
 
-$S^{-1} = S'$ 인 경우 (2차 변환),
-
 $$
 S'\mathbf{y}' = A\mathbf{x}, \quad \mathbf{y} = A\mathbf{x}
 $$
 
-이로써 similarity transformation의 정합성이 확인된다.
 
 # 궁금한 내용
 

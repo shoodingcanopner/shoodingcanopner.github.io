@@ -16,9 +16,30 @@ class: study_lecture
 
 [[ED lecture note - Faraday Maxwell Potentials]]
 
+
+$$
+\mathbf{B} = \nabla \times \mathbf{A}
+$$
+$$
+\mathbf{E} = -\nabla\phi - \frac{\partial \mathbf{A}}{\partial t}
+$$
+전기장에도 $\mathbf{A}$에 대한 시간 미분이 들어간다... 자꾸 잊음. dynamics에서만 나오는 항이라서 익숙치 않은갑다. 
+
 # 오늘의 핵심
 
 - **Gauge Transform**: 물리적으로 측정 가능한 E, B는 변하지 않으면서 포텐셜 $\phi$, $\mathbf{A}$를 임의의 스칼라 함수 $\Lambda$로 변환할 수 있다.
+
+
+
+$$
+\mathbf{A} \to \mathbf{A}' = \mathbf{A} + \nabla\Lambda
+$$
+
+$$
+\phi \to \phi' = \phi - \frac{\partial \Lambda}{\partial t}
+$$
+
+
 
 - **Lorenz Condition**
 $$
@@ -397,6 +418,8 @@ $$
 $$
 \frac{dW}{dt} = -\int \mathbf{J} \cdot \mathbf{E}\,d^3x = \int_V \left[\frac{\partial u}{\partial t} + \nabla \cdot (\mathbf{E} \times \mathbf{H})\right]d^3x
 $$
+왜 갑자기 부호가 거꾸로 되었냐고 걱정한다면...
+아무래도 $W$를 시스템이 외부에 한 일로 정의한 거 같다. $\mathbf{J} \cdot \mathbf{E}$ 는 받은 일에 해당한다. 
 
 정리:
 
@@ -503,4 +526,6 @@ $$
 
 # References
 
+# 다음 강의
 
+[[ED lecture note - Momentum Conservation and Stress Tensor]]

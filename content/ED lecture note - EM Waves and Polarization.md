@@ -269,7 +269,8 @@ $$
 편광은 **clock wise** 방향으로 회전. 이것을 **RCP (Right Circular Polarization)**라 부르며, **negative helicity**를 가진다고 한다.
 
 > [!info] Helicity 관례 (세 가지 convention이 맞물린다)
-> - Clock wise ↔ right ↔ negative helicity
+> 시계 방향이 옳다. 
+> - Clock wise ↔ right ↔ negative helicity (오른손의 네 손가락이 회전 방향으로 감길 때, 엄지 손가락이 나로부터 멀어지는 방향)
 > - Anti-clock wise ↔ left ↔ positive helicity
 
 # 궁금한 내용
