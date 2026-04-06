@@ -266,7 +266,8 @@ $$
 \hat{\varepsilon}_1 E_0\cos(\omega t) + \hat{\varepsilon}_2 E_0(-\sin\omega t)
 $$
 
-편광은 **clock wise** 방향으로 회전. 이것을 **RCP (Right Circular Polarization)**라 부르며, **negative helicity**를 가진다고 한다.
+편광은 **clock wise** 방향으로 회전. 이것을 **RCP (Right Circular Polarization)** 라 부르며, **negative helicity**를 가진다고 한
+다.
 
 > [!info] Helicity 관례 (세 가지 convention이 맞물린다)
 > 시계 방향이 옳다. 

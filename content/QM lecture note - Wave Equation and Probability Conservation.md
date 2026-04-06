@@ -438,6 +438,8 @@ Tong의 고전역학 교재
 
 # 다음 강의
 
+[[QM lecture note - Propagators and Path Integral]]
+
 # 원본 필기 이미지
 
 [[QM_6thweek_1.pdf]]
