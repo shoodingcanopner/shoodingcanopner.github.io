@@ -34,6 +34,7 @@ class: study_subject
 [[ED lecture note - Dispersion]]
 
 [[ED lecture note - Complex Analysis]]
+[[ED lecture note - Radiating Systems]]
 
 [[중간고사 대비 - 이정도 유도는 모두 할 수 있어야 한다! 리스트]]
 

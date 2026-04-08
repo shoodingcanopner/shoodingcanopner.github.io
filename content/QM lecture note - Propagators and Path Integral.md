@@ -425,6 +425,8 @@ Sakurai, Modern Quantum Mechanics, Chap. 2
 
 # 다음 강의
 
+[[QM lecture note - Path Integral Formulation]]
+
 # 원본 필기 이미지
 
 [[QM_6thweek_2.pdf]]

@@ -190,6 +190,7 @@ $$
 \int_{C_\delta} \frac{f(z)}{z-\alpha}\,dz \to i\pi f(\alpha)
 \tag{19}
 $$
+식(16) 보다 값이 1/2 되었음을 알 수 있다. 
 
 따라서:
 
@@ -282,6 +283,7 @@ $$
 
 > [!question] 강의에서 강조: $G(0) = 0$인 것... 왜지?
 > $\tau = 0$에서 $\sin(0) = 0$이므로 자연스럽게 $G(0) = 0$.
+> → 수학적으로는 알겠다. 그런데 물리적으로 왜 $G(0) = 0$이어야 하나?
 
 ---
 
@@ -362,10 +364,29 @@ $$
 > [!tip] Glia의 보충 설명 — Kramers-Kronig의 물리적 함의
 > Kramers-Kronig 관계식은 단순한 수학적 트릭이 아니다. 이것은 **선형 인과 시스템이라면 반드시 만족해야 하는 보편적 관계**다. 흡수(허수부)가 있으면 굴절률의 주파수 의존성(분산, 실수부)이 반드시 따라온다. 역으로 분산이 있으면 어딘가에 흡수가 있다. 실험적으로 흡수 스펙트럼만 측정해도 굴절률을 계산할 수 있다는 강력한 결론이다.
 
+> [!tip] Glia의 보충 설명 — Kramers-Kronig와 Fluctuation-Dissipation Theorem의 연결
+> 두 정리는 **같은 뿌리에서 나온 다른 표현**이다. 공통 기반은 **선형 응답 이론(Linear Response Theory)**이다.
+>
+> 외부 perturbation에 대한 반응을 response function $\chi(\tau)$로 쓸 때:
+> $$\langle A(t) \rangle = \int_{-\infty}^{t} \chi(t-t') F(t')\, dt'$$
+> 여기서 $\chi(\tau < 0) = 0$이 causality다. 전기역학의 $G(\tau)$와 완전히 같은 구조.
+>
+> | | Kramers-Kronig | Fluctuation-Dissipation |
+> |--|--|--|
+> | **가정** | causality만 | causality + **열평형** |
+> | **내용** | $\chi'$와 $\chi''$ 사이의 관계 | $\chi''$와 자발적 요동 사이의 관계 |
+> | **도구** | 복소 해석학 | 통계역학 |
+>
+> FDT의 핵심 결과 (classical limit):
+> $$S_{AA}(\omega) = \frac{2k_BT}{\omega} \chi''(\omega)$$
+> 여기서 $S_{AA}(\omega)$는 자기상관함수의 파워 스펙트럼. **흡수가 있는 곳에 반드시 열요동이 있다.**
+> 둘을 합치면: 열평형 시스템에서 자발적 요동 → $\chi''(\omega)$ → KK → $\chi'(\omega)$라는 체인이 완성된다.
+
 # 연관 학습 노트
 
 - [[ED lecture note - Dispersion]]
 - [[ED lecture note - Fresnel Equations]]
+- Fluctuation-Dissipation Theorem (통계역학, 추후 연결 예정)
 
 # References
 

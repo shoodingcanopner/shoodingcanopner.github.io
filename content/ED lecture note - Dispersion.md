@@ -403,6 +403,7 @@ $$
 
 # 다음 강의
 
+[[ED lecture note - Radiating Systems]]
 
 # 원본 필기 이미지
 

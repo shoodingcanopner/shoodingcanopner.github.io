@@ -46,3 +46,5 @@ Week 16: Final Exam
 [[QM lecture note - Wave Equation and Probability Conservation]]
 → 해석역학 범위인 Hamiton-Jacobi equation 설명도 자세하게 되어 있음
 [[QM lecture note - Propagators and Path Integral]]
+[[QM lecture note - Path Integral Formulation]]
+[[QM lecture note - Gauge Transformations]]
