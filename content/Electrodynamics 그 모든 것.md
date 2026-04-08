@@ -95,6 +95,13 @@ $$
 
 - 게이지 불변성과 게이지 선택 (Coulomb gauge, Lorenz gauge)
 
+$$
+\mathbf{A} \to \mathbf{A}' = \mathbf{A} + \nabla\Lambda
+$$
+$$
+\phi \to \phi' = \phi - \frac{\partial \Lambda}{\partial t}
+$$
+
 [[전기장과 자기장의 포텐셜]]
 [[포텐셜을 이용한 맥스웰 방정식]]
 [[Vector Identities in Electrodynamics]]

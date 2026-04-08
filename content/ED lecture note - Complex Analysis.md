@@ -395,7 +395,9 @@ $$
 
 # 다음 강의
 
+[[ED lecture note - Radiating Systems]]
 
 # 필기 원본
+[[ED_7thweek_1_handout_complex_analysis.pdf]]
 
-`ED_7thweek_1.pdf` 참조
+![[ED_7thweek_1.pdf]]

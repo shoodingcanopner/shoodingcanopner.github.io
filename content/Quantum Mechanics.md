@@ -48,3 +48,5 @@ Week 16: Final Exam
 [[QM lecture note - Propagators and Path Integral]]
 [[QM lecture note - Path Integral Formulation]]
 [[QM lecture note - Gauge Transformations]]
+
+[[Sakurai 1장 문제 풀기]]
