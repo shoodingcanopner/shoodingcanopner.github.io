@@ -32,7 +32,6 @@ class: study_subject
 [[ED lecture note - Stokes Parameters and Reflection]]
 [[ED lecture note - Fresnel Equations]]
 [[ED lecture note - Dispersion]]
-
 [[ED lecture note - Complex Analysis]]
 [[ED lecture note - Radiating Systems]]
 

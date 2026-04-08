@@ -11,6 +11,8 @@ class: study_lecture
 > 이것은 [[Quantum Mechanics]] 강의를 듣고 적은 필기입니다.
 > 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다.
 
+
+아직 실제 필기 내용이랑 대조 검토 안 함.. 해야해..
 # 지난 강의
 
 [[QM lecture note - Propagators and Path Integral]]
@@ -224,6 +226,6 @@ Sakurai, Modern Quantum Mechanics, Chap. 2
 
 [[QM lecture note - Gauge Transformations]]
 
-# 원본 필기 이미지
+# 원본 필기
 
-[[QM_7thweek_1.pdf]]
+![[QM_7thweek_1.pdf]]

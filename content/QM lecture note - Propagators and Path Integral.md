@@ -429,10 +429,4 @@ Sakurai, Modern Quantum Mechanics, Chap. 2
 
 # 원본 필기 이미지
 
-[[QM_6thweek_2.pdf]]
-
-![[Pasted image 20260406122549.png]]
-
-![[Pasted image 20260406122556.png]]![[Pasted image 20260406122600.png]]
-![[Pasted image 20260406122608.png]]
-![[Pasted image 20260406122616.png]]
+![[QM_6thweek_2.pdf]]

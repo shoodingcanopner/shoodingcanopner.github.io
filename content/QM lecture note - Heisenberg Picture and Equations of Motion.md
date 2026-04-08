@@ -238,6 +238,5 @@ $$
 
 # 원본 필기 이미지
 
-[[QM_5thweek_1.pdf]]
-![[Pasted image 20260326162832.png]]![[Pasted image 20260326162835.png]]
-![[Pasted image 20260326162844.png]]
+![[QM_5thweek_1.pdf]]
+
