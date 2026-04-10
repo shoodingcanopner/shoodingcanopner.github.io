@@ -24,7 +24,10 @@ class: study_lecture
 Probability conservation, 슈방, continuity equation에서 probability flux의 정의를 이용하면 양자역학 버전의 **Probability current** (flux) $\mathbf{J}$를 이렇게 정의할 수 있다. 
 
 $$
-\boxed{\mathbf{J} = -\left(\frac{i\hbar}{2m}\right)\left[\psi^*\nabla\psi - \psi\nabla\psi^*\right]}
+\mathbf{J} = -\left(\frac{i\hbar}{2m}\right)\left[\psi^*\nabla\psi - \psi\nabla\psi^*\right]
+$$
+$$
+\boxed{\mathbf{J} = \left(\frac{\hbar}{m}\right)\text{Im}\left[\psi^*\nabla\psi\right]}
 $$
 
 - 이를 국소적으로 기술하면 **Continuity Equation**: $\frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{J} = 0$
@@ -48,6 +51,22 @@ $\nabla W_{(x)} = P_{(x)}$이기 때문에, 이 스칼라 장의 기울기가 �
 ### 고전역학으로 환원
 
 - **Hamilton-Jacobi 방정식**과 양자역학의 Wave Equation을 비교하면, $\hbar \to 0$ 극한에서 양자역학이 고전역학으로 환원됨을 보일 수 있다 → **Classical Limit (WKB)**
+
+### wave function의 극좌표 표현
+
+$$
+\psi(\mathbf{x}, t) = \sqrt{\rho(\mathbf{x}, t)} \exp\left[\frac{iS(\mathbf{x}, t)}{\hbar}\right]
+$$
+이렇게 확률 밀도 $\rho(\mathbf{x}, t)$와 phase $S(\mathbf{x}, t)$로 나누어서 나타낼 수있다. 
+Phase를 괜히 $S(\mathbf{x}, t)$라고 쓴 게 아니다. 나중에 파인만의 경로 적분을 공부한다면, 시간이 지날 때 파동함수의 phase는 액션만큼 돌아간다는 걸 알 수 있다.
+위의 식에서 $S(\mathbf{x}, t)$가 바로 액션이자, 해밀턴-자코비 방정식에 등장하는 $W(q, t)$이다! 
+$\nabla S_{(x)}$ 가 바로 운동량이라는 게 양자역학에서도 그대로 적용된다. 
+Probability current가 $\nabla S_{(x)} = P_{(x)}$로 결정되는 것이다. 
+
+$$
+\boxed{\mathbf{J} = \frac{\rho \nabla S}{m}}
+$$
+Probability current는 velocity field와 probability density의 곱이라는 점을 고려해라. 
 
 # 필기 내용
 
@@ -331,6 +350,32 @@ v_\text{phase} = \frac{E}{|\nabla W^0|} = \frac{E}{|P|} = \frac{E}{\sqrt{2m(E-V)
 $$
 
 ($E$ 자체가 이동속도가 아니다. 운동량 $|P| = \sqrt{2m(E-V)}$로 나눈 값이다.)
+
+---
+
+## Wave Function의 극좌표 표현과 Probability Current의 의미
+
+파동함수를 확률 밀도 $\rho(\mathbf{x}, t)$와 위상 $S(\mathbf{x}, t)$로 분리해 나타낼 수 있다:
+
+$$
+\psi(\mathbf{x}, t) = \sqrt{\rho(\mathbf{x}, t)} \exp\left[\frac{iS(\mathbf{x}, t)}{\hbar}\right]
+$$
+
+Phase를 굳이 $S(\mathbf{x}, t)$라고 쓴 건 우연이 아니다. 파인만의 경로 적분에 따르면, **시간이 지날 때 파동함수의 phase는 액션만큼 돌아간다**. 즉 $S(\mathbf{x}, t)$는 바로 액션이자, Hamilton-Jacobi 방정식에 등장하는 $W(q, t)$와 같은 것이다.
+
+고전역학에서 $\nabla W_{(x)} = P_{(x)}$였던 것과 대응하여, $\nabla S_{(x)}$는 **고전적 대응(classical correspondence)으로서 국소 운동량의 역할**을 한다. 엄밀하게는 $\hbar \to 0$ 극한에서 성립하는 관계이며, 일반적인 양자 상태에서 $\nabla S$는 정확한 운동량 eigenvalue가 아니라 **국소 평균 운동량(local mean momentum)**에 해당한다:
+
+$$
+\nabla S_{(x)} \longleftrightarrow P_{(x)} \quad (\hbar \to 0 \text{ 극한})
+$$
+
+Probability current도 이것으로 결정된다:
+
+$$
+\boxed{\mathbf{J} = \frac{\rho \nabla S}{m}}
+$$
+
+이 식의 구조를 보면: **Probability current = probability density × velocity field**. $\dfrac{\nabla S}{m}$이 velocity field 역할을 하는 것이다. 고전 유체역학의 연속 방정식 $\dfrac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0$과 정확히 같은 구조다.
 
 ---
 
