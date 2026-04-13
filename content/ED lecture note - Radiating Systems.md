@@ -11,7 +11,6 @@ class: study_lecture
 > 이것은 [[Electrodynamics 그 모든 것]] 강의를 듣고 적은 필기입니다.
 > 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다.
 
-아직 실제 필기 내용이랑 대조 검토 안 함.. 해야해..
 
 # 지난 강의
 
@@ -19,10 +18,22 @@ class: study_lecture
 
 # 오늘의 핵심
 
-- 전자기장에서 각운동량 보존 법칙 → Chapter 9 (Radiating Systems)로 진입
-- 진동하는 전하가 어떻게 빛을 만드는가: **Retarded Green's function** 과 **Vector Potential**
-- Source와 관찰자 거리에 따른 Near zone / Far zone 구분
-- Far zone에서 Electric Dipole Radiation의 벡터 포텐셜 및 전자기장 유도
+진동하는 currnet density에서 retarded green function을 이용해 벡터 포텐셜을 구한 뒤 
+Near zone / Far zone 에 대해 approximation을 한다. 
+Fear field에서 approximation한 경우, **multipole expansion**이 나타난다. 
+
+중간에 spherical wave가 나오는 것, 
+그리고 exponential term을 테일러전개했을 때 각차수의 항들이 바로 nth order multipole이 된다는 게 핵심. 
+
+![[Radiating Systems.png]]
+
+$$
+\mathbf{H} = \frac{1}{\mu} \nabla \times \mathbf{A}, \qquad \mathbf{E} = \frac{iZ_0}{k} \nabla \times \mathbf{H}, \qquad Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}
+$$
+$$
+\left\langle \frac{dP}{d\Omega} \right\rangle = \frac{1}{2} \text{Re}\left[r^2 \hat{n} \cdot (\mathbf{E} \times \mathbf{H}^*)\right]
+$$
+
 
 # 필기 내용
 
@@ -60,7 +71,8 @@ $$
 \mathbf{J}(\mathbf{x}, t) = \mathbf{J}(\mathbf{x})\, e^{-i\omega t}
 \end{cases}
 $$
-보면 위치에 따라 진동하는 phase가 다르다거나.. 하지는 않다. 모든 위치에 있는 전하와 전류가 일제히 깜박거린다. 
+식을 보면 위치에 따라 진동하는 phase가 다르다거나.. 하지는 않다. 
+모든 위치에 있는 전하와 전류가 일제히 깜박거린다. 
 
 벡터 포텐셜에 대한 헬름홀츠 방정식의 general한 해, 
 이것은 **retarded Green's function**이라 한다:
@@ -96,7 +108,7 @@ $$
 \end{cases}
 $$
 
-> [!question] 위 식에서 J에 시간을 대입하지 않는 건가?
+> [!question] 공간에 대한 함수만 쏙 빼기
 > $\mathbf{J}(\mathbf{x}', t)= \mathbf{J}(\mathbf{x}') e^{-i\omega t}$ 이므로, 공간 부분 $\mathbf{J}(\mathbf{x}')$만 남기고 시간 의존성은 $e^{-i\omega t}$ 인수로 분리한 것. $\mathbf{A}(\mathbf{x})$는 공간 함수만.
 
 ---
@@ -107,14 +119,88 @@ $$
 \mathbf{H} = \frac{1}{\mu} \nabla \times \mathbf{A}, \qquad \mathbf{E} = \frac{iZ_0}{k} \nabla \times \mathbf{H}, \qquad Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}
 $$
 
-> → 이게 왜 성립하지? 원래는 시간 미분이 들어가야 할 텐데. 
-> $\dot{\mathbf{E}} = -i\omega\mathbf{E}$을 이용한 거 같기도 하다. 
+> → 이게 왜 성립하지? 원래는 $\mathbf{E}$와 를 이어주는 식에 시간 미분이 들어가야 할 텐데. 
+> $\dot{\mathbf{E}} = -i\omega\mathbf{E}$을 이용한 거 같기도 하다. → 이렇게 유도하니까 정확하다. 
+
+
+## 복사 파워 (Radiated Power)
+
+아래 식은 각도에 따라서 편광된 빛의 세기가 달라지는 현상과 관련있다.
+
+**Average power:**
+Unit solid angle $\Omega$ 당 복사량, 시간 평균낸 것. 
+1/2 는 시간 평균 내느라 들어간 것 같다. 
+$r^2$는 unit solid angle에 따른 구껍질 면적때문에 들어간 것. 
+$$
+\left\langle \frac{dP}{d\Omega} \right\rangle = \frac{1}{2} \text{Re}\left[r^2 \hat{n} \cdot (\mathbf{E} \times \mathbf{H}^*)\right]
+$$
+
+> [!tip] Glia의 보충 설명 — 복사 파워 식의 유도: 왜 $\mathbf{H}^*$인가?
+>
+> ### 핵심 주의사항: 포인팅 벡터는 반드시 실수 장으로 계산해야 한다
+>
+> 포인팅 벡터의 정의는:
+> $$
+> \mathbf{S} = \mathbf{E}_\text{real} \times \mathbf{H}_\text{real}
+> $$
+>
+> 여기서 **실수 장(real field)** 이란 복소수 표현의 실수부를 말한다. 복소수 표현 자체를 그대로 곱하면 안 된다! 이것이 이 유도에서 가장 중요한 점이다.
+>
+> 왜냐하면 복소수 표현 $\mathbf{E} e^{-i\omega t}$는 계산 편의를 위한 수학적 도구일 뿐이고, 물리적으로 실재하는 장은 그 실수부이기 때문이다.
+>
+> ### 유도 과정
+>
+> 복소수 표현으로 쓰면:
+> $$
+> \mathbf{E}(\mathbf{x}, t) = \mathbf{E}(\mathbf{x})\, e^{-i\omega t}, \qquad \mathbf{H}(\mathbf{x}, t) = \mathbf{H}(\mathbf{x})\, e^{-i\omega t}
+> $$
+>
+> 실수부를 추출하면 ($\text{Re}[Z] = \frac{1}{2}(Z + Z^*)$ 이용):
+> $$
+> \mathbf{E}_\text{real} = \frac{1}{2}(\mathbf{E}\, e^{-i\omega t} + \mathbf{E}^*\, e^{+i\omega t})
+> $$
+> $$
+> \mathbf{H}_\text{real} = \frac{1}{2}(\mathbf{H}\, e^{-i\omega t} + \mathbf{H}^*\, e^{+i\omega t})
+> $$
+>
+> 이 둘의 외적을 전개하면 4개의 항이 나온다:
+> $$
+> \mathbf{S} = \frac{1}{4}\Big[(\mathbf{E} \times \mathbf{H}^*) + (\mathbf{E}^* \times \mathbf{H}) + (\mathbf{E} \times \mathbf{H})\,e^{-2i\omega t} + (\mathbf{E}^* \times \mathbf{H}^*)\,e^{+2i\omega t}\Big]
+> $$
+>
+> ### 시간 평균
+>
+> 한 주기 $T = 2\pi/\omega$에 대해 평균을 취하면 $e^{\pm 2i\omega t}$ 항들은 사라진다:
+> $$
+> \langle e^{\pm 2i\omega t} \rangle_T = 0
+> $$
+>
+> 남는 것은:
+> $$
+> \langle \mathbf{S} \rangle = \frac{1}{4}\left[(\mathbf{E} \times \mathbf{H}^*) + (\mathbf{E}^* \times \mathbf{H})\right]
+> $$
+>
+> 그런데 $(\mathbf{E}^* \times \mathbf{H}) = (\mathbf{E} \times \mathbf{H}^*)^*$ 이므로, 두 항의 합은 실수부의 두 배:
+> $$
+> \langle \mathbf{S} \rangle = \frac{1}{2}\,\text{Re}[\mathbf{E} \times \mathbf{H}^*]
+> $$
+>
+> ### 왜 $\mathbf{H}^*$인가? — 한 줄 요약
+>
+> **E와 H 둘 다 $e^{-i\omega t}$를 달고 있으므로, 그냥 곱하면 $e^{-2i\omega t}$가 생겨 시간 평균이 0이 된다.** 하나에 켤레를 취해야 $e^{-i\omega t} \cdot e^{+i\omega t} = 1$이 되어 시간 독립적인 항이 살아남는다. 관례상 $\mathbf{H}$에 켤레를 취한다.
+>
+> 최종적으로 단위 입체각당 평균 복사 파워:
+> $$
+> \left\langle \frac{dP}{d\Omega} \right\rangle = r^2\,\hat{n} \cdot \langle \mathbf{S} \rangle = \frac{1}{2}\,\text{Re}\left[r^2\,\hat{n} \cdot (\mathbf{E} \times \mathbf{H}^*)\right]
+> $$
+
+
 
 ---
 
 ## Near zone / Far zone 구분
 
-소스크기 $d$, 소스와 관찰자 사이의 거리 $r$, 파장 $\lambda$.
+소스 크기 $d$, 소스와 관찰자 사이의 거리 $r$, 파장 $\lambda$.
 
 $$
 \begin{cases}
@@ -122,6 +208,8 @@ $$
 \text{Far zone} : & d \ll \lambda \ll r & \text{소스랑 멀다.}
 \end{cases}
 $$
+둘 다 소스는 작다고 가정하는 것 같다. 
+소스와 관찰자 사이 거리, 그리고 파장, 둘의 스케일 차이가 관건이다. 
 
 ---
 
@@ -162,6 +250,14 @@ $$
 
 > 그림을 그려서 이 근사를 직관적으로 납득해 보자.
 ![[Pasted image 20260408145349.png]]
+
+
+$$
+\mathbf{A}(\mathbf{x}) = \dfrac{\mu_0}{4\pi} \int d^3\mathbf{x}' \, \dfrac{\mathbf{J}(\mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|} \, e^{ik|\mathbf{x} - \mathbf{x}'|}
+$$
+이랬던 식에 근사를 하면, 분모 부분에 있는 $|\mathbf{x} - \mathbf{x}'|$에는 그냥 $r$을 대입, exponential에 있는 거에는 $|\mathbf{x} - \mathbf{x}'| \simeq r - \hat{n} \cdot \mathbf{x}'$를 대입. 
+
+구면파를 나타내는 부분이 나타난다. 
 $$
 \mathbf{A}(\mathbf{x}) = \frac{\mu_0}{4\pi} \cdot \frac{e^{ikr}}{r} \int \mathbf{J}(\mathbf{x}')\, e^{-ik\hat{n} \cdot \mathbf{x}'} \, d\mathbf{x}'
 $$
@@ -191,107 +287,25 @@ $$
 
 n이 커짐에 따라 $(ik\hat{n} \cdot \mathbf{x}')^n$이 점점 작아지므로, $n$이 작은 게 leading term이다.
 
----
+다음 노트부터는 n에 뭘 집어넣는지에 따라서 방정식의 해가 어떻게 달라지고, radiation power가 $k$에 몇 승에 비례하고, 전기장과 자기장의 편광 방향이 어느 쪽인지 알아볼 것이다. 
 
-## Electric Dipole Field (Far zone)
-
-**Electric dipole field**가 있을 때 Far zone에서
-
-9.9 식에서 $n=0$인 term만 이용. 
-> 어라... n=1이 dipole term이어야 할 것 같은데? 아닌가 지금 전류 밀도를 보고 있어서 n =0 인 게 dipole인가보다. 
-
-$$
-\mathbf{A}(\mathbf{x}) = \frac{\mu_0}{4\pi} \frac{e^{ikr}}{r} \int \mathbf{J}(\mathbf{x}') \, d\mathbf{x}' \tag{Jackson 9.13}
-$$
-
-연속 방정식 $\nabla \cdot \mathbf{J} = -\dfrac{\partial \rho}{\partial t}$를 이용:
-
-$$
-\int \mathbf{J}(\mathbf{x}') \, d\mathbf{x}' = -\int \mathbf{x}' (\nabla' \cdot \mathbf{J}) \, d\mathbf{x}' = -i\omega \int \mathbf{x}' \rho(\mathbf{x}') \, d\mathbf{x}'
-$$
-
-> 부분 적분을 적용한 것 같다. 이런 스킬도 있구나. 
-
-$$
-\mathbf{A}(\mathbf{x}) = -\frac{i\mu_0 \omega}{4\pi} \mathbf{p} \cdot \frac{e^{ikr}}{r}
-$$
-이렇게 임의의 전하밀도로부터 dipole moment를 구하는 방법을 찾았다. 
-$$
-\mathbf{p} = \int \mathbf{x}' \rho(\mathbf{x}') \, d^3\mathbf{x}' \quad \leftarrow \text{electric dipole, 회전 관성 moment와 비슷한 정의}
-$$
-정성적으로 뜻을 이해하자면, 전체적인 전하 분포가 어느 방향으로 얼마나 치우쳐졌는가가 dipole moment이다. 전하가 원점을 중심으로 고르게 분포되어 있으면 dipole moment가 0이고, 한쪽 위치에 쏠려있으면 dipole moment가 커진다. 
 
 ---
 
-## H, E 구하기 (Electric Dipole)
-
-$$
-\mathbf{H} = \frac{1}{\mu} \nabla \times \mathbf{A} = \frac{ck^2}{4\pi} (\hat{n} \times \mathbf{p}) \frac{e^{ikr}}{r} \left(1 - \frac{1}{ikr}\right)
-$$
-
-> → curl 연산할 때 stokes theorem 들어간 것. 자세한 유도를 공부할 필요가 있다. 
-
-$$
-\mathbf{E} = \frac{ck^2}{4\pi} \frac{iZ_0}{k} \nabla \times \left\{(\hat{n} \times \mathbf{p}) \underbrace{\frac{e^{ikr}}{r}\left(1 - \frac{1}{ikr}\right)}_{g(r)}\right\}
-$$
-
-$$
-g(r) \equiv \frac{e^{ikr}}{r}\left(1 - \frac{1}{ikr}\right)
-$$
-
-$$
-\mathbf{E} = \frac{ck^2}{4\pi} \frac{iZ_0}{k} \nabla \times (\hat{n} \times \mathbf{p} g(r))\
-$$
-
-$$
-= \frac{ik}{4\pi\varepsilon_0} \left[(\mathbf{p}\, g(r) \cdot \nabla)\hat{n} - \mathbf{p}\, g(r)(\nabla \cdot \hat{n}) + \hat{n}(\nabla \cdot \mathbf{p}\, g(r)) - (\hat{n} \cdot \nabla g(r))\mathbf{p}\, \right] 
-$$
-위의 식 맞는지 확인이 필요. 
-
-최종:
-
-$$
-\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \left\{ k^2 (\hat{n} \times \mathbf{p}) \times \hat{n} \frac{e^{ikr}}{r} + \left[3\hat{n}(\hat{n} \cdot \mathbf{p}) - \mathbf{p}\right] \frac{e^{ikr}}{r}(1 - ikr) \right\} \tag{Jackson 9.18}
-$$
-
-**특징 정리:**
-- $\mathbf{H}$는 $\hat{n}$과 직교. 빛의 특성과 같다.
-- $\mathbf{E}$는 $\hat{n}$과 직교한 성분도 있고 평행한 성분도 있다.
-
-제일 dominant한 term $\frac{1}{r} e^{ikr}$만 쓰면:
-
-$$
-\begin{cases}
-\mathbf{H} = \dfrac{ck^2}{4\pi} (\hat{n} \times \mathbf{p}) \dfrac{e^{ikr}}{r} \\[6pt]
-\mathbf{E} = Z_0\, \mathbf{H} \times \hat{n}
-\end{cases}
-$$
-
->  이러면 E랑 p랑 평행하나나? → 그건 아닌 듯.
 
 ---
 
-## 복사 파워 (Radiated Power)
+## Electric Dipole Radiation 이후
 
-아래 식은 각도에 따라서 편광된 빛의 세기가 달라지는 현상과 관련있다. 
-
-**Average power:**
-
-$$
-\left\langle \frac{dP}{d\Omega} \right\rangle = \frac{1}{2} \text{Re}\left[r^2 \hat{n} \cdot (\mathbf{E} \times \mathbf{H}^*)\right]
-$$
-
-$$
-\frac{dP}{d\Omega} = \frac{k^4}{32\pi^2} \left(\frac{c}{\varepsilon_0}\right) |(\hat{n} \times \mathbf{p}) \times \hat{n}|^2
-$$
+이 부분부터는 별도 노트로 분리됨 → [[ED lecture note - Electric Dipole Radiation]]
 
 # 궁금한 내용
 
 0. 전자기장에서 각운동량 보존 법칙은?
 1. $\mathbf{H}$와 $\mathbf{E}$를 $\mathbf{A}$로부터 구할 때 $\mathbf{E} = \frac{iZ_0}{k}\nabla \times \mathbf{H}$ 가 성립하는 이유는? 시간 미분이 있어야 할 것 같은데.
 2. Near zone에서 갑자기 시간을 고려 안 하기 시작한 이유는?
-3. 식 (9.9)에서 $n=0$ term이 왜 electric dipole에 해당하는가?
-4. $\int \mathbf{J} d\mathbf{x}' = -i\omega \int \mathbf{x}' \rho \, d\mathbf{x}'$ 유도에서 부분적분 과정은?
+3. 식 (9.9)에서 $n=0$ term이 왜 electric dipole에 해당하는가? → [[ED lecture note - Electric Dipole Radiation]] 참고
+4. $\int \mathbf{J} d\mathbf{x}' = -i\omega \int \mathbf{x}' \rho \, d\mathbf{x}'$ 유도에서 부분적분 과정은? → [[ED lecture note - Electric Dipole Radiation]] 참고
 
 # AI의 보충 설명
 
@@ -355,8 +369,6 @@ $$
 
 # 연관 학습 노트
 
-[[ED lecture note - Dispersion]]
-[[ED lecture note - Momentum Conservation and Stress Tensor]]
 
 # References
 
@@ -364,7 +376,7 @@ $$
 
 # 다음 강의
 
-# 필기 원본
+[[ED lecture note - Electric Dipole Radiation]]
 
 ![[ED_7thweek_2.pdf]]
 ![[Pasted image 20260408113007.png]]

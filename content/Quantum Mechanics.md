@@ -13,7 +13,7 @@ class: study_subject
 # 강의 정보 
 교재로 Sakurai 책을 이용한다. 
 
-중간고사 4월 14일
+중간고사 4월 16일
 기말고사 6월 9일
 
 결석을 하게 된다면 다음 강의 시작 전까지 못 들은 강의의 필기를 보내면 결석 점수가 아니라 지각 점수를 받게 된다. 
@@ -50,3 +50,4 @@ Week 16: Final Exam
 [[QM lecture note - Gauge Transformations]]
 
 [[Sakurai 1장 문제 풀기]]
+[[QM mini note - Canonical Commutation Relation from Translation]]
