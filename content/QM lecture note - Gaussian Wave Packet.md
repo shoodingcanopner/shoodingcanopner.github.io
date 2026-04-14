@@ -95,6 +95,10 @@ $$
 $$
 \boxed{\phi_\alpha(p') = \sqrt{\frac{d}{\hbar\sqrt{\pi}}} \exp\!\left[-\frac{d^2}{2\hbar^2}(p' - \hbar k)^2\right]}
 $$
+Probability density를 구하면, 
+$$
+|\phi_\alpha(p')|^2 = \frac{d}{\hbar\sqrt{\pi}} \exp\!\left[-\frac{d^2}{\hbar^2}(p' - \hbar k)^2\right]
+$$
 
 놀랍게도 $\hbar k$만큼 평행이동한 Gaussian distribution이 나온다. 진동하는 phase가 전혀 없다.
 
@@ -107,6 +111,8 @@ $$
 $$
 \therefore \langle (\Delta p)^2 \rangle = \frac{\hbar^2}{2d^2}
 $$
+어차피 가우시안이므로 standard deviation은 식을 보며 바로 알 수 있다. 
+다만 주의할 점은, 꼭 wave function을 제곱하여 probability density를 구해야 한다는 것이다. Wave function 자체가 가우시안이라서 좀 헷갈린다. 
 
 ---
 
@@ -136,4 +142,4 @@ Gaussian wave packet은 불확정성 원리를 정확히 포화(saturate)시키�
 
 # 원본 필기 이미지
 
-[[QM_4thweek_2.pdf]]
+![[QM_4thweek_2.pdf]]

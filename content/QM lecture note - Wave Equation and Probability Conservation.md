@@ -363,7 +363,7 @@ $$
 
 Phase를 굳이 $S(\mathbf{x}, t)$라고 쓴 건 우연이 아니다. 파인만의 경로 적분에 따르면, **시간이 지날 때 파동함수의 phase는 액션만큼 돌아간다**. 즉 $S(\mathbf{x}, t)$는 바로 액션이자, Hamilton-Jacobi 방정식에 등장하는 $W(q, t)$와 같은 것이다.
 
-고전역학에서 $\nabla W_{(x)} = P_{(x)}$였던 것과 대응하여, $\nabla S_{(x)}$는 **고전적 대응(classical correspondence)으로서 국소 운동량의 역할**을 한다. 엄밀하게는 $\hbar \to 0$ 극한에서 성립하는 관계이며, 일반적인 양자 상태에서 $\nabla S$는 정확한 운동량 eigenvalue가 아니라 **국소 평균 운동량(local mean momentum)**에 해당한다:
+고전역학에서 $\nabla W_{(x)} = P_{(x)}$였던 것과 대응하여, $\nabla S_{(x)}$는 **고전적 대응(classical correspondence)으로서 국소 운동량의 역할**을 한다. 엄밀하게는 $\hbar \to 0$ 극한에서 성립하는 관계이며, 일반적인 양자 상태에서 $\nabla S$는 정확한 운동량 eigenvalue가 아니라 **국소 평균 운동량(local mean momentum)** 에 해당한다:
 
 $$
 \nabla S_{(x)} \longleftrightarrow P_{(x)} \quad (\hbar \to 0 \text{ 극한})

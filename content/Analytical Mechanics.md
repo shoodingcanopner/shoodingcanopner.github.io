@@ -41,6 +41,7 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Relativistic particle and Dirac bracket]]
 [[AM lecture note - Liouville theorem and Canonical transformation]]
 [[AM lecture note - Canonical transformation]]
+[[AM lecture note - Generating function]]
 
 
 

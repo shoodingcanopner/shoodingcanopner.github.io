@@ -19,8 +19,16 @@ class: study_lecture
 
 Time evolution operator $\mathcal{U}(t, t_0)$는 세 가지 특성(Unitarity, Composition, Identity)으로부터 Schrödinger 방정식을 유도한다.
 
+특히, Composition 성질에 따라:
+
 $$
-\boxed{i\hbar \frac{d}{dt}|\alpha, t\rangle = \mathcal{H}|\alpha, t\rangle}
+\mathcal{U}(t+dt, t_0) = \mathcal{U}(t+dt, t)\,\mathcal{U}(t, t_0) = \left(\mathbb{1} - \frac{i}{\hbar}\mathcal{H}(t)\,dt\right)\mathcal{U}(t, t_0)
+$$
+$$
+\boxed{\frac{d\,\mathcal{U}(t, t_0)}{dt} = -\frac{i}{\hbar}\mathcal{H}(t)\,\mathcal{U}(t, t_0)}
+$$
+$$
+\boxed{i\hbar \frac{d}{dt}|\alpha, t\rangle = \mathcal{H}(t)|\alpha, t\rangle}
 $$
 
 에너지 고유상태는 시간이 지나도 phase만 바뀌며, 일반 상태의 time evolution은 에너지 eigenbasis로 전개하여 기술한다.
@@ -135,8 +143,11 @@ $$
 $$
 
 $$
-\frac{d\,\mathcal{U}(t, t_0)}{dt} = -\frac{i}{\hbar}\mathcal{H}\,\mathcal{U}(t, t_0)
+\boxed{\frac{d\,\mathcal{U}(t, t_0)}{dt} = -\frac{i}{\hbar}\mathcal{H}\,\mathcal{U}(t, t_0)}
 $$
+
+generator가 결국은 미분 연산자라는 걸 유도하는 이 논리는, 
+앞서 위치와 운동량에서 사용한 것과 완전 동일하다. 
 
 양자에서는 $\dfrac{d}{dt} = -\dfrac{i}{\hbar}\mathcal{H}$인 것. 위 식 양변에 $|\alpha, t_0\rangle$을 곱하면:
 
@@ -161,6 +172,8 @@ $$
 $$
 
 **Energy eigenket은 시간이 지나도 phase만 바뀐다.** (Stationary state)
+Phase가 바뀌는 진동수는 eigen ket의 eigen value와 비례한다. 
+더 큰 에너지일 수록 phas가 빠르게 돌아간다. 
 
 ---
 
@@ -237,6 +250,84 @@ $n$부터 대입하면서 차례로 비교하면:
 | $n=1$ | $\dfrac{1}{i\hbar}\displaystyle\int_{t_0}^{t}dt'\,\mathcal{H}(t')$                                            | $\dfrac{1}{i\hbar}\displaystyle\int_{t_0}^{t}dt_1\,\mathcal{H}(t_1)$                                                                                                                      |
 | $n=2$ | $\left(\dfrac{1}{i\hbar}\right)^2\dfrac{1}{2}\left(\displaystyle\int_{t_0}^{t}dt'\,\mathcal{H}(t')\right)^2$  | $\left(\dfrac{1}{i\hbar}\right)^2\displaystyle\int_{t_0}^{t}dt_1\,\mathcal{H}(t_1)\displaystyle\int_{t_0}^{t_1}dt_2\,\mathcal{H}(t_2)$                                                    |
 | $n=3$ | $\left(\dfrac{1}{i\hbar}\right)^3\dfrac{1}{3!}\left(\displaystyle\int_{t_0}^{t}dt'\,\mathcal{H}(t')\right)^3$ | $\left(\dfrac{1}{i\hbar}\right)^3\displaystyle\int_{t_0}^{t}dt_1\,\mathcal{H}(t_1)\displaystyle\int_{t_0}^{t_1}dt_2\,\mathcal{H}(t_2)\displaystyle\int_{t_0}^{t_2}dt_3\,\mathcal{H}(t_3)$ |
+적분 변수로 $t_1$부터 $t_n$까지 사용하는 게 핵심. 
+가능하면 인덱스 사용을 교과서랑 맞춰야 안 헷갈리지 않을까...
+
+```tikz
+\begin{tikzpicture}[
+    scale=1.1,
+    axis/.style={->, thick},
+    interval/.style={thick},
+]
+
+\def\rowsep{1.5}
+\def\tend{8.0}
+
+% t-axis
+\draw[axis] (-0.3, 0) -- (9.0, 0) node[right] {$t$};
+\foreach \x/\lbl in {1.2/$t_1$, 2.4/$t_2$, 3.6/$t_3$, 4.8/$t_4$, 6.0/$t_5$, 8.0/$t_0$} {
+    \draw[thick] (\x, 0.1) -- (\x, -0.1);
+    \node[below, font=\small] at (\x, -0.1) {\lbl};
+}
+
+% Row 1
+\draw[thick] (1.2, -1*\rowsep+0.13) -- (8.0, -1*\rowsep+0.13);
+\draw[thick] (1.2, -1*\rowsep-0.13) -- (8.0, -1*\rowsep-0.13);
+\draw[thick] (1.2, -1*\rowsep+0.28) -- (1.2, -1*\rowsep-0.28);
+\draw[thick] (8.0, -1*\rowsep+0.28) -- (8.0, -1*\rowsep-0.28);
+\node[left, font=\small] at (1.2, -1*\rowsep) {$t_1$};
+\node[above, font=\scriptsize] at (4.6, -1*\rowsep+0.22) {range of $t_1$};
+\node[right, font=\small] at (8.0, -1*\rowsep) {$t_0$};
+
+% Row 2
+\draw[thick] (2.4, -2*\rowsep+0.13) -- (8.0, -2*\rowsep+0.13);
+\draw[thick] (2.4, -2*\rowsep-0.13) -- (8.0, -2*\rowsep-0.13);
+\draw[thick] (2.4, -2*\rowsep+0.28) -- (2.4, -2*\rowsep-0.28);
+\draw[thick] (8.0, -2*\rowsep+0.28) -- (8.0, -2*\rowsep-0.28);
+\node[left, font=\small] at (2.4, -2*\rowsep) {$t_2$};
+\node[above, font=\scriptsize] at (5.2, -2*\rowsep+0.22) {range of $t_2$};
+\node[right, font=\small] at (8.0, -2*\rowsep) {$t_0$};
+
+% Row 3
+\draw[thick] (3.6, -3*\rowsep+0.13) -- (8.0, -3*\rowsep+0.13);
+\draw[thick] (3.6, -3*\rowsep-0.13) -- (8.0, -3*\rowsep-0.13);
+\draw[thick] (3.6, -3*\rowsep+0.28) -- (3.6, -3*\rowsep-0.28);
+\draw[thick] (8.0, -3*\rowsep+0.28) -- (8.0, -3*\rowsep-0.28);
+\node[left, font=\small] at (3.6, -3*\rowsep) {$t_3$};
+\node[above, font=\scriptsize] at (5.8, -3*\rowsep+0.22) {range of $t_3$};
+\node[right, font=\small] at (8.0, -3*\rowsep) {$t_0$};
+
+% Row 4
+\draw[thick] (4.8, -4*\rowsep+0.13) -- (8.0, -4*\rowsep+0.13);
+\draw[thick] (4.8, -4*\rowsep-0.13) -- (8.0, -4*\rowsep-0.13);
+\draw[thick] (4.8, -4*\rowsep+0.28) -- (4.8, -4*\rowsep-0.28);
+\draw[thick] (8.0, -4*\rowsep+0.28) -- (8.0, -4*\rowsep-0.28);
+\node[left, font=\small] at (4.8, -4*\rowsep) {$t_4$};
+\node[above, font=\scriptsize] at (6.4, -4*\rowsep+0.22) {range of $t_4$};
+\node[right, font=\small] at (8.0, -4*\rowsep) {$t_0$};
+
+% Row 5
+\draw[thick] (6.0, -5*\rowsep+0.13) -- (8.0, -5*\rowsep+0.13);
+\draw[thick] (6.0, -5*\rowsep-0.13) -- (8.0, -5*\rowsep-0.13);
+\draw[thick] (6.0, -5*\rowsep+0.28) -- (6.0, -5*\rowsep-0.28);
+\draw[thick] (8.0, -5*\rowsep+0.28) -- (8.0, -5*\rowsep-0.28);
+\node[left, font=\small] at (6.0, -5*\rowsep) {$t_5$};
+\node[above, font=\scriptsize] at (7.0, -5*\rowsep+0.22) {range of $t_5$};
+\node[right, font=\small] at (8.0, -5*\rowsep) {$t_0$};
+
+% dots
+\node[font=\large] at (7.0, -6*\rowsep) {$\vdots$};
+
+% green vertical connectors
+\draw[thick, green!60!black] (1.2, -0.28) -- (1.2, -\rowsep+0.28);
+\draw[thick, green!60!black] (2.4, -\rowsep-0.28) -- (2.4, -2*\rowsep+0.28);
+\draw[thick, green!60!black] (3.6, -2*\rowsep-0.28) -- (3.6, -3*\rowsep+0.28);
+\draw[thick, green!60!black] (4.8, -3*\rowsep-0.28) -- (4.8, -4*\rowsep+0.28);
+\draw[thick, green!60!black] (6.0, -4*\rowsep-0.28) -- (6.0, -5*\rowsep+0.28);
+
+\end{tikzpicture}
+```
+![[Pasted image 20260414170353.png]]
 
 $n=2$의 경우, 
 $t_1$은 $t_0$부터 $t$까지 적분하면서 연속적으로 정분한다. $t_2$는 $t_0$부터 $t_1$까지만 적분하여 $\mathcal{H}(t_2)$가 항상 $\mathcal{H}(t_1)$보다 왼쪽에 오도록 한다.
@@ -327,4 +418,4 @@ $$
 
 # 원본 필기 이미지
 
-[[QM_4thweek_2.pdf]]
+![[QM_4thweek_2.pdf]]

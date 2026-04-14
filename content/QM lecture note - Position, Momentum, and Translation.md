@@ -178,6 +178,7 @@ $$
 $$
 = \int \ket{x}\braket{x - \delta x|\alpha} = \int \psi_\alpha(x - \delta x)\,\ket{x}
 $$
+$x'$ 와 $x$ ,둘이 notation이 왔다갔다 하긴 하지만 고치기 귀찮으니까 냅두자. 
 
 ### $T(\delta x)$의 특성
 
@@ -202,6 +203,8 @@ $$
 $$
 T(-\delta x) = T^{-1}(\delta x) = T^\dagger(\delta x)
 $$
+→ 위의 unitary 조건이랑 동치 아닌가?
+Tranplation의 정의에 기반한 직접적인 증명은 [[QM mini note - Generator as Differential Operator]] 에 있다. 
 
 **4) Identity**
 
@@ -214,8 +217,10 @@ $$
 $$
 T(\delta x) = \mathbb{1} - ik\cdot\delta x
 $$
+$T(\delta x)$의 네 가지 특성을 모두 만족시키기 위해서는 $T(\delta x)$는 위의 형태를 가져야 한다. 
 
-$T(\delta x)$를 테일러 전개 1차까지 한 것이다. $k$ 또한 어떤 operator이다.
+
+$T(\delta x)$를 테일러 전개 1차까지 한 것이다. $k$ 또한 어떤 operator이며, Hermitian이다. $T(\delta x)$의 unitery property를 위해서다. 
 
 **Unitarity 검증:**
 
@@ -232,6 +237,8 @@ $$
 $$
 T(\delta x)\,T(\delta x') = (\mathbb{1} - ik\delta x)(\mathbb{1} - ik\delta x') = \mathbb{1} - ik(\delta x + \delta x') = T(\delta x + \delta x')
 $$
+$\delta x$와 $\delta x'$의 1차까지만 전개한 결과이다. 
+
 
 **Unitary 검증 (inverse):**
 
@@ -242,6 +249,8 @@ $$
 ---
 
 ## $x$와 $T(\delta x)$ 사이의 관계
+
+중요하다고 생각한 부분, 따로 [[QM mini note - Canonical Commutation Relation from Translation]] 에 적었다. translation의 특성만으로 변수와 그것의 generator 사이의 commutation relation을 알 수 있다. 
 
 $$
 [x,\, T(\delta x)] = ?

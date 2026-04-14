@@ -14,9 +14,19 @@ class: study_lecture
 # 핵심
 
 - Translation operator의 generator 개념을 이용하면 $[x, p_x] = i\hbar$를 유도할 수 있다.
-- **운동량이 위치의 미분연산자라는 사실을 이용하지 않은, 순수하게 translation property를 이용한 유도이다. **
+- **운동량이 위치의 미분연산자라는 사실을 이용하지 않은, 순수하게 translation property를 이용한 유도이다.**
 - $[x, T(dx')]$를 직접 계산한 뒤, $T(dx') = \mathbb{1} - \frac{i}{\hbar}dx'\,p_x$를 대입하면 canonical commutation relation이 나온다.
 - $[p_i, p_j] = 0$은 서로 다른 방향의 translation operator가 commute한다는 사실에서 유도된다.
+- $T(\Delta p) = \mathbb{1} + i\frac{\Delta p}{\hbar}\,x$의 부호는 왜 $T(\Delta x) = \mathbb{1} - i\frac{\Delta x}{\hbar}\,p$와 반대일까? → commutation relation 때문에 그렇다. 
+
+> [!note] 일반화
+> A와 B가 서로 canonical conjugate라고 치자. 둘은 서로의 generator이다.
+> 둘의 commutation relation이 $[A, B] = i$를 만족할 때, 
+> 각자의 translation operator는 이렇게 정의된다. 
+> $$
+> T(\delta A) = \mathbb{1} - i\,\delta A \cdot B, \qquad T(\delta B) = \mathbb{1} + i\,\delta B \cdot A
+> $$
+> 두 translation operator에서 $\delta$의 계수 앞 부호가 반대가 되는 것은 commutation relation의 비대칭성 $[A,B] = -[B,A]$에서 비롯된다.
 
 # 필기 내용
 
@@ -139,6 +149,71 @@ $$
 
 이 세 관계식은 양자역학의 근본 구조를 이루며, translation operator의 성질로부터 자연스럽게 도출된다.
 
+---
+
+## 보충: $T(\Delta p)$의 부호는 왜 $T(\Delta x)$와 반대일까?
+
+**문제의식:** position translation operator는
+
+$$
+T(\Delta x) = \mathbb{1} - i\frac{\Delta x}{\hbar}\,p
+\tag{12}
+$$
+
+인데, momentum translation operator는
+
+$$
+T(\Delta p) = \mathbb{1} + i\frac{\Delta p}{\hbar}\,x
+\tag{13}
+$$
+
+로 부호가 반대다. 왜일까?
+
+**검증:** $[T(\Delta p),\, p]$를 직접 계산해보자.
+
+$T(\Delta p)$가 momentum eigenket $\ket{p'}$에 작용하면:
+
+$$
+T(\Delta p)\,p\,\ket{p'} = p'\,T(\Delta p)\ket{p'} = p'\ket{p' + \Delta p}
+\tag{14}
+$$
+
+$$
+p\,T(\Delta p)\ket{p'} = p\,\ket{p' + \Delta p} = (p' + \Delta p)\ket{p' + \Delta p}
+\tag{15}
+$$
+
+따라서:
+
+$$
+[T(\Delta p),\, p]\,\ket{p'} = -\Delta p\,\ket{p' + \Delta p} \approx -\Delta p\,\ket{p'}
+$$
+
+$$
+[T(\Delta p),\, p] = -\Delta p
+\tag{16}
+$$
+
+한편 (13)을 대입하면:
+
+$$
+\left[\mathbb{1} + i\frac{\Delta p}{\hbar}\,x,\; p\right] = i\frac{\Delta p}{\hbar}[x,\,p] = -\Delta p
+$$
+
+$$
+\therefore\quad [x,\,p] = i\hbar \quad \checkmark
+\tag{17}
+$$
+
+만약 (13)의 부호를 반대로 $T(\Delta p) = \mathbb{1} - i\frac{\Delta p}{\hbar}x$로 놓았다면, (16)과 비교했을 때 $[x, p] = -i\hbar$가 나와 canonical commutation relation에 모순이 생긴다.
+
+> [!note] 일반화
+> A와 B가 서로 반대 방향의 generator 관계, 즉 $[A, B] = i$를 만족할 때:
+> $$
+> T(\delta A) = \mathbb{1} - i\,\delta A \cdot B, \qquad T(\delta B) = \mathbb{1} + i\,\delta B \cdot A
+> $$
+> 두 translation operator에서 $\delta$의 계수 앞 부호가 반대가 되는 것은 commutation relation의 비대칭성 $[A,B] = -[B,A]$에서 비롯된다.
+
 # 연관 학습 노트
 
 - [[QM lecture note - Position, Momentum, and Translation]]
@@ -149,3 +224,4 @@ $$
 # 필기 원본 이미지
 
 ![[Pasted image 20260413210949.png]]
+![[Pasted image 20260414140232.png]]

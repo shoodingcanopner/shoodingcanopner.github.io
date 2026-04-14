@@ -19,25 +19,7 @@ class: study_lecture
 
 Momentum operator를 position basis에서 나타내면 디락델타와 공간 미분이 나온다. 
 유도는 momentum operator가 position transition operator라는 점에서 시작한다. 
-
-**이 유도법은 다른 generator에서도 쓰일 것 같으니 통으로 알아두자**
-
-$$
-T(dx)\ket{\alpha} = \left(\mathbb{1} - \frac{i}{\hbar}dx\, p\right)\ket{\alpha} = \int dx''\, \psi_\alpha(x'')\ket{x''} - \frac{i}{\hbar}dx\, p\ket{\alpha}
-$$
-한편으로는, 
-$$
-T(dx)\ket{\alpha} = \int dx'\, \psi_\alpha(x')T(dx)\ket{x'} = \int dx'\, \psi_\alpha(x')\ket{x'+dx} = \int dx''\, \psi_\alpha(x''-dx)\ket{x''}
-$$
-두 식을 같다고 놓으면:
-$$
--\frac{i}{\hbar}dx\, p\ket{\alpha} = \int dx''\,\bigl(\psi_\alpha(x''-dx) - \psi_\alpha(x'')\bigr)\ket{x''}
-$$
-$$
-= \int dx''\left(-dx\,\frac{\partial}{\partial x''}\psi_\alpha(x'')\right)\ket{x''}
-$$
-
-양변에서 $-\frac{i}{\hbar}dx$를 나누고, $\bra{x''}$을 왼쪽에서 곱하면:
+더 쉬운 유도법이 이 노트에 있다. [[QM mini note - Generator as Differential Operator]]
 
 $$
 \braket{x''|p|\alpha} = -i\hbar\frac{\partial}{\partial x''}\braket{x''|\alpha}
@@ -48,16 +30,31 @@ $$
 이것이 모든 유도의 시작점.
 
 ---
+Position basis에서 momentum basis로 옮기는 unitary transformation operator $\mathcal{U}$
 
+$$
+\mathcal{U} = \sum_{k'}\ket{p^{k'}}\bra{x^{k'}}
+$$
+$\mathcal{U}$를 momentum basis에서 나타내면 이렇게 된다. 
 $$
 \langle x^m | \mathcal{U} | x^k \rangle = \langle x^m | p^k \rangle
 $$
 
-이게 position space와 mementum space사이 transformation function 역할을 한다.
 Position basis에서 연산을 수행할 때, transformation function으로 $\langle x^m | p^k \rangle$의 값을 사용하면 되는 것이다. 
 $$
 \boxed{\langle x' | p' \rangle = \frac{1}{\sqrt{2\pi\hbar}} \exp\!\left( \frac{ip'x'}{\hbar} \right)}
 $$
+이걸 유도할 수 있어야 한다. Normalization까지 같이. 
+
+$\phi(p')$에서 $\psi(x')$로 변환하는 데에 왜 $\braket{x'|p'}$가 필요한지는 간단하게 알 수 있다. 
+
+$$
+\psi_\alpha(x') = \braket{x'|\alpha} = \int dp' \, \braket{x'|p'}\braket{p'|\alpha} = \int dp' \, \braket{x'|p'} \phi_\alpha(p')
+$$
+
+$\mathbb{1}$을 적분 형태(혹은 summation) 형태로 끼워넣는 스킬이 얼마나 중요한지 알 수 있는 부분. 
+
+
 ---
 
 # 필기 내용
@@ -77,6 +74,8 @@ $A$는 anti-Hermitian이어야 하고, 대응하는 observable $k$에 대해 $A 
 ### Canonical Transformation 복습
 모르는 것 투성이였다. 아래 노트를 참고하자. 
 [[Canonical Transformation and Symplectic Structure]]
+사쿠라이 책 이외의 내용이므로, 양자 시험에 이 내용 자체가 나오진 않을 것이다. 
+
 해밀턴 역학에서 운동 방정식:
 
 $$
@@ -115,7 +114,6 @@ $$
 
 변환을 해도 시간에 대한 전미분 항 $\frac{dF}{dt}$만 추가될 뿐.
 
-→ 유도를 직접 할 수 있을까?
 
 ---
 
@@ -134,7 +132,7 @@ $$
 → 무슨 취지로 이 네 가지 generating function을 생각하는 거지?
 → 원하는 변환을 얻고싶다면 gernerating function을 어떻게 설정해야 하는가?
 
-$F_2(q_i, P_i, t)$를 선택하면,
+가장 많이 쓰이는 형태인 $F_2(q_i, P_i, t)$를 선택하면,
 
 $$
 dF_2 = \frac{\partial F_2}{\partial q_i} dq_i + \frac{\partial F_2}{\partial P_i} dP_i + \frac{\partial F_2}{\partial t} dt
@@ -261,6 +259,7 @@ $$
 $$
 
 **유도:** $T(dx)\ket{\alpha}$를 두 가지 방법으로 전개해서 비교한다.
+이 부분은 [[QM mini note - Generator as Differential Operator]]에서 더 간단히 증명했다. 
 
 **방법 1 — $T(dx)$의 정의로부터:**
 
@@ -311,11 +310,7 @@ $$
 운동량 연산자를 서로 다른 상태에 샌드위치한 결과를 position basis에서 계산하면 이렇게 된다. 
 
 $$
-\langle \beta | p | \alpha \rangle = \int dx'\, \langle \beta | x' \rangle \left( -i\hbar \frac{\partial}{\partial x'} \langle x' | \alpha \rangle \right)
-$$
-
-$$
-= \int dx' \int dx''\, \langle \beta | x' \rangle \langle x' | p | x'' \rangle \langle x'' | \alpha \rangle
+\langle \beta | p | \alpha \rangle = \int dx' \int dx''\, \langle \beta | x' \rangle \langle x' | p | x'' \rangle \langle x'' | \alpha \rangle
 $$
 
 $$
@@ -345,15 +340,16 @@ $$
 ## Finite Translation과 Momentum Eigenstate
 
 ### Finite Translation Operator
-
-Infinitesimal translation을 $N$번 반복하면:
+$\Delta x$만큼 옮기는 translation을 $\frac{\Delta x}{N}$만큼 N번 옮기는 과정으로 나타내보자. 
+$N$을 무한대로 보내면, 자연스럽게 자연상수가 나온다. 
 
 $$
 T(\Delta x) = \lim_{N \to \infty} \left( T\!\left(\frac{\Delta x}{N}\right) \right)^N = \lim_{N \to \infty} \left( \mathbb{1} - \frac{i}{\hbar} \frac{p_x \Delta x}{N} \right)^N = \exp\!\left( -\frac{i}{\hbar} p_x \Delta x \right)
 $$
 
 지금까지 infinitesimal translation을 exponential로 나타내는 게 그냥 테일러 전개의 결인 줄알았다. 
-이것은더 정확한 방식으로 exponential 표현을 정당화한다. 곱하기와 더하기 연산을 이어주는 것은 로그나 지수함수밖에 없으므로. 
+이것은더 정확한 방식으로 exponential 표현을 정당화한다. 
+곱하기와 더하기 연산을 이어주는 것은 로그나 지수함수밖에 없으므로. 
 
 ### Translation Operator의 Commutativity
 
@@ -379,13 +375,12 @@ $$
 ## Poisson Bracket → Commutator 대응
 
 고전역학의 Poisson bracket을 commutator로 바꾸면 양자화된다:
-
 $$
 \{\cdot,\cdot\} \longrightarrow \frac{1}{i\hbar}[\cdot,\cdot]
 $$
-$\hbar$랑 $p \dot{q}$ 랑 차원이 같나.. 생각해 보니까 그렇지 않다. 시간 만큰의 차원 차이가 있다. 
-
 Poisson bracket이 가지는 성질들은 commutator 또한 가진다.
+
+이걸 알아두면 푸아송 괄호를 계산하기 귀찮을 때는 commutator를 계산하고, 그 반대의 상황에도 적용하는 등 꼼수를 부릴 수 있다. 
 
 ---
 
@@ -440,6 +435,8 @@ $$
 = |N|^2 \int dp'\, \exp\!\left( \frac{ip'(x' - x'')}{\hbar} \right) = |N|^2\, 2\pi\hbar\, \delta(x' - x'')
 $$
 
+이때, $\int dt\, \exp (i \omega t) = 2\pi \delta(\omega)$를 이용한다. 디락델타 앞에 $2\pi$가 나오는 게 핵심이다. 
+
 $$
 \therefore\quad |N|^2 = \frac{1}{2\pi\hbar}, \qquad N = \frac{1}{\sqrt{2\pi\hbar}}
 $$
@@ -483,9 +480,5 @@ $$
 
 # 원본 필기 이미지
 
-[[QM_4thweek_1.pdf]]
-![[Pasted image 20260326172639.png]]![[Pasted image 20260326172645.png]]
-![[Pasted image 20260326172650.png]]
-![[Pasted image 20260326172657.png]]
-![[Pasted image 20260326172704.png]]
-![[Pasted image 20260326172709.png]]
+![[QM_4thweek_1.pdf]]
+

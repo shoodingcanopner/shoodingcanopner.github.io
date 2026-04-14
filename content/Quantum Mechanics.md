@@ -51,3 +51,5 @@ Week 16: Final Exam
 
 [[Sakurai 1장 문제 풀기]]
 [[QM mini note - Canonical Commutation Relation from Translation]]
+[[QM mini note - Generator as Differential Operator]]
+

@@ -300,6 +300,7 @@ David Tong, *Classical Dynamics* (Cambridge lecture notes)
 
 # 다음 강의
 
+[[AM lecture note - Generating function]]
 
 # 필기 원본
 
