@@ -20,10 +20,31 @@ class: study_lecture
 
 # 오늘의 핵심
 
-- 전자기장 속 입자의 해밀토니안은 $\mathcal{H} = \frac{1}{2m}\!\left(\mathbf{p} - \frac{e}{c}\mathbf{A}\right)^2 + e\phi$이다.
+- 전자기장 속 입자의 해밀토니안은 
+$$
+\mathcal{H} = \frac{1}{2m}\!\left(\mathbf{p} - \frac{e}{c}\mathbf{A}\right)^2 + e\phi
+$$
+- 라그랑지안은 
+$$
+\mathcal{L} = \frac{1}{2}m\dot{\mathbf{x}}^2 - e\phi + \frac{e}{c}\dot{\mathbf{x}}\cdot\mathbf{A}
+$$
+$\frac{e}{c}\dot{\mathbf{x}}\cdot\mathbf{A}$부분을 잊지 마! $\frac{e}{c}\mathbf{A}$가 momentum의 차원이므로, 여기에 속도를 곱하면 차원적으로 에너지가된다. 
+
+
+해밀토니안이 바뀜에 따라, 유효한 gradient 연산또한 바뀌었다. 
+
+**Mechanical momentum**
+$$
+\boxed{\quad\mathbf{p} = -i\hbar\nabla \quad \xrightarrow{\mathbf{A}\text{가 있으면}} \quad \boldsymbol{\pi} = -i\hbar\nabla - \frac{e}{c}\mathbf{A} = -i\hbar\!\left(\nabla - \frac{ie}{\hbar c}\mathbf{A}\right)\quad}
+$$
+**Schrödinger equation에 쓰이는 gradient operator**
+$$
+\boxed{\quad \nabla \quad \xrightarrow{\mathbf{A}\text{가 있으면}} \quad \nabla - \frac{ie}{\hbar c}\mathbf{A}\quad}
+$$
+
 - **Canonical momentum** $\mathbf{p}$와 **Mechanical momentum** $\boldsymbol{\pi} = \mathbf{p} - \frac{e}{c}\mathbf{A}$는 다르다.
 - 게이지 변환 $\mathbf{A} \to \mathbf{A} + \nabla\Lambda$, $\phi \to \phi - \frac{1}{c}\frac{\partial\Lambda}{\partial t}$ 아래서 물리 observable은 불변이다.
-- 변환은 unitary operator 
+- 변환은 unitary operator, 부호에 유의한다!
 
 $$
 G = \exp\!\left(\frac{ie\Lambda(\mathbf{x})}{\hbar c}\right)
@@ -365,6 +386,8 @@ $$
 Sakurai, Modern Quantum Mechanics, Chap. 2
 
 # 다음 강의
+
+[[QM lecture note - Aharonov-Bohm Effect and Magnetic Monopole]]
 
 # 원본 필기 이미지
 

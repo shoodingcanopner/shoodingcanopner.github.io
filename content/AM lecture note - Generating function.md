@@ -172,15 +172,7 @@ $$
 |---|---|---|
 | $Q$ | $F_1(q, Q)$ | $F_3(p, Q)$ |
 | $P$ | $F_2(q, P)$ | $F_4(p, P)$ |
-
-각 generating function의 편미분 관계:
-
-| | $\partial / \partial q_i$ | $\partial / \partial Q_i$ | $\partial / \partial p_i$ | $\partial / \partial P_i$ |
-|---|---|---|---|---|
-| $F_1(q,Q)$ | $= p_i$ | $= -P_i$ | — | — |
-| $F_2(q,P)$ | $= p_i$ | — | — | $= Q_i$ |
-| $F_3(p,Q)$ | — | $= -P_i$ | $= -q_i$ | — |
-| $F_4(p,P)$ | — | — | $= -q_i$ | $= Q_i$ |
+![[Pasted image 20260414172051.png]]
 
 Legendre 변환 관계도는 다음과 같다:
 

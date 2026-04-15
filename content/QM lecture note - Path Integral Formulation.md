@@ -26,39 +26,47 @@ Propagator $K(x_N, t_N; x_1, t_1)$는 time evolution operator를 위치 기저�
 - **짧은 시간 $\Delta t$ 동안의 propagator**는 normalization 인자 $\omega(\Delta t)$와 action의 phase로 분리된다.
 - 시간 조각을 무한히 쪼개면, propagator는 모든 경로에 대한 **path integral**로 표현된다.
 - $\Delta t \to 0$ 극한에서 path integral로부터 **슈뢰딩거 방정식**이 직접 유도된다.
-- $\omega(\Delta t)$는 free propagator와의 비교로 결정된다: $\omega(\Delta t) = \sqrt{\frac{2\pi i \hbar \Delta t}{m}}$
+- $\omega(\Delta t)$는 free propagator와의 비교로 결정되거나, 아니면 그냥 normalization condition(probability perseravation)을 이용해도 된다. 
+- In 1-dimension, $\omega(\Delta t) = \sqrt{\frac{2\pi i \hbar \Delta t}{m}}$ 
+- $\omega(\Delta t)$는 $[L^d]$의 차원을 가지고 있다. 
+- Propagator은 $[L^d]$의 차원을 가지고 있다. 위치에 대한 디락델타 함수와 차원이 같으므로. 
 
 # 필기 내용
 
 ## 짧은 시간 동안의 Propagator
 
 짧은 시간 $\Delta t$ 동안의 propagator를 구체적으로 써보자.
+단기간동안 한 운동에 의한 action을 exponential로 올린 term앞에 비례 상수가 붙는 형태가 되어야 한다. 
+이 비례 상수는 짧은 시간 간격$\Delta t$을 무엇으로 잡는가에 따라 달라져야 할 것이다. 
 
 $$
 \langle x_n, t_n \mid x_{n-1}, t_{n-1} \rangle = \frac{1}{\omega(\Delta t)} \exp\!\left(\frac{i\, S(n, n-1)}{\hbar}\right)
 \tag{1}
 $$
 
-여기서 $\frac{1}{\omega(\Delta t)}$은 normalization constant이다. $(x_n, t_n) \to (x_{n-1}, t_{n-1})$은 충분히 짧은 시간 구간으로 간주한다.
+여기서 $\frac{1}{\omega(\Delta t)}$은 normalization constant이다. 
+물리적 차원으로 생각해 보아도, position ket 사이의 inner product는 부피에 대한 역수 차원이다. 따라서 exponential term 앞에 부피에 대한 역수차원을 가지는 상수가 곱해져야 한다. 
 
-$\Delta t$는 아주 작다고 가정한다. 짧은 시간 $\Delta t$ 동안의 action $S(n, n-1)$는:
+짧은 시간 $\Delta t$ 동안의 action $S(n, n-1)$는, 등속 운동을 한다고 근사한다. 포텐셜은 시작점과 끝점의 중간 위치에서 포텐셜로 정한다. 
 
 $$
 S(n, n-1) = \int_{t_{n-1}}^{t_n} dt \left[\frac{m}{2}\dot{x}^2 - V(x)\right] \approx \Delta t \left[\frac{m}{2}\frac{(x_n - x_{n-1})^2}{\Delta t^2} - V\!\left(\frac{x_n + x_{n-1}}{2}\right)\right]
 \tag{2}
 $$
-이때, 속도는 짧은 시간 동안 등속운동한다는 전제로 결정된다. 포텐셜은 시작점과 끝점의 중간 위치에서 포텐셜로 정한다. 
 
 따라서 짧은 구간의 propagator는:
 
 $$
 \langle x_n, t_n \mid x_{n-1}, t_{n-1} \rangle = \frac{1}{\omega(\Delta t)} \exp\!\left[\frac{i\Delta t}{\hbar}\left(\frac{m}{2}\frac{(x_n - x_{n-1})^2}{\Delta t^2} - V\!\left(\frac{x_n + x_{n-1}}{2}\right)\right)\right]
-\tag{3}
+\tag{3-1}
 $$
 
-포텐셜 항은 $\Delta t$에 비례하기 때문에 $\exp\!\left(\frac{i}{\hbar} V\Delta t\right) \approx 1$로 근사할 수 있다.
-
-그러므로 $\omega(\Delta t)$는 **kinetic term으로만** 결정된다, 따라서 free propagator(포텐셜없이 해밀토니안에 운동에너지만 있는 상태태)에서 아래와 같이 결정된다.
+포텐셜 항은 $\Delta t$에 비례하기 때문에 $V\Delta t \approx 0$로 근사할 수 있다.
+$$
+\langle x_n, t_n \mid x_{n-1}, t_{n-1} \rangle = \frac{1}{\omega(\Delta t)} \exp\!\left[\frac{im}{2 \hbar \Delta t}(x_n - x_{n-1})^2 \right]
+\tag{3-2}
+$$
+그러므로 $\omega(\Delta t)$는 **kinetic term으로만** 결정된다.
 
 ### $\omega(\Delta t)$의 결정
 
@@ -71,12 +79,15 @@ $$
 지난시간에 배운바, free propagetor는 가우시안 분포였다.
 출발과 도착사이의 시간 간격은 가우시안 분포에서 variance와 비례했다. 
 따라서 시간 간격을 0에 가깝게 하면, variance가 0이 되어 가면서 가우시안 분포가 디락델타가 된다. 
-디락델타는 그자체오 normalization이 된 분포이다. 
-이렇듯,
-$t_n \to t_{n-1}$, $\Delta t \to 0$ 극한에서 $\langle x_n, t_n \mid x_{n-1}, t_{n-1} \rangle\big|_{t_n = t_{n-1}}$이 Dirac delta가 되어야 한다는 조건으로부터, $\xi = x_n - x_{n-1}$으로 놓고:
+디락델타는 그자체로 normalization이 된 분포이다. 
+이렇듯, $\omega(\Delta t)$는 propagator를 normalization을 할 수 있는 값이어야 한다. 
+$\omega(\Delta t)$가 없는 exponential항을 적분했을 때 나오는 값이 바로 $\omega(\Delta t)$가 되어야 하는 것이다. 
+
+$\xi = x_n - x_{n-1}$으로 놓고, $\exp\!\left[\frac{im}{2 \hbar \Delta t}(x_n - x_{n-1})^2 \right]$ 의 적분을 취해 보자. 그냥 가우시안 적분이다. 
+
 
 $$
-\int_{-\infty}^{\infty} d\xi\, \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right) = \sqrt{\frac{2\pi i \hbar \Delta t}{m}} = \omega(\Delta t)
+\int_{-\infty}^{\infty} d\xi\, \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right) = \int_{-\infty}^{\infty} d\xi\, \exp\!\left(-\frac{m}{2i\hbar\Delta t}\xi^2\right) =\sqrt{\frac{2\pi i \hbar \Delta t}{m}} = \omega(\Delta t)
 \tag{5}
 $$
 
@@ -87,15 +98,19 @@ $$
 \tag{6}
 $$
 
-> [!question] 왜 $2\pi$가 필요한가?
-> 이 극한에서 $2\pi$는 어떤 역할을 하는가? $2\pi$ 없이는 Dirac delta 조건을 만족할 수 없다.
-> → 실제로 Gaussian integral $\int e^{-\alpha u^2} du = \sqrt{\pi/\alpha}$에서 자연스럽게 나온다. 정규화 상수 자체에 $\sqrt{2\pi}$ 인자가 포함되어 있기 때문에, delta function의 표현과 맞추려면 이 인자가 필수적이다.
+결국 작은 시간 동안의 propagator는
+$$
+\boxed{\langle x_n, t_n \mid x_{n-1}, t_{n-1} \rangle = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \exp\!\left[\frac{iS(n,n-1)}{\hbar}\right]}
+
+$$
+exponential-action 항과 normalization constant, 둘이 곱해진 형태가 propagator라는 걸 잊지 말것. 
 
 ---
 
 ## Path Integral의 완전한 표현
+![[Pasted image 20260415121616.png]]
 
-위를 반복하면 전체 propagator는:
+짧은 시간 구간의 propagator들을 켜켜이 곱한 뒤, 위치에 대해 적분하자. 
 
 $$
 \langle x_N, t_N \mid x_1, t_1 \rangle = \lim_{N\to\infty} \left(\frac{m}{2\pi i \hbar \Delta t}\right)^{\!\frac{N-1}{2}} \int dx_{N-1} \cdots \int dx_2 \prod_{n=2}^{N} \exp\!\left(\frac{i\, S(n, n-1)}{\hbar}\right)
@@ -115,15 +130,31 @@ $$
 \boxed{\langle x_N, t_N \mid x_1, t_1 \rangle = \int_{x_1}^{x_N} \mathcal{D}(x(t))\; \exp\!\left[\frac{i}{\hbar} \int_{t_1}^{t_N} dt\, \mathcal{L}(x, \dot{x})\right]}
 \tag{9}
 $$
+$\mathcal{D}(x(t))$속 $x(t)$는 가능한 경로 중 하나를 나타낸 것, $\int_{t_1}^{t_N} dt\, \mathcal{L}(x, \dot{x})$는 그 경로에 대한 액션. 
+결국 모든 경로에 의한 $\exp\!\left[\frac{i}{\hbar} \int_{t_1}^{t_N} dt\, \mathcal{L}(x, \dot{x})\right]$를 더한다는 뜻이다. 
+
 
 ---
 
 ## Path Integral에서 Schrödinger 방정식 유도
-
-$\Delta t$가 작을 때의 propagator:
+여기에서부터 시작한다. 
+$\Delta t$ 딱 한 단계만 지날 때의, propagator사이의 관계식
+$$
+\braket{x_N,t_N|x_1,t_1} = \int dx_{N-1} \braket{x_N,t_N|x_{N-1},t_{N-1}}\braket{x_{N-1},t_{N-1}|x_1,t_1}
+$$
+N번째는 마지막 단계를 의미하므로, 기존 wave equation의 표기와 결을 맞추기 위해 
+**$x_N$을 $x$이라고 표기하고 $t_{N-1}$을 $t$라고 표기하자.** 
+나중에 테일러 전개를 취할 때, 이 변수를 어떻게 두느냐에 따라 난이도가 달라진다. 
 
 $$
-\langle x_1, t_1 + \Delta t \mid x_1, t_1 \rangle = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi\; \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right)\left(1 - \frac{iV\Delta t}{\hbar}\right) \langle x_1 - \xi, t_1 \mid x_1, t_1 \rangle
+\braket{x,t + \Delta t|x_1,t_1} = \int dx_{N-1} \braket{x,t + \Delta t|x_{N-1},t} \braket{x_{N-1},t|x_1,t_1}
+$$
+
+$\Delta t$가 작을 때의 propagator, 어쩐지 이 증명법에서는 potential을 상수로 두는 것만 같다. 
+시간이 아주 짧으면 변위가 크지 않으니까 그런가?
+
+$$
+\braket{x,t + \Delta t|x_1,t_1} = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi\; \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right)\left(1 - \frac{iV\Delta t}{\hbar}\right) \langle x_1 - \xi, t_1 \mid x_1, t_1 \rangle
 \tag{10}
 $$
 
@@ -212,6 +243,60 @@ $$
 $$
 
 $i\hbar$를 곱하면 슈뢰딩거 방정식이 된다. ∎
+
+## Propagator의 물리적 차원과 경로적분 측도의 정규화
+
+### Q. Propagator의 물리적 차원은?
+
+Propagator $K(x'', t''; x', t')$는 다음 관계식으로 정의된다:
+
+$$
+\psi(x'', t'') = \int dx'\, K(x'', t''; x', t')\, \psi(x', t')
+$$
+
+1D에서 $[\psi] = L^{-1/2}$ (규격화 조건 $\int|\psi|^2 dx = 1$로부터)이므로, 차원 분석을 하면:
+
+$$
+[L^{-1/2}] = [K] \cdot L \cdot L^{-1/2} \quad \Rightarrow \quad [K] = L^{-1}
+$$
+
+$d$차원으로 일반화하면 $[\psi] = L^{-d/2}$이므로:
+
+$$
+[K] = L^{-d}
+$$
+
+즉 propagator의 차원은 **공간 부피의 역수**이다. 시간은 지수부 $\exp(iS/\hbar)$ 안에 무차원으로 들어가므로 차원에 기여하지 않는다.
+
+### Q. $\exp(iS/\hbar)$는 무차원인데, 비례 상수는 어디서 오는가?
+
+비례 상수는 별도로 존재하는 것이 아니라, **경로적분 측도 $\mathcal{D}[x(t)]$ 자체에 포함되어 있다.** 시간 슬라이싱으로 측도를 구체적으로 쓰면:
+
+$$
+\int \mathcal{D}[x(t)] = \lim_{N\to\infty} \left(\frac{m}{2\pi i \hbar \Delta t}\right)^{\!\frac{N-1}{2}} \int dx_{N-1}\cdots\int dx_2
+$$
+
+(이것이 식 (8)의 measure 정의와 동일하다.)
+
+**구조적 이유:** 완전한 propagator를 슬라이싱으로 쓰면 $N$개의 inner product $\braket{x_n, t_n | x_{n-1}, t_{n-1}}$의 곱이 나타나지만, 중간 위치 적분 변수는 $(N-1)$개뿐이다. 이 비대칭성—$N$개의 inner product와 $(N-1)$개의 적분—이 정확히 차원 $L^{-1}$을 만들어낸다.
+
+차원 분석으로 확인:
+- $(N-1)$개의 $dx_k$: 차원 $L^{N-1}$
+- 정규화 인자 $\left(\frac{m}{2\pi i \hbar \Delta t}\right)^{(N-1)/2}$: 차원 $L^{-(N-1)}$
+- 나머지 정규화 인자 $\left(\frac{m}{2\pi i \hbar \Delta t}\right)^{1/2}$: 차원 $L^{-1}$
+- $\exp(iS/\hbar)$: 무차원
+
+$$
+[K] = L^{-(N-1)} \cdot L^{N-1} \cdot L^{-1} = L^{-1} \quad (N \to \infty \text{ 극한에서도 성립})
+$$
+
+**3차원으로 일반화:** 위치 변수가 3차원 벡터 $\mathbf{x}$가 되면 각 시간 슬라이스의 적분 $dx_k \to d^3x_k$이고, 정규화 인자도 $\left(\frac{m}{2\pi i \hbar \Delta t}\right)^{3/2}$으로 대체된다. 이때 $d$차원 일반화에서:
+
+$$
+[K] = L^{-d(N-1)} \cdot L^{d(N-1)} \cdot L^{-d} = L^{-d}
+$$
+
+즉, **$d$차원 공간에서 propagator의 차원은 $L^{-d}$**이고, 이는 처음 규격화 조건에서 구한 결과와 일치한다. ∎
 
 # 연관 학습 노트
 

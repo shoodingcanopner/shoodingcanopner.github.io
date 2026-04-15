@@ -254,80 +254,61 @@ $n$부터 대입하면서 차례로 비교하면:
 가능하면 인덱스 사용을 교과서랑 맞춰야 안 헷갈리지 않을까...
 
 ```tikz
-\begin{tikzpicture}[
-    scale=1.1,
-    axis/.style={->, thick},
-    interval/.style={thick},
-]
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{kotex}
 
-\def\rowsep{1.5}
-\def\tend{8.0}
+\begin{document}
+\begin{tikzpicture}[>=stealth, thick]
 
-% t-axis
-\draw[axis] (-0.3, 0) -- (9.0, 0) node[right] {$t$};
-\foreach \x/\lbl in {1.2/$t_1$, 2.4/$t_2$, 3.6/$t_3$, 4.8/$t_4$, 6.0/$t_5$, 8.0/$t_0$} {
-    \draw[thick] (\x, 0.1) -- (\x, -0.1);
-    \node[below, font=\small] at (\x, -0.1) {\lbl};
-}
-
-% Row 1
-\draw[thick] (1.2, -1*\rowsep+0.13) -- (8.0, -1*\rowsep+0.13);
-\draw[thick] (1.2, -1*\rowsep-0.13) -- (8.0, -1*\rowsep-0.13);
-\draw[thick] (1.2, -1*\rowsep+0.28) -- (1.2, -1*\rowsep-0.28);
-\draw[thick] (8.0, -1*\rowsep+0.28) -- (8.0, -1*\rowsep-0.28);
-\node[left, font=\small] at (1.2, -1*\rowsep) {$t_1$};
-\node[above, font=\scriptsize] at (4.6, -1*\rowsep+0.22) {range of $t_1$};
-\node[right, font=\small] at (8.0, -1*\rowsep) {$t_0$};
-
-% Row 2
-\draw[thick] (2.4, -2*\rowsep+0.13) -- (8.0, -2*\rowsep+0.13);
-\draw[thick] (2.4, -2*\rowsep-0.13) -- (8.0, -2*\rowsep-0.13);
-\draw[thick] (2.4, -2*\rowsep+0.28) -- (2.4, -2*\rowsep-0.28);
-\draw[thick] (8.0, -2*\rowsep+0.28) -- (8.0, -2*\rowsep-0.28);
-\node[left, font=\small] at (2.4, -2*\rowsep) {$t_2$};
-\node[above, font=\scriptsize] at (5.2, -2*\rowsep+0.22) {range of $t_2$};
-\node[right, font=\small] at (8.0, -2*\rowsep) {$t_0$};
-
-% Row 3
-\draw[thick] (3.6, -3*\rowsep+0.13) -- (8.0, -3*\rowsep+0.13);
-\draw[thick] (3.6, -3*\rowsep-0.13) -- (8.0, -3*\rowsep-0.13);
-\draw[thick] (3.6, -3*\rowsep+0.28) -- (3.6, -3*\rowsep-0.28);
-\draw[thick] (8.0, -3*\rowsep+0.28) -- (8.0, -3*\rowsep-0.28);
-\node[left, font=\small] at (3.6, -3*\rowsep) {$t_3$};
-\node[above, font=\scriptsize] at (5.8, -3*\rowsep+0.22) {range of $t_3$};
-\node[right, font=\small] at (8.0, -3*\rowsep) {$t_0$};
-
-% Row 4
-\draw[thick] (4.8, -4*\rowsep+0.13) -- (8.0, -4*\rowsep+0.13);
-\draw[thick] (4.8, -4*\rowsep-0.13) -- (8.0, -4*\rowsep-0.13);
-\draw[thick] (4.8, -4*\rowsep+0.28) -- (4.8, -4*\rowsep-0.28);
-\draw[thick] (8.0, -4*\rowsep+0.28) -- (8.0, -4*\rowsep-0.28);
-\node[left, font=\small] at (4.8, -4*\rowsep) {$t_4$};
-\node[above, font=\scriptsize] at (6.4, -4*\rowsep+0.22) {range of $t_4$};
-\node[right, font=\small] at (8.0, -4*\rowsep) {$t_0$};
-
-% Row 5
-\draw[thick] (6.0, -5*\rowsep+0.13) -- (8.0, -5*\rowsep+0.13);
-\draw[thick] (6.0, -5*\rowsep-0.13) -- (8.0, -5*\rowsep-0.13);
-\draw[thick] (6.0, -5*\rowsep+0.28) -- (6.0, -5*\rowsep-0.28);
-\draw[thick] (8.0, -5*\rowsep+0.28) -- (8.0, -5*\rowsep-0.28);
-\node[left, font=\small] at (6.0, -5*\rowsep) {$t_5$};
-\node[above, font=\scriptsize] at (7.0, -5*\rowsep+0.22) {range of $t_5$};
-\node[right, font=\small] at (8.0, -5*\rowsep) {$t_0$};
-
-% dots
-\node[font=\large] at (7.0, -6*\rowsep) {$\vdots$};
-
-% green vertical connectors
-\draw[thick, green!60!black] (1.2, -0.28) -- (1.2, -\rowsep+0.28);
-\draw[thick, green!60!black] (2.4, -\rowsep-0.28) -- (2.4, -2*\rowsep+0.28);
-\draw[thick, green!60!black] (3.6, -2*\rowsep-0.28) -- (3.6, -3*\rowsep+0.28);
-\draw[thick, green!60!black] (4.8, -3*\rowsep-0.28) -- (4.8, -4*\rowsep+0.28);
-\draw[thick, green!60!black] (6.0, -4*\rowsep-0.28) -- (6.0, -5*\rowsep+0.28);
+    % 설정값 수정
+    \def\n{6} % 층수
+    \def\stepY{1.56} % 기존 1.2에서 30% 확장 (1.2 * 1.3 = 1.56)
+    \def\widthX{8} % 전체 가로 길이
+    
+    \foreach \i in {1,...,\n} {
+        \pgfmathsetmacro{\currentY}{-(\i-1)*\stepY}
+        \pgfmathsetmacro{\startX}{(\i-1)*1.2}
+        \def\endX{\widthX}
+        
+        % 메인 시간축
+        \draw (\startX, \currentY) -- (\endX, \currentY);
+        
+        % 양 끝 세로 바
+        \draw (\startX, \currentY+0.2) -- (\startX, \currentY-0.2);
+        \draw (\endX, \currentY+0.2) -- (\endX, \currentY-0.2);
+        
+        % 왼쪽 라벨
+        \ifnum\i=1
+            \node[above] at (\startX, \currentY+0.1) {$t$};
+        \else
+            \pgfmathsetmacro{\prevI}{int(\i-1)}
+            \node[above] at (\startX, \currentY+0.1) {$t_{\prevI}$};
+        \fi
+        
+        % 오른쪽 라벨
+        \node[above] at (\endX, \currentY+0.1) {$t_0$};
+        
+        % 구간 내 포인트 t_i 표시
+        \ifnum\i<\n
+            \pgfmathsetmacro{\pointX}{\startX + 1.2}
+            \draw (\pointX, \currentY+0.1) -- (\pointX, \currentY-0.1);
+            \node[below] at (\pointX, \currentY-0.1) {$t_{\i}$};
+            
+            % 다음 층 가이드 점선
+            \draw[dashed, gray!60] (\pointX, \currentY) -- (\pointX, \currentY-\stepY+0.2);
+        \fi
+        
+        % "영역" 표시 (화살표 제거, 단순 곡선으로 변경)
+        \draw (\startX+0.2, \currentY+0.5) to[bend left=12] node[above, yshift=2pt] {$t_{\i}$의 영역} (\endX-0.2, \currentY+0.5);
+    }
+    
+    % 마지막 말줄임표 위치 조정
+    \node at (\widthX-1, -{\n*\stepY*0.9}) {$\vdots$};
 
 \end{tikzpicture}
+\end{document}
 ```
-![[Pasted image 20260414170353.png]]
+![[스크린샷 2026-04-14 171505.png]]
 
 $n=2$의 경우, 
 $t_1$은 $t_0$부터 $t$까지 적분하면서 연속적으로 정분한다. $t_2$는 $t_0$부터 $t_1$까지만 적분하여 $\mathcal{H}(t_2)$가 항상 $\mathcal{H}(t_1)$보다 왼쪽에 오도록 한다.
