@@ -169,3 +169,8 @@ $x^H(t)$의 eigenket은 **자유입자 전파자에 의해 퍼져나간 위치 �
 - 그러면서도 연산자 $x^H(t)$의 eigenvalue는 고전적 궤적 $x_0 + \frac{p_0}{m}t$를 그대로 추적함
 
 Heisenberg 그림과 Schrödinger 그림이 완벽하게 일관됨을 확인. ✅
+
+## 임의 스핀 위치의 eigen vector
+
+![[Pasted image 20260416085039.png]]
+

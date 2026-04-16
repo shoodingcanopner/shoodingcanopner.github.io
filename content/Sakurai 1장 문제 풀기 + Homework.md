@@ -459,7 +459,7 @@ $$
 ---
 
 # Week 2 HW
-
+[[QM week2 20262182 김신지.pdf]]
 ## 1.2 — Commutator 항등식 증명
 
 > $[AB, CD] = -AC\{D,B\} + A\{C,B\}D - C\{D,A\}B + \{C,A\}DB$ 증명.
@@ -530,12 +530,22 @@ $\ket{+} = \begin{pmatrix}1\\0\end{pmatrix}$, $\ket{-} = \begin{pmatrix}0\\1\end
 $$
 \ket{+}\bra{-} = \begin{pmatrix}1\\0\end{pmatrix}\begin{pmatrix}0 & 1\end{pmatrix} = \begin{pmatrix}0 & 1 \\ 0 & 0\end{pmatrix}
 $$
+사실 문제를 잘못 읽었었다. 
+
+
+> $\ket{\alpha} = \ket{S_z;+}$, $\ket{\beta} = \ket{S_x;-}$일 때 $\ket{\alpha}\bra{\beta}$의 matrix를 구하라.
+
+$\ket{+} = \begin{pmatrix}1\\0\end{pmatrix}$, $\ket{-} = \begin{pmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{pmatrix}$ 이므로:
+
+$$
+\ket{+}\bra{-} = \begin{pmatrix}1\\0\end{pmatrix}\begin{pmatrix}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\end{pmatrix} = \begin{pmatrix}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ 0 & 0\end{pmatrix}
+$$
 
 ---
 
-## 1.9b — Spin-1/2 연산자 곱 결과
+## 1.10 — Spin-1/2 연산자 곱 결과
 
-> $[S_i, S_j] = i\varepsilon_{ijk}\hbar S_k$와 $\{S_i, S_j\} = \frac{\hbar^2}{2}\delta_{ij}$를 이용해서, $\ket{+}$, $\ket{-}$를 basis로 $[S_x, S_y]$, $[S_y, S_z]$, $[S_z, S_x]$와 $S_xS_y$, $S_yS_z$, $S_zS_x$ 등을 계산하라.
+> $[S_i, S_j] = i\varepsilon_{ijk}\hbar S_k$와 $\{S_i, S_j\} = \frac{\hbar^2}{2}\delta_{ij}$를 증명하라. $\ket{+}$, $\ket{-}$를 basis로 $[S_x, S_y]$, $[S_y, S_z]$, $[S_z, S_x]$와 $S_xS_y$, $S_yS_z$, $S_zS_x$ 등을 계산하라.
 
 #### 핵심 개념
 
@@ -627,13 +637,14 @@ $$
 ---
 
 # Week 3 HW
-
+[[QM week3 20262182 김신지.pdf]]
 ## 1.15 — Stern-Gerlach 순차 실험에서 $\ket{S_z;-}$의 세기
-
+![[Pasted image 20260416083753.png]]
 > $\ket{S_z;\downarrow}$ 빔이 장치 (a) → (b) → (c) 순서로 통과할 때, 마지막에 $\ket{S_z;\downarrow}$의 세기를 구하라.
+> 장치 (a)에서 나온 빛은 normalized 되어 있다. 
 >
 > - 장치 (a): $\ket{S_z;\uparrow}$ 통과, $\ket{S_z;\downarrow}$ 차단
-> - 장치 (b): $\ket{S_n;\uparrow}$ 통과, $\ket{S_n;\downarrow}$ 차단
+> - 장치 (b): $\ket{S_n;\uparrow}$ 통과, $\ket{S_n;\downarrow}$ 차단, $\hat{n}$은 xz-plane에서 z-axis에 대해 각도가 $\beta$인 방향. $S_n = \mathbf{S}\cdot \hat{n}$ 
 > - 장치 (c): $\ket{S_z;\uparrow}$ 차단, $\ket{S_z;\downarrow}$ 통과
 
 #### 풀이
@@ -651,7 +662,7 @@ $$
 $$
 \begin{pmatrix}\cos\beta & \sin\beta \\ \sin\beta & -\cos\beta\end{pmatrix}\begin{pmatrix}a\\b\end{pmatrix} = \begin{pmatrix}a\\b\end{pmatrix}
 $$
-
+![[Pasted image 20260416085058.png]]
 normalization 조건 $|a|^2 + |b|^2 = 1$을 함께 풀면:
 
 $$
@@ -663,7 +674,7 @@ $$
 $$
 
 세기 계산:
-
+죄변에서 첫번째 항은 두 번째 검출기를 통과할 확률, 두번째 항은 마지막 검출기를 통과할 확률률
 $$
 \left|\langle S_z;\downarrow | S_n;\uparrow\rangle\right|^2 \cdot \left|\langle S_n;\uparrow | S_z;\uparrow\rangle\right|^2 = \left|\cos\frac{\beta}{2}\right|^2 \left|\sin\frac{\beta}{2}\right|^2 = \left(\frac{1}{2}\sin\beta\right)^2 = \frac{1}{4}\sin^2\beta
 $$
@@ -746,7 +757,7 @@ $$
 ---
 
 # Week 4 HW
-
+[[QM week4 20262182 김신지.pdf]]
 ## 1.35 — Gaussian Wave Packet에서 $\langle p\rangle$, $\langle p^2\rangle$ 계산
 
 > Gaussian wave packet $\psi(x') = \langle x'|\alpha\rangle = \frac{1}{\pi^{1/4}\sqrt{d}}\exp\left(-\frac{x'^2}{2d^2} + ikx'\right)$에서 $\langle p\rangle$과 $\langle p^2\rangle$를 구하라.
@@ -884,245 +895,4 @@ $$
 
 이는 운동량 $[p]$를 가지는 eigenket을 x-space에서 보면 $\frac{[p]}{\hbar}$의 wave number를 가지는 평면파라는 뜻이다.
 
-
-
-#### 초기 상태 $\ket{\uparrow_n}$ 구하기
-
-$S_n = \sin\beta\,S_x + \cos\beta\,S_z = \frac{\hbar}{2}\begin{pmatrix}\cos\beta & \sin\beta\\\sin\beta & -\cos\beta\end{pmatrix}$
-
-eigenvalue equation에서:
-
-$$
-\ket{\uparrow_n} = \cos\frac{\beta}{2}\ket{\uparrow} + \sin\frac{\beta}{2}\ket{\downarrow}
-$$
-
-#### $\mathcal{H}$의 energy eigenstate
-
-$\ket{\uparrow}$, $\ket{\downarrow}$가 $\mathcal{H}$의 eigenstate:
-
-$$
-\mathcal{H}\ket{\uparrow} = -\frac{\hbar\gamma B_0}{2}\ket{\uparrow} = E_\uparrow\ket{\uparrow}, \quad \mathcal{H}\ket{\downarrow} = \frac{\hbar\gamma B_0}{2}\ket{\downarrow} = -E_\uparrow\ket{\downarrow}
-$$
-
-#### 시간 발전
-
-$$
-\ket{\uparrow_n(t)} = \cos\frac{\beta}{2}\exp\left(i\frac{\gamma B_0}{2}t\right)\ket{\uparrow} + \sin\frac{\beta}{2}\exp\left(-i\frac{\gamma B_0}{2}t\right)\ket{\downarrow}
-$$
-
-#### (a) $t$ 시간 후에 $\ket{\uparrow_x}$로 발견될 확률
-
-$\ket{\uparrow_x} = \frac{1}{\sqrt{2}}\left(\ket{\uparrow} + \ket{\downarrow}\right)$ 이므로:
-
-$$
-\langle\uparrow_x|\uparrow_n(t)\rangle = \frac{1}{\sqrt{2}}\left[\cos\frac{\beta}{2}\exp\left(i\frac{\gamma B_0}{2}t\right) + \sin\frac{\beta}{2}\exp\left(-i\frac{\gamma B_0}{2}t\right)\right]
-$$
-
-$$
-\left|\langle\uparrow_x|\uparrow_n(t)\rangle\right|^2 = \frac{1}{2}\left[\cos^2\frac{\beta}{2} + \sin^2\frac{\beta}{2} + 2\cos\frac{\beta}{2}\sin\frac{\beta}{2}\cos(\gamma B_0 t)\right]
-$$
-
-$$
-\boxed{\left|\langle\uparrow_x|\uparrow_n(t)\rangle\right|^2 = \frac{1}{2}\left[1 + \cos(\gamma B_0 t)\sin\beta\right]}
-$$
-
-#### (b) $\langle S_x\rangle$의 시간 의존성
-
-$\left|\langle\downarrow_x|\uparrow_n(t)\rangle\right|^2 = 1 - \left|\langle\uparrow_x|\uparrow_n(t)\rangle\right|^2 = \frac{1}{2}\left[1 - \cos(\gamma B_0 t)\sin\beta\right]$
-
-$$
-\langle S_x\rangle = \frac{\hbar}{2}\left|\langle\uparrow_x|\uparrow_n(t)\rangle\right|^2 - \frac{\hbar}{2}\left|\langle\downarrow_x|\uparrow_n(t)\rangle\right|^2
-$$
-
-$$
-\boxed{\langle S_x\rangle = \frac{\hbar}{2}\cos(\gamma B_0 t)\sin\beta}
-$$
-
-#### (c) 경계 조건 확인
-
-**(i) $\beta \to 0$**: $\hat{n} = \hat{z}$ → $\ket{\uparrow_n} = \ket{\uparrow}$
-
-$\left|\langle\uparrow_x|\uparrow\rangle\right| = \frac{1}{\sqrt{2}}$ 이므로 $\ket{\uparrow_x}$로 관찰될 확률은 항상 $\frac{1}{2}$. $\sin\beta = 0$ → $\langle S_x\rangle = 0$ ✅
-
-**(ii) $\beta \to \frac{\pi}{2}$**: $\hat{n} = \hat{x}$ → $\ket{\uparrow_n} = \ket{\uparrow_x}$
-
-$\langle S_x\rangle(0) = \frac{\hbar}{2}\sin\frac{\pi}{2} = \frac{\hbar}{2}$ → $\ket{\uparrow_x}$의 $\langle S_x\rangle$와 같다 ✅
-
-x-y 평면에 묶여 있어서, 시간이 지남에 따라 $\ket{\uparrow_x}$와 $\ket{\downarrow_x}$ 사이를 진동한다.
-
----
-
-## 2.12 — SHO Superposition State의 $\langle x\rangle$, $\langle p\rangle$
-
-> $\ket{\alpha} = \frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}}e^{i\delta}\ket{1}$, $\delta\in\mathbb{R}$.
->
-> (a) $\langle x'\,|\alpha,t\rangle$를 구하고, $\langle x\rangle$과 $\langle p\rangle$를 찾아라.
-> (b) Heisenberg 관점에서 계산하여 같은 결과를 얻어라.
-
-#### 기본 표기
-
-$x_0 = \sqrt{\frac{\hbar}{m\omega}}$, 에너지 고유상태: $E_n = \left(n+\frac{1}{2}\right)\hbar\omega$
-
-#### (a) Schrödinger 관점
-
-시간 발전:
-
-$$
-\ket{0(t)} = \exp\left(-i\frac{\omega}{2}t\right)\ket{0}, \quad \ket{1(t)} = \exp\left(-i\frac{3\omega}{2}t\right)\ket{1}
-$$
-
-$$
-\ket{\alpha,t} = \frac{1}{\sqrt{2}}\exp\left(-i\frac{\omega}{2}t\right)\ket{0} + \frac{1}{\sqrt{2}}\exp\left(-i\frac{3\omega}{2}t+i\delta\right)\ket{1}
-$$
-
-파동함수:
-
-$$
-\psi_\alpha(x',t) = \frac{1}{\sqrt{2}}\exp\left(-i\frac{\omega}{2}t\right)\psi_0(x') + \frac{1}{\sqrt{2}}\exp\left(-i\frac{3\omega}{2}t+i\delta\right)\psi_1(x')
-$$
-
-여기서 $\psi_0(x') = \frac{1}{\pi^{1/4}\sqrt{x_0}}\exp\left(-\frac{x'^2}{2x_0^2}\right)$, $\psi_1(x') = \frac{\sqrt{2}}{\pi^{1/4}\sqrt{x_0}}\cdot\frac{x'}{x_0}\psi_0$
-
-**$\langle x\rangle$ 계산:**
-
-$\langle 0|x|0\rangle = \langle 1|x|1\rangle = 0$ (홀/짝 함수의 적분이 0)
-
-$$
-\langle 0|x|1\rangle = \int x'\psi_0^*\psi_1\,dx' = \frac{\sqrt{2}}{x_0}\int x'^2\psi_0^*\psi_0\,dx' = \frac{\sqrt{2}}{x_0}\cdot\frac{x_0^2}{2} = \frac{x_0}{\sqrt{2}}
-$$
-
-$$
-\langle\alpha|x(t)|\alpha\rangle = \frac{x_0}{\sqrt{2}}\cos(\omega t - \delta)
-$$
-
-**$\langle p\rangle$ 계산:**
-
-$\langle 0|p|1\rangle = -i\hbar\frac{1}{x_0\sqrt{2}}\int\left(1-\frac{x'^2}{x_0^2}\right)\psi_0^*\psi_0\,dx' = -i\hbar\frac{1}{x_0\sqrt{2}}\left(1-\frac{1}{2}\right)\cdot(-2) = -i\frac{\hbar}{x_0\sqrt{2}}$
-
-$$
-\langle\alpha|p(t)|\alpha\rangle = -\frac{\hbar}{x_0\sqrt{2}}\sin(\omega t - \delta)
-$$
-
-$$
-\boxed{\langle x\rangle_\alpha(t) = \frac{x_0}{\sqrt{2}}\cos(\omega t - \delta), \quad \langle p\rangle_\alpha(t) = -\frac{\hbar}{x_0\sqrt{2}}\sin(\omega t - \delta)}
-$$
-
-#### (b) Heisenberg 관점
-
-$a(t) = e^{-i\omega t}a_0$, $a^\dagger(t) = e^{i\omega t}a_0^\dagger$ 이므로:
-
-$$
-x(t) = x_0\cos\omega t + \frac{p_0}{m\omega}\sin\omega t
-$$
-
-$$
-p(t) = p_0\cos\omega t - m\omega x_0\sin\omega t
-$$
-
-$\langle 0|x_0|0\rangle = 0$, $\langle 0|x_0|1\rangle = \frac{x_0}{\sqrt{2}}$, $\langle 0|p_0|1\rangle = -i\frac{\hbar}{x_0\sqrt{2}}$ 를 이용하면:
-
-$$
-\langle\alpha|x(t)|\alpha\rangle = \frac{x_0}{\sqrt{2}}\cos\delta\cos\omega t + \frac{x_0}{\sqrt{2}}\sin\delta\sin\omega t = \frac{x_0}{\sqrt{2}}\cos(\omega t - \delta)
-$$
-
-$$
-\langle\alpha|p(t)|\alpha\rangle = -\frac{\hbar}{x_0\sqrt{2}}\sin(\omega t - \delta)
-$$
-
-두 관점에서 완전히 동일한 결과. ✅
-
-> [!tip]
-> $\langle x\rangle$과 $\langle p\rangle$이 $\omega$ 주기로 진동하는 것은 Ehrenfest 정리를 만족한다. 이 상태는 QM적인 특성을 가지면서도 고전 SHO와 같이 진동하는 상태이다.
-
-
-> 시작점 $(x,t) = (0,0)$, 도착점 $(x,t) = (D,T)$인 두 경로를 고려.
-> - 경로 1 (가속 경로): $x_1(t) = \frac{1}{2}at^2$
-> - 경로 2 (등속 경로): $x_2(t) = vt$
->
-> 포텐셜: $V(x) = -\frac{maDx}{T^2} \cdot \frac{2mD}{T^2}x = -\frac{2mD}{T^2}x$
-
-#### (a) $a$와 $v$ 결정, $V(x)$를 $m, D, T$로 나타내기
-
-경로 1에서 $D = x_1(T) = \frac{1}{2}aT^2$ 이므로:
-
-$$
-a = \frac{2D}{T^2}
-$$
-
-$F = -\frac{dV}{dx} = ma$ 이므로:
-
-$$
-V(x) = -\frac{2mD}{T^2}x
-$$
-
-경로 2에서 $D = vT$ 이므로:
-
-$$
-v = \frac{D}{T}
-$$
-
-#### (b) 각 경로에서 Classical action $S = \int_0^T\left[\frac{1}{2}m\dot{x}^2 - V(x)\right]dt$ 계산
-
-**경로 1** ($\dot{x}_1 = at$):
-
-$$
-S_1 = \int_0^T\left[\frac{1}{2}ma^2t^2 + \frac{2mD}{T^2}\cdot\frac{1}{2}at^2\right]dt = \left(\frac{1}{2}ma^2 + \frac{maD}{T^2}\right)\frac{T^3}{3}
-$$
-
-$a = \frac{2D}{T^2}$를 대입:
-
-$$
-S_1 = \left(\frac{1}{2}m\cdot\frac{4D^2}{T^4} + \frac{m\cdot\frac{2D}{T^2}\cdot D}{T^2}\right)\frac{T^3}{3} = \left(\frac{2mD^2}{T^4} + \frac{2mD^2}{T^4}\right)\frac{T^3}{3} = \frac{4}{3}\cdot\frac{mD^2}{T}
-$$
-
-**경로 2** ($\dot{x}_2 = v$):
-
-$$
-S_2 = \int_0^T\left[\frac{1}{2}mv^2 + \frac{2mD}{T^2}\cdot vt\right]dt = \frac{1}{2}mv^2T + \frac{2mD}{T^2}\cdot v\cdot\frac{T^2}{2}
-$$
-
-$v = \frac{D}{T}$를 대입:
-
-$$
-S_2 = \frac{mD^2}{2T} + \frac{mD^2}{T} = \frac{3}{2}\cdot\frac{mD^2}{T}
-$$
-
-**비교:**
-
-$$
-S_1 = \frac{4}{3}\cdot\frac{mD^2}{T} < S_2 = \frac{3}{2}\cdot\frac{mD^2}{T}
-$$
-
-**올바른 경로 (경로 1)의 action이 더 작다.** 이는 최소 작용의 원리와 일치. ✅
-
-$$
-\Delta S = S_2 - S_1 = \frac{1}{6}\cdot\frac{mD^2}{T}
-$$
-
-#### (c) $D = 1\text{ mm}$, $T = 1\text{ ms}$일 때 $\Delta S/\hbar$ 계산
-
-**조건:**
-- $\frac{D^2}{T} = \frac{(10^{-3})^2}{10^{-3}} = 10^{-3}\text{ m}^2/\text{s}$
-- $\hbar = 10^{-34}\text{ m}^2\text{kg/s}$
-
-**전자의 경우** ($m_e = 9\times 10^{-31}\text{ kg}$):
-
-$$
-\frac{\Delta S}{\hbar} = \frac{1}{6}\cdot\frac{m_e D^2}{\hbar T} = \frac{1}{6}\cdot\frac{1.6\times 10^{30}\text{ kg}^{-1}}{} \times (9\times 10^{-31}\text{ kg}) \approx 1.44
-$$
-
-**탄소 나노입자의 경우** ($m_c = \frac{12\text{ g/mol}}{6\times 10^{23}/\text{mol}} \times 100 \approx 2\times 10^{-24}\text{ kg}$):
-
-$$
-\frac{\Delta S}{\hbar} = \frac{1}{6}\cdot\frac{(1.6\times 10^{30})(2\times 10^{-24})}{} \approx 3.2\times 10^6
-$$
-
-#### 해석: 고전 극한
-
-**전자의 경우** ($\Delta S/\hbar \approx 1.44$): 비고전적 경로와 고전적 경로 사이의 phase 차이가 작다. 이는 양자적인 효과가 나타나며, 비고전적 경로도 중첩 상태로 이어져 간섭무늬가 관찰될 수 있음을 나타낸다.
-
-**탄소 나노입자의 경우** ($\Delta S/\hbar \approx 3.2\times 10^6$): phase 차이가 $10^6$ 단위로 다르며, 이는 고전적 경로와 조금이라도 다른 경로는 위상이 너무 빠르게 진동하여 평균이 0이 되고, 오직 고전적인 경로만을 따라서 운동한다. 따라서 질량이 큰 물체는 고전적인 경로만을 따라 운동한다.
-
-> [!tip] Path Integral의 물리적 의미
-> Feynman의 경로적분에서 모든 경로가 기여하지만, 무거운 입자일수록 고전적 경로 근방에서만 위상이 정렬(stationary phase)되어 보강간섭이 일어나고, 다른 경로들은 서로 상쇄된다. 이것이 대응원리가 구현되는 메커니즘이다.
 

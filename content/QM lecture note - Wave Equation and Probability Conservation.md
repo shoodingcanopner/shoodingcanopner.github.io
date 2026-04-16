@@ -402,14 +402,27 @@ $$
 $$
 \boxed{\frac{\partial}{\partial t}\Theta + \frac{1}{2m}|\nabla\Theta|^2 + V = \frac{i\hbar}{2m}\nabla^2\Theta}
 $$
+$\Theta$는 액션의 차원이었다. 
+위 식에서, 우변을 0으로 두고 좌변만 보면은 $\Theta$를 액션으로 취급했을 때 해밀턴-자코비 방정식과 일치한다. 
+따라서 $\frac{i\hbar}{2m}\nabla^2\Theta$항이 무시할 만 하면,  특히 $\frac{1}{2m}|\nabla\Theta|^2$과 비교했을 때 작다면, 
+$\Theta$가 고전적인 액션과 같아지면서 시스템은 고전역학이 된다. 
+
+> [!important]
+> $\hbar|\nabla^2 \Theta| \ll |\nabla \Theta|^2$ 일 때 시스템은 고전적이게 된다.
+
+> [! AI 보충 설명]
+> 이 조건을 직관적으로 해석하면: $W$의 변화 스케일 $\lambda_W$가 드 브로이 파장 $\lambda_\text{dB} = h/p$보다 훨씬 클 때, 즉 **양자 효과(파장)에 비해 그 스케일이 충분히 클 때** 고전적이 된다. $\psi = e^{i\Theta/\hbar}$의 phase가 짧은 거리 안에서 빠르게 돌아갈수록 (비유: 파장이 짧을수록) 고전적이다.
+>
+> 드 브로이 물질파 $p = \hbar k = h/\lambda$는 이 조건의 직관적 보연이다. 조건 $\hbar|\nabla^2 W| \ll |\nabla W|^2$의 의미를 구체적으로 보여주는 예시다:
+> $$
+> |\nabla W|^2 \sim p^2, \qquad \hbar|\nabla^2 W| \sim \hbar\frac{p}{\lambda_W} \sim \frac{h}{\lambda_W}p
+> $$
+> 따라서 조건 $\hbar|\nabla^2 W| \ll |\nabla W|^2$는 $\lambda_\text{dB} = h/p \ll \lambda_W$와 동치다. 드 브로이 파장이 시스템의 건화량 스케일보다 훨씬 짧을 때 고전 근사가 성립한다.
 
 ### $\hbar \to 0$ 극한: Classical Limit
 
 만약 $\hbar \to 0$이라면, $W$ 대신 $\Theta$에 대한 **Hamilton-Jacobi Equation**이 되는 것이다.
 
-$$
-\text{양자역학 방정식이 고전적으로 되는 것이다.}
-$$
 
 $$
 \psi = \exp\!\left(-\frac{i}{\hbar} \cdot \text{고전적 작용}\right) \qquad \text{→ 양자역학에서는 action이 phase를 돌린다.}
@@ -423,18 +436,6 @@ $$
 \Theta \approx W + \frac{\hbar}{i}W_1 + \left(\frac{\hbar}{i}\right)^2 W_2 + \cdots
 $$
 
-$\hbar|\nabla^2 W| \ll |\nabla W|^2$ 일 때 시스템은 고전적이게 된다.
-
-> [! AI 보충 설명]
-> 이 조건을 직관적으로 해석하면: $W$의 변화 스케일 $\lambda_W$가 드 브로이 파장 $\lambda_\text{dB} = h/p$보다 훨씬 클 때, 즉 **양자 효과(파장)에 비해 그 스케일이 충분히 클 때** 고전적이 된다. $\psi = e^{i\Theta/\hbar}$의 phase가 짧은 거리 안에서 빠르게 돌아갈수록 (비유: 파장이 짧을수록) 고전적이다.
->
-> 드 브로이 물질파 $p = \hbar k = h/\lambda$는 이 조건의 직관적 보연이다. 조건 $\hbar|\nabla^2 W| \ll |\nabla W|^2$의 의미를 구체적으로 보여주는 예시다:
-> $$
-> |\nabla W|^2 \sim p^2, \qquad \hbar|\nabla^2 W| \sim \hbar\frac{p}{\lambda_W} \sim \frac{h}{\lambda_W}p
-> $$
-> 따라서 조건 $\hbar|\nabla^2 W| \ll |\nabla W|^2$는 $\lambda_\text{dB} = h/p \ll \lambda_W$와 동치다. 드 브로이 파장이 시스템의 건화량 스케일보다 훨씬 짧을 때 고전 근사가 성립한다.
-
-
 
 ### $W_1$ 계산 → 나중에 직접 해보기!
 
@@ -446,7 +447,7 @@ $$
 \frac{\partial W}{\partial t} + \frac{1}{2m}|\nabla W|^2 + V = 0
 $$
 
-$\hbar^1$ 차수 항을 모으면 $W_1$ 방정식이 나온다:
+$\hbar^1$ 차수 항을 모으면 $W_1$ 방정식이 나온다. $|\nabla\Theta|^2$ 계산하는 게 복소수 절댓값이 아님에 유의하라. 
 
 $$
 \frac{\hbar}{i}\frac{\partial}{\partial t}W_1 + \frac{1}{2m}\cdot\frac{\hbar}{i}\cdot 2(\nabla W \cdot \nabla W_1) = i\hbar\frac{1}{2m}\nabla^2 W
@@ -466,7 +467,7 @@ $$
 |\psi|^2 = e^{2W_1} = \rho(x, t)
 $$
 
-**"고전적 액션에서 벗어난 항이 probability distribution을 만든다."**
+**"고전적 액션에서 벗어난 액션이 probability distribution을 만든다."**
 
 ---
 
