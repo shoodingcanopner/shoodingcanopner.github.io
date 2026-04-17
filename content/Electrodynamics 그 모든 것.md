@@ -33,11 +33,17 @@ class: study_subject
 [[ED lecture note - Fresnel Equations]]
 [[ED lecture note - Dispersion]]
 [[ED lecture note - Complex Analysis]]
+
+### 학습 노트
+[[Cauchy Integral Formula]]
+[[Green Function for Wave Equation]]
 [[ED lecture note - Radiating Systems]]
 [[ED lecture note - Electric Dipole Radiation]]
 
 ### 시험 대비 정리 & handout 공부
 [[중간고사 대비 - 이정도 유도는 모두 할 수 있어야 한다! 리스트]]
+
+[[Green Function for Wave Equation]]
 
 ### 과제 풀이 & 교수님께서 뿌린 작년 기출 풀이
 
@@ -128,9 +134,11 @@ $$
 - [[Poisson_Equation_for_Dirac_Delta_and_Point_Charge_Potential]]
 
 **작성할 노트:**
-- Green's Function for Poisson Equation
 - Coulomb's Law from Maxwell Equations
 - Biot-Savart Law from Maxwell Equations
+
+**완성된 노트:**
+- [[Green Function for Wave Equation]]
 
 ### 4. 전자기파
 - 진공에서의 파동 방정식

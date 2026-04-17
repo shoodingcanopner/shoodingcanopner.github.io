@@ -82,7 +82,7 @@ $$
 
 ---
 
-## 3. Cauchy-Riemann 조건, 복소평면에서 부드러운 함수가 되기 위해해
+## 3. Cauchy-Riemann 조건, 복소평면에서 부드러운 함수가 되기 위해
 
 $w(z)$의 미분 $dw/dz$가 존재하려면, **적분 경로에 무관하게** 극한값이 같아야 한다.
 
@@ -126,12 +126,15 @@ $$
 
 닫힌 경로 $C$ 위의 선적분을 $n$개 분할한 뒤 극한을 취한다.
 
+![[Pasted image 20260417160009.png]]
 $$
 \oint_C f(z)\,dz = \lim_{n\to\infty} \sum_j f(\zeta_j)(z_j - z_{j-1})
 \tag{11}
 $$
+$z_j$는 커브 위에 일정 간격으로 점을 찍었을 때 $j$번째 점, 
+$\zeta_j$는 $(z_{j-1},z_j)$구간 내부의 점으로, 함수 $f$의 값을 평가하는 점이다. 
 
-$f(z) = u + iv$, $dz = dx + i\,dy$로 분해하면:
+$f(z) = u + iv$, $dz = dx + i\,dy$로 분해하여, 적분 값의 실수부와 허수부를 나누어주면, 
 
 $$
 \oint_C f\,dz = \oint (u\,dx - v\,dy) + i\oint (v\,dx + u\,dy)
@@ -144,18 +147,20 @@ $$
 \oint (u\,dx - v\,dy) = \iint \left(-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right)dx\,dy = 0
 \tag{13}
 $$
-
 $$
 \oint (v\,dx + u\,dy) = \iint \left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right)dx\,dy = 0
 \tag{14}
 $$
 
-> **결론:** $f(z)$가 단연결 영역에서 analytic하고 단일값이면,
+> [!Success] **결론:** 해석적인 복소 함수를 폐경로로 적분하면 0이다
+> $f(z)$가 단연결 영역에서 analytic하고 단일값이면,
 > $$\oint_C f(z)\,dz = 0 \tag{15}$$
+
 
 ---
 
 ## 5. Cauchy 적분 공식 (Cauchy Integral Formula)
+
 
 닫힌 경로 $C$ 안에 $z_0$가 있고 $f(z)$가 $C$ 위 및 내부에서 analytic할 때:
 
@@ -165,6 +170,7 @@ $$
 $$
 
 **증명 스케치:** $z_0$ 주변에 반지름 $\delta$의 작은 원 $C'$을 그리면, $C$와 $C'$ 사이 영역에서 피적분 함수가 analytic하므로 두 경로의 적분이 같다. $C'$ 위에서 $z - z_0 = \delta e^{i\theta}$로 매개변수화하면 $f(z_0)$만 남는다.
+자세한 내용: [[Cauchy Integral Formula]]
 
 **고차 도함수로의 확장:**
 
