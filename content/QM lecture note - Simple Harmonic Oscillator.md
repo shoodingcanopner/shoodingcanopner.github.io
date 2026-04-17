@@ -327,7 +327,7 @@ $\chi_0^2 \equiv \frac{\hbar}{m\omega}$로 정의하면, 이 방정식의 해:
 $$
 \left(x' + \chi_0^2\frac{d}{dx'}\right)\psi_0(x') = 0
 $$
-
+이거 적분하는 것도 좀 주의할 필요 있겠음. 
 $$
 \boxed{\psi_0(x') = \frac{1}{\pi^{1/4}\sqrt{\chi_0}} \exp\left(-\frac{1}{2}\left(\frac{x'}{\chi_0}\right)^2\right)}
 $$

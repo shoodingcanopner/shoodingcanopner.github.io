@@ -459,7 +459,7 @@ $$
 ---
 
 # Week 2 HW
-[[QM week2 20262182 김신지.pdf]]
+![[QM week2 20262182 김신지.pdf]]
 ## 1.2 — Commutator 항등식 증명
 
 > $[AB, CD] = -AC\{D,B\} + A\{C,B\}D - C\{D,A\}B + \{C,A\}DB$ 증명.
@@ -637,7 +637,7 @@ $$
 ---
 
 # Week 3 HW
-[[QM week3 20262182 김신지.pdf]]
+![[QM week3 20262182 김신지.pdf]]
 ## 1.15 — Stern-Gerlach 순차 실험에서 $\ket{S_z;-}$의 세기
 ![[Pasted image 20260416083753.png]]
 > $\ket{S_z;\downarrow}$ 빔이 장치 (a) → (b) → (c) 순서로 통과할 때, 마지막에 $\ket{S_z;\downarrow}$의 세기를 구하라.
@@ -757,7 +757,7 @@ $$
 ---
 
 # Week 4 HW
-[[QM week4 20262182 김신지.pdf]]
+![[QM week4 20262182 김신지.pdf]]
 ## 1.35 — Gaussian Wave Packet에서 $\langle p\rangle$, $\langle p^2\rangle$ 계산
 
 > Gaussian wave packet $\psi(x') = \langle x'|\alpha\rangle = \frac{1}{\pi^{1/4}\sqrt{d}}\exp\left(-\frac{x'^2}{2d^2} + ikx'\right)$에서 $\langle p\rangle$과 $\langle p^2\rangle$를 구하라.

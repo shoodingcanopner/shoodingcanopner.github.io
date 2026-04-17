@@ -16,7 +16,7 @@ tags:
 ---
 
 # Week 5 HW
-
+![[QM week5 20262182 김신지.pdf]]
 
 ## 2.3 — Larmor Precession
 
@@ -51,7 +51,7 @@ $$
 \ket{\uparrow_n(t)} = \cos\frac{\beta}{2}\exp\left(i\frac{\gamma B_0}{2}t\right)\ket{\uparrow} + \sin\frac{\beta}{2}\exp\left(-i\frac{\gamma B_0}{2}t\right)\ket{\downarrow}
 $$
 
-#### (a) $t$ 시간 후에 $\ket{\uparrow_x}$로 발견될 확률
+#### (a) $t$ 시간 후에 $\ket{\uparrow_x}$로 발견될 확률을 구하라
 
 $\ket{\uparrow_x} = \frac{1}{\sqrt{2}}\left(\ket{\uparrow} + \ket{\downarrow}\right)$ 이므로:
 
@@ -67,7 +67,7 @@ $$
 \boxed{\left|\langle\uparrow_x|\uparrow_n(t)\rangle\right|^2 = \frac{1}{2}\left[1 + \cos(\gamma B_0 t)\sin\beta\right]}
 $$
 
-#### (b) $\langle S_x\rangle$의 시간 의존성
+#### (b) $\langle S_x\rangle$의 기댓값을 시간에 대한 함수로 구하라
 
 $\left|\langle\downarrow_x|\uparrow_n(t)\rangle\right|^2 = 1 - \left|\langle\uparrow_x|\uparrow_n(t)\rangle\right|^2 = \frac{1}{2}\left[1 - \cos(\gamma B_0 t)\sin\beta\right]$
 
@@ -79,7 +79,7 @@ $$
 \boxed{\langle S_x\rangle = \frac{\hbar}{2}\cos(\gamma B_0 t)\sin\beta}
 $$
 
-#### (c) 경계 조건 확인
+#### (c) $\beta \to 0$의 극한과 $\beta \to \frac{\pi}{2}$의 극한에서 결과를 정당화하라라
 
 **(i) $\beta \to 0$**: $\hat{n} = \hat{z}$ → $\ket{\uparrow_n} = \ket{\uparrow}$
 
@@ -178,7 +178,7 @@ $$
 ---
 
 # Week 6 HW
-
+![[QM week6 20262182 김신지.pdf]]
 ## 2.41 — Propagators and Action
 
 > 시작점 $(x,t) = (0,0)$, 도착점 $(x,t) = (D,T)$인 두 경로를 고려.

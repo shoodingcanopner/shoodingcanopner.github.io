@@ -137,6 +137,9 @@ $\mathcal{D}(x(t))$속 $x(t)$는 가능한 경로 중 하나를 나타낸 것, $
 ---
 
 ## Path Integral에서 Schrödinger 방정식 유도
+
+![[QM path integral to Schrodinger equation.pdf]]
+
 여기에서부터 시작한다. 
 $\Delta t$ 딱 한 단계만 지날 때의, propagator사이의 관계식
 $$

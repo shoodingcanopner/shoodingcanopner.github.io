@@ -58,7 +58,7 @@ Week 16: Final Exam
 
 ## 으악 시험이 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.
-
+![[Pasted image 20260416143202.png]]
 ### Heisenberg 운동방정식에서 commutator를 슈뢰딩거 연산자로 계산해도 되는 이유
 
 $H$가 시간 무관할 때, Heisenberg 연산자의 정의는
