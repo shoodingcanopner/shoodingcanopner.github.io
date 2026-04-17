@@ -616,9 +616,10 @@ ol.overflow {
 }
 
 .katex-display {
-  display: initial;
+  display: block;          // initial → block 으로 변경
   overflow-x: auto;
   overflow-y: hidden;
+  margin: 1.5em 0;         // 수식 블록 위아래 여백
 }
 
 .external-embed.youtube,
