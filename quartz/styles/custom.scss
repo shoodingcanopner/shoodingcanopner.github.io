@@ -66,3 +66,11 @@ a {
   font-family: "Nanum Square", sans-serif !important;
 }
 
+/* Display math ($$...$$) 블록의 줄간격 조절 */
+.katex-display {
+  margin: 1.5em 0;        /* 수식 블록 위아래 여백 */
+}
+
+.katex-display > .base {
+  margin: 0.4em 0;        /* 수식 내 각 줄 사이 여백 */
+}
