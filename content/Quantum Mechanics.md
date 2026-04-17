@@ -14,7 +14,7 @@ class: study_subject
 교재로 Sakurai 책을 이용한다. 
 
 중간고사 4월 16일
-기말고사 6월 9일
+기말고사 6월 9일(예정)
 
 결석을 하게 된다면 다음 강의 시작 전까지 못 들은 강의의 필기를 보내면 결석 점수가 아니라 지각 점수를 받게 된다. 
 LMS에 강의록을 다 올려주신다고 한다. 
@@ -33,6 +33,7 @@ Week 16: Final Exam
 [[QM lecture note  - Template]]
 
 ## 중간고사 범위
+### 강의 필기
 [[QM lecture note - Kets, Bras, and Operators]]
 [[QM lecture note - Base Kets and Matrix Representation]]
 [[QM lecture note - Measurements, Observables, and the Uncertainty Relations]]
@@ -50,13 +51,17 @@ Week 16: Final Exam
 [[QM lecture note - Gauge Transformations]]
 [[QM lecture note - Aharonov-Bohm Effect and Magnetic Monopole]]
 
+### 숙제와 추가 필기
 [[Sakurai 1장 문제 풀기 + Homework]]
 [[Sakurai 2장 문제 풀기 + Homework]]
 [[QM mini note - Canonical Commutation Relation from Translation]]
 [[QM mini note - Generator as Differential Operator]]
 [[QM mini note - Translation Operator in Generator Eigenket Basis]]
 
-## 으악 시험이 24시간도 안 남았다! 
+## 기말고사 범위
+
+
+## 으악 중간고사가 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.
 ![[Pasted image 20260416143202.png]]
 ### Heisenberg 운동방정식에서 commutator를 슈뢰딩거 연산자로 계산해도 되는 이유
