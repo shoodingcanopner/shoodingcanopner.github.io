@@ -66,10 +66,13 @@ a {
   font-family: "Nanum Square", sans-serif !important;
 }
 
-.katex-display {
+// custom.scss에 추가
+mjx-container[jax="SVG"][display="true"] {
   margin: 1.5em 0 !important;
+  display: block !important;
 }
 
-.katex-display > .katex > .katex-html > .base {
-  margin-bottom: 0.6em !important;
+mjx-container[jax="SVG"][display="true"] > svg {
+  display: block;
+  margin: 0 auto;
 }
