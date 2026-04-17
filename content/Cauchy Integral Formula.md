@@ -123,4 +123,7 @@ $$
 ## 연관 학습 노트
 
 - [[Green Function for Wave Equation]]
-- [[ED lecture note - Complex Analysis]]
+- [[ED lecture note - Complex Analysis and Causality]]
+
+## 원본 필기
+![[ED_Cauchy_integral.pdf]]

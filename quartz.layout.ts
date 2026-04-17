@@ -24,6 +24,14 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
+    Component.ConditionalRender({   // ← 여기 추가
+      component: Component.RecentNotes({
+        title: "최근 업데이트",
+        limit: 5,
+        showTags: false,
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     Component.ContentMeta(),
     Component.TagList(),
   ],

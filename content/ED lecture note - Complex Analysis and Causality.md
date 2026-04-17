@@ -186,17 +186,17 @@ $$
 실수축 위의 이상 적분에서 특이점 $\alpha$가 있을 때, 대칭적으로 제거하는 방식:
 
 $$
-P\int_{-\infty}^{\infty} f(x)\,dx = \lim_{\delta\to 0} \left[\int_{-\infty}^{\alpha-\delta} f(x)\,dx + \int_{\alpha+\delta}^{\infty} f(x)\,dx\right]
+P\int_{-\infty}^{\infty} \frac{f(x)}{x-\alpha}\,dx = \lim_{\delta\to 0} \left[\int_{-\infty}^{\alpha-\delta} \frac{f(x)}{x-\alpha}\,dx + \int_{\alpha+\delta}^{\infty} \frac{f(x)}{x-\alpha}\,dx\right] = i\pi f(\alpha)
 \tag{18}
 $$
-
-$\alpha$ 주변에 반지름 $\delta$의 반원 $C_\delta$를 위쪽으로 돌린다. $\delta \to 0$ 극한에서:
+![[Pasted image 20260417171509.png]]
+$\alpha$ 주변에 반지름 $\delta$의 반원 $S_\delta$를 위쪽으로 돌린다. $\delta \to 0$ 극한에서:
 
 $$
-\int_{C_\delta} \frac{f(z)}{z-\alpha}\,dz \to i\pi f(\alpha)
+\int_{S_\delta} \frac{f(z)}{z-\alpha}\,dz \to -i\pi f(\alpha)
 \tag{19}
 $$
-식(16) 보다 값이 1/2 되었음을 알 수 있다. 
+식(16) 보다 값이 1/2 되었음을 알 수 있다. Pole 근처를 원형으로 두른 게 아니라 
 
 따라서:
 
@@ -216,7 +216,7 @@ $$
 
 ---
 
-## 7. $G(\tau)$ 유도 — Lorentz 모델에서 유수 정리 활용
+## 이제 본론!!! $G(\tau)$ 유도 — Lorentz 모델에서 유수 정리 활용
 
 지난 강의에서:
 
@@ -407,3 +407,6 @@ $$
 [[ED_7thweek_1_handout_complex_analysis.pdf]]
 
 ![[ED_7thweek_1.pdf]]
+
+교수님 handout
+[[PHYS503 Compex Analysis.pdf]]

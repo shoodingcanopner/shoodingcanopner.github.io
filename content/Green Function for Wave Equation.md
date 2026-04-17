@@ -14,17 +14,17 @@ class: study
 
 ## 기호 범례
 
-| 기호            | 의미                                    |
-| ------------- | ---------------------------------- |
-| $\phi$        | 스칼라 포텐셜                              |
-| $\mathbf{A}$  | 벡터 포텐셜                             |
-| $\square$     | 달랑베르시안 (d'Alembertian) 연산자        |
-| $k$           | 파수 (wave number), $k = \omega/c$    |
-| $R$           | 소스-관찰자 사이 거리, $R =\|\mathbf{x} - \mathbf{x}'\|$   |
-| $\tau$        | 지연 시간, $\tau = t - t'$    |
-| $G^+$         | 지연 그린 함수 (retarded Green function)  |
-| $G^-$         | 선진 그린 함수 (advanced Green function) |
-| $\tilde{G}_k$ | $k$-공간에서의 그린 함수  |
+| 기호            | 의미                                              |
+| ------------- | ----------------------------------------------- |
+| $\phi$        | 스칼라 포텐셜                                         |
+| $\mathbf{A}$  | 벡터 포텐셜                                          |
+| $\square$     | 달랑베르시안 (d'Alembertian) 연산자                      |
+| $k$           | 파수 (wave number), $k = \omega/c$                |
+| $R$           | 소스-관찰자 사이 거리, $R =\|\mathbf{x} - \mathbf{x}'\|$ |
+| $\tau$        | 지연 시간, $\tau = t - t'$                          |
+| $G^+$         | 지연 그린 함수 (retarded Green function)              |
+| $G^-$         | 선진 그린 함수 (advanced Green function)              |
+| $\tilde{G}_k$ | $k$-공간에서의 그린 함수                                 |
 
 ---
 
