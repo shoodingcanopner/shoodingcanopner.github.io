@@ -179,3 +179,6 @@ Heisenberg 그림과 Schrödinger 그림이 완벽하게 일관됨을 확인. �
 
 ![[Pasted image 20260416085039.png]]
 
+## Bloch sphere
+
+![[Pasted image 20260417121202.png]]

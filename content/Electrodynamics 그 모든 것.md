@@ -22,7 +22,7 @@ class: study_subject
 [[ED lecture note - Template]]
 
 ## 중간고사 범위
-
+### 강의 필기
 [[ED lecture note - electroststics and magnetostatics]]
 [[ED lecture note - Faraday Maxwell Potentials]]
 [[ED lecture note - Gauge Transform and Energy Conservation]]
@@ -36,7 +36,12 @@ class: study_subject
 [[ED lecture note - Radiating Systems]]
 [[ED lecture note - Electric Dipole Radiation]]
 
+### 시험 대비 정리 & handout 공부
 [[중간고사 대비 - 이정도 유도는 모두 할 수 있어야 한다! 리스트]]
+
+### 과제 풀이 & 교수님께서 뿌린 작년 기출 풀이
+
+
 
 ---
 

@@ -140,82 +140,133 @@ $\mathcal{D}(x(t))$속 $x(t)$는 가능한 경로 중 하나를 나타낸 것, $
 
 ![[QM path integral to Schrodinger equation.pdf]]
 
-여기에서부터 시작한다. 
-$\Delta t$ 딱 한 단계만 지날 때의, propagator사이의 관계식
+슈뢰딩거 방정식을 유도하기 위해 어디서부터 시작하냐면...
+$\Delta t$ 딱 한 단계만 지날 때의, propagator사이의 관계식부터다. 
 $$
 \braket{x_N,t_N|x_1,t_1} = \int dx_{N-1} \braket{x_N,t_N|x_{N-1},t_{N-1}}\braket{x_{N-1},t_{N-1}|x_1,t_1}
 $$
 N번째는 마지막 단계를 의미하므로, 기존 wave equation의 표기와 결을 맞추기 위해 
 **$x_N$을 $x$이라고 표기하고 $t_{N-1}$을 $t$라고 표기하자.** 
-나중에 테일러 전개를 취할 때, 이 변수를 어떻게 두느냐에 따라 난이도가 달라진다. 
+마지막에는 $\braket{x_N,t_{N-1}|x_1,t_1}$을 wave function $\psi (x, t)$로 두어서 슈뢰딩거 방정식을 유도할 것이기 때문이다. 
 
+위의 표기로 식을 다시 정리하면, 
 $$
 \braket{x,t + \Delta t|x_1,t_1} = \int dx_{N-1} \braket{x,t + \Delta t|x_{N-1},t} \braket{x_{N-1},t|x_1,t_1}
 $$
 
-$\Delta t$가 작을 때의 propagator, 어쩐지 이 증명법에서는 potential을 상수로 두는 것만 같다. 
+어쩐지 이 증명법에서는 potential을 상수로 두는 것만 같다. 
 시간이 아주 짧으면 변위가 크지 않으니까 그런가?
+여기서 $x$와 $x_{N-1}$의 차이, 즉 이동거리 $\xi$를 두고 적분해보자. 가우시안 적분이다.
 
 $$
-\braket{x,t + \Delta t|x_1,t_1} = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi\; \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right)\left(1 - \frac{iV\Delta t}{\hbar}\right) \langle x_1 - \xi, t_1 \mid x_1, t_1 \rangle
-\tag{10}
+\xi = x - x_{N-1}
 $$
 
-여기서 $\xi = x - (x_1 - \xi)$로 잡으면 ($x = x_1$, $\xi = x_1 - x_{n-1}$):
-
 $$
-\langle x, t + \Delta t \mid x_1, t_1 \rangle = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi\; \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right)\left(1 - \frac{iV\Delta t}{\hbar}\right) \langle x - \xi, t \mid x_1, t_1 \rangle
-\tag{11}
+\langle x, t+\Delta t \mid x_1, t_1 \rangle = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t} - \frac{iV\Delta t}{\hbar}\right) \langle x-\xi, t \mid x_1, t_1 \rangle
 $$
 
-$\langle x - \xi, t \mid x_1, t_1 \rangle$를 $\xi$ 에 대해 Taylor 전개한다:
+Exponential term 내부에 있는 $\xi^2$에 주목, $\xi$에 대한 가우시안 분포이며, variance는 $\Delta t$에 비례한다.
 
+$\Delta t \to 0$의 극한으로 보내면, $\xi = 0$ 인근에서 적분 결과가 주요해진다.
+
+$0$에 가까운 $\xi$와 $\Delta t$에 대해 테일러 전개를 취한다.
+이때, $\xi$와 $\Delta t$에게 전개를 취하는 order가 똑같지 않은 게 핵심이다.
+exponential term안에 $\frac{\xi^2}{\Delta t}$를 보아라, 이것은 $\Delta t$를 1차까지 전개한다면, $\xi$는 2차까지 전개해야 한다는 것을 알려준다. 
+
+> [!insight] $\xi$와 $\Delta t$ 전개 차수가 다른 이유, 스케일 관계
+> 
+> Gaussian 적분의 exponential term 안에 $\dfrac{\xi^2}{\Delta t}$가 들어있다는 점이 핵심이다.
+> 
+> Gaussian의 분산은 $\langle \xi^2 \rangle \sim \Delta t$이므로, $\xi \sim \sqrt{\Delta t}$로 스케일된다. 즉, $\xi$는 독립적인 변수가 아니라 $\sqrt{\Delta t}$에 종속된 변수다.
+> 
+> 따라서 $\Delta t$에 대해 1차까지 유지하려면:
+> - $\Delta t$ → 1차까지 전개
+> - $\xi$ → $\sqrt{\Delta t}$에 해당하므로, **2차까지** 전개
+> 
+> 이를 일반화하면: **Gaussian 적분에서 $\langle \xi^{2k} \rangle \sim (\Delta t)^k$이므로, $\Delta t$의 $n$차 정확도를 원한다면 $\xi$는 $2n$차까지 전개해야 한다.**
+> 
+
+여러 term에 대해 근사를 진행한다. 복잡하다. 그런데 중요하다. 
+
+---
+
+**첫 번째)**
 $$
-\langle x - \xi, t \mid x_1, t_1 \rangle \approx \langle x, t \mid x_1, t_1 \rangle + \xi \frac{\partial}{\partial x}\langle x, t \mid x_1, t_1 \rangle + \frac{\xi^2}{2}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle + \cdots
+\langle x, t+\Delta t \mid x_1, t_1 \rangle \simeq \langle x, t \mid x_1, t_1 \rangle + \Delta t \frac{\partial}{\partial t}\langle x, t \mid x_1, t_1 \rangle
 $$
 
+**두 번째)**
+$$
+\exp\!\left(-\frac{iV\Delta t}{\hbar}\right) \simeq 1 - \frac{iV\Delta t}{\hbar}
+$$
+
+**세 번째)**
+$$
+\langle x-\xi, t \mid x_1, t_1 \rangle \simeq \langle x, t \mid x_1, t_1 \rangle - \xi\frac{\partial}{\partial x}\langle x, t \mid x_1, t_1 \rangle + \frac{1}{2}\xi^2 \frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle
+$$
+
+세 번째 근사에서, $\frac{\partial}{\partial \xi}$가 아니라 $\frac{\partial}{\partial x}$임에 유의하라! 정말로!
+
+세 번째에서 $\xi$에 대한 일차항은 없어도 된다. 가우시안 함수가 even function이라서 적분하면 $0$이 되어버린다.
 > [!note] 홀수 차수 항 소거
 > $\xi \to -\xi$ 대칭 때문에 홀수 차수 항은 Gaussian 적분 시 0이 된다. 즉 $\int \xi \cdot e^{im\xi^2/2\hbar\Delta t} d\xi = 0$.
 
-적분을 수행하면 ($\int \xi^2 e^{im\xi^2/2\hbar\Delta t} d\xi$가 필요한 유일한 항):
+그래서 다시 쓰면,
 
+**세 번째 (재작성)**
 $$
-\Delta t \frac{\partial}{\partial t}\langle x, t \mid x_1, t_1 \rangle = \sqrt{\frac{m}{2\pi i \hbar \Delta t}} \cdot \sqrt{2\pi} \cdot \left(\frac{i\hbar\Delta t}{m}\right)^{\!3/2} \cdot \frac{1}{2}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle - \frac{i}{\hbar}\Delta t\, V\langle x, t \mid x_1, t_1 \rangle
-\tag{12}
-$$
-
-양변을 $\Delta t$로 나누고 정리하면:
-
-$$
-\boxed{i\hbar \frac{\partial}{\partial t}\langle x, t \mid x_1, t_1 \rangle = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle + V\langle x, t \mid x_1, t_1 \rangle}
-\tag{13}
+\langle x-\xi, t \mid x_1, t_1 \rangle \simeq \langle x, t \mid x_1, t_1 \rangle + \frac{1}{2}\xi^2\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle
 $$
 
+---
+
+각 근사들이 슈뢰딩거 방정식과 어떻게 연관되는지 보인다.
+
+첫 번째는 $\frac{\partial}{\partial t} \psi$와, 두 번째는 $V \psi$와, 세 번째는 $\frac{\partial^2}{\partial x^2} \psi$ 와 연결된다.
+
+근사들을 대입하면,
+
+$$
+\langle x, t \mid x_1, t_1 \rangle + \Delta t \frac{\partial}{\partial t}\langle x, t \mid x_1, t_1 \rangle = 
+$$
+$$
+\sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right) \left[1 - \frac{i}{\hbar}V\Delta t\right] \left[\langle x, t \mid x_1, t_1 \rangle + \frac{\xi^2}{2}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle\right]
+$$
+
+적분에서 $\left[1 - \frac{i}{\hbar}V\Delta t\right]$는 밖으로 나온다. 적분만 계산하면,
+
+$$
+\sqrt{\frac{m}{2\pi i \hbar \Delta t}} \int_{-\infty}^{\infty} d\xi \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right) \left[\langle x, t \mid x_1, t_1 \rangle + \frac{\xi^2}{2}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle\right]
+$$
+
+$$
+= \langle x, t \mid x_1, t_1 \rangle + \sqrt{\frac{m}{2\pi i \hbar \Delta t}}\cdot\sqrt{2\pi}\left(\frac{i\hbar\Delta t}{m}\right)^{\!3/2} \frac{1}{2}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle
+$$
+
+---
+
+첫 번째 것은 $\Delta t$에 대해 0차, 두 번째 것은 $\Delta t$에 대해 1차이다.
+
+양 변에서 $\langle x, t \mid x_1, t_1 \rangle$는 뺄 수 있으며, $\Delta t$에 대한 1차항만 남기자.
+
+$$
+\Delta t \frac{\partial}{\partial t}\langle x, t \mid x_1, t_1 \rangle = -\frac{i}{\hbar}\Delta t\, V\langle x, t \mid x_1, t_1 \rangle + \frac{i\hbar\Delta t}{2m}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle
+$$
+
+ $\Delta t$로 나누고 양 변에 $i\hbar$를 곱한다.
+
+$$
+\boxed{i\hbar\frac{\partial}{\partial t}\langle x, t \mid x_1, t_1 \rangle = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\langle x, t \mid x_1, t_1 \rangle + V\langle x, t \mid x_1, t_1 \rangle}
+$$
 **이것이 바로 슈뢰딩거 방정식이다.** Path integral은 슈뢰딩거 방정식과 동등한 또 다른 양자역학의 공식화임이 확인된다.
 
 ---
 
-## 포텐셜과 게이지 변환 (연결)
 
-**Constant potential** $V_0$를 더한다면:
-- $\mathcal{H}' = \mathcal{H} + V_0$
-- 포텐셜이 상수가 되면, wave function은 phase만 바뀌고, expectation value는 바뀌지 않는다.
-- 전자기학에서도 해당되었던 이야기 → 다음 강의에서 자세히 다룬다.
-
-$$
-\psi'_{(\alpha)} = \exp\!\left(-\frac{i}{\hbar} t(\mathcal{H} + V_0)\right)\psi_0 = e^{-\frac{i}{\hbar}V_0 t}\psi_0
-$$
-
-$$
-\psi_{(\alpha)} = \exp\!\left(-t\frac{i}{\hbar}\mathcal{H}\right)\psi_0
-$$
-
-→ $\psi_0 = \psi_\alpha$라는 것을 전제로 한다.
 
 # 궁금한 내용
 
-- **유도 연습**: 식 (12)의 Gaussian 적분 과정을 직접 해보자. $\int_{-\infty}^{\infty} d\xi\, \xi^2 \exp\!\left(\frac{im\xi^2}{2\hbar\Delta t}\right)$를 계산하고, 슈뢰딩거 방정식이 나오는지 확인하자.
-- Path integral에서 고전 극한을 보이기: 질량이 커지면 action $S$의 스케일이 $\hbar$보다 훨씬 커져서, stationary phase approximation에 의해 고전 경로만 살아남음을 보여라.
 
 # AI의 보충 설명
 

@@ -71,6 +71,20 @@ $S$가 변하는 만큼 $\mathbf{A}$도 변하기 때문이다.
 
 # 필기 내용
 
+## 포텐셜과 게이지 변환 (연결)
+
+**Constant potential** $V_0$를 더한다면:
+- $\mathcal{H}' = \mathcal{H} + V_0$
+- 포텐셜이 상수가 되면, wave function은 phase만 바뀌고, expectation value는 바뀌지 않는다.
+
+$$
+\psi'_{(\alpha)} = \exp\!\left(-\frac{i}{\hbar} t(\mathcal{H} + V_0)\right)\psi_0 = e^{-\frac{i}{\hbar}V_0 t}\psi_0
+$$
+
+$$
+\psi_{(\alpha)} = \exp\!\left(-t\frac{i}{\hbar}\mathcal{H}\right)\psi_0
+$$
+
 ## 전자기장 속 해밀토니안
 
 전자기장 속 입자의 해밀토니안:
