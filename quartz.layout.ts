@@ -26,7 +26,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ConditionalRender({   // ← 여기 추가
       component: Component.RecentNotes({
-        title: "최근 업데이트",
+        title: "최근에 손본 노트들",
         limit: 5,
         showTags: false,
       }),
@@ -60,8 +60,8 @@ export const defaultContentPageLayout: PageLayout = {
       },
       globalGraph: {
         repelForce: 1.5,
-        linkDistance: 60,
-        centerForce: 0.2,
+        linkDistance: 50,
+        centerForce: 0.3,
         showTags: false,  // ← 추가
       },
     }),
