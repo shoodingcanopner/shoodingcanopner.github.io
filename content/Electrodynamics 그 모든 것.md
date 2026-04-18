@@ -47,7 +47,6 @@ class: study_subject
 ![[Pasted image 20260418135105.png]]
 ![[Pasted image 20260418135530.png]]
 
-
 ---
 
 

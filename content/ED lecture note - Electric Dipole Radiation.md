@@ -19,6 +19,10 @@ class: study_lecture
 
 ![[DipoleRadiation.gif]]
 위키피디아에서 퍼왔다. 보다 보면 빠져든다.  By MyName (<a href="//commons.wikimedia.org/wiki/User:Geoemyda" title="User:Geoemyda">Geoemyda</a> (<a href="//commons.wikimedia.org/wiki/User_talk:Geoemyda" title="User talk:Geoemyda"><span class="signature-talk">talk</span></a>)) - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=5179902">Link</a>
+저 그림에서 검은 화살표가 무엇을 나타내나?
+Poyinting vector아닐까?
+색깔은 전기장의 세기를 나타낸다고 한다. 
+
 
 Multipole expansion 에서 $n=0$인 term은 electric dipole을 의미한다. 
 
@@ -242,7 +246,7 @@ $$
 - $\mathbf{H}$는 $\hat{n}$과 직교. 빛의 특성과 같다.
 - $\mathbf{E}$는 $\hat{n}$과 직교한 성분도 있고 평행한 성분도 있다.
 
-제일 dominant한 term $\frac{1}{r} e^{ikr}$만 쓰면:
+관찰자가 정말 정말 멀리 있을 때, $r$이 큰 경우, 제일 dominant한 term $\frac{1}{r} e^{ikr}$만 쓰면
 
 $$
 \begin{cases}
@@ -250,6 +254,21 @@ $$
 \mathbf{E} = Z_0\, \mathbf{H} \times \hat{n}
 \end{cases}
 $$
+전기장과 자기장이 직교한다. 
+==또한 전기장의 방향이 $(\hat{n} \times \mathbf{p}) \times \hat{n}$인 것에 주목.==  
+==편광의 방향을 확인하는 것은 항상 중요하니까.== 
+
+$(\hat{n} \times \mathbf{p}) \times \hat{n}$을 BAC-CAB 공식으로 전개하면,
+$$
+(\hat{n} \times \mathbf{p}) \times \hat{n} = \mathbf{p} - \hat{n}(\hat{n} \cdot \mathbf{p})
+$$
+이는 **p에서 $\hat{n}$ 방향 성분을 제거한 것**, 즉 **p의 횡방향(transverse) 성분**이다.
+
+![[Pasted image 20260418160121.png]]
+
+
+위 그림에서 빨간 벡터의 방향이 $\mathbf{H}$ field, 파란 벡터의 방향이  $\mathbf{E}$ field. 
+
 
 ---
 ## 복사 파워 (Radiated Power)
@@ -267,7 +286,7 @@ $\hat{n} \cdot \left[ \{ (\hat{n} \times \mathbf{p}) \times \hat{n} \} \times (\
 $$
 \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = \mathbf{b} \cdot (\mathbf{c} \times \mathbf{a})
 $$
-이 벡터 항등식은 잘 알고 있던 것. 
+이 벡터 항등식은 잘 알고 있던 것이다. 
 $$
 \hat{n} \cdot \left[\{(\hat{n} \times \mathbf{p}) \times \hat{n}\} \times (\hat{n} \times \mathbf{p})\right]
 $$
@@ -282,15 +301,7 @@ $$
 \frac{dP}{d\Omega} = \frac{k^4}{32\pi^2} \left(c^2 Z_0\right) |(\hat{n} \times \mathbf{p}) \times \hat{n}|^2
 $$
 
-$(\hat{n} \times \mathbf{p}) \times \hat{n}$을 BAC-CAB 공식으로 전개하면,
-$$
-(\hat{n} \times \mathbf{p}) \times \hat{n} = \mathbf{p} - \hat{n}(\hat{n} \cdot \mathbf{p})
-$$
-이는 **p에서 $\hat{n}$ 방향 성분을 제거한 것**, 즉 **p의 횡방향(transverse) 성분**이다.
-
-![[Pasted image 20260418160121.png]]
-
-그리고 이 벡터의 크기는 $\left|(\hat{n} \times \mathbf{p}) \times \hat{n}\right| = \left| \mathbf{p} \right| sin(\theta)$ 이다. 각도에 따른 복사 파워를 명시적으로 나타내면, 관찰자가 electric dipole moment로부터 $\theta$의 각도로 있을 때에, 
+$(\hat{n} \times \mathbf{p}) \times \hat{n}$ 의 크기는 $\left| \mathbf{p} \right| sin(\theta)$ 이다. 각도에 따른 복사 파워를 명시적으로 나타내면, 관찰자가 electric dipole moment로부터 $\theta$의 각도로 있을 때에, 
 
 $$
 \frac{dP}{d\Omega} = \frac{k^4}{32\pi^2} \left(c^2 Z_0\right) \left| \mathbf{p} \right|^2 sin^2(\theta)
