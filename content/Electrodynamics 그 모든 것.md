@@ -35,6 +35,8 @@ class: study_subject
 [[ED lecture note - Complex Analysis and Causality]]
 [[ED lecture note - Radiating Systems]]
 [[ED lecture note - Electric Dipole Radiation]]
+[[ED lecture note - Magnetic Dipole Radiation]]
+[[ED lecture note - Electric Quadrupole Radiation]]
 
 ### 시험 대비 정리 & handout 공부
 [[중간고사 대비 - 이정도 유도는 모두 할 수 있어야 한다! 리스트]]

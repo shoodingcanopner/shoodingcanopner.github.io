@@ -44,7 +44,7 @@ $$
 $$
 그러나 전기장에 관한 식을 아래와 같이 정리하는 건 어렵다. 
 $$
-\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \left\{ k^2 (\hat{n} \times \mathbf{p}) \times \hat{n} \frac{e^{ikr}}{r} + \left[3\hat{n}(\hat{n} \cdot \mathbf{p}) - \mathbf{p}\right] \frac{e^{ikr}}{r}(1 - ikr) \right\} \tag{Jackson 9.18}
+\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \left\{ k^2 (\hat{n} \times \mathbf{p}) \times \hat{n} \frac{e^{ikr}}{r} + \left[3\hat{n}(\hat{n} \cdot \mathbf{p}) - \mathbf{p}\right] e^{ikr}(\frac{1}{r^3}-\frac{ik}{r^2}) \right\} \tag{Jackson 9.18}
 $$
 
 **전기장과 자기장의 편광 방향**
@@ -235,7 +235,7 @@ $$
 설마 시험에 나오진 않겠지?
 
 $$
-\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \left\{ k^2 (\hat{n} \times \mathbf{p}) \times \hat{n} \frac{e^{ikr}}{r} + \left[3\hat{n}(\hat{n} \cdot \mathbf{p}) - \mathbf{p}\right] \frac{e^{ikr}}{r}(1 - ikr) \right\} \tag{Jackson 9.18}
+\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \left\{ k^2 (\hat{n} \times \mathbf{p}) \times \hat{n} \frac{e^{ikr}}{r} + \left[3\hat{n}(\hat{n} \cdot \mathbf{p}) - \mathbf{p}\right] e^{ikr}(\frac{1}{r^3}-\frac{ik}{r^2}) \right\} \tag{Jackson 9.18}
 $$
 $$
 \mathbf{H} = \frac{ck^2}{4\pi} (\hat{n} \times \mathbf{p}) \frac{e^{ikr}}{r} \left(1 - \frac{1}{ikr}\right)
@@ -330,4 +330,4 @@ Jackson Ch. 9 (9.13, 9.18)
 
 # 다음 강의
 
-Magnetic Dipole Radiation, Electric Quadrupole Radiation (보충 예정)
+[[ED lecture note - Magnetic Dipole Radiation]]
