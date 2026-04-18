@@ -1,6 +1,6 @@
 ---
 title: ED lecture note - Complex Analysis
-date: "2026-04-06"
+date: 2026-04-17
 subject: physics
 tags:
   - study
@@ -27,7 +27,7 @@ class: study_lecture
 - Kramers-Kronig 관계식: $\varepsilon(\omega)$의 실수부와 허수부는 서로 독립이 아님
 - $G(\tau)$의 유도 (Lorentz 모델, 유수 정리 활용)
 
-# 필기 내용
+# Complex Analysis, 수학적 배경
 
 ## 1. 복소 변수 (Complex Variables)
 
@@ -196,12 +196,12 @@ $$
 \int_{S_\delta} \frac{f(z)}{z-\alpha}\,dz \to -i\pi f(\alpha)
 \tag{19}
 $$
-식(16) 보다 값이 1/2 되었음을 알 수 있다. Pole 근처를 원형으로 두른 게 아니라 
+식(16) 보다 값이 1/2 되었음을 알 수 있다. Pole 근처를 원형으로 두른 게 아니라 반원으로 둘러서 그렇다. 
 
 따라서:
 
 $$
-P\int_{-\infty}^{\infty} \frac{f(x)}{x-\alpha}\,dx = i\pi f(\alpha) - \oint_{\text{large}} \frac{f(z)}{z-\alpha}\,dz
+P\int_{-\infty}^{\infty} \frac{f(x)}{x-\alpha}\,dx= -\int_{S_\delta} \frac{f(z)}{z-\alpha}\,dz - \oint_{\text{large}} \frac{f(z)}{z-\alpha}\,dz = i\pi f(\alpha) - \oint_{\text{large}} \frac{f(z)}{z-\alpha}\,dz
 \tag{20}
 $$
 
@@ -215,6 +215,8 @@ $$
 **Hilbert 변환:** $f(x) = f_R(x) + if_I(x)$로 쓰면 실수부와 허수부 사이의 변환 관계가 도출된다.
 
 ---
+
+# 본론, 필기 내용
 
 ## 이제 본론!!! $G(\tau)$ 유도 — Lorentz 모델에서 유수 정리 활용
 
@@ -293,7 +295,7 @@ $$
 
 ---
 
-## 8. $\varepsilon(\omega)$의 Analytic 구조와 Causality
+## $\varepsilon(\omega)$의 Analytic 구조와 Causality
 
 **핵심 결과:**
 
@@ -314,7 +316,7 @@ $$
 
 ---
 
-## 9. Kramers-Kronig 관계식
+## Kramers-Kronig 관계식
 
 $\varepsilon(\omega)/\varepsilon_0$가 상반 복소 평면에서 analytic → Cauchy principal value 공식 적용:
 

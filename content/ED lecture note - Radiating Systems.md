@@ -27,6 +27,8 @@ Fear field에서 approximation한 경우, **multipole expansion**이 나타난�
 
 ![[Radiating Systems.png]]
 
+지금은 주로 자기벡터포텐셜 $\mathbf{A}$에 대해 풀고 있어가지고, 먼저 $\mathbf{H}$를 구한 다음 $\mathbf{E}$를 구한다. 
+
 $$
 \mathbf{H} = \frac{1}{\mu} \nabla \times \mathbf{A}, \qquad \mathbf{E} = \frac{iZ_0}{k} \nabla \times \mathbf{H}, \qquad Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}
 $$
@@ -116,7 +118,7 @@ $$
 ## H, E를 A로부터 구하기
 
 $$
-\mathbf{H} = \frac{1}{\mu} \nabla \times \mathbf{A}, \qquad \mathbf{E} = \frac{iZ_0}{k} \nabla \times \mathbf{H}, \qquad Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}
+\mathbf{H} = \frac{1}{\mu_0} \nabla \times \mathbf{A}, \qquad \mathbf{E} = \frac{iZ_0}{k} \nabla \times \mathbf{H}, \qquad Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}
 $$
 
 > → 이게 왜 성립하지? 원래는 $\mathbf{E}$와 를 이어주는 식에 시간 미분이 들어가야 할 텐데. 
@@ -223,7 +225,6 @@ $$
 \mathbf{A}(\mathbf{x}) = \frac{\mu_0}{4\pi} \int \mathbf{J}(\mathbf{x}') \frac{d\mathbf{x}'}{|\mathbf{x} - \mathbf{x}'|}
 $$
 
-> 아니 근데 왜 갑자기 시간은 고려 안 하기 시작한 거지? → 일단 지금은 공간에 대한 함수만 분리해서 보고 있기 때문이다. 
 
 와! 특수함수를 쓴다. 공부해야 할까? 시험에서는 표로 주지 않을까?
 
@@ -292,9 +293,6 @@ n이 커짐에 따라 $(ik\hat{n} \cdot \mathbf{x}')^n$이 점점 작아지므�
 
 ---
 
-
----
-
 ## Electric Dipole Radiation 이후
 
 이 부분부터는 별도 노트로 분리됨 → [[ED lecture note - Electric Dipole Radiation]]
@@ -302,10 +300,6 @@ n이 커짐에 따라 $(ik\hat{n} \cdot \mathbf{x}')^n$이 점점 작아지므�
 # 궁금한 내용
 
 0. 전자기장에서 각운동량 보존 법칙은?
-1. $\mathbf{H}$와 $\mathbf{E}$를 $\mathbf{A}$로부터 구할 때 $\mathbf{E} = \frac{iZ_0}{k}\nabla \times \mathbf{H}$ 가 성립하는 이유는? 시간 미분이 있어야 할 것 같은데.
-2. Near zone에서 갑자기 시간을 고려 안 하기 시작한 이유는?
-3. 식 (9.9)에서 $n=0$ term이 왜 electric dipole에 해당하는가? → [[ED lecture note - Electric Dipole Radiation]] 참고
-4. $\int \mathbf{J} d\mathbf{x}' = -i\omega \int \mathbf{x}' \rho \, d\mathbf{x}'$ 유도에서 부분적분 과정은? → [[ED lecture note - Electric Dipole Radiation]] 참고
 
 # AI의 보충 설명
 

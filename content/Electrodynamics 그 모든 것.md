@@ -34,13 +34,18 @@ class: study_subject
 [[ED lecture note - Dispersion]]
 [[ED lecture note - Complex Analysis and Causality]]
 [[ED lecture note - Radiating Systems]]
+[[ED lecture note - Electric Dipole Radiation]]
+
 ### 시험 대비 정리 & handout 공부
 [[중간고사 대비 - 이정도 유도는 모두 할 수 있어야 한다! 리스트]]
 
 [[Green Function for Wave Equation]]
 [[Cauchy Integral Formula]]
 ### 과제 풀이 & 교수님께서 뿌린 작년 기출 풀이
+[[ED HW3 풀이]]
 
+![[Pasted image 20260418135105.png]]
+![[Pasted image 20260418135530.png]]
 
 
 ---
