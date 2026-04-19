@@ -17,7 +17,7 @@ class: study_homework
 ---
 
 # Problem 1. Radiation from a Center-fed Linear Antenna (20점)
-
+![[Pasted image 20260419201201.png]]
 Coaxial center-fed antenna의 전류밀도:
 
 $$

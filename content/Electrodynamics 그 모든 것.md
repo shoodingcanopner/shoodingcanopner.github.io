@@ -44,9 +44,18 @@ class: study_subject
 [[Green Function for Wave Equation]]
 [[Cauchy Integral Formula]]
 ### 과제 풀이 & 교수님께서 뿌린 작년 기출 풀이
-[[ED HW3 풀이]]
+![[Pasted image 20260419201524.png]]
+![[Pasted image 20260419201536.png]]
 
-![[Pasted image 20260418135105.png]]
+
+[[ED_HW1_20262182_김신지_흑백.pdf]]
+[[ED_HW1_20262182_김신지_회색조.pdf]]
+
+[[ED HW3 풀이]]
+[[몇 가지 Vector analysis HW 풀이]]
+[[EM wave propagation through dielectric layers 기출 풀이]]
+
+
 ![[Pasted image 20260418135530.png]]
 
 ---

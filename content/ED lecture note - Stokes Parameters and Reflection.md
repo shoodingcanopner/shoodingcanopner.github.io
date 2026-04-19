@@ -47,11 +47,13 @@ $$
 
 $i\hat{\varepsilon}_2$ 앞에 붙는 부호에 따라 편광의 회전 방향이 달라진다.
 
-| 부호 | Helicity | 편광 | 회전 방향 |
-|------|----------|------|-----------|
+| 부호                      | Helicity          | 편광  | 회전 방향              |
+| ----------------------- | ----------------- | --- | ------------------ |
 | $+i\hat{\varepsilon}_2$ | positive helicity | LCP | counter clock wise |
-| $-i\hat{\varepsilon}_2$ | negative helicity | RCP | clock wise |
-
+| $-i\hat{\varepsilon}_2$ | negative helicity | RCP | clock wise         |
+이렇게 부르는 convention이 교재마다 다른 듯 하다. 
+헷갈린다. 외우자. 시계가 옳은(right) 방향으로 돈다!  
+![[Pasted image 20260419142808.png]]
 한 자리에서 빛을 정면으로 맞으며 관찰한 시간에 따른 편광의 회전 방향.
 
 회전 자체를 나타내는 기저를 만들 수도 있다. **circular polarization basis**:
@@ -75,6 +77,8 @@ $$
 Stokes parameters는 빛의 세기로 결정된다. 편광 상태를 결정하는 요소.
 
 네 가지 편광 요소로 표현: $\tilde{E}_1 = a_1 e^{i\delta_1}$, $\tilde{E}_2 = a_2 e^{i\delta_2}$, $\tilde{E}_+ = a_+ e^{i\delta_+}$, $\tilde{E}_- = a_- e^{i\delta_-}$
+즉, 크기랑 위상을 따로 분리해서 일단 지금은 생각하자. 
+$a$와 $\delta$는 모두 실수이다. 
 
 $\mathbb{E}_0$를 두 가지로 나타낼 수 있다.
 
@@ -207,19 +211,19 @@ $n$인 medium에서 $n'$으로 빛이 향할 때, 입사파는 $\mathbf{k}$, 굴
 
 **incident wave:**
 $$
-\mathbb{E} = \mathbb{E}_0\exp(i\mathbf{k}\cdot\mathbf{x} - i\omega t), \qquad \mathbf{B} = \sqrt{\mu\varepsilon}\,\frac{1}{k}\mathbf{k}\cdot\mathbb{E}
+\mathbb{E} = \mathbb{E}_0\exp(i\mathbf{k}\cdot\mathbf{x} - i\omega t), \qquad \mathbf{B} = \sqrt{\mu\varepsilon}\,\frac{1}{k}\mathbf{k}\times\mathbb{E}
 \tag{13}
 $$
 
 **refracted wave:**
 $$
-\mathbb{E}' = \mathbb{E}_0'\exp(i\mathbf{k}'\cdot\mathbf{x} - i\omega t), \qquad \mathbf{B}' = \sqrt{\mu'\varepsilon'}\,\frac{1}{k'}\mathbf{k}'\cdot\mathbb{E}'
+\mathbb{E}' = \mathbb{E}_0'\exp(i\mathbf{k}'\cdot\mathbf{x} - i\omega t), \qquad \mathbf{B}' = \sqrt{\mu'\varepsilon'}\,\frac{1}{k'}\mathbf{k}'\times\mathbb{E}'
 \tag{14}
 $$
 
 **reflected wave:**
 $$
-\mathbb{E}'' = \mathbb{E}_0''\exp(i\mathbf{k}''\cdot\mathbf{x} - i\omega t), \qquad \mathbf{B}'' = \sqrt{\mu\varepsilon}\,\frac{1}{k''}\mathbf{k}''\cdot\mathbb{E}''
+\mathbb{E}'' = \mathbb{E}_0''\exp(i\mathbf{k}''\cdot\mathbf{x} - i\omega t), \qquad \mathbf{B}'' = \sqrt{\mu\varepsilon}\,\frac{1}{k''}\mathbf{k}''\times\mathbb{E}''
 \tag{15}
 $$
 
@@ -322,6 +326,7 @@ exponent 안에 **real value가 들어간다**.
 
 # 다음 강의
 
+[[ED lecture note - Fresnel Equations]]
 
 # 원본 필기 이미지
 [[ED_5thweek_2.pdf]]

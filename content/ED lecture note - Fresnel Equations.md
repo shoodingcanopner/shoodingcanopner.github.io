@@ -26,7 +26,7 @@ class: study_lecture
 
 ## 1. 경계 조건과 Maxwell 방정식
 
-이전까지는 반사·굴절에 의한 **강도**를 공부했다.
+이전까지는 반사·굴절에 의한 **각도**를 공부했다.
 이제는 입사·굴절·반사 파의 **전기장 세기 관계**를 알아보자.
 ![[Pasted image 20260401134111.png]]
 > [!note] notation
@@ -57,6 +57,24 @@ $$
 \nabla\times\mathbf{H} = 0
 \end{cases}
 $$
+
+> [!tip] Glia의 보충 설명 — 왜 curl 항도 0인가?
+> 
+> 이 식은 맥스웰 방정식 자체가 0이라는 뜻이 **아니다**. 원래 맥스웰 방정식은:
+> 
+> $$
+> \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}, \quad \nabla \times \mathbf{H} = \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}
+> $$
+> 
+> 경계 조건을 유도할 때는 **경계면에 수직인 아주 얇은 루프**에 스토크스 정리를 적용한다:
+> 
+> $$
+> \oint \mathbf{E}\cdot d\vec{l} = -\int \frac{\partial \mathbf{B}}{\partial t}\cdot d\vec{a}
+> $$
+> 
+> 루프의 높이를 0으로 보내면, **루프가 둘러싸는 면적이 0**이 된다. $\frac{\partial \mathbf{B}}{\partial t}$는 유한한 값이므로 면적분이 사라진다. $\nabla \times \mathbf{H}$도 마찬가지로, 자유 전류 $\mathbf{J}_f = 0$ (유전체)이고 $\frac{\partial \mathbf{D}}{\partial t}$도 유한하므로 면적 → 0 극한에서 기여가 사라진다.
+> 
+> 즉, **"경계 조건 유도의 극한에서 우변이 사라진다"**는 의미이지, 공간 전체에서 curl이 0이라는 뜻이 아니다.
 
 이를 경계에 적용하면:
 
