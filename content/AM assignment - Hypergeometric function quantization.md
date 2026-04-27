@@ -464,8 +464,8 @@ Module[{a = 2, b = -1, c = 2, t0 = 0.5, nEig = 4, ymax = 5, mt, kt, evals, efunc
   ]
 ]
 ```
+![[AM midterm figure1.png]]
 
-![[Pasted image 20260426100257.png]]
 
 SHO와 유사한 discrete eigenfunction들이 나타난다. $n$이 증가함에 따라 node 수가 하나씩 늘어나며, 이는 조화진동자의 에르미트 함수와 정성적으로 일치한다. 
 
