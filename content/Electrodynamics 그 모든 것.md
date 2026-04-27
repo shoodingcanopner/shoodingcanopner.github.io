@@ -43,6 +43,8 @@ class: study_subject
 
 [[Green Function for Wave Equation]]
 [[Cauchy Integral Formula]]
+[[PHYS503 Group velocity .pdf]]
+[[Group Velocity]]
 ### 과제 풀이 & 교수님께서 뿌린 작년 기출 풀이
 ![[Pasted image 20260419201524.png]]
 ![[Pasted image 20260419201536.png]]

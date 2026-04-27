@@ -214,7 +214,7 @@ $$
 $\vec{J} = \rho \vec{v}$를 이용해서도 증명할 수 있다.
 
 #### (v) Polarization P → realvector & time reversal invariant
-
+time reversal invariant한 이유는 polarization이 점전하 밀도의 공간 미분에 의존하기 때문
 $$
 I(\vec{P}) = -\vec{P}, \quad T(\vec{P}) = \vec{P}
 $$
@@ -239,7 +239,7 @@ $\frac{\partial \vec{E}}{\partial t} \times \vec{B}$ 만이 P의 대칭성을 �
 
 질문) $\vec{E} \cdot \vec{B}$는 생각 안 하지? E랑 B는 항상 직교하나?
 
-대칭성을 만복한느 항들만을 골라 expansion하면 어래같이 표현할 수 있다. 
+대칭성을 만족한 항들만을 골라 expansion하면 아래같이 표현할 수 있다. 
 
 $$
 \frac{1}{\varepsilon_0} \vec{P} = \chi_0 \vec{E} + \chi_1 \frac{\partial \vec{E}}{\partial t} \times \vec{B} + \chi_2 (\vec{B} \cdot \vec{B})\vec{E} + \chi_3 (\vec{E} \cdot \vec{B})\vec{B}

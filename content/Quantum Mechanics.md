@@ -58,6 +58,10 @@ Week 16: Final Exam
 [[QM mini note - Generator as Differential Operator]]
 [[QM mini note - Translation Operator in Generator Eigenket Basis]]
 
+### 시험 족보
+후배를 위해 남기는 이번 중간고사 족보
+[[QM midterm 2026-1]]
+
 ## 기말고사 범위
 
 
@@ -98,9 +102,9 @@ $$
 
 
 
-## Free Particle: Position Operator의 시간 진화
+### Free Particle: Position Operator의 시간 진화
 
-### Heisenberg 운동방정식으로 $x^H(t)$ 구하기
+#### Heisenberg 운동방정식으로 $x^H(t)$ 구하기
 
 자유입자 $H = \frac{p^2}{2m}$에 Heisenberg 운동방정식 적용:
 
@@ -175,10 +179,10 @@ $x^H(t)$의 eigenket은 **자유입자 전파자에 의해 퍼져나간 위치 �
 
 Heisenberg 그림과 Schrödinger 그림이 완벽하게 일관됨을 확인. ✅
 
-## 임의 스핀 위치의 eigen vector
+### 임의 스핀 위치의 eigen vector
 
 ![[Pasted image 20260416085039.png]]
 
-## Bloch sphere
+### Bloch sphere
 
 ![[Pasted image 20260417121202.png]]

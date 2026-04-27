@@ -61,7 +61,7 @@ $$
 R_1 = t_{12} \cdot e^{i\delta} \cdot r_{23} \cdot e^{i\delta} \cdot t_{21} = t_{12}\,t_{21}\,r_{23}\,e^{2i\delta}
 $$
 
-Stokes relation $t_{12}\,t_{21} = 1 - r_{12}^2$ 를 적용하면:
+==Stokes relation $t_{12}\,t_{21} = 1 - r_{12}^2$ 를 적용하면:==
 
 $$
 R_1 = (1 - r_{12}^2)\,r_{23}\,e^{2i\delta}

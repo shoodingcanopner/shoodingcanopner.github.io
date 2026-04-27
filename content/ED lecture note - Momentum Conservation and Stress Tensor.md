@@ -229,6 +229,7 @@ $$
 $$
 
 여기서 아까 체적분-면적분 변환은 Green's theorem에 의함이다.
+→ 어 아닌데 발산정리 같은데????
 
 이것을 **Maxwell stress tensor** 라고 한다. 차원은 힘/면적, 즉 **stress tensor** 의 형태와 같다.
 

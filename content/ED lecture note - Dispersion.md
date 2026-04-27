@@ -72,7 +72,8 @@ $$
 m\left[-\omega^2 - i\gamma\omega + \omega_0^2\right]x = -e\,\mathbb{E}
 $$
 
-전자의 **dipole moment**는:
+전자의 **dipole moment**는 → 지금은 전자 하나만을 보고 있으므로, 
+단순히 전하의 위치에 전하량을 곱하면 된다. 
 
 $$
 p = -ex = \frac{e^2}{m}\left[\omega_0^2 - \omega^2 - i\omega\gamma\right]^{-1}\mathbb{E}
@@ -88,6 +89,7 @@ $\omega_j$의 binding frequency와 $\gamma_j$의 damping을 가지는 전자가 
 $f_j$는 이를 만족: $Z = \sum_j f_j$
 
 이 각기 다른 전자들의 dipole moment를 모두 합한 게 $\epsilon$를 결정할 것이다.
+아래 식은 Polarization density를 구한 것. 
 
 $$
 p_\text{total} = \frac{e^2}{m}N\sum_j f_j\left[\omega_j^2 - \omega^2 - i\omega\gamma_j\right]^{-1}\mathbb{E}

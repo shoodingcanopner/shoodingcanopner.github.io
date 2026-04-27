@@ -42,6 +42,11 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Liouville theorem and Canonical transformation]]
 [[AM lecture note - Canonical transformation]]
 [[AM lecture note - Generating function]]
+[[QM lecture note - Wave Equation and Probability Conservation]] → 해밀턴-자코비 방정식 설명
+
+### 중간고사 대체 과제
+
+[[AM assignment - Hypergeometric function quantization]]
 
 
 
