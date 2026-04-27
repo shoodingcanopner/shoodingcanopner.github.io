@@ -20,6 +20,7 @@ class: study_lecture
 - Electric quadrupole radiation은 multipole expansion의 **1차 대칭 항**에서 나온다.
 - Quadrupole moment tensor: $Q_{kl} = \int \rho(\mathbf{x}')\left[3x'_k x'_l - x'^2 \delta_{kl}\right] d^3x'$
 - 복사 파워: $\frac{dP}{d\Omega} \propto k^6$ — dipole ($k^4$)과 다름!
+- $\mathbf{Q}_k = Q_{kl}\,\hat{n}_l$라고 정의한다. 텐서를 축약 해서 벡터로 만든다. 
 - $\mathbf{Q}(\hat{n})$을 이용한 compact한 표현으로 H-field가 결정된다.
 
 # 필기 내용
