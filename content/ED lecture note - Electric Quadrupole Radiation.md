@@ -232,6 +232,8 @@ Jackson, Classical Electrodynamics, Chapter 9 (식 9.30, 9.38, 9.39, 9.40, 9.44)
 
 # 다음 강의
 
+[[ED lecture note - Scattering and Diffraction]]
+
 # 필기 원본
 
 ED week 8-1 remaster (p.4–6)

@@ -64,6 +64,9 @@ Week 16: Final Exam
 
 ## 기말고사 범위
 
+[[QM lecture note - Symmetry, Conservation Laws, and Degeneracy]]
+[[QM lecture note - Discrete Symmetries]]
+
 
 ## 으악 중간고사가 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.

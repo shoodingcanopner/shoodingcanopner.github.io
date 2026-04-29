@@ -254,6 +254,7 @@ David Tong, *Classical Dynamics* (Cambridge lecture notes)
 
 # 다음 강의
 
+[[AM lecture note - Symplectic geometry intro]]
 
 # 필기 원본
 
