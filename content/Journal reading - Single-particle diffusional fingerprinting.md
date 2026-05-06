@@ -284,7 +284,3 @@ Brownian motion에서 $\log\gamma \approx -7$ (lognormal 분포). Directed motio
 ## 더 읽어보고 싶은 레퍼런스
 
 이 논문의 레퍼런스 중에서 읽어보고 싶은 것을 링크. 
-
-- Bohr et al. (2019) Sci. Rep. — TLL lipase SPT 원본 데이터 [DOI: 10.1038/s41598-019-52702-2]
-- Hansen et al. (2018) eLife — Spot-On, transcription factor SPT analysis [DOI: 10.7554/eLife.33125]
-- Kowalek et al. (2019) Phys. Rev. — Feature-based vs deep-learning for diffusion classification [ref 32]

@@ -37,8 +37,15 @@ class: study_subject
 [[ED lecture note - Electric Dipole Radiation]]
 [[ED lecture note - Magnetic Dipole Radiation]]
 [[ED lecture note - Electric Quadrupole Radiation]]
-[[ED lecture note - Scattering and Diffraction]]
 
+## 기말고사 범위
+### 강의 필기
+[[ED lecture note - Scattering and Diffraction]]
+[[ED lecture note - Diffraction Theory]]
+
+
+
+## 나머지 자잘한 노트
 ### 시험 대비 정리 & handout 공부
 [[중간고사 대비 - 이정도 유도는 모두 할 수 있어야 한다! 리스트]]
 

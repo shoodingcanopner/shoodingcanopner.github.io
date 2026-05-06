@@ -21,7 +21,7 @@ class: study_journal
 ## Link to PDF and DOI
 
 - DOI: [10.1103/flv6-zw1v](https://doi.org/10.1103/flv6-zw1v)
-- PDF: [[Books/Enzyme_as_Maxwell_s_Demon_Steady-State_Deviation_from_Chemical_Equilibrium_by_Enhanced_Enzyme_Diffusion.pdf]]
+- PDF: [[Enzyme as Maxwell’s Demon Steady-State Deviation from Chemical Equilibrium by Enhanced Enzyme Diffusion.pdf]]
 
 ## 주요 내용 요약
 

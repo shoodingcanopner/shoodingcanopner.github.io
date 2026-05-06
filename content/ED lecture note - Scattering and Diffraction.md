@@ -664,7 +664,7 @@ Jackson, Chapter 2.14 (완전 도체구 electric dipole)
 Jackson, Chapter 5.11 (완전 도체구 magnetic dipole)
 
 # 다음 강의
-
+[[ED lecture note - Diffraction Theory]]
 # 필기 원본
 
 ![[ED_10thweek_1.pdf]]
