@@ -42,6 +42,7 @@ class: study_subject
 ### 강의 필기
 [[ED lecture note - Scattering and Diffraction]]
 [[ED lecture note - Diffraction Theory]]
+[[ED lecture note - Circular Aperture Diffraction and Optical Theorem]]
 
 
 

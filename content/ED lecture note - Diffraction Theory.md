@@ -380,7 +380,7 @@ Jackson Classical Electrodynamics, Chapter 10 (10.75, 10.79, 10.85)
 
 # 다음 강의
 
-
+[[ED lecture note - Circular Aperture Diffraction and Optical Theorem]]
 # 필기 원본
 
 ![[ED_11thweek_1.pdf]]
