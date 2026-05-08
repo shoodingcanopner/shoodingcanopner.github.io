@@ -26,6 +26,63 @@ class: study_lecture
 - **Lie bracket**: 두 벡터장의 commutator $[V, W]$, 미분기하의 핵심 구조
 - **Tangent map (push-forward)**: 매끄러운 사상 $\varphi: \mathcal{U}_1 \to \mathcal{U}_2$가 벡터장을 어떻게 이동시키는지
 
+
+
+$$\boxed{\quad \frac{d}{dt}\gamma(t) = V(\gamma(t)) \quad \to \quad \text{이것이 ODE이다.}\quad}
+$$
+
+
+**예시:** $\mathcal{H}(p, q)$가 phase space에서 해밀토니안을 나타낸다 치자. 해밀턴 방정식은 integral curve를 만들어 낸다. 이를 결정하는 vector field는:
+
+$$
+\mathbb{V}(q, p) = \dot{q}^i\,\frac{\partial}{\partial q^i} + \dot{p}_i\,\frac{\partial}{\partial p_i} = \frac{\partial\mathcal{H}}{\partial p_i}\frac{\partial}{\partial q^i} - \frac{\partial\mathcal{H}}{\partial q^i}\frac{\partial}{\partial p_i}
+$$
+
+($\dot{q}^i$와 $\dot{p}_i$가 $\dfrac{\partial\gamma^i}{\partial t}$의 역할을 하는 것)
+
+
+
+Vector field와 integral curve, 그리고 0-form에 미분 연산자처럼 작용하는 vector field
+
+$$
+\boxed{\quad V(f)(x_0) = \frac{d}{dt}\bigg|_{t=0} f(\gamma(t)) \quad}
+$$
+이 연산 결과 또한 0-form이다. 
+
+
+**RHS 계산:**
+
+$$
+\frac{d}{dt}f(\gamma(t)) = \sum_i \frac{d\gamma^i(t)}{dt}\,\frac{\partial f}{\partial x^i}\bigg|_{\gamma(t)} = \sum_i V^i(\gamma(t))\,\frac{\partial f}{\partial x^i}(\gamma(t))
+$$
+
+
+**Lie bracket 정의:**
+
+$$
+[V, W]\,f = V(W(f)) - W(V(f))
+$$
+
+
+이를 이용해 tangent vector를 mapping하는 **$\varphi_*$를 정의한다:
+
+$$
+\varphi_*: T_x\mathcal{U}_1 \longrightarrow T_{\varphi(x)}\mathcal{U}_2
+$$
+
+$T_x\mathcal{U}_1$의 basis를 $\varphi_*$가 어떻게 mapping하는지는, 그냥 좌표계 변환이다. 
+
+$$
+\varphi_*\!\left(\frac{\partial}{\partial x^i}\right) = \frac{\partial y^j}{\partial x^i}\,\frac{\partial}{\partial y^j} = \frac{\partial\varphi^j}{\partial x^i}\,\frac{\partial}{\partial y^j}
+$$
+
+따라서 $T_x\mathcal{U}_1$에 속한 일반적인 벡터 $\xi^i\dfrac{\partial}{\partial x^i}$에 대해서:
+
+$$
+\varphi_*\!\left(\sum_{i=1}^n \xi^i\,\frac{\partial}{\partial x^i}\right) = \sum_j\sum_i \xi^i\,\frac{\partial\varphi^j}{\partial x^i}\,\frac{\partial}{\partial y^j}
+$$
+
+
 # 필기 내용
 
 ## Vector field란 무엇인가?
@@ -40,7 +97,7 @@ $$
 
 - $x$는 **point**를 나타내고, $\xi$는 **velocity vector**를 나타낸다.
 - $(x, \xi)$는 tangent vector를 나타낸다.
-- 이것은 linear structure를 가진다:
+- 이것은 linear structure를 가진다. 같은 점 $x$에서 정의된 두 tangent vector는 선형적으로 더할 수 있다. 
 
 $$
 \lambda_1(x, \xi) + \lambda_2(x, \eta) = (x,\, \lambda_1\xi + \lambda_2\eta)
@@ -48,13 +105,13 @@ $$
 
 ---
 
-$\gamma$는 시간이라는 매개변수를 manifold 위의 한 점으로 mapping하는 함수, 즉 운동 그 자체이다.
+$\gamma$는 시간이라는 매개변수를 manifold 위의 한 점으로 mapping하는 함수, 즉 운동 그 자체이며, manifold 위의 curve이다. 
 
 $$
 \gamma: (t_0, t_1) \longrightarrow \mathcal{U} \subset \mathbb{R}^n, \qquad t \longmapsto \gamma(t)
 $$
 
-$\gamma$로 tangent vector를 정의할 수 있다:
+$\gamma$로 tangent vector를 정의할 수 있다. $\gamma$가 지나가는 특정 점 $x$에서 $\gamma$가 만드는 속도. 
 
 $$
 \left(x = \gamma(t),\; \xi = \frac{d\gamma(t)}{dt}\right) \in T_{\gamma(t)}\mathcal{U}
@@ -62,13 +119,13 @@ $$
 
 ---
 
-$V$가 $\mathcal{U}$ 위의 **vector field**일 때:
+$V$가 $\mathcal{U}$ 위의 **vector field**일 때, 이는 점과 tangent vector를 mapping하는 함수이다. 
 
 $$
 V: \mathcal{U} \longrightarrow T_x\mathcal{U}, \qquad x \longmapsto V(x) = (x,\, \xi(x))
 $$
 
-**기저(basis):**
+**vector field basis:**
 
 $$
 \frac{\partial}{\partial x_i}\bigg|_x = \left(x,\; (\delta_{1i},\, \delta_{2i},\, \ldots,\, \delta_{ni})\right)
@@ -90,7 +147,7 @@ $$
 
 ## Integral Curve
 
-상의 방을 벡터장과 연관지어 보자. **상의 방 = 운동 방정식을 따르는 궤도**, 벡터장의 흐름을 따르는 입자.
+상미방을 벡터장과 연관지어 보자. **상미방의 해 = 운동 방정식을 따르는 궤적**,이는 곧 상미방으로 정의된 벡터장의 흐름을 따르는 입자.
 
 **정의:** Let $I \subset \mathbb{R}$ be the open interval.
 
@@ -98,7 +155,10 @@ $$
 \gamma: I \to \mathcal{U} \subset \mathbb{R}^n, \qquad \frac{d\gamma(t)}{dt} = V(\gamma(t)) \quad \text{for each } t \in I
 $$
 
-이런 곡선을 **integral curve of the vector field $V$ on $\mathcal{U}$**라고 부른다.
+이런 곡선을 **integral curve of the vector field $V$ on $\mathcal{U}$** 라고 부른다.
+
+> [!question] 질문
+> Initial condition에 따라서 상미방의 해는 여러가지이다. 그러니 한 vector field로 정의되는 integral curve도 무한히 많은 curve의 집합을 이루지 않겠는가?
 
 예시: $\gamma_i(t) = t\,(\delta_{i1},\, \delta_{i2},\, \delta_{i3},\, \ldots,\, \delta_{in})$
 
@@ -112,8 +172,7 @@ $$
 
 이것은 ODE solution의 **existence and uniqueness**에 의한 성질이다.
 
-$$
-\frac{d}{dt}\gamma(t) = V(\gamma(t)) \quad \to \quad \text{이것이 ODE이다.}
+$$\boxed{\quad \frac{d}{dt}\gamma(t) = V(\gamma(t)) \quad \to \quad \text{이것이 ODE이다.}\quad}
 $$
 
 $\gamma(t) = (\gamma^1(t), \ldots, \gamma^n(t))$, $V(x) = V^1(x)\partial_{x^1} + \cdots + V^n(x)\partial_{x^n}$이면:
@@ -128,13 +187,13 @@ $$
 \mathbb{V}(q, p) = \dot{q}^i\,\frac{\partial}{\partial q^i} + \dot{p}_i\,\frac{\partial}{\partial p_i} = \frac{\partial\mathcal{H}}{\partial p_i}\frac{\partial}{\partial q^i} - \frac{\partial\mathcal{H}}{\partial q^i}\frac{\partial}{\partial p_i}
 $$
 
-($\dot{q}^i$가 $\dfrac{\partial\gamma^i}{\partial t}$의 역할을 하는 것)
+($\dot{q}^i$와 $\dot{p}_i$가 $\dfrac{\partial\gamma^i}{\partial t}$의 역할을 하는 것)
 
 ---
 
 ## 벡터장과 미분 연산자
 
-벡터장 그 자체는 그 위에 있는 함수에 대한 **미분 연산자**로 작동한다.
+벡터장 그 자체는  $\mathcal{U}$위에 있는 함수에 대한 **미분 연산자**로 작동한다.
 
 $$
 V(x) = V^i(x)\,\frac{\partial}{\partial x^i}, \qquad V(f)(x) = V^i(x)\,\frac{\partial f}{\partial x^i}\bigg|_x
@@ -146,19 +205,18 @@ $$
 V(fg) = f\,V(g) + V(f)\,g
 $$
 
-**역할의 모든 특성은 위상 공간의 기하가 결정한다.**
+**역학의 모든 특성은 위상 공간의 기하가 결정한다.**
 
 **미분 연산자를 이해하는 기하학적 방법:**
 
 Let $f \in C^\infty$, $x_0 \in \mathcal{U}$, $\gamma: (-\varepsilon, \varepsilon) \to \mathcal{U}$, $\gamma(0) = x_0$.
-
+그리고 curve $\gamma(t)$가 벡터장 $V$의 integral curve일 때($V(\gamma(t)) = \dfrac{d}{dt}\gamma(t)$)
 Then:
 
 $$
-V(f)(x_0) = \frac{d}{dt}\bigg|_{t=0} f(\gamma(t))
+\boxed{\quad V(f)(x_0) = \frac{d}{dt}\bigg|_{t=0} f(\gamma(t)) \quad}
 $$
 
-이때 $V(\gamma(t)) = \dfrac{d}{dt}\gamma(t)$.
 
 **RHS 계산:**
 
@@ -178,7 +236,7 @@ $$
 V = V^i\,\frac{\partial}{\partial x^i}, \qquad W = W^j\,\frac{\partial}{\partial x^j}
 $$
 
-**정의:**
+**Lie bracket 정의:**
 
 $$
 [V, W]: \big(C^\infty(\mathcal{U}),\, C^\infty(\mathcal{U})\big) \longrightarrow C^\infty(\mathcal{U})
@@ -193,6 +251,8 @@ $$
 **성질:**
 1. $[V, W]\,C = 0$ for any constant $C$
 2. $[V, W]\,fg = V(W(fg)) - W(V(fg))$
+
+![[Pasted image 20260508105437.png]]
 
 계산하면:
 
@@ -224,7 +284,7 @@ $$
 
 1. **Bilinear**
 2. **Skew symmetry**: $[W, V] = -[V, W]$
-3. **Jacobi identity** → 이게 형상, 연산의 consistency를 만든다:
+3. **Jacobi identity** → 이게 핵심, 연산의 consistency를 만든다:
 
 $$
 [A,\,[B,C]] + [B,\,[C,A]] + [C,\,[A,B]] = 0
@@ -236,15 +296,15 @@ $$
 [V,\,[W,T]] + [W,\,[T,V]] + [T,\,[V,W]] = 0
 $$
 
-가 성립함을 볼 수 있다. → 정각 증명은 나중에 해 보기!
+가 성립함을 볼 수 있다. → 직접 증명은 나중에 해 보기!
 
 ---
 
 ## Tangent map, push-forward
 
 Let $\mathcal{U}_1 \subset \mathbb{R}^n$, $\mathcal{U}_2 \subset \mathbb{R}^m$ be two open subsets.
-
-좌표계: $\mathcal{U}_1: x = (x^1, \ldots, x^n)$, $\mathcal{U}_2: y = (y^1, \ldots, y^m)$
+둘의 좌표계를 이렇게 나타내자:
+$\mathcal{U}_1: x = (x^1, \ldots, x^n)$, $\mathcal{U}_2: y = (y^1, \ldots, y^m)$
 
 $\varphi$는 smooth map, $\mathcal{U}_1$에서 $\mathcal{U}_2$로 정의되는 mapping:
 
@@ -262,7 +322,7 @@ $$
 \varphi_*: T_x\mathcal{U}_1 \longrightarrow T_{\varphi(x)}\mathcal{U}_2
 $$
 
-$T_x\mathcal{U}_1$의 basis를 $\varphi_*$가 어떻게 mapping하는지:
+$T_x\mathcal{U}_1$의 basis를 $\varphi_*$가 어떻게 mapping하는지는, 그냥 좌표계 변환이다. 
 
 $$
 \varphi_*\!\left(\frac{\partial}{\partial x^i}\right) = \frac{\partial y^j}{\partial x^i}\,\frac{\partial}{\partial y^j} = \frac{\partial\varphi^j}{\partial x^i}\,\frac{\partial}{\partial y^j}
@@ -311,14 +371,7 @@ $$
 $$
 
 교환 다이어그램:
-
-$$
-T_x\mathcal{U}_1 \xrightarrow{\;\varphi_*\;} T_{\varphi(x)}\mathcal{U}_2 \xrightarrow{\;\phi_*\;} T_{\phi(\varphi(x))}\mathcal{U}_3
-$$
-
-$$
-(\phi \circ \varphi)_* \searrow \qquad\qquad\nearrow
-$$
+![[Pasted image 20260508113744.png]]
 
 # 궁금한 내용
 
@@ -338,7 +391,7 @@ $$
 
 # 다음 강의
 
-
+[[AM lecture note - Differential forms]]
 # 필기 원본
 
 ![[AM_9thweek_2.pdf]]

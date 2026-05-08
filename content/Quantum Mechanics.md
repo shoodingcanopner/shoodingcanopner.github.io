@@ -66,6 +66,7 @@ Week 16: Final Exam
 
 [[QM lecture note - Symmetry, Conservation Laws, and Degeneracy]]
 [[QM lecture note - Discrete Symmetries]]
+[[QM lecture note - Time Reversal Operator]]
 
 
 ## 으악 중간고사가 24시간도 안 남았다! 

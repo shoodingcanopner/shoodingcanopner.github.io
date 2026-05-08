@@ -319,9 +319,7 @@ $$
 
 # 다음 강의
 
-- Time reversal의 antiunitary 성질 더 자세히
-- Kramers degeneracy
-
+[[QM lecture note - Time Reversal Operator]]
 # 원본 필기 이미지
 
 ![[QM_10thweek_1.pdf]]

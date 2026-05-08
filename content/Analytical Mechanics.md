@@ -55,5 +55,6 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 주요 교재: [[Chapter3_Interlude of Sympletic Geometry_[Si Li] Classical Mechanics and Geometry.pdf]]
 
 [[AM lecture note - Symplectic geometry intro]]
+[[AM lecture note - Differential forms]]
 
 
