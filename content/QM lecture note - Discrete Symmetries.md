@@ -8,6 +8,10 @@ tags:
   - quantum_mechanics
 class: study
 ---
+> [!attention] 강의 필기
+> 이것은 [[Quantum Mechanics]] 강의를 듣고 적은 필기입니다.
+> 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다.
+
 
 # 지난 강의
 [[QM lecture note - Symmetry, Conservation Laws, and Degeneracy]]

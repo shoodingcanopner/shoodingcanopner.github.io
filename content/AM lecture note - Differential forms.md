@@ -442,6 +442,9 @@ $$
 > dy^{i_s} \xrightarrow{\;\varphi^*\;} d(\varphi^*(y^{i_s})) = d(\varphi^{i_s}(x)) = \sum_{j_s} \frac{\partial \varphi^{i_s}(x)}{\partial x^{j_s}}\;dx^{j_s}
 > $$
 
+갑자기 등장한 $i_s$라는 index는 1부터 n까지 중 하나다. 
+
+
 위 두 변환을 $\alpha$의 표현식에 적용하여 $\varphi^*(\alpha)$를 찾는다.
 
 $$
@@ -462,8 +465,6 @@ $$
 
 # 연관 학습 노트
 
-[[AM lecture note - Symplectic geometry intro]]
-[[AM lecture note - Canonical transformation]]
 
 # References
 
@@ -471,7 +472,7 @@ $$
 
 # 다음 강의
 
-
+[[AM lecture note - Hodge dual and Lie derivative]]
 # 필기 원본
 
 ![[AM_10thweek_1.pdf]]

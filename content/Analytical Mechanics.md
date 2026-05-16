@@ -56,5 +56,6 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 
 [[AM lecture note - Symplectic geometry intro]]
 [[AM lecture note - Differential forms]]
+[[AM lecture note - Hodge dual and Lie derivative]]
 
 

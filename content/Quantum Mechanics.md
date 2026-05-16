@@ -67,6 +67,10 @@ Week 16: Final Exam
 [[QM lecture note - Symmetry, Conservation Laws, and Degeneracy]]
 [[QM lecture note - Discrete Symmetries]]
 [[QM lecture note - Time Reversal Operator]]
+[[QM lecture note - Rotation and Angular Momentum]]
+[[QM lecture note - Time Reversal for Spin-½ System]]
+[[QM lecture note - Kramers' Degeneracy]]
+[[QM lecture note - Two-Component Spinor and Rotation Operator]]
 
 
 ## 으악 중간고사가 24시간도 안 남았다! 

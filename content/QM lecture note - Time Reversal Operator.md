@@ -8,6 +8,10 @@ tags:
   - quantum_mechanics
 class: study
 ---
+> [!attention] 강의 필기
+> 이것은 [[Quantum Mechanics]] 강의를 듣고 적은 필기입니다.
+> 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다.
+
 
 # 지난 강의
 [[QM lecture note - Discrete Symmetries]]에서 Time Reversal의 동기와 복소 켤레를 통한 구현을 배웠다.
@@ -473,9 +477,7 @@ $$
 - 강의 필기 (Week 10 - 2)
 
 # 다음 강의
-
-
-
+[[QM lecture note - Rotation and Angular Momentum]]
 # 원본 필기 이미지
 
 ![[QM_10thweek_2.pdf]]
