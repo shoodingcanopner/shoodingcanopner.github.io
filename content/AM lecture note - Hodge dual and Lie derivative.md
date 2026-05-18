@@ -121,7 +121,7 @@ $$
 $A \wedge B \wedge C$는 부피와 직결되며, 이것이 $dx \wedge dy \wedge dz$ (3차원에서의 top form)가 **volume form**이라고 불리는 이유다.
 
 $$
-A \wedge B \wedge C = (A_x\,dx + A_y\,dy + A_z\,dz) \wedge \bigl[[\mathbf{B} \times \mathbf{C}]_z\,dx \wedge dy + [\mathbf{B} \times \mathbf{C}]_x\,dy \wedge dz + [\mathbf{B} \times \mathbf{C}]_y\,dz \wedge dx\bigr]
+A \wedge (B \wedge C) = (A_x\,dx + A_y\,dy + A_z\,dz) \wedge \bigl[[\mathbf{B} \times \mathbf{C}]_z\,dx \wedge dy + [\mathbf{B} \times \mathbf{C}]_x\,dy \wedge dz + [\mathbf{B} \times \mathbf{C}]_y\,dz \wedge dx\bigr]
 $$
 
 $$
@@ -132,8 +132,9 @@ $$
 = \mathbf{A} \cdot (\mathbf{B} \times \mathbf{C})\; dx \wedge dy \wedge dz
 $$
 
-> [!question] 질문
-> 이것을 어떻게 잘 표기할 수 있을까... 고민하던 누군가가 **Hodge dual**이라는 걸 개발했다.
+### Hodge dual
+
+이것을 어떻게 잘 표기할 수 있을까... 고민하던 누군가가 **Hodge dual**이라는 걸 개발했다.
 
 > [!question] 질문
 > Hodge dual 관계인 두 form을 곱하면 volume form이 나오는 성질을 이용해 쉽게 이해할 수 있는 것 같다.
@@ -301,6 +302,40 @@ $$
 > [!question] 질문
 > Current 3-form $J$가 정확히 무엇인지 설명을 들었지만 이해하지 못했다. $dJ = 0$이 conservation law와 연결된다는 점은 나중에 다시 확인할 것.
 
+> [!note] Glia의 보충 (2026-05-17)
+> **왜 $d\star F = J$인가? — 직관적 해석**
+>
+> $F$는 2-form으로 $E$와 $B$ 정보를 담고 있는데, Hodge dual $\star F$를 취하면 $E$와 $B$의 역할이 뒤바뀐다. $F$에서 $dt$ 방향에 실려 있던 $E$ 성분이 $\star F$에서는 순수 공간 방향으로 가고, 순수 공간 방향에 실려 있던 $B$ 성분이 $dt$를 포함하는 방향으로 간다.
+>
+> 따라서:
+> - $dF = 0$에서 $d$가 $E$와 $B$의 특정 조합을 잡아냄: $\nabla \cdot \mathbf{B} = 0$, $\nabla \times \mathbf{E} + \partial_t \mathbf{B} = 0$
+> - $d\star F$에서는 $d$가 $E$와 $B$의 **나머지 조합**을 잡아냄: $\nabla \cdot \mathbf{E} = \rho$, $\nabla \times \mathbf{B} - \partial_t \mathbf{E} = \mathbf{J}$
+>
+> 즉, Maxwell 방정식 4개를 $E$-$B$ 대칭성 관점에서 두 쌍으로 나눈 것이 정확히 $dF = 0$과 $d\star F = J$에 대응한다.
+>
+> **Current 3-form $J$의 정체:**
+> 4차원 시공간 $(x,y,z,t)$에서 $F$는 2-form이니까 $\star F$도 2-form이고 (4-2=2), $d\star F$는 3-form이다. $J$는 전하밀도 $\rho$와 전류밀도 $\mathbf{J}$를 담는 3-form이다:
+> $$
+> J = \rho\;dx \wedge dy \wedge dz - J_x\;dy \wedge dz \wedge dt - J_y\;dz \wedge dx \wedge dt - J_z\;dx \wedge dy \wedge dt
+> $$
+> $\rho$는 공간 3차원 방향($dx \wedge dy \wedge dz$)에 실리고, 전류밀도 $J_i$는 시간 방향 $dt$를 하나 포함하는 3-form 기저에 실린다.
+>
+> **$dJ = 0$과 전하 보존 법칙:**
+> $d\star F = J$의 양변에 $d$를 취하면 $d^2 = 0$에 의해 $dJ = 0$이 자동으로 성립한다. 이것을 성분으로 풀면 정확히 **전하 보존 법칙(continuity equation)**이다:
+> $$
+> \frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{J} = 0
+> $$
+> $d^2 = 0$이라는 수학적 항등식이 $d\star F = J$라는 물리 법칙과 결합하여 전하 보존을 자동으로 보장하는 구조다.
+>
+> **요약:**
+>
+> | 미분형식 | Maxwell 방정식 |
+> |---|---|
+> | $F = dA$ | 포텐셜로부터 장을 정의 |
+> | $dF = 0$ | $\nabla \cdot \mathbf{B} = 0$, $\nabla \times \mathbf{E} + \partial_t \mathbf{B} = 0$ |
+> | $d\star F = J$ | $\nabla \cdot \mathbf{E} = \rho$, $\nabla \times \mathbf{B} - \partial_t \mathbf{E} = \mathbf{J}$ |
+> | $dJ = 0$ ($d^2=0$에서 자동) | $\partial_t \rho + \nabla \cdot \mathbf{J} = 0$ (전하 보존) |
+
 ## Lie Derivative
 
 ### 벡터장과 적분 곡선 (복습)
@@ -316,10 +351,15 @@ $$
 $$
 
 $$
-\partial_t \varphi(t, x) = V(\varphi(t, x))
+\boxed{\partial_t \varphi(t, x) = V(\varphi(t, x))}
 $$
 
 $x$ 위치에 있던 점이 벡터장을 따라흐르면 $t$ 초 뒤에 $\varphi(t, x)$에 있다는 것이다. $\varphi$는 위치 $x$와 경과 시간 $t$를 알려주면 $t$ 뒤에 $x$의 미래를 알려주는 함수.
+
+> [!warning] 표기 주의
+> 위 식의 양변은 벡터장이 아니라 **성분값(실수값 함수)**이다. 엄밀하게는 $\partial_t \varphi^i(t,x) = V^i(\varphi(t,x))$로, 각 성분별 방정식이다. 
+> $V = V^i \partial_i$는 벡터장이지만, 적분 곡선 방정식에서 $V(\varphi(t,x))$는 "벡터장 $V$가 점 $\varphi(t,x)$에서 가지는 성분값"을 뜻한다. 이 구분을 놓치면 나중에 chain rule 적용 시 헷갈릴 수 있다.
+
 
 ### Flow와 Diffeomorphism
 
@@ -354,6 +394,29 @@ $$
 > [!question] 질문
 > 이것보다 더 이해하기 쉬운 해석은 없나?
 
+> [!note] Glia의 보충 (2026-05-17)
+> **핵심 문제: "form이 변했는지"를 어떻게 비교하나?**
+>
+> 보통 미분은 $f(x+\epsilon) - f(x)$를 비교하는 것이지만, $p$-form은 각 점마다 정의된 객체라서 점 $x$에서의 $\alpha$와 점 $\varphi_\epsilon(x)$에서의 $\alpha$는 **서로 다른 공간에 사는 객체**라 직접 뺄 수가 없다. 비교를 가능하게 만드는 트릭이 pull-back이다:
+>
+> 1. 벡터장 $V$의 flow를 따라 점 $x$를 $\epsilon$만큼 흘려보내면 $\varphi_\epsilon(x)$에 도착
+> 2. 그 도착점에서의 $\alpha$를 $\varphi_\epsilon^*$로 **원래 점 $x$로 끌고 온다**
+> 3. 이제 둘 다 같은 점 $x$에 있으니까 뺄셈이 가능
+>
+> $$
+> \mathcal{L}_V \alpha = \lim_{\epsilon \to 0} \frac{\varphi_\epsilon^*(\alpha) - \alpha}{\epsilon}
+> $$
+>
+> **비유: 강물 위의 온도 측정.** 강물이 흐르고 있고($V$ = 유속장), 수면 위에 온도 분포가 있다고 하자($\alpha$ = 물리량). "강물의 흐름을 따라가면서 온도가 변하는가?"를 묻는 것이 Lie derivative다. 단순히 "이 자리에서 시간이 지나면 변하나"($\partial_t$)가 아니라, **흐름을 타고 이동하면서 느끼는 변화**를 측정한다.
+>
+> $\mathcal{L}_V \alpha = 0$이면 "$\alpha$는 $V$의 흐름을 따라 끌려가도 모양이 안 변한다" — 즉 $V$의 flow에 대한 **대칭성**이 있다는 뜻이다.
+>
+> 0-form $f$의 경우 pull-back이 그냥 합성이니까:
+> $$
+> \mathcal{L}_V f = \lim_{\epsilon \to 0} \frac{f(\varphi_\epsilon(x)) - f(x)}{\epsilon} = V(f)
+> $$
+> 이것은 유체역학의 **물질미분(material derivative)**의 공간 부분과 정확히 같은 구조다.
+
 ### 0-form에 대한 Lie derivative
 
 만약 $\alpha = f \in \Omega^0$이라면, Lie derivative는 그냥 미분 연산자 $V$를 $f$에 적용한 것이다:
@@ -365,8 +428,43 @@ $$
 > [!question] 질문 (빨간 글씨)
 > 왜 $\frac{d}{dt}\big|_{t=0} f(\varphi(t,x)) = V(f)$이지? $\partial_t \varphi(t,x) = V(\varphi(t,x))$에서 어떻게 유도해?
 
+> [!note] Glia의 보충 (2026-05-17)
+> Chain rule을 적용한다. $f(\varphi(t,x))$에서 $\varphi$는 $n$개의 성분 $\varphi^i$를 가지므로:
+> $$
+> \frac{d}{dt}\bigg|_{t=0} f(\varphi(t,x)) = \frac{\partial f}{\partial \varphi^i}\bigg|_{\varphi(0,x)} \cdot \frac{\partial \varphi^i}{\partial t}\bigg|_{t=0}
+> $$
+>
+> 여기서 두 가지 사실을 대입한다:
+> - $\varphi(0, x) = x$ (시간 0에서는 제자리) $\Rightarrow$ $\frac{\partial f}{\partial \varphi^i}\big|_{\varphi(0,x)} = \frac{\partial f}{\partial x^i}\big|_x$
+> - 적분 곡선의 정의 $\partial_t \varphi^i(t,x) = V^i(\varphi(t,x))$에서 $t=0$ $\Rightarrow$ $\frac{\partial \varphi^i}{\partial t}\big|_{t=0} = V^i(x)$
+>
+> 따라서:
+> $$
+> = \frac{\partial f}{\partial x^i}\bigg|_x \cdot V^i(x) = V^i(x)\,\partial_i f = V(f)
+> $$
+> 마지막 등호는 벡터장 $V = V^i \partial_i$가 함수 $f$에 작용하는 것의 정의 그 자체다.
+
 > [!question] 질문 (빨간 글씨)
 > Lie derivative와 Lie bracket은 무슨 연관이기에 Lie라는 명칭을 동시에 쓰는 걸까?
+
+> [!note] Glia의 보충 (2026-05-17)
+> 단순히 명칭만 공유하는 게 아니라 실제로 깊이 연결되어 있다.
+>
+> **1. 벡터장에 대한 Lie derivative = Lie bracket:**
+> 벡터장 $W$에 대한 Lie derivative는:
+> $$
+> \mathcal{L}_V W = [V, W]
+> $$
+> 즉 Lie bracket은 "벡터장의 Lie derivative"의 특수한 경우다.
+>
+> **2. 함수에 대한 Lie derivative의 비가환성 = Lie bracket:**
+> 두 벡터장 $V$, $W$와 함수 $f$에 대해:
+> $$
+> \mathcal{L}_V(\mathcal{L}_W f) - \mathcal{L}_W(\mathcal{L}_V f) = \mathcal{L}_{[V,W]} f
+> $$
+> Lie derivative를 두 번 적용하는 순서를 바꿨을 때의 차이가 정확히 Lie bracket $[V,W]$에 의한 Lie derivative다. Lie bracket이 "두 flow를 번갈아 따라갔을 때 생기는 어긋남"을 측정하는 것이었는데, 그 어긋남이 Lie derivative의 비가환성으로 나타난다.
+>
+> **왜 같은 이름인가:** Sophus Lie가 연구한 핵심 주제가 연속 변환군(Lie group)과 그 무한소 생성자(Lie algebra)였다. Lie derivative는 "flow(연속 변환)를 따라가면서 기하학적 객체의 변화를 측정"하는 것이고, Lie bracket은 "두 무한소 생성자 사이의 대수적 관계"인데, 이 둘이 같은 구조의 서로 다른 얼굴이다.
 
 ### Lie derivative의 성질
 
@@ -400,6 +498,19 @@ Product rule을 적용하면 위의 Leibniz 규칙이 된다.
 
 > [!note] 필기 노트의 메모
 > 이 성질을 기하학적으로 해석하면 재미있다고 하는데, 나는 이것을 어떻게 기하학적으로 해석해야 하는지 모르겠다.
+
+> [!note] Glia의 보충 (2026-05-17)
+> **기하학적 해석: 넓이의 변화율**
+>
+> 2차원에서 $\alpha$와 $\beta$가 각각 1-form이면, $\alpha \wedge \beta$는 두 방향이 만드는 **넓이 요소**다. Flow를 따라 이 넓이가 어떻게 변하는지를 묻는 게 $\mathcal{L}_V(\alpha \wedge \beta)$이다.
+>
+> 넓이가 변하는 방식은 두 가지뿐이다:
+> - $\alpha$ 방향이 변형되면서 넓이가 변한다 → $\mathcal{L}_V(\alpha) \wedge \beta$
+> - $\beta$ 방향이 변형되면서 넓이가 변한다 → $\alpha \wedge \mathcal{L}_V(\beta)$
+>
+> 이것은 곡의 미분법 $(fg)' = f'g + fg'$과 본질적으로 같은 구조다. 직사각형의 넓이 $A = a \times b$의 변화율이 $dA = da \cdot b + a \cdot db$인 것처럼, wedge product로 만들어진 기하학적 "부피"의 변화율도 각 변이 독립적으로 기여하는 항의 합이 된다.
+>
+> 실제로 노트 아래의 volume form 결과 $\mathcal{L}_V \Omega = \text{div}(V)\,\Omega$도 이 Leibniz 규칙을 $n$번 반복 적용해서 나온 것이다 — $dx^1 \wedge \cdots \wedge dx^n$의 각 $dx^{i_q}$가 한 번씩 $\mathcal{L}_V$를 받아 $\frac{\partial V^{i_q}}{\partial x^k}dx^k$로 바뀌고, 대각 성분($k = i_q$)만 살아남아 $\partial_1 V^1 + \cdots + \partial_n V^n = \text{div}(V)$가 된다.
 
 ### 일반적 $p$-form의 Lie derivative
 
@@ -496,7 +607,7 @@ $$
 
 # 다음 강의
 
-
+[[AM lecture note - Stokes theorem]]
 # 필기 원본
 
 ![[AM_10thweek_2.pdf]]

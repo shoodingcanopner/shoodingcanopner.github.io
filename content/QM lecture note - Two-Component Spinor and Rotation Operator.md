@@ -347,8 +347,7 @@ $$
 
 # 다음 강의
 
-
-
+[[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]에서 Euler rotation의 body-fixed → space-fixed 변환, 고차원 각운동량의 고유값 구조, $\mathcal{D}(R)$의 기약 표현, 그리고 $d^{(j)}(\beta)$ 행렬을 다룬다.
 # 원본 필기 이미지
 
 ![[QM_12thweek_1.pdf]]

@@ -71,6 +71,7 @@ Week 16: Final Exam
 [[QM lecture note - Time Reversal for Spin-½ System]]
 [[QM lecture note - Kramers' Degeneracy]]
 [[QM lecture note - Two-Component Spinor and Rotation Operator]]
+[[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]
 
 
 ## 으악 중간고사가 24시간도 안 남았다! 
