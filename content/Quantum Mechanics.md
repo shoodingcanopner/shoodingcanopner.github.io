@@ -74,6 +74,8 @@ Week 16: Final Exam
 [[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]
 
 
+
+[[QM lecture note - Schwinger Oscillator Model and Wigner d-Matrix]]
 ## 으악 중간고사가 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.
 ![[Pasted image 20260416143202.png]]

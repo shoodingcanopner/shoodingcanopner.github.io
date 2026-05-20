@@ -481,8 +481,7 @@ $$
 
 # 다음 강의
 
-
-
+[[QM lecture note - Schwinger Oscillator Model and Wigner d-Matrix]]에서 임의의 $j$에 대해 $d^{(j)}_{m'm}(\beta)$의 닫힌 공식(Wigner's formula)을 유도한다. Schwinger Oscillator Model을 도입하여 두 독립 oscillator로 각운동량 대수를 구성하고, Baker-Hausdorff Lemma와 binomial expansion을 거쳐 최종 공식에 도달한다.
 # 원본 필기 이미지
 
 ![[QM_12thweek_2.pdf]]
