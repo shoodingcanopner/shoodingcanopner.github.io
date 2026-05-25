@@ -311,7 +311,6 @@ $$
 $$
 = (-1)^{p-1}\,dx^{i_1} \wedge dx^{i_2} \cdots \wedge dx^{i_{p-1}} \wedge \underset{0}{d(dx^{i_p})}
 $$
-
 $$
 = 0 \;\;!!
 $$

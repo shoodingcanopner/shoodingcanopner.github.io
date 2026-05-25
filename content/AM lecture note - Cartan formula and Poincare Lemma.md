@@ -241,7 +241,7 @@ $$
 - $\alpha$가 **exact**: $\alpha = d\beta$인 $\beta$가 존재
 
 $d^2 = 0$이기 때문에, **exact form은 모두 closed form**이다.
-
+![[Pasted image 20260525133153.png]]
 ### de Rham Cohomology
 
 **정의)** $\mathcal{U} \in \mathbb{R}^n$이 열린 집합일 때, p차 de Rham cohomology를 다음과 같이 정의한다:
@@ -291,6 +291,7 @@ $$
 $$
 
 즉, **모든 closed form이 exact**하다.
+$\alpha$가 closed form ($d \alpha = 0$)이면 반드시 어떤 $\beta$가 존재해서 $\alpha = d \beta$가 된다.
 
 ### Phase Space와의 연결
 
@@ -347,4 +348,7 @@ $$
 # 다음 강의
 
 
+
+[[AM lecture note - Symplectic form]]
 # 필기 원본
+![[AM_11thweek_1.pdf]]
