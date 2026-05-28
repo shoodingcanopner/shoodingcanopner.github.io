@@ -183,8 +183,8 @@ $Y^\dagger C Y = C$ 는 "새 기저에서 봐도 $C$의 표현이 똑같다" —
 
 # 연관 학습 노트
 
-[[AM lecture notes - Galilean transformation]]
-[[AM lecture notes - Transformation of equation, Casimir Invariants]]
+[[AM lecture note - Galilean transformation]]
+[[AM lecture note - Transformation of equation, Casimir Invariants]]
 [[Poisson_Brackets]]
 
 양자역학에서

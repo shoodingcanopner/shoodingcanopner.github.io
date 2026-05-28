@@ -27,8 +27,8 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 
 ### 중간고사 범위
 
-[[AM lecture notes - Galilean transformation]]
-[[AM lecture notes - Transformation of equation, Casimir Invariants]]
+[[AM lecture note - Galilean transformation]]
+[[AM lecture note - Transformation of equation, Casimir Invariants]]
 [[AM lecture note - Lagrangian mechanics]]
 [[AM lecture note - Lagrangian for fields]]
 [[AM lecture note - Coordinate transformation invariance of Lagrangian equation]]
@@ -43,7 +43,9 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Canonical transformation]]
 [[AM lecture note - Generating function]]
 
-
+번외, 내가 지금 해석역학을 공부하고 있는 건지 양자역학을 하고 있는 건지 모르겠다. 
+해석역학에서는 고전역학의 양자화를 배우고 양자역학에서는 양자역학의 고전화를 배우고 있다. 
+그리고 둘 다 군론과 Lie algebra의 깊은 이해가 필요하다. 
 [[QM lecture note - Wave Equation and Probability Conservation]] → 해밀턴-자코비 방정식 설명
 
 ### 중간고사 대체 과제
@@ -59,8 +61,11 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Hodge dual and Lie derivative]]
 [[AM lecture note - Stokes theorem]]
 [[AM lecture note - Cartan formula and Poincare Lemma]]
-
-
-
 [[AM lecture note - Symplectic form]]
 [[AM lecture note - Poisson bracket and Darboux theorem]]
+
+### Mini Notes
+심플래틱 기하학이 아름답고 간결한 표현이라는 걸 알 수 있는 부분
+[[AM mini note - Conservation Laws and Hamiltonian Vector Fields]]
+심플래틱 기하학과 양자역학의 연결
+[[Mini note - Lie Derivative and Baker-Hausdorff Correspondence]]

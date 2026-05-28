@@ -72,10 +72,18 @@ Week 16: Final Exam
 [[QM lecture note - Kramers' Degeneracy]]
 [[QM lecture note - Two-Component Spinor and Rotation Operator]]
 [[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]
-
-
-
 [[QM lecture note - Schwinger Oscillator Model and Wigner d-Matrix]]
+[[QM lecture note - Orbital Angular Momentum and Spherical Harmonics]]
+
+
+
+
+
+### Mini Notes
+
+[[Mini note - Lie Derivative and Baker-Hausdorff Correspondence]]
+
+
 ## 으악 중간고사가 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.
 ![[Pasted image 20260416143202.png]]

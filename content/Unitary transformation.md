@@ -86,7 +86,7 @@ Eigenvector들의 orthogonality로 인해 변환된 행렬은 대각 성분만 �
 
 ## Related Concepts
 
-- [[AM lecture notes - Galilean transformation]]
+- [[AM lecture note - Galilean transformation]]
 
 ## References
 

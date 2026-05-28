@@ -413,10 +413,12 @@ $$
 \mathcal{D}(R)\ket{j,m} = \frac{\left[a_+^\dagger\cos\frac{\beta}{2} + a_-^\dagger\sin\frac{\beta}{2}\right]^{j+m}\;\left[-a_+^\dagger\sin\frac{\beta}{2} + a_-^\dagger\cos\frac{\beta}{2}\right]^{j-m}}{\sqrt{(j+m)!\,(j-m)!}}\ket{0,0}
 $$
 
-이때 binomial expansion을 이용한다. $(x + y)^N = \sum_k \frac{N!}{(N-k)!\,k!}\,x^{N-k}\,y^k$이므로:
+이때 binomial expansion을 이용한다. $(x + y)^N = \sum_k \frac{N!}{(N-k)!\,k!}\,x^{N-k}\,y^k$이므로, 
+아래 식의 k가 $\left[a_+^\dagger\cos\frac{\beta}{2} + a_-^\dagger\sin\frac{\beta}{2}\right]^{j+m}$식에 대한 인자,  위 표준식($(x+y)^N$)의 k와 같은 역할. 
+아래 식의 $\ell$이 $\left[-a_+^\dagger\sin\frac{\beta}{2} + a_-^\dagger\cos\frac{\beta}{2}\right]^{j-m}$에 대한 인자다. 
 
 $$
-\mathcal{D}(R)\ket{j,m} = \sum_k\sum_\ell \frac{(j+m)!}{(j+m-k)!\,k!}\cdot\frac{(j-m)!}{(j-m-\ell)!\,\ell!}\cdot\frac{(a_+^\dagger\cos\frac{\beta}{2})^{j+m-k}\,(a_-^\dagger\sin\frac{\beta}{2})^k\,(-a_+^\dagger\sin\frac{\beta}{2})^{j-m-\ell}\,(a_-^\dagger\cos\frac{\beta}{2})^\ell}{\sqrt{(j+m)!\,(j-m)!}}\ket{0}
+\mathcal{D}(R)\ket{j,m} = \sum^{j+m}_k\sum^{j-m}_\ell \frac{(j+m)!}{(j+m-k)!\,k!}\cdot\frac{(j-m)!}{(j-m-\ell)!\,\ell!}\cdot\frac{(a_+^\dagger\cos\frac{\beta}{2})^{j+m-k}\,(a_-^\dagger\sin\frac{\beta}{2})^k\,(-a_+^\dagger\sin\frac{\beta}{2})^{j-m-\ell}\,(a_-^\dagger\cos\frac{\beta}{2})^\ell}{\sqrt{(j+m)!\,(j-m)!}}\ket{0}
 $$
 
 한편, $\mathcal{D}(R)\ket{j,m}$의 $d^{(j)}_{m'm}(\beta)$ 표현은:
@@ -424,6 +426,16 @@ $$
 $$
 \mathcal{D}(R)\ket{j,m} = \sum_{m'}\ket{j,m'}\,d^{(j)}_{m'm}(\beta) = \sum_{m'} d^{(j)}_{m'm}(\beta)\,\frac{(a_+^\dagger)^{j+m'}(a_-^\dagger)^{j-m'}}{\sqrt{(j+m')!\,(j-m')!}}\ket{0}
 $$
+
+이 식하고 
+$$
+\sum^{j+m}_k\sum^{j-m}_\ell \frac{(j+m)!}{(j+m-k)!\,k!}\cdot\frac{(j-m)!}{(j-m-\ell)!\,\ell!}\cdot\frac{(a_+^\dagger\cos\frac{\beta}{2})^{j+m-k}\,(a_-^\dagger\sin\frac{\beta}{2})^k\,(-a_+^\dagger\sin\frac{\beta}{2})^{j-m-\ell}\,(a_-^\dagger\cos\frac{\beta}{2})^\ell}{\sqrt{(j+m)!\,(j-m)!}} \quad \text{(1)}
+$$
+이 식이 같아야 한다. 
+$$
+ \sum_{m'} d^{(j)}_{m'm}(\beta)\,\frac{(a_+^\dagger)^{j+m'}(a_-^\dagger)^{j-m'}}{\sqrt{(j+m')!\,(j-m')!}} \quad \text{(2)}
+ $$
+
 
 $a_+^\dagger$와 $a_-^\dagger$의 지수가 같은 항을 비교한다:
 
@@ -433,7 +445,7 @@ $a_+^\dagger$와 $a_-^\dagger$의 지수가 같은 항을 비교한다:
 - 2식에서 $a_-^\dagger$의 지수: $j - m'$
 
 양쪽 다 $\ell = j - k - m'$이라는 결론. 즉, $j$, $m'$과 $k$가 결정되면 $\ell$은 정해진다.
-
+$\ell$은 없어져도 되는(다른 양자수로 표현이 대체되어야 할) summation index다. 
 ### 각 인자의 지수를 $m$, $m'$, $k$, $j$에 대해 나타내기
 
 $$
@@ -478,7 +490,7 @@ $$
 
 # 다음 강의
 
-
+[[QM lecture note - Orbital Angular Momentum and Spherical Harmonics]]에서 orbital angular momentum $\mathbf{L} = \mathbf{r} \times \mathbf{p}$의 position representation, spherical coordinate에서 $L_z$, $L_\pm$, $L^2$의 미분 연산자 표현, spherical harmonics $Y_l^m(\theta, \phi)$의 유도와 반정수 $l$ 배제, 그리고 spherical harmonics와 rotation matrix의 관계를 다룬다.
 
 # References
 
