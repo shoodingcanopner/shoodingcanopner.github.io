@@ -29,7 +29,7 @@ class: study
 
 **Rotation group SO(3)**: 3차원 공간에서의 모든 회전의 집합. 두 회전을 연속 적용하면 또 다른 회전이고, 항등 회전이 있고, 역회전이 있다. 양자역학 Chapter 3의 주인공.
 
-**Galilean group Gal(3)**: [[AM lecture notes - Transformation of equation, Casimir Invariants]]에서 배운 것. 공간 병진($\vec{a}$), 시간 병진($s$), 회전($\vec{\theta}$), boost($\vec{u}$)를 모두 포함한다.
+**Galilean group Gal(3)**: [[AM lecture note - Transformation of equation, Casimir Invariants]]에서 배운 것. 공간 병진($\vec{a}$), 시간 병진($s$), 회전($\vec{\theta}$), boost($\vec{u}$)를 모두 포함한다.
 
 $$
 G = \exp\{i(Hs + \vec{P}\cdot\vec{a} + \vec{L}\cdot\vec{\theta} + \vec{K}\cdot\vec{u})\}
@@ -63,7 +63,7 @@ $J_x$, $J_y$, $J_z$ 세 개의 generator가 이 관계를 만족한다. Structur
 
 **$\mathfrak{su}(1,1)$ (Schwinger model의 확장)**: $K_+ = a_+^\dagger a_-^\dagger$, $K_- = a_+ a_-$, 그리고 $N$의 적절한 조합이 만드는 algebra. $j$를 정수 단위로 바꾸는 operator를 포함한다. Angular momentum의 $\mathfrak{su}(2)$와는 다른 algebra.
 
-**Galilean algebra**: [[AM lecture notes - Transformation of equation, Casimir Invariants]]에서 다룬 $H$, $\vec{P}$, $\vec{L}$, $\vec{K}$ 사이의 commutation relation 전체가 Galilean Lie algebra이다.
+**Galilean algebra**: [[AM lecture note - Transformation of equation, Casimir Invariants]]에서 다룬 $H$, $\vec{P}$, $\vec{L}$, $\vec{K}$ 사이의 commutation relation 전체가 Galilean Lie algebra이다.
 
 # Representation (표현)
 
@@ -81,7 +81,7 @@ $$
 D(g_1 \cdot g_2) = D(g_1)\,D(g_2), \qquad D(e) = \mathbb{1}
 $$
 
-직관적으로, **"추상적인 group 원소에 구체적인 행렬을 배정하는 규칙"**이다.
+직관적으로, **"추상적인 group 원소에 구체적인 행렬을 배정하는 규칙"** 이다.
 
 ## 양자역학에서의 Representation
 
@@ -142,7 +142,7 @@ $$
 
 ## 해석역학에서의 예시
 
-[[AM lecture notes - Transformation of equation, Casimir Invariants]]에서 배운 질문:
+[[AM lecture note - Transformation of equation, Casimir Invariants]]에서 배운 질문:
 
 > "p orbital은 SO(3) group에 irreducible하다"의 의미?
 
@@ -158,7 +158,7 @@ Galilean algebra의 경우: [[Casimir Invariants]]에서 배운 $M$ (질량), $U
 
 정리하면: **Casimir operator의 고유값이 irreducible representation에 이름표를 붙여준다.**
 
-# Addition of Angular Momentum (미리보기)
+# Addition of Angular Momentum
 
 Sakurai Chapter 4에서 배울 내용: 두 angular momentum $j_1$, $j_2$를 합치면?
 
@@ -166,7 +166,7 @@ $$
 V^{(j_1)} \otimes V^{(j_2)} = \bigoplus_{j=|j_1-j_2|}^{j_1+j_2} V^{(j)}
 $$
 
-왼쪽은 $(2j_1+1)(2j_2+1)$차원의 **reducible representation**이고, 오른쪽은 이것을 **irreducible representation들의 직합으로 분해**한 것이다. 이 분해에 등장하는 계수가 **Clebsch-Gordan coefficient**이다.
+왼쪽은 $(2j_1+1)(2j_2+1)$차원의 **reducible representation**이고, 오른쪽은 이것을 **irreducible representation들의 direct sum으로 분해**한 것이다. 이 분해에 등장하는 계수가 **Clebsch-Gordan coefficient**이다.
 
 예시: spin-$\frac{1}{2}$ 두 개를 합치면 ($j_1 = j_2 = \frac{1}{2}$):
 
@@ -178,7 +178,7 @@ $2 \times 2 = 4$차원이 $1 + 3 = 4$차원으로 분해. Singlet ($j = 0$)과 t
 
 # 연관 학습 노트
 
-- [[AM lecture notes - Transformation of equation, Casimir Invariants]]
+- [[AM lecture note - Transformation of equation, Casimir Invariants]]
 - [[Casimir Invariants]]
 - [[QM lecture note - Rotation and Angular Momentum]]
 - [[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]
