@@ -13,7 +13,7 @@ class: study_lecture
 
 # 지난 강의
 
-[[AM lecture note - Cartan formula and Poincare Lemma]]
+[[AM lecture note - Interior product, Cartan formula and Poincare Lemma]]
 
 # 오늘의 핵심
 
@@ -294,6 +294,8 @@ $$
 으로, Poisson 괄호와 결부된다!
 
 > **질문:** 이 논리로 Hamilton 방정식을 나타내면 무슨 식인가?
+
+아래 콜아웃은 무시해도 된다. 다음 강의 노트에서 정확한 내용을 다룬다. 
 
 > [!note] Glia의 보충 (2026-05-25)
 > **Symplectic geometry의 언어로 본 Hamilton 방정식**

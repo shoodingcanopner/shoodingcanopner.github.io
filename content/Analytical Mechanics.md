@@ -60,9 +60,20 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Differential forms]]
 [[AM lecture note - Hodge dual and Lie derivative]]
 [[AM lecture note - Stokes theorem]]
-[[AM lecture note - Cartan formula and Poincare Lemma]]
-[[AM lecture note - Symplectic form]]
+[[AM lecture note - Interior product, Cartan formula and Poincare Lemma]]
+[[AM lecture note - Symplectic form and Hamiltonian vector field]]
 [[AM lecture note - Poisson bracket and Darboux theorem]]
+[[AM lecture note - Canonical transformation revisited]]
+
+
+### 기말고사 대체과제
+
+[[AM Finalterm problem]]
+[[AM finalterm answer]]
+[[AM Final - Paper Reading Guide (Duval & Horvathy 2015)]]
+
+#### 기말고사 대체 과제 to-do list
+1번 문제 x p 같은 거 볼드체 안 되어 있는 거 고쳐야 함
 
 ### Mini Notes
 심플래틱 기하학이 아름답고 간결한 표현이라는 걸 알 수 있는 부분

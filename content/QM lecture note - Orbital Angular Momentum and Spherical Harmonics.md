@@ -537,10 +537,7 @@ $$
 - [[QM lecture note - Rotation and Angular Momentum]]
 
 # 다음 강의
-
-
-
-# References
+[[QM lecture note - Addition of Angular Momentum and CG Coefficients]]에서 $\mathbf{J}$, $\mathbf{L}$, $\mathbf{S}$의 관계를 tensor product 구조로 정리하고, 두 각운동량의 합 $\mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2$에서 허용되는 $j$의 범위와 Clebsch-Gordan coefficients, CG의 4가지 규칙 및 recursion relation을 통한 도출 방법, 그리고 spin-angular functions $\mathcal{Y}_l^{j=l\pm1/2,m}$을 다룬다.# References
 
 - Sakurai, *Modern Quantum Mechanics*, Chapter 3.6
 

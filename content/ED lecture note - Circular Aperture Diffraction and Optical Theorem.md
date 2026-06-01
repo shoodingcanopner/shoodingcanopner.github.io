@@ -245,7 +245,7 @@ Jackson Classical Electrodynamics, Chapter 10.9, 10.11
 
 # 다음 강의
 
-
+[[ED lecture note - Special Relativity and Lorentz Transform]]
 # 필기 원본
 
 ![[ED_11thweek_2.pdf]]

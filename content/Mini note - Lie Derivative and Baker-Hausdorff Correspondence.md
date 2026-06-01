@@ -140,7 +140,7 @@ $$
 # 연관 학습 노트
 
 - [[AM lecture note - Hodge dual and Lie derivative]]
-- [[AM lecture note - Symplectic form]]
+- [[AM lecture note - Symplectic form and Hamiltonian vector field]]
 - [[AM mini note - Conservation Laws and Hamiltonian Vector Fields]]
 - [[QM lecture note - Schwinger Oscillator Model and Wigner d-Matrix]]
 - [[QM lecture note - Rotation and Angular Momentum]]

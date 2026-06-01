@@ -9,7 +9,7 @@ class: study_lecture
 ---
 > [!attention] 강의 필기 보충 노트
 > 이것은 [[Analytical Mechanics]] 강의 관련 보충 노트입니다.
-> [[AM lecture note - Symplectic form]]의 Hamiltonian vector field 내용과 양자역학의 보존량 개념을 연결합니다.
+> [[AM lecture note - Symplectic form and Hamiltonian vector field]]의 Hamiltonian vector field 내용과 양자역학의 보존량 개념을 연결합니다.
 
 # 오늘의 핵심
 
@@ -81,7 +81,7 @@ $$
 V_{L_z} = -y\,\partial_x + x\,\partial_y + p_y\,\partial_{p_x} - p_x\,\partial_{p_y}
 $$
 
-이것은 [[AM lecture note - Symplectic form]]에서 이미 유도한 $z$축 회전의 무한소 생성자이다.
+이것은 [[AM lecture note - Symplectic form and Hamiltonian vector field]]에서 이미 유도한 $z$축 회전의 무한소 생성자이다.
 
 $$
 V_{L_z}(\mathcal{H}) = 0
@@ -97,7 +97,7 @@ $$
 
 # 연관 학습 노트
 
-- [[AM lecture note - Symplectic form]]
+- [[AM lecture note - Symplectic form and Hamiltonian vector field]]
 - [[AM lecture note - Hodge dual and Lie derivative]]
 - [[AM lecture note - Noether theorem]]
 - [[AM lecture note - Poisson bracket and Darboux theorem]]

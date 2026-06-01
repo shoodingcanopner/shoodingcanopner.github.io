@@ -13,7 +13,7 @@ class: study_lecture
 
 # 지난 강의
 
-[[AM lecture note - Symplectic form]]
+[[AM lecture note - Symplectic form and Hamiltonian vector field]]
 
 # 오늘의 핵심
 
@@ -636,7 +636,7 @@ $$
 
 # 다음 강의
 
-
+[[AM lecture note - Canonical transformation revisited]]
 # 필기 원본
 
 ![[AM_12thweek_2.pdf]]

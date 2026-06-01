@@ -43,6 +43,9 @@ class: study_subject
 [[ED lecture note - Scattering and Diffraction]]
 [[ED lecture note - Diffraction Theory]]
 [[ED lecture note - Circular Aperture Diffraction and Optical Theorem]]
+[[ED lecture note - Special Relativity and Lorentz Transform]]
+[[ED lecture note - Covariant Formulation of Electrodynamics]]
+[[ED lecture note - Moving Charge Fields and Invariant Green Function]]
 
 
 

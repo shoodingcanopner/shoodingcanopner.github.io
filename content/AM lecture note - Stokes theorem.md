@@ -398,6 +398,6 @@ $$
 
 # 다음 강의
 
-[[AM lecture note - Cartan formula and Poincare Lemma]]
+[[AM lecture note - Interior product, Cartan formula and Poincare Lemma]]
 # 필기 원본
 ![[AM_10thweek_3.pdf]]

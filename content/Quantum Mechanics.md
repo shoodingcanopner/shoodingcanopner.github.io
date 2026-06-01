@@ -74,6 +74,8 @@ Week 16: Final Exam
 [[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]
 [[QM lecture note - Schwinger Oscillator Model and Wigner d-Matrix]]
 [[QM lecture note - Orbital Angular Momentum and Spherical Harmonics]]
+[[QM lecture note - Addition of Angular Momentum and CG Coefficients]]
+[[QM lecture note - Tensor Operators and Wigner-Eckart Theorem]]
 
 
 

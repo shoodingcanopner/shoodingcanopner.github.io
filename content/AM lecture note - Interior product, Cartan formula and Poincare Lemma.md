@@ -349,6 +349,6 @@ $$
 
 
 
-[[AM lecture note - Symplectic form]]
+[[AM lecture note - Symplectic form and Hamiltonian vector field]]
 # 필기 원본
 ![[AM_11thweek_1.pdf]]
