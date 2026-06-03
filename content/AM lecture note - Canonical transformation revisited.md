@@ -274,4 +274,4 @@ $$
 - Si Li, *Classical Mechanics and Geometry*, Chapter 3, §3.4.1–3.4.2 (pp. 108–111)
 
 # 다음 강의
-
+[[AM lecture note - Lagrangian submanifold]]

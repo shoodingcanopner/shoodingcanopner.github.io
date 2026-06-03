@@ -2,8 +2,6 @@
 
 # 2026 Classical Mechanics Final Term
 
----
-
 ## Problem 1 (50 points)
 
 Based on the following effective action:

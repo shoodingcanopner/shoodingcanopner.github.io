@@ -64,6 +64,8 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM lecture note - Symplectic form and Hamiltonian vector field]]
 [[AM lecture note - Poisson bracket and Darboux theorem]]
 [[AM lecture note - Canonical transformation revisited]]
+[[AM lecture note - Lagrangian submanifold]]
+[[AM lecture note - Lie Group, Lie Algebra and Moment Map]]
 
 
 ### 기말고사 대체과제
@@ -73,8 +75,9 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 [[AM Final - Paper Reading Guide (Duval & Horvathy 2015)]]
 
 #### 기말고사 대체 과제 to-do list
-1번 문제 x p 같은 거 볼드체 안 되어 있는 거 고쳐야 함
-
+1번 문제 추가 질문 보충
+2번 문제 Hamiltonian vector field 보충
+논문 section3읽고 이해(?)하기
 ### Mini Notes
 심플래틱 기하학이 아름답고 간결한 표현이라는 걸 알 수 있는 부분
 [[AM mini note - Conservation Laws and Hamiltonian Vector Fields]]

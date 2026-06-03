@@ -514,7 +514,6 @@ $$
 # 다음 강의
 [[QM lecture note - Tensor Operators and Wigner-Eckart Theorem]]에서 CG coefficients와 rotation matrix의 연결, spherical tensor operator의 정의와 성질, Wigner-Eckart theorem을 다룬다.
 # References
-
 - Sakurai, *Modern Quantum Mechanics*, Chapter 3.7, 3.8
 - Sakurai, *Modern Quantum Mechanics*, Chapter 4.1 (Symmetry and Conservation Laws)
 
