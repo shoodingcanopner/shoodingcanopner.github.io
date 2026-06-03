@@ -76,6 +76,7 @@ Week 16: Final Exam
 [[QM lecture note - Orbital Angular Momentum and Spherical Harmonics]]
 [[QM lecture note - Addition of Angular Momentum and CG Coefficients]]
 [[QM lecture note - Tensor Operators and Wigner-Eckart Theorem]]
+[[QM lecture note - Wigner-Eckart Theorem Proof and Applications]]
 
 
 

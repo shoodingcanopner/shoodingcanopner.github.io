@@ -395,7 +395,7 @@ $$
 
 # 다음 강의
 
-
+[[QM lecture note - Wigner-Eckart Theorem Proof and Applications]] — Wigner-Eckart theorem 증명, selection rules, scalar/vector 예제, Projection theorem
 
 # References
 
