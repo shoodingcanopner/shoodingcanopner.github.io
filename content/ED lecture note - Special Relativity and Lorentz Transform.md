@@ -349,7 +349,7 @@ A =
 0 & 0 & 0 & 1
 \end{pmatrix}
 $$
-삼각함수가 아니라 하이퍼볼릭 삼각함수인 만큼, 그의 역변환은 pesudo-orthogonal하다. 
+내부에 들어가는 원소가 삼각함수가 아니라 하이퍼볼릭 삼각함수인 만큼, 그의 역변환은 pesudo-orthogonal하다. 
 $\cosh^2\zeta - \sinh^2\zeta = 1$임을 이용해 찾아보면, 
 $$
 A^{-1} =
@@ -384,7 +384,7 @@ $\vec{\beta} = \dfrac{1}{c}\vec{V}$라고, 3-vector를 정의.
 $$
 \begin{cases}
 A_0' = \gamma(A_0 - \vec{\beta}\cdot\vec{A}) \\
-A_\parallel' = \gamma(A_\parallel - \beta A_0) \\
+A_\parallel' = \gamma(- \beta A_0 + A_\parallel ) \\
 A_\perp' = A_\perp
 \end{cases}
 $$
@@ -412,7 +412,7 @@ $$
 고수님이 교과서 보라고 하심. 이미 아는 내용이다.
 
 
-![[Pasted image 20260529122806.png]]
+![[Pasted image 20260529122806.png|289]]
 
 두 사건 $P_1(t_1, \vec{x}_1)$, $P_2(t_2, \vec{x}_2)$가 있을 때, 시공간에서 사건 사이 거리를:
 
@@ -434,7 +434,7 @@ $$
 ---
 
 ## Proper Time
-
+![[Pasted image 20260603172349.png]]
 - 멈춘 coordinate $K$에서 흐른 시간: $dt$
 - 움직인 coordinate $K'$에서 흐른 시간: $dt'$ → 이게 **proper time**이다.
 
@@ -658,6 +658,7 @@ $(P_0, \vec{P})$도 four-vector다.
 # 연관 학습 노트
 
 - [[ED lecture note - Circular Aperture Diffraction and Optical Theorem]]
+- [[Mini Note - Lorentz Transform Derivation (교과서 표기)]]
 
 # References
 
