@@ -168,6 +168,19 @@ $$
 Y_2^{\pm 2} = \sqrt{\frac{15}{32\pi}}\frac{(x \pm iy)^2}{r^2} \quad\longrightarrow\quad T_{\pm 2}^{(2)} = \sqrt{\frac{15}{32\pi}}\,(V_x \pm iV_y)^2
 $$
 
+> [!note] AI 답변 — $T_q^{(k)}$는 어떻게 operator가 될 수 있는가?
+> $Y_l^m(\theta, \phi)$는 원래 숫자값 함수인데, 이것을 operator로 만드는 트릭은 **인자를 벡터 연산자로 바꾸는 것**이다.
+>
+> 구체적으로, $Y_l^m$의 인자인 $\hat{n}$의 성분들 $(\sin\theta\cos\phi,\, \sin\theta\sin\phi,\, \cos\theta)$을 위치 연산자 $\hat{\mathbf{r}}$의 방향 성분 $(x/r,\, y/r,\, z/r)$으로 대체하면:
+>
+> $$
+> \cos\theta \to \frac{\hat{z}}{r}, \qquad \sin\theta\, e^{\pm i\phi} \to \frac{\hat{x} \pm i\hat{y}}{r}
+> $$
+>
+> 이렇게 하면 $Y_l^m$은 더 이상 숫자가 아니라 **위치 연산자의 함수**, 즉 operator가 된다.
+>
+> 더 일반적으로는 꼭 위치 연산자일 필요가 없다. **임의의 벡터 연산자** $\mathbf{V} = (V_x, V_y, V_z)$의 성분으로 $\hat{n}$을 대체하면 $T_q^{(k)} = Y_q^k(\mathbf{V})$가 operator가 된다. $Y_l^m$은 이 연산자들을 어떻게 조합할지를 알려주는 **레시피** 역할을 할 뿐이고, $T_q^{(k)}$가 operator인 근본적인 이유는 $\mathbf{V}$ 자체가 operator이기 때문이다.
+
 ### Spherical Tensor의 변환 규칙
 
 Spherical harmonics가 rotation 하에서 어떻게 변환하는지를 복습하자.

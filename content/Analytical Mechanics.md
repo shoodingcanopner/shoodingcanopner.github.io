@@ -82,4 +82,4 @@ https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S1.html
 심플래틱 기하학이 아름답고 간결한 표현이라는 걸 알 수 있는 부분
 [[AM mini note - Conservation Laws and Hamiltonian Vector Fields]]
 심플래틱 기하학과 양자역학의 연결
-[[Mini note - Lie Derivative and Baker-Hausdorff Correspondence]]
+[[Mini Note - Lie Derivative and Baker-Hausdorff Correspondence]]

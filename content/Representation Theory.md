@@ -184,7 +184,7 @@ $2 \times 2 = 4$차원이 $1 + 3 = 4$차원으로 분해. Singlet ($j = 0$)과 t
 - [[QM lecture note - Euler Rotation and Angular Momentum Eigenvalues]]
 - [[QM lecture note - Schwinger Oscillator Model and Wigner d-Matrix]]
 - [[QM lecture note - Orbital Angular Momentum and Spherical Harmonics]]
-- [[Mini note - Lie Derivative and Baker-Hausdorff Correspondence]]
+- [[Mini Note - Lie Derivative and Baker-Hausdorff Correspondence]]
 
 # References
 

@@ -518,6 +518,22 @@ $$
 d^{(l)}_{00}(\beta)\bigg|_{\beta = \theta} = P_l(\cos\theta)
 $$
 
+> [!insight] 비례 관계의 물리적 의미: Normalization 관점
+> $Y_l^m(\theta,\phi)$는 $J_z$가 $m\hbar$인 상태가 방향 $(\theta,\phi)$에 있을 probability amplitude이다.
+>
+> $\mathcal{D}^{(l)}_{m0}(\alpha = \phi, \beta = \theta)$는 $J_z = 0$인 상태를 $\mathcal{D}(\alpha = \phi, \beta = \theta)$만큼 돌렸을 때 $J_z = m\hbar$ 상태가 될 확률진폭이다.
+>
+> 둘 다 같은 물리를 기술하니 비례 관계인 것은 당연하다. 비례 상수 $\sqrt{\frac{2l+1}{4\pi}}$는 **두 normalization convention의 비율**에서 나온다:
+>
+> $$
+> 4\pi\,|Y_l^m(\theta,\phi)|^2 = (2l+1)\left(\mathcal{D}^{(l)}_{m0}(\alpha = \phi, \beta = \theta)\right)^2
+> $$
+>
+> - $|Y_l^m|^2$은 "$m$ 값이 정해진 상태"가 $(\theta,\phi)$에 있을 확률이므로, 전 입체각에 대해 적분하면 1: $\int \sin\theta\,d\theta\,d\phi = 4\pi$로 normalization
+> - $|\mathcal{D}^{(l)}_{m0}|^2$은 "돌리는 각이 정해져 있을 때" $\ket{l,0}$가 $2l+1$가지 상태 중 $\ket{l,m}$이 될 확률이므로, $\sum_m |\mathcal{D}^{(l)}_{m0}|^2 = 1$: $2l+1$개 항으로 normalization
+>
+> 따라서 비례 상수는 "연속적인 방향 공간의 크기 $4\pi$"와 "이산적인 $m$ 상태의 개수 $2l+1$"의 비율로 즉시 결정된다.
+
 # 궁금한 내용
 
 > [!question] $L_x$와 $L_y$에 대한 식을 직관적으로 이해할 수 있을까?

@@ -531,6 +531,8 @@ $$
 Jackson Classical Electrodynamics, Chapter 11 (Section 11.9)
 
 # 다음 강의
-[[ED lecture note - Moving Charge Fields and Invariant Green Function]]# 필기 원본
+[[ED lecture note - Moving Charge Fields and Invariant Green Function]]
+
+# 필기 원본
 
 ![[ED_13thweek_1.pdf]]

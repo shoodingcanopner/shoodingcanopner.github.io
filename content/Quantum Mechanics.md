@@ -83,7 +83,7 @@ Week 16: Final Exam
 
 ### Mini Notes
 
-[[Mini note - Lie Derivative and Baker-Hausdorff Correspondence]]
+[[Mini Note - Lie Derivative and Baker-Hausdorff Correspondence]]
 
 
 ## 으악 중간고사가 24시간도 안 남았다! 
