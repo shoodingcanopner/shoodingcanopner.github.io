@@ -68,7 +68,7 @@ $$
 
 이것은 CG coefficient에 대한 selection rule에서 바로 나온다.
 
-## 2. Wigner-Eckart Theorem
+## 2. c
 
 ### Statement
 

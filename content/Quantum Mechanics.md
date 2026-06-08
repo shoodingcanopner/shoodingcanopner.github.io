@@ -14,7 +14,7 @@ class: study_subject
 교재로 Sakurai 책을 이용한다. 
 
 중간고사 4월 16일
-기말고사 6월 9일(예정)
+기말고사 6월 8일 14:00 ~ 17:00
 
 결석을 하게 된다면 다음 강의 시작 전까지 못 들은 강의의 필기를 보내면 결석 점수가 아니라 지각 점수를 받게 된다. 
 LMS에 강의록을 다 올려주신다고 한다. 
@@ -77,10 +77,7 @@ Week 16: Final Exam
 [[QM lecture note - Addition of Angular Momentum and CG Coefficients]]
 [[QM lecture note - Tensor Operators and Wigner-Eckart Theorem]]
 [[QM lecture note - Wigner-Eckart Theorem Proof and Applications]]
-
-
-
-
+[[QM lecture note - Density Operator and Entropy]]
 
 ### Mini Notes
 

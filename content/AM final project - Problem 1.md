@@ -1,7 +1,3 @@
----
-draft: true
----
-
 
 # Problem 1
 
@@ -215,7 +211,3 @@ $$
 
 이 방정식들은 **Weyl 반금속**이나 카이랄 입자의 anomalous transport를 기술한다.
 
-
-## UV complete version
-
-*UV complete version은 Souriau의 massless spinning particle model이다. 이 모델에서 spin은 독립적인 자유도이며, Poincaré 대칭이 자연스럽게 작용한다. Spin enslaving s=sp^s = s\hat{p} s=sp^​을 gauge fixing으로 적용하면 6차원으로 reduce되어 effective action (1.1)이 복원된다.*

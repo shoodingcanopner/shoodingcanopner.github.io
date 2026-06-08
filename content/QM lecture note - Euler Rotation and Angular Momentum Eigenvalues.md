@@ -21,7 +21,7 @@ class: study
 - **Euler Rotation**: 임의의 회전을 3개의 고정축 회전의 연속으로 표현. Body-fixed axis 회전 $R_{z'}(\gamma)\,R_{y'}(\beta)\,R_z(\alpha)$를 space-fixed axis 회전 $R_z(\alpha)\,R_y(\beta)\,R_z(\gamma)$로 변환
 - $j = \frac{1}{2}$ **irreducible representation** $\mathcal{D}^{(1/2)}(\alpha,\beta,\gamma)$의 명시적 행렬
 - **고차원 각운동량의 고유값 구조**: $J^2$과 $J_z$의 동시 고유켓 $\ket{a,b}$, ladder operator $J_\pm$의 도입
-- $b$의 boundary 조건으로부터 **양자수 $j$와 $m$**의 결정: $a = j(j+1)\hbar^2$, $b = m\hbar$
+- $b$의 boundary 조건으로부터 **양자수 $j$와 $m$** 의 결정: $a = j(j+1)\hbar^2$, $b = m\hbar$
 - **Ladder operator의 계수** $C^\pm_{jm}$의 normalization을 통한 결정
 - $\mathcal{D}(R)$의 **$(2j+1)$차원 기약 표현**: $\mathcal{D}^{(j)}_{m'm}(R) = \bra{j,m'}\exp\!\left(-\frac{i}{\hbar}\vec{J}\cdot\hat{n}\,\phi\right)\ket{j,m}$
 - Euler angle을 적용한 $\mathcal{D}^{(j)}_{m'm}(\alpha,\beta,\gamma)$에서 $d^{(j)}_{m'm}(\beta)$ 행렬의 분리
@@ -362,6 +362,9 @@ $$
 > [!note] Bra와 Ket의 $j$ 값이 같음에 주목하라.
 
 모든 $j$에 대한 회전을 하나의 행렬로 나타낼 수 있다: block diagonal 형태로 $\mathcal{D}^{(1/2)}(R)$, $\mathcal{D}^{(1)}(R)$, $\mathcal{D}^{(3/2)}(R)$, ... 이 대각선에 배치된다.
+
+![[Pasted image 20260607222450.png]]
+
 
 ## 7. Euler Angle 적용과 $d^{(j)}(\beta)$ 행렬
 

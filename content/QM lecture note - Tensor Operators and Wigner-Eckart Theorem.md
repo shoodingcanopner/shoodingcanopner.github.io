@@ -145,7 +145,7 @@ $$
 $(\theta, \phi) = \hat{n}$ 방향의 벡터 $\mathbf{V}$를 대체하면, **spherical tensor of rank $k$**:
 
 $$
-T_q^{(k)} = Y_q^k(\mathbf{V})
+T_q^{(k)} = Y_{l=k}^{m=q}(\mathbf{V})
 $$
 
 즉, spherical harmonics의 $\cos\theta = z/r$, $\sin\theta\, e^{\pm i\phi} = (x \pm iy)/r$ 등을 벡터 성분으로 바꾼다:

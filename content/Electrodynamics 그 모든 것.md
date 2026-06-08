@@ -34,12 +34,13 @@ class: study_subject
 [[ED lecture note - Dispersion]]
 [[ED lecture note - Complex Analysis and Causality]]
 [[ED lecture note - Radiating Systems]]
-[[ED lecture note - Electric Dipole Radiation]]
-[[ED lecture note - Magnetic Dipole Radiation]]
-[[ED lecture note - Electric Quadrupole Radiation]]
+
 
 ## 기말고사 범위
 ### 강의 필기
+[[ED lecture note - Electric Dipole Radiation]]
+[[ED lecture note - Magnetic Dipole Radiation]]
+[[ED lecture note - Electric Quadrupole Radiation]]
 [[ED lecture note - Scattering and Diffraction]]
 [[ED lecture note - Diffraction Theory]]
 [[ED lecture note - Circular Aperture Diffraction and Optical Theorem]]

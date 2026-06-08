@@ -76,11 +76,11 @@ $$
 **Translation operator** $\boldsymbol{\tau}(a)$:
 
 $$
-\mathcal{T}^\dagger(a) \mathcal{H} \mathcal{T}(a) = \mathcal{H}
+\boldsymbol{\tau}^\dagger(a) \mathcal{H} \boldsymbol{\tau}(a) = \mathcal{H}
 $$
 
 $$
-\mathcal{T}^\dagger(a) \mathcal{T}(a) = \mathbf{1}
+\boldsymbol{\tau}^\dagger(a) \boldsymbol{\tau}(a) = \mathbf{1}
 $$
 
 $\boldsymbol{\tau}(a)$는 **unitary**이지만 **Hermitian은 아니다**.
@@ -203,7 +203,8 @@ $$
 \psi_\theta(x') = e^{ikx'} u_k(x'), \quad \text{with } ka = \theta
 $$
 
-여기서 $u_k(x \pm a) = u_k(x)$ — $u_k$는 $a$ 주기로 **periodic**.
+여기서 $u_k(x \pm a) = u_k(x)$ 
+$u_k$는 $a$ 주기로 **periodic**.
 
 **검증:**
 

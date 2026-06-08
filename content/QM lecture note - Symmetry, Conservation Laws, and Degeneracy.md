@@ -101,7 +101,7 @@ $$
 **Heisenberg 운동방정식**으로 확인:
 
 $$
-\frac{dG}{dt} = \frac{i}{\hbar}[\mathcal{H}, G] + \frac{\partial G}{\partial t} = 0
+\frac{dG}{dt} = \frac{1}{i\hbar}[ G,\mathcal{H}] + \frac{\partial G}{\partial t} = 0
 $$
 
 ---
