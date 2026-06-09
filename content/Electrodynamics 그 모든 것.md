@@ -47,7 +47,7 @@ class: study_subject
 [[ED lecture note - Special Relativity and Lorentz Transform]]
 [[ED lecture note - Covariant Formulation of Electrodynamics]]
 [[ED lecture note - Moving Charge Fields and Invariant Green Function]]
-
+[[ED mini note - Lienard-Wiechert Potential]]
 
 
 ## 나머지 자잘한 노트
