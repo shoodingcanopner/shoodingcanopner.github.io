@@ -1,9 +1,14 @@
 ---
 title: AM finalterm answer
-date: "2026-05-31"
-draft: true
+date: 2026-05-31
+draft: false
 subject: physics
-tags: [study, analytical-mechanics, hamilton, berry-phase, chiral]
+tags:
+  - study
+  - analytical-mechanics
+  - hamilton
+  - berry-phase
+  - chiral
 class: study
 ---
 문제: [[AM Finalterm problem]]

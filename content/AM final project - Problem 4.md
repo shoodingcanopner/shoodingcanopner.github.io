@@ -1,11 +1,4 @@
----
-title: AM final project - Problem 4
-date: "2026-06-05"
-draft: true
-subject: physics
-tags: [study, analytical-mechanics, BMT, spinning-particle, symplectic]
-class: study
----
+
 문제: [[AM Finalterm problem]] / 답안 모음: [[AM finalterm answer]]
 
 # Problem 4

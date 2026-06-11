@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(obsidian --help)",
+      "PowerShell(obsidian --help)"
+    ]
+  }
+}

@@ -1,6 +1,5 @@
----
-draft: true
----
+
+문제: [[AM Finalterm problem]] / 답안 모음: [[AM finalterm answer]]
 
 # Appendix B: Coadjoint Orbit으로부터 $\sigma$유도
 

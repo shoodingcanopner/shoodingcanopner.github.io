@@ -1,7 +1,5 @@
----
-draft: true
----
 
+문제: [[AM Finalterm problem]] / 답안 모음: [[AM finalterm answer]]
 # Background knowledge: Souriau Mechanics의 Symplectic framework
 
 > [!info] 이 섹션의 목적

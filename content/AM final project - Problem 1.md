@@ -1,4 +1,4 @@
-
+문제: [[AM Finalterm problem]] / 답안 모음: [[AM finalterm answer]]
 # Problem 1
 
 Based on the following effective action:

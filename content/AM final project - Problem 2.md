@@ -1,7 +1,5 @@
----
-draft: true
----
 
+문제: [[AM Finalterm problem]] / 답안 모음: [[AM finalterm answer]]
 # Problem 2
 Revisit this problem based on the symplectic geometry perspectives. Can you find the corresponding symplectic two-form and the symplectic vector field? Let me give you the answer.
 

@@ -1,6 +1,4 @@
----
-draft: true
----
+
 문제: [[AM Finalterm problem]] / 답안 모음: [[AM finalterm answer]]
 # Problem 3
 
