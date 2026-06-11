@@ -147,31 +147,3 @@ $$
 
 > [!note] Plot
 > 두 경우의 polar radiation pattern은 대화 내에서 시각화하였음.
-
----
-
-# Problem 2. Angular Distribution of the Multipole Radiation (20점)
-
-> [!warning] 풀이 예정
-> 다음 세션에서 풀이할 것.
-
----
-
-# Problem 3. Jackson 9.1 (20점)
-
-> [!warning] 풀이 예정
-> 문제 내용 확인 후 풀이할 것.
-
----
-
-# Problem 4. Radiating Quadrupole — Jackson 9.2 (20점)
-
-> [!warning] 풀이 예정
-> 문제 내용 확인 후 풀이할 것.
-
----
-
-# Problem 5. Radiating Two Fixed Dipoles — Jackson 9.15 (20점)
-
-> [!warning] 풀이 예정
-> 문제 내용 확인 후 풀이할 것.

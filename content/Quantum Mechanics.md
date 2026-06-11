@@ -63,7 +63,6 @@ Week 16: Final Exam
 [[QM midterm 2026-1]]
 
 ## 기말고사 범위
-
 [[QM lecture note - Symmetry, Conservation Laws, and Degeneracy]]
 [[QM lecture note - Discrete Symmetries]]
 [[QM lecture note - Time Reversal Operator]]
@@ -80,9 +79,10 @@ Week 16: Final Exam
 [[QM lecture note - Density Operator and Entropy]]
 
 ### Mini Notes
-
 [[Mini Note - Lie Derivative and Baker-Hausdorff Correspondence]]
 
+### 기말고사 대비 마지막 필기
+![[QM_FINAL.pdf]]
 
 ## 으악 중간고사가 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.

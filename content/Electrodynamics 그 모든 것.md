@@ -48,7 +48,7 @@ class: study_subject
 [[ED lecture note - Covariant Formulation of Electrodynamics]]
 [[ED lecture note - Moving Charge Fields and Invariant Green Function]]
 [[ED mini note - Lienard-Wiechert Potential]]
-
+[[ED mini note - Center-fed Linear Antenna]]
 
 ## 나머지 자잘한 노트
 ### 시험 대비 정리 & handout 공부
@@ -58,20 +58,13 @@ class: study_subject
 [[Cauchy Integral Formula]]
 [[PHYS503 Group velocity .pdf]]
 [[Group Velocity]]
-### 과제 풀이 & 교수님께서 뿌린 작년 기출 풀이
-![[Pasted image 20260419201524.png]]
-![[Pasted image 20260419201536.png]]
 
-
+[[ED_final.pdf]]
 [[ED_HW1_20262182_김신지_흑백.pdf]]
 [[ED_HW1_20262182_김신지_회색조.pdf]]
-
 [[ED HW3 풀이]]
 [[몇 가지 Vector analysis HW 풀이]]
 [[EM wave propagation through dielectric layers 기출 풀이]]
-
-
-![[Pasted image 20260418135530.png]]
 
 ---
 
