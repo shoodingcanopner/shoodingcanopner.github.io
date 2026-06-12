@@ -79,39 +79,39 @@ mjx-container[jax="SVG"][display="true"] > svg {
 
 // 헤더 색상 (Obsidian 동기화)
 h1 {
-  color: #ad0505;
-  border-left: 6px solid #ad0505;
-  padding-left: 10px;
-  margin-bottom: 15px;
-}
-h1 mjx-container { color: #ad0505; }
-
-h2 {
-  color: #a84c0e;
+  color: #3f0101;
+  font-size: 1.5rem;
   margin-bottom: 12px;
 }
-h2 mjx-container { color: #a8720e; }
+h1 mjx-container { color: #3f0101; }
+
+h2 {
+  color: #441e05;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+h2 mjx-container { color: #441e05; }
 
 h3 {
-  color: #599400;
+  color: #233803;
   margin-bottom: 10px;
 }
-h3 mjx-container { color: #599400; }
+h3 mjx-container { color: #233803; }
 
 h4 {
-  color: #0c7770;
+  color: #063a36;
   margin-bottom: 8px;
 }
-h4 mjx-container { color: #0c7770; }
+h4 mjx-container { color: #063a36; }
 
 h5 {
-  color: #193c9c;
+  color: #071231;
   margin-bottom: 5px;
 }
-h5 mjx-container { color: #193c9c; }
+h5 mjx-container { color: #071231; }
 
 h6 {
-  color: #4f076b;
+  color: #20032c;
   margin-bottom: 5px;
 }
-h6 mjx-container { color: #4f076b; }
+h6 mjx-container { color: #20032c; }
