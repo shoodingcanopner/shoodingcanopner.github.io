@@ -1,9 +1,9 @@
 ---
-title: "The fractal globule as a model of chromatin architecture in the cell"
+title: Journal reading - The fractal globule as a model of chromatin architecture in the cell
 authors: Leonid A. Mirny
 DOI: "[DOI](https://doi.org/10.1007/s10577-010-9177-0)"
-date read: "2026-05-29"
-date published: "2011-01-01"
+date read: 2026-05-29
+date published: 2011-01-01
 subject: biophysics, polymer physics, chromatin
 tags:
   - study

@@ -23,9 +23,8 @@ class: study_journal
 DOI: [10.1109/TSMC.1975.5408382](https://doi.org/10.1109/TSMC.1975.5408382)
 
 ## Related Concepts
-
 논문 내용이 길지 않다. 
-바로 아래의 학습 노트 하나에 거의 모든 내용이 담겼다. 
+바로 아래의 개념 노트 하나에 거의 모든 내용이 담겼다. 
 
 - [[Markov Chain Tree Theorem]]
 

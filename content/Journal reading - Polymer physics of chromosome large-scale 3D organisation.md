@@ -1,9 +1,9 @@
 ---
-title: "Polymer physics of chromosome large-scale 3D organisation"
+title: Journal reading - Polymer physics of chromosome large-scale 3D organisation
 authors: Andrea M. Chiariello, Carlo Annunziatella, Simona Bianco, Andrea Esposito, Mario Nicodemi
 DOI: "[DOI](https://doi.org/10.1038/srep29775)"
-date read: "2026-06-15"
-date published: "2016-07-13"
+date read: 2026-06-15
+date published: 2016-07-13
 subject: polymer physics
 tags:
   - study

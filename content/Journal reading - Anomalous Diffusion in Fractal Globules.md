@@ -1,9 +1,9 @@
 ---
-title: Anomalous Diffusion in Fractal Globules
+title: Journal reading - Anomalous Diffusion in Fractal Globules
 authors: M. V. Tamm, L. I. Nazarov, A. A. Gavrilov, A. V. Chertovich
 DOI: "[DOI](https://doi.org/10.1103/PhysRevLett.114.178102)"
-date read: "2026-06-13"
-date published: "2015-05-01"
+date read: 2026-06-13
+date published: 2015-05-01
 subject: polymer physics
 tags:
   - study

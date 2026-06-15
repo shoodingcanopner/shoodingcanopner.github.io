@@ -1,9 +1,9 @@
 ---
-title: "Entropy Production in Non-Gaussian Active Matter: A Unified Fluctuation Theorem and Deep Learning Framework"
+title: "Journal reading - Entropy Production in Non-Gaussian Active Matter: A Unified Fluctuation Theorem and Deep Learning Framework"
 authors: Yuanfei Huang, Chengyu Liu, Bing Miao, Xiang Zhou
 DOI: "[10.1103/y94p-4qcz](https://doi.org/10.1103/y94p-4qcz)"
-date read: "2026-03-22"
-date published: "2026-02-11"
+date read: 2026-03-22
+date published: 2026-02-11
 subject: nonequilibrium statistical mechanics, active matter, stochastic thermodynamics
 tags:
   - study

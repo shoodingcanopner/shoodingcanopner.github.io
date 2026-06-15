@@ -1,9 +1,9 @@
 ---
-title: "Enzyme as Maxwell's Demon: Steady-State Deviation from Chemical Equilibrium by Enhanced Enzyme Diffusion"
+title: "Journal reading - Enzyme as Maxwell's Demon: Steady-State Deviation from Chemical Equilibrium by Enhanced Enzyme Diffusion"
 authors: Shunsuke Ichii, Tetsuhiro S. Hatakeyama, Kunihiko Kaneko
 DOI: "[10.1103/flv6-zw1v](https://doi.org/10.1103/flv6-zw1v)"
-date read: "2026-05-04"
-date published: "2026-01-21"
+date read: 2026-05-04
+date published: 2026-01-21
 subject: nonequilibrium statistical mechanics, biophysics
 tags:
   - study

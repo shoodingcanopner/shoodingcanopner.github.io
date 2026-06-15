@@ -1,9 +1,9 @@
 ---
-title: "Estimating Entropy Production from Waiting Time Distributions"
+title: Journal reading - Estimating Entropy Production from Waiting Time Distributions
 authors: Dominic J. Skinner, Jörn Dunkel
 DOI: "[10.1103/PhysRevLett.127.198101](https://doi.org/10.1103/PhysRevLett.127.198101)"
-date read: "2026-04-27"
-date published: "2021-11-01"
+date read: 2026-04-27
+date published: 2021-11-01
 subject: nonequilibrium statistical mechanics, stochastic thermodynamics, biophysics
 tags:
   - study
