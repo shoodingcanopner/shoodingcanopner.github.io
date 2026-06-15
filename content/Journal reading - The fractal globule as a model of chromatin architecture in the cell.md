@@ -23,7 +23,7 @@ class: study_journal
 ## Link to PDF and DOI
 
 - DOI: [10.1007/s10577-010-9177-0](https://doi.org/10.1007/s10577-010-9177-0)
-- PDF: [[Books/The_fractal_globule_as_a_model_of_chromatin_architecture_in_the_cell.pdf]]
+- PDF: [[The fractal globule as a model of chromatin architecture in the cell.pdf]]
 
 ## 주요 내용 요약
 
