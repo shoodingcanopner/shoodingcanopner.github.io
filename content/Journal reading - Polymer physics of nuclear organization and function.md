@@ -1,11 +1,20 @@
 ---
-title: "Polymer physics of nuclear organization and function"
-date: "2026-06-02"
-subject: "biophysics"
-tags: [study, journal-reading, polymer-physics, chromatin, DNA, nucleus, anomalous-diffusion, Hi-C, MFET]
+title: Journal reading - Polymer physics of nuclear organization and function
+date: 2026-06-02
+subject: biophysics
+tags:
+  - study
+  - journal-reading
+  - polymer-physics
+  - chromatin
+  - DNA
+  - nucleus
+  - anomalous-diffusion
+  - Hi-C
+  - MFET
 class: study
-authors: "A. Amitai, D. Holcman"
-journal: "Physics Reports 678 (2017) 1–83"
+authors: A. Amitai, D. Holcman
+journal: Physics Reports 678 (2017) 1–83
 ---
 
 # Polymer physics of nuclear organization and function
@@ -77,7 +86,7 @@ journal: "Physics Reports 678 (2017) 1–83"
 
 ---
 
-### 2.1 기본 폴리머 (Gaussian Chain, Ideal Chain)
+### 기본 폴리머 (Gaussian Chain, Ideal Chain)
 **기본 아이디어:** 폴리머를 일정한 통계적 규칙을 따르는 random walk trajectory로 본다. 즉 한 monomer에서 다음 monomer로의 변위 $\mathbf{b}_n$을 random step으로 간주하고, 전체 폴리머를 $N$-step random walk의 한 realization으로 본다.
 
 이때 self-avoidance를 무시한다 (monomer끼리 통과 가능). 그래서 **Ideal Chain** 혹은 **Phantom Chain**이라고도 부른다.
@@ -149,7 +158,7 @@ $$
 
 ---
 
-### Self-Avoiding Random Walk Model
+### Self-Avoiding Random Walk Model (SAW)
 Gaussian chain은 random walk의 궤적이기 때문에, walker가 한번 지나왔던 장소를 다시 지나가는 것 처럼, monomer의 위치가 겹칠 수도 있는 (혹은 아주 가까워질 수 있는) 모델이다. 
 실제 polymer는 그렇지 않다. momomer가 부피를 가지기 때문이다. 
 이러한 점을 고려한 게 self-avoiding random walk이다. 

@@ -15,7 +15,7 @@ https://www.sciencedirect.com/science/article/pii/S0375960122003279#kws0010
 # 내용 정리
 
  so-called  1/f noise -> 이게 뭐지?
- [[Journal reading _ Self-Organized Criticality_ An Explanation of 1_f Noise]]
+ [[Journal reading - Self-Organized Criticality_ An Explanation of 1_f Noise]]
  
 
 # 읽고 싶은 다른 레퍼런스

@@ -87,7 +87,7 @@ $$X_T(f) = \int_{-T/2}^{T/2} x(t) e^{-2\pi i f t} dt \tag{2}$$
 - [[Fast_Fourier_Transform]] - PSD 계산의 핵심 도구
 - [[Brownian Motion Properties]] - 확률 과정의 spectral 특성
 - [[White Noise and Brownian Motion Relationship]] - 노이즈 유형간 관계
-- [[Journal reading _ Self-Organized Criticality_ An Explanation of 1_f Noise]] - 1/f 노이즈의 물리적 기원
+- [[Journal reading - Self-Organized Criticality_ An Explanation of 1_f Noise]] - 1/f 노이즈의 물리적 기원
 
 ## References
 
