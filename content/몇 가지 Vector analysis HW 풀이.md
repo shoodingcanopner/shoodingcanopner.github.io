@@ -10,7 +10,7 @@ tags:
 # 몇 가지 Vector Analysis HW 풀이
 
 > [!info] 시험 대비
-> [[Electrodynamics 그 모든 것]]
+> [[MOCs/Electrodynamics]]
 > 전기역학1 중간고사 대비 기출 문제 풀이. 원본: [[Old HW PHYS503.pdf]]
 
 ---

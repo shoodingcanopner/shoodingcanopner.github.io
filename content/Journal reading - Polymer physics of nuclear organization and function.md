@@ -16,12 +16,14 @@ class: study
 authors: A. Amitai, D. Holcman
 journal: Physics Reports 678 (2017) 1–83
 ---
-
+![[Pasted image 20260616113754.png]]
 # Polymer physics of nuclear organization and function
 
 > Amitai & Holcman, *Physics Reports* 678, 1–83 (2017)
 
 **핵심 질문:** 세포 핵 내부의 DNA/크로마틴 구조와 동역학을 폴리머 물리학으로 어떻게 기술할 수 있는가?
+
+PDF: [[Polymer physics of nuclear organization and function.pdf]]
 
 ---
 

@@ -123,7 +123,7 @@ $$
 
 - [[맥스웰 방정식 외우기]]
 - [[전기장과 자기장의 포텐셜]]
-- [[Electrodynamics 그 모든 것]]
+- [[MOCs/Electrodynamics|Electrodynamics]]
 - [[Vector Identities in Electrodynamics]]
 
 ## References

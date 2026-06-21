@@ -131,7 +131,7 @@ $$\nabla^2 \phi - \mu_0 \epsilon_0 \frac{\partial^2 \phi}{\partial t^2} = -\frac
 
 - [[Electric and Magnetic Potentials]]
 - [[맥스웰 방정식 외우기]]
-- [[Electrodynamics 그 모든 것]]
+- [[MOCs/Electrodynamics|Electrodynamics]]
 
 ## References
 

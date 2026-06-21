@@ -40,7 +40,7 @@ class: study_journal
 | 항목                     | 값 / 설정                                                                | 비고                                                                                    |
 | ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | Chain length           | $n = 512$ spherical sites                                             | 더 짧거나 긴 polymer도 scaling 상 유사 거동                                                      |
-| Bead 당 genomic content | $s_0 = L/n$, 예) $L = 10\,\mathrm{Mb}$이면 $s_0 \approx 20\,\mathrm{kb}$ |                                                                                       |
+| Bead 당 genomic content | $s_0 = L/n$, 예) $L = 10\,\mathrm{Mb}$이면 $s_0 \approx 20\,\mathrm{kb}$ | 20kb에 0.34nm(1bp의 길이)를 곱하면 $6.8\mu m$이다.                                              |
 | Binding site fraction  | $f = 0.5$ (main case) binding site와 none-binding site가 1대1            | site는 chain을 따라 **균등 분포(evenly distributed)** 가정                                      |
 | Binding affinity       | $E_X = 2\,k_B T$ (모든 site 고정)                                         | 실제 TF 결합 에너지: nonspecific $\approx 2\,k_B T$ ~ specific $\approx 20\,k_B T$           |
 | Binding multiplicity   | 6 → cubic lattice라서!                                                  | CTCF·transcription factory 등 multi-binding organizer 반영. multiplicity $\geq 2$면 유사 패턴 |

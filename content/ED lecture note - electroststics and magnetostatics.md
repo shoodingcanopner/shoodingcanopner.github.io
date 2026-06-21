@@ -8,7 +8,7 @@ tags:
 class: study_lecture
 ---
 > [!attention] 강의 필기
-> 이것은 [[Electrodynamics 그 모든 것]] 강의를 듣고 적은 필기입니다. 
+> 이것은 [[MOCs/Electrodynamics]] 강의를 듣고 적은 필기입니다. 
 > 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
 # 오늘의 핵심
@@ -481,7 +481,7 @@ $$
 
 # 연관 학습 노트
 
-- [[Electrodynamics 그 모든 것]]
+- [[MOCs/Electrodynamics|Electrodynamics]]
 
 # References
 

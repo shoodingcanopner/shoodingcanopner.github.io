@@ -10,7 +10,7 @@ class: study_homework
 ---
 
 > [!info] 과제 풀이
-> [[Electrodynamics 그 모든 것]] 과목의 HW3 풀이 정리
+> [[MOCs/Electrodynamics]] 과목의 HW3 풀이 정리
 > Due: 2026-05-20 6:00 PM
 > Jackson Chapter 9 (3rd edition) 관련 문제
 
