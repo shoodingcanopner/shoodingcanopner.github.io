@@ -26,14 +26,6 @@ class: study_journal
 - Nature Communications (2025) 16:10814
 - Local PDF: [[Coherent_X-rays_reveal_anomalous_molecular_diffusion_and_cage_effects_in_crowded_protein_solutions.pdf]]
 
-## 이 내용 찾아보고 이렇게 정리해야지
-- colloid theory가 뭐지
-- SAXS의 원리, $q$라고 적히는 momentum transfer의 의미
-- 발표 마자막에, ferritin이 철을 가지고 있기 때문에 이런 방법이 통하는 것이라고 반전 주기. 일반적인 단백질에는 통하지 않을 방법. 
-- 관측량을 바탕으로 물리량을 찾아내는 변환식, 단계별로
-- '$\delta \gamma$-theory'가 뭐지
-- Crowded라고 하여 세포질 내 condition을 재현한 줄 알았는데 아님
-
 ## 주요 내용 요약
 
 - **연구 질문**: crowded 환경에서 hydrodynamic interaction과 direct interaction이 long-time protein diffusion에 어떻게 영향을 주는가? cage effect의 시간/길이 스케일 signature는 무엇인가?
@@ -45,10 +37,30 @@ class: study_journal
 - **Cage effect**: double exponential의 amplitude 분석에서 $A_0 = 89\%$의 단백질이 cage 형성에 참여, 평균 변위 $\delta = 1.0$ nm (단백질 반지름의 일부) → 갇힌 상태에서 rattling.
 - **결론**: long-time diffusion이 hydrodynamic + direct interaction 모두에 지배됨. cage effect가 crowded 환경에서의 reduced mobility를 분자 수준에서 설명.
 
+### Hydrodynamic interaction vs. Direct interaction (핵심 구분)
+
+이 논문 논리의 뼈대가 되는 두 상호작용의 구분:
+
+- **Hydrodynamic interaction**: 단백질이 움직이며 용매(물)에 만든 **flow field**를 매개로 이웃에게 전달되는 간접적 영향. 분자끼리 닿지 않아도 작용하며 **장거리(long-range)**. (수영장에서 한 사람의 물결이 멀리 떠 있는 사람을 출렁이게 하는 것과 같음)
+- **Direct interaction**: 용매를 거치지 않고 분자 표면끼리 직접 느끼는 힘. **electrostatic**(표면 전하 반발/인력), **van der Waals** 같은 nonspecific attraction, **excluded volume**(입체 배제, cage effect의 핵심 원인). 보통 **단거리(short-range)**.
+
+**왜 중요한가 — 두 상호작용의 분리(disentangle) 전략:**
+
+| | Short-time ($t \ll \tau_i$) | Long-time ($t \gg \tau_i$) |
+|---|---|---|
+| 지배 요인 | Hydrodynamic만 | Hydrodynamic + Direct 둘 다 |
+| 이론 | δγ-theory로 예측 가능 | 이론적 예측 없음 (research gap) |
+
+Short-time에는 hydrodynamic만 작동하므로 δγ-theory로 모델링하면 hydrodynamic 기여를 따로 떼어낼 수 있고, long-time에서 추가로 나타나는 둔화는 direct interaction 탓으로 귀속시킬 수 있다. Fig. 6c에서 $D^{short}(q)$와 $D^{long}(q)$가 **같은 $q$-의존성(같은 lineshape)을 갖고 scaling factor만 다르다**는 발견이 이 전략을 뒷받침 → hydrodynamic force는 두 diffusion에 똑같이 작용하고, direct interaction은 $q$에 무관하게 long-time diffusion을 전체적으로 끌어내리기만 한다.
+
+> [!note] crowding effect의 주체
+> 이 실험에서 crowding을 만드는 입자와 관찰 대상은 **모두 ferritin** (monodisperse 단일 성분 시스템). 즉 "나 같은 이웃에게 둘러싸여 갇히는" 상황으로, cage를 만드는 주체도 갇히는 주체도 ferritin이다. 단, 이는 의도적 단순화이며 실제 세포질의 crowding은 다양한 분자(다른 단백질, polymer, 다당류 등)에 의한 것. 논문 Future work에서 크기가 다른 crowder를 도입해 polydispersity 효과를 보겠다고 언급한다.
+
+
 ### SAXS란 뭔가?
 개념 노트 참고 [[SAXS (Small-Angle X-ray Scattering)]]
 
-### XPCS란 뭔가?
+### XPCS(X-ray Photon Correlation Spectroscopy)란 뭔가?
 ![[Pasted image 20260622094029.png]]
 SAXS는 정적인 구조($S(q)$, $P(r)$)를 본다. 같은 빔으로 시간 상관 $g_2(q,t)$를 보면 dynamics가 나오고, 그게 **XPCS**다. 두 기법이 같은 $I(q)$ 측정에서 출발한다는 점이 자연스러운 다리.
 
@@ -173,7 +185,7 @@ $$
 $$
 **MSD의 비선형성이 $f$의 비지수성으로, 그리고 $g_2$ 곡선의 모양으로 직접 번역**된다. 이게 "시뮬레이션(MSD) ↔ 실험($g_2$)" 다리의 수학적 근거. 논문 Fig. 6이 $\ln[f(q,t)]$의 직선성을 따진 이유 — $\ln f = -D_\alpha q^2 t^{\alpha_{\text{MSD}}}$이니 지수가 1이면 직선, 아니면 휘다.
 
-#### KWW exponent와 MSD exponent의 관계 (주의!)
+#### KWW exponent와 MSD exponent의 관계
 
 둘이 **일반적으로 같지 않다.** 두 종류의 "anomalous"가 있기 때문.
 
@@ -224,27 +236,68 @@ $$
 > [!warning] Gaussian 가정의 한계
 > "$\ln f = -q^2\langle\Delta r^2\rangle/6$" 관계는 변위가 Gaussian일 때만 정확. cage에서 탈출하는 hopping 처럼 변위 분포가 non-Gaussian이면(non-Gaussian parameter $\neq0$) $f$에 고차 모멘트(kurtosis 등)도 섞인다. ferritin의 cage 영역이 엄밀히 이 보정이 필요한 구간 — 그래서 double exponential 같은 더 정교한 모델로 간 것.
 
-### Hydrodynamic interaction vs. Direct interaction (핵심 구분)
 
-이 논문 논리의 뼈대가 되는 두 상호작용의 구분:
 
-- **Hydrodynamic interaction**: 단백질이 움직이며 용매(물)에 만든 **흐름장(flow field)**을 매개로 이웃에게 전달되는 간접적 영향. 분자끼리 닿지 않아도 작용하며 **장거리(long-range)**. (수영장에서 한 사람의 물결이 멀리 떠 있는 사람을 출렁이게 하는 것과 같음)
-- **Direct interaction**: 용매를 거치지 않고 분자 표면끼리 직접 느끼는 힘. **electrostatic**(표면 전하 반발/인력), **van der Waals** 같은 nonspecific attraction, **excluded volume**(입체 배제, cage effect의 핵심 원인). 보통 **단거리(short-range)**.
+### δγ-theory란 무엇인가
 
-**왜 중요한가 — 두 상호작용의 분리(disentangle) 전략:**
+**한 줄 정의**: 농축된 colloid 현탁액에서 입자들 사이의 **many-body hydrodynamic interaction**을 계산하는 이론. Beenakker & Mazur (1980년대, ref. 42, 43)가 개발. 목표는 hydrodynamic function $H(q)$를 structure factor $S(q)$로부터 이론적으로 예측하는 것.
 
-| | Short-time ($t \ll \tau_i$) | Long-time ($t \gg \tau_i$) |
-|---|---|---|
-| 지배 요인 | Hydrodynamic만 | Hydrodynamic + Direct 둘 다 |
-| 이론 | δγ-theory로 예측 가능 | 이론적 예측 없음 (research gap) |
+**풀려는 문제 — many-body 얽힘**: 입자 A가 만든 흐름이 B를 밀고, B가 다시 흐름을 만들어 C를 밀고, C의 흐름이 다시 A로 되돌아오고... 농축되면 모든 입자가 용매를 통해 동시에 얽힌다. 이 무한 연쇄를 정면으로 더하면 발산하는 악명 높은 문제.
 
-Short-time에는 hydrodynamic만 작동하므로 δγ-theory로 모델링하면 hydrodynamic 기여를 따로 떼어낼 수 있고, long-time에서 추가로 나타나는 둔화는 direct interaction 탓으로 귀속시킬 수 있다. Fig. 6c에서 $D^{short}(q)$와 $D^{long}(q)$가 **같은 $q$-의존성(같은 lineshape)을 갖고 scaling factor만 다르다**는 발견이 이 전략을 뒷받침 → hydrodynamic force는 두 diffusion에 똑같이 작용하고, direct interaction은 $q$에 무관하게 long-time diffusion을 전체적으로 끌어내리기만 한다.
+**$\delta\gamma$의 의미 — 요동에 대한 전개**:
+- **$\gamma$**: 평균장(mean-field) 수준의 hydrodynamic 응답 커널 (흐름장이 어떻게 전파되는가의 기본항).
+- **$\delta$**: 그 위에 얹히는 **요동(fluctuation) 보정**. 입자 배치가 균일하지 않고 흔들리는 정도, 즉 $\delta\gamma$ = "$\gamma$의 요동분".
 
-> [!note] crowding effect의 주체
-> 이 실험에서 crowding을 만드는 입자와 관찰 대상은 **모두 ferritin** (monodisperse 단일 성분 시스템). 즉 "나 같은 이웃에게 둘러싸여 갇히는" 상황으로, cage를 만드는 주체도 갇히는 주체도 ferritin이다. 단, 이는 의도적 단순화이며 실제 세포질의 crowding은 다양한 분자(다른 단백질, polymer, 다당류 등)에 의한 것. 논문 Future work에서 크기가 다른 crowder를 도입해 polydispersity 효과를 보겠다고 언급한다.
+즉 직역하면 "hydrodynamic 응답 커널의 요동을 다루는 이론". 정면으로 풀면 발산하는 many-body 합을 요동 차수별로 재배열(resummation)해 **수렴하는 형태로 만든다** (ref. 42 제목의 "resummation of many-body hydrodynamic interactions").
 
-> [!warning] TBIO/polymer 관점과의 대비
-> 우리 SBS/polymer 관점에서 주로 다루는 건 chain의 **connectivity**와 **binder-mediated interaction**이다. 반면 이 논문의 hydrodynamic interaction은 LAMMPS의 기본 Brownian/Langevin (implicit solvent) 세팅에서는 보통 명시적으로 들어가지 않는다(흐름장 부재). 발표 시 짚을 만한 대조점.
+**출력 — $S(q)$를 넣으면 $H(q)$가 나온다**: 논문 Methods 식 (14)가 그 계산식. 입력은 오직 $S(q)$이고, 그 배치가 만드는 집단적 hydrodynamic 흐름의 효과가 적분으로 나온다.
+
+> [!important] 핵심 제약 — short-time limit에서만 성립
+> δγ-theory는 hydrodynamic interaction만 다루고 direct interaction(전기적 반발, excluded volume 등)은 안 들어간다. 그래서 short-time limit에서만 엄밀. 이게 "short = hydrodynamic만, long = hydrodynamic + direct" 구분과 맞물린다.
+
+**이 논문에서의 역할**: "순수 hydrodynamic만 있었다면 이래야 한다"는 **기준선(baseline)**. 실험 $D(q)S(q)/D_0$에 **scaling factor**를 곱해 맞추는데, lineshape($q$-의존성)는 δγ가 정확히 맞히고 전체 크기만 안 맞아서, 그 scaling이 곳 direct interaction의 기여를 정량화.
+
+> [!note] 왜 colloid 이론이 단백질에 통하나
+> δγ-theory는 원래 단단한 구형 colloid용. ferritin이 거의 완벽한 구형(24 subunit nanocage)이라 colloid처럼 다룰 수 있다는 게 근거. "$I(q)=P(q)S(q)$ 분리가 구형이라 정확히 성립"과 같은 맥락 — ferritin의 구형성이 SAXS 분석과 δγ 모델링 양쪽을 정당화.
+
+### Short / Long diffusion 분리의 논리 사슬 (4~6페이지)
+
+핵심: **측정한 건 $g_2$ 하나인데 어떻게 short/long 두 성분을 분리했는가**. "아는 것(hydrodynamic)을 빼서 모르는 것(direct/long)을 드러낸다"는 빼기의 논리.
+
+**1단계 (4p) — 단순 Brownian이 깨진다**: stretched fit에서 $\Gamma(q)$ → $D(q)=\Gamma(q)/q^2$. 단순 Brownian이면 $q$-무관 상수여야 하는데, 실제는 $q_0$에서 **최소** (De Gennes narrowing). 단순 diffusion이 아니라는 첫 신호 (단, 아직 short/long 분리의 직접 증거는 아니고 collective dynamics의 $q$-의존성일 뿐).
+
+**2단계 (4~5p) — $H(q)$ 절편이 너무 가파르게 떨어진다 (첫 핵심 증거)**: 큰 $q$ 극한에서 $H(q\to\infty) = D_s/D_0$ (self-diffusion 척도). 이걸 $\phi_h$에 대해 그렸더니(Fig. 5b):
+- 순수 **short-time 이론** (식 4, $D_s^{short}/D_0 = 1 - 1.73\phi_h + 0.88\phi_h^2$) 예측선보다
+- 실측값이 **훨씬 더 가파르게** 떨어짐
+
+이 **초과 둔화(excess slowdown)** 가 long-time 성분의 존재 증거. long-time 모델(식 5)로 정량화:
+$$
+\frac{D_s^{long}}{D_0} = \frac{D_s^{short}}{D_0}\cdot\frac{D_s^{direct}}{D_0}, \qquad \frac{D_s^{direct}}{D_0} = \frac{1}{1+2\phi_h\chi}
+\tag{15}
+$$
+$\chi$ = pair-correlation의 contact value (hard-sphere 근사, excluded volume). 이 long-time 모델이 측정값을 훨씬 잘 맞춤 → **$D_s/D_0$의 가파른 감소는 long-time 성분(direct interaction이 만듦) 때문**.
+
+**3단계 (6p) — $g_2$를 직접 두 개로 쪼개다**: $\ln[f(q,t)]$를 그리면 저농도는 직선, 고농도(730 mg/ml)는 **5 μs 이후 명확히 다른 기울기** → 두 시간 스케일 공존. double exponential(식 7)로 fit:
+$$
+g_2(q,t) = 1 + \beta(q)\{[1-A(q)]e^{-\Gamma_1 t} + A(q)e^{-\Gamma_2 t}\}^2
+\tag{16}
+$$
+$\Gamma_1$(빠름) → $D^{short}(q)$, $\Gamma_2$(느림) → $D^{long}(q)$.
+
+**4단계 — 두 성분이 진짜 short/long인지 검증** (수학적 인공물이 아닌지):
+- **검증 A — aggregate 가설 배제**: 느린 성분이 응집체 때문이라면 단백질보다 11배 큰 입자가 있어야 하고, $S(q)$ 낮은 $q$에서 peak이 보여야 하는데 — 안 보임. 응집체 아님.
+- **검증 B — interaction time 일치**: $D^{short}$에서 $\tau_i = R_h^2/(6D_s^{short}) = 3.77$ μs 계산 → 이게 두 지수함수의 **cross-over 시간과 일치**. interaction time은 정의상 short/long의 경계이므로, 이 일치가 "진짜 short/long"이라는 강력한 물증.
+
+**5단계 — 마지막 못: 두 성분이 같은 $q$-모양**: $D^{short}(q)$와 $D^{long}(q)$가 lineshape 동일, scaling factor만 다름 (Fig. 6c, 비율 0.09). → hydrodynamic force는 두 diffusion에 **똑같이** 작용(같은 $q$-모양), direct interaction은 $q$-무관하게 long-time만 **전체적으로 끌어내림**(scaling 차이).
+
+**전체 사슬 요약**:
+$$
+\text{De Gennes (단순 X)} \to H(q)\ \text{절편 과도 감소 (long 존재)} \to \text{double exp 분해} \to \tau_i\ \text{일치 (진짜 short/long)} \to \text{같은 q-모양 (HI 공통, direct는 long만)}
+\tag{17}
+$$
+
+> [!note] 발표 팁
+> 이 5단계를 그대로 슬라이드 흐름으로. 특히 4단계(aggregate 배제 + $\tau_i$ 일치)는 "그냥 fit한 게 아니라 물리적으로 검증했다"는 점에서 청중 질문을 미리 막아주는 부분.
 
 
 ### Ferritin은 무슨 단백질인가
@@ -252,6 +305,32 @@ Short-time에는 hydrodynamic만 작동하므로 δγ-theory로 모델링하면 
 ![[Pasted image 20260621213028.png]]
 
 이미지 출처: https://www.authorea.com/doi/full/10.22541/au.174660859.91442623/v1
+
+Subunit 24개가 합쳐진, 10nm order 크기의 속이 빈 공모양.
+안쪽 cavity에 철 원자를 넣어서 운반한다. 
+
+
+### Ferritin이 아니었으면 이런 실험 기법을 쓰지 못 한다
+
+#### 핵심: 철의 역할은 scattering contrast
+
+X-ray는 **전자 밀도(electron density)**와 상호작용한다. 산란 강도는 단백질과 용매 사이의 **electron density 차이(scattering contrast $\Delta\rho$)의 제곱**에 비례:
+
+$$
+I(q) \propto c\,\Delta\rho^2\,P(q)\,S(q)
+$$
+
+- **철(Fe, $Z=26$)**은 전자가 많아 X-ray를 강하게 산란한다. Ferritin은 속이 빈 nanocage 안에 **iron-rich core**를 품어, 이 core가 주변 물보다 electron density가 압도적으로 높다.
+- 증거: dilute SAXS에서 측정한 반경 $R_s \approx 4.0$ nm가 단백질 껍질 전체가 아니라 **iron core 크기**와 일치 → 신호가 사실상 iron core에서 나온다.
+
+#### 일반 단백질이라면 무너지는 것들
+
+일반 단백질은 주로 C, N, O, H 등 가벼운 원자로 구성 → electron density가 물과 크게 다르지 않음 → **$\Delta\rho$가 작고 $\Delta\rho^2$로 신호가 깎인다.** 연쇄 문제:
+
+1. **신호 약함 (SNR 붕괴)**: 산란 광자가 적으면 speckle를 또렷이 못 잡고, $g_2$가 노이즈에 묻혀 $\Gamma$를 신뢰성 있게 추출 불가.
+2. **Radiation damage 경쟁에서 패배 (치명적)**: XPCS는 손상 누적 전에 신호를 따내야 하는 시간 경쟁("correlation before aggregation"). Iron core 덕에 ferritin은 적은 노출로 강한 신호 확보. 신호 약한 일반 단백질은 통계를 쌓으려 노출을 늘리는 순간 타버림 → **"신호 모으려면 태워야 하고, 태우면 신호가 망가지는"** 딜레마.
+3. **Monodispersity/안정성**: ferritin은 24-subunit의 견고하고 균일한 nanocage라 $S(q)$ 해석이 깨끗. 일반 단백질은 모양 다양·응집·변성으로 해석이 지저분해질 수 있음.
+
 
 ## Questions & Insights
 
@@ -267,8 +346,3 @@ Short-time에는 hydrodynamic만 작동하므로 δγ-theory로 모델링하면 
 
 ## 더 읽어보고 싶은 레퍼런스
 
-이 논문의 레퍼런스 중에서 읽어보고 싶은 것을 링크. 
-DOI를 적어도 좋고, 'academic_journal' class의 다른 노트를 연결하면 더 좋다. 
-
-- Source 1
-- Source 2

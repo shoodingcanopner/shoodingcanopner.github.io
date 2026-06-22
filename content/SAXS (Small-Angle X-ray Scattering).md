@@ -110,7 +110,7 @@ $g(r)$은 **pair correlation function**, "내 위치에서 거리 $r$에 다른 
 > [!warning] 분리가 깨지는 경우
 > 곱 분리는 **위치와 방향이 독립**일 때만 성립한다. 비구형 분자가 서로 정렬되거나(orientational correlation), 농도가 극단적으로 높아 위치-방향이 얽히면 단순 곱이 깨진다. 구형에 가까운 **ferritin**이 이상적 모델인 이유 — 방향이라는 게 아예 없어 분리가 정확히 성립한다.
 
-#### SAXS의 structure factor가 XRD(결정)의 structure factor사이 관계
+#### SAXS의 structure factor와 XRD(결정)의 structure factor사이 관계
 같은 뿌리, 다른 극한. 
 결정학에는 unit cell 내 원자 배치를 다루는 crystallographic structure factor $F(\mathbf{q})$와, 
 분자들의 상대 위치를 다루는 liquid-state structure factor $S(q)$가 있다. 
