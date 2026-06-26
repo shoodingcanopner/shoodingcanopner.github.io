@@ -20,6 +20,8 @@ Weekly on Friday 14:30 – 15:30
 
 발표 순서 및 일정: [https://docs.google.com/spreadsheets/d/1cNmxNrQUniC8MljfuktEaN_eGWXYAUYwI38rUeTEhMQ/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1cNmxNrQUniC8MljfuktEaN_eGWXYAUYwI38rUeTEhMQ/edit?usp=sharing)
 
+
+ZOOM link: [https://us06web.zoom.us/j/89302538330?pwd=Hlaax9aKMC6G0g9kBc6kagRfstB2rG.1](https://us06web.zoom.us/j/89302538330?pwd=Hlaax9aKMC6G0g9kBc6kagRfstB2rG.1 "https://us06web.zoom.us/j/89302538330?pwd=Hlaax9aKMC6G0g9kBc6kagRfstB2rG.1")
 # 파일 목록
 
 - [[Elements of information theory_cover.pdf]]

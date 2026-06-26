@@ -24,7 +24,7 @@ class: study
 | $x_i(t)$                   | 미시적으로 본 위치, 미시상태마다 다름 (혹은 그냥 conjugate variable)                           |
 | $\Delta x_i(t)$            | 미시적으로 본 변위, $\Delta x_i(t) = x_i - \langle x_i \rangle_0$                  |
 | $\Delta X_i(t)$            | 미시 변위차의 앙상블 평균, 혹은 거시적 변위, $\Delta X_i(t) = \langle \Delta x_i(t) \rangle$ |
-| $f_i$                      | $x_i$와의 conjugate force, 둘이 곱하면 헤밀토니안의 perturbation term 됨                 |
+| $f_i$                      | $x_i$와의 conjugate force, 둘이 곱하면 해밀토니안의 perturbation term 됨                 |
 | $\langle \cdots \rangle_0$ | 평형 앙상블 평균                                                                  |
 | $\beta$                    | $1/(k_B T)$                                                                |
 | $\tau$                     | 이완 시간 상수                                                                   |
@@ -36,14 +36,14 @@ class: study
 그러면 시간 $t$에서의 시스템 변수 변화는 다음과 같이 주어진다:
 
 $$
-\Delta X_i(t) = \beta f_i \langle \Delta x_i(t) \Delta x_i(0) \rangle_0
+\Delta X_i(t) = \beta f_i \langle \Delta x_i(t) \Delta x_i(0) \rangle_{f=0}
 \tag{17.21}
 $$
 
 여기서:
 - **좌변**: 비평형 상태에서의 거시적 이완 (macroscopic relaxation)
 - **우변**: stationary state에서의 미시적 시간 상관함수 (microscopic time correlation)
-- $\langle \cdots \rangle_0$: 외력이 없는 평형 상태에서의 앙상블 평균
+- $\langle \cdots \rangle_{f=0}$: 외력이 없는 평형 상태에서의 앙상블 평균
 ![[Pasted image 20260130113412.png]]
 ![[Pasted image 20260130113430.png]]
 
