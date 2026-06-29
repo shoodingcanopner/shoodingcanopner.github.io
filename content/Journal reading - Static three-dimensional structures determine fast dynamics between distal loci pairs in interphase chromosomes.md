@@ -288,26 +288,34 @@ Normalized two-point autocorrelation function, G2(t)/G2(0), N-1000의 FG model�
 
 ![[Pasted image 20260629100723.png]]
 ![[Pasted image 20260629101202.png]]
-(A)
+(A) Contect probability map의 실험값(좌측 하단)과 이론값(우측 하단)
+
 ![[Pasted image 20260629100759.png]]
-(B)
-JSD가 뭐지?
+(B) Distribution of pairwise distances for the seven promoter-enhancer
+loci pairs: experimental histograms and HIPPS-DIMES predicted distribution (solid lines). JSD values between model predictions and experimental data are reported.
+
 ![[Pasted image 20260629100733.png]]
-(C)
+(C) Comparison of the mean spatial distances ⟨r⟩ as a function of the genomic distance s between the experimental measurements and the HIPPS-DI MES predictions.
 ![[Pasted image 20260629100809.png]]
 (D) Two-point MSD $M_2(t)$를 이론으로 계산한 결과
 ![[Pasted image 20260629100743.png]]
 (E) $\gamma$를 실험과 이론에서 비교한 결과. 실험은 0.7, 이론은 0.8
 우리 이론이 scaling theory보다 정확하게 맞춘다고 주장장
 ![[Pasted image 20260629100817.png]]
-(F)
+(F) Scatter plot for the relaxation
+time τ versus genomic separation s for all pairs of loci. Power-law
+fit is shown in black line.
+
+
+**Randomly shuffled control.** 
+Pairwise distance를 무작위로 섞으면(첫 off-diagonal만 보존) $\langle r_{ij}\rangle$가 plateau로 가고 $\tau$가 $s$에 무관해짐 — **정적 contact map의 실제 sequence/structure 정보가 빠른 동역학의 원인**임을 직접 증명하는 negative control.
+(b)에서 small $s$에서 나오는 exponent $\nu = 0.6 = 3/5$는 SAW에서 나타나는 trivial한 값. 
 
 ##### Fig. S7
 ![[Pasted image 20260629102518.png]]
 ![[Pasted image 20260629102532.png]]
 ![[Pasted image 20260629102540.png]]
-**Randomly shuffled control.** Pairwise distance를 무작위로 섞으면(첫 off-diagonal만 보존) $\langle r_{ij}\rangle$가 plateau로 가고 $\tau$가 $s$에 무관해짐 — **정적 contact map의 실제 sequence/structure 정보가 빠른 동역학의 원인**임을 직접 증명하는 negative control.
-(b)에서 small $s$에서 나오는 exponent $\nu = 0.6 = 3/5$는 SAW에서 나타나는 trivial한 값. 
+
 
 ### 5. Locus별 relaxation time과 eigenvalue spectrum
 
