@@ -13,6 +13,8 @@ class: study_journal
 ---
 
 # Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes
+![[Pasted image 20260629090825.png]]
+
 ## 읽은 이유
 [[260619 Lab Rotation Presentation (EN)]]의 후속연구를 위해
 
@@ -20,7 +22,9 @@ class: study_journal
 
 Live-cell imaging은 enhancer–promoter(E–P) 같은 chromatin loci 쌍 사이의 dynamics가 예상보다 훨씬 빠르다는 것을 보여줬다. 그런데 같은 세포의 정적(static) Hi-C/Micro-C contact map은 분명히 compact한 구조(fractal globule에 가까운 $\nu \approx 1/3$)를 보인다. **Compact한 구조라면 relaxation도 느려야 하는데, 실제로는 빠르다** — 이것이 Brückner et al. (Science, 2023)이 제기한 **conundrum**이다.
 
-이 논문은 이 conundrum을 "구조와 동역학이 무관하다"가 아니라, **정적 contact map 단 하나만 입력으로 받으면 동역학 전체(relaxation time, MSD, first-passage time)를 정량적으로 예측할 수 있다**는 식으로 해결한다. 방법론은 **HIPPS-DIMES**: maximum entropy principle로 Hi-C contact map에서 3D 구조 ensemble을 만들고, 그 과정에서 나오는 connectivity matrix $\mathbf{K}$를 harmonic spring network의 spring constant로 재해석해 generalized Rouse model처럼 동역학을 푼다. Locus 고유의 fitting parameter는 전혀 없고, **전체 timescale을 정하는 friction coefficient 하나**만 조정한다.
+이 논문은 이 conundrum을 "구조와 동역학이 무관하다"가 아니라, **static contact map 단 하나만 입력으로 받으면 동역학 전체(relaxation time, MSD, first-passage time)를 정량적으로 예측할 수 있다**는 식으로 해결한다. 방법론은 **HIPPS-DIMES**: maximum entropy principle로 Hi-C contact map에서 3D 구조 ensemble을 만들고, 그 과정에서 나오는 connectivity matrix $\mathbf{K}$를 harmonic spring network의 spring constant로 재해석해 generalized Rouse model처럼 동역학을 푼다. Locus 고유의 fitting parameter는 전혀 없고, **전체 timescale을 정하는 friction coefficient 하나**만 조정한다.
+
+주목할 점: 이 논문의 방법론. Analytic하게 풀 수 있다면 시간에 따라 바뀌는 exponents사이 관계식을 구할 수 있지 않을까?
 
 ## Link to PDF and DOI
 
@@ -85,6 +89,18 @@ Brückner et al. (2023)의 *Drosophila* 측정 결과:
 
 ### 2. HIPPS-DIMES 방법론
 
+| 단계                | Notation                              | 이름 / 의미                                                                                                   | 정의식                                                                                                                                                            | 비고                                                                                                                                                            |
+| ----------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 입력 (정적)           | $\langle p_{ij}\rangle$               | **Contact probability**. Locus $i,j$가 contact할 평균 확률(Hi-C/Micro-C 실험에서 직접 측정되는 raw 입력)                    | — (실험 측정값)                                                                                                                                                     | HIPPS 관계 $\langle r_{ij}\rangle=\Lambda\langle p_{ij}\rangle^{-1/\alpha}$ ($\alpha\approx4$)로 거리로 환산됨. **이 $\alpha$는 MSD exponent와는 다른 양**(앞서 다룬 notation 충돌) |
+| 입력 (정적)           | $\langle r_{ij}\rangle$               | **Mean spatial distance**. Locus $i,j$ 사이의 평균 3D 공간 거리                                                    | $\langle r_{ij}\rangle=\Lambda\langle p_{ij}\rangle^{-1/\alpha}$ (식 2)                                                                                         | $P^{\text{MaxEnt}}$를 세우기 위한 제약조건(constraint) 값                                                                                                                |
+| 정적 구조             | $P^{\text{MaxEnt}}(\{\mathbf{r}_i\})$ | 모든 loci 좌표 $\{\mathbf{r}_i\}$에 대한 **maximum-entropy joint distribution**                                  | $P^{\text{MaxEnt}}=\dfrac{1}{Z}\exp\!\Big(-\sum_{i<j}k_{ij}\|\mathbf{r}_i-\mathbf{r}_j\|^2\Big)$ (식 3)                                                         | $Z$는 normalization constant. $\langle r_{ij}\rangle$ 제약을 만족하도록 $k_{ij}$가 결정됨                                                                                  |
+| 정적 구조             | $\mathbf{K}$ (connectivity matrix)    | $P^{\text{MaxEnt}}$의 Lagrange multiplier $k_{ij}$들을 모은 행렬. Harmonic spring network의 spring constant로 재해석됨 | $K_{ij}=k_{ij}\ (i\neq j),\quad K_{ii}=-\sum_{j\neq i}k_{ij}$                                                                                                  | $k_{ij}<0$이면 반발(repulsion) 의미. Iterative scaling algorithm으로 수치적으로 결정. 본 이론의 **핵심 출력물**                                                                       |
+| effective energy  | $H \propto ln(P^{\text{MaxEnt}})$     | $P^{\text{MaxEnt}}$를 **Boltzmann distribution**으로 재해석할 때 쓰는 양                                             | $H=\sum_{i<j}k_{ij}\|\mathbf{r}_i-\mathbf{r}_j\|^2$                                                                                                            | $P^{\text{MaxEnt}}\propto e^{-H}$. 이 재해석이 (i) 정적 구조 ↔ (ii) 동역학(스프링 네트워크)을 잇는 다리                                                                               |
+| 동역학 (locus pair별) | $G_2^{ij}(t)$                         | Locus $i,j$ pair에 특화된 two-point **autocorrelation function**                                              | $G_2^{ij}(t)=\langle\mathbf{r}_{ij}(t)\cdot\mathbf{r}_{ij}(0)\rangle=3\sum_{p=1}^{N-1}(V_{pi}-V_{pj})^2 e^{-t/\tau_p}\Big(-\dfrac{k_BT}{\lambda_p}\Big)$ (식 3) | $\mathbf{K}$의 eigenvalue/eigenvector로 직접 계산됨. Rouse model의 구조와 동일하나 $V$가 nontrivial(수치적으로 구해야 함)                                                              |
+| 동역학 (앙상블 평균)      | $G_2(t)$                              | $G_2^{ij}(t)$를 같은 genomic separation $s$에 대해 평균낸 **앙상블 버전**                                               | $G_2(t)=\langle r^2(s)\rangle-M_2(t)/2$                                                                                                                        | Relaxation time $\tau$의 정의: $G_2(\tau)/G_2(0)=1/e$                                                                                                            |
+| 동역학 (관측량)         | $M_2(t)$                              | **Two-point MSD**. Locus 쌍 사이 거리 벡터의 변화량 제곱                                                               | $M_2(t)=\big\langle\|\mathbf{r}_{ij}(t)-\mathbf{r}_{ij}(0)\|^2\big\rangle = 2\langle r_{ij}^2\rangle-2G_2(t)$                                                  | 실험(Brückner et al.)에서 직접 측정 가능한 양. $t\to\infty$에서 $\langle r_{ij}^2\rangle$로 saturate                                                                         |
+| 동역학 (스펙트럼)        | $\lambda_p,\ V$                       | $\mathbf{K}$의 **eigenvalue**(모드 $p$의 spring 강도)와 **eigenvector**(모드의 공간적 모양)                              | $\mathbf{K}V=\lambda V$                                                                                                                                        | $\tau_p=-\xi/\lambda_p$ (mode relaxation time, $\xi$=friction). $p$=normal mode index, $p=1,\dots,N-1$                                                        |
+
 **Step 1 — 정적 구조 (HIPPS).** Hi-C contact probability $\langle p_{ij}\rangle$를 mean spatial distance로 변환하는 power law:
 
 $$
@@ -103,15 +119,24 @@ $k_{ij}$(Lagrange multiplier)를 iterative scaling으로 풀면 모든 pairwise 
 
 **Step 2 — 동역학 (Rouse-style normal mode).** $k_{ij}$를 harmonic potential $H=\sum_{i<j}k_{ij}\|\mathbf{r}_i-\mathbf{r}_j\|^2$의 spring constant로 재해석. Connectivity matrix $\mathbf{K}$ ($K_{ij}=k_{ij},\ K_{ii}=-\sum_{j\neq i}k_{ij}$)의 eigendecomposition으로 normal mode를 얻고, 각 mode가 독립적인 Ornstein-Uhlenbeck process를 따른다고 가정한다. Mode $p$의 relaxation time은 $\tau_p = -\xi/\lambda_p$ ($\xi$ = friction coefficient, **유일한 adjustable parameter, 전체 timescale만 결정**).
 
-> [!warning] $\mathbf{K}$를 실제 힘으로 읽으면 안 됨
-> 논문이 명시적으로 경고: $k_{ij}$는 Hi-C/imaging 제약을 만족시키기 위한 **effective coupling**일 뿐, large length scale에서 작용하는 literal한 분자 힘이 아니다.
 
-순도 모형(homopolymer)에서는 $\theta=1$로 고정된다(diagonal mobility, hydrodynamic/Zimm coupling 없음을 가정) — 따라서 $\tau \sim s^{2\nu+1}$.
+homopolymer에서는 $\theta=1$로 고정된다(diagonal mobility, hydrodynamic/Zimm coupling 없음을 가정) — 따라서 $\tau \sim s^{2\nu+1}$.
 
 ### 3. Homopolymer 검증 (Rouse / SAW / FG)
 
 해석적 $\langle r_{ij}\rangle = |i-j|^\nu$ ($\nu=1/2, 3/5, 1/3$)를 그대로 입력해 $\mathbf{K}$를 역산하고 $G_2(t)$를 계산 → relaxation time $\tau(s)$가 정확히 $s^2$ (Rouse), $s^{2.2}$ (SAW), $s^{5/3}$ (FG)로 재현됨 (Fig. 1). Self-avoiding polymer의 Brownian dynamics 시뮬레이션(good/poor solvent)에 대해서도 $M_1(t), M_2(t)$를 정확히 재현 — **이론 자체의 self-consistency를 먼저 검증**한 단계.
+##### Fig. S3
+![[Pasted image 20260629092808.png]]
+(b), (c), (d)는 각각 Rouse chain. FG model, and SAW에 대해 numericaly 계산한 connectivity matrices $\mathbf{K}$
+##### Fig. 1
+![[Pasted image 20260629092150.png]]
+(A) Normalized two-point autocorrelation function, G2(t)/G2(0), N-1000의 Rouse model에서.
+(B) 세 종류의 homopolymer의 relaxation time을 이론적으로 계산한 결과. Exponent가 기존에 알려진 값으로 나온다. 
 
+##### Fig. S4
+
+![[Pasted image 20260629092653.png]]
+Normalized two-point autocorrelation function, G2(t)/G2(0), N-1000의 FG model과 SAW에서.
 ### 4. *Drosophila* E–P pair 실험과의 비교
 
 *Drosophila* nc14 embryo의 WT Micro-C contact map(chr 2R)을 HIPPS-DIMES에 입력 → Brückner et al.의 7개 eve E–P pair(58 kb ~ 3.3 Mb 분리) 위치에서 구조·동역학을 모두 예측:
@@ -119,12 +144,41 @@ $k_{ij}$(Lagrange multiplier)를 iterative scaling으로 풀면 모든 pairwise 
 - Contact map, $P(r)$ 분포, $\langle r\rangle$ vs $s$ — 모두 실험과 정량적으로 일치 (JSD 0.05–0.2).
 - Friction coefficient를 fitting해 $l_0=147\,\text{nm}$, $\tau_0\approx3.1\,\text{s}$ 결정 ($\eta\approx0.5\,\text{Pa·s}$로 추정). **이 두 파라미터는 절대 timescale만 정하고 scaling exponent $\gamma$에는 영향을 주지 않음.**
 - 결과: $\tau \sim s^{0.8\pm0.1}$ (HIPPS-DIMES) vs $\tau\sim s^{0.7\pm0.05}$ (실험) — Rouse($\gamma=2$)·FG($\gamma=5/3$)보다 **압도적으로 잘 맞음**.
+##### Fig. 2
 
+![[Pasted image 20260629100723.png]]
+![[Pasted image 20260629101202.png]]
+(A)
+![[Pasted image 20260629100759.png]]
+(B)
+JSD가 뭐지?
+![[Pasted image 20260629100733.png]]
+(C)
+![[Pasted image 20260629100809.png]]
+(D) Two-point MSD $M_2(t)$를 이론으로 계산한 결과
+![[Pasted image 20260629100743.png]]
+(E) $\gamma$를 실험과 이론에서 비교한 결과. 실험은 0.7, 이론은 0.8
+우리 이론이 scaling theory보다 정확하게 맞춘다고 주장장
+![[Pasted image 20260629100817.png]]
+(F)
+
+##### Fig. S7
+![[Pasted image 20260629102518.png]]
+![[Pasted image 20260629102532.png]]
+![[Pasted image 20260629102540.png]]
 **Randomly shuffled control.** Pairwise distance를 무작위로 섞으면(첫 off-diagonal만 보존) $\langle r_{ij}\rangle$가 plateau로 가고 $\tau$가 $s$에 무관해짐 — **정적 contact map의 실제 sequence/structure 정보가 빠른 동역학의 원인**임을 직접 증명하는 negative control.
+(b)에서 small $s$에서 나오는 exponent $\nu = 0.6 = 3/5$는 SAW에서 나타나는 trivial한 값. 
 
 ### 5. Locus별 relaxation time과 eigenvalue spectrum
 
 E–P pair를 넘어 **모든 locus 쌍**에 대해 $\tau_{ij}$를 계산하면 $\tau_{ij} \sim \langle r_{ij}\rangle^{2.7}$ (Rouse 예측 $4$, FG 예측 $5$보다 훨씬 작은 지수) — 평균적 homopolymer 근사(genomic distance만으로 averaging한 effective $r(s)\sim s^{1/4}$)를 적용하면 오히려 $\tau\sim s^{1.1}$, $\tau\sim r^4$로 **다른** 결과가 나옴. 즉 **전체 WT contact map의 heterogeneous 정보를 다 써야만** 빠른 동역학이 재현되고, 평균화된 homopolymer 그림으로는 안 됨.
+
+##### Fig. 3
+![[Pasted image 20260629103006.png]]
+(A)
+![[Pasted image 20260629103024.png]]
+(B)
+
 
 이 빠른 동역학의 메커니즘을 eigenvalue spectrum $|\lambda_p|$로 분석하면 Rouse의 깨끗한 $|\lambda_p|\sim p^2$와 달리 **3개의 서로 다른 scaling regime**이 나타남:
 
@@ -137,12 +191,20 @@ p^{1.5} & p \gtrsim 50
 \end{cases}
 \tag{4}
 $$
-
+$1/\lvert \lambda_p \rvert$는 $N/p$개로 이루어진 segment의 relaxation time과 비례한다.
 작은 $p$(큰 length scale)에서 Rouse의 $p^2$보다 **작은** 지수($p^{1.2}$)를 가지는 것이 곧 큰 스케일에서 chromatin이 Rouse보다 빨리 relax한다는 것의 직접적 원인. End-to-end relaxation time $\tau_{ee}$는 chain length $N$에 대해 $\sim N^{1.03}$로 scaling (Rouse는 $N^2$).
+
+##### Fig. 4
+![[Pasted image 20260629103048.png]]
+(A)
+![[Pasted image 20260629103057.png]]
+(B)
+
 
 ### 6. First-passage time (contact 형성)
 
-Loci가 처음 접촉(threshold $r_c=147\,\text{nm}$)하는 시간 $\tau_c$를 계산하면 $\langle\tau_c\rangle \sim \langle r\rangle^{3.4}$, 실험 trajectory에서 독립적으로 계산한 값과도 잘 맞음. 흥미로운 점은 이 지수($3.4$)가 **Szabo-Schulten-Schulten (SSS) 이론의 예측치 $3$**에 가깝다는 것 — SSS는 원래 Rouse model을 위해 유도됐고 Rouse에는 잘 안 맞는 이론인데, 오히려 **chromatin에는 더 잘 맞는다**는 역설적 결과.
+Loci가 처음 접촉(threshold $r_c=147\,\text{nm}$)하는 시간 $\tau_c$를 two-point relaxation time을 이용해 계산하면 $\langle\tau_c\rangle \sim \langle r\rangle^{3.4}$, 실험 trajectory에서 독립적으로 계산한 값과도 잘 맞음. 
+흥미로운 점은 이 지수($3.4$)가 **Szabo-Schulten-Schulten (SSS) 이론의 예측치 $3$**에 가깝다는 것 — SSS는 원래 Rouse model을 위해 유도됐고 Rouse에는 잘 안 맞는 이론인데, 오히려 **chromatin에는 더 잘 맞는다**는 역설적 결과.
 
 $$
 k = \frac{1}{\tau_d+\tau_c}, \qquad \tau_c \sim \tau_0\,p_c^{-\theta}
@@ -153,9 +215,28 @@ $$
 
 식 (5)는 transcription rate $k$를 E–P contact probability $p_c$의 함수로 쓴 **Hill equation의 동적 analog**(cooperativity parameter $\theta$).
 
+##### Fig. 5
+![[Pasted image 20260629111332.png]]
+(A)
+![[Pasted image 20260629111354.png]]
+(B)
+
 ### 7. Single-locus dynamics와 centrality
 
 단일 locus MSD $M_1(t)\sim t^{0.5}$ (Rouse-like), 그러나 locus별로 $\alpha,D$가 넓게 분포(heterogeneous). **Closeness centrality** $C_i = \sum_{j\neq i}\langle r_{ij}\rangle^{-m}$ ($m=3$)을 정의하면 diffusivity $M_1(t=10^2\,\text{s})$와 **음의 상관** — 주변에 가까운 loci가 많을수록(=local density 높을수록) 더 느리게 움직인다. Total contact connectivity $\sum_j p_{ij}$와도 같은 방향의 anticorrelation.
+
+##### Fig. 6
+![[Pasted image 20260629113333.png]]
+(A) Single-locus MSD M1(t). Each curve corresponds to an individual locus. 
+![[Pasted image 20260629113346.png]]
+(B) Histogram of the fitted diffusion exponent α and diffusion coefficients D. 
+![[Pasted image 20260629113359.png]]
+(C) Locus-specific diffusivity, defined as $M_1(t = 10^2 s)$, versus closeness centrality  $C_i = \sum_{j\neq i}\langle r_{ij}\rangle^{-m}$ ($m=3$)
+
+![[Pasted image 20260629113411.png]]
+(D) Scatter plot of locus-specific diffusivity, defined as $M_1(t) at t = 10^2 s$, versus total contact connectivity as a function of the sum of contact probabilities for each locus i $\sum_j p_{ij}$.
+
+
 
 ### 8. Cohesin depletion (ΔRAD21)의 효과
 
@@ -166,9 +247,11 @@ Human HCT116 imaging data(WT vs ΔRAD21)에 같은 framework 적용:
 - First-passage time: WT에서는 TAD 내부 $\langle\tau_c\rangle\sim s^{0.5}$ + 경계에서 sharp jump였다가, ΔRAD21에서는 전체가 $s^{1.2}$로 **TAD 구분 자체가 사라짐**.
 - Eigenvalue spectrum의 small-$p$ scaling도 $p^{1.2}\to p^{1.5}$로 바뀌고 $p=1,2$ mode 사이 gap이 사라짐 — TAD가 만들던 "두 개의 분리된 영역"이라는 구조적 신호가 spectrum에서도 지워짐.
 
+
+
 ## Questions & Insights
 
-- _(아직 없음 — 논문을 더 깊이 파고들면서 채워갈 섹션)_
+- **Q: $|\lambda_p|\sim p^x$에서 왜 $x$가 작을수록 더 빠른 relaxation을 의미하는가?** 직관과 반대로 $|\lambda_p|$가 작으면 $\tau_p=-\xi/\lambda_p$는 커지므로 "더 느려야 하는 게 아닌가" 하는 의문이 생길 수 있다. 핵심은 $p$ 자체가 절대적인 단위가 아니라는 점 — $1/|\lambda_p|$는 길이 $s=N/p$인 chain segment의 relaxation time으로 해석된다. 이를 $s$로 환산하면 $|\lambda_p|\sim p^x=(N/s)^x \Rightarrow \tau(s)\sim s^x$가 되고, 이 $x$는 앞서 다룬 $\gamma$와 같은 역할을 한다. 같은 length scale $s(>1)$에서 비교하면 $x$가 작을수록 $\tau(s)$도 작다(=빠르다). 반면 $p$만 고정하고 $p^x$를 직접 비교하면($N$을 무시) 결론이 뒤집힐 수 있다 — 예를 들어 $p=10,\,N=1000$일 때 $N$을 제대로 포함하면 $|\lambda_p|_{\text{chromatin}}\sim p^{1.2}N^{-1.2}\approx0.0040$이 $|\lambda_p|_{\text{Rouse}}\sim p^2N^{-2}\approx0.0001$보다 오히려 크다(=더 빠르다). 즉 $N$을 함께 고정해야 비교가 성립한다(Fig. 4B의 $\tau_{ee}\sim N^{1.03}$ vs Rouse $N^2$가 바로 이 $s$/$N$-domain 비교의 직접적 증거).
 
 ## Related Concepts
 
