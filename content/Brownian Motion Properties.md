@@ -200,7 +200,7 @@ $$dX_t = -\theta X_t dt + \sigma dB_t$$
 
 ### 3. **분수 브라운 운동**
 허스트 지수 $H ≠ 1/2$를 가진 자기상관이 있는 가우시안 과정
-
+[[Fractional Brownian motion]]
 ##  Reference
 
 [[MOCs/Stochastic Differential Equations 공부하기]]

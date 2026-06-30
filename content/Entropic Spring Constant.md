@@ -82,17 +82,6 @@ Gaussian chain의 탄성은 **엔트로피**에서 온다:
 
 직렬 연결된 스프링의 유효 상수가 $1/N$에 비례하는 것과 일치.
 
-### 수치 예시
-
-ssDNA at room temperature ($T = 300$ K):
-- $l \approx 1.5$ nm (Kuhn length)
-- $N = 1000$ segments
-
-$$
-K_e = \frac{3 \times (1.38 \times 10^{-23}) \times 300}{1000 \times (1.5 \times 10^{-9})^2} \approx 5.5 \times 10^{-6} \text{ N/m}
-$$
-
-이는 매우 부드러운 스프링이다 (비교: 일반 금속 스프링 $\sim 10^2$ N/m).
 
 ## Questions & Insights
 

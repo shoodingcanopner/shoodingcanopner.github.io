@@ -10,6 +10,7 @@ class: study
 ---
 
 # Static Fluctuation-Response Theorem
+FRT
 
 ## Overview
 

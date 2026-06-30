@@ -104,12 +104,11 @@ $$
 P(\mathbf{R}) = \left( \frac{3}{2\pi Nl^2} \right)^{3/2} \exp\left( -\frac{3\mathbf{R}^2}{2Nl^2} \right)
 \tag{6}
 $$
-왜 exp안에 3이 들어가 있지! 그야 3차원이라서 그런 거겠지. 그런데 그게 왜?
-x, y, z로 나누어 보면 명확해진다. 시스템이 isotropic하므로 
+시스템이 isotropic하므로, $x, y, z$에서 물리가 다 같아야 한다. 
 
 $$\langle \Delta x^2 \rangle = \langle \Delta y^2 \rangle = \langle \Delta z^2 \rangle = \frac{\langle \Delta R^2 \rangle}{3}$$
 $$\exp\left( -\frac{3\mathbf{R}^2}{2\langle \Delta R^2 \rangle} \right) = \exp\left( -\frac{3(x^2 + y^2 + z^2)}{2\langle \Delta R^2 \rangle} \right)$$
-이 뒤는 눈치껐 알겠지!! 각각 x y z 에 대한 분포의 곱으로 나타내면 된다. 
+각각 x y z 에 대한 분포의 곱으로 나타내면 된다. 
 
 ### 자유에너지와 엔트로피
 

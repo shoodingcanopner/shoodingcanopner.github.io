@@ -31,29 +31,22 @@ $$P(x,0) = \delta(x) \tag{2}$$
 ## 3. 푸리에 변환을 이용한 풀이
 
 ### 3.1 푸리에 변환 정의
-
 $P(x,t)$의 푸리에 변환을 $\tilde{P}(k,t)$라 정의:
 
 $$\tilde{P}(k,t) = \int_{-\infty}^{\infty} P(x,t) e^{-ikx} dx$$
 
 ### 3.2 푸리에 공간에서의 확산방정식
-
-확산방정식을 푸리에 변환하면:
+확산방정식을 푸리에 변환하면, $x$ 2차 미분이 $-k^2$가 된다. 
 
 $$\frac{\partial \tilde{P}(k,t)}{\partial t} = -Dk^2 \tilde{P}(k,t) \tag{3}$$
-
 ### 3.3 푸리에 공간에서의 해
-
 식 (3)은 1차 선형 미분방정식이므로:
 
 $$\tilde{P}(k,t) = \tilde{P}(k,0) e^{-Dk^2t} \tag{4}$$
 
 초기조건 $P(x,0) = \delta(x)$의 푸리에 변환:
-
 $$\tilde{P}(k,0) = \int_{-\infty}^{\infty} \delta(x) e^{-ikx} dx = 1$$
-
 따라서:
-
 $$\tilde{P}(k,t) = e^{-Dk^2t} \tag{5}$$
 
 ## 4. 역푸리에 변환
@@ -87,28 +80,23 @@ $$P(x,t) = \frac{e^{-x^2/(4Dt)}}{2\pi} \cdot \frac{\sqrt{\pi}}{\sqrt{Dt}} = \fra
 확산방정식의 해가 정확히 **가우시안 분포**입니다:
 
 $$P(x,t) = \frac{1}{\sqrt{4\pi Dt}} \exp\left(-\frac{x^2}{4Dt}\right) \tag{7}$$
-
 ### 물리적 의미
 
 - **평균**: $\langle x \rangle = 0$ (원점 중심)
 - **분산**: $\langle x^2 \rangle = 2Dt$ (시간에 비례해서 퍼짐)
 - **표준편차**: $\sigma = \sqrt{2Dt}$
 
-## 물리학적 중요성
-
-이 결과는 **아인슈타인의 브라운 운동 이론(1905)**의 핵심입니다:
-
-1. 미시적으로는 분자들의 개별적 충돌 (이항분포적 과정)
-2. 거시적으로는 연속적인 확산 (가우시안 분포)
-
-이것이 바로 **브라운 운동하는 입자의 위치분포가 가우시안인 수학적 이유**입니다.
+### In the case of 3D diffusion
+$$ 
+P(\vec{r},t) = P(x,t)P(y,t)P(z,t) = \frac{1}{(4\pi Dt)^{3/2}} \exp\left(-\frac{r^2}{4Dt}\right) \tag{8}
+$$
+$x, y, z$각각이 식(7)의 분포를 가진다. 분산은 $\langle r^2 \rangle = 6Dt$가 나온다. 
 
 ## 연관 개념
 
-- [[중심극한정리]]
-- [[브라운 운동]]
-- [[Wick Rotation]]
-- [[양자 조화진동자]]
+- [[Central Limit Theorem]]
+- [[Brownian Motion Properties]]
+- [[Diffusion Equation Derivation from Random Walks]]
 
 ---
 

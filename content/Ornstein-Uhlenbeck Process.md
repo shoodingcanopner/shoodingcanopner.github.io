@@ -31,14 +31,16 @@ Ornstein-Uhlenbeck (OU) process는 **mean-reverting stochastic process**이다. 
 
 ### 두 가지 형태
 
-**Velocity OU process** (식 13.64, F=0 경우):
+**Velocity OU process** (식 13.64, F=0 경우) 이것은 Brownian particle의 Langevin equation:
 
 $$
 M\frac{dv}{dt} = -\zeta v + f_R(t)
 \tag{1}
 $$
+식 전체에 평균을 취하면 $M\frac{d\langle v\rangle}{dt} = -\zeta \langle v \rangle + \langle f_R(t) \rangle =  -\zeta \langle v \rangle$, 
+간단한 미방을 풀면 $\langle v \rangle = v_0 e^{t/\tau_p}$
 
-$v$가 평균 0으로 회귀하며, 완화 시간은 $\tau_p = M/\zeta$이다.
+$v$가 평균 0으로 회귀하며, relaxation time은 $\tau_p = M/\zeta$이다.
 
 **Position OU process** (식 13.107, overdamped + harmonic):
 
@@ -47,7 +49,7 @@ $$
 \tag{2}
 $$
 
-$x$가 평균 0으로 회귀하며, 완화 시간은 $\tau = \zeta/k$이다.
+$x$가 평균 0으로 회귀하며, relaxation time은 $\tau = \zeta/k$이다.
 
 두 방정식은 수학적으로 동일한 구조를 가지므로, velocity OU의 결과를 치환하여 position OU에 적용할 수 있다 ($v \to x$, $M \to \zeta$, $\tau_p \to \tau$).
 

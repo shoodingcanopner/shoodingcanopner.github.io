@@ -61,11 +61,6 @@ class: study_subject
 ## 공부하고 노트 쓸 내용
 
 ### 13 Brownian motion 
-![[Pasted image 20260113140026.png]]
-NP(r,t)가 무엇에 대한 notation인가?
-
-![[Pasted image 20260113140116.png]]
-Smoluchoski equation, 확산방정식에 확산뿐만 아니라 외력에 의한 convection 까지 포함된 방정식, 간단하게 개념 노트 만들기, 식 12, 13
 
 
 Einstein relation 유도 방법
@@ -225,3 +220,4 @@ ideal chain을 연속체로 볼 수 있다.
 ## Chapter 13: Brownian Motions
 
 - [[Ornstein-Uhlenbeck Process]]
+- [[Smoluchowski Equation]]

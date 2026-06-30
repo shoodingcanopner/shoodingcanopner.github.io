@@ -38,13 +38,16 @@ $$\frac{\partial \rho}{\partial t} = D\nabla^2 \rho = D \frac{\partial^2 \rho}{\
 #### 1단계: 기본 가정
 각 시간 단계 $\Delta t$에서 입자의 위치 변화:
 $$x(t + \Delta t) = x(t) + \ell(t) \tag{2}$$
-
+즉 $\ell(t)$는 $\Delta t$동안의 이동 거리, 스텝을 의미. 
 스텝 $\ell(t)$의 확률 분포 $\chi(\ell)$는 다음 조건을 만족:
-첫째는 확률 밀도 분포가 정규화되었다는 의미. 이건 당연히 지켜야 한다.
-둘째는 스텝 $\ell(t)$ 가 한쪽으로 쏠리지 않았다는 의미. 스텝의 기댓값이 0이라는 의미다.
+
 $$\int \chi(z) dz = 1 \tag{3a}$$
-$$\int z\chi(z) dz = 0 \tag{3b}$$
-$$\int z^2\chi(z) dz = a^2 \tag{3c}$$
+확률 밀도 분포가 정규화되었다는 의미. 이건 당연히 지켜야 한다.
+$$\int z\chi(z) dz = \langle \ell \rangle= 0 \tag{3b}$$
+스텝 $\ell(t)$ 가 한쪽으로 쏠리지 않았다는 의미. 스텝의 기댓값이 0이라는 의미다.
+$$\int z^2\chi(z) dz = \langle 
+\ell^2 \rangle = a^2 \tag{3c}$$
+스텝의 표준편차가 $a$, 이것이 확산의 빠르기를 결정
 
 #### 2단계: 확률 밀도의 시간 진화
 다음 시간 단계에서의 확률 밀도:
@@ -52,17 +55,17 @@ $$\rho(x, t + \Delta t) = \int_{-\infty}^{\infty} \rho(x', t)\chi(x - x') dx' \t
 
 변수 치환 $z = x - x'$을 통해:
 $$\rho(x, t + \Delta t) = \int_{-\infty}^{\infty} \rho(x - z, t)\chi(z) dz \tag{5}$$
-
 #### 3단계: 테일러 전개
-$\rho$가 broad하고 스텝 크기가 변화 스케일에 비해 매우 작다는 가정 하에:
-$$\rho(x, t + \Delta t) \approx \int \left[ \rho(x,t) - z\frac{\partial \rho}{\partial x} + \frac{z^2}{2}\frac{\partial^2 \rho}{\partial x^2} \right] \chi(z) dz \tag{6}$$
+$\rho$가 broad하고 스텝 크기가 변화 스케일에 비해 매우 작다는 가정 하에,
+$\rho(x - z, t)$를 2차까지 테일러 전개
+$$\rho(x, t + \Delta t) \approx \int \left[ \rho(x,t) - z\left.\frac{\partial \rho}{\partial x}\right|_{t}  + \frac{z^2}{2}\left. \frac{\partial^2 \rho}{\partial x^2}\right|_t \right] \chi(z) dz \tag{6}$$
 
 #### 4단계: 적분 계산
 $\chi(z)$의 모멘트 조건들을 이용하여:
 $$\rho(x, t + \Delta t) = \rho(x,t) + \frac{1}{2}\frac{\partial^2 \rho}{\partial x^2} a^2 \tag{7}$$
 
 #### 5단계: 연속 극한
-$\rho$가 천천히 변한다는 가정하에 ($\rho(x, t + \Delta t) - \rho(x,t) \approx (\partial \rho/\partial t) \Delta t$):
+$\rho$가 천천히 변한다는 가정하에, $\rho(x, t + \Delta t)$를 $t$에 대해 테일러 전개 $\rho(x, t + \Delta t) - \rho(x,t) \approx (\partial \rho/\partial t) \Delta t$:
 $$\frac{\partial \rho}{\partial t} = \frac{a^2}{2\Delta t} \frac{\partial^2 \rho}{\partial x^2} \tag{8}$$
 
 ### 확산 계수
