@@ -128,14 +128,12 @@ D = \frac{k_BT}{m\xi} = \frac{k_BT}{\zeta} = \frac{k_BT}{6\pi \eta_s a}
 \tag{2.13}
 $$
 마지막 항 $\frac{k_BT}{6\pi \eta_s a}$이 diffusion coefficient라는 것은 Einstein relation이다.
-> [!note] 시뮬레이션과의 연결
-> LAMMPS 같은 MD 시뮬레이션에서 thermostat(예: Langevin thermostat)을 설정할 때 friction coefficient $\zeta$ (또는 damping time $1/\xi$)와 온도 $T$를 동시에 지정하는데, 그 둘이 독립적으로 자유롭게 고를 수 있는 게 아니라 식 (2.9)의 관계로 묶여 있다는 걸 보여주는 부분이다.
 
 ### 2. Overdamped 극한과 Smoluchowski 영역
 
 Bead가 초기 속도의 "기억"을 잃는 시간 $\tau \approx 1/\xi$ 동안 이동하는 거리는 bead 지름에 비해 극히 작다 (나노미터 크기 bead: $l/a \sim 10^{-2}$, 식 2.14). 즉 **속도 자유도가 거의 즉시 평형화되므로, 우리가 관심 있는 시간척도(configuration이 바뀌는 시간척도)에서는 속도를 적분해서 없애고 위치만 추적할 수 있다.**
 
-이렇게 얻는 것이 overdamped Langevin equation:
+이렇게 얻는 것이 overdamped Langevin equation, 관성항이 없다. :
 
 $$
 \frac{d\mathbf{r}}{dt} = -\frac{1}{\zeta}\nabla\Phi + \nabla D + \mathbf{f}
@@ -177,6 +175,19 @@ $$
 $$
 양 끝 bead ($n=0, N$)는 한쪽 이웃만 있어서 식이 다르다 (식 2.18, 2.20). 
 이 **경계조건의 비대칭성**이 다음 단계인 normal mode 분리에서 mode의 quantization 조건을 결정한다.
+
+### 3-C. Rouse Chain의 Langevin 방정식 - Circular polymer
+
+만약 양 끝, 0번째와 N번째 bead가 연결된 고리 형태의 polymer라면, 
+$$
+\frac{d\mathbf{R}_0}{dt} = -\frac{3k_BT}{\zeta b^2}(2\mathbf{R}_0 - \mathbf{R}_{N} - \mathbf{R}_{1}) + \mathbf{f}_0
+\tag{2.18 - C}
+$$
+$$
+\frac{d\mathbf{R}_N}{dt} = -\frac{3k_BT}{\zeta b^2}(2\mathbf{R}_N - \mathbf{R}_{N-1} - \mathbf{R}_{0}) + \mathbf{f}_N
+\tag{2.20 - C}
+$$
+식 2.19는 동일하다. 
 
 ### 4. Normal Mode 분리 — 경계조건이 만드는 양자화
 
@@ -257,7 +268,64 @@ $$
 
 $p=0$ 모드($\mathbf{X}_0$)는 무게중심(center of mass) $\mathbf{R}_G$ 그 자체이며, 다른 모든 모드($p\geq 1$)는 무게중심을 고정한 채 일어나는 독립적인 진동(vibration)이다. 모드 $\mathbf{X}_p$는 $N/p$개 세그먼트로 이루어진 subchain의 진폭에 대응한다.
 
+### 4-C. Normal Mode 분리 — Circular polymer
+$$
+\frac{d\mathbf{X}}{dt}\cos c = -\frac{3k_BT}{\zeta b^2}\left\{2\cos c - \cos(Na+c) - \cos(a+c)\right\}\mathbf{X}
+\tag{2.24 - C}
+$$
+$$
+\frac{d\mathbf{X}}{dt}\cos(Na+c) = -\frac{3k_BT}{\zeta b^2}\left\{2\cos(Na+c) - \cos((N-1)a+c) - \cos(c)\right\}\mathbf{X}
+\tag{2.26 - C}
+$$
+위가 방정식 2.25와 동일하게 적용되기 위해서는, $2\cos c - \cos(Na+c) - \cos(a+c)$, $2\cos(Na+c) - \cos((N-1)a+c) - \cos(c)$각각이 $2\cos(na+c) - \cos((n-1)a+c) - \cos((n+1)a+c)$에다가 $n$에 각각 0과 $N$을 대입한 것과 같은 결과여야 한다. 이 조건은 아래와 같다. 
+$$
+\cos(-a+c) = \cos (Na+c), \qquad \cos((N+1)a+c) = \cos(c)
+\tag{2.30 - C, 2.31 - C}
+$$
+여기서 결정적인 관찰: **$c$가 어떤 값이든 위 두 조건이 만족된다.** 이건 우연이 아니라 ring의 구조적 특징이다 — periodic system은 monomer index에 대한 회전 대칭($n \to n + \text{const}$)을 가지므로 cosine의 phase가 물리적으로 고정되지 않는다. 그 결과, $a \neq 0$인 각 wavenumber마다 $\cos(an)$과 $\sin(an)$이 **같은 eigenvalue를 갖는 두 개의 독립 mode**가 된다 (2-fold degeneracy). Linear chain에서 $c = a/2$로 phase가 고정되어 mode가 non-degenerate였던 것과 결정적으로 다른 점이다.
+
+주기 조건 $\mathbf{R}_{n+(N+1)} = \mathbf{R}_n$으로부터 wavenumber가 quantize된다:
+$$
+a = \frac{2\pi p}{N+1}, \qquad p = 0, 1, ..., N
+\tag{2.34 - C}
+$$
+
+> [!warning] Cosine만으로는 basis가 불완전하다
+> Degeneracy 때문에 ring의 완전한 mode 전개는 $\cos$과 $\sin$을 **둘 다** 포함해야 한다. $\cos(2\pi pn/(N+1))$만 쓰면 (1) $\sin$ mode가 통째로 빠져 임의의 configuration을 표현할 수 없고 (incomplete), (2) $\cos$은 $p$와 $N+1-p$가 같은 함수라 $p=1,...,N$을 모두 합하면 같은 cosine을 두 번 세게 된다 (redundant). 따라서 아래처럼 **complex exponential**을 쓰는 것이 가장 깔끔하다.
+
+**Complex exponential 전개.** $c$의 자유도(= degeneracy)를 자연스럽게 담기 위해 complex Fourier basis를 쓴다:
+$$
+\mathbf{R}_n(t) = \sum_{p=0}^{N} \mathbf{X}_p(t)\, e^{i\frac{2\pi p}{N+1}n}
+\tag{2.35 - C}
+$$
+역변환:
+$$
+\mathbf{X}_p(t) = \frac{1}{N+1}\sum_{n=0}^{N} \mathbf{R}_n(t)\, e^{-i\frac{2\pi p}{N+1}n}
+\tag{2.37 - C}
+$$
+$\mathbf{R}_n$이 실수이므로 mode는 reality condition $\mathbf{X}_{N+1-p} = \mathbf{X}_p^{*}$를 만족한다 — 즉 $p$와 $N+1-p$가 서로 켤레인 degenerate pair를 이룬다. $p=0$은 여전히 center of mass ($\mathbf{X}_0 = \frac{1}{N+1}\sum_n \mathbf{R}_n$)다.
+
+**Eigenvalue.** $\mathbf{R}_n \propto e^{ian}$을 interior 방정식(2.19)에 넣으면 $2 - e^{-ia} - e^{ia} = 2 - 2\cos a = 4\sin^2(a/2)$이다. Ring에서는 이 관계가 boundary bead를 포함한 모든 bead에 예외 없이 성립하므로 (matching condition 자동 충족), mode 방정식은:
+$$
+\frac{d\mathbf{X}_p}{dt} = -\frac{3k_BT}{\zeta b^2}4\sin^2\left(\frac{p\pi}{N+1}\right)\mathbf{X}_p + \mathbf{F}_p
+\tag{2.38 - C}
+$$
+Linear chain의 $4\sin^2\!\big(\frac{p\pi}{2(N+1)}\big)$과 비교하면 argument가 정확히 2배다. 작은 $p$에서 $\tau_p^{\text{ring}} \approx \tau_p^{\text{linear}}/4$가 되어, **같은 길이의 ring이 linear chain보다 4배 빠르게 완화된다**는 잘 알려진 결과가 나온다.
+
+**Noise.** Random force도 같은 complex basis로 변환한다:
+$$
+\mathbf{F}_p = \frac{1}{N+1}\sum_{n=0}^{N} \mathbf{f}_n\, e^{-i\frac{2\pi p}{N+1}n}
+\tag{2.42 - C}
+$$
+Real-space FDT $\langle \mathbf{f}_n(t)\mathbf{f}_m(t')\rangle = 2D\,\bar{\mathbf{I}}\,\delta_{nm}\delta(t-t')$를 대입하고 $\sum_n e^{-i\frac{2\pi (p-q)n}{N+1}} = (N+1)\delta_{pq}$를 쓰면:
+$$
+\langle \mathbf{F}_p(t)\,\mathbf{F}_q^{*}(t')\rangle = \frac{2D}{N+1}\,\bar{\mathbf{I}}\,\delta_{pq}\,\delta(t-t') \qquad (p, q \geq 1)
+\tag{2.41-2 - C}
+$$
+
 ### 5. Relaxation Time과 평형 진폭
+다시 linear polymer로 돌아온다. 
+
 $\mathbf{X}_0$는 center of mass라는 것을 푸리에변환으로 알 수 있다. 
 $$
 \mathbf{X}_0(t) = \frac{1}{N+1}\sum_{n=0}^N \mathbf{R}_n(t) = \text{Center of mass}
@@ -362,7 +430,7 @@ $$
 
 (prime은 홀수 $p$만 합산을 의미.) 이 식은 실제 polyethylene melt의 MD 시뮬레이션 결과(Padding & Briels 2001, Fig. 2.2)와 entanglement 길이 이하에서 잘 맞는다.
 
-### 7. Segmental MSD — 세 가지 시간 영역
+### 7. Segmental MSD — 세 가지 시간 영역 → 중요
 
 #### 개별 세그먼트의 MSD를 Rouse mode로 분해 (식 2.54)
 
@@ -467,6 +535,7 @@ $$
 ## References
 
 - J.T. Padding, *Theory of Polymer Dynamics*, Chapter 2: The Rouse Model
+- [[[Padding] THEORY OF POLYMER DYNAMICS-part-2.pdf]]
 - [[Polymer Models]] (Rouse Model 섹션, Amitai & Holcman 2017 기반 요약)
 - J.T. Padding and W.J. Briels, *J. Chem. Phys.* 114, 8685 (2001) — MD 시뮬레이션 비교 데이터 (Fig. 2.2, 2.3)
 

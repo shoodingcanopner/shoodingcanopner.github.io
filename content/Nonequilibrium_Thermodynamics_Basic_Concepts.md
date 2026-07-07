@@ -29,7 +29,7 @@ class: study
 - **비평형상태**: ATP 같은 에너지원 때문에 이 균형이 깨짐
   - 순환 흐름(probability flux) 발생
 
-### 3. 요동-소산 정리 (Fluctuation-Dissipation Theorem, FDT) → 따로 노트로 정리해야지 
+### 3. 요동-소산 정리 ([[Fluctuation-Dissipation Theorem]], FDT) → 따로 노트로 정리해야지 
 ![[Pasted image 20260630111925.png]]
 #### 기본 형태
 $$S_x(\omega) = \frac{2k_BT}{\omega}\chi''(\omega)$$

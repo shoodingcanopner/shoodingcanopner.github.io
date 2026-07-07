@@ -55,7 +55,23 @@ V = \frac{1}{\zeta} F(r) = \frac{1}{\zeta}\left.\nabla U\right|_r
 \tag{3}
 $$
 
-많은 생물학적에 의해 이어야 하므로, 이를 대입하면
+### 3. Flux: diffusive + convective
+입자 flux는 두 항의 합이다:
+
+$$
+J_n = -D\nabla n + nV \tag{4}
+$$
+첫 항은 농도 기울기를 따라가는 diffusive current, 둘째 항은 force를 따라가는 convective (drift) current이다.
+
+### 4. 평형 조건에서 Einstein relation 유도
+평형 상태에서는 두 흐름이 정확히 상쇄되어 $J_n = 0$:
+
+$$
+-D\nabla n - \frac{n}{\zeta}\nabla U = 0
+\tag{5}
+$$
+
+평형통계역학에 의해 $n(r) \propto e^{-\beta U(r)}$ 이어야 하므로, 이를 대입하면
 
 $$
 D = \frac{k_BT}{\zeta}

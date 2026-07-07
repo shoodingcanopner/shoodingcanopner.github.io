@@ -99,7 +99,7 @@ $$
 ![[Pasted image 20260625112630.png]]
 
 - Bead가 만드는 회절무늬(diffraction rings) 패턴이 objective focal plane(OFP)과 bead 사이 거리에 따라 달라지는 것을 이용
-- Calibration profile을 미리 만들어두고, 실측 회절무늬를 여기 대조(interpolation)해서 z 위치를 역산 — 정확도 $\sim$10 nm
+- Calibration profile을 미리 만들어두고, 실측 회절무늬를 여기 대조(interpolation)해서 z 위치를 역산 — 정확도 $\sim$ 10 nm
 - Reference bead(표면에 고정)를 같이 측정해서 objective-sample 간 drift를 보정
 
 ### DNA/RNA의 force-torque response

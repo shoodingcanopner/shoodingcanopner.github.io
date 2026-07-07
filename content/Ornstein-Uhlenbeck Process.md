@@ -12,20 +12,24 @@ class: study
 # Ornstein-Uhlenbeck Process
 
 ## Overview
+$$
+\boxed{\quad \zeta\frac{dx}{dt} = -kx + f_R(t) \quad}
+$$
+시간 미분 항, 선형 항, 그리고 Gaussian white noise
 
 Ornstein-Uhlenbeck (OU) process는 **mean-reverting stochastic process**이다. 조화 포텐셜 $U(x) = \frac{1}{2}kx^2$ 하에서 overdamped Brownian motion에 해당하며, 노이즈가 있음에도 불구하고 평균 위치로 돌아오려는 경향을 가진다. Velocity Langevin equation도 같은 수학적 구조를 가지므로 OU process에 속한다.
 
 ## Symbol Table
 
-| Symbol | Meaning |
-|--------|---------|
-| $x$ | Position (or velocity in velocity OU) |
-| $\zeta$ | Friction coefficient |
-| $k$ | Spring (restoring) constant |
-| $\tau$ | Relaxation time $= \zeta/k$ |
-| $f_R(t)$ | Random (thermal) force |
-| $H$ | Noise strength |
-| $\tau_p$ | Momentum relaxation time $= M/\zeta$ |
+| Symbol   | Meaning                               |
+| -------- | ------------------------------------- |
+| $x$      | Position (or velocity in velocity OU) |
+| $\zeta$  | Friction coefficient                  |
+| $k$      | Spring constant                       |
+| $\tau$   | Relaxation time $= \zeta/k$           |
+| $f_R(t)$ | Gaussian white noise                  |
+| $H$      | Noise strength                        |
+| $\tau_p$ | Momentum relaxation time $= M/\zeta$  |
 
 ## Key Points
 

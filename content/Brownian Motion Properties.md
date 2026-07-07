@@ -27,7 +27,7 @@ class: concept
 
 ## 브라운 운동의 정의
 
-**브라운 운동** $\{B_t\}_{t≥0}$는 다음 조건들을 만족하는 확률과정입니다:
+**브라운 운동** $\{B_t\}_{t≥0}$는 다음 조건들을 만족하는 확률과정이다:
 
 ### 1. **연속성 (Continuity)**
 $$P[t \mapsto B_t(ω) \text{ is continuous}] = 1$$
@@ -35,7 +35,7 @@ $$P[t \mapsto B_t(ω) \text{ is continuous}] = 1$$
 
 ### 2. **독립증분 (Independent Increments)**
 $$B_{t_1}, B_{t_2}-B_{t_1}, B_{t_3}-B_{t_2}, \ldots, B_{t_k}-B_{t_{k-1}}$$
-이 **서로 독립**입니다 (단, $0 ≤ t_1 < t_2 < \cdots < t_k$).
+모든 조합의 $t_1, t_2, ..., t_{k}$에 대해 위 값들이 **서로 독립**이다. (단, $0 ≤ t_1 < t_2 < \cdots < t_k$).
 
 **직관적 의미**: 
 - 서로 다른 시간 구간에서의 위치 변화량은 완전히 독립
@@ -47,7 +47,7 @@ $$B_{t_1}, B_{t_2}-B_{t_1}, B_{t_3}-B_{t_2}, \ldots, B_{t_k}-B_{t_{k-1}}$$
 모든 $s < t$에 대해:
 $$B_t - B_s \sim N(0, t-s)$$
 
-즉, 증분이 평균 0, 분산 (t-s)인 정규분포를 따릅니다.
+즉, 증분이 평균 0, 분산 (t-s)인 정규분포를 따른른다.
 이것은 **central limit theorem** 의 결과다
 
 ### 4. **시작점**을 원점으로 둔다
@@ -106,12 +106,12 @@ $$\langle B, B \rangle_t = t$$
 **의미**: $(dB_t)^2 = dt$ (Itô 공식의 기초)
 
 ### 3. **스케일링 성질 (Scaling Property)**
-$c > 0$에 대해:
+$c > 0$에 대해, $B_{ct}$는 $B_{t}$의 운동을 시간에 대해 $c$배 가속한 것. 
 $$\tilde{B}_t = \frac{1}{\sqrt{c}} B_{ct}$$
-도 브라운 운동입니다. 
+이것도 브라운 운동이다. 
 
 공간 축과 시간 축을 scaling 했다.
-시간이 c대 더 흐르면 위치 분포의 분산은 c배로 증가, 표준편차 $\sqrt{c}$ 배가 된다. 
+시간이 $c$배 더 흐르면 위치 분포의 분산은 c배로 증가, 표준편차 $\sqrt{c}$ 배가 된다. 
 그래서 위치 값을 $\sqrt{c}$로 나눈 것이다. 
 
 ### 4. **시간 역전 성질**
@@ -121,40 +121,24 @@ $$\hat{B}_t = B_{T-t} - B_T, \quad 0 ≤ t ≤ T$$
 
 ## 전이확률밀도와 확률측도
 
-### 전이확률밀도 -> 여기 자세히 읽어봐야지지
+### 전이확률밀도
 $$p(t,x,y) = \frac{1}{\sqrt{2\pi t}} \exp\left(-\frac{(x-y)^2}{2t}\right)$$
 
 **의미**: 시점 0에서 $x$에 있던 입자가 시점 $t$에서 $y$ 근처에 있을 확률밀도
 
 ### Kolmogorov 구성
-브라운 운동의 존재는 유한차원 분포들이 **일관성 조건**을 만족함을 보이고, Kolmogorov 확장 정리를 적용하여 증명됩니다.
+브라운 운동의 존재는 유한차원 분포들이 **일관성 조건**을 만족함을 보이고, Kolmogorov 확장 정리를 적용하여 증명된다.
 
 ## n차원 브라운 운동
 
 ### 정의
 $$B_t = (B_t^{(1)}, B_t^{(2)}, \ldots, B_t^{(n)})$$
-여기서 각 $B_t^{(i)}$는 독립인 1차원 브라운 운동입니다.
+여기서 각 $B_t^{(i)}$는 독립인 1차원 브라운 운동이다. 
 
 ### 성질
 - **독립성**: $E[B_t^{(i)} B_t^{(j)}] = 0$ for $i ≠ j$
 - **등방성**: 회전에 대해 불변
 - **증분**: $B_t - B_s \sim N(0, (t-s)I_n)$
-
-## 물리적/직관적 해석
-
-### 1. **분자 운동**
-- Robert Brown이 관찰한 꽃가루의 무작위 움직임
-- 액체 분자들의 충돌에 의한 무작위 보행
-- 중심극한정리의 결과
-
-### 2. **효율적 시장 가설**
-- 주식 가격의 무작위 보행 모델
-- 과거 정보가 미래 예측에 도움 안 됨
-- 독립증분 = 시장의 효율성
-
-### 3. **확산 과정**
-- 열전도, 물질 확산의 수학적 모델
-- 확산방정식 $\frac{\partial u}{\partial t} = \frac{1}{2}\frac{\partial^2 u}{\partial x^2}$의 확률적 해석
 
 ## Itô 적분과의 관계
 
@@ -171,19 +155,20 @@ $$\frac{dB_t}{dt} = W_t \text{ (white noise)}$$
 
 하지만 이는 형식적 표기일 뿐, 실제로는 미분불가능합니다.
 
-## 브라운 운동의 놀라운 성질들
+## 브라운 운동의 성질들
 
 ### 1. **무한 변분 (Infinite Variation)**
 거의 모든 경로에서:
 $$\lim_{\Delta t_j \to 0} \sum_j |B_{t_{j+1}} - B_{t_j}| = ∞$$
 더 자세한 설명: [[Infinite Variation of Brownian Motion]]
 ### 2. **어디서도 미분불가능**
-거의 모든 경로는 모든 점에서 미분불가능합니다.
+거의 모든 경로는 모든 점에서 미분불가능하다. 
 
 ### 3. **법칙의 반복 로그 (Law of Iterated Logarithm)**
 $$\limsup_{t \to ∞} \frac{B_t}{\sqrt{2t \log \log t}} = 1 \text{ a.s.}$$
 
 ### 4. **재귀성 (Recurrence)**
+[[Recurrence of Brownian Motion]]
 - 1차원: $P[\text{origin을 무한히 많이 방문}] = 1$
 - 2차원: $P[\text{origin 근방을 무한히 많이 방문}] = 1$  
 - 3차원 이상: $P[\text{origin에서 영원히 멀어짐}] = 1$
@@ -194,13 +179,13 @@ $$\limsup_{t \to ∞} \frac{B_t}{\sqrt{2t \log \log t}} = 1 \text{ a.s.}$$
 $$dX_t = \mu X_t dt + \sigma X_t dB_t$$
 $$X_t = X_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma B_t\right)$$
 
-### 2. **Ornstein-Uhlenbeck 과정**
+### 2. [[Ornstein-Uhlenbeck Process]]
 $$dX_t = -\theta X_t dt + \sigma dB_t$$
 평균 회귀 성질을 가진 가우시안 과정
 
-### 3. **분수 브라운 운동**
+### 3. [[Fractional Brownian motion]]
 허스트 지수 $H ≠ 1/2$를 가진 자기상관이 있는 가우시안 과정
-[[Fractional Brownian motion]]
+
 ##  Reference
 
 [[MOCs/Stochastic Differential Equations 공부하기]]

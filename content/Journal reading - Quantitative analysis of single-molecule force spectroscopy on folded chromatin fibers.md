@@ -128,8 +128,7 @@ $$
 이 논문을 이해하기 위해 필요한 학습 노트를 연결한다.
 글리아와 논문을 읽으며 새로 공부하고, 작성한 학습노트를 이곳에 자동으로 추가한다.
 
-- [[Worm Like Chain (WLC) model]]
-- [[Statistical mechanics of multistate systems - degeneracy and Boltzmann weighting]]
+- [[Magnetic Tweezers]]
 
 ## 더 읽어보고 싶은 레퍼런스
 

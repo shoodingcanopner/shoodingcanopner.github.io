@@ -84,7 +84,7 @@ DNA segment 또는 DNA-binding protein의 운동을 특징짓는 양들. anomalo
 - 우리 coarse-grained 모델에서 1 bead를 몇 bp로 잡을 것인지, 그리고 그 선택이 MSD scaling exponent 추정에 어떤 bias를 주는지 점검 필요.
 
 ## Related Concepts
-
+- [[Chromatin dynamics]]
 - [[Gaussian Chain (Ideal Chain)]]
 - [[Radius of Gyration of Gaussian Chain]]
 - [[Entropic Spring Constant]]
@@ -97,6 +97,4 @@ DNA segment 또는 DNA-binding protein의 운동을 특징짓는 양들. anomalo
 
 - 사용자가 정리한 DNA 기본 물성 데이터 (geometric size, persistence length)
 
-## Notes from Claude
 
-이 노트는 "측정값/물성 모음집" 성격이라, 앞으로 실제 LAMMPS input을 짜면서 구체적인 환산 숫자(σ in nm, bead당 bp 수, angle stiffness 값 등)가 확정되면 Coarse-graining mapping 섹션을 실제 사용한 값으로 채워나가면 좋겠다. 그렇게 하면 이 노트가 "이론값 → 우리 시뮬레이션에서 실제 쓴 값"을 잇는 다리 역할을 하게 된다.
