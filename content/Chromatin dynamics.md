@@ -48,7 +48,6 @@ $$
 
 ### 저널 리딩 노트 (chromatin dynamics 직접 관련)
 
-
 - [[Journal reading - Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes]] — 정적 Hi-C 구조와 실측 dynamics 사이의 괴리, K-matrix normal mode 접근
 - [[Journal reading - Polymer physics of nuclear organization and function]] — nuclear organization의 polymer physics 개관, MFPT 포함
 - [[Journal reading - Anomalous Diffusion in Fractal Globules]] — fractal globule의 동적 성질(α ≈ 0.4)

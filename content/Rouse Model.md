@@ -160,13 +160,15 @@ $$
 
 ### 3. Rouse Chain의 Langevin 방정식
 
-$N+1$개 bead, $N$개 spring ($k=3k_BT/b^2$)으로 이루어진 chain에서 내부 bead의 운동방정식:
+$N+1$개 bead, $N$개 spring ($k=3k_BT/b^2$)으로 이루어진 chain에서 내부 bead의 운동방정식
+
 $$
 \frac{d\mathbf{R}_0}{dt} = -\frac{3k_BT}{\zeta b^2}(\mathbf{R}_0 - \mathbf{R}_{1}) + \mathbf{f}_0
 \tag{2.18}
 $$
+전체 potential energy  $\frac{3k_BT}{2b^2}\sum_n(\mathbf{R}_n-\mathbf{R}_{n-1})^2$을  $\mathbf{R}_n$으로 미분한 게 아래 식(2.19) 에서 $\nabla\Phi$이다. 
 $$
-\frac{d\mathbf{R}_n}{dt} = -\frac{3k_BT}{\zeta b^2}(2\mathbf{R}_n - \mathbf{R}_{n-1} - \mathbf{R}_{n+1}) + \mathbf{f}_n \qquad  n=1,...,N-1
+\frac{d\mathbf{R}_n}{dt} = -\frac{1}{\zeta}\frac{3k_BT}{ b^2}(2\mathbf{R}_n - \mathbf{R}_{n-1} - \mathbf{R}_{n+1}) + \mathbf{f}_n \qquad  n=1,...,N-1
 \tag{2.19}
 $$
 $$
@@ -194,7 +196,7 @@ $$
 $(3N+3)$개의 결합된 stochastic differential equation을 풀기 위해, ansatz 
 
 $$
-\mathbf{R}_n(t) = \mathbf{X}(t)\cos(an+c) \tag{2.23}
+\mathbf{R}_n(t) = C \mathbf{X}(t)\cos(an+c) \tag{2.23}
 $$
 를 대입한다. 
 
@@ -226,20 +228,26 @@ $$
 Quantization을 대입하면 ansatz는 
 
 $$
-\mathbf{R}_n(t) = \mathbf{X}(t)\cos( \frac{p\pi}{N+1}(n+\frac{1}{2}))
+\mathbf{R}_n(t) = C\mathbf{X}(t)\cos( \frac{p\pi}{N+1}(n+\frac{1}{2}))
 $$
 **핵심 통찰:** Free end 경계조건(양 끝이 한쪽 이웃만 갖는다는 사실)이 정확히 $N+1$개의 독립적인 cosine mode를 허용한다. 이는 고전적인 "고정된 끝(fixed boundary)"의 normal mode(사인 함수, $\sin(p\pi n/N)$ 형태)와 다른 quantization이다 — Rouse chain의 양 끝이 자유롭기 때문에 코사인 형태가 나온다.
 **생각해보기**: 왜 $p$의 최댓값이 $N$인 것인가? $p=N+1$을 대입하는 순간 무슨 일이 일어나는가?
 
-전체 해는 이 mode들의 선형결합:
+전체 해는 이 mode들의 선형결합. 방금 식에서 정규화 상수 $C$를 잘 결정한다. 
+왜 이런지 자세한 내용은 아래 diagonalization에서 다룬다. 
 $$
-\mathbf{R}_n(t) = \mathbf{X}_0 + 2\sum_{p=1}^N \mathbf{X}_p(t) \cos\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
+\mathbf{R}_n(t) = \mathbf{X}_0 + \sqrt{\frac{2}{N+1}}\sum_{p=1}^N \mathbf{X}_p(t) \cos\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
 \tag{2.35}
 $$
 역변환:
 $$
-\mathbf{X}_p(t) = \frac{1}{N+1}\sum_{n=0}^N \mathbf{R}_n(t) \cos\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
+\mathbf{X}_p(t) = \sqrt{\frac{c_p}{N+1}}\sum_{n=0}^N \mathbf{R}_n(t) \cos\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right] \qquad c_0 = 1,\ c_{p\ge1} = 2
 \tag{2.37}
+$$
+Random force도 변환해 준다. 
+$$
+\mathbf{F}_p = \sqrt{\frac{c_p}{N+1}}\sum_{n=0}^{N} \mathbf{f}_n \cos\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right] \qquad c_0 = 1,\ c_{p\ge1} = 2
+\tag{2.42}
 $$
 
 이 변환으로 원래 결합된 방정식들이 완전히 **분리(decouple)** 된다. $\mathbf{X}_p(t)$에 대한 방정식(2.25)을 풀면 된다. 
@@ -253,17 +261,12 @@ $$
 \tag{2.39}
 $$
 $$
-\langle \mathbf{F}_0(t)\mathbf{F}_0(t')\rangle = \frac{2D}{N+1}\bar{\mathbf{I}}\delta(t-t')
+\langle \mathbf{F}_0(t)\mathbf{F}_0(t')\rangle = 2D\bar{\mathbf{I}}\delta(t-t')
 \tag{2.40}
 $$
 $$
-\langle \mathbf{F}_p(t)\mathbf{F}_q(t')\rangle = \frac{D}{N+1}\bar{\mathbf{I}}\delta_{pq}\delta(t-t') \qquad (p+q>0)
+\langle \mathbf{F}_p(t)\mathbf{F}_q(t')\rangle = 2D\bar{\mathbf{I}}\delta_{pq}\delta(t-t') \qquad (p+q>0)
 \tag{2.41}
-$$
-$\mathbf{F}_p$는 $\mathbf{f}_n$을 $n \rightarrow p$로 푸리에변환한 것이다. 
-$$
-\mathbf{F}_p = \frac{1}{N+1}\sum_{n=0}^{N} \mathbf{f}_n \cos\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
-\tag{2.42}
 $$
 
 $p=0$ 모드($\mathbf{X}_0$)는 무게중심(center of mass) $\mathbf{R}_G$ 그 자체이며, 다른 모든 모드($p\geq 1$)는 무게중심을 고정한 채 일어나는 독립적인 진동(vibration)이다. 모드 $\mathbf{X}_p$는 $N/p$개 세그먼트로 이루어진 subchain의 진폭에 대응한다.
@@ -295,12 +298,12 @@ $$
 
 **Complex exponential 전개.** $c$의 자유도(= degeneracy)를 자연스럽게 담기 위해 complex Fourier basis를 쓴다:
 $$
-\mathbf{R}_n(t) = \sum_{p=0}^{N} \mathbf{X}_p(t)\, e^{i\frac{2\pi p}{N+1}n}
+\mathbf{R}_n(t) = \sqrt{\frac{1}{N+1}}\sum_{p=0}^{N} \mathbf{X}_p(t)\, e^{i\frac{2\pi p}{N+1}n}
 \tag{2.35 - C}
 $$
 역변환:
 $$
-\mathbf{X}_p(t) = \frac{1}{N+1}\sum_{n=0}^{N} \mathbf{R}_n(t)\, e^{-i\frac{2\pi p}{N+1}n}
+\mathbf{X}_p(t) = \sqrt{\frac{1}{N+1}}\sum_{n=0}^{N} \mathbf{R}_n(t)\, e^{-i\frac{2\pi p}{N+1}n}
 \tag{2.37 - C}
 $$
 $\mathbf{R}_n$이 실수이므로 mode는 reality condition $\mathbf{X}_{N+1-p} = \mathbf{X}_p^{*}$를 만족한다 — 즉 $p$와 $N+1-p$가 서로 켤레인 degenerate pair를 이룬다. $p=0$은 여전히 center of mass ($\mathbf{X}_0 = \frac{1}{N+1}\sum_n \mathbf{R}_n$)다.
@@ -314,26 +317,29 @@ Linear chain의 $4\sin^2\!\big(\frac{p\pi}{2(N+1)}\big)$과 비교하면 argumen
 
 **Noise.** Random force도 같은 complex basis로 변환한다:
 $$
-\mathbf{F}_p = \frac{1}{N+1}\sum_{n=0}^{N} \mathbf{f}_n\, e^{-i\frac{2\pi p}{N+1}n}
+\mathbf{F}_p = \sqrt{\frac{1}{N+1}}\sum_{n=0}^{N} \mathbf{f}_n\, e^{-i\frac{2\pi p}{N+1}n}
 \tag{2.42 - C}
 $$
 Real-space FDT $\langle \mathbf{f}_n(t)\mathbf{f}_m(t')\rangle = 2D\,\bar{\mathbf{I}}\,\delta_{nm}\delta(t-t')$를 대입하고 $\sum_n e^{-i\frac{2\pi (p-q)n}{N+1}} = (N+1)\delta_{pq}$를 쓰면:
 $$
-\langle \mathbf{F}_p(t)\,\mathbf{F}_q^{*}(t')\rangle = \frac{2D}{N+1}\,\bar{\mathbf{I}}\,\delta_{pq}\,\delta(t-t') \qquad (p, q \geq 1)
+\langle \mathbf{F}_p(t)\,\mathbf{F}_q^{*}(t')\rangle = 2D\,\bar{\mathbf{I}}\,\delta_{pq}\,\delta(t-t') \qquad (p, q \geq 1)
 \tag{2.41-2 - C}
 $$
 
 ### 5. Relaxation Time과 평형 진폭
 다시 linear polymer로 돌아온다. 
 
-$\mathbf{X}_0$는 center of mass라는 것을 푸리에변환으로 알 수 있다. 
+$\mathbf{X}_0$는 center of mass와 비례함을 알 수 있다. 
 $$
-\mathbf{X}_0(t) = \frac{1}{N+1}\sum_{n=0}^N \mathbf{R}_n(t) = \text{Center of mass}
+\mathbf{X}_0(t) = \sqrt{\frac{1}{N+1}}\sum_{n=0}^N \mathbf{R}_n(t) = \sqrt{N+1} \cdot\text{Center of mass}
 \tag{2.37}
 $$
-$\mathbf{F}_0$는 polymer전체에 가해진 합력을 monomer 수로 나눠 평균낸 것이라는 것은 자명하다. 
+$\mathbf{F}_0$는 polymer전체에 가해진 합력과 비례한다는 점은 자명하다. 
 $$
-\mathbf{F}_0(t) = \frac{1}{N+1}\sum_{n=0}^N \mathbf{f}_n(t)
+\mathbf{F}_0(t) = \sqrt{\frac{1}{N+1}}\sum_{n=0}^N \mathbf{f}_n(t)
+$$
+$$
+\langle \mathbf{F}_0(t)\mathbf{F}_0(t')  \rangle =  6D\,\delta(t-t')
 $$
 이를 통해 polymer 전체, center of mass의 diffusion coefficient를 알 수 있다. 
 $p=0$일 때 미분방정식 (2.38)을 풀면, 
@@ -343,15 +349,19 @@ $$
 $$
 단순히 합력을 적분한 뻔한 결과이다. MSD를 구하면
 $$
-\text{MSD}_{cm}(t) = \left\langle (\mathbf{X}_0(t)-\mathbf{X}_0(0))^2\right\rangle = \left\langle \int_0^t d\tau \int_0^t d\tau'\, \mathbf{F}_0(\tau)\cdot\mathbf{F}_0(\tau')\right\rangle = \frac{6D}{N+1}t \equiv 6D_Gt
+\text{MSD}_{cm}(t) = \frac{1}{N+1}\left\langle (\mathbf{X}_0(t)-\mathbf{X}_0(0))^2\right\rangle = \frac{1}{N+1}\left\langle \int_0^t d\tau \int_0^t d\tau'\, \mathbf{F}_0(\tau)\cdot\mathbf{F}_0(\tau')\right\rangle 
+$$
+$$
+= \frac{6D}{N+1}t \equiv 6D_Gt
 \tag{2.44}
 $$
+
 COM의 diffusivity는 monomer diffusivity를 monomer 갯수만큼 나눈 것이란 걸 알 수 있다. 
 $$
 D_G = \frac{D}{N+1}
 $$
 
-아래 식(2.45)를 식 (2.38)과 비교하면 $\text{p-mode}$의 relaxation time $\tau_p$을 구할 수 있다. 
+아래 식(2.45)를 식 (2.38) $\frac{d\mathbf{X}_p}{dt} = -\frac{3k_BT}{\zeta b^2}4\sin^2\left(\frac{p\pi}{2(N+1)}\right)\mathbf{X}_p + \mathbf{F}_p$과 비교하면 $\text{p-mode}$의 relaxation time $\tau_p$을 구할 수 있다. 
 $$
 \mathbf{X}_p(t) = \mathbf{X}_p(0)e^{-t/\tau_p} + \int_0^t d\tau\, e^{-(t-\tau)/\tau_p}\mathbf{F}_p(\tau)
 \tag{2.45}
@@ -380,48 +390,25 @@ $$
 
 여기서 $\langle X_p^2\rangle \equiv \langle\mathbf{X}_p(0)\cdot\mathbf{X}_p(0)\rangle$는 모드의 **equilibrium variance**, $t=0$에서의 자기 자신과의 상관, 즉 그냥 그 모드의 "전형적인 크기"다. 식 (2.47)이 말하는 바는 단순하다: 모드 $p$가 초기값을 "기억하는" 정도가 시간이 지나면서 $e^{-t/\tau_p}$로 감쇄한다는 것. $\tau_p$가 작을수록(빠른 모드, 큰 $p$) 기억을 빨리 잃고, $\tau_p$가 클수록(느린 모드, 작은 $p$) 오래 기억한다.
 
-> [!note] 왜 이 결과가 중요한가
-> 식 (2.47)은 이후 segmental MSD (식 2.54-2.55), end-to-end correlation (식 2.53), stress relaxation (식 2.79) 전부에서 반복적으로 등장하는 **유일한 빌딩 블록**이다. 즉 Rouse model의 모든 동적 관측량은 결국 "$\langle X_p^2\rangle$이라는 진폭"과 "$e^{-t/\tau_p}$라는 감쇄"를 적절한 가중치로 합산한 것일 뿐이다. 그래서 $\langle X_p^2\rangle$이 정확히 무엇인지(식 2.50)를 구하는 일이 다음 단계의 핵심 과제가 된다.
-
 #### Boltzmann Weight의 좌표 변환 — 평형 진폭이 나오는 근거 (식 2.48-2.49)
 
 진폭 $\langle X_p^2\rangle$은 **동역학과 무관한 순수 평형 통계량**이다 — 즉 시간을 전혀 포함하지 않고, Gaussian chain이 열평형 상태에서 어떤 모양을 하고 있는지에만 의존한다. 이를 구하려면 동역학 방정식이 아니라 **평형 분포(Boltzmann distribution)** 로 돌아가야 한다.
 
 Cartesian 좌표에서 Rouse chain의 configuration 확률은, entropic spring 에너지 $\frac{3k_BT}{2b^2}\sum_n(\mathbf{R}_n-\mathbf{R}_{n-1})^2$에 대한 Boltzmann factor다:
 $$
-P(\mathbf{R}_0,...,\mathbf{R}_N) = \frac{1}{Z}\exp\left[-\frac{3}{2b^2}\sum_{n=1}^N(\mathbf{R}_n-\mathbf{R}_{n-1})^2\right]
+P(\mathbf{R}_0,...,\mathbf{R}_N) = \frac{1}{Z}\exp\left[-\frac{3}{2b^2}\sum_{n=0}^N(\mathbf{R}_n-\mathbf{R}_{n-1})^2\right]
 \tag{2.48}
 $$
-이 분포를 그대로는 다루기 어렵다 — 지수 안의 합이 이웃한 $\mathbf{R}_n$들을 서로 얽어매고 있어서, $N+1$개의 좌표가 독립이 아니다. 그런데 식 (2.35)-(2.37)의 변환(Rouse mode로 옮기는 것)은 **선형(linear)이고 직교(orthogonal)** 변환이다 — 단순히 $\mathbf{R}_n$들을 cosine 기저로 재전개하는 것뿐이라, 회전변환과 비슷한 성격을 가진다. 직교변환의 핵심 성질은 **Jacobian이 1인 상수**라는 것 — 즉 좌표를 바꿔도 "부피 요소"가 늘어나거나 줄지 않는다. 이 사실 덕분에, 지수 안의 이차형식(quadratic form)만 Rouse 좌표로 바꿔서 다시 쓰면 그대로 새로운 분포가 된다:
-
+이 분포를 그대로는 다루기 어렵다 — 지수 안의 합이 이웃한 $\mathbf{R}_n$들을 서로 얽어매고 있어서, $N+1$개의 좌표가 독립이 아니다. 그런데 식 (2.35)-(2.37)의 변환(Rouse mode로 옮기는 것)은 **선형(linear)이고 직교(orthogonal)** 변환이다. 지수 안의 이차형식(quadratic form)만 Rouse 좌표로 바꿔서 다시 쓰면 그대로 새로운 분포가 된다:
 $$
-P(\mathbf{X}_0,...,\mathbf{X}_N) = \frac{1}{Z}\exp\left[-\frac{12}{b^2}(N+1)\sum_{p=1}^N \mathbf{X}_p\cdot\mathbf{X}_p\sin^2\left(\frac{p\pi}{2(N+1)}\right)\right]
+P(\mathbf{X}_0,...,\mathbf{X}_N) = \frac{1}{Z}\exp\left[-\frac{6}{b^2}\sum_{p=1}^N \mathbf{X}_p\cdot\mathbf{X}_p\sin^2\left(\frac{p\pi}{2(N+1)}\right)\right]
 \tag{2.49}
 $$
-
-**이 식이 왜 중요한가:** 지수 안의 합이 $\sum_n(\mathbf{R}_n-\mathbf{R}_{n-1})^2$ (이웃끼리 얽힌 합)에서 $\sum_p \mathbf{X}_p\cdot\mathbf{X}_p \times (\text{상수})$ (각 $p$가 완전히 독립인 합)로 바뀌었다. 이게 바로 **diagonalization** — Rouse mode 변환이 동역학 방정식만 분리해준 게 아니라, 평형 분포 자체도 "서로 독립인 Gaussian들의 곱"으로 쪼개준다는 뜻이다. 식 (2.49)을 $p$에 대한 곱으로 다시 쓰면:
-
-$$
-P(\mathbf{X}_0,...,\mathbf{X}_N) \propto \prod_{p=1}^N \exp\left[-\frac{12(N+1)}{b^2}\sin^2\left(\frac{p\pi}{2(N+1)}\right)\,\mathbf{X}_p\cdot\mathbf{X}_p\right]
-$$
-
-평형 진폭(Gaussian 분포의 분산):
-
-$$
-\langle X_p^2 \rangle = \frac{b^2}{8(N+1)\sin^2\left(\frac{p\pi}{2(N+1)}\right)} \approx \frac{(N+1)b^2}{2\pi^2}\frac{1}{p^2}
-\tag{2.50}
-$$
-
-$P(\mathbf{X}_0,...,\mathbf{X}_N)$은 각 $p$마다 독립적인 단순 Gaussian이다. 1차원 Gaussian $\propto e^{-x^2/2\sigma^2}$의 분산이 $\sigma^2$이라는 표준 결과를 그대로 적용하면 ($2\sigma^2$를 지수의 계수와 맞춰주면), 정확히 식 (2.50)의 $\langle X_p^2\rangle$가 나온다 — 즉 **equilibrium variance은 entropic spring 에너지를 Rouse 좌표로 옮겼을 때 보이는 "각 모드별 스프링 상수"의 역수**에 비례한다. $p$가 클수록(짧은 파장 진동) 유효 스프링 상수 $\sin^2(\cdot)$가 커지므로 진폭이 작아지는 것이 직관적으로도 맞다 — 짧은 파장으로 흔들리려면 더 많은 국소적인 스프링을 늘여야 하므로 엔트로피 비용이 크다.
-
-> [!note] 동역학 vs 평형 — 두 가지 독립적인 입력이 만나는 지점
-> 식 (2.46)의 $\tau_p$는 **동역학**(friction $\zeta$, Langevin equation)에서 나왔고, 식 (2.50)의 $\langle X_p^2\rangle$는 **평형 통계역학**(Boltzmann weight, 식 2.48-2.49)에서 나왔다 — 서로 완전히 다른 두 계산이다. 그런데 둘 다 같은 $\sin^2(p\pi/2(N+1))$ 함수에 의존한다는 게 우연이 아니다: 둘 다 **같은 entropic spring 포텐셜**(식 2.19의 우항, 식 2.48의 지수)에서 나왔기 때문이다. 이것이 바로 fluctuation-dissipation theorem의 또 다른 얼굴이다 — 식 (2.9)에서 friction과 noise의 크기가 묶였던 것처럼, 여기서는 완화시간과 평형진폭이 같은 포텐셜로부터 동시에 결정된다.
-
-**진폭도 완화시간도 똑같이 $1/p^2$로 떨어진다** — 이 사실이 뒤에 나오는 모든 멱법칙(end-to-end correlation, segmental MSD, stress relaxation)의 공통 원인이다.
+Variance는 $1/\sin^2\left(\frac{p\pi}{2(N+1)}\right)$에 비례한다. $p$가 클 수록 variance가 작아지고 0에 분포가 집중된다. 
 
 ### 6. End-to-End Vector의 시간 상관함수
 
-$\mathbf{R} = \mathbf{R}_N - \mathbf{R}_0$은 홀수 $p$ 모드만으로 표현된다 (짝수 모드는 대칭성에 의해 상쇄, Problem 2-1):
+$\mathbf{R} = \mathbf{R}_N - \mathbf{R}_0$은 홀수 $p$ 모드만으로 표현된다 (짝수 모드는 대칭성에 의해 상쇄):
 
 $$
 \langle \mathbf{R}(t)\cdot\mathbf{R}(0)\rangle = \frac{8b^2}{\pi^2}(N+1)\sum_{p=1}^{N}{}' \frac{1}{p^2}e^{-t/\tau_p}
@@ -435,16 +422,18 @@ $$
 #### 개별 세그먼트의 MSD를 Rouse mode로 분해 (식 2.54)
 
 지금까지는 무게중심($p=0$ 모드)의 MSD(식 2.44)와 각 모드의 자기상관함수(식 2.47)를 따로 구했다. 이제 이걸 합쳐서 **특정 세그먼트 $n$ 하나의 실제 위치** $\mathbf{R}_n(t)$가 시간에 따라 얼마나 움직이는지를 구해보자. 식 (2.35)의 역변환을 이용하면 $\mathbf{R}_n(t) - \mathbf{R}_n(0)$은 각 모드의 변위를 $\cos$ 가중치로 합한 것이다. 다른 모드들끼리는 서로 상관이 없다는 사실(식 2.41의 $\delta_{pq}$)을 쓰면, MSD도 교차항 없이 각 모드의 기여를 그냥 더한 형태로 쓸 수 있다:
-
 $$
-\left\langle (\mathbf{R}_n(t)-\mathbf{R}_n(0))^2\right\rangle = \left\langle (\mathbf{X}_0(t)-\mathbf{X}_0(0))^2\right\rangle + 4\sum_{p=1}^N \left\langle(\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\right\rangle\cos^2\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
+\left\langle (\mathbf{R}_n(t)-\mathbf{R}_n(0))^2\right\rangle = \left\langle (\mathbf{X}_0(t)-\mathbf{X}_0(0))^2\right\rangle + \frac{2}{N+1}\sum_{p=1}^N \left\langle(\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\right\rangle\cos^2\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
+\tag{2.54}
+$$
+$$
+\left\langle (\mathbf{R}_n(t)-\mathbf{R}_n(0))^2\right\rangle = 6D_Gt + \frac{2}{N+1}\sum_{p=1}^N \left\langle(\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\right\rangle\cos^2\left[\frac{p\pi}{N+1}\left(n+\frac{1}{2}\right)\right]
 \tag{2.54}
 $$
 
 **구조를 풀어보면:**
 - 첫 항 $\langle(\mathbf{X}_0(t)-\mathbf{X}_0(0))^2\rangle$은 식 (2.44)에서 이미 구한 무게중심의 MSD, 즉 $6D_Gt$ — 세그먼트가 어디에 있든 공통으로 겪는 "사슬 전체의 이동".
-- 합 안의 $\cos^2[\cdot]$는 식 (2.35)의 역변환 $\mathbf{R}_n = \mathbf{X}_0 + 2\sum_p \mathbf{X}_p\cos[\cdot]$을 그대로 제곱하면서 나온 가중치다. 이 값은 세그먼트의 위치 $n$이 그 모드의 진동 패턴(파장 $N/p$인 정상파) 위에서 정확히 어느 지점에 있는지를 나타낸다 — 마디(node) 근처에 있는 세그먼트는 그 모드의 영향을 거의 안 받고($\cos^2 \approx 0$), 배(antinode) 근처 세그먼트는 최대로 영향을 받는다($\cos^2 \approx 1$).
-- $\langle(\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\rangle$는 식 (2.47)에서 구한 자기상관함수를 펼치면 바로 얻어진다: $\langle X_p(t)^2\rangle - 2\langle X_p(t)\cdot X_p(0)\rangle + \langle X_p(0)^2\rangle = 2\langle X_p^2\rangle(1-e^{-t/\tau_p})$ (평형상태라 $\langle X_p(t)^2\rangle = \langle X_p(0)^2\rangle = \langle X_p^2\rangle$).
+- $\langle(\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\rangle$는 식 (2.47)에서 구한 자기상관함수를 펼치면 바로 얻어진다: $\langle X_p(t)^2\rangle - 2\langle X_p(t)\cdot X_p(0)\rangle + \langle X_p(0)^2\rangle = 2\langle \mathbf{X}_p^2\rangle(1-e^{-t/\tau_p}) = \frac{6k_BT\tau_p}{\zeta}(1-e^{-t/\tau_p})$ (평형상태라 $\langle \mathbf{X}_p(t)^2\rangle = \langle \mathbf{X}_p(0)^2\rangle = \langle \mathbf{X}_p^2\rangle = \frac{3k_BT\tau_p}{\zeta}$ — general framework의 per-coordinate $\frac{k_BT}{2|\lambda_p|}$의 3배).
 
 #### 모든 세그먼트에 대한 평균 — $\cos^2$가 사라지는 이유 (식 2.55)
 
@@ -457,28 +446,29 @@ $$
 이 평균을 식 (2.54)에 대입하면, $n$에 대한 합이 $\cos^2[\cdot]$ 항에만 걸린다. 직교성 관계식 (2.36)의 변형을 쓰면 $\frac{1}{N+1}\sum_n \cos^2[p\pi(n+1/2)/(N+1)] = \frac{1}{2}$ (단 $p\geq1$) — 즉 **세그먼트 전체에 평균을 내면 어느 모드든 가중치가 똑같이 $1/2$로 평탄해진다.** 마디/배의 위치 의존성이 평균화 과정에서 정확히 지워지는 것이다. 이 사실을 대입하면 바로 식 (2.55)가 나온다:
 
 $$
-g_{seg}(t) = 6D_Gt + 4\sum_{p=1}^N \langle X_p^2\rangle\left(1-e^{-t/\tau_p}\right)
+g_{seg}(t) = 6D_Gt + \frac{1}{N+1}\sum_{p=1}^N \left\langle(\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\right\rangle = 6D_Gt + \frac{6k_BT}{\zeta(N+1)}\sum_{p=1}^N \tau_p\left(1-e^{-t/\tau_p}\right)
 \tag{2.55}
 $$
+$$
+\tau_p = \frac{\zeta b^2}{12k_BT}\left[\sin^2\left(\frac{p\pi}{2(N+1)}\right)\right]^{-1} 
+$$
 
-여기서 $D_G = D/(N+1)$은 무게중심의 diffusion coefficient.
 
-> [!note] 식 (2.54) → (2.55), 무엇이 사라지고 무엇이 남았나
-> $n$에 대한 평균은 **세그먼트의 위치 정보**($\cos^2$ 가중치, 즉 "이 모드의 정상파에서 내가 어디 있는가")만 지웠을 뿐, **모드 자체의 동역학**($\langle X_p^2\rangle$, $\tau_p$)은 전혀 건드리지 않았다. 그래서 식 (2.55)는 이미 식 (2.46), (2.47), (2.50)에서 구한 재료만으로 완전히 결정된다 — 새로운 물리적 입력이 추가된 게 아니라 순수한 합산(summation)의 결과다.
+##### **(a) $t \gg \tau_1$ (Rouse time보다 긴 시간):** 
+모든 $p\geq1$ 모드에서 $e^{-t/\tau_p}\to 0$이므로 합 전체가 $4\sum_p \langle X_p^2\rangle$라는 상수로 포화되고, 시간에 따라 자라는 항은 첫 항뿐이다.
+→ $g_{seg}(t) \approx 6D_G t$. 정상 확산, 사슬 전체가 분자처럼 움직인다.
 
-**(a) $t \gg \tau_1$ (긴 시간):** 모든 $p\geq1$ 모드에서 $e^{-t/\tau_p}\to 0$이므로 합 전체가 $4\sum_p \langle X_p^2\rangle$라는 상수로 포화되고, 시간에 따라 자라는 항은 첫 항뿐이다 → $g_{seg}(t) \approx 6D_G t$. 정상 확산, 사슬 전체가 분자처럼 움직인다.
-
-**(b) $\tau_N \ll t \ll \tau_1$, $N \gg 1$ (중간 시간) — 적분 근사의 4단계 (식 2.57 유도):**
+##### **(b) $\tau_N \ll t \ll \tau_1$, $N \gg 1$ (중간 시간) — 적분 근사의 4단계 (식 2.57 유도):**
 
 이 구간에서는 $6D_Gt$ 항이 무시할 만큼 작고(식 2.44에서 $D_G \propto 1/(N+1)$이라 매우 느림), 합 $\sum_p\langle X_p^2\rangle(1-e^{-t/\tau_p})$이 지배적이다. $N\gg1$이면 $p$값이 매우 빽빽하게 분포하므로, 합을 적분으로 바꿀 수 있다. Padding은 이 적분을 4단계로 변환한다:
 
 **1단계 — 합을 적분으로, $\langle X_p^2\rangle$와 $\tau_p$를 큰-$N$ 근사식(식 2.46, 2.50)으로 치환:**
 
+$\tau_p \approx \frac{\zeta b^2(N+1)^2}{3\pi^2 k_BT}\frac{1}{p^2}$, $g_{seg}(t) \approx \frac{6k_BT}{\zeta(N+1)}\sum_{p=1}^N \tau_p\left(1-e^{-t/\tau_p}\right)$
 $$
 g_{seg}(t) = \frac{2b^2}{\pi^2}(N+1)\int_0^\infty dp\,\frac{1}{p^2}\left(1-e^{-tp^2/\tau_1}\right)
 $$
-
-(계수 $2b^2(N+1)/\pi^2$은 식 (2.50)의 $\langle X_p^2\rangle \approx (N+1)b^2/(2\pi^2 p^2)$에 식 (2.55)의 인수 $4$를 곱하고, 지수의 $\tau_p \approx \tau_1/p^2$를 대입한 결과다.)
+(계수 $2b^2(N+1)/\pi^2$은 식 (2.55)의 $\frac{6k_BT}{\zeta(N+1)}\tau_p$에 $\tau_p \approx \tau_1/p^2$와 $\tau_1 = \frac{\zeta b^2(N+1)^2}{3\pi^2 k_BT}$를 대입한 결과다. 평형 진폭으로 쓰면 $\frac{2}{N+1}\langle\mathbf{X}_p^2\rangle$에 $\langle\mathbf{X}_p^2\rangle = \frac{b^2}{4\sin^2(p\pi/2(N+1))} \approx \frac{b^2(N+1)^2}{\pi^2 p^2}$를 넣은 것과 같다.)
 
 **2단계 — $(1-e^{-x})$를 시간 적분으로 다시 쓰기:** 임의의 $x>0$에 대해 $1-e^{-x} = \int_0^x e^{-x'}dx'$라는 사실(또는 동등하게 $\frac{d}{dt'}e^{-t'p^2/\tau_1} = -\frac{p^2}{\tau_1}e^{-t'p^2/\tau_1}$를 적분)을 이용해 $(1-e^{-tp^2/\tau_1})$을 $t'$에 대한 적분으로 바꾼다:
 
@@ -514,10 +504,196 @@ $$
 > [!note] 적분 변환의 핵심 아이디어 한 줄 요약
 > 합 → 적분 (연속체 근사) → $(1-e^{-x})$를 적분형으로 전환 (발산 제거) → 가우시안 적분 (표준 공식) → 남은 시간적분에서 $t^{1/2}$ 출현. 이 패턴은 "완화시간이 연속 스펙트럼으로 퍼진 시스템에서 짧은 시간 거동을 구하는" 거의 모든 상황(stress relaxation의 Problem 2-2, β-polymer 일반화)에서 재사용된다.
 
-**(c) $t \ll \tau_N$ (아주 짧은 시간):** 첫 항이 다시 $6D_Gt$이지만, 이 영역은 개별 bead들이 서로 거의 독립으로 움직이는 ballistic-to-diffusive 초기 영역과 맞물린다.
+##### **(c) $t \ll \tau_N$ (아주 짧은 시간):** 
+첫 항이 다시 $6D_Gt$이지만, 이 영역은 개별 bead들이 서로 거의 독립으로 움직이는 ballistic-to-diffusive 초기 영역과 맞물린다.
 
 > [!note] $\alpha=1/2$의 기하학적 origin
 > 이 멱법칙은 외부 매질의 점탄성이나 fractional Gaussian noise 같은 별도의 메커니즘 없이, **순수하게 완화시간 스펙트럼이 $\tau_p \sim 1/p^2$로 연속적으로 퍼져 있다는 사실**에서 나온다. 어느 시점에 측정하든 "아직 완화되지 않은 모드들의 연속체"가 있고, 그 누적합이 정확히 $t^{1/2}$를 만든다. [[Polymer Models]]의 β-polymer 일반화($\tilde\kappa_p \propto \sin^\beta$)에서 $\alpha = 1-1/\beta$가 나오는 것도 똑같은 메커니즘의 연장이다 — mode density 모양만 바뀐 것.
+
+
+
+### 일반화: K-matrix Diagonalization (GNM / HIPPS-DIMES convention)
+
+앞의 (2.48)-(2.50)은 Rouse chain의 특정 $\cos$ 기저에 대한 대각화였다. 이것을 임의의 connectivity를 갖는 harmonic network(GNM, Hi-C 기반 chromatin model 등)로 일반화하면, 핵심은 **connectivity matrix $K$의 eigendecomposition** 하나로 정리된다.
+
+**General framework.** 
+$K-\text{matrix}$는 해밀토니안에서 모든 2차항의 계수를 담았다. 대칭행렬이며,  $K_{ij}=k_{ij}\ (i\ne j)$, $K_{ii}=-\sum_{j\ne i}k_{ij}$로 값이 주어진다. 이때, $k_{ij}$안에 $1/2$ factor가 이미 들어있다고 친다. 
+
+Position vector $\mathbf{R} = (\mathbf{R}_0, \dots, \mathbf{R}_N)^T$에 대해 network의 결합에너지를 이차형식으로 쓰고, $K$의 orthonormal eigenvector를 행으로 쌓은 $V$와 eigenvalue 대각행렬 $\Lambda$로 대각화한다:
+$$
+H = -\mathbf{R}^T K \mathbf{R} = -\sum_{ij}\mathbf{R}_i K_{ij}\mathbf{R}_j, \qquad V K V^T = \Lambda = \mathrm{diag}(\lambda_0, \dots, \lambda_N)
+$$
+이때, $\Lambda$는 0 아니면 음수 값만 가진다. 즉 $K$는 negative-definite
+
+$\mathbf{X} = V\mathbf{R}$로 $\mathbf{R}$을 mode vector $\mathbf{V}$로 변환할 수 있다. Linear과 circular polymer의 경우, 이 과정이 discrete Fourier transform이라는 것을 나중에 보게 될 것이다. 
+
+해밀토니안을 mode vector $\mathbf{V}$로 나타내면 결합항이 완전히 분리된다 (independent quadratic terms):
+$$
+H = -\mathbf{X}^T \Lambda \mathbf{X} = -\sum_p \lambda_p\, \mathbf{X}_p^2
+$$
+$\lambda_0 = 0$은 center-of-mass zero mode다.
+
+#### **Probability density** 
+$P = \frac{1}{Z}\exp \left( -\beta H\right)$이므로, 
+
+$$
+P(\mathbf{R}_0, \dots, \mathbf{R}_N) = \frac{1}{Z}\exp\!\left(+\beta \,\mathbf{R}^T K \mathbf{R}\right) 
+$$
+$$
+P(\mathbf{X}_0, \dots, \mathbf{X}_N) = \frac{1}{Z}\exp\!\left(+\beta\sum_p \lambda_p \mathbf{X}_p^2\right)
+$$
+대각화로 인해서, 각 $\mathbf{X}_p$ p-mode가 독립적인 Gaussian distribution을 가진다. $\lambda_p \le 0$이라는 점을 의식할 것. 
+
+각 mode의 평형 분산을 읽으면 (per coordinate $\alpha$):
+$$
+\langle X_{p,\alpha}^2 \rangle = \frac{k_BT}{2 \lvert \lambda_p \rvert}
+$$
+Eigrn value의 절댓값이 크면 분산이 작아지는 것을 볼 수 있다. 
+
+#### Dynamics
+K-matrix로 일반화한 운동방정식을 유도하자. 
+##### Hamiltonian과 gradient
+$$
+H = -\sum_{i=0}^{N}\sum_{j=0}^{N} \mathbf{R}_i\,\mathbf{R}_j\,K_{ij}
+$$
+$\mathbf{R}_n$에 대한 gradient를 구하면, $\mathbf{R}_i$와 $\mathbf{R}_j$ **양쪽 모두** $\mathbf{R}_n$에 의존하므로 곱미분으로 두 항이 나온다:
+
+$$
+\frac{dH}{d\mathbf{R}_n} = -\sum_{i,j}\left[\delta_{in}\mathbf{R}_j K_{ij} + \mathbf{R}_i\,\delta_{jn}K_{ij}\right] = -\sum_{j}\mathbf{R}_j K_{nj} - \sum_{i}\mathbf{R}_i K_{in}
+$$
+
+$K$의 대칭성($K_{ij}=K_{ji}$)으로 두 합이 같으므로, gradient vector는:
+$$
+\nabla\Phi = -K\mathbf{R} - \mathbf{R}^T K = -2K\mathbf{R}
+$$
+> **핵심:** quadratic form을 미분하면 대칭성 때문에 factor 2가 내려온다. 이 2가 뒤에서 Hamiltonian eigenvalue와 EOM eigenvalue를 구분 짓는다.
+##### Equation of Motion
+Overdamped Langevin equation에 대입한다:
+
+$$
+\frac{d\mathbf{R}}{dt} = -\frac{1}{\zeta}\nabla\Phi + \mathbf{f} = \frac{2}{\zeta}K\mathbf{R} + \mathbf{f}
+$$
+$\mathbf{R} = V^T\mathbf{X}$ (즉 $\mathbf{X} = V\mathbf{R}$)로 변환한다. EOM에 대입한 뒤 **왼쪽에서 $V$를 곱한다**:
+
+$$
+V\frac{d(V^T\mathbf{X})}{dt} = \frac{2}{\zeta}V K V^T\mathbf{X} + V\mathbf{f}
+$$
+
+$$
+\underbrace{VV^T}_{I}\frac{d\mathbf{X}}{dt} = \frac{2}{\zeta}\underbrace{VKV^T}_{\Lambda}\mathbf{X} + V\mathbf{f}
+$$
+
+$$
+\frac{d\mathbf{X}}{dt} = \frac{2}{\zeta}\Lambda\mathbf{X} + \mathbf{F}, \qquad \mathbf{F} = V\mathbf{f}
+$$
+
+각 mode가 완전히 분리된다. $\Lambda = \mathrm{diag}(\lambda_0,\dots,\lambda_N)$이고 $\lambda_p \le 0$ (negative semi-definite, $\lambda_0 = 0$은 center-of-mass zero mode).
+#### Relaxation time
+
+EOM eigenvalue가 $\frac{2\lambda_p}{\zeta}$이므로, $\langle \mathbf{X}_p(t)\cdot\mathbf{X}_p(0)\rangle = \langle X_p^2\rangle\exp(-t/\tau_p)$에서 relaxation time은 (Hamiltonian eigenvalue $\lambda_p$ 기준):
+$$
+\tau_p = -\frac{\zeta}{2\lambda_p}
+$$
+이제 general form의 single-locus MSD를 먼저 구하고, 그다음 linear chain과 circular chain에서 eigen value problem이 어떻게 풀리는지 살펴보자.
+
+#### MSD of single locus
+
+특정 locus $n$의 MSD $\left\langle (\mathbf{R}_n(t)-\mathbf{R}_n(0))^2\right\rangle$를 K-matrix framework로 일반화하자. §7 (2.54)에서 linear chain에 대해 구한 것을 임의 connectivity로 확장하는 것이다.
+
+**재료.** 각 mode는 독립적인 OU process이므로 변위의 통계는 §5의 (2.47)과 동일한 꼴이다:
+
+$$
+\left\langle \mathbf{X}_p(t)\cdot\mathbf{X}_p(0)\right\rangle = \langle \mathbf{X}_p^2\rangle\, e^{-t/\tau_p}
+\quad\Longrightarrow\quad
+\left\langle (\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\right\rangle = 2\langle \mathbf{X}_p^2\rangle\left(1-e^{-t/\tau_p}\right)
+$$
+
+평형 진폭은 general framework의 per-coordinate 결과 $\langle X_{p,\alpha}^2\rangle = \frac{k_BT}{2|\lambda_p|}$의 3배 (3D vector):
+
+$$
+\langle \mathbf{X}_p^2\rangle = \frac{3k_BT}{2|\lambda_p|} = \frac{3k_BT\,\tau_p}{\zeta}
+$$
+
+(마지막 등호는 $\tau_p = \zeta/2|\lambda_p|$.)
+
+$\mathbf{R} = V^T\mathbf{X}$이므로 $\mathbf{R}_n = \sum_p (V^T)_{np}\mathbf{X}_p$이고, 변위도 선형 결합이다:
+
+$$
+\mathbf{R}_n(t)-\mathbf{R}_n(0) = \sum_p (V^T)_{np}\left(\mathbf{X}_p(t)-\mathbf{X}_p(0)\right)
+$$
+
+이것을 **제곱**해서 평균을 취하면 이중합 $\sum_{p,q}$이 나오는데, 서로 다른 mode는 상관이 없으므로 ($\langle \Delta\mathbf{X}_p\cdot\Delta\mathbf{X}_q\rangle \propto \delta_{pq}$) cross term이 전부 죽고 대각항만 남는다:
+
+$$
+\left\langle (\mathbf{R}_n(t)-\mathbf{R}_n(0))^2\right\rangle = \sum_{p,q}(V^T)_{np}(V^T)_{nq}\left\langle \Delta\mathbf{X}_p\cdot\Delta\mathbf{X}_q\right\rangle = \sum_p (V^T)_{np}^{\,2}\left\langle (\mathbf{X}_p(t)-\mathbf{X}_p(0))^2\right\rangle
+$$
+
+$\langle(\Delta\mathbf{X}_p)^2\rangle = 2\langle\mathbf{X}_p^2\rangle(1-e^{-t/\tau_p})$과 $\langle\mathbf{X}_p^2\rangle = 3k_BT\tau_p/\zeta$를 대입하면 최종 general form:
+
+$$
+\left\langle (\mathbf{R}_n(t)-\mathbf{R}_n(0))^2\right\rangle = \frac{6k_BT}{\zeta}\sum_p (V^T)_{np}^{\,2}\,\tau_p\left(1-e^{-t/\tau_p}\right)
+$$
+
+> [!note] Zero mode가 CoM diffusion을 자동으로 준다
+> $p=0$은 $\lambda_0 = 0$이라 $\tau_0 \to \infty$이고, 극한에서 $\tau_0(1-e^{-t/\tau_0}) \to t$. Center-of-mass eigenvector는 상수 $(V^T)_{n0} = 1/\sqrt{N+1}$이므로 이 항은
+> $$
+> \frac{6k_BT}{\zeta}\cdot\frac{1}{N+1}\cdot t = 6D_G t, \qquad D_G = \frac{k_BT}{\zeta(N+1)} = \frac{D}{N+1}
+> $$
+> 가 되어 식 (2.44)의 무게중심 확산이 그대로 복원된다. 즉 위 general form은 CoM drift와 internal relaxation을 하나의 합에 담고 있다.
+
+**Linear chain 확인.** $(V_{lin})_{pn} = \sqrt{\frac{c_p}{N+1}}\cos\!\left[\frac{p\pi}{N+1}\left(n+\tfrac12\right)\right]$을 넣으면 $(V^T)_{np}^{\,2} = \frac{c_p}{N+1}\cos^2[\cdots]$ ($c_0=1$, $c_{p\ge1}=2$)이고, $p=0$ 항이 $6D_Gt$, $p\ge1$ 항이 $\frac{12k_BT\tau_p}{\zeta(N+1)}\cos^2[\cdots](1-e^{-t/\tau_p})$가 되어 §7의 식 (2.54)와 정확히 일치한다.
+
+#### Example: Linear chain
+Spring constant $k$ 를 1/2 factor를 포함해서 정의. 
+$$
+k = \frac{3}{2\beta b^2}
+$$
+Linear chain의 K-matrix는 $K_{lin}$은 대각 $-2k$ (양 끝 $-k$), off-diagonal $+k$인 tridiagonal이다. 
+$$
+\mathbb{K}_{\text{lin}} = \begin{pmatrix} -k & k & 0 & \cdots & \cdots & 0 \\ k & -2k & k & 0 & & \vdots \\ 0 & k & -2k & \ddots & \ddots & \vdots \\ \vdots & 0 & \ddots & \ddots & k & 0 \\ \vdots & & \ddots & k & -2k & k \\ 0 & \cdots & \cdots & 0 & k & -k \end{pmatrix}
+$$
+
+eigenvector는 $\cos$:
+$$
+(V_{lin})_{pn} = \sqrt{\frac{c_p}{N+1}}\cos\!\left[\frac{p\pi}{N+1}\left(n+\tfrac12\right)\right], \qquad c_0 = 1,\ c_{p\ge1} = 2
+$$
+**정규화 주의:** 공통 $\frac{1}{\sqrt{N+1}}$만 붙이면 $p\ge1$ 행은 $\sum_n\cos^2 = \frac{N+1}{2}$라 norm$^2=\frac12$로 덜 정규화된다 — $p\ge1$ 행에 $\sqrt{2}$를 더 붙여야 $V_{lin}$이 진짜 orthogonal이 되고 $V_{lin}K_{lin}V_{lin}^T = \Lambda_{lin}$이 정확히 성립한다.
+
+Eigen value는 $\lambda_p =  -4k\sin^2\tfrac{\pi p}{2(N+1)}$
+$$
+\Lambda_{lin} = -4k\,\mathrm{diag}\!\left(0,\ \sin^2\tfrac{\pi}{2(N+1)},\ \sin^2\tfrac{2\pi}{2(N+1)},\ \dots,\ \sin^2\tfrac{N\pi}{2(N+1)}\right)
+$$
+위 eigen value와 $k = \frac{3}{2\beta b^2}$를 $P(\mathbf{X}_0, \dots, \mathbf{X}_N) = \frac{1}{Z}\exp\!\left(+\beta\sum_p \lambda_p \mathbf{X}_p^2\right)$에 대입하면 식 (2.49)가 나온다. 
+#### Example: **Circular polymer**
+
+Ring은 $K_{cir}$가 아래같이 생겼다. circulant matrix.
+$$
+\mathbb{K}_{\text{cir}} = 
+\begin{pmatrix} 
+-2k & k & 0 & \cdots & 0 & k \\ 
+k & -2k & k & 0 & & 0 \\ 
+0 & k & -2k & \ddots & \ddots & \vdots \\ 
+\vdots & 0 & \ddots & \ddots & k & 0 \\ 
+0 & & \ddots & k & -2k & k \\
+k & 0 & \cdots & 0 & k & -k 
+\end{pmatrix}
+$$
+
+eigenvector는 complex exponential이다. 
+
+$$
+(V_{cir})_{pn} = \frac{1}{\sqrt{N+1}}e^{-i\frac{2\pi p}{N+1}n}
+$$
+
+Eigenvalue는:
+$$
+\lambda_p = 2k\left(\cos\tfrac{2\pi p}{N+1} - 1\right) = -4k\sin^2\tfrac{p\pi}{N+1}
+$$
+**argument가 $\frac{p\pi}{N+1}$ (분모에 2 없음)** — linear의 $\frac{p\pi}{2(N+1)}$과 다르다. 
+$$
+\Lambda_{cir} = -4k\,\mathrm{diag}\!\left(0,\ \sin^2\tfrac{\pi}{N+1},\ \sin^2\tfrac{2\pi}{N+1},\ \dots,\ \sin^2\tfrac{N\pi}{N+1}\right)
+$$
+Ring은 $\lambda_p = \lambda_{N+1-p}$의 **2-fold degeneracy**를 갖는다 ($\sin^2\frac{(N+1-p)\pi}{N+1} = \sin^2\frac{p\pi}{N+1}$) — 4-C의 complex mode degeneracy가 spectrum에도 그대로 나타난다. $V_{cir}$는 complex(unitary)이므로 $V_{cir}K_{cir}V_{cir}^{\dagger} = \Lambda_{cir}$, quadratic form도 $\mathbf X^\dagger\Lambda\mathbf X$로 conjugate transpose를 쓴다 ($V^T$ 아님). 모든 $p$에서 $|(V_{cir})_{pn}|=1$이라 $\frac{1}{\sqrt{N+1}}$ 하나로 전부 unitary가 되어, linear에서 있던 $p\ge1$ 정규화 문제가 없다.
 
 
 ## Questions & Insights
@@ -531,7 +707,8 @@ $$
 - [[Contact probability exponent and polymer scaling]]
 - [[Entropic Spring Constant]]
 - [[Central Limit Theorem]]
-
+HIPPS-DIMES 부분은 아래 논문을 참고
+- [[Journal reading - Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes]]
 ## References
 
 - J.T. Padding, *Theory of Polymer Dynamics*, Chapter 2: The Rouse Model
