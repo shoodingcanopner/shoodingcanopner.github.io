@@ -47,6 +47,8 @@ class: study_subject
 [[ED lecture note - Special Relativity and Lorentz Transform]]
 [[ED lecture note - Covariant Formulation of Electrodynamics]]
 [[ED lecture note - Moving Charge Fields and Invariant Green Function]]
+
+#### mini note
 [[ED mini note - Lienard-Wiechert Potential]]
 [[ED mini note - Center-fed Linear Antenna]]
 

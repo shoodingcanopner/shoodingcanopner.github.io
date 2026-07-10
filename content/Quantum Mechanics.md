@@ -78,6 +78,9 @@ Week 16: Final Exam
 [[QM lecture note - Wigner-Eckart Theorem Proof and Applications]]
 [[QM lecture note - Density Operator and Entropy]]
 
+### 시험 족보
+후배를 위해 남기는 이번 기말고사 족보
+[[QM finalterm 2026-1]]
 ### Mini Notes
 [[Mini Note - Lie Derivative and Baker-Hausdorff Correspondence]]
 
