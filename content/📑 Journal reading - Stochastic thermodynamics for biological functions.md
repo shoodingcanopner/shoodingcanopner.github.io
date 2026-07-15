@@ -63,5 +63,5 @@ Quantitative biology Journal의 논문.
 
 ## 더 읽어보고 싶은 레퍼런스
 
-[[Journal reading - Size limits the sensitivity of kinetic schemes]]
-[[Journal reading - Flexibility and sensitivity in gene regulation out of equilibrium]]
+[[📑 Journal reading - Size limits the sensitivity of kinetic schemes]]
+[[📑 Journal reading - Flexibility and sensitivity in gene regulation out of equilibrium]]

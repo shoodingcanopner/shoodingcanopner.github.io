@@ -160,7 +160,7 @@ Liouville's theorem 자체는 밀도의 보존을 말하지만, 엔트로피는 
 - [[Poisson_Brackets]]
 - [[Involution and Dynamical Reversibility]]
 - [[microcanonical ensemble의 entropy]]
-- [[Journal reading - Time-Reversal and Entropy]]
+- [[📑 Journal reading - Time-Reversal and Entropy]]
 
 ## References
 

@@ -108,7 +108,7 @@ Single-particle tracking(SPT)으로 얻은 분자 궤적(trajectory)을 분류�
   1. **Product inhibition**: 효소가 반응을 촉매하면 생성물(product)이 주변에 쌓임. 이 생성물이 효소 활성 부위에 다시 결합하면 효소 활성을 저하하는 product inhibition이 발생한다.
   2. **Chemotaxis vs Antichemotaxis**: chemotaxis는 화학 농도 기울기를 따라 이동하는 현상. 반대로 antichemotaxis는 생성물 농도가 높은 곳에서 **멀어지는** 방향으로 이동 → 방금 반응한 자리를 탈출.
   3. **L3의 large jump → antichemotaxis**: L3가 stochastically 큰 점프를 한다는 것은, 반응 후 생성물이 쌓인 자리에서 멀리 이탈한다는 의미 → product 농도가 낮은 새 자리에서 반응 재개 → product inhibition 회피.
-  → 얼마 전에 저널 클럽에서 소개된 '맥스웰의 악마' 논문이 생각남 [[Journal reading - Enzyme as Maxwell's Demon]]
+  → 얼마 전에 저널 클럽에서 소개된 '맥스웰의 악마' 논문이 생각남 [[📑 Journal reading - Enzyme as Maxwell's Demon]]
   4. **실험적 검증**: 실제로 L3는 bulk product inhibition이 낮다는 게 기존 실험(ref. 19)에서 확인됨 → fingerprinting이 제시한 메커니즘 가설을 뒷받침
 - 이 분석은 fingerprinting이 단순 분류를 넘어 **기존에 몰랐던 메커니즘적 통찰을 새롭게 도출**한 대표적 예시
 

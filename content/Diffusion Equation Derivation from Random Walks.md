@@ -87,7 +87,7 @@ $$D = \frac{a^2}{2\Delta t} \tag{9}$$
 - [[Ficks_Second_Law_of_Diffusion]]
 - [[Diffusion Equation Gaussian Distribution]]
 - [[Brownian Motion Properties]]
-- [[Journal reading - Anomalous diffusion models and their properties]]
+- [[📑 Journal reading - Anomalous diffusion models and their properties]]
 - [[Central Limit Theorem]]
 - [[White Noise and Brownian Motion Relationship]]
 

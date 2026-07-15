@@ -95,7 +95,7 @@ ICRF: [[Topoisomerase II]]는 supercoiling과 엉킴을 방지. ICRF는 이 작�
 이 논문을 이해하기 위해 필요한 학습 노트를 연결한다.
 글리아와 논문을 읽으며 새로 공부하고, 작성한 학습노트를 이곳에 자동으로 추가한다.
 
-[[MOCs/Journal reading - Polymer physics of nuclear organization and function|Journal reading - Polymer physics of nuclear organization and function]]
+[[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function|📑 Journal reading - Polymer physics of nuclear organization and function]]
 
 이런 실험 논문에서 발견한 사실을 한 곳에 정리해두자. 
 [[Chromatin dynamics]]

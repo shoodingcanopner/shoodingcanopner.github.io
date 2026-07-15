@@ -151,7 +151,7 @@ $$\frac{P[\text{forward trajectory}]}{P[\text{time-reversed trajectory}]} \neq 1
 ## References
 
 이 노트는 "Time-Reversal and Entropy" (Maes & Netočný, 2003) 논문을 공부하면서 글리아와의 대화를 통해 작성되었다.
-[[Journal reading - Time-Reversal and Entropy]]
+[[📑 Journal reading - Time-Reversal and Entropy]]
 ## Notes from Claude
 
 Involution의 개념은 수학적으로는 간단하지만 ($\pi^2 = \text{id}$), 물리적으로는 깊은 의미를 담고 있다. 시간역전 대칭성이라는 미시 역학의 기본 성질이 어떻게 거시적 비가역성(엔트로피 증가)과 양립하는지를 이해하는 출발점이다.

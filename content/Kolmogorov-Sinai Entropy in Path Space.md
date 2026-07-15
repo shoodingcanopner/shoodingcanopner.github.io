@@ -245,7 +245,7 @@ $S_K(\omega)$는 무엇을 측정하는가?
 - [[Gibbs Entropy]]
 - [[Shannon Entropy and Boltzmann Entropy Decomposition]]
 - [[Involution and Dynamical Reversibility]]
-- [[Journal reading - Time-Reversal and Entropy]]
+- [[📑 Journal reading - Time-Reversal and Entropy]]
 
 ## References
 

@@ -18,7 +18,7 @@ class: study
 
 세포 핵 내 크로마틴/DNA의 구조와 동역학을 기술하기 위해 사용되는 coarse-grained 폴리머 모델들을 정리한 노트다. 가장 단순한 Gaussian (Ideal) Chain에서 시작해, excluded volume을 고려한 Self-Avoiding Walk, 동역학을 부여한 Rouse Model, 그리고 그 일반화 버전들(Freely-Joined-Chain, β-polymer, Worm-Like Chain, Rod-like)까지 다룬다. 모든 모델은 결국 같은 질문으로 수렴한다 — **monomer 간 상호작용(또는 그 부재)이 폴리머의 정적 통계량($R_{ee}$, $R_g$, Flory exponent $\nu$)과 동적 통계량(MSD, 이상확산 지수 $\alpha$)을 어떻게 결정하는가?**
 
-내용은 Amitai & Holcman, *Physics Reports* 678 (2017) 리뷰의 Section 3을 기반으로 하며, [[Journal reading - Polymer physics of nuclear organization and function]]에서 분리되어 독립 개념 노트로 정리되었다.
+내용은 Amitai & Holcman, *Physics Reports* 678 (2017) 리뷰의 Section 3을 기반으로 하며, [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function]]에서 분리되어 독립 개념 노트로 정리되었다.
 
 ## Key Points
 
@@ -349,7 +349,7 @@ $$
 
 - **긴 시간** ($t \gg \tau_1$): 지수항이 모두 포화되고 무게중심 확산만 남아 정상 확산, 단 확산계수는 $D_{cm} = D/N$.
 
-> **핵심:** Rouse 모델의 이상확산($t^{1/2}$)은 외부 매질의 점탄성이 아니라, **내부 모드들의 완화 시간이 넓게 퍼져 있다는 사실**에서 순수하게 기하학적으로 나온다. 이것이 [[Journal reading - Polymer physics of nuclear organization and function#3. 이상확산 (Anomalous Diffusion) (Section 3.10)|이상확산]]에서 다룰 다른 메커니즘(FBM 등)과 구별되는 점이다.
+> **핵심:** Rouse 모델의 이상확산($t^{1/2}$)은 외부 매질의 점탄성이 아니라, **내부 모드들의 완화 시간이 넓게 퍼져 있다는 사실**에서 순수하게 기하학적으로 나온다. 이것이 [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function#3. 이상확산 (Anomalous Diffusion) (Section 3.10)|이상확산]]에서 다룰 다른 메커니즘(FBM 등)과 구별되는 점이다.
 >
 > 이 섹션의 전체 유도 과정(friction의 미시적 기원, normal mode 분리, stress tensor)은 [[Rouse Model]] 노트에 자세히 정리되어 있다.
 
@@ -502,16 +502,16 @@ $$
 - [[Entropic Spring Constant]]
 - [[MSD exponent from scale-dependent Flory exponent]]
 - [[Contact probability exponent and polymer scaling]]
-- [[Journal reading - Polymer physics of nuclear organization and function#3. 이상확산 (Anomalous Diffusion) (Section 3.10)|이상확산 (Anomalous Diffusion)]]
+- [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function#3. 이상확산 (Anomalous Diffusion) (Section 3.10)|이상확산 (Anomalous Diffusion)]]
 
 ## References
 
 - Amitai, A. & Holcman, D., "Polymer physics of nuclear organization and function," *Physics Reports* 678, 1–83 (2017) — Section 3
-- [[Journal reading - Polymer physics of nuclear organization and function]]
+- [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function]]
 
 ## Notes from Claude
 
-이 노트는 원래 [[Journal reading - Polymer physics of nuclear organization and function]]의 Section 3 발췌본으로 시작됐던 것을, 독립적인 개념 노트 형식(frontmatter + Overview/Key Points/Related Concepts/References 구조)으로 재구성한 것이다.
+이 노트는 원래 [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function]]의 Section 3 발췌본으로 시작됐던 것을, 독립적인 개념 노트 형식(frontmatter + Overview/Key Points/Related Concepts/References 구조)으로 재구성한 것이다.
 
 - 본문에 있던 Glia(AI)의 보충 설명 콜아웃(`[!note] AI 보충`)은 해당 수식 직후 원래 위치에 그대로 유지했다 — excluded volume 포텐셜이 디랙델타로 근사되는 이유, Flory exponent의 mean-field 유도와 0.588의 정체, FJC와 ideal chain 명명 충돌 정리 세 가지다. 내용 손실 없이 그대로 보존했다.
 - 원문에서 `[[#3. 이상확산...]]`처럼 같은 파일 내부 앵커로 걸려 있던 링크는 실제로는 모(母) 저널 노트의 섹션을 가리키고 있었기 때문에, 정확한 cross-note 링크로 수정했다.

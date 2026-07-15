@@ -365,6 +365,8 @@ $$
 $$
 Ring은 $\lambda_p = \lambda_{N+1-p}$의 **2-fold degeneracy**를 갖는다 ($\sin^2\frac{(N+1-p)\pi}{N+1} = \sin^2\frac{p\pi}{N+1}$) — 4-C의 complex mode degeneracy가 spectrum에도 그대로 나타난다. $V_{cir}$는 complex(unitary)이므로 $V_{cir}K_{cir}V_{cir}^{\dagger} = \Lambda_{cir}$, quadratic form도 $\mathbf X^\dagger\Lambda\mathbf X$로 conjugate transpose를 쓴다 ($V^T$ 아님). 모든 $p$에서 $|(V_{cir})_{pn}|=1$이라 $\frac{1}{\sqrt{N+1}}$ 하나로 전부 unitary가 되어, linear에서 있던 $p\ge1$ 정규화 문제가 없다.
 
+
+
 ## Questions & Insights
 
 - (Rouse Model 노트에서 이어진 열린 질문) segment-averaged MSD의 summation $\sum_{p\ge1}\tau_p(1-e^{-t/\tau_p})$이 single exponential이 되기 위한 $\tau$ 스펙트럼은 무엇인가?
@@ -374,7 +376,7 @@ Ring은 $\lambda_p = \lambda_{N+1-p}$의 **2-fold degeneracy**를 갖는다 ($\s
 - [[Rouse Model]]
 - [[Polymer Models]]
 - [[MSD exponent from scale-dependent Flory exponent]]
-- [[Journal reading - Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes]]
+- [[📑 Journal reading - Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes]]
 
 ## References
 

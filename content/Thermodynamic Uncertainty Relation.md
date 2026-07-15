@@ -77,7 +77,7 @@ TUR의 등호는 특수한 경우에만 성립한다. biased random walk에서�
 - [[Entropy Production Rate]]
 - [[Local Detailed Balance]]
 - [[Kolmogorov's Criterion]]
-- [[Journal reading - Stochastic thermodynamics for biological functions]]
+- [[📑 Journal reading - Stochastic thermodynamics for biological functions]]
 
 ## References
 

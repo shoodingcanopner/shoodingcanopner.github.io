@@ -87,7 +87,7 @@ LDB를 적용하면 $F_c$는 그 사이클을 한 바퀴 돌 때 생성되는 �
 - [[detailed balance]]
 - [[Nonequilibrium_Thermodynamics_Basic_Concepts]]
 - [[Kolmogorov's Criterion]]
-- [[Journal reading - Stochastic thermodynamics for biological functions]]
+- [[📑 Journal reading - Stochastic thermodynamics for biological functions]]
 
 ## References
 

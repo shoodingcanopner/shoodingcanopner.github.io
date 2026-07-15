@@ -107,10 +107,10 @@ SAW 검산: $\alpha = (3 + 0.81)\times 0.588 \approx 2.24$, SBS 논문의 $\alph
 
 ## Related Concepts
 
-- [[Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]]
-- [[Journal reading - The fractal globule as a model of chromatin architecture in the cell]]
-- [[Journal reading - Polymer physics of nuclear organization and function]]
-- [[Journal reading - Anomalous Diffusion in Fractal Globules]]
+- [[📑 Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]]
+- [[📑 Journal reading - The fractal globule as a model of chromatin architecture in the cell]]
+- [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function]]
+- [[📑 Journal reading - Anomalous Diffusion in Fractal Globules]]
 
 ## References
 

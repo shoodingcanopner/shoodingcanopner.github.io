@@ -118,7 +118,7 @@ $$\Delta S_A = \int_{T_A^i}^{T_A^f} \frac{C_V dT}{T}$$
 - [[열역학 자연변수와 르장드르 변환]]
 - [[Gibbs Entropy]]
 - [[Shannon Entropy and Boltzmann Entropy Decomposition]]
-- [[Journal reading - Time-Reversal and Entropy]]
+- [[📑 Journal reading - Time-Reversal and Entropy]]
 
 ## References
 

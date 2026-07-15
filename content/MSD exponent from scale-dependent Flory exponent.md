@@ -36,6 +36,12 @@ $$
 | $n_c$ | static crossover ($\nu$가 $\nu_1 \to \nu_2$로 바뀌는 contour distance) |
 | $\tau_c$ | dynamic crossover ($\alpha$가 바뀌는 lag time) |
 | $\tau_0, \tau_N$ | 단기 Fickian / 장기 Fickian 경계 시간 |
+| $\tau(n)$ | relaxation time of a subchain of $n$ monomers |
+| $z_n$ | relaxation time exponent (contour), $\tau \sim n^{z_n}$ |
+| $z_R$ | relaxation time exponent (spatial), $\tau \sim R^{z_R}$ |
+| $d_f$ | fractal dimension of the chain conformation, $d_f = 1/\nu$ |
+| $\rho(n)$ | monomer density within a subchain of size $R(n)$ |
+| $\beta$ | surface-friction exponent, $A \sim [\delta n]^{\beta}$ |
 
 ## Key Points
 
@@ -285,6 +291,137 @@ $$
 >
 > 위 ODE 접근은 $\nu_{\text{loc}}$가 $\delta n$에 대해 충분히 천천히 변할 때(adiabatic)에 가장 잘 맞는다. $R^2(n)$이 좁은 구간에서 급격히 꺾이면 local power law 가정 자체가 그 구간에서 깨진다. SBS의 부드러운 crossover는 보통 이 조건을 잘 만족한다.
 
+### 6. Relaxation time exponent와 $\alpha$의 관계
+
+식 (12)의 $\delta n(\tau)$ 를 **뒤집으면** 그것이 바로 길이 $n$ 인 subchain의 **relaxation time** $\tau(n)$ 이다. 같은 mapping을 반대 방향에서 읽는 것일 뿐이지만, 문헌에서는 dynamic exponent 로 따로 불리므로 관계식을 명시해 둔다.
+
+#### 유도 (Rouse-type)
+
+길이 $n$ 인 subchain을 하나의 Rouse mode로 보면:
+
+- friction: $\zeta_n \sim n\,\zeta$ (monomer 수에 비례)
+- effective spring constant: $k_n \sim \dfrac{k_B T}{R(n)^2} \sim \dfrac{k_B T}{b^2 n^{2\nu}}$ (entropic spring)
+
+$$
+\tau(n) \sim \frac{\zeta_n}{k_n} \sim \frac{n\,\zeta\, b^2\, n^{2\nu}}{k_B T} \sim \frac{b^2}{D_0}\, n^{1 + 2\nu}
+\tag{21}
+$$
+
+이는 식 (12)의 $[\delta n]^{2\nu+1} \sim (D_0/b^2)\tau$ 와 정확히 동치이다.
+
+#### 두 가지 dynamic exponent 관습
+
+문헌에따라 $\tau$ 를 $n$ 으로 재는지 $R$ 로 재는지가 다르므로, **두 exponent를 반드시 구분할 것.**
+
+**(a) Contour 기준** $\tau \sim n^{z_n}$:
+
+$$
+z_n \equiv \frac{d\ln\tau}{d\ln n} = 1 + 2\nu
+\tag{22}
+$$
+
+**(b) Spatial 기준** $\tau \sim R^{z_R}$: $R \sim n^{\nu}$ 이므로 $z_R = z_n/\nu$.
+
+$$
+z_R \equiv \frac{d\ln\tau}{d\ln R} = \frac{1 + 2\nu}{\nu} = 2 + \frac{1}{\nu} = 2 + d_f
+\tag{23}
+$$
+
+여기서 $d_f = 1/\nu$ 는 chain conformation의 fractal dimension이다.
+
+#### $\alpha$ 와의 관계식
+
+식 (1)과 (22), (23)을 결합하면 $\nu$ 를 소거한 깔끔한 관계가 나온다.
+
+$$
+\alpha = \frac{2\nu}{1+2\nu} = \frac{z_n - 1}{z_n} = 1 - \frac{1}{z_n}
+\tag{24}
+$$
+
+$$
+\alpha = \frac{2\nu}{1+2\nu} = \frac{2}{z_R}
+\tag{25}
+$$
+
+역으로 풀면 $z_n = \dfrac{1}{1-\alpha}$, $z_R = \dfrac{2}{\alpha}$.
+
+**식 (25)가 더 근본적이다.** "monomer가 자신의 blob 크기만큼 움직이는 데 blob의 relaxation time이 걸린다"는 진술을 그대로 적은 것이므로, Rouse ansatz 밖에서도 성립한다. 예: **Zimm dynamics**(hydrodynamic interaction 포함)에서는 $\tau \sim \eta R^3/k_BT$, 즉 $z_R = 3$ (대략 $\nu$ 무관) 이므로 식 (25)는 즉시 $\alpha = 2/3$ 를 줌 — 알려진 Zimm monomer subdiffusion 결과와 일치한다.
+
+#### 검산 표
+
+| system | $\nu$ | $d_f = 1/\nu$ | $z_n = 1+2\nu$ | $z_R = 2 + 1/\nu$ | $\alpha = 2/z_R$ |
+|---|---|---|---|---|---|
+| ideal chain (Rouse) | $1/2$ | $2$ | $2$ | $4$ | $1/2$ |
+| SAW (Rouse) | $0.588$ | $1.70$ | $2.18$ | $3.70$ | $0.54$ |
+| fractal globule | $1/3$ | $3$ | $5/3$ | $5$ | $2/5$ |
+| confinement | $\to 0$ | — | $\to 1$ | $\to \infty$ | $\to 0$ (plateau) |
+| Zimm (any $\nu$) | — | — | — | $3$ | $2/3$ |
+
+맨 아랫 줄이 중요하다: confinement 극한에서 $z_R \to \infty$ (사슬이 아무리 길어져도 크기가 안 커지므로)이고, 식 (25)가 자동으로 $\alpha \to 0$, 즉 MSD plateau를 준다.
+
+#### Scale-dependent 버전
+
+§5의 adiabatic 근사 아래에서는 이 관계들이 모두 국소화된다. 식 (20)의 $z(\tau) = d\ln\delta n/d\ln\tau$ 는 정확히 $z_n$ 의 **역수**임에 주의할 것.
+
+$$
+z(\tau) = \frac{d\ln\delta n}{d\ln\tau} = \frac{1}{z_n(\delta n)} = \frac{1}{1 + 2\nu_{\text{loc}}(\delta n)}
+\tag{26}
+$$
+
+따라서 식 (B''), $\alpha_{\text{loc}} = 1 - z$, 는 식 (24)의 국소 버전 $\alpha_{\text{loc}} = 1 - 1/z_n(\delta n)$ 과 같은 식이다. 즉 §5의 ODE는 **"scale마다 달라지는 relaxation time exponent $z_n(n)$ 을 시간축으로 적분하는 과정"** 으로 재해석된다. 등가적으로 $\tau(n)$ 을 직접 적분해도 된다:
+
+$$
+\ln\tau(n) = \int^{\ln n} \big[\,1 + 2\nu_{\text{loc}}(n')\,\big]\, d\ln n'
+\tag{27}
+$$
+
+이쪽이 수치적으로 더 안정적일 수 있다 — $\nu_{\text{loc}}(n)$ 을 **직접 적분**해 $\tau(n)$ 을 얻고, 그것을 수치적으로 역함수화해 $\delta n(\tau)$ 를 얻으면 ODE 적분기의 stiffness 문제를 피할 수 있다. 둘은 수학적으로 동치이므로 **교차검증용으로 둘 다 구현해 비교해볼 것.**
+
+### 7. $\nu$ 의 물리적 범위 — 3차원에서 $\nu < 1/3$ 은 가능한가?
+
+$\nu(n)$ 을 자유함수로 다루기 시작하면 바로 따라오는 질문이다. 답은 **"asymptotic exponent로는 불가능, local exponent $\nu(n)$ 으로는 가능"** 이며, 이 구분이 본 framework의 실제 적용에서 결정적이다.
+
+#### 하한 $\nu \geq 1/3$ 의 근거
+
+**(a) 기하학적.** $\nu < 1/3 \Rightarrow d_f = 1/\nu > 3$. 그러나 $\mathbb{R}^3$ 의 부분집합이 갖는 Hausdorff dimension은 최대 $3$ 이므로, embedding 차원을 초과하는 fractal dimension은 정의상 존재할 수 없다.
+
+**(b) 물리적 (maximal packing).** monomer가 각기 유한 부피 $b^3$ 를 차지하면(excluded volume), $N$ 개가 크기 $R$ 인 영역에 들어가려면:
+
+$$
+R^3 \gtrsim N b^3 \quad\Longrightarrow\quad R \gtrsim b\, N^{1/3}
+\tag{28}
+$$
+
+즉 $\nu = 1/3$ 은 **"더 이상 압축할 수 없는 가장 조밀한 상태"**(compact globule)이고, 그것이 하한을 강제한다. equilibrium globule과 fractal globule은 **둘 다** 전역적으로 $\nu = 1/3$ 이며, 둘의 차이는 $\nu$ 가 아니라 topology(knottedness)에 있다.
+
+종합하면 3차원 asymptotic exponent는 $\tfrac{1}{3} \leq \nu \leq 1$ 에 갇힌다 (상한 $\nu = 1$ 은 rigid rod).
+
+#### 그러나 $\nu_{\text{loc}}(n) < 1/3$ 은 가능하다
+
+유한한 $n$ 구간에서의 local slope는 $1/3$ 보다 작아질 수 있다. density를 보면 왜 모순이 아닌지 즉시 보인다.
+
+$$
+\rho(n) \sim \frac{n}{R(n)^3} \sim n^{\,1 - 3\nu_{\text{loc}}}
+\tag{29}
+$$
+
+$\nu_{\text{loc}} < 1/3$ 이면 $\rho(n)$ 이 $n$ 에 따라 **증가**한다. 이것은 금지된 것이 아니라 단지 **아직 maximal packing에 도달하지 않았다**는 뜻 — 사슬이 정해진 영역을 점점 채워가는 중이다. 다만 density에는 유한한 상한이 있으므로 **이 구간은 반드시 유한해야 하고**, 포화하는 순간 $\nu_{\text{loc}}$ 은 $1/3$ 으로 되돌아가야 한다.
+
+극단적 예가 **confinement**다. 사슬이 크기 $R_0$ 의 cavity(chromosome territory, TAD)에 갇히면 $n$ 이 커져도 $R(n) \to R_0$ 로 saturate하고, 그 구간의 local exponent는 $\nu_{\text{loc}}(n) \to 0$ 이 된다. Hi-C의 $P(s)$ plateau가 정확히 이 신호다.
+
+#### 정리와 framework에의 함의
+
+| | 성립 여부 | 이유 |
+|---|---|---|
+| asymptotic $\nu < 1/3$ ($N\to\infty$) | **불가능** | $d_f \leq d$, maximal packing |
+| local $\nu_{\text{loc}}(n) < 1/3$ (유한 구간) | **가능** | density가 상한까지 증가하는 transient |
+| local $\nu_{\text{loc}}(n) \to 0$ | **가능** | confinement / saturation (TAD, territory) |
+
+> [!warning] 구현 상의 주의
+> $\nu \in [1/3, 1]$ 제약은 **asymptotic 값에만** 걸어야 하며, $\nu_{\text{loc}}(n)$ 곱선 전체에 하드 제약으로 걸면 **confinement 신호를 인위적으로 지워버린다.** $R^2(n)$ fitting이나 ODE 구현에서 $\nu \geq 1/3$ 을 clamp하고 있지 않은지 확인할 것.
+
+식 (1)을 통해 이 구간은 $\alpha < 2/5$ 인 시간 영역을 낳는다. 즉 **$\alpha$ 가 fractal globule 값 $2/5$ 보다 작게 관측되는 것은 이상 신호가 아니라 confinement의 자연스러운 귀결**이며, SBS에서 binder domain이 사슬을 가두는 경우 예상되는 거동이다.
+
 ## Questions & Insights
 
 - Q: 단기($\tau \ll \tau_0$)에서 polymer dynamics가 monomer dynamics와 같아지는 근거는? (식 3 → 식 5)
@@ -295,7 +432,8 @@ $$
 
 ## Related Concepts
 
-- [[Journal reading - Anomalous Diffusion in Fractal Globules]]
+- [[📑 Journal reading - Anomalous Diffusion in Fractal Globules]]
+- [[Fractional Brownian Motion]]
 - [[Physical properties of DNA]]
 - [[Contact probability exponent and polymer scaling]]
 

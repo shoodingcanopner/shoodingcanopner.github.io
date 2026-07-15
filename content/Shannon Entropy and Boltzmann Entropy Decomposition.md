@@ -156,7 +156,7 @@ $$S_G(\hat{\nu}) = \sup_{p(\mu)=\hat{\nu}} S(\mu) = S(\hat{\nu} \times \rho) \ta
 
 - [[microcanonical ensemble의 entropy]]
 - [[2025-09-05_Entropy_Misconception_Volume_vs_Microstates]]
-- [[Journal reading - Time-Reversal and Entropy]]
+- [[📑 Journal reading - Time-Reversal and Entropy]]
 
 ## References
 

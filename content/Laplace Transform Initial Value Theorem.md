@@ -89,7 +89,7 @@ $$
 ## References
 
 - Nicoll et al. (2025) "Transient power-law behaviour following induction distinguishes between competing models of stochastic gene expression" Nature Communications
-- [[Journal reading - Transient power-law behaviour following induction distinguishes between competing models of stochastic gene expression]]
+- [[📑 Journal reading - Transient power-law behaviour following induction distinguishes between competing models of stochastic gene expression]]
 
 ## Notes from Claude
 

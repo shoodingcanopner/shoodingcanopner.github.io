@@ -458,9 +458,9 @@ Discussion은 본문 7번(centrality)·8번(cohesin depletion) 섹션의 핵심 
 - [[MSD exponent from scale-dependent Flory exponent]] — 이 논문 식 (1)의 $\alpha=2\nu/(2\nu+\theta)$가 사용자가 정리한 $\alpha=2\nu/(1+2\nu)$ 관계의 $\theta=1$ 특수 경우. 단, 이 논문은 **constant $\nu$**만 다루고 user의 continuous $\nu_{\text{loc}}(n)$ 일반화는 다루지 않음.
 - [[Rouse Model]]
 - [[Chromatin dynamics]]
-- [[Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]]
-- [[Journal reading - The fractal globule as a model of chromatin architecture in the cell]]
-- [[Journal reading - Polymer physics of chromosome large-scale 3D organisation]]
+- [[📑 Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]]
+- [[📑 Journal reading - The fractal globule as a model of chromatin architecture in the cell]]
+- [[📑 Journal reading - Polymer physics of chromosome large-scale 3D organisation]]
 
 ## 더 읽어보고 싶은 레퍼런스
 

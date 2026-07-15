@@ -234,7 +234,7 @@ Gibbs entropy vs 열역학 엔트로피?
 
 - [[microcanonical ensemble의 entropy]]
 - [[Shannon Entropy and Boltzmann Entropy Decomposition]]
-- [[Journal reading - Time-Reversal and Entropy]]
+- [[📑 Journal reading - Time-Reversal and Entropy]]
 
 ## References
 

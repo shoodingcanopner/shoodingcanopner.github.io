@@ -139,7 +139,7 @@ $$\Delta S = k_B \ln(k_+/k_-)$$
 - [[Kolmogorov's Criterion]]
 - [[detailed balance]]
 - [[Gibbs Entropy]]
-- [[Journal reading - Stochastic thermodynamics for biological functions]]
+- [[📑 Journal reading - Stochastic thermodynamics for biological functions]]
 
 ## References
 

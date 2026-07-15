@@ -123,7 +123,7 @@ $$
 ## References
 
 - Shubert, B. O. (1975). A flow-graph formula for the stationary distribution of a Markov chain. *IEEE Transactions on Systems, Man, and Cybernetics*.
-- [[Journal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov Chain]]
+- [[📑Journal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov ChainJournal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov Chain]]
 
 > [!warning] Notation 주의
 > 원 논문은 row stochastic 표기 ($p_{ij}$: $i \to j$, arc $(i,j)$)를 사용하지만, 이 노트는 column stochastic 표기 ($w_{ji}$: $i \to j$, arc $(j,i)$)를 사용함.

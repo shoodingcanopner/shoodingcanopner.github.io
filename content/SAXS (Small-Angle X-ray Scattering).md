@@ -143,7 +143,7 @@ Colloid는 분자가 유동적이어도 분자 간 상호작용 때문에 **선�
 ## Related Concepts
 
 - [[ED lecture note - Scattering and Diffraction]]
-- [[Journal reading - Coherent X-rays reveal anomalous molecular diffusion and cage effects in crowded protein solutions]]
+- [[📑 Journal reading - Coherent X-rays reveal anomalous molecular diffusion and cage effects in crowded protein solutions]]
 
 ## References
 

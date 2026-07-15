@@ -510,7 +510,70 @@ $$
 > [!note] $\alpha=1/2$의 기하학적 origin
 > 이 멱법칙은 외부 매질의 점탄성이나 fractional Gaussian noise 같은 별도의 메커니즘 없이, **순수하게 완화시간 스펙트럼이 $\tau_p \sim 1/p^2$로 연속적으로 퍼져 있다는 사실**에서 나온다. 어느 시점에 측정하든 "아직 완화되지 않은 모드들의 연속체"가 있고, 그 누적합이 정확히 $t^{1/2}$를 만든다. [[Polymer Models]]의 β-polymer 일반화($\tilde\kappa_p \propto \sin^\beta$)에서 $\alpha = 1-1/\beta$가 나오는 것도 똑같은 메커니즘의 연장이다 — mode density 모양만 바뀐 것.
 
+### 8. Coarse-graining scaling — subpolymer 크기 선택의 자유도
 
+> 출처: Yuan et al., *Phys. Rev. E* **109**, 044502 (2024), Sec. II E → [[📑 Journal reading - Effect of loops on the mean-square displacement of Rouse-model chromatin]]
+
+Rouse model에서 bead 하나는 물리적 실체가 아니라 **subpolymer의 무게중심**이다. 따라서 "몇 개의 bead로 자를 것인가"($N$의 선택)에는 상당한 자의성(laxity)이 있다. 그런데 이 자의성이 무해하려면, 서로 다른 coarse-graining 수준이 **같은 물리를 예측해야** 한다. 이 정합성 조건이 parameter들의 scaling을 완전히 결정한다.
+
+#### Scaling 규칙
+
+Subpolymer의 크기를 factor $f$만큼 크게 잡으면 (bead 하나가 $f$배 많은 monomer를 품게 하면):
+
+| 양 | 변환 | 이유 |
+|---|---|---|
+| Bead 수 | $N \to N/f$ | 전체 contour 길이는 불변 |
+| Spring constant | $\kappa \to \kappa/f$ | $\kappa = d\,k_BT/\langle R_{EE}^2\rangle$이고 Gaussian subchain이라 $\langle R_{EE}^2\rangle \propto f$ |
+| Friction coefficient | $\zeta \to f\zeta$ | Friction은 monomer 수에 대해 additive (Rouse는 HI를 무시하므로 정확히 선형) |
+| Polymer time | $\tau_p \to f^2 \tau_p$ | $\tau_p = \zeta/(4\kappa) \to (f\zeta)/(4\kappa/f) = f^2\tau_p$ |
+| **Amplitude** $D$ | $D \to D$ (**불변**) | 아래 참조 |
+
+#### $D$의 불변성이 핵심이다
+
+Early-time MSD의 amplitude는
+
+$$
+D = \frac{k_BT}{\sqrt{\pi \zeta \kappa}}
+$$
+
+인데, $\zeta\kappa \to (f\zeta)\cdot(\kappa/f) = \zeta\kappa$로 **곱이 불변**이다. 따라서 $D$도 불변이다.
+
+이것은 우연이 아니라 **요구조건**이다. $D$는 실험에서 직접 측정되는 physical observable(gene locus MSD의 amplitude)이므로, chromatin을 10 kb 단위로 자르든 100 kb 단위로 자르든 같은 값이 나와야만 한다. $\kappa \propto 1/f$와 $\zeta \propto f$는 각각 독립적으로 유도된 결과인데, 그 곱이 불변이라는 사실이 coarse-graining 절차의 **자기정합성(self-consistency)** 을 보증한다.
+
+> [!note] §7의 결과와 일치하는가?
+> 이 노트 §7의 식 (2.57)은 $g_{seg}(t) = \left(\frac{12k_BTb^2}{\pi\zeta}\right)^{1/2}t^{1/2}$였다. Padding 표기에서 $k = 3k_BT/b^2$이므로 $b^2 \propto 1/k$, 즉 amplitude $\propto (b^2/\zeta)^{1/2} \propto (k\zeta)^{-1/2}$. Yuan et al.의 $D \propto (\kappa\zeta)^{-1/2}$와 **정확히 같은 조합**이다. 표기가 다른 두 유도가 같은 invariant를 지목한다.
+
+반대로 $\tau_p \to f^2\tau_p$는 불변이 **아니다**. 하지만 이것도 문제가 되지 않는다. MSD를
+
+$$
+\text{MSD} = \frac{k_BT}{\sqrt{\pi\kappa}}\sqrt{t/\tau_p}
+$$
+
+로 쓰면 $\sqrt{\kappa\,\tau_p} = \sqrt{\kappa \cdot \zeta/(4\kappa)} = \sqrt{\zeta}/2$이므로, $\tau_p$의 $f^2$ 증가는 $\kappa$의 $1/f$ 감소와 결합해 다시 $D$ 불변으로 귀결된다. **$\tau_p$는 관측량이 아니라 model-internal한 시계 단위**일 뿐이다.
+
+#### 실전: chromatin parameter 정하기 (Yuan et al.)
+
+이 scaling 덕분에 coarse-graining 수준을 먼저 **자유롭게 고르고**, 그다음 실험값으로 parameter를 고정할 수 있다.
+
+1. 6 Mb 영역을 $N = 600$ bead로 → subpolymer $N_1 = 10$ kb로 **선택**.
+2. Spring constant는 Kuhn length $l_k$와 base-pair 밀도 $C$로부터:
+
+$$
+\kappa = \frac{d\,k_BT}{(N_1/C)\,l_k}
+$$
+
+3. Friction은 **실험에서 측정된 $D$** 를 역이용해 결정 ($D$의 정의를 $\zeta$에 대해 푼 것):
+
+$$
+\zeta = \frac{(N_1/C)\,l_k\,k_BT}{d\,\pi D^2}
+$$
+
+$C = 50\ \text{bp}\,\text{nm}^{-1}$, $l_k = 138\ \text{nm}$, $D \approx 4.1\times10^{-3}\ \mu\text{m}^2\,\text{s}^{-1/2}$ ($d=2$)를 넣으면 $\kappa/k_BT \approx 7.25\times10^{-5}\ \text{nm}^{-2}$, $\zeta/k_BT \approx 2.61\times10^{-4}\ \text{nm}^{-2}\,\text{s}$, $\tau_p \approx 0.9\ \text{s}$.
+
+> [!tip] 왜 이게 우리 연구에 중요한가
+> SBS simulation이나 K-matrix 접근에서 "monomer 하나가 몇 kb인가"를 바꿀 때, 이 scaling이 **어떤 양을 다시 fit해야 하고 어떤 양은 건드리면 안 되는지**를 알려준다. $\Gamma$(mobility prefactor)는 $D$-계열의 불변량이므로 coarse-graining 수준에 의존해선 안 되고, $\alpha$는 애초에 dimensionless exponent라 당연히 불변이다. 즉 **coarse-graining은 $\Gamma$도 $\alpha$도 바꾸지 않아야 한다** — simulation의 sanity check로 쓸 수 있는 조건이다.
+>
+> 단, 위 scaling은 Gaussian subchain($\langle R_{EE}^2\rangle \propto f$, 즉 $\nu = 1/2$)을 가정한다. $\nu \neq 1/2$이면 $\langle R_{EE}^2\rangle \propto f^{2\nu}$이므로 $\kappa \propto f^{-2\nu}$가 되고, $\zeta\kappa \propto f^{1-2\nu}$는 **더 이상 불변이 아니다**. 즉 non-Gaussian polymer에서는 $D$의 coarse-graining invariance가 깨진다 — $\nu(n)$ framework에서 반드시 짚고 넘어가야 할 지점.
 
 ### 일반화: K-matrix Diagonalization (GNM / HIPPS-DIMES convention)
 
@@ -529,13 +592,14 @@ $$
 - [[Entropic Spring Constant]]
 - [[Central Limit Theorem]]
 HIPPS-DIMES 부분은 아래 논문을 참고
-- [[Journal reading - Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes]]
+- [[📑 Journal reading - Static three-dimensional structures determine fast dynamics between distal loci pairs in interphase chromosomes]]
 ## References
 
 - J.T. Padding, *Theory of Polymer Dynamics*, Chapter 2: The Rouse Model
 - [[[Padding] THEORY OF POLYMER DYNAMICS-part-2.pdf]]
 - [[Polymer Models]] (Rouse Model 섹션, Amitai & Holcman 2017 기반 요약)
 - J.T. Padding and W.J. Briels, *J. Chem. Phys.* 114, 8685 (2001) — MD 시뮬레이션 비교 데이터 (Fig. 2.2, 2.3)
+- Yuan, Yan, Bailey, Williams, Surovtsev, King & Mochrie, *Phys. Rev. E* **109**, 044502 (2024) — coarse-graining scaling (§8)
 
 ## Notes from Claude
 

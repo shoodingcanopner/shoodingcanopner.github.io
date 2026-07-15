@@ -89,9 +89,9 @@ DNA segment 또는 DNA-binding protein의 운동을 특징짓는 양들. anomalo
 - [[Radius of Gyration of Gaussian Chain]]
 - [[Entropic Spring Constant]]
 - [[Contact probability exponent and polymer scaling]]
-- [[Journal reading - Polymer physics of chromosome large-scale 3D organisation]]
-- [[Journal reading - Polymer physics of nuclear organization and function]]
-- [[Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]]
+- [[📑 Journal reading - Polymer physics of chromosome large-scale 3D organisation]]
+- [[MOCs/📑 Journal reading - Polymer physics of nuclear organization and function]]
+- [[📑 Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]]
 
 ## References
 

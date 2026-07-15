@@ -15,7 +15,7 @@ class: study_journal
 
 ## 이거 왜 읽었나?
 
-[[Journal reading - Stochastic thermodynamics for biological functions]]
+[[📑 Journal reading - Stochastic thermodynamics for biological functions]]
 위 리뷰 논문의 레퍼런스라서 읽었다. 
 세포의 sensitivity가 Markov chain의 topology와 관련있다는 내용이라고 하길래, 흥미로워 보였다. 
 
@@ -268,5 +268,5 @@ Hunchback 이라는 유전자의 TF에 대한 sensitivity를 측정한 결과, H
 ## 더 읽어보고 싶은 레퍼런스
 
 
-[[Journal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov Chain]]
+[[📑Journal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov ChainJournal reading - A Flow-Graph Formula for the Stationary Distribution of a Markov Chain]]
 → Markov chain tree theorem이 뭔지 알 수 있다고 한다.

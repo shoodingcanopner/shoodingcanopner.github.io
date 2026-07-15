@@ -72,7 +72,7 @@ Power-law 형태의 대기 시간 분포의 모멘트 계산에서 사용
 
 - [[Brownian Motion Properties]]
 - [[Diffusion Equation Derivation from Random Walks]]
-- [[Journal reading - Anomalous diffusion models and their properties]]
+- [[📑 Journal reading - Anomalous diffusion models and their properties]]
 - [[Central Limit Theorem]]
 
 ## References

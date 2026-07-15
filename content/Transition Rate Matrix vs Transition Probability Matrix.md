@@ -126,7 +126,7 @@ $$
 ## Related Concepts
 
 - [[Markov Property]]
-- [[Journal reading - Shortcuts in Stochastic Systems and Control of Biophysical Processes]]
+- [[📑 Journal reading - Shortcuts in Stochastic Systems and Control of Biophysical Processes]]
 
 ## References
 

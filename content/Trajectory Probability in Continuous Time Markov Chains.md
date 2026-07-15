@@ -89,7 +89,7 @@ trajectory probability는 세 종류의 "사건"을 모두 곱한 것이다:
 - [[Markov Property]]
 - [[Entropy Production Rate]]
 - [[Local Detailed Balance]]
-- [[Journal reading - Stochastic thermodynamics for biological functions]]
+- [[📑 Journal reading - Stochastic thermodynamics for biological functions]]
 - [[Markov Process]]
 
 ## References
