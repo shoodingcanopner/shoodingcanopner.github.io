@@ -329,10 +329,14 @@ $$
 $$
 **정규화 주의:** 공통 $\frac{1}{\sqrt{N+1}}$만 붙이면 $p\ge1$ 행은 $\sum_n\cos^2 = \frac{N+1}{2}$라 norm$^2=\frac12$로 덜 정규화된다 — $p\ge1$ 행에 $\sqrt{2}$를 더 붙여야 $V_{lin}$이 진짜 orthogonal이 되고 $V_{lin}K_{lin}V_{lin}^T = \Lambda_{lin}$이 정확히 성립한다.
 
-Eigen value는 $\lambda_p =  -4k\sin^2\tfrac{\pi p}{2(N+1)}$
+Eigen value는 
+$$
+\lambda_p =  -4k\sin^2\tfrac{\pi p}{2(N+1)}
+$$
 $$
 \Lambda_{lin} = -4k\,\mathrm{diag}\!\left(0,\ \sin^2\tfrac{\pi}{2(N+1)},\ \sin^2\tfrac{2\pi}{2(N+1)},\ \dots,\ \sin^2\tfrac{N\pi}{2(N+1)}\right)
 $$
+
 위 eigen value와 $k = \frac{3}{2\beta b^2}$를 $P(\mathbf{X}_0, \dots, \mathbf{X}_N) = \frac{1}{Z}\exp\!\left(+\beta\sum_p \lambda_p \mathbf{X}_p^2\right)$에 대입하면 식 (2.49)가 나온다. 
 #### Example: **Circular polymer**
 
@@ -366,6 +370,133 @@ $$
 Ring은 $\lambda_p = \lambda_{N+1-p}$의 **2-fold degeneracy**를 갖는다 ($\sin^2\frac{(N+1-p)\pi}{N+1} = \sin^2\frac{p\pi}{N+1}$) — 4-C의 complex mode degeneracy가 spectrum에도 그대로 나타난다. $V_{cir}$는 complex(unitary)이므로 $V_{cir}K_{cir}V_{cir}^{\dagger} = \Lambda_{cir}$, quadratic form도 $\mathbf X^\dagger\Lambda\mathbf X$로 conjugate transpose를 쓴다 ($V^T$ 아님). 모든 $p$에서 $|(V_{cir})_{pn}|=1$이라 $\frac{1}{\sqrt{N+1}}$ 하나로 전부 unitary가 되어, linear에서 있던 $p\ge1$ 정규화 문제가 없다.
 
 
+
+
+#### Example: Circular polymer with constant loop
+
+Circular backbone의 모든 loci가 $m$칸 떨어진 상대와 추가로 loop bond를 이루는 경우다. 이것은 [[🔥MAIN - looped polymer dynamics]] 연구에서 **해석적 검증용 reference system**으로 쓰인다 — looped polymer 중 닫힌 형태로 완전히 풀리는 드문 경우이기 때문이다.
+
+##### K-matrix 구조
+
+Bead 개수 $n = N+1$, 모든 index는 $\bmod\ n$으로 순환한다. 각 bead $i$는 backbone 이웃 $i\pm1$과 loop 상대 $i\pm m$, 총 4개와 연결되므로 degree가 **모든 site에서 균일하게 4**다:
+
+$$
+(K_{\text{cir-loop}})_{ij} = k\left(\delta_{j,i+1} + \delta_{j,i-1} + \delta_{j,i+m} + \delta_{j,i-m}\right), \qquad (K_{\text{cir-loop}})_{ii} = -4k
+\tag{L1}
+$$
+
+Row sum이 0인 Laplacian 조건 $-4k + 4k = 0$이 자동으로 만족된다. 핵심은 이 행렬이 **circulant**라는 점 — 각 행이 이전 행의 순환 shift이고, 첫 행 $c_j$ 하나가 전체를 결정한다:
+
+$$
+(K_{\text{cir-loop}})_{ij} = c_{(j-i) \bmod n}, \qquad c_1 = c_{n-1} = c_m = c_{n-m} = k,\quad c_0 = -4k
+\tag{L2}
+$$
+
+##### 대각화 — Fourier mode가 항상 eigenvector다
+
+Circulant matrix의 결정적 성질: **행렬의 내용과 무관하게** eigenvector가 discrete Fourier mode로 고정된다. Loop 유무나 $m$ 값에 관계없이 basis가 circular Rouse chain과 동일하다.
+
+$$
+(V_{\text{cir-loop}})_{pn} = \frac{1}{\sqrt{N+1}}e^{-i\frac{2\pi p}{N+1}n}
+\tag{L3}
+$$
+
+증명은 shift operator의 고유함수 성질 하나로 끝난다. Test vector $v_p(j) = e^{i\theta_p j}$, $\theta_p \equiv \frac{2\pi p}{n}$에 $K$를 작용시키면:
+
+$$
+(Kv_p)(i) = k\left[v_p(i+1) + v_p(i-1) + v_p(i+m) + v_p(i-m)\right] - 4k\,v_p(i)
+\tag{L4}
+$$
+
+$v_p(i\pm s) = v_p(i)\,e^{\pm i\theta_p s}$를 대입하면 공통인자 $v_p(i)$가 통째로 빠져나온다:
+
+$$
+(Kv_p)(i) = v_p(i)\cdot k\left[e^{i\theta_p} + e^{-i\theta_p} + e^{i\theta_p m} + e^{-i\theta_p m} - 4\right]
+\tag{L5}
+$$
+
+Euler 항등식 $e^{ix}+e^{-ix} = 2\cos x$로 정리하면 eigenvalue equation $Kv_p = \lambda_p v_p$가 성립하고:
+
+$$
+\lambda_p = 2k\left(\cos\frac{2\pi p}{N+1} - 1\right) + 2k\left(\cos\frac{2\pi pm}{N+1} - 1\right)
+\tag{L6}
+$$
+
+Half-angle 항등식 $1-\cos x = 2\sin^2(x/2)$를 적용한 최종 형태:
+
+$$
+\lambda_p = -4k\left[\sin^2\frac{p\pi}{N+1} + \sin^2\frac{pm\pi}{N+1}\right], \qquad p = 0, 1, \dots, N
+\tag{L7}
+$$
+
+
+##### 결과 해석
+
+**두 항의 합 구조.** (L7)은 backbone 항과 loop 항의 **단순 덧셈**이다. 앞 절의 circular Rouse eigenvalue $\lambda_p^{\text{cir}} = -4k\sin^2\frac{p\pi}{N+1}$과 비교하면:
+
+$$
+\lambda_p^{\text{cir-loop}} = \lambda_p^{\text{cir}} + \lambda_{pm}^{\text{cir}}
+\tag{L8}
+$$
+
+즉 loop은 spectrum에 **주기가 $m$배 빠른 두 번째 cosine을 중첩**시킨다. 첫 항의 주기는 $p \sim n$, 둘째 항의 주기는 $p \sim n/m$으로 훨씬 짧다.
+
+**극한 확인.** $m=0$ (또는 $m=n$)이면 둘째 항이 0이 되어 circular Rouse가 정확히 복원된다. $m=1$이면 backbone bond가 두 겹이 되어 $\lambda_p = -8k\sin^2\frac{p\pi}{n}$, 즉 spring constant가 두 배인 Rouse chain과 같다.
+
+**Zero mode.** $p=0$에서 두 항 모두 0이므로 $\lambda_0 = 0$ — center-of-mass mode는 connectivity와 무관하게 항상 보존된다.
+
+**Degeneracy.** $\sin^2$의 대칭성이 두 항 모두에서 성립하므로, circular Rouse와 동일한 **2-fold degeneracy** $\lambda_p = \lambda_{N+1-p}$가 유지된다.
+
+**Small-$p$ 거동.** $p \ll n/m$이면 두 sine 모두 quadratic 근사가 가능해서:
+
+$$
+\lambda_p \approx -4k\left[\left(\frac{p\pi}{n}\right)^2 + \left(\frac{pm\pi}{n}\right)^2\right] = -\frac{4k\pi^2}{n^2}(1+m^2)\,p^2
+\tag{L9}
+$$
+
+가장 긴 파장 영역에서는 여전히 $-\lambda_p \sim p^2$ (Rouse scaling, $\alpha=2$)이지만 **prefactor가 $(1+m^2)$배 증폭**된다. Loop이 large-scale relaxation을 $\tau_p = -\zeta/2\lambda_p$만큼 가속시킨다는 뜻이다.
+
+**Beating과 겉보기 exponent.** $p \gtrsim n/m$부터는 둘째 항이 quadratic 영역을 벗어나 진동하기 시작하고, spectrum이 순수 power-law가 아니라 **두 주기의 중첩(beating pattern)**이 된다. 이 구간에서 수치적으로 측정되는 local exponent $\alpha(p) = d\log(-\lambda_p)/d\log p$는 심하게 요동하며, 넓은 구간 평균은 $\alpha=2$가 아닌 값으로 나타난다 ($N=10^4$, $m=2048$ 수치실험에서 관측상 $\alpha \approx 1$). 이것은 진짜 asymptotic scaling law가 아니라 **두 성분의 crossover 평균**임에 주의해야 한다.
+
+> [!warning] Aliasing 주의
+> $2m \equiv 0 \pmod{n}$인 경우(예: $m = n/2$) $i+m$과 $i-m$이 같은 site를 가리켜 bond가 이중으로 계산된다. 이때 (L7)은 loop 항의 계수가 두 배인 형태로 수정되어야 하며, 수치 구현에서도 `+=` 누적 방식이 같은 원소에 두 번 더하는지 확인해야 한다.
+
+##### Linear chain은 왜 안 풀리는가
+
+같은 loop 구조를 **linear** backbone에 얹으면 (L3)이 더 이상 eigenvector가 아니다. 두 가지 이유가 있다.
+
+1. **Translation invariance 파괴.** 양 끝 근방($i < m$ 또는 $i > N-m$)에서 loop 상대가 존재하지 않아 bond가 잘려나간다. 대각항이 $-4k$가 아니라 $-2k$ 또는 $-3k$로 site마다 달라지고, 행렬이 circulant가 아니게 되어 (L4)의 인수분해가 성립하지 않는다.
+2. **Band 구조.** $\pm1$과 $\pm m$ 두 개의 off-diagonal band를 갖는다. 순수 tridiagonal($m=0$)이면 Chebyshev 계열로 풀리지만, $m$번째 band가 추가되면 일반적으로 닫힌 형태의 해가 없다.
+
+따라서 해석적 검증은 circular 버전으로 수행하고, linear의 bulk 성질은 $N \gg m$ 조건에서 circular 결과로 근사하는 것이 표준적인 접근이다.
+
+##### Numerical validation
+
+(L7)을 numerical diagonalization과 직접 비교할 수 있다.
+
+```python
+def analytic_eigenvalues_circular_loop(N, k, m):
+    """식 (L7): circular polymer with constant loop의 해석적 eigenvalue"""
+    n = N + 1
+    p = np.arange(n)
+    return -4 * k * (np.sin(p * np.pi / n)**2 + np.sin(p * m * np.pi / n)**2)
+
+K = build_K_circular_constant_loop(N, k, m)
+lam_num, _ = diagonalize(K)
+lam_ana = analytic_eigenvalues_circular_loop(N, k, m)
+assert np.allclose(np.sort(lam_num), np.sort(lam_ana))
+```
+
+##### MSD와의 연결
+
+Eigenvector가 모든 site에서 $|(V)_{pn}| = 1/\sqrt{N+1}$로 균일하므로 single-locus MSD가 **locus 위치에 무관**하다 (circular 대칭성). 따라서 single-locus MSD와 segment-averaged MSD가 일치하고, 앞 절의 결과가 그대로 적용된다:
+
+$$
+\left\langle (\Delta\mathbf{R}_n(t))^2\right\rangle = 6D_Gt + \frac{6k_BT}{\zeta(N+1)}\sum_{p\ge1}\tau_p\left(1-e^{-t/\tau_p}\right), \qquad \tau_p = -\frac{\zeta}{2\lambda_p}
+\tag{L10}
+$$
+
+$\lambda_p$에 (L7)을 대입하면 loop이 MSD에 미치는 영향이 완전히 결정된다. Spectrum이 $-\lambda_p \sim p^{\alpha}$를 따르는 구간에서 MSD exponent는 $\beta = 1 - 1/\alpha$ 관계를 만족하므로, small-$p$의 $\alpha=2$ 구간은 $\beta=1/2$ (Rouse), beating 구간의 겉보기 $\alpha \approx 1$은 $\beta \approx 0$ (plateau, loop에 의한 caging)에 대응한다.
 
 ## Questions & Insights
 

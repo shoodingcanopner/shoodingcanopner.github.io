@@ -80,6 +80,10 @@ $$
 노란 선 → 제일 강한 subdiffusion이 나타난다. extruder가 unbinder이전에 많은 step을 진행해서 큰 loop가 생성된 경우라고 해석한다. $k_l < k_u$이라는 조건은 소수의 extruder가 chain에 있어서 서로 방해 받지 않아 큰 loop를 형성할 수 있게 했을 것이다. 
 
 ![[Pasted image 20260713143803.png]]
+괄호 속의 값은 average number of active extruders
+
+말이 안 되는 부분. $k_l/k_u$가 bound된 mean  extruder number과 같아야 하지 않은가?
+
 Heat map은 exponent $\alpha$를 나타낸 것. 
 여기서도 $k_l$이 적은 때 더 강한 sub diffusion이 나타남.
 → 실제 biologial system의 parameter는?
@@ -356,7 +360,7 @@ $\beta = 1$이면 $\alpha = 1/2$로 표준 Rouse. $\beta \ne 1$이면 nonstandar
 글리아와 논문을 읽으며 새로 공부하고, 작성한 학습노트를 이곳에 자동으로 추가한다.
 
 - [[Rouse model]]
-- [[Loop extrusion]]
+- 연관 논문 [[📑 Journal reading - Effect of loops on the mean-square displacement of Rouse-model chromatin]]
 
 ## 더 읽어보고 싶은 레퍼런스
 
