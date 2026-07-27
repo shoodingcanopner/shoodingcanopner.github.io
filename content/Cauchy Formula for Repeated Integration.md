@@ -1,6 +1,5 @@
 ---
-title:
-  "{ title }": "Cauchy Formula for Repeated Integration"
+title: Cauchy Formula for Repeated Integration
 date: "2026-07-21"
 subject: mathematics
 tags:

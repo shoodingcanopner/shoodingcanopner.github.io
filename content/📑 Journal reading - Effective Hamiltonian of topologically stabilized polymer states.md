@@ -153,8 +153,7 @@ $$
 V(\{\mathbf{X}\}) = \psi(\mathbf{x}_0,\dots,\mathbf{x}_{N-1}) = a(0)\sum_{m=0}^{N-1}\mathbf{x}_m^2 - 2\sum_{m<k} a(s(k,m))\,\mathbf{x}_m\mathbf{x}_k = \langle X|\mathbb{A}|X\rangle \tag{13}
 $$
 
-  여기서 matrix $\mathbb{A}$의 원소는 오직 $s(k,m)$(chemical distance)에만 의존한다. 이 구조가 $\mathbb{A}$를 **symmetric circulant matrix**로 만드는 핵심이며, 이 성질 덕분에 뒤 eq. 15에서 eigenvector가 (data-dependent가 아니라) 항상 discrete Fourier mode로 고정된다 — 
-  이는 사용자의 K-matrix Diagonalization 노트에서 확인한 "circulant matrix는 내용과 무관하게 eigenvector가 Fourier mode로 고정된다"는 성질과 정확히 같은 메커니즘이다.
+  여기서 matrix $\mathbb{A}$의 원소는 오직 $s(k,m)$(chemical distance)에만 의존한다. 이 구조가 $\mathbb{A}$를 **symmetric circulant matrix**로 만드는 핵심이며, 이 성질 덕분에 뒤 eq. 15에서 eigenvector가 (data-dependent가 아니라) 항상 discrete Fourier mode로 고정된다.
 
 - **Circulant matrix $\mathbb{A}$의 구체적 예시 (eq. 14, $n=3$, $N=7$)**: matrix element가 $s(k,m)$에만 의존하는 구조를 $7\times7$ 예시로 명시적으로 보여준다.
 
@@ -218,7 +217,7 @@ $$
 V(\{\mathbf{X}\}) = \sum_{m=0}^{N-1}\left\langle \mathbf{A}_m\left|\mathbf{u}_m^*\sum_{p=0}^{N-1}\omega_p\mathbf{u}_p\right|\mathbf{A}_p\right\rangle = \sum_{m=0}^{N-1}\sum_{p=0}^{N-1}\mathbf{u}_m^*\,\omega_p\,\mathbf{u}_p\langle\mathbf{A}_m|\mathbf{A}_p\rangle = \sum_{p=0}^{N-1}\omega_p|\mathbf{u}_p|^2 \tag{19}
 $$
 
-  이 형태는 사용자의 K-matrix 노트에서 다뤘던 $H=-\mathbf{X}^T\Lambda\mathbf{X}=-\sum_p\lambda_p\mathbf{X}_p^2$와 정확히 같은 구조다(부호 convention만 반대 — 이 논문은 potential $V=\sum\omega_p|u_p|^2$을 최소화하는 Boltzmann weight $e^{-V}$를 쓰고, 사용자 노트는 $H=-\mathbf{X}^T K\mathbf{X}$에서 $K$가 negative-definite인 convention을 쓴다. $\omega_p \leftrightarrow -\lambda_p$로 대응).
+  이 형태는 K-matrix 노트에서 다뤘던 $H=-\mathbf{X}^T\Lambda\mathbf{X}=-\sum_p\lambda_p\mathbf{X}_p^2$와 정확히 같은 구조다(부호 convention만 반대).
 
 - **Equipartition theorem 적용 (eq. 20)**: 대각화된 potential (19)은 각 mode당 독립적인 Gaussian이므로, [[Equipartition Theorem]]에 의해 mode의 평형 분산이 eigenvalue의 역수로 바로 주어진다.
 
@@ -288,8 +287,8 @@ a(s) = \begin{cases} c_1 s^{-\gamma_1} & \text{for } s<s^* \\ c_2 s^{-\gamma_2} 
 $$
 
   $s^*$는 두 power-law regime을 나누는 **crossover length scale**이다. $s\ll s^*$인 짧은 거리에서는 $\gamma_1$이, $s\gg s^*$인 긴 거리에서는 $\gamma_2$가 $\sigma^2(s)$의 거동을 지배한다 — 즉 chain이 더 이상 하나의 fractal dimension을 갖지 않고, $s\ll s^*$ 구간과 $s\gg s^*$ 구간에서 서로 다른 $d_f$(eq. 26–27 관계를 각각 $\gamma_1$, $\gamma_2$에 적용)를 갖는 **scale-dependent** conformation이 만들어진다. 
-  대규모($s\gg s^*$) 거동은 오직 $\gamma_2$(=$a(s)$의 large-$s$ tail)에만 의존한다는 점은 eq. 26의 asymptotic 결과와 일관된다. 논문은 이 성질이 active/inactive 영역이 섞인 heterochromatin처럼, chain의 서로 다른 부분(혹은 서로 다른 길이 스케일)에서 다른 fractal dimension을 갖는 conformation을 만드는 데 쓰일 수 있다고 제안한다. Fig. 2의 수치 예시는 $s^*=100$, $(\gamma_1,\gamma_2)=(4,\,8/3)$과 그 반대 $(8/3,\,4)$ 두 조합을 비교한다 — 사용자의 continuous $\nu(n)$ 프레임워크 관점에서 보면, 이 eq. 28은 $\nu(n)$이 두 개의 constant piece로만 이루어진 가장 단순한 2-piece 특수 케이스에 해당한다.
-
+  대규모($s\gg s^*$) 거동은 오직 $\gamma_2$(=$a(s)$의 large-$s$ tail)에만 의존한다는 점은 eq. 26의 asymptotic 결과와 일관된다. 논문은 이 성질이 active/inactive 영역이 섞인 heterochromatin처럼, chain의 서로 다른 부분(혹은 서로 다른 길이 스케일)에서 다른 fractal dimension을 갖는 conformation을 만드는 데 쓰일 수 있다고 제안한다. Fig. 2의 수치 예시는 $s^*=100$, $(\gamma_1,\gamma_2)=(4,\,8/3)$과 그 반대 $(8/3,\,4)$ 두 조합을 비교한다.
+  
   **$s^*$를 결정하는 요소**: 논문은 $s^*$를 유도하는 analytical formula를 제공하지 않는다 — $s^*$, $\gamma_1$, $\gamma_2$, $c_1$, $c_2$ 모두 Fig. 2 수치 테스트를 위해 **손으로 지정한 free parameter**일 뿐이다. 굴이 제약을 찾자면 $s=s^*$에서 $a(s)$가 연속이어야 한다는 조건 $c_1(s^*)^{-\gamma_1}=c_2(s^*)^{-\gamma_2}$ 정도가 전부이며, 이건 $s^*$ 값 자체를 결정하는 게 아니라 $s^*$를 먼저 고르면 $c_1/c_2$ 비율이 정해진다는 constraint일 뿐이다. 논문이 부여하는 유일한 물리적 해석은 Discussion에서 언급되는 heterochromatin 비유 정도로, active/inactive domain의 경계(예: TAD boundary)가 $s^*$에 대응할 것이라는 정성적 제안만 있고 이를 계산하는 방법은 논문 범위 밖에 남겨둔다.
 
 - **fBm의 power spectrum $f(p)$ 정의 (eq. 29)**
@@ -430,14 +429,14 @@ $$
 - [[Fractional Brownian Motion]] — 이 논문의 핵심 대상. df와 Hurst exponent H=1/df 관계
 - [[K-matrix Diagonalization (Generalized Rouse Model)]] — 이 논문 Section III의 circulant matrix eigenmode 대각화(eq. 13-23)와 double-centering / eigenvalue spectrum → variance 골격을 정확히 공유하는 사용자의 K-matrix 노트
 - [[β-polymer (beta-polymer)]] — 이 논문 ref. 41 "beta-model"(Amitai & Holcman)과 동일한 generalized Rouse eigenvalue 구조 ($\sin^\beta$ vs. 이 논문의 $(p/N)^{\gamma-1}$)
-- [[MSD exponent from scale-dependent Flory exponent]] — 사용자의 ν(n)→α(τ) 프레임워크 노트, 이 논문의 $d_f=2/(\gamma-2)$와 직접 연결
+- [[MSD exponent from scale-dependent Flory exponent]] 
 - [[Rouse Model]] — $\gamma>3$ 극한에서 이 논문의 결과가 환원되는 baseline
 - [[Equipartition Theorem]] — eq. 20 $\overline{\mathbf{u}_p^*\mathbf{u}_{p'}} = 3\delta_{pp'}/\omega_p$ 유도에 사용
 
 **관련 저널 리딩 노트:**
 - [[📑 Journal reading - Anomalous Diffusion in Fractal Globules]] — 이 논문의 ref. 29 (Tamm et al. PRL 2015)이자, 이 논문 Fig. 3a의 Maxwell-fit 검증 데이터 원출처
 - [[📑 Journal reading - The fractal globule as a model of chromatin architecture in the cell]] — 이 논문 ref. 21 (Mirny 2011)
-- [[📑 Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]] — 사용자의 핵심 연구 모델(SBS)과의 접점
+- [[📑 Journal reading - Complexity of chromatin folding is captured by the strings and binders switch model]] 
 
 - [[Generalized Langevin Equation and Memory Kernel]] — eq. 4 (fLe)와 eq. 8 (memory-kernel action)에 대한 상세 설명, FDT를 통한 friction-noise kernel 등가성의 미시적 유도(Caldeira-Leggett) 포함
 
