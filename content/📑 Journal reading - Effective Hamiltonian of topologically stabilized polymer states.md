@@ -1,9 +1,9 @@
 ---
-title: "Effective Hamiltonian of topologically stabilized polymer states"
+title: Journal reading - Effective Hamiltonian of topologically stabilized polymer states
 authors: K. Polovnikov, S. Nechaev, M. V. Tamm
 DOI: "[DOI](https://doi.org/10.1039/c8sm00785c)"
-date read: "2026-07-27"
-date published: "2018-07-27"
+date read: 2026-07-27
+date published: 2018-07-27
 subject: polymer physics
 tags:
   - study
@@ -13,7 +13,10 @@ class: study_journal
 ---
 
 # Effective Hamiltonian of topologically stabilized polymer states
-![[Pasted image 20260727082118.png]]
+![[Pasted image 20260727110337.png]]
+## 왜 읽었나
+우리 연구실에 방문하신 세르게이 교수님의 [[2026-07-17]] 특강에서 잠깐 다룬 내용이다. 
+그리고 loop extrusion관련해서 하고 있는 작업과 방법론이 비슷하다. 
 
 ## Overview
 
@@ -28,7 +31,7 @@ $$
 ## Link to PDF and DOI
 
 - DOI: [10.1039/c8sm00785c](https://doi.org/10.1039/c8sm00785c)
-- 로컬 PDF: `Books/Effective_Hamiltonian_of_topologically_stabilized_polymer_state.pdf`
+- 로컬 PDF: [[Books/Effective Hamiltonian of topologically stabilized polymer state.pdf]]
 
 ## 주요 내용 요약
 ### SectionⅠ - 서론
@@ -93,7 +96,7 @@ $$
 a_s \sim c\, s^{-\gamma}, \qquad \gamma \in (2,3), \quad c>0 \tag{6}
 $$
 
-- **Fractal dimension과 decay exponent의 관계 (eq. 7)**: 위 조건 하에서 얻어지는 conformational statistics의 대규모 fractal dimension이 $\gamma$에 의해 결정된다.
+- **Fractal dimension과 decay exponent의 관계 (eq. 7)**: 위 조건 하에서 얻어지는 conformational statistics의 fractal dimension이 $\gamma$에 의해 결정된다.
 
 $$
 d_f = \frac{2}{\gamma-2} \tag{7}
@@ -222,7 +225,7 @@ $$
 $$
 \overline{\mathbf{u}_p^*\mathbf{u}_{p'}} = \frac{3\delta_{pp'}}{\omega_p} \tag{20}
 $$
-	$k_bT = 1$로 두면 인수 $1/2$가 위 식에서 빠긴 것 같다. 
+	$k_bT = 1$로 두면 인수 $1/2$가 위 식에서 빠진 것 같다. 
   
   이 식이 다음 단계(eq. 21–23)에서 monomer-to-monomer distance $\mathbf{x}_k-\mathbf{x}_m$의 분산 $\sigma^2(s)$를 eigenvalue spectrum $\{\omega_p\}$의 합으로 명시적으로 계산하는 데 직접 사용된다 
 
