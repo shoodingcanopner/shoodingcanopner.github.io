@@ -22,6 +22,10 @@ Weekly on Friday 14:30 – 15:30
 
 
 ZOOM link: [https://us06web.zoom.us/j/89302538330?pwd=Hlaax9aKMC6G0g9kBc6kagRfstB2rG.1](https://us06web.zoom.us/j/89302538330?pwd=Hlaax9aKMC6G0g9kBc6kagRfstB2rG.1 "https://us06web.zoom.us/j/89302538330?pwd=Hlaax9aKMC6G0g9kBc6kagRfstB2rG.1")
+
+사이트: https://sites.google.com/view/itsymeeting/talk-order
+
+
 # 파일 목록
 
 - [[Elements of information theory_cover.pdf]]
