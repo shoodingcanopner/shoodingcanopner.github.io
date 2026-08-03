@@ -1,9 +1,9 @@
 ---
-title: "Genome-wide absolute quantification of chromatin looping"
+title: Journal reading - Genome-wide absolute quantification of chromatin looping
 authors: James M. Jusuf, Jin H. Yang, Jack Toppen, Simon Grosse-Holz, Michele Gabriele, Pia Mach, Ilya M. Flyamer, Christoph Zechner, Luca Giorgetti, Leonid A. Mirny, Anders S. Hansen
 DOI: "[DOI](https://doi.org/10.1038/s41594-026-01819-2)"
-date read: "2026-08-02"
-date published: "2026-06-30"
+date read: 2026-08-02
+date published: 2026-06-30
 subject: chromatin biology
 tags:
   - study
@@ -168,7 +168,7 @@ Analyzing the effects of intervening CTCF sites and loop size separately, we fou
 ![[Pasted image 20260803094737.png]]
 ![[Pasted image 20260803094759.png]]
 ![[Pasted image 20260803094806.png]]
-
+![[Pasted image 20260803102537.png]]
 ![[Pasted image 20260803094820.png]]
 
 ## Questions & Insights
