@@ -13,6 +13,8 @@ class: study_journal
 ---
 
 # Genome-wide absolute quantification of chromatin looping
+![[Screenshot_20260803_131500_Flexcil.jpg]]
+
 ## 왜 읽었나
 나는 아직 저널 리딩에서 순수 이론 논문을 발표할 깜냥이 안 된다. 
 최근에 나온 생명 실험 논문 중 우리 연구실 사람들이 흥미 있어 할 만할 걸 찾아달라고 AI한테 부탁했더니 이걸 추천해 줬다. 
