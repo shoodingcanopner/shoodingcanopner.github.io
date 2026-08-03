@@ -149,9 +149,27 @@ $k= 0.161$이 나왔다고 한다.
 
 ### 실험 결과
 
-#### looping probability distribution
-![[Pasted image 20260803094156.png]]
+#### Looping probability distribution
+![[Pasted image 20260803094631.png]]
+![[Pasted image 20260803094643.png]]
 
+![[Pasted image 20260803094656.png]]
+
+![[Pasted image 20260803094706.png]]
+
+
+![[Pasted image 20260803101813.png]]
+Analyzing the effects of intervening CTCF sites and loop size separately, we found that intervening CTCF sites reduced looping probability more than expected from loop size effects alone
+
+
+
+#### Looping probabilities corrleate with epigenomic features
+![[Pasted image 20260803094730.png]]
+![[Pasted image 20260803094737.png]]
+![[Pasted image 20260803094759.png]]
+![[Pasted image 20260803094806.png]]
+
+![[Pasted image 20260803094820.png]]
 
 ## Questions & Insights
 
