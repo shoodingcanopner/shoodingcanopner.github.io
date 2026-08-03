@@ -303,7 +303,7 @@ g_{seg}(t) = \frac{6k_BT}{\zeta(N+1)}\sum_p \tau_p\left(1-e^{-t/\tau_p}\right) =
 $$
 
 $\tau_p = -\frac{\zeta}{2\lambda_p}$
-저 summation 부분($\sum_{p\ge1} \tau_p\left(1-e^{-t/\tau_p}\right)$)이 single exponent이기 위한 $\tau$의 스펙트럼은 무엇인가?
+→ 저 summation 부분($\sum_{p\ge1} \tau_p\left(1-e^{-t/\tau_p}\right)$)이 single exponent이기 위한 $\tau$의 스펙트럼은 무엇인가?
 
 이것은 §7의 식 (2.55)와 정확히 같은 식이다. 유도만 다르다 — §7은 linear chain의 $\cos^2$ 직교성($\frac{1}{N+1}\sum_n\cos^2 = \frac12$)에 의존했지만, 여기선 **basis 무관하게 eigenvector row norm = 1** 하나로 끝난다. (linear에서 $(V^T)_{np}^{\,2} = \frac{2}{N+1}\cos^2$이니 $\sum_n = \frac{2}{N+1}\cdot\frac{N+1}{2} = 1$로 두 논증이 일치.)
 
