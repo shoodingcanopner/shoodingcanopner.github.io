@@ -22,6 +22,85 @@ class: study
 > [!info] 분리 출처
 > 본문은 [[Rouse Model]]의 "일반화: K-matrix Diagonalization" 섹션을 손실 없이 그대로 옮긴 것이다 (2026-07-10 분리). 본문에 등장하는 §5, §7, 식 (2.44)/(2.47)/(2.54)/(2.55) 등의 상호참조는 모두 [[Rouse Model]] 노트의 Part 1 내용을 가리킨다.
 
+
+## Notation
+
+이 노트 전체에서 쓰는 기호를 모아둔다. Bead 개수는 항상 $N+1$개($n \equiv N+1$)이며, mode index는 $p = 0, 1, \dots, N$이다.
+
+### 구조와 network
+
+| Symbol | Meaning |
+|--------|---------|
+| $N+1$, $n$ | Bead(locus) 개수. index $i, j, n = 0, \dots, N$ |
+| $d$ | 공간 차원 (본문에서는 $d=3$) |
+| $\mathbf{R}_i$ | Bead $i$의 위치 vector, $\mathbf{R} = (\mathbf{R}_0, \dots, \mathbf{R}_N)^T$ |
+| $\mathbf{R}_{cm}$ | Center of mass, $\frac{1}{n}\sum_k \mathbf{R}_k$ |
+| $\delta\mathbf{R}_i$ | 중심화 위치, $\mathbf{R}_i - \mathbf{R}_{cm}$ |
+| $\mathsf{R}$ | 위치를 행으로 쌓은 $n\times d$ 행렬 |
+| $b$ | Kuhn segment length |
+| $k$ | Spring constant, $k = \frac{3}{2\beta b^2}$ ($1/2$ factor 포함 정의) |
+| $k_{ij}$ | Bead $i$–$j$ 사이 harmonic bond 세기 |
+| $m$ | Constant-loop 구조에서 loop이 잇는 간격 (bead $i \leftrightarrow i\pm m$) |
+
+### K-matrix와 대각화
+
+| Symbol | Meaning |
+|--------|---------|
+| $K$ | Connectivity (graph Laplacian) matrix. $K_{ij}=k_{ij}$ ($i\ne j$), $K_{ii}=-\sum_{j\ne i}k_{ij}$. Negative semi-definite |
+| $K^{+}$ | $K$의 Moore–Penrose pseudo-inverse |
+| $V$ | Orthonormal eigenvector를 **행으로** 쌓은 행렬. $VKV^T = \Lambda$, $K = V^T\Lambda V$ |
+| $\mathbf{v}_p$ | $p$번째 eigenvector ($V$의 $p$번째 행) |
+| $\Lambda$ | Eigenvalue 대각행렬 $\mathrm{diag}(\lambda_0,\dots,\lambda_N)$ |
+| $\lambda_p$ | $p$번째 eigenvalue. $\lambda_0 = 0$ (zero mode), $\lambda_{p\ge1} < 0$ |
+| $\mathbf{X}$ | Mode coordinate, $\mathbf{X} = V\mathbf{R}$ |
+| $\mathbf{X}_p$ | $p$번째 mode의 진폭 vector |
+| $c_p$ | Linear chain eigenvector 정규화 상수. $c_0=1$, $c_{p\ge1}=2$ |
+| $\theta_p$ | Circulant 대각화의 위상, $\theta_p = 2\pi p/n$ |
+| $\mathbf{1}$ | 모든 성분이 1인 vector. $\mathbf{v}_0 = \mathbf{1}/\sqrt{n}$ |
+
+### 통계역학과 동역학
+
+| Symbol                     | Meaning                                                                    |
+| -------------------------- | -------------------------------------------------------------------------- |
+| $H$                        | Hamiltonian (bond 에너지), $H = -\mathbf{R}^TK\mathbf{R}$                     |
+| $Z$                        | Partition function                                                         |
+| $\beta$                    | Inverse temperature $1/k_BT$ — **아래 주의 참고**                                |
+| $\zeta$                    | Bead 하나의 friction coefficient                                              |
+| $\mathbf{f}$, $\mathbf{F}$ | Random force ($\mathbf{R}$ basis / mode basis, $\mathbf{F} = V\mathbf{f}$) |
+| $\tau_p$                   | Mode $p$의 relaxation time, $\tau_p = -\zeta/2\lambda_p$                    |
+| $\tau_*$                   | Power-law spectrum $\tau_p = \tau_*p^{-\alpha}$의 prefactor                 |
+| $D$                        | 단일 bead diffusion coefficient $k_BT/\zeta$ — **아래 주의 참고**                  |
+| $D_G$                      | Center-of-mass diffusion coefficient, $D_G = D/(N+1)$                      |
+| $g_{seg}(t)$               | Segment-averaged MSD                                                       |
+| $A$                        | $g_{seg}$의 prefactor, $A = 6k_BT/\zeta(N+1)$                               |
+
+### Static structure (MDS 경로)
+
+| Symbol | Meaning |
+|--------|---------|
+| $\boldsymbol{\Sigma}$ | 위치 covariance matrix. per-coordinate 버전은 $\Sigma^{(\alpha)} = -\frac{1}{2\beta}K^{+}$ |
+| $D_{ij}$ | Squared-distance matrix, $\vert\mathbf{R}_i-\mathbf{R}_j\vert^2$ — **아래 주의 참고** |
+| $B_{ij}$ | Uncentered Gram matrix, $\mathbf{R}_i\cdot\mathbf{R}_j$ |
+| $G_{ij}$ | 중심화 Gram matrix, $\delta\mathbf{R}_i\cdot\delta\mathbf{R}_j$ |
+| $J$ | Centering matrix, $J = I - \frac{1}{n}\mathbf{1}\mathbf{1}^T$ |
+| $a_i$ | $\vert\mathbf{R}_i\vert^2$ (Step 1의 rank-1 항) |
+
+### Exponent
+
+| Symbol | Meaning |
+|--------|---------|
+| $\alpha$ | Eigenvalue spectrum exponent, $-\lambda_p \sim p^{\alpha}$. Local 값은 $\alpha(p) = d\log(-\lambda_p)/d\log p$ — **아래 주의 참고** |
+| $\beta$ (문맥상) | MSD exponent, $g_{seg}\sim t^{\beta}$. Local 값은 $\beta(t) = d\log g_{seg}/d\log t$ — **아래 주의 참고** |
+| $\nu$ | Flory exponent, $\langle R^2(s)\rangle \sim s^{2\nu}$ |
+| $p_c$ | Spectrum crossover가 일어나는 mode index |
+| $d_s$ | Spectral dimension |
+
+> [!warning] 기호 충돌 세 가지
+> 이 노트는 서로 다른 문헌 관례를 합쳐 놓았기 때문에 같은 글자가 두 뜻으로 쓰인다. 읽을 때 문맥으로 구분해야 한다.
+> - **$\beta$**: Boltzmann factor $e^{-\beta H}$에서는 inverse temperature, exponent 논의(L10, D3–D8)에서는 MSD exponent.
+> - **$D$**: $D = k_BT/\zeta$ (diffusion coefficient)와 $D_{ij} = \vert\mathbf{R}_i-\mathbf{R}_j\vert^2$ (squared-distance matrix). 후자는 항상 첨자를 달거나 $\langle D\rangle$로 나타난다.
+> - **$\alpha$**: spectrum exponent와, per-coordinate 분산 $\langle X_{p,\alpha}^2\rangle$의 공간 좌표 index.
+
 ## Key Points
 
 ### 일반화: K-matrix Diagonalization (GNM / HIPPS-DIMES convention)
@@ -304,6 +383,8 @@ $$
 
 $\tau_p = -\frac{\zeta}{2\lambda_p}$
 → 저 summation 부분($\sum_{p\ge1} \tau_p\left(1-e^{-t/\tau_p}\right)$)이 single exponent이기 위한 $\tau$의 스펙트럼은 무엇인가?
+→ 한 번 $t$에 대해 미분하면 어떻게 되는가? → 그냥 $e^{-t/\tau_p}$의 합이다. 
+→ log-log scale에서 한 번 미분하면 어떻게 되는가? → 
 
 이것은 §7의 식 (2.55)와 정확히 같은 식이다. 유도만 다르다 — §7은 linear chain의 $\cos^2$ 직교성($\frac{1}{N+1}\sum_n\cos^2 = \frac12$)에 의존했지만, 여기선 **basis 무관하게 eigenvector row norm = 1** 하나로 끝난다. (linear에서 $(V^T)_{np}^{\,2} = \frac{2}{N+1}\cos^2$이니 $\sum_n = \frac{2}{N+1}\cdot\frac{N+1}{2} = 1$로 두 논증이 일치.)
 
@@ -313,8 +394,84 @@ $\tau_p = -\frac{\zeta}{2\lambda_p}$
 > [!important] Structure → dynamics 함의
 > segment-averaged MSD는 **eigenvalue spectrum $\{\tau_p\} = \{-\zeta/2\lambda_p\}$에만 의존하고 eigenvector에는 전혀 의존하지 않는다.** connectivity($K$의 구조)가 $g_{seg}$로 들어오는 통로는 오직 스펙트럼뿐이다. "어느 loci가 어떻게 연결됐나"의 세부(eigenvector)는 개별 locus MSD에는 남지만, segment 평균에서는 spectral density로 압축돼 사라진다.
 
+
+#### Local MSD exponent — segment MSD의 log-derivative
+
+앞에서 $g_{seg}$가 $\{\tau_p\}$만의 함수임을 보였다. 그렇다면 log-log plot에서 실제로 측정하는 **순간 exponent** $\alpha(t)$ 역시 spectrum만으로 닫힌 형태로 쓸 수 있어야 한다. 실제로 그렇고, 이 식은 MSD를 만든 뒤 수치미분할 필요 없이 eigenvalue만으로 정확히 평가된다.
+
+##### 정확한 표현
+
+$$
+g_{seg}(t) = A\sum_{p}\tau_p\left(1-e^{-t/\tau_p}\right), \qquad A = \frac{6k_BT}{\zeta(N+1)}
+\tag{D1}
+$$
+
+$t$에 대한 미분에서 $\tau_p$가 상쇄되어 순수한 지수합만 남는다:
+
+$$
+\frac{dg_{seg}}{dt} = A\sum_{p} e^{-t/\tau_p}
+\tag{D2}
+$$
+
+따라서 local exponent $\alpha(t) \equiv \dfrac{d\log g_{seg}}{d\log t} = \dfrac{t\,g_{seg}'(t)}{g_{seg}(t)}$는 prefactor $A$가 완전히 소거된 형태가 된다:
+
+$$
+\alpha(t) = \frac{t\displaystyle\sum_{p} e^{-t/\tau_p}}{\displaystyle\sum_{p}\tau_p\left(1-e^{-t/\tau_p}\right)}
+\tag{D3}
+$$
+
+Zero mode를 분리하고 ($\tau_0\to\infty$에서 $e^{-t/\tau_0}\to1$, $\tau_0(1-e^{-t/\tau_0})\to t$) $\tau_p = \zeta/2|\lambda_p|$를 대입한 실전용 형태:
+
+$$
+\alpha(t) = \frac{t\left[1 + \displaystyle\sum_{p\ge1} e^{-2|\lambda_p|t/\zeta}\right]}{t + \displaystyle\sum_{p\ge1}\tau_p\left(1-e^{-2|\lambda_p|t/\zeta}\right)}
+\tag{D4}
+$$
+
+> [!tip] 물리적 읽기
+> 분자는 "시각 $t$까지 아직 relax하지 못한 mode의 실효 개수 $\times\, t$", 분모는 "그때까지 누적된 MSD"다. 즉 $\beta$는 **살아 있는 mode의 비중**을 재는 양이다.
+
+##### 극한과 부등식
+
+- $t\to0$: 분자 $\to t(N+1)$, 분모 $\to \sum_p\tau_p\cdot(t/\tau_p) = t(N+1)$ $\Rightarrow$ $\alpha\to1$ (개별 bead의 자유 확산)
+- $t\to\infty$: 분자 $\to t$ (zero mode만 생존), 분모 $\to t$ $\Rightarrow$ $\alpha\to1$ (center-of-mass 확산)
+- 중간 영역에서만 $\beta<1$의 subdiffusion이 나타난다.
+
+(D2)가 completely monotone function의 합이므로 $g_{seg}$는 Bernstein function이고, 따라서 **connectivity와 무관하게 항상 $0<\alpha(t)\le1$** 이다. Harmonic network인 한 loop을 아무리 넣어도 segment-averaged MSD가 superdiffusive가 될 수는 없다.
+
+##### Power-law spectrum에서 $\alpha = 1-1/\beta$ 재유도
+
+$-\lambda_p = c\,p^{\beta}$, 즉 $\tau_p = \tau_* p^{-\beta}$ ($\beta>1$)를 가정하고 내부 mode를 연속 극한으로 바꾼다. 치환 $u = (t/\tau_*)p^{\beta}$로 두 합이 모두 Gamma function으로 떨어진다:
+    
+$$
+\sum_{p\ge1}e^{-t/\tau_p} \;\to\; \int_0^{\infty}\!dp\; e^{-(t/\tau_*)p^{\beta}} = \Gamma\!\left(1+\tfrac1\beta\right)\tau_*^{1/\beta}\,t^{-1/\beta}
+\tag{D5}
+$$
+
+$$
+\sum_{p\ge1}\tau_p\left(1-e^{-t/\tau_p}\right) \;\to\; \frac{\beta}{\beta-1}\,\Gamma\!\left(1+\tfrac1\beta\right)\tau_*^{1/\beta}\,t^{1-1/\beta}
+\tag{D6}
+$$
+
+((D6)은 $\int_0^\infty u^{s-1}(1-e^{-u})\,du = -\Gamma(s)$, $-1<s<0$을 $s = 1/\beta-1$에 적용한 것이다. $\beta>1$이 이 수렴 조건을 보장한다.) 비를 취하면 $\Gamma$와 $\tau_*$가 전부 상쇄되고 $t$ 의존성도 사라져:
+
+$$
+\alpha = 1 - \frac{1}{\beta}
+\tag{D7}
+$$
+
+**Sharp-cutoff 해석.** $\tau_{p_c} = t$인 mode index $p_c(t) = (t/\tau_*)^{-1/\beta}$를 기준으로, $p<p_c$는 아직 relax하지 않아 각각 $t$만큼 기여하고 ($1-e^{-t/\tau_p}\approx t/\tau_p$), $p>p_c$는 이미 포화되어 $\tau_p$만큼 기여한다:
+
+$$
+\alpha \simeq \frac{t\,p_c}{t\,p_c + \displaystyle\int_{p_c}^{\infty}\tau_*p^{-\beta}\,dp} = \frac{t\,p_c}{t\,p_c + \dfrac{t\,p_c}{\beta-1}} = \frac{\beta-1}{\beta}
+\tag{D8}
+$$
+
+Gamma function 없이도 같은 답이 나온다. 이 형태가 **$\alpha$가 국소적으로만 정의될 때 (D7)이 왜 근사인지**를 드러낸다 — 분모의 적분이 $p_c$ 근방에 지배되므로, $\alpha$가 $p_c(t)$ 주변 몇 decade에서 상수여야만 (D7)이 성립한다.
+
+
+
 #### Example: Linear chain
-Spring constant $k$ 를 1/2 factor를 포함해서 정의. 
+Spring constant $k$ 를 1/2 factor와 ddimension을 포함해서 정의. 
 $$
 k = \frac{3}{2\beta b^2}
 $$

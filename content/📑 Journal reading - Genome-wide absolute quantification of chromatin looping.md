@@ -13,7 +13,7 @@ class: study_journal
 ---
 
 # Genome-wide absolute quantification of chromatin looping
-![[Screenshot_20260803_131500_Flexcil.jpg]]
+![[Screenshot_20260803_131500_Flexcil.jpg|373]]
 
 ## 왜 읽었나
 나는 아직 저널 리딩에서 순수 이론 논문을 발표할 깜냥이 안 된다. 
@@ -23,7 +23,6 @@ class: study_journal
 또한, Mirny group도 저자로 끼어있다. 아무래도 MD simulation을 이용한 분석으로 기여한 것 같다. 
 
 ## Overview
-
 Hi-C/Micro-C 같은 3D genomics 기법은 pairwise interaction을 **relative scale**로만 측정한다는 근본적 한계가 있다. Sequencing read count에서 신호를 뽑아내기 때문에, "이 loop이 저 loop보다 강하다"는 말할 수 있어도 "이 loop은 전체 allele의 몇 %에서 형성되어 있다"는 말할 수 없다.
 
 이 논문(Technical Report)은 그 한계를 **live imaging 데이터로 Micro-C를 calibration**함으로써 돌파한다. 핵심 아이디어는 단순하다:
