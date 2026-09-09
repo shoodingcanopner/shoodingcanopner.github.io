@@ -1,7 +1,7 @@
 ---
-title: "📖 Quantum Mechanics"
+title: 📖 Quantum Mechanics
 date: 2026-02-26
-subject:
+subject: quantum mechanics
 tags:
   - study
   - subject
