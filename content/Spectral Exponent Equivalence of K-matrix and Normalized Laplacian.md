@@ -53,7 +53,7 @@ $$
 K-matrix는 $K = -L$이다 (대각 성분이 $-\deg(i)$). 
 Generalized Rouse model $\dot{\mathbf r} = K\mathbf r + \boldsymbol\xi$ 의 relaxation rate는 $L$의 eigenvalue다.
 
-**(b) Degree-normalized generator.** Fan & Huang의 simple random walk는 각 step에서 이웃을 **균등하게** 고른다. 전이확률 $P_{ij} = A_{ij}/d_i$, 즉 $P = D^{-1}A$ 이고 generator는
+**(b) Degree-normalized generator.** Fan & Huang의 simple random walk는 각 step에서 이웃을 **균등하게** 고른다. 전이확률 $P_{ij} = A_{ij}/d_i$, 즉 $P = D^{-1}A$ 이고 generator는 transition matrix에 identity matrix를 뺀 것
 
 $$
 H = P - I = D^{-1}A - I = -D^{-1}(D - A) = -D^{-1}L
@@ -67,7 +67,8 @@ D^{1/2} H D^{-1/2} = -D^{1/2} D^{-1} L D^{-1/2} = -D^{-1/2} L D^{-1/2} = -\mathc
 \tag{3}
 $$
 
-Similarity transform은 eigenvalue를 보존하므로 $\operatorname{spec}(H) = \operatorname{spec}(-\mathcal{L})$. 따라서 문제는 **대칭행렬 두 개** $L$과 $\mathcal{L} = D^{-1/2} L D^{-1/2}$ 의 spectrum 비교로 환원된다.
+Similarity transform은 eigenvalue를 보존하므로 $\operatorname{spec}(H) = \operatorname{spec}(-\mathcal{L})$. 
+따라서 문제는 **대칭행렬 두 개** $L$과 $\mathcal{L} = D^{-1/2} L D^{-1/2}$ 의 spectrum 비교로 환원된다.
 
 > [!note] Similarity vs congruence
 > $M \mapsto P^{-1} M P$ (similarity)는 eigenvalue를 보존한다. $M \mapsto S^{\top} M S$ (congruence)는 일반적으로 eigenvalue를 보존하지 않고 **inertia**(양/음/0 eigenvalue의 개수)만 보존한다 (Sylvester's law of inertia). 식 (3)의 첫 등호는 similarity, $\mathcal{L} = S^{\top} L S$ with $S = D^{-1/2}$ 는 congruence다. $S$가 대각행렬이라 $S^{\top} = S$ 이고, $S^{-1} \neq S^{\top}$ 이므로 이 congruence는 similarity가 아니다. 그래서 $\mathcal{L}$과 $L$의 eigenvalue는 다르다.
