@@ -17,7 +17,7 @@ class: study_journal
 ## Overview
 
 Nature Communications 게재 논문 (Koopmans, Kay, Youk, 2026). Secrete-and-sense 세포 간 상호작용을 모사한 generalized deterministic cellular automaton을 이용해, "완전히 결정론적이고 chaos가 없는 시스템"에서도 macroscopic fate가 initial configuration으로부터 예측 불가능할 수 있음을 보인 연구. 그 이유는 fate를 legible하게 만드는 predictive structure(vortex, non-contractible loop string, winding field)가 초기에는 부재하고, 동역학이 진행되면서 self-organize되어 나타나기 때문이라는 주장.
-
+![[Pasted image 20260914152137.png]]
 ## Link to PDF and DOI
 
 - DOI: https://doi.org/10.1038/s41467-026-77737-0

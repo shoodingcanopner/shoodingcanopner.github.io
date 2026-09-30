@@ -16,6 +16,18 @@ class: study_lecture
 [[QM lecture note - Heisenberg Picture and Equations of Motion]]
 
 # 오늘의 핵심
+학부때 배운 것: 1D harmonic osillator의 eigenstate and eigen energy
+![[Pasted image 20260930143123.png]]
+
+Eigenfunction은 에르미트 다항식에 가우시안을 곱한 꼴로 나온다. 
+$$
+E_n = \hbar \omega \left( n + \frac{1}{2} \right), \quad n = 0, 1, 2, 3, \dots
+$$
+$$
+\psi_n(x) = \left( \frac{m\omega}{\pi\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} H_n\left( \sqrt{\frac{m\omega}{\hbar}} x \right) \exp\left( -\frac{m\omega}{2\hbar} x^2 \right)
+$$
+
+
 **내림 연산자 $a$** (lowering operator)와 **올림 연산자 $a^\dagger$** (raising operator):
 
 $$

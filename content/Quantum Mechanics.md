@@ -8,25 +8,11 @@ tags:
 class: study_subject
 ---
 > [!info] 과목 노트
-> 대학원 1학년 1학기에 수강하는 양자역학1 강의 필기들
+> 대학원 1학년 1학기, 2학기기에 수강하는 양자역학1 강의 필기들
 
 # 강의 정보 
 교재로 Sakurai 책을 이용한다. 
-
-중간고사 4월 16일
-기말고사 6월 8일 14:00 ~ 17:00
-
-결석을 하게 된다면 다음 강의 시작 전까지 못 들은 강의의 필기를 보내면 결석 점수가 아니라 지각 점수를 받게 된다. 
-LMS에 강의록을 다 올려주신다고 한다. 
-
-Week 1-4: Chap. 1 Fundamental Concepts
-Week 5-7: Chap. 2 Quantum Dynamics
-Week 8: Midterm Exam
-Week 9-13: Chap. 3 Theory of Angular Momentum
-Week 14-15: Chap. 4 Symmetry in Quantum Mechanics
-Week 16: Final Exam
-
-# 강의 필기
+# 1학기 강의 필기
 
 ## 필기 노트 템플릿
 
@@ -87,7 +73,25 @@ Week 16: Final Exam
 ### 기말고사 대비 마지막 필기
 ![[QM_FINAL.pdf]]
 
-## 으악 중간고사가 24시간도 안 남았다! 
+
+# 2학기 강의 필기
+
+## 강의 일정
+- Midterm: 2026-10-26 (Mon)
+- Final test: 2026-12-18 (Fri)
+- Week 1–7: Chapter 5 / Week 9–10: Chapter 6 / Week 11–13: Chapter 7 / Week 14–15: Chapter 8 (6–8장은 partially)
+
+## 중간고사 범위
+### 강의 필기
+[[QM lecture note - Time-Independent Nondegenerate Perturbation Theory]]
+[[QM lecture note - Nondegenerate Perturbation Theory Examples]]
+
+### 숙제와 추가 필기
+[[Sakurai 5.17 - Darwin Term and Fine Structure]]
+
+
+
+# 으악 1학기 중간고사가 24시간도 안 남았다! 
 이모저모 깨달은 것들을 써보자.
 ![[Pasted image 20260416143202.png]]
 ### Heisenberg 운동방정식에서 commutator를 슈뢰딩거 연산자로 계산해도 되는 이유
@@ -199,7 +203,7 @@ $x^H(t)$의 eigenket은 **자유입자 전파자에 의해 퍼져나간 위치 �
 - $t = 0$에서 $x'$에 완전히 국소화된 상태가 시간이 지나면 Gaussian 형태로 퍼져나감
 - 그러면서도 연산자 $x^H(t)$의 eigenvalue는 고전적 궤적 $x_0 + \frac{p_0}{m}t$를 그대로 추적함
 
-Heisenberg 그림과 Schrödinger 그림이 완벽하게 일관됨을 확인. ✅
+
 
 ### 임의 스핀 위치의 eigen vector
 

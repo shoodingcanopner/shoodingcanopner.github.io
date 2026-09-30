@@ -226,6 +226,9 @@ $$
 
 기말고사 범위의 마지막 주제.
 
+
+2학기 첫 강의: [[QM lecture note - Time-Independent Nondegenerate Perturbation Theory]]
+
 # References
 
 - Sakurai, *Modern Quantum Mechanics*, Section 3.4
