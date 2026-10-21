@@ -13,18 +13,10 @@ draft: false
 > 이것은 [[양자물리 (학부용, Griffiths)]] HW2를 TA가 푼 풀이입니다.
 
 # 채점 기준
-total 100 pt (혹시 보너스 점수로 인해 100점 이상을 받아도 100으로 인정함함)
+total 100 pt 
 
-연산 실수, 부호 실수 → 각 풀이 내부에서 종류가 다른 실수가 **최초** 발생 시 각 -1 pt
+연산 실수, 부호 실수 → 각 풀이 내부에서 종류가 다른 실수가 **최초** 발생 시 각 -1 pt, 발견 안 될 경우 그냥 넘어감
 (앞선 과정에서 생긴 실수로 인해 뒤에서 계속 틀리는 경우는 감점하지 않음)
-
-
-# Notation
-이 페이지에서 
-점수 앞에 - 가 있는 경우 감점을 의미
-
-Feedback pdf에서
-보라 글씨는 문항 당 득점 표시, 빨간 글씨는 세부 사항 당 감점 표시. 
 
 # Problem 7.9 (20 pt)
 ![[Pasted image 20261016183318.png]]
@@ -602,6 +594,9 @@ $\Delta E$구하기 → $Hz$단위로 frequency 구하기(선과 선 사이의)
 $$
 h  = 4.136 \cdot 10^{-15} \text{eV}\cdot\text{s}
 $$
+$$
+E_1 = -13.6 \text{ eV}
+$$
 
 $$
 E_3 - E_2 = 13.6\ \text{eV}\left(\frac14 - \frac19\right) = 1.889\ \text{eV}
@@ -616,7 +611,7 @@ $$
 \tag{42}
 $$
 
-###### → 굳이 풀이에 없어도 괜찮음
+######  wave length, frequency2 pt
 
 ## Fine structure sublevels
 
@@ -631,7 +626,7 @@ $$
 E^1_{fs} = -\dfrac{1}{n^4}\left(\dfrac{n}{j+1/2} - \dfrac34\right) \cdot(7.241\times10^{-4}\ \text{eV})
 $$
 
-
+Sublevel의 개수는 $j$의 종류로 결정된다. 
 
 | Level         | $-\dfrac{1}{n^4}\left(\dfrac{n}{j+1/2} - \dfrac34\right)$ | $E^1_{fs}$ (eV)       |
 | ------------- | --------------------------------------------------------- | --------------------- |
@@ -646,9 +641,9 @@ $$
 ==$n = 2$는 2개, $n = 3$은 3개의 sublevel로 갈라진다.== 
 
 
-Finestructure는 $\ell$ degeneracy만 깨뜨리고 $m_\ell$ degeneracy는 유지하며, $\ell$의 종류는 $n$과 같으니 이게 당연한 결과이다. 
-
 ## Allowed transitions
+
+
 Chapter 7 범위에서는 selection rule을 따로 고fu하지 않고, $n = 3$의 세 sublevel에서 $n = 2$의 두 sublevel로 가는 **모든 조합 $3\times2 = 6$개**를 전이로 본다. $\Delta E = E^1_{fs}(3, j) - E^1_{fs}(2, j')$:
 
 | Line | Transition        | $\Delta E$ (eV)       | 이전 level과 에너지 차이 (eV) | 이전 level과 frequency 차이 (Hz) |
@@ -662,13 +657,21 @@ Chapter 7 범위에서는 selection rule을 따로 고fu하지 않고, $n = 3$�
 |      |                   |                       |                       |                             |
 
 $h  = 4.136 \cdot 10^{-15} \text{eV}\cdot\text{s}$
+![[Pasted image 20261021144634.png]]
+이00 학생의 그림
+
 
 > [!Danger] Forbidden transition?
-> 6번 transition이 논란이 생길 만 한 부분이다. 이것이forbidden transition이라는 이유로 답안에서 제외한 학생들이 많다. 
-> 아직 빛에 의한 전자의 에너지 전이가 어떤 원리로 일어나는지 우리는 배우지 않았다. (Griffith chapter 1 내용)
-> 그리고 문제에서는 전자의 에너지 전이가 빛에 의한 것이라고 언급되지 않았다.
-> 
-> 왜 $\Delta j =-2$인 게 안 되는지 설명이 제대로 없는 경우에는, AI의 답변을 깊이 고민하거나 이해하지 않은 것으로 간주한다. 
+> 6번 transition이 논란이 생길 만 한 부분이다. 이것이 forbidden transition이라는 이유로 답안에서 제외한 학생들이 많다. 
+> 전자 에너지 전이에서 고려되는 selection rule, $\Delta = \pm1$, $\Delta m = 0 \, or \pm 1$ 은, 
+> 상태 $a$에서 $b$로 가는 transition rate가 $|\bra{\psi_b} \vec{r} \ket{\psi_a}|^2$에 비례하기 때문에 생긴 규칙이다. 
+> 샌드위치된 $\vec{r}$ 연산자는 1rank-tensor이기 때문에 $l$값을 1만큼 바꾼다는 규칙을 이용한 것이다. (Griffith chapter 11 p.420)
+> 이 규칙은 전자 에너지 전위가 전자기파로 인해 일어날 때, electric dipole approximation의 결과로 나타난다. 
+> 실제로는 Forbidden transition도 아주 드물지만 가능은 하다. 이를 인광이라고 부른다. 
+> 조교가 처음 이 문제를 AI를 이용해 풀었을 때도, claude가 forbidden transition을 언급하며 유효한 답은 '5개의 transition이 가능하다' 이라고 답변했다. 
+> 이 문제는 아직 chapter 11 이전의 문제이며, 전자기파가 언급되지 않았다는 점을 지적하자 AI는 문제의 답을 6개로 수정했다. 
+> 이러한 이유로, 왜 $\Delta j =-2$인 게 안 되는지 설명이 제대로 없는 풀이 ($\bra{\psi_b} \vec{r} \ket{\psi_a}$ 혹은 electric dipole transition이 언급되지 않은 경우) 는  AI의 답변을 깊이 고민하거나 이해하지 않은 것으로 간주한다. (-2pt)
+> 광자가 $j$을 1가져간다는 설명도 애매하다. quadrupole photon (2E photon)은 $j$를 $\pm 2$가져간다. 
 
 
 ## 최종 답
@@ -687,7 +690,7 @@ $h  = 4.136 \cdot 10^{-15} \text{eV}\cdot\text{s}$
 > between (4) and (5) is $3.24\times10^9$ Hz, and 
 > between (5) and (6) is $1.08\times10^9$ Hz.
 
-
+###### 7 pt
 ## 설마 누군가가 에너지 레벨을 내림차순으로 보아서 frequency차이를 계산했다면?
 아이고 다시 계산해야 하네?
 
@@ -696,7 +699,7 @@ $h  = 4.136 \cdot 10^{-15} \text{eV}\cdot\text{s}$
 
 > [!note] 채점 참고
 > **간격의 패턴**: 여섯 선은 도착 준위가 $j' = 3/2$인 세 선 (1)–(3)과 $j' = 1/2$인 세 선 (4)–(6)의 두 묶음이다. 각 묶음 안의 간격은 $n = 3$ sublevel 사이의 간격 ($3.24$ GHz, $1.08$ GHz)이고, 두 묶음은 $n = 2$ fine splitting만큼 통째로 밀려 있다. 그래서 같은 간격이 두 번씩 나타난다.
-> **Selection rule을 쓴 답도 정답 처리 권장**: Electric dipole (E1) selection rule $\Delta j = 0, \pm1$ (Chapter 11)을 적용하면 (6) $j = 5/2 \to 1/2$가 빠져서 5개가 된다. 이 전이는 electric quadrupole 같은 higher multipole로만 일어나 실제 스펙트럼에서는 매우 약하다. 공식 풀이가 어느 쪽인지 확인하지 못했으므로, 채점 기준은 교수님과 맞추는 것이 좋다.
+
 
 # Problem 7.45 (20 pt)
 
@@ -704,7 +707,8 @@ $h  = 4.136 \cdot 10^{-15} \text{eV}\cdot\text{s}$
 
 Stark effect: $H'_S = eE_{\text{ext}}z = eE_{\text{ext}}r\cos\theta$. Spin과 fine structure는 무시.
 
-
+상태로 $r \cos (\theta)$를 잘 샌드위치하는 게 관건. 
+$n=2$ state 관해서는  degenrative perturbation theory를 써야 한다. 
 ## (a) Ground state
 
 $$
@@ -713,13 +717,15 @@ E^1_{100} = eE_{\text{ext}}\bra{\psi_{100}}z\ket{\psi_{100}} = eE_{\text{ext}}\i
 $$
 
 $|\psi_{100}|^2$은 spherically symmetric이고 $\int_0^\pi\cos\theta\sin\theta\,d\theta = 0$이기 때문이다. (Parity로 보면 $|\psi_{100}|^2$은 even, $z$는 odd.)
+###### 5 pt
 
 ## (b) First excited states
 
 Basis $\psi_1 = \psi_{200},\ \psi_2 = \psi_{211},\ \psi_3 = \psi_{210},\ \psi_4 = \psi_{21-1}$. 대부분의 matrix element는 selection rule로 계산 없이 0이다.
 
-- **$\Delta m = 0$**: $[L_z, z] = 0$이므로 $m$이 다른 state 사이의 $z$ matrix element는 0 (φ 적분이 사라짐). 따라서 $\psi_{21\pm1}$은 다른 state와 섞이지 않는다.
-- **Parity**: $\psi_{n\ell m}$의 parity는 $(-1)^\ell$이고 $z$는 odd이므로, **같은 $\ell$ 사이의 element (모든 diagonal 포함)는 0**이다.
+- **$\Delta m = 0$**: $[L_z, z] = 0$이므로, state에 $z$을 적용해도 $m$값이 절대 바뀌지 않는다. 
+- 그래서 $m$이 다른 state 사이의 $z$ matrix element는 0 (φ 적분이 사라짐). 따라서 $\psi_{21\pm1}$은 다른 state와 섞이지 않는다.
+- **Parity**: $\psi_{n\ell m}$의 parity는 $(-1)^\ell$이고 $z$는 odd이므로, **같은 $\ell$ 사이의 element (모든 diagonal 포함)는 0**이다. 
 
 남는 것은 $W_{13} = W_{31} = eE_{\text{ext}}\bra{\psi_{200}}z\ket{\psi_{210}}$ 하나다.
 
@@ -766,7 +772,7 @@ $$
 $$
 
 - $1\times1$ block 두 개: $\psi_{211}$, $\psi_{21-1}$은 다른 state와 섞이지 않으므로 이미 good states이고, $E^1 = 0$이다.
-- 따라서 $2\times2$ block $\{\psi_{200}, \psi_{210}\}$만 대각화하면 된다.
+- 따라서 왼쪽 상단의 $2\times2$ block $\{\psi_{200}, \psi_{210}\}$만 대각화하면 된다.
 
 ### $2\times2$ block 대각화
 
@@ -787,6 +793,10 @@ $$
 $$
 
 **$E_2$는 세 준위로 갈라진다**: $-3eaE_{\text{ext}}$, $0$ ($\psi_{211}$, $\psi_{21-1}$의 doubly degenerate), $+3eaE_{\text{ext}}$.
+
+
+######  Selection rule 충분한 설명 없을 경우, 각기 -1 pt (문제에서 hint라고 준 것의 근거를 설명해야 함)
+###### 10 pt
 
 ## (c) Good states와 electric dipole moment
 
@@ -818,7 +828,7 @@ $$
 \psi_{211},\ \psi_{21-1}\ \ (E^1 = 0)
 \tag{50}
 $$
-
+###### 5pt
 ### Theorem 관점: 어떤 symmetry가 남았나
 
 Electric field가 $z$축을 골라서, $H^0$의 완전한 rotational symmetry와 parity는 깨지고 **$z$축에 대한 회전 대칭**만 남는다. 후보 operator를 하나씩 확인하면

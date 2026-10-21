@@ -7,23 +7,30 @@ tags:
   - concept
 class: study
 ---
+이 페이지 QR link
+
+![[Pasted image 20261021140823.png]]
+
+
 > [!info] 관련 노트
 > 과목 노트: [[양자물리 (학부용, Griffiths)]]
 > Sakurai 정리: [[QM lecture note - Rotation and Angular Momentum]]
+> 아..큰일났다! 1학기 내용 다 까먹었다!
+> 이 노트 내용을 알면 2학기 중간고사 공부가 쉬워질 것이다.
 
-| Symbol | Meaning |
-|--------|---------|
-| $\vec{J}$ | total angular momentum, 일반적인 rotation generator |
-| $\vec{L}$ | orbital angular momentum, $\vec{r}\times\vec{p}$ |
-| $\vec{S}$ | spin angular momentum |
-| $j, m$ | $J^2$, $J_z$의 eigenvalue를 나타내는 quantum number |
-| $J_\pm$ | ladder operator |
-| $C^\pm_{jm}$ | ladder operator를 작용할 때 붙는 계수 |
-| $\mathcal{D}(R)$ | rotation operator |
-| $T^{(k)}_q$ | rank $k$ spherical tensor operator의 $q$ 성분 |
-| $\langle \alpha', j' \Vert T^{(k)} \Vert \alpha, j \rangle$ | reduced matrix element |
-| $\Pi$ | parity operator |
-| $\braket{j_1, j_2; m_1, m_2 \vert j_1, j_2; j, m}$ | Clebsch–Gordan coefficient |
+| Symbol                                                      | Meaning                                          |
+| ----------------------------------------------------------- | ------------------------------------------------ |
+| $\vec{J}$                                                   | total angular momentum, 일반적인 rotation generator  |
+| $\vec{L}$                                                   | orbital angular momentum, $\vec{r}\times\vec{p}$ |
+| $\vec{S}$                                                   | spin angular momentum                            |
+| $j, m$                                                      | $J^2$, $J_z$의 eigenvalue를 나타내는 quantum number    |
+| $J_\pm$                                                     | ladder operator                                  |
+| $C^\pm_{jm}$                                                | ladder operator를 작용할 때 붙는 계수                     |
+| $\mathcal{D}(R)$                                            | rotation operator                                |
+| $T^{(k)}_q$                                                 | rank $k$ spherical tensor operator의 $q$ 성분       |
+| $\langle \alpha', j' \Vert T^{(k)} \Vert \alpha, j \rangle$ | reduced matrix element                           |
+| $\Pi$                                                       | parity operator                                  |
+| $\braket{j_1, j_2; m_1, m_2 \vert j_1, j_2; j, m}$          | Clebsch–Gordan coefficient                       |
 
 # $\vec{J}$ $\ket{j, m}$의 의미를 처음부터 고민해보자
 
