@@ -36,7 +36,7 @@ class: study
 
 ## Operator $\vec{J}$는 무엇인가?
 $\vec{J}$ operator는 일반적인 회전의 생성자이다. (rotation generator)
-나중에 자세히 이야기하겠지만, $\vec{J}$ 는 $\vec{L}$과 $\vec{S}$의 **합(sum)**이다. 
+나중에 자세히 이야기하겠지만, $\vec{J}$ 는 $\vec{L}$과 $\vec{S}$의 **합(sum)** 이다. 
 $\vec{L}$과 $\vec{S}$는 서로 다른 공간에서 회전을 만든다. 정확히는 두 공간의 tensor product 위에서
 
 $$
@@ -652,7 +652,8 @@ $$
 
 
 ### 3. Phase convention과 실수성
-CG coefficient의 전체 phase는 지금까지의 정의만으로는 정해지지 않는다. Condon–Shortley convention에서는
+CG coefficient의 전체 phase는 지금까지의 정의만으로는 정해지지 않는다. 
+그런 자유도는  관습상 고정해 둔다. Condon–Shortley convention에서는
 - ladder 계수 $C^\pm_{jm}$를 양의 실수로 고르고
 - $\braket{j_1, j_2; j_1, j - j_1 | j_1, j_2; j, j} > 0$ 으로 정한다. 
 
@@ -668,6 +669,7 @@ $$
 $$
 \sum_{j, m}\braket{j_1, j_2; m_1, m_2 | j_1, j_2; j, m}\braket{j_1, j_2; m_1', m_2' | j_1, j_2; j, m} = \delta_{m_1m_1'}\delta_{m_2m_2'}
 $$
+증명 → 중간에 있는 ket bra를 뒤집어 identity operator를 만든다. 
 
 ### 5. Recursion relation
 $J_\pm = J_{1\pm} + J_{2\pm}$를 양쪽에 작용시키고 노트 앞부분의 $C^\pm_{jm}$를 쓰면
@@ -680,15 +682,192 @@ $$
 이 식 하나로 모든 CG coefficient를 계산할 수 있다. Wigner–Eckart theorem에서 $T^{(k)}_q$의 행렬 원소가 만족하는 recursion relation이 바로 이것과 같아서 CG coefficient가 나오는 것이다. 
 
 ## 계산 절차
-1. **맨 위에서 시작**: $m = j_1 + j_2$인 상태는 uncoupled basis에서 하나뿐이므로 바로 알 수 있다. 
+절차 자체는 네 단계뿐이다. 각 단계를 하나의 예시로 끝까지 따라가 보자. 
+
+> [!example] 따라갈 예시: $j_1 = 1$, $j_2 = \frac{1}{2}$
+> $p$ orbital ($l = 1$)과 전자 spin ($s = \frac{1}{2}$)을 합치는 경우다. 
+> 표기를 줄이기 위해 $j_1, j_2$는 생략하고
+> - uncoupled: $\ket{m_1, m_2}$, 특히 $m_2 = \pm\frac{1}{2}$은 $\uparrow, \downarrow$로 쓴다. 예) $\ket{0, \uparrow}$
+> - coupled: $\ket{j, m}$. 예) $\ket{\tfrac{3}{2}, \tfrac{1}{2}}$
+> 
+> 상태 수는 $3 \times 2 = 6$개이고, triangle inequality에 의해 $j = \frac{3}{2}$ (4개)와 $j = \frac{1}{2}$ (2개)로 나뉜다. 
+
+### 0단계: 지도 그리기 ($m$별로 상태 정리)
+본격적으로 계산하기 전에, uncoupled 상태를 $m = m_1 + m_2$ 값별로 묶어 두자. 
+$J^2$는 $m$이 같은 상태끼리만 섞으므로, **이 묶음 안에서만** 계산하면 된다. 
+
+| $m$ | uncoupled 상태 | 개수 | 이 $m$을 가지는 $j$ |
+|---|---|---|---|
+| $\frac{3}{2}$ | $\ket{1, \uparrow}$ | 1 | $\frac{3}{2}$ |
+| $\frac{1}{2}$ | $\ket{0, \uparrow}$, $\ket{1, \downarrow}$ | 2 | $\frac{3}{2}$, $\frac{1}{2}$ |
+| $-\frac{1}{2}$ | $\ket{-1, \uparrow}$, $\ket{0, \downarrow}$ | 2 | $\frac{3}{2}$, $\frac{1}{2}$ |
+| $-\frac{3}{2}$ | $\ket{-1, \downarrow}$ | 1 | $\frac{3}{2}$ |
+
+개수 열을 보면 구조가 보인다. 
+- 맨 위 $m = \frac{3}{2}$는 1개뿐이다 → $j = \frac{3}{2}$ 사다리의 꼭대기
+- 한 칸 내려오면 2개가 된다 → 하나는 $j = \frac{3}{2}$ 사다리의 일부, 새로 늘어난 하나가 $j = \frac{1}{2}$ 사다리의 꼭대기
+
+일반적으로 $m$이 한 칸 내려갈 때마다 상태가 하나 늘어나면, 그만큼 새로운 $j$ 사다리가 시작된다는 뜻이다. 
+
+### 1단계: 맨 위에서 시작
+$m = j_1 + j_2$인 상태는 uncoupled basis에서 하나뿐이므로 바로 알 수 있다. 
 
 $$
 \ket{j_1+j_2, j_1+j_2} = \ket{m_1 = j_1, m_2 = j_2}
 $$
 
-2. **$J_-$로 내려가기**: $J_- = J_{1-} + J_{2-}$를 반복 적용해 $j = j_1+j_2$인 모든 $m$ 상태를 얻는다. 
-3. **다음 $j$는 orthogonality로**: $m = j_1+j_2-1$인 상태는 2차원이다. 그중 하나는 2단계에서 얻었고, 그것과 직교하는 상태가 $\ket{j_1+j_2-1, j_1+j_2-1}$이다. (phase는 convention으로 고정)
-4. 다시 $J_-$로 내려가고, 반복한다. 
+두 각운동량이 모두 $z$축 방향으로 최대로 정렬된 상태이므로, 합성된 각운동량도 최대일 수밖에 없다. 
+
+> [!example] 예시
+> $m = \frac{3}{2}$인 상태는 $\ket{1, \uparrow}$ 하나뿐이다. 
+> 
+> $$
+> \ket{\tfrac{3}{2}, \tfrac{3}{2}} = \ket{1, \uparrow}
+> $$
+
+### 2단계: $J_-$로 내려가기
+$J_- = J_{1-} + J_{2-}$를 반복 적용해 $j = j_1 + j_2$인 모든 $m$ 상태를 얻는다. 
+요령은 **같은 연산자 $J_-$를 coupled 표기와 uncoupled 표기로 각각 작용시키는 것**이다. 
+- 왼쪽(coupled): $J_-\ket{j, m} = C^-_{jm}\ket{j, m-1}$
+- 오른쪽(uncoupled): $(J_{1-} + J_{2-})\ket{m_1, m_2}$, 각 공간에 따로 작용
+
+두 결과가 같은 상태이므로, 양변을 비교하면 $\ket{j, m-1}$을 uncoupled 상태로 쓸 수 있다. 
+계수는 노트 앞에서 구한 
+
+$$
+C^{\pm}_{jm} = \hbar\sqrt{(j\mp m)(j \pm m+1)}
+$$
+
+를 이용한다. 
+
+> [!example] 예시: $\ket{\tfrac{3}{2}, \tfrac{1}{2}}$ 구하기
+> **왼쪽**: $C^-_{\frac{3}{2},\frac{3}{2}} = \hbar\sqrt{(\tfrac{3}{2}+\tfrac{3}{2})(\tfrac{3}{2}-\tfrac{3}{2}+1)} = \sqrt{3}\,\hbar$ 이므로
+> 
+> $$
+> J_-\ket{\tfrac{3}{2}, \tfrac{3}{2}} = \sqrt{3}\,\hbar\,\ket{\tfrac{3}{2}, \tfrac{1}{2}}
+> $$
+> 
+> **오른쪽**: $J_{1-}$는 $m_1$만, $J_{2-}$는 $m_2$만 내린다. 
+> - $J_{1-}\ket{1} = \hbar\sqrt{(1+1)(1-1+1)}\ket{0} = \sqrt{2}\,\hbar\ket{0}$
+> - $J_{2-}\ket{\uparrow} = \hbar\sqrt{(\tfrac{1}{2}+\tfrac{1}{2})(\tfrac{1}{2}-\tfrac{1}{2}+1)}\ket{\downarrow} = \hbar\ket{\downarrow}$
+> 
+> $$
+> (J_{1-} + J_{2-})\ket{1, \uparrow} = \sqrt{2}\,\hbar\,\ket{0, \uparrow} + \hbar\,\ket{1, \downarrow}
+> $$
+> 
+> **비교**: 양변을 $\sqrt{3}\,\hbar$로 나누면
+> 
+> $$
+> \ket{\tfrac{3}{2}, \tfrac{1}{2}} = \sqrt{\frac{2}{3}}\,\ket{0, \uparrow} + \sqrt{\frac{1}{3}}\,\ket{1, \downarrow}
+> $$
+> 
+> 계수의 제곱합이 $\frac{2}{3} + \frac{1}{3} = 1$로, 정규화가 자동으로 맞는다. 
+
+같은 일을 한 번 더 반복한다. 
+
+> [!example] 예시: $\ket{\tfrac{3}{2}, -\tfrac{1}{2}}$ 구하기
+> **왼쪽**: $C^-_{\frac{3}{2},\frac{1}{2}} = \hbar\sqrt{(\tfrac{3}{2}+\tfrac{1}{2})(\tfrac{3}{2}-\tfrac{1}{2}+1)} = 2\hbar$
+> 
+> **오른쪽**: 두 항에 각각 $J_{1-} + J_{2-}$를 작용시킨다. 
+> - $(J_{1-} + J_{2-})\ket{0, \uparrow} = \sqrt{2}\,\hbar\,\ket{-1, \uparrow} + \hbar\,\ket{0, \downarrow}$
+> - $(J_{1-} + J_{2-})\ket{1, \downarrow} = \sqrt{2}\,\hbar\,\ket{0, \downarrow} + 0$ ($\downarrow$은 더 내릴 수 없다)
+> 
+> $$
+> J_-\ket{\tfrac{3}{2}, \tfrac{1}{2}} = \sqrt{\frac{2}{3}}\left(\sqrt{2}\,\hbar\,\ket{-1, \uparrow} + \hbar\,\ket{0, \downarrow}\right) + \sqrt{\frac{1}{3}}\,\sqrt{2}\,\hbar\,\ket{0, \downarrow} = \frac{2}{\sqrt{3}}\,\hbar\,\ket{-1, \uparrow} + 2\sqrt{\frac{2}{3}}\,\hbar\,\ket{0, \downarrow}
+> $$
+> 
+> **비교**: $2\hbar$로 나누면
+> 
+> $$
+> \ket{\tfrac{3}{2}, -\tfrac{1}{2}} = \sqrt{\frac{1}{3}}\,\ket{-1, \uparrow} + \sqrt{\frac{2}{3}}\,\ket{0, \downarrow}
+> $$
+
+맨 아래에 도달하면 다시 하나뿐인 상태가 나온다. 
+
+> [!example] 예시: $\ket{\tfrac{3}{2}, -\tfrac{3}{2}}$
+> $C^-_{\frac{3}{2},-\frac{1}{2}} = \sqrt{3}\,\hbar$이고, 같은 계산을 하면 
+> 
+> $$
+> \ket{\tfrac{3}{2}, -\tfrac{3}{2}} = \ket{-1, \downarrow}
+> $$
+> 
+> 1단계와 대칭적으로, 두 각운동량이 모두 $-z$ 방향으로 정렬된 상태다. (검산용으로 좋다.)
+
+이렇게 $j = \frac{3}{2}$ 사다리 4개를 모두 얻었다. 
+
+### 3단계: 다음 $j$는 orthogonality로
+$m = j_1 + j_2 - 1$인 상태는 2차원이다. 
+그중 하나는 2단계에서 이미 얻었다. 
+남은 하나는 **그것과 직교하는 방향**이고, 그것이 다음 사다리의 꼭대기 $\ket{j_1+j_2-1, j_1+j_2-1}$이다. 
+(서로 다른 $j$의 eigenket은 $J^2$의 서로 다른 eigenvalue에 속하므로 반드시 직교한다.)
+
+직교 조건과 정규화만으로는 전체 부호 $\pm$가 남는다. 이건 Condon–Shortley convention으로 고정한다. 
+
+$$
+\braket{j_1, j_2; m_1 = j_1, m_2 = j - j_1 | j_1, j_2; j, j} > 0
+$$
+
+즉 "$m_1$이 최대인 uncoupled 상태의 계수를 양수로" 고른다. 
+
+> [!example] 예시: $\ket{\tfrac{1}{2}, \tfrac{1}{2}}$ 구하기
+> $m = \frac{1}{2}$ 묶음은 $\ket{0, \uparrow}$, $\ket{1, \downarrow}$ 두 개로 이루어진 2차원 공간이다. 
+> 미지의 상태를 $\ket{\tfrac{1}{2}, \tfrac{1}{2}} = a\,\ket{0, \uparrow} + b\,\ket{1, \downarrow}$로 두자. 
+> 
+> **직교 조건**: $\ket{\tfrac{3}{2}, \tfrac{1}{2}} = \sqrt{\tfrac{2}{3}}\,\ket{0, \uparrow} + \sqrt{\tfrac{1}{3}}\,\ket{1, \downarrow}$와 직교해야 하므로
+> 
+> $$
+> \sqrt{\frac{2}{3}}\,a + \sqrt{\frac{1}{3}}\,b = 0 \quad\Rightarrow\quad b = -\sqrt{2}\,a
+> $$
+> 
+> **정규화**: $a^2 + b^2 = 3a^2 = 1$ 이므로 $(a, b) = \pm\left(\sqrt{\tfrac{1}{3}}, -\sqrt{\tfrac{2}{3}}\right)$
+> 
+> **부호 결정**: $m_1$이 최대($m_1 = j_1 = 1$)인 상태는 $\ket{1, \downarrow}$이므로 $b > 0$이 되도록 고른다. 
+> 
+> $$
+> \ket{\tfrac{1}{2}, \tfrac{1}{2}} = -\sqrt{\frac{1}{3}}\,\ket{0, \uparrow} + \sqrt{\frac{2}{3}}\,\ket{1, \downarrow}
+> $$
+> 
+> 2차원 평면에서 $\ket{\tfrac{3}{2}, \tfrac{1}{2}}$ 벡터를 90° 돌린 것이라고 생각하면 기억하기 쉽다. 계수 $(\sqrt{2/3}, \sqrt{1/3})$가 $(-\sqrt{1/3}, \sqrt{2/3})$로 바뀐다. 
+
+### 4단계: 다시 $J_-$로 내려가고, 반복한다
+새 사다리의 꼭대기를 얻었으니 2단계와 똑같이 $J_-$로 내려간다. 
+
+> [!example] 예시: $\ket{\tfrac{1}{2}, -\tfrac{1}{2}}$ 구하기
+> **왼쪽**: $C^-_{\frac{1}{2},\frac{1}{2}} = \hbar\sqrt{(\tfrac{1}{2}+\tfrac{1}{2})(\tfrac{1}{2}-\tfrac{1}{2}+1)} = \hbar$
+> 
+> **오른쪽**: 2단계에서 계산해 둔 $J_-\ket{0, \uparrow}$, $J_-\ket{1, \downarrow}$를 그대로 재활용한다. 
+> 
+> $$
+> J_-\ket{\tfrac{1}{2}, \tfrac{1}{2}} = -\sqrt{\frac{1}{3}}\left(\sqrt{2}\,\hbar\,\ket{-1, \uparrow} + \hbar\,\ket{0, \downarrow}\right) + \sqrt{\frac{2}{3}}\,\sqrt{2}\,\hbar\,\ket{0, \downarrow} = -\sqrt{\frac{2}{3}}\,\hbar\,\ket{-1, \uparrow} + \sqrt{\frac{1}{3}}\,\hbar\,\ket{0, \downarrow}
+> $$
+> 
+> **비교**: $\hbar$로 나누면
+> 
+> $$
+> \ket{\tfrac{1}{2}, -\tfrac{1}{2}} = -\sqrt{\frac{2}{3}}\,\ket{-1, \uparrow} + \sqrt{\frac{1}{3}}\,\ket{0, \downarrow}
+> $$
+> 
+> **검산**: $\ket{\tfrac{3}{2}, -\tfrac{1}{2}} = \sqrt{\tfrac{1}{3}}\,\ket{-1, \uparrow} + \sqrt{\tfrac{2}{3}}\,\ket{0, \downarrow}$와의 내적은 $-\frac{\sqrt{2}}{3} + \frac{\sqrt{2}}{3} = 0$이다. 다른 $j$끼리 직교하는 것이 확인된다. 
+
+$j = \frac{1}{2} = |j_1 - j_2|$에 도달했으므로 여기서 끝이다. 6개 상태를 모두 얻었다. 
+
+일반적인 경우에는 이 과정이 더 길어진다. 
+예를 들어 $m = j_1 + j_2 - 2$ 묶음은 3차원이고, 이미 얻은 두 상태($j = j_1+j_2$와 $j = j_1+j_2-1$ 사다리에서 하나씩)와 **모두** 직교하는 방향이 $j = j_1 + j_2 - 2$ 사다리의 꼭대기가 된다. 
+이렇게 3단계와 4단계를 $j = |j_1 - j_2|$에 도달할 때까지 반복한다. 
+
+> [!summary] 결과 정리: $1 \otimes \frac{1}{2} = \frac{3}{2} \oplus \frac{1}{2}$
+> 
+> | coupled | $\ket{1,\uparrow}$ | $\ket{0,\uparrow}$ | $\ket{1,\downarrow}$ | $\ket{-1,\uparrow}$ | $\ket{0,\downarrow}$ | $\ket{-1,\downarrow}$ |
+> |---|---|---|---|---|---|---|
+> | $\ket{\tfrac{3}{2}, \tfrac{3}{2}}$ | $1$ | | | | | |
+> | $\ket{\tfrac{3}{2}, \tfrac{1}{2}}$ | | $\sqrt{2/3}$ | $\sqrt{1/3}$ | | | |
+> | $\ket{\tfrac{1}{2}, \tfrac{1}{2}}$ | | $-\sqrt{1/3}$ | $\sqrt{2/3}$ | | | |
+> | $\ket{\tfrac{3}{2}, -\tfrac{1}{2}}$ | | | | $\sqrt{1/3}$ | $\sqrt{2/3}$ | |
+> | $\ket{\tfrac{1}{2}, -\tfrac{1}{2}}$ | | | | $-\sqrt{2/3}$ | $\sqrt{1/3}$ | |
+> | $\ket{\tfrac{3}{2}, -\tfrac{3}{2}}$ | | | | | | $1$ |
+> 
+> 빈 칸은 0이다. 행렬이 $m$별 블록(1×1, 2×2, 2×2, 1×1)으로 나뉘는 것이 0단계에서 그린 지도 그대로다. 
+> 이 표의 각 칸이 바로 CG coefficient $\braket{m_1, m_2 | j, m}$이다. 아래 예시 2의 일반식에 $l = 1$을 넣은 결과와도 일치한다. 
 
 ## 예시 1: 두 spin-1/2 ($\frac{1}{2}\otimes\frac{1}{2} = 1 \oplus 0$)
 상태 수: $2\times 2 = 3 + 1$
@@ -742,14 +921,7 @@ Fine structure에서 coupled basis를, strong-field Zeeman에서 uncoupled basis
 - [[양자 필기 - Spin-Orbit Coupling and Fine Structure]]
 - [[양자 필기 - Intermediate-Field Zeeman Effect]]
 
-## 참고: Wigner 3j symbol
-CG coefficient를 더 대칭적인 형태로 다시 쓴 것이 Wigner 3j symbol이다. 
 
-$$
-\braket{j_1, j_2; m_1, m_2 | j_1, j_2; j, m} = (-1)^{j_1 - j_2 + m}\sqrt{2j+1}\begin{pmatrix} j_1 & j_2 & j \\ m_1 & m_2 & -m \end{pmatrix}
-$$
-
-3j symbol은 열을 바꿔도 부호만 바뀌는 대칭성이 있어서 표로 정리하거나 계산하기 편하다. 다른 교재나 표(Griffiths의 CG table, PDG table)를 볼 때는 phase convention과 $j_1, j_2$ 순서를 먼저 확인해야 한다. 순서를 바꾸면 $(-1)^{j_1+j_2-j}$의 부호가 붙는다. 
 
 # Selection rule: 대칭성으로 보기
 Griffiths에서는 spontaneous emission을 다룰 때 dipole 행렬 원소를 직접 적분해서 selection rule을 보인다. 
@@ -759,7 +931,174 @@ Griffiths에서는 spontaneous emission을 다룰 때 dipole 행렬 원소를 �
 1. **회전 대칭** → Wigner–Eckart theorem → $\Delta l$, $\Delta m$의 범위
 2. **Parity** → $\Delta l$의 짝홀
 
+## Griffiths 수준에서 먼저 보기: scalar operator와 vector operator
+> [!tip] 이 부분의 목표
+> Griffiths는 일반적인 tensor operator를 다루지 않는다. scalar operator와 vector operator 두 종류만, 그것도 **commutator 계산만으로** selection rule을 얻는다. 
+> 도구는 딱 하나다. 
+> 
+> $$
+> [L_z, A] = \hbar q A \quad\Rightarrow\quad (m' - m - q)\bra{n',l',m'}A\ket{n,l,m} = 0
+> $$
+> 
+> 즉 "행렬 원소가 0이 아니려면 $m' = m + q$여야 한다." ($L_z$를 양쪽 끝의 ket과 bra에 작용시켜 얻는다.) 
+> 아래의 "Spherical tensor operator", "Wigner–Eckart theorem" 절은 이 내용을 일반화한 심화 내용이므로, 학부 수준에서는 이 절만 이해해도 충분하다. 
+
+Spin이 없는 입자의 상태 $\ket{n, l, m}$을 생각하자. (spin이 있으면 $\vec{L}$ 자리에 $\vec{J}$를 넣으면 된다.)
+
+### 기본 도구: commutator를 새드위치하기
+어떤 operator $A$가 $[L_z, A] = \hbar q A$를 만족한다고 하자. ($q$는 숫자)
+양변을 $\bra{n',l',m'}$과 $\ket{n,l,m}$ 사이에 끼우면, $L_z$는 왼쪽 bra에서는 $m'\hbar$, 오른쪽 ket에서는 $m\hbar$를 내놓는다. 
+
+$$
+\bra{n',l',m'}(L_zA - AL_z)\ket{n,l,m} = (m' - m)\hbar\bra{n',l',m'}A\ket{n,l,m}
+$$
+
+이것이 $\hbar q\bra{n',l',m'}A\ket{n,l,m}$과 같아야 하므로
+
+$$
+(m' - m - q)\bra{n',l',m'}A\ket{n,l,m} = 0
+$$
+
+$m' \neq m + q$이면 행렬 원소는 무조건 0이다. 
+앞에서 ladder operator를 다룰 때 $[J_z, J_\pm] = \pm\hbar J_\pm$이면 $J_\pm$가 $m$을 $\pm1$ 바꾼다는 것과 완전히 같은 논리다. 
+
+### Scalar operator
+**정의**: 모든 성분의 $\vec{L}$과 commute하는 operator $f$
+
+$$
+[L_i, f] = 0 \qquad (i = x, y, z)
+$$
+
+방향에 대한 정보가 없는, 회전해도 그대로인 양이다. 예) $r$, $p^2$, $\vec{L}\cdot\vec{S}$, 구대칭 potential을 가진 Hamiltonian
+
+**Selection rule**
+1. $[L_z, f] = 0$, 즉 $q = 0$이므로 $m' = m$
+2. $[L^2, f] = 0$을 같은 방식으로 새드위치하면 $\hbar^2[l'(l'+1) - l(l+1)]\bra{n',l',m'}f\ket{n,l,m} = 0$이므로 $l' = l$
+3. 더 나아가 $[L_\pm, f] = 0$을 이용하면 행렬 원소가 $m$에 무관하다는 것도 보일 수 있다. 
+
+3번을 보이면 이렇다. $\bra{n',l,m+1}(L_+f - fL_+)\ket{n,l,m} = 0$에서
+- $fL_+$ 항: $L_+\ket{n,l,m} = C^+_{lm}\ket{n,l,m+1}$
+- $L_+f$ 항: $\bra{n',l,m+1}L_+ = (L_-\ket{n',l,m+1})^\dagger = C^-_{l,m+1}\bra{n',l,m}$, 그리고 $C^-_{l,m+1} = C^+_{lm}$
+
+$$
+C^+_{lm}\left(\bra{n',l,m}f\ket{n,l,m} - \bra{n',l,m+1}f\ket{n,l,m+1}\right) = 0
+$$
+
+따라서 $m$을 하나씩 올려도 행렬 원소가 같다. 정리하면
+
+$$
+\bra{n',l',m'}f\ket{n,l,m} = \delta_{ll'}\,\delta_{mm'}\,(\text{$m$에 무관한 숫자})
+$$
+
+구대칭 Hamiltonian의 에너지가 $m$에 대해 $(2l+1)$중 degenerate한 이유가 바로 이것이다. 
+
+### Vector operator
+**정의**: $\vec{L}$과 다음 commutation relation을 만족하는 세 operator의 묶 $\vec{V} = (V_x, V_y, V_z)$
+
+$$
+[L_i, V_j] = i\hbar\,\epsilon_{ijk}V_k
+$$
+
+회전시키면 보통의 vector처럼 성분끼리 섞인다는 뜻이다. 예) $\vec{r}$, $\vec{p}$, $\vec{L}$ 자신 ($\vec{V} = \vec{L}$을 넣으면 각운동량의 commutation relation이 된다.)
+
+**$\Delta m$ selection rule**
+$z$축에 대한 commutator만 뽑아 보면
+
+$$
+[L_z, V_x] = i\hbar V_y, \qquad [L_z, V_y] = -i\hbar V_x, \qquad [L_z, V_z] = 0
+$$
+
+$V_x, V_y$는 서로 섞여서 기본 도구를 바로 쓸 수 없다. 그래서 ladder operator처럼 조합을 만든다. 
+
+$$
+V_\pm = V_x \pm iV_y \quad\Rightarrow\quad [L_z, V_\pm] = \pm\hbar V_\pm
+$$
+
+(확인: $[L_z, V_x + iV_y] = i\hbar V_y + i(-i\hbar V_x) = \hbar(V_x + iV_y)$)
+
+기본 도구에 $q = 0, \pm 1$을 넣으면
+
+| operator | $q$ | 행렬 원소가 0이 아닌 조건 |
+|---|---|---|
+| $V_z$ | $0$ | $m' = m$ |
+| $V_+$ | $+1$ | $m' = m + 1$ |
+| $V_-$ | $-1$ | $m' = m - 1$ |
+
+$V_x, V_y$는 $V_\pm$의 조합이므로 $m' = m \pm 1$일 때만 0이 아니다. 결론적으로 vector operator는 $\Delta m = 0, \pm 1$만 허용한다. 
+
+**$\Delta l$ selection rule**
+일반적인 vector operator에 대해서는 $\Delta l = 0, \pm 1$이다. 
+직관적으로는 **vector operator를 작용시키는 것이 각운동량 1짜리를 하나 더 얹는 것과 같다**고 생각하면 된다. 
+앞의 CG 절에서 본 것처럼 $l$에 각운동량 1을 합치면 결과는 $l-1$, $l$, $l+1$ 중 하나다. (triangle inequality)
+$V_z, V_\pm$가 $m$을 $0, \pm1$ 바꾸는 것도 "각운동량 1의 $m_2 = 0, \pm 1$을 더하는 것"으로 읽을 수 있다. 
+
+### Electric dipole: Griffiths의 직접 유도
+Griffiths는 spontaneous emission을 다룰 때 $\vec{r}$에 대해 위 논리를 구체적으로 계산한다. 
+
+**$\Delta m$**: $\vec{r}$은 vector operator이므로 위 표 그대로다. 
+
+$$
+[L_z, z] = 0, \qquad [L_z, x \pm iy] = \pm\hbar(x \pm iy)
+$$
+
+여기서 빛의 polarization과의 연결이 보인다. $z$ 방향으로 편광된 빛은 $z$ 성분만 남아 $\Delta m = 0$, 원편광된 빛은 $x \pm iy$ 성분이 남아 $\Delta m = \pm 1$ 전이를 일으킨다. 
+
+**$\Delta l$**: Griffiths는 $\vec{r}$에만 성립하는 다음 identity를 이용한다. 
+
+$$
+[L^2, [L^2, \vec{r}]] = 2\hbar^2(\vec{r}L^2 + L^2\vec{r})
+$$
+
+양변을 $\bra{n',l',m'}$과 $\ket{n,l,m}$ 사이에 끼우고 $A = l(l+1)$, $B = l'(l'+1)$로 쓰면
+- 좌변: $L^2$가 바깥에서 두 번 작용하므로 $\hbar^4(B - A)^2\bra{n',l',m'}\vec{r}\ket{n,l,m}$
+- 우변: $2\hbar^4(A + B)\bra{n',l',m'}\vec{r}\ket{n,l,m}$
+
+행렬 원소가 0이 아니려면 $(B - A)^2 = 2(A + B)$여야 하고, 이것을 인수분해하면
+
+$$
+(l' + l)(l' + l + 2)\left[(l' - l)^2 - 1\right] = 0
+$$
+
+따라서 $l' = l \pm 1$이거나 $l = l' = 0$이다. 후자는 $\bra{n',0,0}\vec{r}\ket{n,0,0}$의 각도 적분이 0이라서 떨어진다. 
+
+$$
+\boxed{\Delta l = \pm 1, \qquad \Delta m = 0, \pm 1}
+$$
+
+> [!question] 일반 vector operator는 $\Delta l = 0$을 허용하는데, 왜 $\vec{r}$은 $\Delta l = \pm 1$뿐인가?
+> 위 identity가 $\vec{r}$의 특수한 성질을 이용하기 때문이다. 그 성질의 정체는 **parity**다. 
+> $\vec{r}$은 공간 반전에서 부호가 바뀌고, $\ket{n,l,m}$의 parity는 $(-1)^l$이다. 따라서 $\vec{r}$은 parity가 다른 상태, 즉 $l$이 홀수만큼 다른 상태만 잇는다. 
+> 회전 대칭이 주는 $\Delta l = 0, \pm1$과 parity가 주는 "$\Delta l$ 홀수"를 합치면 $\Delta l = \pm 1$이 남는다. Griffiths의 identity 한 줄이 이 두 가지를 동시에 해 준 것이다. (자세한 내용은 아래 [[#Parity가 주는 selection rule]])
+> 
+> 반면 $\vec{L}$도 vector operator이지만 parity에서 부호가 바뀌지 않는다(axial vector). 그래서 $\vec{L}$은 $\Delta l = 0$인 상태만 잇는다. 당연하다. $\vec{L}$은 $l$을 바꾸지 않는다. 
+
+### 정리
+
+| operator 종류 | 정의 | 예시 | selection rule |
+|---|---|---|---|
+| scalar | $[L_i, f] = 0$ | $r$, $H$ | $\Delta l = 0$, $\Delta m = 0$, 행렬 원소는 $m$에 무관 |
+| vector | $[L_i, V_j] = i\hbar\epsilon_{ijk}V_k$ | $\vec{r}$, $\vec{p}$, $\vec{L}$ | $\Delta l = 0, \pm1$, $\Delta m = 0, \pm1$ |
+| $\vec{r}$ (dipole) | vector + parity odd | | $\Delta l = \pm1$, $\Delta m = 0, \pm1$ |
+
+### 다리 놓기: Wigner–Eckart theorem이 말하는 것
+Griffiths 수준의 결론을 한 문장으로 요약하면 이렇다. 
+
+> 행렬 원소의 방향 의존성($m$, $m'$, 성분 $q$)은 전부 회전 대칭이 정하고, 남는 것은 $m$과 무관한 숫자 하나뿐이다. 
+
+Scalar operator에서는 "방향 의존성"이 $\delta_{ll'}\delta_{mm'}$로 아주 단순했다. 
+Vector operator에서는 이 자리에 **CG coefficient**가 들어간다. "각운동량 1을 더 얹는다"는 직관을 그대로 수식으로 옮긴 것이다. 
+
+$$
+\bra{n',l',m'}V_q\ket{n,l,m} = \underbrace{\braket{l, 1; m, q | l, 1; l', m'}}_{\text{CG: 방향 의존성, 표에서 찾는다}} \times \underbrace{(\text{$m, m', q$에 무관한 숫자})}_{\text{계의 물리: radial 적분 등}}
+$$
+
+($V_q$는 $V_\pm$, $V_z$를 적절히 normalize한 성분으로, 아래 절에서 정의한다.)
+CG coefficient가 0이 되는 조건($m' = m + q$, $|l - 1| \leq l' \leq l + 1$)이 바로 위에서 commutator로 얻은 selection rule이다. 
+실용적으로는 여러 $m$에 대한 행렬 원소 중 **하나만 직접 적분하면, 나머지는 CG table의 비율로 얻을 수 있다**는 것이 이 정리의 가치다. 
+
 ## Spherical tensor operator
+> [!note] 여기부터는 심화 내용 (Sakurai 수준)
+> 위의 scalar(rank 0), vector(rank 1)를 임의의 rank $k$로 일반화한다. 
 $\ket{j,m}$이 회전에 대해 특정한 방식으로 변환되듯, operator도 회전에 대해 변환된다. 
 회전에 대해 $\ket{k, q}$처럼 변환하는 $2k+1$개 operator의 묶을 **rank $k$ spherical tensor** $T^{(k)}_q$ ($q = -k, \dots, k$)라고 한다. 
 
@@ -840,12 +1179,16 @@ Weak-field Zeeman effect에서 Landé g-factor를 구할 때 $\vec{S}$를 $\vec{
 
 ## Parity가 주는 selection rule
 회전 대칭만으로는 $\vec{r}$에 대해 $\Delta l = 0$이 허용된다. 이것을 금지하는 것은 parity다. 
-
+연산자가 true vector거나 pseudoscalar이라면, parity를 적용할 때 부호가 바뀐다. 
 $$
 \Pi\,\vec{r}\,\Pi^\dagger = -\vec{r}, \qquad \Pi\ket{n,l,m} = (-1)^l\ket{n,l,m}
 $$
 
 ($Y_l^m(\pi-\theta, \phi+\pi) = (-1)^l Y_l^m(\theta,\phi)$에서 온다.) 
+![[Pasted image 20261021195046.png]]
+![[Pasted image 20261021194857.png]]
+이  그림을 봐... 부호가 다른 부분을 다른 색으로 칠해뒀어.
+
 $\Pi^\dagger\Pi = \mathbb{1}$을 끼워 넣으면
 
 $$
@@ -881,65 +1224,3 @@ $$
 - $3d \to 1s$: $\Delta l = -2$, 금지 (triangle inequality). $3d \to 2p \to 1s$로 단계를 거쳐 내려간다. 
 
 "금지"는 electric dipole 근사에서의 금지다. Magnetic dipole, electric quadrupole 같은 고차 항은 다른 rank와 parity를 가지므로 다른 selection rule을 따르고, 훨씬 약하게 일어난다. 
-
-# 더 나아가: $d$차원의 rotation generator
-$\vec{J} = \vec{r}\times\vec{p}$ 꼴은 사실 3차원에서만 성립하는 우연이다. 
-
-## 회전은 축이 아니라 평면에서 일어난다
-"$z$축 둘레의 회전"은 사실 $xy$-평면 안에서의 회전이다. 평면에 수직인 방향이 하나로 정해지는 것은 3차원뿐이다. (4차원에서 $x_1x_2$-평면에 수직인 것은 $x_3x_4$-평면 전체)
-그래서 일반 차원에서는 평면 $(i,j)$마다 generator를 하나씩 정의하는 antisymmetric tensor를 쓴다. 
-
-$$
-L_{ij} = x_i p_j - x_j p_i, \qquad L_{ij} = -L_{ji}
-$$
-
-독립적인 generator 수는 평면의 수 $\binom{d}{2} = \frac{d(d-1)}{2}$이다. 3차원에서만 평면 수와 축 수가 같아서 Hodge dual로 vector처럼 쓸 수 있었다. 
-
-$$
-L_k = \frac{1}{2}\epsilon_{ijk}L_{ij} \quad\Rightarrow\quad L_3 = L_{12},\; L_1 = L_{23},\; L_2 = L_{31}
-$$
-
-## $\mathfrak{so}(d)$ commutation relation
-Spin까지 포함한 일반적인 $J_{ij}$는 다음 $\mathfrak{so}(d)$ Lie algebra의 commutation relation (defining relation)으로 정의한다. 
-
-$$
-[J_{ij}, J_{kl}] = i\hbar \left( \delta_{ik} J_{jl} - \delta_{il} J_{jk} - \delta_{jk} J_{il} + \delta_{jl} J_{ik} \right)
-$$
-
-- index를 공유하지 않는 두 평면의 generator는 commute한다. 
-- 3차원에서 $[L_{12}, L_{23}] = -i\hbar L_{13} = i\hbar L_{31}$, 즉 $[L_3, L_1] = i\hbar L_2$로 익숙한 식이 나온다. 
-- Rotation operator: $U(R) = \exp\left(-\frac{i}{2\hbar}\theta_{ij}J_{ij}\right)$
-- Spin 부분은 Clifford algebra $\{\gamma_i,\gamma_j\} = 2\delta_{ij}$로 만든다: $S_{ij} = -\frac{i\hbar}{4}[\gamma_i, \gamma_j]$. ($d=3$, $\gamma_i = \sigma_i$이면 $S_{12} = \frac{\hbar}{2}\sigma_3$)
-- $\delta_{ij}$를 Minkowski metric $\eta_{\mu\nu}$로 바꾸면 **Lorentz algebra** $\mathfrak{so}(1,3)$이 된다. 
-
-## 차원이 올라가면 달라지는 것
-- 동시에 대각화할 수 있는 generator 수: $L_{12}, L_{34}, \dots$ 처럼 $\lfloor d/2 \rfloor$개 (Cartan subalgebra). 3차원에서는 $J_z$ 하나뿐이었다. 
-- Casimir $L^2 = \frac{1}{2}\sum_{i,j}L_{ij}L_{ij}$의 orbital eigenvalue는 $\hbar^2\,l(l+d-2)$이고, $d=3$에서 $l(l+1)$로 돌아온다. 
-
-## 4차원은 특별하다: $\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus\mathfrak{su}(2)$
-6개의 generator를 $L_k = \frac{1}{2}\epsilon_{ijk}L_{ij}$ ($i,j,k\in\{1,2,3\}$)와 $K_k = L_{k4}$로 나누면
-
-$$
-[L_i, L_j] = i\hbar\,\epsilon_{ijk}L_k, \qquad [L_i, K_j] = i\hbar\,\epsilon_{ijk}K_k, \qquad [K_i, K_j] = i\hbar\,\epsilon_{ijk}L_k
-$$
-
-이고, 다음 조합은 서로 commute하는 두 개의 $\mathfrak{su}(2)$가 된다. 
-
-$$
-\vec{J}^{\pm} = \frac{1}{2}(\vec{L}\pm\vec{K}), \qquad [J^+_i, J^-_j] = 0
-$$
-
-Hydrogen의 $n^2$ degeneracy가 바로 이 숨겨진 SO(4) symmetry 때문이다. $\vec{L}$과 (rescale한) Runge–Lenz vector $\vec{A}$가 $\vec{L}, \vec{K}$와 같은 algebra를 이루고, bound state에서 $j_+ = j_- = \frac{n-1}{2}$이므로 degeneracy는 $(2j_++1)(2j_-+1) = n^2$이다. 
-
-# 수정 기록
-> [!note] 2026-10-20, Glia가 수정
-> - "$\vec{J}$는 $\vec{L}$과 $\vec{S}$의 합집합" → 합(sum), tensor product 표기 추가
-> - "2×2 = SU(2) spin, 3×3 = SO(3) angular momentum" 구분을 바로잡고 warning callout 추가
-> - $\ket{m_x, m_y, m_x}$ 오타, commutator 계산의 $\hbar^2$ 누락 수정
-> - $a \geq b \geq -a$ → $\sqrt{a} \geq b \geq -\sqrt{a}$
-> - $b_{\min} = -b_{\max}$에서 다른 해를 버리는 근거 추가, "$b$값의 종류는 2 이상" → $n+1$가지 ($n \geq 0$)
-> - $J_+\ket{j,m} = C^+_{jm}\ket{j,m}$ → $\ket{j,m+1}$, $C^+_{jm}$ 유도 과정 정리, phase convention 명시
-> - rotation이 $J^2$를 보존하는 논리 방향 수정
-> - "반정수 $j$와 정수 $j$", "$d$차원의 rotation generator" 섹션 새로 작성
-> - "Selection rule: 대칭성으로 보기" 섹션 새로 작성 (spherical tensor, Wigner–Eckart theorem, parity, dipole selection rule)
-> - "Angular momentum addition과 Clebsch–Gordan coefficient" 섹션 새로 작성
