@@ -102,6 +102,9 @@ $$
 d_f = \frac{2}{\gamma-2} \tag{7}
 $$
 
+$\nu = \frac{\gamma -2}{2}$, $\alpha = \frac{2\nu}{1+2\nu}$
+
+
   $\gamma>3$이면 $a_s$가 $s^{-3}$보다 빨리 죽어서 large scale에서 여전히 ideal chain 통계($d_f=2$)를 유지하고, non-nearest-neighbor 항은 그저 persistence length만 renormalize한다. $\gamma=3$은 log correction이 붙는 critical point. Quadratic interaction (5)는 물리적으로 "monomer 쌍마다 rigidity가 다른 harmonic spring들의 집합"(Fig. 1)으로 해석할 수 있으며, protein 구조를 설명하는 Gaussian network model이나 "beta-model"(Amitai & Holcman) 등 여러 맥락에서 이전에도 등장한 potential 형태다.
 
 - **Continuum 극한에서의 대안적 action, memory kernel 표현 (eq. 8)**: $N\to\infty$인 long fBm conformation의 경우, harmonic potential (5) 대신 action (1)의 "kinetic" 항 자체를 memory-dependent kernel로 수정한 형태로 다시 쓸 수 있다.

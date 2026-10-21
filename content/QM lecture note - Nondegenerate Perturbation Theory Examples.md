@@ -138,8 +138,6 @@ $$
 \pi\ket{g^0} = \ket{g^0}
 $$
 
-> [!warning] 필기 수정
-> 필기의 $\pi\ket{g^0} = 1$은 $\pi\ket{g^0} = \ket{g^0}$ (eigenvalue $+1$)이 맞다.
 
 반면 $z$는 parity에 odd하다.
 

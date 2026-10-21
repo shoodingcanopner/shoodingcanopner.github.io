@@ -17,6 +17,8 @@ class: study_subject
 출석 관련 정책: 1번 결석은 괜찮아요. 지각 감점 없어요.(출석과 동일) 결석할 때마다 출석점수에서 2점식 차감되어요.
 과제 마감: 과제 나온 다음 주 목요일 자정까지. 
 
+[[양자물리2 조교용 기록]]
+
 # 양자물리Ⅰ 내용은 여기 없어요, Ⅱ만 정리하며 채워나갈 예정
 대신 Sakurai(대학원 교재)에서 다룬 해당 내용은 이미 잘 정리되어 있어요. 
 [[Quantum Mechanics]]를 참고. 
@@ -43,4 +45,7 @@ class: study_subject
 [[양자 필기 - Hyperfine Splitting in Hydrogen]]
 
 #### 과제 풀이
-[[양자 HW2 풀이]]
+[[양자 HW2 풀이]] (10.17. 부터 공개)
+
+## 개념 다시 이해하기
+[[양자 - J, L, S operator, CG coefficient and selection rule, 한 시간 만에 무배에서 다시 이해하기]]

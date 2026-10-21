@@ -87,7 +87,6 @@ $$
 | inner product  | $\braket{\beta\|\alpha} = \sum_{a'}\braket{\beta\|a'}\braket{a'\|\alpha}$ | $\braket{\beta\|\alpha} = \int d\xi'\,\braket{\beta\|\xi'}\braket{\xi'\|\alpha}$ |
 | matrix element | $\bra{a''}A\ket{a'} = a'\delta_{a''a'}$                                   | $\bra{\xi''}\xi\ket{\xi'} = \xi'\,\delta(\xi''-\xi')$                            |
 
-
 $$
 x\ket{x'} = x'\ket{x'} \qquad (x\text{는 operator, }x'\text{는 값})
 $$
@@ -134,7 +133,7 @@ $$
 = \int dx'\int dx''\, \psi_\beta^*(x')\,\bra{x'}A\ket{x''}\,\psi_\alpha(x'')
 $$
 
-만약 $A = f(x)$이면,
+만약 $A$가 position operator만으로 이루어진 함수, $A = f(x)$ 이라면
 
 $$
 \bra{x'}f(x)\ket{x''} = f(x'')\,\braket{x'|x''} = f(x'')\,\delta(x'-x'')
@@ -176,7 +175,7 @@ $$
 = \int dx'\,\ket{x' + \delta x}\braket{x'|\alpha}
 $$
 $$
-= \int \ket{x}\braket{x - \delta x|\alpha} = \int \psi_\alpha(x - \delta x)\,\ket{x}
+= \int dx \ket{x}\braket{x - \delta x|\alpha} = \int \psi_\alpha(x - \delta x)\,\ket{x}
 $$
 $x'$ 와 $x$ ,둘이 notation이 왔다갔다 하긴 하지만 고치기 귀찮으니까 냅두자. 
 

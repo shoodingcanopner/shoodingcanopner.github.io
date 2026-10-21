@@ -8,7 +8,7 @@ tags:
 class: study_subject
 ---
 > [!info] 과목 노트
-> 대학원 1학년 1학기, 2학기기에 수강하는 양자역학1 강의 필기들
+> 대학원 1학년 1학기, 2학기에 수강하는 양자역학 강의 필기들
 
 # 강의 정보 
 교재로 Sakurai 책을 이용한다. 
@@ -77,14 +77,23 @@ class: study_subject
 # 2학기 강의 필기
 
 ## 강의 일정
-- Midterm: 2026-10-26 (Mon)
+- Midterm: 2026-10-27 (Tue)
 - Final test: 2026-12-18 (Fri)
 - Week 1–7: Chapter 5 / Week 9–10: Chapter 6 / Week 11–13: Chapter 7 / Week 14–15: Chapter 8 (6–8장은 partially)
 
 ## 중간고사 범위
+### 1학기에서 배운 것 중 제일 정리 안 되고 헷갈리는 것
+[[양자 - J, L, S operator, CG coefficient and selection rule, 한 시간 만에 무배에서 다시 이해하기]]
+
 ### 강의 필기
 [[QM lecture note - Time-Independent Nondegenerate Perturbation Theory]]
 [[QM lecture note - Nondegenerate Perturbation Theory Examples]]
+[[QM lecture note - Time-Independent Degenerate Perturbation Theory]]
+
+[[QM lecture note - The Interaction Picture]]
+[[QM lecture note - Dyson Series & Transition Probability]]
+[[QM lecture note - Constant Perturbation and Transition Rate]]
+[[QM lecture note  - Harmonic Perturbation]]
 
 ### 숙제와 추가 필기
 [[Sakurai 5.17 - Darwin Term and Fine Structure]]

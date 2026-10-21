@@ -17,6 +17,7 @@ class: study
 [[QM lecture note - Orbital Angular Momentum and Spherical Harmonics]]에서 orbital angular momentum $\mathbf{L}$의 position representation, spherical coordinate에서 $L_z$, $L_\pm$, $L^2$의 미분 연산자 표현, spherical harmonics $Y_l^m(\theta, \phi)$의 유도와 반정수 $l$ 배제, 그리고 $\mathcal{D}^{(l)}_{m'0}$과 spherical harmonics의 관계를 다루었다.
 
 # 오늘의 핵심
+![[Pasted image 20260930183650.png]]
 
 - **$\mathbf{J}$, $\mathbf{L}$, $\mathbf{S}$의 관계**: $\mathbf{J} = \mathbf{L} \otimes \mathbf{1} + \mathbf{1} \otimes \mathbf{S}$. Orbital part와 spin part의 tensor product로 나타나는 전체 상태
 - **두 전자 시스템**: 총 spin operator $\mathbf{S} = \mathbf{S}_1 \otimes \mathbf{1} + \mathbf{1} \otimes \mathbf{S}_2$의 commutation relation 증명

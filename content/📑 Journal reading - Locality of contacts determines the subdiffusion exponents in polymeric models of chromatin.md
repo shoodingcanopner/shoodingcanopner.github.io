@@ -16,7 +16,7 @@ class: study_journal
 
 ## Overview
 
-Chromatin의 anomalous subdiffusion exponent $\alpha$가 무엇에 의해 결정되는지를 묻는 논문. 저자들의 핵심 주장은 명확하다: **MSD의 exponent $\alpha$를 결정하는 것은 model parameter의 세부값이 아니라, contact를 이루는 두 monomer 사이의 평균 genomic 거리, 즉 contact의 "locality" $\ell$ 하나뿐이다.**
+
 
 Loop extrusion (cohesin) model, static quenched-link model, 그리고 minimal analytical model의 세 층위에서 같은 결론에 수렴하도록 논증을 쌓아 올린다. Local contact만 있으면 dynamics는 excluded-volume Rouse ($\alpha \approx 0.55$)와 구분되지 않고, nonlocal contact가 생기면 intermediate time scale에서 $\alpha < 0.5$의 sub-Rouse subdiffusion이 나타난다.
 

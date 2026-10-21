@@ -33,10 +33,10 @@ class: study
 
 지금까지 회전을 나타낼 때 회전축 $\hat{n}$과 회전각 $\phi$를 지정했다. 총 3개의 real parameter가 필요하다: $(\hat{n}(\alpha,\beta),\,\phi)$.
 
-**Euler Rotation**: 어떤 회전이든 3개의 **고정축**에 대한 각 회전 과정의 연속된 결과로 나타낼 수 있다.
+**Euler Rotation**: 어떤 회전이든 3개의 **internal axis**에 대한 각 회전 과정의 연속된 결과로 나타낼 수 있다.
 
 ### 과정
-
+![[Pasted image 20261020150212.png]]
 1. $z$축에 대해 $\alpha$ 돌림: $R_z(\alpha)$
 2. $y'$축(internal axis)에 대해 $\beta$ 돌림: $R_{y'}(\beta)$
 3. $z'$축에 대해 $\gamma$ 돌림: $R_{z'}(\gamma)$
@@ -52,8 +52,7 @@ $R_{y'}(\beta)$를 space axis에 대한 표현으로 바꾸고 싶다. 경험적
 $$
 R_{y'}(\beta)\,R_z(\alpha) = R_z(\alpha)\,R_y(\beta)
 $$
-
-임을 알 수 있으므로:
+이렇게 회전 순서를 바꾸어도 결과물이 같다는 것을 안다. 
 
 $$
 \boxed{R_{y'}(\beta) = R_z(\alpha)\,R_y(\beta)\,R_z^{-1}(\alpha)}
@@ -80,6 +79,7 @@ $$
 $$
 \boxed{R(\alpha,\beta,\gamma) = R_z(\alpha)\,R_y(\beta)\,R_z(\gamma)}
 $$
+위에 그려진 그림 예시를 이용해 스스로 감을 익혀보자.  머릿속에서 이리저리 사과를 굴려..
 
 > [!note] $\alpha$와 $\gamma$의 위치 교환
 > Body-fixed 표현 $R_{z'}(\gamma)\,R_{y'}(\beta)\,R_z(\alpha)$와 비교하면 $\alpha$와 $\gamma$의 위치가 바뀐 것이 특징적이다.
@@ -96,8 +96,6 @@ $$
 = \begin{pmatrix} e^{i\alpha/2} & 0 \\ 0 & e^{-i\alpha/2} \end{pmatrix}\begin{pmatrix} \cos\frac{\beta}{2} & -\sin\frac{\beta}{2} \\ \sin\frac{\beta}{2} & \cos\frac{\beta}{2} \end{pmatrix}\begin{pmatrix} e^{i\gamma/2} & 0 \\ 0 & e^{-i\gamma/2} \end{pmatrix}
 $$
 
-> [!warning] 부호 주의
-> 여기서 $D_z(\alpha) = e^{-iJ_z\alpha/\hbar}$이므로, $j = \frac{1}{2}$일 때 $\ket{+}$에 대해 $e^{-i\alpha/2}$가 (1,1) 성분이 되어야 한다. 필기에는 $e^{i\alpha/2}$가 (1,1)에 적혀 있는데, 이는 convention의 차이일 수 있으므로 교재와 대조 필요.
 
 곱을 계산하면:
 
@@ -105,7 +103,7 @@ $$
 \mathcal{D}^{(1/2)}(\alpha,\beta,\gamma) = \begin{pmatrix} e^{-i(\alpha+\gamma)/2}\cos\frac{\beta}{2} & -e^{-i(\alpha-\gamma)/2}\sin\frac{\beta}{2} \\ e^{i(\alpha-\gamma)/2}\sin\frac{\beta}{2} & e^{i(\alpha+\gamma)/2}\cos\frac{\beta}{2} \end{pmatrix}
 $$
 
-이 행렬을 **$j = \frac{1}{2}$ irreducible representation of the rotation operator $\mathcal{D}(\alpha,\beta,\gamma)$**라 부른다:
+이 행렬을 **$j = \frac{1}{2}$ irreducible representation of the rotation operator $\mathcal{D}(\alpha,\beta,\gamma)$** 라 부른다:
 
 $$
 \mathcal{D}^{(1/2)}_{m'm}(\alpha,\beta,\gamma) = \bra{j = \tfrac{1}{2}, m'}\,e^{-iJ_z\alpha/\hbar}\,e^{-iJ_y\beta/\hbar}\,e^{-iJ_z\gamma/\hbar}\,\ket{j = \tfrac{1}{2}, m}
@@ -115,7 +113,7 @@ $$
 
 ### Total Angular Momentum
 
-Total angular momentum을 도입한다:
+Total angular momentum이라는 개념을 도입한다. 
 
 $$
 J^2 = \sum_i J_i^2
@@ -126,6 +124,7 @@ $J^2$은 모든 방향의 $J$와 commute한다:
 $$
 [J^2, J_i] = 0 \quad \text{for } \forall\,i
 $$
+증명은 commutation의 성질 $[AB,C] = A[B,C] + [A,C]B$이라는 점과 $[J_i,J_j] = i\hbar \epsilon_{ijk}J_k$이라는 점을 이용하면 된다. 
 
 ### 동시 고유켓
 
@@ -134,11 +133,20 @@ $J^2$과 $J_z$의 simultaneous eigenket $\ket{a,b}$를 정의한다:
 $$
 J^2\ket{a,b} = a\ket{a,b}, \qquad J_z\ket{a,b} = b\ket{a,b}
 $$
+아... 니면 
+$$
+J^2\ket{a,c} = a\ket{a,c}, \qquad J_x\ket{a,c} = c\ket{a,c}
+$$
+나,
+$$
+J^2\ket{a,d} = a\ket{a,d}, \qquad J_y\ket{a,d} = d\ket{a,d}
+$$
+같은 걸 정의해도 되긴 한다. 만약 당신이 지적으로 고통받는 것을 좋아한다면. 
 
 ### Ladder Operators
 
 Ladder operator를 도입한다:
-
+[[QM lecture note - Simple Harmonic Oscillator]] 에서 정의한 ladder operator과과 비슷함을
 $$
 J_\pm = J_x \pm iJ_y, \qquad J_\pm^\dagger = J_\mp
 $$
@@ -168,17 +176,19 @@ $$
 
 ### $J_\pm$의 작용
 
-$J_z$에 $J_\pm\ket{a,b}$를 적용하면:
+$J_z$를 $J_\pm\ket{a,b}$에 적용하면:
 
 $$
 J_z(J_\pm\ket{a,b}) = ([J_z, J_\pm] + J_\pm J_z)\ket{a,b} = (b \pm \hbar)(J_\pm\ket{a,b})
 $$
+$J_\pm\ket{a,b}$ 자체도 $J_z$에 대한 eigenket이며, eigenvalue는 $b \pm \hbar$임을 알 수 있다. 
 
 $J^2$에 적용하면:
 
 $$
 J^2(J_\pm\ket{a,b}) = J_\pm(J^2\ket{a,b}) = a(J_\pm\ket{a,b})
 $$
+$J_\pm\ket{a,b}$ 자체도 $J^2$에 대한 eigenket이며, eigenvalue는 $a$임을 알 수 있다. 
 
 따라서 계수 $C_\pm$에 대해:
 
@@ -199,9 +209,12 @@ $$
 $$
 \bra{a,b}J^2 - J_z^2\ket{a,b} = \frac{1}{2}\left\{\bra{a,b}J_-^\dagger J_-\ket{a,b} + \bra{a,b}J_+^\dagger J_+\ket{a,b}\right\}
 $$
+우변의 $\left\{\bra{a,b}J_-^\dagger J_-\ket{a,b} + \bra{a,b}J_+^\dagger J_+\ket{a,b}\right\}$은 $J_-\ket{a,b}$의 norm 제곱과  $J_+\ket{a,b}$의 norm 제곱의 합이므로 무조건 $\geq 0$이다. 
 
-우변은 각각 norm의 제곱이므로 $\geq 0$이다. 따라서:
-
+$$
+\bra{a,b}J^2 - J_z^2\ket{a,b} = a - b^2
+$$
+따라서:
 $$
 a - b^2 \geq 0
 $$
@@ -209,15 +222,15 @@ $$
 ### $b_{\max}$와 $b_{\min}$의 결정
 
 $b$에는 boundary가 있으며, $a$로 결정된다.
-
+가능한 $b$의 값 중에서 최대 값을 가진 ket을 상정해 보자. 
 $$
 J_+\ket{a, b_{\max}} = 0 \quad \Rightarrow \quad J_-J_+\ket{a, b_{\max}} = 0
 $$
-
+$J_-J_+$를 $J_z$에 대해 나타낼 수 있다. 
 $$
 J_-J_+ = (J_x - iJ_y)(J_x + iJ_y) = J_x^2 + J_y^2 + i[J_x, J_y] = J^2 - J_z^2 - \hbar J_z
 $$
-
+이를 아까 상정한 ket에 적용하면, 
 $$
 J_-J_+\ket{a, b_{\max}} = (a - b_{\max}^2 - \hbar\,b_{\max})\ket{a, b_{\max}} = 0
 $$
@@ -251,25 +264,26 @@ $$
 b_{\max} = \frac{n}{2}\hbar
 $$
 
-### 양자수 $j$
-
+### 양자수 $j$를 정의할 수 있다
+$b$값 ($J_z$)로 구별가능한 상태의 수, n을 이용하여 $j$를 정의하자. 
 $$
 j = \frac{b_{\max}}{\hbar} = \frac{n}{2}
 $$
 
 $n$이 홀수면 $j$는 half integer, 짝수면 $j$는 integer. 총 $2j + 1$개의 state가 존재.
 
+$j$는 총 각운동량을 나타내기도 한다. 
 $$
 a = b_{\max}(b_{\max} + \hbar) = j(j+1)\hbar^2
 $$
 
 ### 양자수 $m$
-
+$b$를 이용해야 양자수 $m$을 정의하자. 
 $$
 b = m\hbar
 $$
 
-$m$: $z$-component angular momentum의 expectation value에 해당하는 양자수.
+정리하면, 각운동량에 대한 eigenket을 이렇게 정의할 수 있다. 
 
 $$
 J^2\ket{j,m} = j(j+1)\hbar^2\ket{j,m}
@@ -292,13 +306,16 @@ $$
 $$
 
 ### $C^+_{jm}$의 결정 (Raising operator)
-
+아까 제대로 알아내지 못 했던 ladder operator를 사용했을 때 붙는 계수를 이제 구해 보자. 
 $$
-\bra{j',m'}J_z\ket{j,m} = C^+_{jm}\bra{j',m'}\ket{j,m+1} = C^+_{jm}\,\delta_{jj'}\,\delta_{m',m+1}
+J_+\ket{j,m}  = C^+_{jm}\ket{j,m}
+$$
+양 변에 $\bra{j',m'}$를 적용하면,
+$$
+\bra{j',m'}J_+\ket{j,m} = C^+_{jm}\bra{j',m'}\ket{j,m+1} = C^+_{jm}\,\delta_{jj'}\,\delta_{m',m+1}
 $$
 
-$\bra{j',m'}J_-J_+\ket{j,m}$을 두 가지 방법으로 계산한다:
-
+$\bra{j',m'}J_-J_+\ket{j,m}$을 두 가지 방법으로 계산할 수 있다. 
 $$
 \bra{j',m'}J_-J_+\ket{j,m} = \bra{j',m'}J_+^\dagger J_+\ket{j,m} = \braket{j,m+1|j,m+1}\,|C^+_{jm}|^2\,\delta_{jj'}\,\delta_{m'm}
 $$
@@ -308,7 +325,6 @@ $$
 $$
 
 따라서:
-
 $$
 \boxed{C^+_{jm} = \hbar\sqrt{(j-m)(j+m+1)}}
 $$
@@ -325,7 +341,7 @@ $$
 \boxed{C^-_{jm} = \hbar\sqrt{(j+m)(j-m+1)}}
 $$
 
-### 전부 정리하면
+### 전부 정리하면, ladder operator의 작용은
 
 $$
 J_+\ket{j,m} = \hbar\sqrt{(j-m)(j+m+1)}\;\ket{j, m+1}
@@ -343,21 +359,21 @@ $$
 
 ### Total Angular Momentum을 바꾸지 않는 이유
 
-$\mathcal{D}(R)$은 total angular momentum을 바꾸지 않는다. 이는 $J^2$이 $\mathcal{D}(R)$과 commute해야 한다는 의미이다. Translation을 해도 momentum이 바뀌지 않는 관계와 유사하다.
+$\mathcal{D}(R)$은 total angular momentum을 바꾸지 않는다. 이는 $J^2$이 $\mathcal{D}(R)$과 commute해야 한다는 의미이다. 
+이 관계는 선운동에서 translation operator를 적용해도 momentum이 바뀌지 않는 것과 비슷하다. 
 
 $\ket{j,m}$과 $\mathcal{D}(R)\ket{j,m}$은 $J^2$에 대해 똑같은 eigenvalue $j(j+1)\hbar^2$을 가진다.
 
 ### $(2j+1)$차원 기약 표현
-
+$\mathcal{D}(R)$을 $\ket{j,m}$basis로 나타내면  $(2j+1) \times (2j+1)$ matrix로 나타낼 수 있을 것이다. 
 $$
 \mathcal{D}(R)\ket{j,m} = \sum_{m'}\ket{j,m'}\bra{j,m'}\mathcal{D}(R)\ket{j,m} = \sum_{m'}\ket{j,m'}\,\mathcal{D}^{(j)}_{m'm}(R)
 $$
-
 $$
 \boxed{\mathcal{D}^{(j)}_{(R)\,m'm} = \bra{j,m'}\exp\!\left(-\frac{i}{\hbar}\vec{J}\cdot\hat{n}\,\phi\right)\ket{j,m}}
 $$
 
-이것은 $(2j+1) \times (2j+1)$ 행렬이다.
+
 
 > [!note] Bra와 Ket의 $j$ 값이 같음에 주목하라.
 
@@ -365,6 +381,7 @@ $$
 
 ![[Pasted image 20260607222450.png]]
 
+왜 고작 이게 교과서 표지가 되었을까?
 
 ## 7. Euler Angle 적용과 $d^{(j)}(\beta)$ 행렬
 
@@ -373,9 +390,7 @@ Euler rotation을 적용하자:
 $$
 \mathcal{D}^{(j)}_{m'm}(\alpha,\beta,\gamma) = \bra{j,m'}\exp\!\left(-\frac{i}{\hbar}J_z\alpha\right)\exp\!\left(-\frac{i}{\hbar}J_y\beta\right)\exp\!\left(-\frac{i}{\hbar}J_z\gamma\right)\ket{j,m}
 $$
-
-$\ket{j,m}$은 $J_z$의 고유켓이므로:
-
+$\ket{j,m}$은 $J_z$의 eigenket이므로:
 $$
 = e^{-im'\alpha}\,e^{-im\gamma}\,\bra{j,m'}\exp\!\left(-\frac{i}{\hbar}J_y\beta\right)\ket{j,m}
 $$

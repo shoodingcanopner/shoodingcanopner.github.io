@@ -145,7 +145,7 @@ $$
 
 # 다음 강의
 
-
+[[QM lecture note - Position, Momentum, and Translation]]
 # 원본 필기 이미지
 ![[Pasted image 20260310153050.png]]
 ![[Pasted image 20260310153045.png]]

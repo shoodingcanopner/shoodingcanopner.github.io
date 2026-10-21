@@ -33,13 +33,16 @@ class: study
 
 지난 시간에 $[J_i, J_j] = i\hbar\,\varepsilon_{ijk}\,J_k$를 유도했다.
 
+위와 같은 성질을 가지는 vector operator라면 그것이 무엇이든 $\vec{J}$로 취급할 수 있다고 생각하자. 
+
 **공간의 차원이 1이라면:** 모든 연산자가 스칼라이므로 모든 연산자가 commute한다. $[J_i, J_j] = i\hbar\,\varepsilon_{ijk}\,J_k$의 관계를 따르는 0이 아닌 operator는 없다.
 
-**공간 차원이 2라면:** Spin $\frac{1}{2}$과 표현식이 같다 → **Two-component spinor**.
+**공간 차원이 2라면:** Spin $\frac{1}{2}$과 표현식이 같다는 점을 지금부터 알아볼 것이다. → **Two-component spinor**.
 
 ## 2. Two-Component Spinor
 
-Basis $\ket{+}, \ket{-}$에서 $S_k\ket{\pm} = \pm\frac{\hbar}{2}\ket{\pm}$:
+Basis $\ket{+}, \ket{-}$에서 한 spin operator를 $S_k$라고 하자, 이것의 eigen ket을 basis 삼는다. 
+$S_k\ket{\pm} = \pm\frac{\hbar}{2}\ket{\pm}$:
 
 $$
 \ket{+} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \equiv \chi_+, \qquad \ket{-} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \equiv \chi_-
@@ -49,7 +52,7 @@ $$
 \bra{+} = \begin{pmatrix} 1 & 0 \end{pmatrix} = \chi_+^\dagger, \qquad \bra{-} = \begin{pmatrix} 0 & 1 \end{pmatrix} = \chi_-^\dagger
 $$
 
-임의의 ket과 bra의 표현:
+임의의 ket과 bra를 이 basis로 표현하면,
 
 $$
 \ket{\alpha} = \begin{pmatrix} \braket{+|\alpha} \\ \braket{-|\alpha} \end{pmatrix}, \qquad \bra{\alpha} = \begin{pmatrix} \braket{\alpha|+} & \braket{\alpha|-} \end{pmatrix}
@@ -63,12 +66,12 @@ $$
 
 ## 3. Pauli Matrices
 
-$S_k$의 matrix representation: $\braket{\pm|S_k|\pm} = \pm\frac{\hbar}{2}\braket{\pm|\pm}$, $\braket{\pm|S_k|\mp} = -\frac{\hbar}{2}\braket{\pm|\mp}$
+$S_k$의 matrix representation: $\braket{\pm|S_k|\pm} = \pm\frac{\hbar}{2}\braket{\pm|\pm}= \pm\frac{\hbar}{2}$, $\braket{\pm|S_k|\mp} = -\frac{\hbar}{2}\braket{\pm|\mp}=0$
 
 $$
 S_k = \frac{\hbar}{2}\left\{\ket{+}\bra{+} - \ket{-}\bra{-}\right\} = \frac{\hbar}{2}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \frac{\hbar}{2}\sigma_k
 $$
-
+그리고 다른 방향의 spin operator도 정의할 수 있다. 
 $$
 S_i = \frac{\hbar}{2}\left\{\ket{+}\bra{-} + \ket{-}\bra{+}\right\}, \qquad S_j = \frac{\hbar}{2}i\left\{-\ket{+}\bra{-} + \ket{-}\bra{+}\right\}
 $$
@@ -146,8 +149,6 @@ $$
 > [!tip] 이 성질이 나중에 증명할 때 유용하게 쓰인다.
 
 ## 7. Rotation Operator의 명시적 유도
-
-지난 시간에 $e^{-i\phi S_z/\hbar} = \mathbb{1}\cos\frac{\phi}{2} - i\sigma_y\sin\frac{\phi}{2}$을 이용했다. 이제 이것을 **일반적인 축에 대해** 증명한다.
 
 $\vec{S}\cdot\hat{n} = \frac{\hbar}{2}\vec{\sigma}\cdot\hat{n}$이므로:
 

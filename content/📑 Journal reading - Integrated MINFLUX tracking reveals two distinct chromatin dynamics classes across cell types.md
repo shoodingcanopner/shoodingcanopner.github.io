@@ -20,11 +20,13 @@ class: study_journal
 
 또한, chrimatin dynamics에 영향을 끼치는 단백질들을 억제하는 약을 쳐서 MSD를 뽑았다. 
 이는 chromatin dynamics의 key factor가 무엇인지 알려주는 단서일지도 모른다. 
+
+
 ## Overview
 
 Hansen lab (MIT)에서 나온 논문으로, MINFLUX(200 μs–10 s), 카메라 기반 SPT(100 ms–200 s), SRLCI(20 s–hours)를 결합해 **7 orders of magnitude (OOM)**에 걸쳐 chromatin MSD를 측정했다. 목표는 MSD(Δt) ∝ Δt^α의 power-law 가정이 실제로 성립하는지, 아니면 α가 timescale에 따라 변하는지(continuously varying α)를 큰 dynamic range에서 검증하는 것. 결과적으로 세포 종류에 따라 두 가지 질적으로 다른 dynamics class가 존재함을 발견했다:
 
-1. **Class 1 (U2OS, RPE-1):** 전체 7 OOM에 걸쳐 α ≈ 0.3으로 일정한 단일 power law — persistent subdiffusion.
+1. **Class 1 (U2OS(인간 골육종 세포주), RPE-1(Human Retinal Pigment Epithelial)):** 전체 7 OOM에 걸쳐 α ≈ 0.3으로 일정한 단일 power law — persistent subdiffusion.
 2. **Class 2 (MEF, RH30, mES cells):** 짧은 시간(α ≈ 0.3)에서 긴 시간(α ≈ 0.5–0.6)으로 갈수록 α가 증가하는 continuously steepening MSD — 즉 단일 exponent로 fitting이 안 됨.
 
 이 두 번째 class는 사용자가 진행 중인 **continuous ν(n) → α(τ) ODE 프레임워크**와 현상론적으로 정확히 같은 형태의 질문(α가 timescale에 따라 어떻게 변하는가)을 실험적으로 다루고 있어, 직접적인 관련성이 크다.
@@ -67,7 +69,7 @@ Hansen lab (MIT)에서 나온 논문으로, MINFLUX(200 μs–10 s), 카메라 �
 
 - **핵심 결과 2 — 모든 세포에서 short-timescale α ≈ 0.3:** Rouse (α=0.5), fractal globule (α=0.4) 같은 표준 polymer 모델보다 훨씬 subdiffusive. 즉 통상적으로 쓰이는 polymer model들로는 짧은 시간 동역학을 설명 못 함.
 
-- **Perturbation 실험:** transcription 억제(DRB), HDAC 억제(TSA), topoisomerase II 억제(ICRF)는 mobility prefactor Γ만 다소 바꾸고 α(exponent)에는 큰 영향 없음. 반면 cohesin subunit RAD21 depletion(loop extrusion 제거)은 유일하게 **long-timescale α를 유의미하게 변화**시켰다(Fbn2 locus, control α~0.3 → ΔRAD21 α~0.5). → loop extrusion이 minutes~hours 스케일 chromatin motion의 주요 regulator라는 결론.
+- **Perturbation 실험:** transcription 억제(DRB), HDAC 억제(TSA), topoisomerase II 억제(ICRF)는 mobility prefactor Γ만 다소 바꾸고 α(exponent)에는 큰 영향 없음. 반면 cohesin subunit RAD21 depletion(loop extrusion 제거)은 유일하게 **long-timescale α를 유의미하게 변화**시켰다(Fbn2 locus, control α~0.3 → ΔRAD21 α~0.5 ---? 진짜? 0.5까지 올라간다고?). → loop extrusion이 minutes~hours 스케일 chromatin motion의 주요 regulator라는 결론.
 ![[Pasted image 20260707113510.png]]
 DRB: RNA polymerase가 DNA에 붙으면 국소적으로 loci하나가 무거워지면서 friction이 증가하는 효과를 줄 것이다. 
 TSA: Acetylation은 histone의 charge를 중화시켜서 open chromatine을 만든다. 

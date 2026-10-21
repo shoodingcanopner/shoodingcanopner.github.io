@@ -34,6 +34,7 @@ $$
 $$
 S_z = \frac{\hbar}{2}\begin{pmatrix}1&0\\0&-1\end{pmatrix}, \quad S_x = \frac{\hbar}{2}\begin{pmatrix}0&1\\1&0\end{pmatrix}, \quad S_y = \frac{\hbar}{2}\begin{pmatrix}0&-i\\i&0\end{pmatrix}
 $$
+
 ### 불확정성의 원리 증명 시작점
 
 
@@ -83,7 +84,7 @@ $$
 $$
 ## Example: Spin-1/2 System (계속)
 
-### S_x, S_y의 Eigenket
+### $S_x, S_y$의 Eigenket
 
 $S_z$의 eigen ket을 $|+\rangle$, $|-\rangle$이라 하고, $S_x$와 $S_y$의 eigenket을 각각 $|S_x;\pm\rangle$, $|S_y;\pm\rangle$이라 하자.
 
@@ -96,34 +97,35 @@ $$
 $|S_x;+\rangle$을 $|+\rangle$, $|-\rangle$ basis로 나타내면:
 
 $$
-|S_x;+\rangle = \frac{1}{\sqrt{2}}|+\rangle + \frac{1}{\sqrt{2}}e^{i\delta_1}|-\rangle
+|S_x;+\rangle = \frac{1}{\sqrt{2}}|+\rangle + \frac{1}{\sqrt{2}}e^{i\delta_x}|-\rangle
 $$
 
 $|S_x;-\rangle$은 $|S_x;+\rangle$에 대해 orthogonal해야 하므로:
 
 $$
-|S_x;-\rangle = \frac{1}{\sqrt{2}}|+\rangle - \frac{1}{\sqrt{2}}e^{i\delta_1}|-\rangle
+|S_x;-\rangle = \frac{1}{\sqrt{2}}|+\rangle - \frac{1}{\sqrt{2}}e^{i\delta_x}|-\rangle
 $$
 
 $S_x$를 나타낼 수 있다. $|S_x;\pm\rangle$의 eigenvalue는 $\pm\frac{\hbar}{2}$이므로:
 모든 operator는 그것의 eigenket으로 만든 projection operator에 eigenvalue를 곱한 것들의 합이다. 
 $$
-S_x = \frac{\hbar}{2}\left\{e^{-i\delta_1}|+\rangle\langle-| + e^{i\delta_1}|-\rangle\langle+|\right\}
+S_x = \frac{\hbar}{2}\left\{e^{-i\delta_x}|+\rangle\langle-| + e^{i\delta_x}|-\rangle\langle+|\right\}
 $$
 
 마찬가지로 $S_y$에 대해서도:
 
 $$
-|S_y;\pm\rangle = \frac{1}{\sqrt{2}}|+\rangle \pm \frac{1}{\sqrt{2}}e^{i\delta_2}|-\rangle
+|S_y;\pm\rangle = \frac{1}{\sqrt{2}}|+\rangle \pm \frac{1}{\sqrt{2}}e^{i\delta_y}|-\rangle
 $$
 
 $$
-S_y = \frac{\hbar}{2}\left\{e^{-i\delta_2}|+\rangle\langle-| + e^{+i\delta_2}|-\rangle\langle+|\right\}
+S_y = \frac{\hbar}{2}\left\{e^{-i\delta_y}|+\rangle\langle-| + e^{+i\delta_y}|-\rangle\langle+|\right\}
 $$
 
-### $\delta_1$, $\delta_2$ 결정
+### $\delta_x$, $\delta_y$ 결정
 
-$|S_x;-\rangle$으로 준비된 빔 또한 같은 조건을 만족해야 한다:
+$|S_x;+ \rangle$, $|S_x;- \rangle$ 으로 준비된 빔 각각은, $|S_y;+ \rangle$로 관측될 확률이 절반이고 $|S_y;- \rangle$ 으로 관측될 확률로 절반이어야 한다. 
+이 조건을 이용하면, 
 
 $$
 |\langle S_y;\pm|S_x;+\rangle| = |\langle S_y;\pm|S_x;-\rangle| = \frac{1}{\sqrt{2}}
@@ -132,10 +134,11 @@ $$
 이를 정리하면:
 
 $$
-\frac{1}{2}\left|1 \pm e^{i(\delta_1-\delta_2)}\right| = \frac{1}{\sqrt{2}}
+\frac{1}{2}\left|1 \pm e^{i(\delta_x-\delta_y)}\right| = \frac{1}{\sqrt{2}}
 $$
 
-따라서 $\delta_2 - \delta_1 = \pm\frac{\pi}{2}$. 즉, x와 y에 대한 eigenket들은 $\frac{\pi}{2}$만큼의 위상 차 외에는 수 없다. 관습적으로 $\delta_1 = 0$, $\delta_2 = \frac{\pi}{2}$로 둔다.
+따라서 $\delta_y - \delta_x = \pm\frac{\pi}{2}$. 즉, x와 y에 대한 eigenket들은 $\frac{\pi}{2}$만큼의 위상차를 가져야 한다.
+관습적으로 $\delta_x = 0$, $\delta_y = \frac{\pi}{2}$로 둔다.
 
 ### 최종 결과
 
@@ -157,6 +160,7 @@ $$
 
 **Commutation & Anti-commutation relations:**
 
+직접 계산해 보면 아래와 같은 관계식을 얻을 수 있다. 
 $$
 [S_i, S_j] = i\varepsilon_{ijk}\hbar S_k
 $$
@@ -187,7 +191,8 @@ $$
 
 **중요한 성질: A와 B가 compatible $\iff$ $[A,B]=0$.**
 
-- A가 non-degenerate이면, $\langle a''|B|a'\rangle$는 diagonal이다.
+- $A$가 non-degenerate이고, $\ket{a'}$와 $\ket{a''}$가 $A$의 eigenket이라면, 이 ket들을 기저로 이용해 $B$를 matrix representation하면 그것은 diagonal matrix이다. 
+- 즉, $A$의 eigenket은 $B$의eigenket이기도 하다. 
 - **Degeneracy** → eigenvalue가 같은 eigenvector가 2개 이상 존재.
 
 ### 증명: $[A,B]=0$이면 A의 eigenket이 B의 eigenket이기도 함
