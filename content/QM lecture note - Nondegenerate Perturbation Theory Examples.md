@@ -211,7 +211,7 @@ $\ket{k^0}$는 수소 원자의 모든 bound state가 될 수 있다.
 - [[QM lecture note - Tensor Operators and Wigner-Eckart Theorem]]
 
 # 다음 강의
-
+[[QM lecture note - Time-Independent Degenerate Perturbation Theory]]
 # References
 
 - Sakurai, *Modern Quantum Mechanics*, Section 5.1

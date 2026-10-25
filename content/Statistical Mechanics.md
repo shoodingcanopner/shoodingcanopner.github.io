@@ -29,6 +29,8 @@ class: study_subject
 
 # 강의 필기
 [[SM lecture note - Thermodynamic Equilibrium and the First Law]]
+[[SM lecture note - Kinetic Theory and Boltzmann's H-theorem]]
+[[SM lecture note - Ensemble Theory and Energy Hypersurface]]
 
 ## 필기 노트 템플릿
 
@@ -37,3 +39,5 @@ class: study_subject
 ## 중간고사 범위
 ### 강의 필기
 - [[SM lecture note - Thermodynamic Equilibrium and the First Law|1st week - Thermodynamic Equilibrium and the First Law]]
+- [[SM lecture note - Kinetic Theory and Boltzmann's H-theorem|Kinetic Theory and Boltzmann's H-theorem]]
+- [[SM lecture note - Ensemble Theory and Energy Hypersurface|Ensemble Theory and Energy Hypersurface]]

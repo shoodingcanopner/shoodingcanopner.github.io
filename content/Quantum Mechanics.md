@@ -89,6 +89,7 @@ class: study_subject
 [[QM lecture note - Time-Independent Nondegenerate Perturbation Theory]]
 [[QM lecture note - Nondegenerate Perturbation Theory Examples]]
 [[QM lecture note - Time-Independent Degenerate Perturbation Theory]]
+[[QM lecture note - Linear Stark Effect]]
 
 [[QM lecture note - The Interaction Picture]]
 [[QM lecture note - Dyson Series & Transition Probability]]

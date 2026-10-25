@@ -110,7 +110,7 @@ $\frac{\partial \rho}{\partial t} = -\{\rho, H\} \tag{10}$
 
 물이 오른쪽으로 흐르면 ($\dot{q} > 0$), 고정된 점의 밀도는 감소 ($\partial_t \rho < 0$). 이것이 부호가 반대인 이유!
 
-### 4. 세 가지 동등한 형태
+### 4. 세 가지 동등한 형태 
 
 **1) 연속체 방정식 형태:**
 $$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0$$
