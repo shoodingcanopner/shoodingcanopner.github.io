@@ -90,6 +90,8 @@ class: study_subject
 [[QM lecture note - Nondegenerate Perturbation Theory Examples]]
 [[QM lecture note - Time-Independent Degenerate Perturbation Theory]]
 [[QM lecture note - Linear Stark Effect]]
+[[QM lecture note - The Relativistic Correction to the Kinetic Energy]]
+[[QM lecture note - Spin-Orbit Interaction and Fine Structure]]
 
 [[QM lecture note - The Interaction Picture]]
 [[QM lecture note - Dyson Series & Transition Probability]]
