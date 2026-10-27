@@ -23,9 +23,22 @@ Ket은 $V_I(t)$에 의해서만 시간 진화, operator는 $H_0$에 의해서만
 
 $$\boxed{\ket{\alpha,t_{0};t}_{I} =e^{i H_{0}t/\hbar}\ket{\alpha,t_{0};t}_{S},}$$
 $${\cal A}_{I}\equiv e^{i H_{0}t/\hbar}{\cal A}_{S}e^{-i H_{0}t/\hbar}.$$
-### Interaction picture에서 슈방
+
+반대로 하이젠베르크 관점 (H-picture)에서 정의하면, H-picture에서 시간에 independent하게 정의한 state를 $V$를 이용해 시간진화하면 된다. 
+
+$$\boxed{\ket{\alpha,t_{0};t}_{I} =e^{-i V t/\hbar}\ket{\alpha}_{H}}$$
+
+$${\cal A}_{I}\equiv e^{-i Vt/\hbar}{\cal A}_{H}(t)e^{i Vt/\hbar}.$$
+
+### Interaction picture에서 ket의 슈방, $V_I$로 time evolution
 
 $$i\hbar\frac{\partial}{\partial t}\ket{\alpha,t_{0};t}_{I}=V_{I}\ket{\alpha,t_{0};t}_{I},$$
+→ 그냥 $V$가 아니라 $V_S$이다. 
+
+
+### I-picture에서 operator의 슈방, $H_0$로 time evolution
+
+$$\frac{d{\cal A}_{I}}{d t}=\frac{1}{i\hbar}[{\cal A}_{I},{\cal H}_{0}],$$
 
 ### Time-dependent perturbation theory에서 문제 정의
 $$\ket{\alpha,t_{0};t}_{I}=\sum_{n}c_{n}(t)\ket{n}.$$
@@ -145,6 +158,7 @@ $$i\hbar\left(\!\!{\begin{array}{c}{{\dot{c}_{1}}}\\ {{\dot{c}_{2}}}\\ {{\dot{c}
 
 # 다음 강의
 
+[[QM lecture note - Dyson Series & Transition Probability]]
 
 # 필기 원본
 

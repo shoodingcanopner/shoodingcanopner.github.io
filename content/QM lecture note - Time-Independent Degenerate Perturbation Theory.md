@@ -18,7 +18,52 @@ class: study
 
 
 # 오늘의 핵심
-7절 내용을 보자. 
+### Projection operator
+
+$$
+P_1 = \mathbf{1} - P_0
+$$
+따라서 $P_0$과 $P_1$는 마치... 계란 노른자와 흰자를 분리하는 도구 같은 거다. 
+
+### 1st order energy correction
+결국, 1st order energy correction은 그저 $V$를 good state로 보쌈한 것이라는 걸 알 수 있다. 
+
+$$
+\Delta_l^{(1)} = \bra{l^{(0)}}V\ket{l^{(0)}}
+\tag{5.84}
+$$
+
+### 1st order state correction
+
+#### 흰자, $P_1$부분
+$$P_{1}|l^{(1)}\rangle=\sum_{k\not\in D}\frac{|k^{(0)}\rangle V_{k l}}{E_{D}^{(0)}-E_{k}^{(0)}}. \tag{5.79}$$
+
+$\ket{l}$의 흰자 부분의 1st order correction을 구했다. 
+Nondegenerate랑 똑같은 공식, 그저 부속품이 degenerate space밖에 있는 ket이어야 할 뿐
+
+#### 노른자, $P_0$부분 → 어려워 
+
+
+$$
+P_0\ket{l_i^{(1)}} = \sum_{j \neq i} \frac{P_0\ket{l_j^{(0)}}}{\Delta_{li}^{(1)}  -  \Delta_{lj}^{(1)}} \bra{l_j^{(0)}} V P_1 \frac{1}{E_D^{(0)} - H_0} P_1 V \ket{l_i^{(0)}}
+\tag{5.86}
+$$
+
+
+### 2nd order energy correction$\Delta_l^{(2)}$, 흰자만 쓴다
+
+$$
+\Delta_l^{(2)}= \bra{l^{(0)}}V P_1\ket{l^{(1)}} 
+$$
+$$
+\Delta_l^{(2)} = \sum_{k \notin D} \frac{|V_{kl}|^2}{E_D^{(0)} - E_k^{(0)}}
+\tag{5.88}
+$$
+
+
+
+### 자세한 유도과정정
+[[#7. Degenerate perturbation theory의 절차 요약|7절]] 내용을 보자. 요약을 잘 했다. 
 앍 개복잡해.
 
 # 필기 내용

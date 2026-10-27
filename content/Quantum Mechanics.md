@@ -86,21 +86,50 @@ class: study_subject
 [[양자 - J, L, S operator, CG coefficient and selection rule, 한 시간 만에 무배에서 다시 이해하기]]
 
 ### 강의 필기
+#### Time independent perturbation theory
 [[QM lecture note - Time-Independent Nondegenerate Perturbation Theory]]
 [[QM lecture note - Nondegenerate Perturbation Theory Examples]]
 [[QM lecture note - Time-Independent Degenerate Perturbation Theory]]
 [[QM lecture note - Linear Stark Effect]]
 [[QM lecture note - The Relativistic Correction to the Kinetic Energy]]
 [[QM lecture note - Spin-Orbit Interaction and Fine Structure]]
+[[QM lecture note - The Zeeman Effect]]
 
+#### Variational methods
+[[QM lecture note - Variational Methods]]
+
+#### Time dependent perturbation and energy transition
 [[QM lecture note - The Interaction Picture]]
 [[QM lecture note - Dyson Series & Transition Probability]]
 [[QM lecture note - Constant Perturbation and Transition Rate]]
-[[QM lecture note  - Harmonic Perturbation]]
+[[QM lecture note - Harmonic Perturbation and Detailed Balance]]
+
+#### Applications : energy transition of electron and light
+[[QM lecture note - Absorption and Stimulated Emission]]
+[[QM lecture note - Electric Dipole Approximation and TRK Sum Rule]]
+[[QM lecture note - Photoelectric Effect]]
+[[QM lecture note - Spontaneous Emission]]
+
+#### Berry's phase
+[[QM lecture note - Adiabatic Approximation]]
+[[QM lecture note - Berry's Phase]]
+
+
+### 아직 안 쓴 것들
+5.5.3 Time-Dependent Two-State Problems
+
+5.6.4 Example: Berry’s Phase for Spin 1/2
+5.6.5 Aharonov–Bohm and Magnetic Monopoles Revisited
+
+
+5.9 Energy Shift and DecayWidth
+
 
 ### 숙제와 추가 필기
 [[Sakurai 5.17 - Darwin Term and Fine Structure]]
 
+
+# 으악 다
 
 
 # 으악 1학기 중간고사가 24시간도 안 남았다! 

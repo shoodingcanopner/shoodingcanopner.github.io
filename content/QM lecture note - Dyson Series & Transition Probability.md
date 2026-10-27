@@ -18,12 +18,16 @@ class: study_lecture
 
 I-picture time evolution operator에 대한 슈방
 
-$$i\hbar{\frac{d}{d t}}U_{I}(t,t_{0})=V_{I}(t)U_{I}(t,t_{0}).$$
+$$i\hbar{\frac{d}{d t}}U_{I}(t,t_{0})=V_{I}(t)U_{I}(t,t_{0}).$$저번에 구한 I-picture에서 ket에 대한 슈방에다가 ket자리에 time evolution operator를 넣으면 된다. 
+
+그저 위 식을 양 변을 통으로 적분. 
+
 이를 Dyson series로 전개하여 2차식 까지만 남기면 아래 식이 된다. 
 
 $$
 \boxed{\, U_{I}(t,t_{0}) \, {{\approx\,\!1-\displaystyle\frac{i}{\hbar}\int_{t_{0}}^{t}d t^{\prime}V_{I}(t^{\prime})+\left(\displaystyle\frac{-i}{\hbar}\right)^{2}\int_{t_{0}}^{t}d t^{\prime}\int_{t_{0}}^{t^{\prime}}d t^{\prime\prime}V_{I}(t^{\prime})V_{I}(t^{\prime\prime})}}\,}
 $$
+우변에 있는 1은 이를테면 적분 상수, $U_I (t_0,t_0) = 1$이라서 그렇다. 
 
 우린 여전히 $\ket{\alpha,t_{0};t}_{I}=\sum_{n}c_{n}(t)\ket{n}$인 setup에서 풀고 있다. 
 만약 $\ket{\alpha}$가 $H_0$에 대해 eigenstate라면, $c_n(t)$는 아래와 같이 깔끔하게 나온다. 
@@ -34,7 +38,11 @@ $$
 $$
 위위 식을 집어넣으면, 
 $$c_{n}^{(0)}(t)=\delta_{n \alpha}\quad(\mathrm{independent\;of\;}t)$$
+
+아래 식이 앞으로의 강의 내용에서 정말 자주 쓰인다. 
 $$\begin{array}{c}{{c_{n}^{(1)}(t)=\displaystyle{\frac{-i}{\hbar}\int_{t_{0}}^{t}\bra{n}V_{I}(t^{\prime})\ket{\alpha} d t^{\prime}}}}\\ {{=\displaystyle{\frac{-i}{\hbar}\int_{t_{0}}^{t}e^{i\omega_{n \alpha}t^{\prime}}V_{n \alpha}(t^{\prime})d t^{\prime}}}}\end{array}$$
+
+아래 식은 좀 덜 쓰인다. 
 $$c_{n}^{(2)}(t)=\left({\frac{-i}{\hbar}}\right)^{2}\sum_{m}\int_{t_{0}}^{t}d t^{\prime}\int_{t_{0}}^{t^{\prime}}d t^{\prime\prime}e^{i\omega_{n m}t^{\prime}}V_{n m}(t^{\prime})e^{i\omega_{m \alpha}t^{\prime\prime}}V_{m \alpha}(t^{\prime\prime}),$$
 
 

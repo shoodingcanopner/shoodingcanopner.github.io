@@ -395,7 +395,7 @@ $$
 - [[양자 필기 - Good States in Degenerate Perturbation Theory]]
 
 # 다음 강의
-
+[[QM lecture note - The Zeeman Effect]]
 
 # References
 

@@ -33,7 +33,7 @@ $\frac{e}{c}\dot{\mathbf{x}}\cdot\mathbf{A}$부분을 잊지 마! $\frac{e}{c}\m
 
 해밀토니안이 바뀜에 따라, 유효한 gradient 연산또한 바뀌었다. 
 
-**Mechanical momentum**
+**Mechanical momentum** $\boldsymbol{\pi}$
 $$
 \boxed{\quad\mathbf{p} = -i\hbar\nabla \quad \xrightarrow{\mathbf{A}\text{가 있으면}} \quad \boldsymbol{\pi} = -i\hbar\nabla - \frac{e}{c}\mathbf{A} = -i\hbar\!\left(\nabla - \frac{ie}{\hbar c}\mathbf{A}\right)\quad}
 $$

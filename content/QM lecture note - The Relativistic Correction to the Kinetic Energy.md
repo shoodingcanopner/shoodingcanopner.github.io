@@ -20,28 +20,81 @@ class: study
 # 오늘의 핵심
 
 
+$$
+V = -\frac{(\mathbf{p}^2)^2}{8m_e^3c^2}
+\tag{5.97}
+$$
+이제 문제는 $\mathbf{p}^4$의 expectation value를 구하는 것으로 바뀐다. 
+
+Perturbation의 Rotational symmetry → $\mathbf{L}$의 eigenstate가 good state
+
+스핀 신경 안 씀, $\ket{n \, l \, m}$ $m$은 오비탈의 $z$ 방향 각운동량량
+
+$$
+\Delta_{nl}^{(1)} = E_n^{(0)}\left[\frac{Z^2\alpha^2}{n^2}\left(-\frac{3}{4} + \frac{n}{l + \frac{1}{2}}\right)\right]
+\tag{5.104a}
+$$
+
+$$
+\Delta_{nl}^{(1)} = -\frac{1}{2}m_ec^2Z^4\alpha^4\left[-\frac{3}{4n^4} + \frac{1}{n^3\left(l + \frac{1}{2}\right)}\right]
+\tag{5.104b}
+$$
+계산을 쉽게 하는 꼼수가 있다. 
+운동에너지 = 해밀토니안 - 포텐셜
+을 이용, 
+$$
+\frac{(\mathbf{p}^2)^2}{8m_e^3c^2} = \frac{1}{2m_ec^2}\left(\frac{\mathbf{p}^2}{2m_e}\right)^2 = \frac{1}{2m_ec^2}\left(H_0 + \frac{Ze^2}{r}\right)^2
+\tag{5.100}
+$$
+
+$$
+\Delta_{nl}^{(1)} = -\frac{1}{2m_ec^2}\left[\left(E_n^{(0)}\right)^2 + 2E_n^{(0)}\bra{nlm}\frac{Ze^2}{r}\ket{nlm} + \bra{nlm}\frac{(Ze^2)^2}{r^2}\ket{nlm}\right]
+\tag{5.101}
+$$
+이제는 $\langle 1/r \rangle$ 과 $\langle 1/r^2 \rangle$를 찾는 문제로 바뀌었다. 
+
+#### $\langle 1/r \rangle$ 을 구하는 올바른 방법 → 쿨롱 포텐셜에 perturbation theory
+
+$$
+H_0 = \frac{\mathbf{p}^2}{2m_e} - \frac{Ze^2}{r}
+\tag{5.95}
+$$
+
+원래 이랬던 해밀토니안에, **작은** perturbation $\lambda\left(-\frac{Ze^2}{r}\right)$를 더한다.
+
+#### $\langle 1/r^2 \rangle$: auxiliary perturbation $V_\gamma = \gamma/r^2$
+비슷한 접근법으로  $\langle 1/r^2 \rangle$도 구할 수 있다. 
+해밀토니안에  $V_\gamma = \gamma/r^2$가 perturbation으로 들어간 것이다. 
+
+자세한 내용은 일단 생략하자. 
+$$
+\bra{nlm}\frac{(Ze^2)^2}{r^2}\ket{nlm} = \frac{4n}{l + \frac{1}{2}}\left(E_n^{(0)}\right)^2
+\tag{5.103}
+$$
+
+
 # 필기 내용
 
 Sakurai 5.3.1 The Relativistic Correction to the Kinetic Energy
 
 ## Symbol table
 
-| Symbol | Meaning |
-|--|--|
-| $m_e$ | Electron mass |
-| $c$ | Speed of light |
-| $Z$ | Atomic number (nuclear charge $= Z\lvert e \rvert$) |
-| $e$ | Electron charge ($e < 0$, Sakurai convention) |
-| $\alpha$ | Fine-structure constant, $\alpha = e^2/\hbar c$ |
-| $\mathbf{p}$ | Momentum operator |
-| $\mathbf{L}$ | Orbital angular momentum operator |
-| $H_0$ | Unperturbed (nonrelativistic) Hamiltonian |
-| $K$ | Relativistic kinetic energy |
-| $V$ | Perturbation (relativistic correction) |
-| $\ket{nlm}$ | Hydrogenlike atom eigenstate |
-| $E_n^{(0)}$ | Unperturbed energy eigenvalue |
-| $\Delta_{nl}^{(1)}$ | First-order energy shift |
-| $V_\gamma$ | Expectation value 계산을 위한 auxiliary perturbation |
+| Symbol              | Meaning                                             |
+| ------------------- | --------------------------------------------------- |
+| $m_e$               | Electron mass                                       |
+| $c$                 | Speed of light                                      |
+| $Z$                 | Atomic number (nuclear charge $= Z\lvert e \rvert$) |
+| $e$                 | Electron charge ($e < 0$, Sakurai convention)       |
+| $\alpha$            | Fine-structure constant, $\alpha = e^2/\hbar c$     |
+| $\mathbf{p}$        | Momentum operator                                   |
+| $\mathbf{L}$        | Orbital angular momentum operator                   |
+| $H_0$               | Unperturbed (nonrelativistic) Hamiltonian           |
+| $K$                 | Relativistic kinetic energy                         |
+| $V$                 | Perturbation (relativistic correction)              |
+| $\ket{nlm}$         | Hydrogenlike atom eigenstate                        |
+| $E_n^{(0)}$         | Unperturbed energy eigenvalue                       |
+| $\Delta_{nl}^{(1)}$ | First-order energy shift                            |
+| $V_\gamma$          | Expectation value 계산을 위한 auxiliary perturbation     |
 
 ## Unperturbed Hamiltonian
 전자가 하나 있고, 핵의 전하가 $Z$인 원자에 대해 unperturbed Hamiltonian을 일반적으로 나타내면 이렇다. 

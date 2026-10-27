@@ -26,12 +26,17 @@ $$
 (Fermi's golden rule)
 
 # 필기 내용
+
+### Transition probability를 1st order correction으로 구한다
 Perturbation이 $t = 0$에서 딱 켜진 상황. 
 
 $$V(t)={\left\{\begin{array}{l l l}{0}&{{\mathrm{for}}}&{{t<0}}\\ {V}&{{\mathrm{(independent~of\,}t)}}&{{\mathrm{for}}}&{{t\ge0.}}\end{array}\right.}$$
 $V$가 시간에는 independent하지만, $\mathbf{x}$, $\mathbf{p}$, $\mathbf{s}$등의 observable에는 dependent할 수 있다. 
-$t_0=0$으로 두자. 이때 상태는 $H_0$의 eigenstate인 $\ket{\alpha}$라고 두자. 
+$t_0=0$으로 두자. 이때 초기 상태는 $H_0$의 eigenstate인 $\ket{\alpha}$라고 두자. 
 [[QM lecture note - Dyson Series & Transition Probability|지난 시간]]에 구한 식으로 $c_n^{(0)}, c_n^{(1)}$을 계산해보자. 
+
+![[Pasted image 20261026153621.png]]
+
 [[QM lecture note - The Interaction Picture|Recall]]: $\omega_{n m}\equiv\frac{\left(E_{n}-E_{m}\right)}{\hbar}=-\omega_{m n}$
 
 $$\begin{array}{c}{{c_{n}^{(0)}=c_{n}^{(0)}(0)=\delta_{n \alpha},}}\\ {{{}}}\\ {{c_{n}^{(1)}=\displaystyle{\frac{-i}{\hbar}}V_{n  \alpha}\int_{0}^{t}e^{i\omega_{n  \alpha}t^{\prime}}d t^{\prime}}}\\ {{{}}}\\ {{=\displaystyle{\frac{V_{n  \alpha}}{E_{n}-E_{ \alpha}}}(1-e^{i\omega_{n  \alpha}t}),}}\end{array}$$
@@ -45,6 +50,8 @@ $$
 $$
 
 $\alpha$에서 $n$으로의 transition probability는 $V_{n \alpha}$에도 dependent하지만, $E_n - E_{\alpha}$에도 depend함을 알 수 있다.
+
+### 전환되는 에너지가 연속적이고, 원 상태 에너지와 거의 비슷하다고 친다
 
 Eigenstate와 eigenenergy가 거의 연속적으로 있다고 치자. 
 원래의 에너지, $E_{\alpha}$에서 에너지 크기가 달라진 정도 $\Delta E$ 를 변수로 따로 두자. 
@@ -66,10 +73,11 @@ $$
 
 위 그래프는 고정된 $t$에서 $|c_n^{(1)}|^2$를 $\omega$의 함수로 그린 것이다. 
 $\omega = 0$에 가장 큰 central peak가 있고, 첫 번째 zero는 $\omega t/2 = \pm\pi$, 즉 $\omega = \pm 2\pi/t$에서 생긴다. 따라서 central peak의 높이는 $t^2$에, 폭은 $1/t$에 비례한다.
-즉, 시간이 지날 수록 디락델타랑 비슷해 진다. 
+즉, 시간이 지날 수록 디락델타랑 비슷해 진다. → 다른 에너지로 전환이 거의 불가능함. 
 
 ![[Pasted image 20261014103330.png]] ![[Pasted image 20261014103340.png]] 
 
+### time-energy uncertainty relation 
 
 Peak의 폭을 이용해서 transition이 유의미하게 일어나는 에너지 범위를 알 수 있다. 
 
@@ -82,11 +90,19 @@ $$\Delta t\Delta E\sim\hbar,$$
 > [!note] 여기서 $\Delta t$의 의미
 > 이 $\Delta t$는 어떤 operator의 표준편차가 아니라, perturbation이 켜져 있던 시간이다. 시간이 짧으면 energy가 보존되지 않는 transition($E_n \neq E_\alpha$)도 꽤 일어나고, 시간이 길수록 $E_n \simeq E_\alpha$인 transition만 살아남는다. 즉 $t \to \infty$에서 energy conservation이 회복된다.
 
-$E_n = E_\alpha$, 즉 $\omega \to 0$인 경우를 보자. $\sin^2(\omega t/2) \approx (\omega t/2)^2$이므로
+$E_n = E_\alpha$, 즉 $\omega \to 0$인 경우를 보자. 
 
+$$
+{{\displaystyle|c_{n}^{(1)}(t)|^{2}= \frac{4|V_{n \alpha}|^{2}}{|E_{n}-E_{\alpha}|^{2}}\sin^{2}\left[\frac{(E_{n}-E_{\alpha})t}{2\hbar}\right].}}
+$$
+
+$\sin^2(\omega t/2) \approx (\omega t/2)^2$ 으로 근사. 
 
 $$|c_{n}^{(1)}(t)|^{2}=\frac{1}{\hbar^{2}}|V_{n \alpha}|^{2}t^{2}.$$
 확률이 $t^2$으로 자란다. (물론 끝없이 자랄 수는 없고, 확률이 1에 가까워지기 전에 1차 perturbation theory가 깨진다.)
+
+### Density of states 와 적분한다
+
 하지만 이건 한 state만 봤을 때의 이야기이다. Eigenenergy가 거의 연속적이면 central peak 안에 들어오는 state가 여러 개 있으므로, 이들을 모두 더한 total transition probability를 봐야 한다.
 
 
@@ -114,11 +130,19 @@ $$\operatorname*{lim}_{t\to\infty}\int d E_{n}\rho(E_{n})|c_{n}^{(1)}(t)|^{2}=\l
 
 $|V_{n\alpha}|^2$ 위의 bar는 $E_n \simeq E_\alpha$ 근처의 final state들에 대해 $|V_{n\alpha}|^2$를 평균한 값이라는 뜻이다.
 
-중요한 점은 total transition probability가 $t^2$이 아니라 $t$에 비례한다는 것이다. 개별 state의 확률은 $t^2$으로 자라지만, peak의 폭이 $1/t$로 좁아지면서 기여하는 state의 수가 줄어들기 때문이다. 확률이 $t$에 비례하므로, 단위 시간당 transition 확률인 **transition rate**를 정의할 수 있다.
+### 시간에 대해 상수인 transition rate를 정의한다
+
+중요한 점은 total transition probability가 $t^2$이 아니라 $t$에 비례한다는 것이다. 개별 state의 확률은 $t^2$으로 자라지만, peak의 폭이 $1/t$로 좁아지면서 기여하는 state의 수가 줄어들기 때문이다. 
+확률이 $t$에 비례하므로, 단위 시간당 transition 확률인 **transition rate**를 정의할 수 있다.
 
 
-$$\frac{d}{d t}\left({\sum_{n}}|c_{n}^{(1)}|^{2}\right),$$
-을 계산하면 아래를 얻는다.
+$$
+\text{transition rate} = \frac{d}{d t}\left({\sum_{n}}|c_{n}^{(1)}|^{2}\right)
+$$
+$$
+= \frac{d}{dt} \left({\frac{2\pi}{\hbar}}\right){\overline{{|V_{n \alpha}|^{2}}}}\rho(E_{n})t\biggr|_{E_{n}\simeq E_{\alpha}}
+$$
+을 계산하면, 그냥 t의 나머지 부분이 나오니까까 아래를 얻는다.
 
 $$w_{\alpha\rightarrow[n]}={\frac{2\pi}{\hbar}}\overline{{{|V_{n \alpha}|^{2}}}}\rho(E_{n})_{E_{n}\simeq E_{\alpha}}$$
 이 결과가 바로 **Fermi's golden rule**이다. 여기서 $[n]$은 $E_n \simeq E_\alpha$인 final state들의 묶음을 뜻한다.
@@ -152,7 +176,7 @@ $$w_{\alpha\rightarrow[n]}=\frac{2\pi}{\hbar}\overline{{{\left|V_{n \alpha}+\sum
 강의 ppt 링크를 이곳에 
 
 # 다음 강의
-[[QM lecture note  - Harmonic Perturbation]]
+[[QM lecture note - Harmonic Perturbation and Detailed Balance]]
 
 # 필기 원본
 

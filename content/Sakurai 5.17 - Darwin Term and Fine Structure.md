@@ -9,6 +9,7 @@ tags:
 class: study
 ---
 # 문제
+![[Pasted image 20261026175844.png]]
 
 > [!question] Sakurai 5.17
 > 5장에서는 one-electron atom의 세 가지 relativistic correction 중 두 가지를 유도했다. "relativistic kinetic energy"에서 오는 $\Delta_K^{(1)}$와 spin-orbit interaction에서 오는 $\Delta_{LS}^{(1)}$이다. 세 번째 항은 전기장이 변하는 영역에서 electron wave function이 퍼져 있어서 생기며, 이 "Darwin term"의 perturbation은 다음과 같다.

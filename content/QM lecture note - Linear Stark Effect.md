@@ -122,7 +122,7 @@ $$
 \psi_{210} = \frac{1}{\sqrt{32\pi a_0^3}}\,\frac{r}{a_0}\,e^{-r/2a_0}\cos\theta
 $$
 
-**적분 세우기** ($z = r\cos\theta$, $d^3x = r^2\sin\theta\,dr\,d\theta\,d\phi$)
+**적분 세우기** ($z = r\cos\theta$, $d^3x = r^2\sin\theta\,dr\,d\theta\,d\phi = r^2 dr d\Omega$)
 
 $$
 \bra{2s}z\ket{2p, m=0} = \frac{1}{32\pi a_0^3}\int_0^\infty\left(2 - \frac{r}{a_0}\right)\frac{r}{a_0}\,e^{-r/a_0}\,r\cdot r^2\,dr\int\cos^2\theta\,d\Omega
