@@ -50,17 +50,17 @@ $$
 
 $\sigma(E)$를 어찌 계산하는가?
 
-$\sigma(E)$에 의해 둘러싸인 부피를 계산:
+$\sigma(E)$에 의해 둘러싸인 부피를 계산, 이를 $\omega (E)$라고 하자. 
 
 $$
 \omega(E) = \int_{\mathcal{H}(\mathbf{q}, \mathbf{p}) \leq E} \prod_i d^3q_i\, d^3p_i
 $$
-
+$E$ 에서 에너지가 $dE$ 만큼  늘어난 부피 = 표면적 · $dE$일 테니.
 $$
 \omega(E + dE) = \omega(E) + \left. \frac{\partial \omega}{\partial E} \right|_E dE = \omega(E) + \sigma(E)\, dE
 $$
 
-$dE$로 인해 늘어난 부피 = 표면적 · $dE$일 테니.
+따라서 $\sigma(E)$ 는 $\omega (E)$에 대한 미분이다.  
 
 $$
 \sigma(E) = \left. \frac{\partial \omega}{\partial E} \right|_E
@@ -80,8 +80,75 @@ $$
 > **Ideal gas의 $S$를 구하라!**
 > $\Omega$를 구한다 → $S = k_B \ln \Omega$를 구한다.
 
+
+### Boltzmann entropy
+볼츠만의 엔트로피 정의에 따르면, 모든 macrostate 중에서 가장 많은 microstate를 가진 macrostate가 바로 엔트로피 최대 상태이다. 
+**Entropy max state** ⟺ **State having the maximum number of microstates** ($\Omega_{\max}$)
+
+> [!note] 그림
+> 상자를 벽으로 나눈 두 subsystem: 왼쪽 $(E_1, V_1, N_1)$, 오른쪽 $(E_2, V_2, N_2)$.
+> ![[Pasted image 20261030113515.png]]
+
+$$
+\Omega(E, V, N) = \Omega_1(E_1, V_1, N_1) \times \Omega_2(E_2, V_2, N_2)
+$$
+
+At EQ, $d\Omega = 0$.
+
+$$
+d\Omega = \Omega_1\, d\Omega_2 + \Omega_2\, d\Omega_1
+$$
+
+$$
+\frac{d\Omega}{\Omega} = \frac{d\Omega_2}{\Omega_2} + \frac{d\Omega_1}{\Omega_1}
+$$
+
+→ 여기에서 log를 써야 할 필요를 느낀다.
+
+$$
+d\ln\Omega = d\ln\Omega_2 + d\ln\Omega_1
+$$
+
+EQ: $d\ln\Omega = 0$, $d\ln\Omega_2 = -d\ln\Omega_1$
+
+$$
+S(E, V, N) = S_1(E_1, V_1, N_1) + S_2(E_2, V_2, N_2)
+$$
+
+$$
+S \propto \ln\Omega
+$$
+
+> [!important] Boltzmann entropy
+> $$
+> S(E, V, N) = k_B \ln\Omega(E, V, N)
+> $$
+
+Thermodynamic entropy와 비교:
+
+$$
+dS = \frac{\text{đ}Q_{\text{rev}}}{T}
+$$
+
+→ 두 정의가 같아지는 지점은?
+
+$k_B$: **Dimension of Entropy**
+
+$$
+\frac{1}{T} = \left.\frac{\partial S}{\partial E}\right|_{V,N}, \qquad \frac{P}{T} = \left.\frac{\partial S}{\partial V}\right|_{E,N}
+$$
+
+→ 미분하면서 voxel의 단위가 의미 없어짐.
+
+$$
+k_B = \frac{R}{N_A}
+$$
+
+→ 이상 기체 상태 방정식으로 유도 가능.
+
 # 궁금한 내용
 
+- Boltzmann entropy $S = k_B \ln\Omega$와 thermodynamic entropy $dS = \text{đ}Q_{\text{rev}}/T$, 두 정의가 같아지는 지점은?
 
 # AI의 보충 설명
 
@@ -131,4 +198,9 @@ $$
 
 # 필기 원본
 
-![[SM_ensemble_theory.pdf]]
+![[1793335407270-4b31de06-bb16-41b1-8514-9a9a09663c64_48.jpg]]
+
+![[1793335407270-4b31de06-bb16-41b1-8514-9a9a09663c64_49.jpg]]
+
+![[1793335407270-4b31de06-bb16-41b1-8514-9a9a09663c64_50.jpg]]
+

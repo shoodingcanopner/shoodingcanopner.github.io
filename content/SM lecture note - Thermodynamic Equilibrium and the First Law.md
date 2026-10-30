@@ -93,7 +93,10 @@ $$
 
 - **Thermodynamic process** → state variable이 바뀌는 것. State space에서 경로로 나타낼 수 있음.
 - **Quasi-equilibrium process** → process 중 거치는 모든 상태가 equilibrium state인 것. State space에서 경로가 equation of state plane에 embed.
-	- **Reversible process**: 반대 방향으로 진행하는 것도 가능한 process. Quasi-equilibrium process이면서, system과 bath 전체의 total entropy 변화가 0이어야 한다.
+
+- **Reversible process**: 반대 방향으로 진행하는 것도 가능한 process. 
+	- ==Quasi-equilibrium process이면서,== 
+	- ==system과 bath 전체의 total entropy 변화가 0이어야 한다.==
 
 ### Three types of thermodynamic system
 
@@ -104,6 +107,8 @@ $$
 ---
 
 ## Three laws of thermodynamics
+
+### Zeroth law
 
 ### First law: Energy conservation
 
@@ -118,7 +123,7 @@ $\text{đ}$ 기호는 일과 열이 state variable이 아님을 의미.
 > [!warning] Notation
 > - $dE > 0$: system got energy
 > - $\text{đ}Q > 0$: system got heat
-> - $\text{đ}W > 0$: system got work
+> - $\text{đ}W > 0$: system got work → 이게 제일 헷갈림 부호 주의
 > 
 > $Q$와 $W$는 state function이 아니다.
 

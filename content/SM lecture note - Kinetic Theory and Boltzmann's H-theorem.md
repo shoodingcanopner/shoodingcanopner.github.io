@@ -12,9 +12,7 @@ class: study_lecture
 > 정리가 안 되어 있고, 개인적인 생각과 풀이가 섞여 있을 수도 있습니다. 
 
 # 지난 강의
-
-[[SM lecture note - Thermodynamic Equilibrium and the First Law]]
-
+[[SM lecture note - Phase Equilibrium and Maxwell Construction|5th week - Phase Equilibrium and Maxwell Construction]]
 # 오늘의 핵심
 
 정리를 끝내고 나서 핵심을 이곳에 적기. 
@@ -541,7 +539,7 @@ $$
 강의 ppt 링크를 이곳에 
 
 # 다음 강의
-[[SM lecture note - Ensemble Theory and Energy Hypersurface]]
+[[SM lecture note - Ensemble Theory and Energy Hypersurface|7th week - Ensemble Theory and Energy Hypersurface]]
 
 # 필기 원본
 
